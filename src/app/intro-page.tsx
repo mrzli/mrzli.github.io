@@ -18,7 +18,7 @@ export const IntroPage: FC = () => {
   return (
     <div>
       <h1>template-react</h1>
-      <p>App is running.</p>
+      <p className='bg-orange-200 text-2xl text-blue-500'>App is running.</p>
       <div style={imageContainerStyle}>
         <img alt='Vite logo' src={viteLogo} style={imageStyle} />
         <img alt='React logo' src={reactLogo} style={imageStyle} />
