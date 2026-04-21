@@ -532,3 +532,21 @@
   - Add link to `ExamplesPage`.
   - Run `bun run format` to format the updated files.
   - Commit the changes with a message like "setup tailwind and example page".
+- Setup icons:
+  - Install dependencies:
+    - `bun add @iconify/react`
+  - Add example for icon usage:
+    - Add stub `app/examples/icons-page.tsx`.
+    - Add some icons to it:
+      - Import `import { Icon } from '@iconify/react';`
+      - Add these icons to the page:
+        ```tsx
+        <Icon icon='cif:hr' width='500' height='300' />
+        <Icon icon='mdi:linkedin' width='48' height='48' color='#0a66c2' />
+        <Icon icon='mdi:github' width='48' height='48' color='#181717' />
+        <Icon icon='mdi:stackoverflow' width='48' height='48' color='#f48024' />
+        ```
+  - Add route to `router.tsx`.
+  - Add link to `ExamplesPage`.
+  - Run `bun run format` to format the updated files.
+  - Commit the changes with a message like "setup icon library and example page".
