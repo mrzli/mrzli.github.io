@@ -9,7 +9,7 @@ interface Props {
 export const NavLink: FC<Props> = ({ to, children }) => {
   return (
     <Link
-      className='text-gray-600 transition-colors hover:text-gray-900 hover:underline'
+      className='text-gray-600 outline-none transition-colors hover:text-gray-900 hover:underline'
       to={to}
     >
       {children}
