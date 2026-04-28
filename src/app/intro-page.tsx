@@ -7,9 +7,7 @@ import profileImage from '../assets/profile.jpg';
 export const IntroPage: FC = () => {
   return (
     <div>
-      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
-        Name &amp; Contact
-      </h1>
+      <h1 className='gm-title'>Name &amp; Contact</h1>
       <div className='grid grid-cols-[auto_1fr] gap-5'>
         <img
           alt='Goran Mržljak'
@@ -19,12 +17,12 @@ export const IntroPage: FC = () => {
         <div className='grid content-center gap-2'>
           <div className='text-[1.2em]'>Goran Mržljak</div>
           <div>
-            <a href='tel:+385912243145' className='text-pink-500'>
+            <a href='tel:+385912243145' className='gm-accent-link'>
               +385 91 224 3145
             </a>
           </div>
           <div>
-            <a href='mailto:goran.mrzljak@gmail.com' className='text-pink-500'>
+            <a href='mailto:goran.mrzljak@gmail.com' className='gm-accent-link'>
               goran.mrzljak@gmail.com
             </a>
           </div>
@@ -33,7 +31,7 @@ export const IntroPage: FC = () => {
               href='https://www.linkedin.com/in/goran-mrzljak'
               target='_blank'
               rel='noreferrer'
-              className='text-slate-700'
+              className='gm-icon-link'
             >
               <Icon icon='mdi:linkedin' width='40' height='40' />
             </a>
@@ -41,7 +39,7 @@ export const IntroPage: FC = () => {
               href='https://github.com/mrzli'
               target='_blank'
               rel='noreferrer'
-              className='text-slate-700'
+              className='gm-icon-link'
             >
               <Icon icon='mdi:github' width='40' height='40' />
             </a>
@@ -49,7 +47,7 @@ export const IntroPage: FC = () => {
               href='https://stackoverflow.com/users/520229/mrzli'
               target='_blank'
               rel='noreferrer'
-              className='text-slate-700'
+              className='gm-icon-link'
             >
               <Icon icon='mdi:stackoverflow' width='40' height='40' />
             </a>
@@ -57,7 +55,7 @@ export const IntroPage: FC = () => {
               href='/data/CV.pdf'
               target='_blank'
               rel='noreferrer'
-              className='text-slate-700'
+              className='gm-icon-link'
             >
               <Icon icon='mdi:file' width='40' height='40' />
             </a>
@@ -65,9 +63,7 @@ export const IntroPage: FC = () => {
         </div>
       </div>
 
-      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
-        Professional Profile
-      </h1>
+      <h1 className='gm-title'>Professional Profile</h1>
       <ul className='ml-6 list-disc space-y-1'>
         <li>14+ years of professional software development experience.</li>
         <li>
@@ -97,9 +93,7 @@ export const IntroPage: FC = () => {
         </li>
       </ul>
 
-      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
-        Other Sections
-      </h1>
+      <h1 className='gm-title'>Other Sections</h1>
       <div className='space-y-1'>
         <div>
           <Link to='/work-history' className='underline'>

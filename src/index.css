@@ -1,1 +1,78 @@
 @import 'tailwindcss';
+
+:root {
+  --gm-bg: var(--color-slate-50);
+  --gm-text: var(--color-slate-700);
+  --gm-title: var(--color-slate-800);
+  --gm-subtitle: var(--color-pink-600);
+  --gm-accent: var(--color-pink-600);
+  --gm-icon: var(--color-slate-600);
+  --gm-icon-hover: var(--color-slate-900);
+  --gm-nav: var(--color-slate-600);
+  --gm-nav-hover: var(--color-slate-900);
+}
+
+.dark {
+  --gm-bg: var(--color-slate-900);
+  --gm-text: var(--color-slate-200);
+  --gm-title: var(--color-slate-100);
+  --gm-subtitle: var(--color-pink-400);
+  --gm-accent: var(--color-pink-400);
+  --gm-icon: var(--color-slate-400);
+  --gm-icon-hover: var(--color-slate-100);
+  --gm-nav: var(--color-slate-400);
+  --gm-nav-hover: var(--color-slate-100);
+}
+
+@layer base {
+  body {
+    background-color: var(--gm-bg);
+    color: var(--gm-text);
+  }
+}
+
+@layer components {
+  .gm-title {
+    margin-top: var(--spacing-6);
+    margin-bottom: var(--spacing-3);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    color: var(--gm-title);
+  }
+
+  .gm-subtitle {
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
+    font-weight: var(--font-weight-bold);
+    color: var(--gm-subtitle);
+  }
+
+  .gm-accent-link {
+    color: var(--gm-accent);
+  }
+
+  .gm-icon-link {
+    color: var(--gm-icon);
+    transition-property: color;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+
+  .gm-icon-link:hover {
+    color: var(--gm-icon-hover);
+  }
+
+  .gm-nav-link {
+    color: var(--gm-nav);
+    outline: none;
+    transition-property: color;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+
+  .gm-nav-link:hover {
+    color: var(--gm-nav-hover);
+    text-decoration-line: underline;
+  }
+}
