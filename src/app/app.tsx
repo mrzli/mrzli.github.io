@@ -14,6 +14,7 @@ export const App: FC = () => {
         <NavLink to='skills-overview'>Skills Overview</NavLink>
         <NavLink to='personal-projects'>Personal Projects</NavLink>
         <NavLink to='personal-info'>Personal Info</NavLink>
+        <NavLink to='example'>Example</NavLink>
       </nav>
       <Outlet />
     </Layout>

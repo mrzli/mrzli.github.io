@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router';
 
 import { App } from '../app/app';
 import { EducationPage } from '../app/education-page';
+import { ExamplePage } from '../app/example-page';
 import { IntroPage } from '../app/intro-page';
 import { PersonalInfoPage } from '../app/personal-info-page';
 import { PersonalProjectsPage } from '../app/personal-projects-page';
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: 'personal-info',
         element: <PersonalInfoPage />,
+      },
+      {
+        path: 'example',
+        element: <ExamplePage />,
       },
     ],
   },

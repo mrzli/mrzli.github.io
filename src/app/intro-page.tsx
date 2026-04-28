@@ -1,37 +1,131 @@
 import { Icon } from '@iconify/react';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
+import { Link } from 'react-router';
 
-import viteLogo from '/vite.svg';
-
-import reactLogo from '../assets/react.svg';
-
-const imageStyle: CSSProperties = {
-  display: 'flex',
-  gap: '1rem',
-  marginTop: '1rem',
-};
+import profileImage from '../assets/profile.jpg';
 
 export const IntroPage: FC = () => {
   return (
     <div>
-      <h1>template-react</h1>
-      <p className='bg-orange-200 text-2xl text-blue-500'>App is running.</p>
-      <div>
-        <img alt='Vite logo' src={viteLogo} style={imageStyle} />
-        <img alt='React logo' src={reactLogo} style={imageStyle} />
-      </div>
-      <div>
-        <Icon icon='cif:hr' width='500' height='300' />
-        <Icon icon='mdi:linkedin' width='48' height='48' color='#0a66c2' />
-        <Icon icon='mdi:github' width='48' height='48' color='#181717' />
-        <Icon icon='mdi:stackoverflow' width='48' height='48' color='#f48024' />
-        <Icon
-          icon='mdi:file-pdf-box'
-          width='48'
-          height='48'
-          color='#ef4444' // classic PDF red
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
+        Name &amp; Contact
+      </h1>
+      <div className='grid grid-cols-[auto_1fr] gap-5'>
+        <img
+          alt='Goran Mržljak'
+          src={profileImage}
+          className='h-40 w-40 overflow-hidden rounded-full border-4 border-slate-200'
         />
-        <Icon icon='material-symbols:download' width='48' height='48' />
+        <div className='grid content-center gap-2'>
+          <div className='text-[1.2em]'>Goran Mržljak</div>
+          <div>
+            <a href='tel:+385912243145' className='text-pink-500'>
+              +385 91 224 3145
+            </a>
+          </div>
+          <div>
+            <a href='mailto:goran.mrzljak@gmail.com' className='text-pink-500'>
+              goran.mrzljak@gmail.com
+            </a>
+          </div>
+          <div className='flex gap-2'>
+            <a
+              href='https://www.linkedin.com/in/goran-mrzljak'
+              target='_blank'
+              rel='noreferrer'
+              className='text-slate-700'
+            >
+              <Icon icon='mdi:linkedin' width='40' height='40' />
+            </a>
+            <a
+              href='https://github.com/mrzli'
+              target='_blank'
+              rel='noreferrer'
+              className='text-slate-700'
+            >
+              <Icon icon='mdi:github' width='40' height='40' />
+            </a>
+            <a
+              href='https://stackoverflow.com/users/520229/mrzli'
+              target='_blank'
+              rel='noreferrer'
+              className='text-slate-700'
+            >
+              <Icon icon='mdi:stackoverflow' width='40' height='40' />
+            </a>
+            <a
+              href='/data/CV.pdf'
+              target='_blank'
+              rel='noreferrer'
+              className='text-slate-700'
+            >
+              <Icon icon='mdi:file' width='40' height='40' />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
+        Professional Profile
+      </h1>
+      <ul className='ml-6 list-disc space-y-1'>
+        <li>14+ years of professional software development experience.</li>
+        <li>
+          Have experience with onboarding new developers, mentoring, and
+          interviewing potential candidates.
+        </li>
+        <li>
+          Done mostly web development recently, but previously had experience
+          with wide range of technologies - see{' '}
+          <Link to='/work-history' className='underline'>
+            work history
+          </Link>{' '}
+          for more details.
+        </li>
+        <li>
+          Full stack development, but also worked on projects where I focus
+          mostly (or completely) on either frontend or backend.
+        </li>
+        <li>Have experience with React, Angular and Vue (in that order).</li>
+        <li>Prefer React, but would consider an Angular position.</li>
+        <li>
+          I have significant backend experience with Node/Express/Nest. These
+          are my technologies of choice for the backend.
+        </li>
+        <li>
+          Secondary option for backend is Spring Boot with Kotlin or Java.
+        </li>
+      </ul>
+
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-700 uppercase'>
+        Other Sections
+      </h1>
+      <div className='space-y-1'>
+        <div>
+          <Link to='/work-history' className='underline'>
+            Work History
+          </Link>
+        </div>
+        <div>
+          <Link to='/education' className='underline'>
+            Education
+          </Link>
+        </div>
+        <div>
+          <Link to='/skills-overview' className='underline'>
+            Skills Overview
+          </Link>
+        </div>
+        <div>
+          <Link to='/personal-projects' className='underline'>
+            Personal Projects
+          </Link>
+        </div>
+        <div>
+          <Link to='/personal-info' className='underline'>
+            Personal Info
+          </Link>
+        </div>
       </div>
     </div>
   );
