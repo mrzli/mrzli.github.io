@@ -1,6 +1,8 @@
 import type { CSSProperties, FC } from 'react';
 import { Link, Outlet } from 'react-router';
 
+import { Layout } from './layout/layout';
+
 const navStyle: CSSProperties = {
   display: 'flex',
   gap: '1rem',
@@ -14,7 +16,7 @@ const linkStyle: CSSProperties = {
 
 export const App: FC = () => {
   return (
-    <div>
+    <Layout>
       <nav style={navStyle}>
         <Link style={linkStyle} to=''>
           Intro
@@ -36,6 +38,6 @@ export const App: FC = () => {
         </Link>
       </nav>
       <Outlet />
-    </div>
+    </Layout>
   );
 };
