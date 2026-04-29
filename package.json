@@ -10,7 +10,8 @@
     "pretty": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "bun run pretty && bun run lint:fix"
+    "format": "bun run pretty && bun run lint:fix",
+    "backport": "./.setup/backport.sh . ../../templates/template-react"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
