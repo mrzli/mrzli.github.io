@@ -56,7 +56,7 @@
 
 ### Use Router in the Application
 
-- Update the `run.tsx` file.
+- Update the file that renders the app (`main.tsx` or wherever else you placed it).
 - Add imports:
   ```tsx
   import { RouterProvider } from 'react-router';
