@@ -1,8 +1,10 @@
-# Create Basic App Setup Structure
+# App Setup
+
+## Create Basic App Setup Structure
 
 - Create `src/setup/` directory if it does not already exist.
 
-## Create `run.tsx` File
+### Create `run.tsx` File
 
 - Create `run.tsx` file under `src/setup/` directory.
 - Move the logic from `src/main.tsx` to `src/setup/run.tsx`.
@@ -31,12 +33,12 @@
   };
   ```
 
-## Create `index.ts` File
+### Create `index.ts` File
 
 - Create `index.ts` file under `src/setup/` directory.
 - Export everything from `run.tsx` in that file.
 
-## Update `main.tsx`
+### Update `main.tsx`
 
 - It should retain import for `index.css`.
 - Other than that, it should only import and execute the `run` function.
@@ -49,7 +51,7 @@
   run();
   ```
 
-## Finalize Step
+### Finalize Step
 
 - Format using `bun run format`.
 - Commit with "create basic app setup structure".
