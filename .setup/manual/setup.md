@@ -1,7 +1,5 @@
 # Steps
 
-
-
 ## TODO
 
 - Setup app dependencies:

@@ -58,87 +58,55 @@
 
 ## App Context
 
-- Create `src/setup/context/` directory.
-- You need for things for the context:
-  - Type of the entire context value.
+### App Context Code
+
+- Create `src/setup/app-context.tsx` file.
+- It needs:
+  - Type for the context value.
   - The context itself.
-  - The context provider component.
-  - A custom hook for consuming the context.
-
-### Create Context Value Type
-
-- Create `app-context-value.ts` file (under the above directory).
-- It should contain the type for the context value.
-- For now, it should just have one field `appName` of type string.
+  - The context consumer hook.
+  - Function to create the context value.
 - Example:
   ```ts
+  import { createContext, useContext } from 'react';
+
   export interface AppContextValue {
     readonly appName: string;
   }
-  ```
 
-### Create Context
-
-- Create `app-context.ts` file.
-  ```tsx
   export const AppContext = createContext<AppContextValue | undefined>(undefined);
-  ```
 
-### Create Context Provider
-
-- Create `app-context-provider.tsx` file.
-- This is a React component.
-- Code:
-  ```tsx
-  export interface AppContextProviderProps {
-    readonly value: AppContextValue;
-    readonly children: ReactNode;
-  }
-
-  export const AppContextProvider: FC<AppContextProviderProps> = ({
-    value,
-    children,
-  }) => {
-    return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-  };
-  ```
-
-### Create App Context Hook
-
-- Create `use-app-context.ts` file.
-  ```tsx
   export const useAppContext = (): AppContextValue => {
     const context = useContext(AppContext);
-    if (context === undefined) {
+    if (!context) {
       throw new Error('useAppContext must be used within an AppContextProvider');
     }
     return context;
   };
+
+  export const createAppContextValue = (): AppContextValue => ({
+    appName: 'My App',
+  });
   ```
-
-### Other Context Files
-
-- Add an index file which exports everything from the context directory.
+- Add the file to index exports.
 
 ### Setup Context in the App
 
 - Update `run.tsx` to wrap the app in the context provider:
   ```tsx
   // ...
-  import { AppContextProvider, type AppContextValue } from './context';
+  import { AppContext, createAppContextValue } from './context';
 
   export const run = async () => {
     // ...
 
-    const value: AppContextValue = {
-      // ...
-    };
+    const value = createAppContextValue();
 
     const content = (
       <StrictMode>
-        <AppContextProvider value={value}>
+        <AppContext.Provider value={value}>
           // ....
-        </AppContextProvider>
+        </AppContext.Provider>
       </StrictMode>
     );
 
