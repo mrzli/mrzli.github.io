@@ -13,3 +13,7 @@ export const useAppContext = (): AppContextValue => {
   }
   return context;
 };
+
+export const createAppContextValue = (): AppContextValue => ({
+  appName: 'Goran Mržljak - CV',
+});

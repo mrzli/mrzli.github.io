@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 
 import { router } from '../routing/router';
-import { AppContext, type AppContextValue } from './app-context';
+import { AppContext, createAppContextValue } from './app-context';
 
 export const run = async () => {
   const root = document.getElementById('root');
@@ -12,9 +12,7 @@ export const run = async () => {
     throw new Error('Root element not found');
   }
 
-  const value: AppContextValue = {
-    appName: 'Goran Mržljak - CV',
-  };
+  const value = createAppContextValue();
 
   const content = (
     <StrictMode>
