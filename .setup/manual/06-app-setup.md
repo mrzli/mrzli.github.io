@@ -84,9 +84,11 @@
     return context;
   };
 
-  export const createAppContextValue = (): AppContextValue => ({
-    appName: 'My App',
-  });
+  export const createAppContextValue = (): AppContextValue => {
+    return {
+      appName: 'My App',
+    };
+  };
   ```
 - Add the file to index exports.
 
@@ -220,13 +222,10 @@
 
 ### Setup Usage in App
 
-- Add to `AppContextValue` interface:
-  ```ts
-  readonly env: AppEnv;
-  ```
-- In file that initialized the context value:
-  - Import `appEnv` function.
-  - Call to create env, use it in the context value.
+- In `app-context.tsx` file.
+- Import the type and creator function.
+- Add field to context value interface.
+- Add creation to the context value creator function.
 
 ### Example Usage
 
@@ -236,3 +235,28 @@
 
 - Format using `bun run format`.
 - Commit with "setup env".
+
+## Setup App Dependencies
+
+### Add Dependencies Code
+
+- Create `app-dependencies.ts` file in `src/setup/` directory.
+- Example:
+  ```ts
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface AppDependencies {}
+
+  export const createAppDependencies = (): AppDependencies => {
+    return {};
+  };
+  ```
+- Add the file to index exports.
+
+### Add to Context
+
+- Import, add field to context value type, add creation.
+
+### Finalize Step
+
+- Format using `bun run format`.
+- Commit with "setup app dependencies in context".

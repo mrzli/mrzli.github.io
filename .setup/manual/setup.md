@@ -2,32 +2,6 @@
 
 ## TODO
 
-- Setup app dependencies:
-  - Create `app-dependencies.ts` file under `src/setup/`.
-  - For now, just have a stub interface for dependencies, with no actual dependencies in it.
-    - Code:
-      ```ts
-      export interface AppDependencies {
-        // Add your app dependencies here
-      }
-      ```
-  - Export the dependencies interface in the `index.ts` file.
-  - Add `dependencies` field to context value, remember to initialize it.
-  - Run `bun run format` to format the updated files.
-  - Commit the changes with a message like "setup app dependencies in context".
-- Setup app dependencies:
-  - Just create an empty dopendencies type and creator in `src/setup/app-dependencies.ts`:
-    ```ts
-    export interface AppDependencies {}
-
-    export const createAppDependencies = (env: AppEnv): AppDependencies => {
-      return {};
-    };
-    ```
-  - Add any `index.ts` entries if necessary.
-  - Add `dependencies` field to context value, remember to initialize it with the `createAppDependencies` function.
-  - Run `bun run format` to format the updated files.
-  - Commit the changes with a message like "setup app dependencies and example page".
 - Setup api stub:
   - Create `src/api/` directory and `parts/` subdirectory under it.
   - Create sub files:
