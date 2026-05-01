@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 
 import { router } from '../routing/router';
-import { AppContextProvider, type AppContextValue } from './context';
+import { AppContext, type AppContextValue } from './app-context';
 
 export const run = async () => {
   const root = document.getElementById('root');
@@ -18,9 +18,9 @@ export const run = async () => {
 
   const content = (
     <StrictMode>
-      <AppContextProvider value={value}>
+      <AppContext.Provider value={value}>
         <RouterProvider router={router} />
-      </AppContextProvider>
+      </AppContext.Provider>
     </StrictMode>
   );
 
