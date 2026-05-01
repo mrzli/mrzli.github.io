@@ -1,7 +1,13 @@
 import { createContext, useContext } from 'react';
 
+import {
+  type AppDependencies,
+  createAppDependencies,
+} from './app-dependencies';
+
 export interface AppContextValue {
   readonly appName: string;
+  readonly dependencies: AppDependencies;
 }
 
 export const AppContext = createContext<AppContextValue | undefined>(undefined);
@@ -14,6 +20,11 @@ export const useAppContext = (): AppContextValue => {
   return context;
 };
 
-export const createAppContextValue = (): AppContextValue => ({
-  appName: 'Goran Mržljak - CV',
-});
+export const createAppContextValue = (): AppContextValue => {
+  const dependencies = createAppDependencies();
+
+  return {
+    appName: 'Goran Mržljak - CV',
+    dependencies,
+  };
+};
