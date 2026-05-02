@@ -13,15 +13,15 @@
 }
 
 .dark {
-  --gm-bg: var(--color-slate-900);
-  --gm-text: var(--color-slate-200);
-  --gm-title: var(--color-slate-100);
-  --gm-subtitle: var(--color-pink-400);
-  --gm-accent: var(--color-pink-400);
-  --gm-icon: var(--color-slate-400);
-  --gm-icon-hover: var(--color-slate-100);
-  --gm-nav: var(--color-slate-400);
-  --gm-nav-hover: var(--color-slate-100);
+  --gm-bg: var(--color-slate-950);
+  --gm-text: var(--color-slate-300);
+  --gm-title: var(--color-slate-200);
+  --gm-subtitle: var(--color-pink-500);
+  --gm-accent: var(--color-pink-500);
+  --gm-icon: var(--color-slate-300);
+  --gm-icon-hover: var(--color-white);
+  --gm-nav: var(--color-slate-300);
+  --gm-nav-hover: var(--color-white);
 }
 
 @layer base {
