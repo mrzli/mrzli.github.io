@@ -17,7 +17,7 @@ export const Nav: FC = () => {
 
   return (
     <nav>
-      <div className='flex items-center p-4'>
+      <div className='flex items-center justify-end gap-2 p-4 md:justify-between'>
         <div className='hidden flex-1 items-center gap-4 md:flex'>
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.to} to={item.to}>
@@ -25,22 +25,16 @@ export const Nav: FC = () => {
             </NavLink>
           ))}
         </div>
-        <div className='flex-1 md:hidden' />
-        <div className='flex items-center gap-2'>
-          <button
-            type='button'
-            onClick={toggleMenu}
-            className='cursor-pointer bg-transparent p-1 text-slate-600 transition-colors hover:text-slate-900 md:hidden dark:text-slate-300 dark:hover:text-white'
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            <Icon
-              icon={isOpen ? 'mdi:close' : 'mdi:menu'}
-              className='h-5 w-5'
-            />
-          </button>
-          <ThemeToggle />
-        </div>
+        <button
+          type='button'
+          onClick={toggleMenu}
+          className='cursor-pointer bg-transparent p-1 text-slate-600 transition-colors hover:text-slate-900 md:hidden dark:text-slate-300 dark:hover:text-white'
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+        >
+          <Icon icon={isOpen ? 'mdi:close' : 'mdi:menu'} className='h-5 w-5' />
+        </button>
+        <ThemeToggle />
       </div>
       {isOpen && (
         <div className='flex flex-col gap-3 px-4 pb-4 md:hidden'>
