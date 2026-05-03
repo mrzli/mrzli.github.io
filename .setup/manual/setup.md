@@ -79,6 +79,20 @@
   - Add link to `ExamplesPage`.
   - Run `bun run format` to format the updated files.
   - Commit the changes with a message like "setup tailwind and example page".
+- Setup tailwind merge:
+  - Install dependencies:
+    - `bun add clsx tailwind-merge`
+  - Create `src/util/` directory (if it doesn't exist):
+  - Create `styles.ts` file in it:
+    ```ts
+    import { type ClassValue, clsx } from 'clsx';
+    import { twMerge } from 'tailwind-merge';
+
+    export const cn = (...inputs: readonly ClassValue[]): string => {
+      return twMerge(clsx(...inputs));
+    };
+    ```
+  - Add to index file.
 - Setup icons:
   - Install dependencies:
     - `bun add @iconify/react`
