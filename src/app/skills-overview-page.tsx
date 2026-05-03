@@ -136,10 +136,14 @@ const DATA: readonly MainSection[] = [
 export const SkillsOverviewPage: FC = () => {
   return (
     <div>
-      <h1 className='gm-title'>Skills Overview (Techs I Worked With)</h1>
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
+        Skills Overview (Techs I Worked With)
+      </h1>
       {DATA.map((section, sectionIndex) => (
         <div key={sectionIndex} className='mt-6'>
-          <h2 className='gm-subtitle'>{section.name}</h2>
+          <h2 className='my-2 font-bold text-pink-600 dark:text-pink-500'>
+            {section.name}
+          </h2>
           {section.subsections.map((sub, subIndex) => (
             <div key={subIndex} className='my-4'>
               {sub.name && <p className='my-2'>{sub.name}</p>}

@@ -61,11 +61,15 @@ const DATA: readonly Project[] = [
 export const PersonalProjectsPage: FC = () => {
   return (
     <div>
-      <h1 className='gm-title'>Personal Projects</h1>
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
+        Personal Projects
+      </h1>
       <p>Projects I did in my free time.</p>
       {DATA.map((project, index) => (
         <div key={index}>
-          <h2 className='gm-subtitle'>{project.name}</h2>
+          <h2 className='my-2 font-bold text-pink-600 dark:text-pink-500'>
+            {project.name}
+          </h2>
           <div className='my-6'>
             <p className='my-2 font-semibold'>{project.description}</p>
             <ul className='ml-6 list-disc'>

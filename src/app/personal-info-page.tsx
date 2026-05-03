@@ -3,7 +3,9 @@ import type { FC } from 'react';
 export const PersonalInfoPage: FC = () => {
   return (
     <div>
-      <h1 className='gm-title'>Personal Info</h1>
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
+        Personal Info
+      </h1>
       <div className='grid grid-cols-[auto_auto] justify-start gap-x-4 gap-y-1'>
         <span>Name:</span>
         <span>Goran Mržljak</span>

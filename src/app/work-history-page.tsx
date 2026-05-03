@@ -233,10 +233,12 @@ const DATA: readonly Job[] = [
 export const WorkHistoryPage: FC = () => {
   return (
     <div>
-      <h1 className='gm-title'>Work History</h1>
+      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
+        Work History
+      </h1>
       {DATA.map((job, jobIndex) => (
         <div key={jobIndex}>
-          <h2 className='gm-subtitle'>
+          <h2 className='my-2 font-bold text-pink-600 dark:text-pink-500'>
             {job.jobTitleLink ? (
               <a
                 href={job.jobTitleLink}
