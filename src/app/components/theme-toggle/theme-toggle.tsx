@@ -47,7 +47,7 @@ export const ThemeToggle: FC = () => {
     <button
       type='button'
       onClick={cycleTheme}
-      className='ml-auto cursor-pointer bg-transparent p-1 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+      className='cursor-pointer bg-transparent p-1 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
       aria-label={`Switch theme (current: ${theme})`}
       title={`Current: ${theme} (click to cycle)`}
     >
