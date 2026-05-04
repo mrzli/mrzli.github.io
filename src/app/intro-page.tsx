@@ -83,8 +83,8 @@ export const IntroPage: FC = () => {
         <li>
           Done mostly web development recently, but previously had experience
           with wide range of technologies - see{' '}
-          <Link to='/work-history' className='underline'>
-            work history
+          <Link to='/experience' className='underline'>
+            experience
           </Link>{' '}
           for more details.
         </li>
@@ -104,32 +104,27 @@ export const IntroPage: FC = () => {
       </ul>
 
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
-        Other Sections
+        Explore
       </h1>
       <div className='space-y-1'>
         <div>
-          <Link to='/work-history' className='underline'>
-            Work History
+          <Link to='/experience' className='underline'>
+            Experience
           </Link>
         </div>
         <div>
-          <Link to='/education' className='underline'>
-            Education
+          <Link to='/skills' className='underline'>
+            Skills
           </Link>
         </div>
         <div>
-          <Link to='/skills-overview' className='underline'>
-            Skills Overview
+          <Link to='/projects' className='underline'>
+            Projects
           </Link>
         </div>
         <div>
-          <Link to='/personal-projects' className='underline'>
-            Personal Projects
-          </Link>
-        </div>
-        <div>
-          <Link to='/personal-info' className='underline'>
-            Personal Info
+          <Link to='/background' className='underline'>
+            Background
           </Link>
         </div>
       </div>

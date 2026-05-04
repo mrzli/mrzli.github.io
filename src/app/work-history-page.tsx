@@ -234,7 +234,7 @@ export const WorkHistoryPage: FC = () => {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
-        Work History
+        Experience
       </h1>
       {DATA.map((job, jobIndex) => (
         <div key={jobIndex}>

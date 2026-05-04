@@ -1,10 +1,8 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 
 import { App } from '../app/app';
-import { EducationPage } from '../app/education-page';
-import { ExamplePage } from '../app/example-page';
+import { BackgroundPage } from '../app/background-page';
 import { IntroPage } from '../app/intro-page';
-import { PersonalInfoPage } from '../app/personal-info-page';
 import { PersonalProjectsPage } from '../app/personal-projects-page';
 import { SkillsOverviewPage } from '../app/skills-overview-page';
 import { WorkHistoryPage } from '../app/work-history-page';
@@ -19,28 +17,44 @@ export const router = createBrowserRouter([
         element: <IntroPage />,
       },
       {
-        path: 'work-history',
+        path: 'experience',
         element: <WorkHistoryPage />,
       },
       {
-        path: 'education',
-        element: <EducationPage />,
-      },
-      {
-        path: 'skills-overview',
+        path: 'skills',
         element: <SkillsOverviewPage />,
       },
       {
-        path: 'personal-projects',
+        path: 'projects',
         element: <PersonalProjectsPage />,
       },
       {
+        path: 'background',
+        element: <BackgroundPage />,
+      },
+      {
+        path: 'work-history',
+        element: <Navigate to='/experience' replace />,
+      },
+      {
+        path: 'skills-overview',
+        element: <Navigate to='/skills' replace />,
+      },
+      {
+        path: 'personal-projects',
+        element: <Navigate to='/projects' replace />,
+      },
+      {
+        path: 'education',
+        element: <Navigate to='/background' replace />,
+      },
+      {
         path: 'personal-info',
-        element: <PersonalInfoPage />,
+        element: <Navigate to='/background' replace />,
       },
       {
         path: 'example',
-        element: <ExamplePage />,
+        element: <Navigate to='/' replace />,
       },
     ],
   },

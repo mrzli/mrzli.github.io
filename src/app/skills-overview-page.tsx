@@ -137,7 +137,7 @@ export const SkillsOverviewPage: FC = () => {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
-        Skills Overview (Techs I Worked With)
+        Skills
       </h1>
       {DATA.map((section, sectionIndex) => (
         <div key={sectionIndex} className='mt-6'>

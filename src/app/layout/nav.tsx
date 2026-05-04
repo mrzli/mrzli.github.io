@@ -55,11 +55,9 @@ interface NavItem {
 }
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { to: '', label: 'Intro' },
-  { to: 'work-history', label: 'Work History' },
-  { to: 'education', label: 'Education' },
-  { to: 'skills-overview', label: 'Skills Overview' },
-  { to: 'personal-projects', label: 'Personal Projects' },
-  { to: 'personal-info', label: 'Personal Info' },
-  { to: 'example', label: 'Example' },
+  { to: '', label: 'Home' },
+  { to: 'experience', label: 'Experience' },
+  { to: 'skills', label: 'Skills' },
+  { to: 'projects', label: 'Projects' },
+  { to: 'background', label: 'Background' },
 ];

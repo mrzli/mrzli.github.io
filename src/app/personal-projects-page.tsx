@@ -62,7 +62,7 @@ export const PersonalProjectsPage: FC = () => {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
-        Personal Projects
+        Projects
       </h1>
       <p>Projects I did in my free time.</p>
       {DATA.map((project, index) => (
