@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import profileImage from '../../../assets/profile.jpg';
 import { Typography } from '../../components';
 import { Card } from '../../components/layout/card';
+import { IconLink } from './components/icon-link';
 import { RouteCard, type RouteCardProps } from './components/route-card';
 
 export const HomePage: FC = () => {
@@ -83,33 +84,15 @@ export const HomePage: FC = () => {
                 goran.mrzljak@gmail.com
               </a>
               <div className='flex gap-3 pt-1'>
-                <a
-                  href='https://www.linkedin.com/in/goran-mrzljak'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
-                  aria-label='LinkedIn'
-                >
-                  <Icon icon='mdi:linkedin' width='28' height='28' />
-                </a>
-                <a
-                  href='https://github.com/mrzli'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
-                  aria-label='GitHub'
-                >
-                  <Icon icon='mdi:github' width='28' height='28' />
-                </a>
-                <a
-                  href='https://stackoverflow.com/users/520229/mrzli'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
-                  aria-label='Stack Overflow'
-                >
-                  <Icon icon='mdi:stackoverflow' width='28' height='28' />
-                </a>
+                <IconLink
+                  to='https://www.linkedin.com/in/goran-mrzljak'
+                  icon='mdi:linkedin'
+                />
+                <IconLink to='https://github.com/mrzli' icon='mdi:github' />
+                <IconLink
+                  to='https://stackoverflow.com/users/520229/mrzli'
+                  icon='mdi:stackoverflow'
+                />
               </div>
             </div>
           </div>
