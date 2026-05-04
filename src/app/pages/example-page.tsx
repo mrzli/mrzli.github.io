@@ -3,7 +3,7 @@ import type { CSSProperties, FC } from 'react';
 
 import viteLogo from '/vite.svg';
 
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../../assets/react.svg';
 
 const imageStyle: CSSProperties = {
   display: 'flex',

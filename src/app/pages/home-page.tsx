@@ -2,12 +2,12 @@ import { Icon } from '@iconify/react';
 import type { FC } from 'react';
 import { Link } from 'react-router';
 
-import profileImage from '../assets/profile.jpg';
+import profileImage from '../../assets/profile.jpg';
 import {
   HighlightCard,
   type HighlightCardProps,
-} from './components/highlight-card';
-import { RouteCard, type RouteCardProps } from './components/route-card';
+} from '../components/highlight-card';
+import { RouteCard, type RouteCardProps } from '../components/route-card';
 
 interface Strength {
   readonly title: string;
