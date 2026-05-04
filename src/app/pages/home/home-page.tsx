@@ -4,10 +4,7 @@ import { Link } from 'react-router';
 
 import profileImage from '../../../assets/profile.jpg';
 import { Typography } from '../../components';
-import {
-  HighlightCard,
-  type HighlightCardProps,
-} from './components/highlight-card';
+import { Card } from '../../components/layout/card';
 import { RouteCard, type RouteCardProps } from './components/route-card';
 
 export const HomePage: FC = () => {
@@ -122,38 +119,36 @@ export const HomePage: FC = () => {
       <section className='grid gap-4 sm:grid-cols-2 xl:grid-cols-4'>
         {HIGHLIGHTS.map((highlight) => {
           return (
-            <HighlightCard
-              key={highlight.title}
-              title={highlight.title}
-              description={highlight.description}
-            />
+            <Card key={highlight.title} as='article'>
+              <Typography variant='card-title'>{highlight.title}</Typography>
+              <Typography variant='body' className='mt-2'>
+                {highlight.description}
+              </Typography>
+            </Card>
           );
         })}
       </section>
 
       <section className='grid gap-6 lg:grid-cols-[1.2fr_0.8fr]'>
-        <div className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
+        <Card padding='large'>
           <Typography variant='section-title'>
             Why I tend to be useful
           </Typography>
           <div className='mt-5 space-y-4'>
             {STRENGTHS.map((strength) => {
               return (
-                <div
-                  key={strength.title}
-                  className='rounded-2xl bg-slate-50 p-4 dark:bg-slate-950'
-                >
+                <Card key={strength.title} variant='inner' padding='small'>
                   <Typography variant='item-title'>{strength.title}</Typography>
                   <Typography variant='body' className='mt-2'>
                     {strength.description}
                   </Typography>
-                </div>
+                </Card>
               );
             })}
           </div>
-        </div>
+        </Card>
 
-        <div className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
+        <Card padding='large'>
           <Typography variant='section-title'>Recent focus</Typography>
           <Typography variant='body' className='mt-3'>
             Most of my recent work has been in web development, but my earlier
@@ -177,10 +172,10 @@ export const HomePage: FC = () => {
             Placeholder: add one short sentence here later about the exact kinds
             of teams, products, or role scope you want next.
           </Typography>
-        </div>
+        </Card>
       </section>
 
-      <section className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
+      <Card as='section' padding='large'>
         <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
           <div>
             <Typography variant='section-title'>Explore the rest</Typography>
@@ -208,17 +203,17 @@ export const HomePage: FC = () => {
             );
           })}
         </div>
-      </section>
+      </Card>
     </div>
   );
 };
 
-interface Strength {
+interface HighlightItem {
   readonly title: string;
   readonly description: string;
 }
 
-const HIGHLIGHTS: readonly HighlightCardProps[] = [
+const HIGHLIGHTS: readonly HighlightItem[] = [
   {
     title: '14+ years',
     description:
@@ -241,7 +236,12 @@ const HIGHLIGHTS: readonly HighlightCardProps[] = [
   },
 ];
 
-const STRENGTHS: readonly Strength[] = [
+interface StrengthItem {
+  readonly title: string;
+  readonly description: string;
+}
+
+const STRENGTHS: readonly StrengthItem[] = [
   {
     title: 'Frontend architecture',
     description:

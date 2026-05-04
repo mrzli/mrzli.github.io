@@ -21,8 +21,10 @@ const typographyVariants = cva('', {
   },
 });
 
+type TypographyVariantsProps = VariantProps<typeof typographyVariants>;
+
 const DEFAULT_ELEMENTS: Record<
-  NonNullable<VariantProps<typeof typographyVariants>['variant']>,
+  NonNullable<TypographyVariantsProps['variant']>,
   ElementType
 > = {
   'page-title': 'h1',
@@ -33,9 +35,7 @@ const DEFAULT_ELEMENTS: Record<
   body: 'p',
 };
 
-export interface TypographyProps extends VariantProps<
-  typeof typographyVariants
-> {
+export interface TypographyProps extends TypographyVariantsProps {
   readonly as?: ElementType;
   readonly className?: string;
   readonly children: ReactNode;
@@ -48,6 +48,7 @@ export const Typography = ({
   children,
 }: TypographyProps) => {
   const Tag = as ?? DEFAULT_ELEMENTS[variant!];
+
   return (
     <Tag className={cn(typographyVariants({ variant }), className)}>
       {children}
