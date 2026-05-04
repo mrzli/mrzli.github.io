@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 import { Outlet } from 'react-router';
 
-import { Layout } from './layout/layout';
-import { Nav } from './layout/nav';
+import { MainContainer } from './components/layout/main-container';
+import { Nav } from './components/layout/nav';
 
 export const App: FC = () => {
   return (
-    <Layout>
+    <MainContainer>
       <Nav />
       <Outlet />
-    </Layout>
+    </MainContainer>
   );
 };
