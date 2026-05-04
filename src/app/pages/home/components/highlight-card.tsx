@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { Typography } from '../../../components';
+import { Card } from '../../../components/layout/card';
 
 export interface HighlightCardProps {
   readonly title: string;
@@ -12,11 +13,11 @@ export const HighlightCard: FC<HighlightCardProps> = ({
   description,
 }) => {
   return (
-    <article className='rounded-2xl border border-slate-200 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
+    <Card as={'article'}>
       <Typography variant='card-title'>{title}</Typography>
       <Typography variant='body' className='mt-2'>
         {description}
       </Typography>
-    </article>
+    </Card>
   );
 };

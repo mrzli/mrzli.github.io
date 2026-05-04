@@ -10,94 +10,6 @@ import {
 } from './components/highlight-card';
 import { RouteCard, type RouteCardProps } from './components/route-card';
 
-interface Strength {
-  readonly title: string;
-  readonly description: string;
-}
-
-const HIGHLIGHTS: readonly HighlightCardProps[] = [
-  {
-    title: '14+ years',
-    description:
-      'Professional software development experience across multiple domains and stacks.',
-  },
-  {
-    title: 'Frontend + backend',
-    description:
-      'Recent work is mostly web-focused, with substantial hands-on experience on both sides of the stack.',
-  },
-  {
-    title: 'Senior-level scope',
-    description:
-      'Mentoring, onboarding, interviewing, architecture decisions, and cross-cutting technical improvements.',
-  },
-  {
-    title: 'Production systems',
-    description:
-      'Work on systems that matter operationally, including large applications and occasional production migrations.',
-  },
-];
-
-const STRENGTHS: readonly Strength[] = [
-  {
-    title: 'Frontend architecture',
-    description:
-      'React and TypeScript are the center of gravity of my recent work, especially in larger codebases that need cleanup, structure, and maintainability.',
-  },
-  {
-    title: 'Backend ownership',
-    description:
-      'I am comfortable working all the way from API design down to database concerns, especially in Node/Express/Nest environments.',
-  },
-  {
-    title: 'Technical leverage',
-    description:
-      'I tend to be most useful where teams need both delivery and engineering judgment: refactoring, developer workflow, testing, and code quality improvements.',
-  },
-];
-
-const ROUTE_CARDS: readonly RouteCardProps[] = [
-  {
-    title: 'Experience',
-    to: '/experience',
-    description:
-      'Detailed work history, project context, and the scope of the systems I worked on.',
-  },
-  {
-    title: 'Skills',
-    to: '/skills',
-    description:
-      'A structured view of the languages, frameworks, tools, and databases I have used.',
-  },
-  {
-    title: 'Projects',
-    to: '/projects',
-    description:
-      'Personal projects that show initiative outside client and company work.',
-  },
-  {
-    title: 'Background',
-    to: '/background',
-    description:
-      'Education, additional learning, and a small amount of personal context.',
-  },
-];
-
-const PRIMARY_TECHS: readonly string[] = [
-  'React',
-  'TypeScript',
-  'Node.js',
-  'Express',
-  'NestJS',
-  'Angular',
-  'Jest',
-  'Testing Library',
-  'Nx',
-  'MongoDB',
-  'PostgreSQL',
-  'Storybook',
-];
-
 export const HomePage: FC = () => {
   return (
     <div className='space-y-8 pb-12'>
@@ -142,9 +54,7 @@ export const HomePage: FC = () => {
             </div>
             <div className='grid gap-3 text-sm text-slate-600 sm:grid-cols-2 dark:text-slate-300'>
               <div>
-                <Typography variant='item-title'>
-                  Current preference
-                </Typography>
+                <Typography variant='item-title'>Current preference</Typography>
                 <p>React-first frontend or balanced full-stack roles.</p>
               </div>
               <div>
@@ -302,3 +212,91 @@ export const HomePage: FC = () => {
     </div>
   );
 };
+
+interface Strength {
+  readonly title: string;
+  readonly description: string;
+}
+
+const HIGHLIGHTS: readonly HighlightCardProps[] = [
+  {
+    title: '14+ years',
+    description:
+      'Professional software development experience across multiple domains and stacks.',
+  },
+  {
+    title: 'Frontend + backend',
+    description:
+      'Recent work is mostly web-focused, with substantial hands-on experience on both sides of the stack.',
+  },
+  {
+    title: 'Senior-level scope',
+    description:
+      'Mentoring, onboarding, interviewing, architecture decisions, and cross-cutting technical improvements.',
+  },
+  {
+    title: 'Production systems',
+    description:
+      'Work on systems that matter operationally, including large applications and occasional production migrations.',
+  },
+];
+
+const STRENGTHS: readonly Strength[] = [
+  {
+    title: 'Frontend architecture',
+    description:
+      'React and TypeScript are the center of gravity of my recent work, especially in larger codebases that need cleanup, structure, and maintainability.',
+  },
+  {
+    title: 'Backend ownership',
+    description:
+      'I am comfortable working all the way from API design down to database concerns, especially in Node/Express/Nest environments.',
+  },
+  {
+    title: 'Technical leverage',
+    description:
+      'I tend to be most useful where teams need both delivery and engineering judgment: refactoring, developer workflow, testing, and code quality improvements.',
+  },
+];
+
+const ROUTE_CARDS: readonly RouteCardProps[] = [
+  {
+    title: 'Experience',
+    to: '/experience',
+    description:
+      'Detailed work history, project context, and the scope of the systems I worked on.',
+  },
+  {
+    title: 'Skills',
+    to: '/skills',
+    description:
+      'A structured view of the languages, frameworks, tools, and databases I have used.',
+  },
+  {
+    title: 'Projects',
+    to: '/projects',
+    description:
+      'Personal projects that show initiative outside client and company work.',
+  },
+  {
+    title: 'Background',
+    to: '/background',
+    description:
+      'Education, additional learning, and a small amount of personal context.',
+  },
+];
+
+const PRIMARY_TECHS: readonly string[] = [
+  'React',
+  'TypeScript',
+  'Node.js',
+  'Express',
+  'NestJS',
+  'Angular',
+  'Jest',
+  'Testing Library',
+  'Nx',
+  'MongoDB',
+  'PostgreSQL',
+  'Storybook',
+];
