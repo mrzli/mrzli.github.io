@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import profileImage from '../assets/profile.jpg';
 
-export const IntroPage: FC = () => {
+export const HomePage: FC = () => {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>

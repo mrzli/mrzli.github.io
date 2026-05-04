@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router';
 
 import { App } from '../app/app';
 import { BackgroundPage } from '../app/background-page';
-import { IntroPage } from '../app/intro-page';
+import { HomePage } from '../app/home-page';
 import { PersonalProjectsPage } from '../app/personal-projects-page';
 import { SkillsOverviewPage } from '../app/skills-overview-page';
 import { WorkHistoryPage } from '../app/work-history-page';
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <IntroPage />,
+        element: <HomePage />,
       },
       {
         path: 'experience',
