@@ -1,8 +1,7 @@
 import { Icon } from '@iconify/react';
 import { type FC, useState } from 'react';
 
-import { NavLink } from '../../components/nav-link';
-import { ThemeToggle } from '../../components/theme-toggle';
+import { NavLink, ThemeToggle } from '../../components';
 
 export const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
