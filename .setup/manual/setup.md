@@ -93,6 +93,9 @@
     };
     ```
   - Add to index file.
+- Add class variance authority:
+  - Install dependencies:
+    - `bun add class-variance-authority`
 - Setup icons:
   - Install dependencies:
     - `bun add @iconify/react`
