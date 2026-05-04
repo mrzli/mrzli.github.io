@@ -1,3 +1,8 @@
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scrollbar-gutter: stable;
+  @apply bg-slate-50 dark:bg-slate-950;
+}
