@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router';
 
 import { App } from '../app/app';
 import { BackgroundPage } from '../app/pages/background-page';
-import { HomePage } from '../app/pages/home-page';
+import { HomePage } from '../app/pages/home/home-page';
 import { PersonalProjectsPage } from '../app/pages/personal-projects-page';
 import { SkillsOverviewPage } from '../app/pages/skills-overview-page';
 import { WorkHistoryPage } from '../app/pages/work-history-page';
