@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { Link } from 'react-router';
 
 import profileImage from '../../../assets/profile.jpg';
+import { Typography } from '../../components';
 import {
   HighlightCard,
   type HighlightCardProps,
@@ -107,14 +108,12 @@ export const HomePage: FC = () => {
               Senior full-stack web developer
             </div>
             <div className='space-y-3'>
-              <h1 className='text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-slate-100'>
-                Goran Mržljak
-              </h1>
-              <p className='max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300'>
+              <Typography variant='page-title'>Goran Mržljak</Typography>
+              <Typography variant='lead' className='max-w-3xl'>
                 I build and improve production web applications, with the
                 strongest recent focus on React, TypeScript, Node.js, and the
                 engineering work that makes larger codebases easier to evolve.
-              </p>
+              </Typography>
             </div>
             <div className='flex flex-wrap gap-3'>
               <Link
@@ -143,15 +142,15 @@ export const HomePage: FC = () => {
             </div>
             <div className='grid gap-3 text-sm text-slate-600 sm:grid-cols-2 dark:text-slate-300'>
               <div>
-                <p className='font-medium text-slate-900 dark:text-slate-100'>
+                <Typography variant='item-title'>
                   Current preference
-                </p>
+                </Typography>
                 <p>React-first frontend or balanced full-stack roles.</p>
               </div>
               <div>
-                <p className='font-medium text-slate-900 dark:text-slate-100'>
+                <Typography variant='item-title'>
                   Secondary backend stack
-                </p>
+                </Typography>
                 <p>Spring Boot with Kotlin or Java.</p>
               </div>
             </div>
@@ -224,9 +223,9 @@ export const HomePage: FC = () => {
 
       <section className='grid gap-6 lg:grid-cols-[1.2fr_0.8fr]'>
         <div className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
-          <h2 className='text-xl font-semibold text-slate-900 dark:text-slate-100'>
+          <Typography variant='section-title'>
             Why I tend to be useful
-          </h2>
+          </Typography>
           <div className='mt-5 space-y-4'>
             {STRENGTHS.map((strength) => {
               return (
@@ -234,12 +233,10 @@ export const HomePage: FC = () => {
                   key={strength.title}
                   className='rounded-2xl bg-slate-50 p-4 dark:bg-slate-950'
                 >
-                  <h3 className='font-medium text-slate-900 dark:text-slate-100'>
-                    {strength.title}
-                  </h3>
-                  <p className='mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300'>
+                  <Typography variant='item-title'>{strength.title}</Typography>
+                  <Typography variant='body' className='mt-2'>
                     {strength.description}
-                  </p>
+                  </Typography>
                 </div>
               );
             })}
@@ -247,15 +244,13 @@ export const HomePage: FC = () => {
         </div>
 
         <div className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
-          <h2 className='text-xl font-semibold text-slate-900 dark:text-slate-100'>
-            Recent focus
-          </h2>
-          <p className='mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300'>
+          <Typography variant='section-title'>Recent focus</Typography>
+          <Typography variant='body' className='mt-3'>
             Most of my recent work has been in web development, but my earlier
             background spans a much wider set of technologies and product types.
             The routes below go into detail; this section is meant as the fast
             scan.
-          </p>
+          </Typography>
           <div className='mt-5 flex flex-wrap gap-2'>
             {PRIMARY_TECHS.map((tech) => {
               return (
@@ -268,23 +263,21 @@ export const HomePage: FC = () => {
               );
             })}
           </div>
-          <p className='mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300'>
+          <Typography variant='body' className='mt-5'>
             Placeholder: add one short sentence here later about the exact kinds
             of teams, products, or role scope you want next.
-          </p>
+          </Typography>
         </div>
       </section>
 
       <section className='rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900'>
         <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
           <div>
-            <h2 className='text-xl font-semibold text-slate-900 dark:text-slate-100'>
-              Explore the rest
-            </h2>
-            <p className='mt-1 text-sm text-slate-600 dark:text-slate-300'>
+            <Typography variant='section-title'>Explore the rest</Typography>
+            <Typography variant='body' className='mt-1'>
               If you want the quick path, start with Experience. The remaining
               sections are there for structured detail.
-            </p>
+            </Typography>
           </div>
           <Link
             to='/experience'
