@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import type { ElementType, ReactNode } from 'react';
 
-import { cn } from '../util/styles';
+import { cn } from '../util';
 
 const typographyVariants = cva('', {
   variants: {
