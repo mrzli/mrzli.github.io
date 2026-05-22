@@ -33,27 +33,7 @@ export const router = createBrowserRouter([
         element: <BackgroundPage />,
       },
       {
-        path: 'work-history',
-        element: <Navigate to='/experience' replace />,
-      },
-      {
-        path: 'skills-overview',
-        element: <Navigate to='/skills' replace />,
-      },
-      {
-        path: 'personal-projects',
-        element: <Navigate to='/projects' replace />,
-      },
-      {
-        path: 'education',
-        element: <Navigate to='/background' replace />,
-      },
-      {
-        path: 'personal-info',
-        element: <Navigate to='/background' replace />,
-      },
-      {
-        path: 'example',
+        path: '*',
         element: <Navigate to='/' replace />,
       },
     ],
