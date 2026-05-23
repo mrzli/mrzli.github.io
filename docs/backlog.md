@@ -1,0 +1,40 @@
+- Think about what to do on the home page, and how to structure it.
+- Implement background page.
+  - Think about layout.
+    - Bullet points seem plain. Ask AI to change the page and/or recommend something better.
+  - Extract to components where it makes sense. To avoid duplication.
+  - Check content and see what needs to be added.
+    - Maybe add learning from frontend masters.
+    - Maybe structure all of learning differently, to more easily see what I have learned.
+    - Add B category drivers license as note.
+    - Maybe have sections "Languages", then "Other" with location and drivers license.
+- Projects page.
+  - Similar to Background, use structure similar to there, ask AI to change the layout into something better.
+  - Note for symbol jump that I deleted the libary repo required to run it, accidentally.
+- Skills.
+  - Layout / structure, ask AI to change into something better, impelement components.
+  - Update for last few projects.
+    - Oracle Eloqua / Infobit intergation project.
+    - Robot project.
+    - 
+- Implement values page.
+  - Implement values stub page, with routing etc.
+    - Make sure it works with responsive design.
+  - Add content.
+    - Have section about my technical values.
+      - Clean code.
+    - My strengths and weaknesses.
+      - Strengths / likes:
+        - Autonomous, but only if provided with all relevant information (what to do, or it does not matter).
+        - Precise and careful (usually). In some ways more than almost anyone I know.
+      - Weaknesses / hates:
+        - Working on a poorly defined goal, or with insufficient information.
+          - Clarify this further.
+        - Context switching.
+    - Have section about my political / contract-related values.
+      - Freedom.
+      - Tolerate, but disagree with:
+        - Non-compete clauses.
+        - Non-solicitation clauses.
+      - Do not tolerate:
+        - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
