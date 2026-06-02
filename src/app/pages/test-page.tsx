@@ -57,7 +57,7 @@ export const TestPage: FC = () => {
   return (
     <div className='pt-6 pb-12'>
       <div className='flex flex-col gap-6'>
-        <h1 className='border-l-4 border-amber-500 pl-3 text-xl font-semibold tracking-tight text-slate-800 uppercase dark:border-amber-600 dark:text-slate-100'>
+        <h1 className='border-l-4 border-amber-600 pl-3 text-xl font-semibold tracking-tight text-slate-800 uppercase dark:border-amber-300 dark:text-slate-100'>
           Background
         </h1>
         <div className='grid gap-4 lg:grid-cols-6'>
@@ -86,7 +86,7 @@ export const TestPage: FC = () => {
                 {educationHighlights.map((item) => {
                   return (
                     <li key={item} className='flex gap-3'>
-                      <span className='mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-amber-600 dark:bg-cyan-400' />
+                      <span className='mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-amber-600 dark:bg-amber-300' />
                       <Typography
                         variant='body'
                         className='text-slate-700 dark:text-slate-300'
