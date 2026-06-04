@@ -6,10 +6,9 @@ import { cn } from '../util';
 const typographyVariants = cva('', {
   variants: {
     variant: {
-      'page-title':
+      display:
         'text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-slate-100',
-      'section-title':
-        'text-xl font-semibold text-slate-900 dark:text-slate-100',
+      heading: 'text-xl font-semibold text-slate-900 dark:text-slate-100',
       'card-title': 'text-lg font-semibold text-slate-900 dark:text-slate-100',
       'item-title': 'font-medium text-slate-900 dark:text-slate-100',
       lead: 'text-lg leading-8 text-slate-600 dark:text-slate-300',
@@ -27,8 +26,8 @@ const DEFAULT_ELEMENTS: Record<
   NonNullable<TypographyVariantsProps['variant']>,
   ElementType
 > = {
-  'page-title': 'h1',
-  'section-title': 'h2',
+  display: 'h1',
+  heading: 'h2',
   'card-title': 'p',
   'item-title': 'h3',
   lead: 'p',

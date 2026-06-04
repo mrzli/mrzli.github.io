@@ -70,7 +70,7 @@ export const TestPage: FC = () => {
                 <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
                   Formal Education
                 </span>
-                <Typography variant='section-title'>
+                <Typography variant='heading'>
                   Faculty of Electrical Engineering and Computing (FER),
                   University of Zagreb
                 </Typography>
@@ -134,7 +134,7 @@ export const TestPage: FC = () => {
                 <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
                   Additional Learning
                 </span>
-                <Typography variant='section-title'>
+                <Typography variant='heading'>
                   Structured learning outside formal education
                 </Typography>
               </div>

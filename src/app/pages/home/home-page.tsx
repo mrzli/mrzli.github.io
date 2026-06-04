@@ -18,7 +18,7 @@ export const HomePage: FC = () => {
               Senior full-stack web developer
             </div>
             <div className='space-y-3'>
-              <Typography variant='page-title'>Goran Mržljak</Typography>
+              <Typography variant='display'>Goran Mržljak</Typography>
               <Typography variant='lead' className='max-w-3xl'>
                 I build and improve production web applications, with the
                 strongest recent focus on React, TypeScript, Node.js, and the
@@ -114,9 +114,7 @@ export const HomePage: FC = () => {
 
       <section className='grid gap-6 lg:grid-cols-[1.2fr_0.8fr]'>
         <Card padding='large'>
-          <Typography variant='section-title'>
-            Why I tend to be useful
-          </Typography>
+          <Typography variant='heading'>Why I tend to be useful</Typography>
           <div className='mt-5 space-y-4'>
             {STRENGTHS.map((strength) => {
               return (
@@ -132,7 +130,7 @@ export const HomePage: FC = () => {
         </Card>
 
         <Card padding='large'>
-          <Typography variant='section-title'>Recent focus</Typography>
+          <Typography variant='heading'>Recent focus</Typography>
           <Typography variant='body' className='mt-3'>
             Most of my recent work has been in web development, but my earlier
             background spans a much wider set of technologies and product types.
@@ -161,7 +159,7 @@ export const HomePage: FC = () => {
       <Card as='section' padding='large'>
         <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
           <div>
-            <Typography variant='section-title'>Explore the rest</Typography>
+            <Typography variant='heading'>Explore the rest</Typography>
             <Typography variant='body' className='mt-1'>
               If you want the quick path, start with Experience. The remaining
               sections are there for structured detail.
