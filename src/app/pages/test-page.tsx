@@ -65,9 +65,9 @@ export const TestPage: FC = () => {
           >
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-2'>
-                <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
+                <Typography variant='card-title-accent'>
                   Formal Education
-                </span>
+                </Typography>
                 <Typography variant='heading-2'>
                   Faculty of Electrical Engineering and Computing (FER),
                   University of Zagreb
@@ -129,9 +129,9 @@ export const TestPage: FC = () => {
           >
             <div className='flex flex-col gap-5'>
               <div className='flex flex-col gap-2'>
-                <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
+                <Typography variant='card-title-accent'>
                   Additional Learning
-                </span>
+                </Typography>
                 <Typography variant='heading-2'>
                   Structured learning outside formal education
                 </Typography>
@@ -144,9 +144,7 @@ export const TestPage: FC = () => {
                       key={item.source}
                       className='flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-slate-100 p-4 dark:border-slate-800 dark:bg-slate-950/70'
                     >
-                      <Typography variant='heading-4'>
-                        {item.source}
-                      </Typography>
+                      <Typography variant='heading-4'>{item.source}</Typography>
                       <Typography variant='body'>{item.description}</Typography>
                     </div>
                   );
@@ -156,9 +154,7 @@ export const TestPage: FC = () => {
           </Card>
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <dt className='text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400'>
-              Location
-            </dt>
+            <Typography variant='card-title-muted'>Location</Typography>
             <dd className='flex flex-wrap gap-2'>
               <span className='rounded-full border border-amber-600 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200'>
                 Zagreb, Croatia
@@ -167,9 +163,7 @@ export const TestPage: FC = () => {
           </div>
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <dt className='text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400'>
-              Languages
-            </dt>
+            <Typography variant='card-title-muted'>Languages</Typography>
             <dd className='flex flex-wrap gap-2'>
               {languages.map((language) => {
                 return (
@@ -185,9 +179,7 @@ export const TestPage: FC = () => {
           </div>
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <dt className='text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400'>
-              Driver's license
-            </dt>
+            <Typography variant='card-title-muted'>Driver's license</Typography>
             <dd className='flex flex-wrap gap-2'>
               {driverLicenseCategories.map((category) => {
                 return (
