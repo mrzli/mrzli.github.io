@@ -15,6 +15,7 @@
     storybook \
     @storybook/react-vite \
     @storybook/addon-docs \
+    @storybook/addon-themes \
     eslint-plugin-storybook
   ```
 
@@ -60,7 +61,7 @@
       '../stories/**/*.mdx',
       '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     ],
-    addons: ['@storybook/addon-docs'],
+    addons: ['@storybook/addon-docs', '@storybook/addon-themes'],
     framework: '@storybook/react-vite',
   };
 
@@ -75,9 +76,19 @@
   ```ts
   import '../src/index.css';
 
-  import type { Preview } from '@storybook/react-vite';
+  import type { Preview, ReactRenderer } from '@storybook/react-vite';
+  import { withThemeByClassName } from '@storybook/addon-themes';
 
   const preview: Preview = {
+    decorators: [
+      withThemeByClassName<ReactRenderer>({
+        themes: {
+          light: '',
+          dark: 'dark',
+        },
+        defaultTheme: 'dark',
+      }),
+    ],
     parameters: {
       actions: {
         argTypesRegex: '^on.*',
@@ -93,6 +104,10 @@
 
   export default preview;
   ```
+- The above should handle:
+  - Theming with Tailwind's `dark` class.
+  - Automatically matching action handlers (e.g., `onClick`).
+  - Automatically matching color and date controls (this was here by default when storybook preview file was generated).
 
 #### `tsconfig.json`
 
