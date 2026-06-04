@@ -18,7 +18,7 @@ export const HomePage: FC = () => {
               Senior full-stack web developer
             </div>
             <div className='space-y-3'>
-              <Typography variant='display'>Goran Mržljak</Typography>
+              <Typography variant='heading-1'>Goran Mržljak</Typography>
               <Typography variant='lead' className='max-w-3xl'>
                 I build and improve production web applications, with the
                 strongest recent focus on React, TypeScript, Node.js, and the
@@ -52,11 +52,11 @@ export const HomePage: FC = () => {
             </div>
             <div className='grid gap-3 text-sm text-slate-600 sm:grid-cols-2 dark:text-slate-300'>
               <div>
-                <Typography variant='item-title'>Current preference</Typography>
+                <Typography variant='heading-4'>Current preference</Typography>
                 <p>React-first frontend or balanced full-stack roles.</p>
               </div>
               <div>
-                <Typography variant='item-title'>
+                <Typography variant='heading-4'>
                   Secondary backend stack
                 </Typography>
                 <p>Spring Boot with Kotlin or Java.</p>
@@ -103,7 +103,7 @@ export const HomePage: FC = () => {
         {HIGHLIGHTS.map((highlight) => {
           return (
             <Card key={highlight.title} as='article'>
-              <Typography variant='card-title'>{highlight.title}</Typography>
+              <Typography variant='heading-3'>{highlight.title}</Typography>
               <Typography variant='body' className='mt-2'>
                 {highlight.description}
               </Typography>
@@ -114,12 +114,12 @@ export const HomePage: FC = () => {
 
       <section className='grid gap-6 lg:grid-cols-[1.2fr_0.8fr]'>
         <Card padding='large'>
-          <Typography variant='heading'>Why I tend to be useful</Typography>
+          <Typography variant='heading-2'>Why I tend to be useful</Typography>
           <div className='mt-5 space-y-4'>
             {STRENGTHS.map((strength) => {
               return (
                 <Card key={strength.title} variant='inner' padding='small'>
-                  <Typography variant='item-title'>{strength.title}</Typography>
+                  <Typography variant='heading-4'>{strength.title}</Typography>
                   <Typography variant='body' className='mt-2'>
                     {strength.description}
                   </Typography>
@@ -130,7 +130,7 @@ export const HomePage: FC = () => {
         </Card>
 
         <Card padding='large'>
-          <Typography variant='heading'>Recent focus</Typography>
+          <Typography variant='heading-2'>Recent focus</Typography>
           <Typography variant='body' className='mt-3'>
             Most of my recent work has been in web development, but my earlier
             background spans a much wider set of technologies and product types.
@@ -159,7 +159,7 @@ export const HomePage: FC = () => {
       <Card as='section' padding='large'>
         <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
           <div>
-            <Typography variant='heading'>Explore the rest</Typography>
+            <Typography variant='heading-2'>Explore the rest</Typography>
             <Typography variant='body' className='mt-1'>
               If you want the quick path, start with Experience. The remaining
               sections are there for structured detail.

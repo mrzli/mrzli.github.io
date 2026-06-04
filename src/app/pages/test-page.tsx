@@ -68,7 +68,7 @@ export const TestPage: FC = () => {
                 <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
                   Formal Education
                 </span>
-                <Typography variant='heading'>
+                <Typography variant='heading-2'>
                   Faculty of Electrical Engineering and Computing (FER),
                   University of Zagreb
                 </Typography>
@@ -101,7 +101,7 @@ export const TestPage: FC = () => {
                 variant='inner'
               >
                 <div className='flex flex-col gap-3'>
-                  <Typography variant='card-title'>Related links</Typography>
+                  <Typography variant='heading-3'>Related links</Typography>
                   <ul className='flex flex-col gap-2'>
                     {thesisLinks.map((link) => {
                       return (
@@ -132,7 +132,7 @@ export const TestPage: FC = () => {
                 <span className='text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300'>
                   Additional Learning
                 </span>
-                <Typography variant='heading'>
+                <Typography variant='heading-2'>
                   Structured learning outside formal education
                 </Typography>
               </div>
@@ -144,7 +144,7 @@ export const TestPage: FC = () => {
                       key={item.source}
                       className='flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-slate-100 p-4 dark:border-slate-800 dark:bg-slate-950/70'
                     >
-                      <Typography variant='item-title'>
+                      <Typography variant='heading-4'>
                         {item.source}
                       </Typography>
                       <Typography variant='body'>{item.description}</Typography>

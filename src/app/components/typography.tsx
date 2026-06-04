@@ -8,11 +8,11 @@ const typographyVariants = cva('', {
     variant: {
       'page-title':
         'border-l-4 border-amber-600 pl-3 text-xl font-semibold tracking-tight text-slate-800 uppercase dark:border-amber-300 dark:text-slate-100',
-      display:
+      'heading-1':
         'text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl dark:text-slate-100',
-      heading: 'text-xl font-semibold text-slate-900 dark:text-slate-100',
-      'card-title': 'text-lg font-semibold text-slate-900 dark:text-slate-100',
-      'item-title': 'font-medium text-slate-900 dark:text-slate-100',
+      'heading-2': 'text-xl font-semibold text-slate-900 dark:text-slate-100',
+      'heading-3': 'text-lg font-semibold text-slate-900 dark:text-slate-100',
+      'heading-4': 'font-medium text-slate-900 dark:text-slate-100',
       lead: 'text-lg leading-8 text-slate-600 dark:text-slate-300',
       body: 'text-sm leading-6 text-slate-600 dark:text-slate-300',
     },
@@ -29,10 +29,10 @@ const DEFAULT_ELEMENTS: Record<
   ElementType
 > = {
   'page-title': 'h1',
-  display: 'h1',
-  heading: 'h2',
-  'card-title': 'p',
-  'item-title': 'h3',
+  'heading-1': 'h1',
+  'heading-2': 'h2',
+  'heading-3': 'h3',
+  'heading-4': 'h4',
   lead: 'p',
   body: 'p',
 };
