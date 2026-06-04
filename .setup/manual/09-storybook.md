@@ -69,9 +69,12 @@
 
 #### `preview.ts`
 
-- Create `.storybook/preview.ts` file with the following content:
-
+- Create `.storybook/preview.ts`.
+- You need to import `index.css` for Tailwind styles to work in Storybook.
+- Add the following content:
   ```ts
+  import '../src/index.css';
+
   import type { Preview } from '@storybook/react-vite';
 
   const preview: Preview = {
@@ -91,9 +94,69 @@
   export default preview;
   ```
 
-- Add a sample story for `Button` component:
-  - Create `stories/example/example-button.stories.tsx` file.
-  - Use `fn()` from `storybook/test` for click handlers that should appear in the Actions panel.
+#### `tsconfig.json`
+
+- Create `.storybook/tsconfig.json` with the following content:
+  ```json
+  {
+    "extends": "../tsconfig.app.json",
+    "include": ["./*.ts"]
+  }
+  ```
+- If you import `index.css` in `preview.ts`, your editor may complain about that import. This `tsconfig.json` file will fix that issue.
+
+### Add Example Stories
+
+- Create `stories/example/` directory in the root of the project.
+- Create file `example-button.stories.tsx` with the following content:
+  ```tsx
+  import type { Meta, StoryObj } from '@storybook/react-vite';
+  import type { CSSProperties, FC } from 'react';
+  import { fn } from 'storybook/test';
+
+  interface ExampleButtonProps {
+    readonly label: string;
+    readonly onClick?: () => void;
+  }
+
+  const buttonStyle: CSSProperties = {
+    cursor: 'pointer',
+    border: 'none',
+    borderRadius: '0.25rem',
+    backgroundColor: '#3b82f6',
+    padding: '0.5rem 1rem',
+    color: '#ffffff',
+  };
+
+  const ExampleButton: FC<ExampleButtonProps> = ({ label, onClick }) => {
+    return (
+      <button type='button' style={buttonStyle} onClick={onClick}>
+        {label}
+      </button>
+    );
+  };
+
+  const meta = {
+    component: ExampleButton,
+  } satisfies Meta<typeof ExampleButton>;
+
+  export default meta;
+
+  type Story = StoryObj<typeof meta>;
+
+  export const Primary: Story = {
+    args: {
+      label: 'Click Me',
+      onClick: fn(),
+    },
+  };
+  ```
+- Alternatively, for better and simpler styles, use tailwind:
+  ```tsh
+  // ...
+  className='cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none'
+  // ...
+  ```
 
 ### Finalize Step
 
