@@ -120,6 +120,13 @@
   ```
 - If you import `index.css` in `preview.ts`, your editor may complain about that import. This `tsconfig.json` file will fix that issue.
 
+### Update `tsconfig.app.json`
+
+- Add `stories` to the `include` array:
+  ```json
+  "include": ["src", "stories"]
+  ```
+
 ### Add Example Stories
 
 - Create `stories/example/` directory in the root of the project.
