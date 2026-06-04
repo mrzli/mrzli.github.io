@@ -26,5 +26,5 @@
       "@components/*": ["./src/app/components/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "stories"]
 }
