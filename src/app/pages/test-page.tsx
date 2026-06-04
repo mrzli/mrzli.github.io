@@ -57,9 +57,7 @@ export const TestPage: FC = () => {
   return (
     <div className='pt-6 pb-12'>
       <div className='flex flex-col gap-6'>
-        <h1 className='border-l-4 border-amber-600 pl-3 text-xl font-semibold tracking-tight text-slate-800 uppercase dark:border-amber-300 dark:text-slate-100'>
-          Background
-        </h1>
+        <Typography variant='page-title'>Background</Typography>
         <div className='grid gap-4 lg:grid-cols-6'>
           <Card
             className='border-slate-300/80 bg-slate-50 shadow-md shadow-slate-200/70 md:col-span-3 lg:col-span-3 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-black/15'
