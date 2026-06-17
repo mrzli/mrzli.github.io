@@ -17,8 +17,8 @@ const typographyVariants = cva('', {
         'text-xs font-semibold tracking-[0.2em] text-amber-700 uppercase dark:text-amber-300',
       'card-title-muted':
         'text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400',
-      lead: 'text-lg leading-8 text-slate-600 dark:text-slate-300',
-      body: 'text-sm leading-6 text-slate-600 dark:text-slate-300',
+      lead: 'text-lg leading-8 text-slate-700 dark:text-slate-300',
+      body: 'text-sm leading-6 text-slate-700 dark:text-slate-300',
     },
   },
   defaultVariants: {
