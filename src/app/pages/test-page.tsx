@@ -1,14 +1,5 @@
+import { Card, Typography, UnorderedList } from '@components';
 import type { FC } from 'react';
-
-import { Card } from '../components/layout/card';
-import { Typography } from '../components/typography';
-
-const educationHighlights = [
-  'Five year course, total 284 ECTS credits.',
-  'Built a strong foundation in mathematics, physics, and electrical engineering.',
-  'The latter part of the program focused on programming, computer science, and software engineering.',
-  'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
-] as const;
 
 const thesisLinks = [
   {
@@ -72,29 +63,12 @@ export const TestPage: FC = () => {
                   Faculty of Electrical Engineering and Computing (FER),
                   University of Zagreb
                 </Typography>
-                <Typography
-                  variant='body'
-                  className='text-slate-700 dark:text-slate-300'
-                >
+                <Typography variant='body'>
                   Graduate Engineer of Computing
                 </Typography>
               </div>
 
-              <ul className='flex flex-col gap-3'>
-                {educationHighlights.map((item) => {
-                  return (
-                    <li key={item} className='flex gap-3'>
-                      <span className='mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-amber-600 dark:bg-amber-300' />
-                      <Typography
-                        variant='body'
-                        className='text-slate-700 dark:text-slate-300'
-                      >
-                        {item}
-                      </Typography>
-                    </li>
-                  );
-                })}
-              </ul>
+              <UnorderedList items={EDUCATION_HIGHLIGHTS} />
 
               <Card
                 className='border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20'
@@ -198,3 +172,10 @@ export const TestPage: FC = () => {
     </div>
   );
 };
+
+const EDUCATION_HIGHLIGHTS: readonly string[] = [
+  'Five year course, total 284 ECTS credits.',
+  'Built a strong foundation in mathematics, physics, and electrical engineering.',
+  'The latter part of the program focused on programming, computer science, and software engineering.',
+  'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
+];
