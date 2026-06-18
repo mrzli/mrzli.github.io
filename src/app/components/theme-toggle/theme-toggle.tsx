@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { type FC, useEffect, useLayoutEffect, useState } from 'react';
+import { type ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 
 import {
   applyTheme,
@@ -11,7 +11,7 @@ import {
 } from './helpers';
 import type { Theme } from './types';
 
-export const ThemeToggle: FC = () => {
+export function ThemeToggle(): ReactNode {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useLayoutEffect(() => {
@@ -54,4 +54,4 @@ export const ThemeToggle: FC = () => {
       <Icon icon={themeToIcon(theme)} className='h-5 w-5' />
     </button>
   );
-};
+}
