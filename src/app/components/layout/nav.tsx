@@ -1,9 +1,9 @@
 import { Icon } from '@iconify/react';
-import { type FC, useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 import { NavLink, ThemeToggle } from '../../components';
 
-export const Nav: FC = () => {
+export function Nav(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = (): void => {
@@ -46,7 +46,7 @@ export const Nav: FC = () => {
       )}
     </nav>
   );
-};
+}
 
 interface NavItem {
   readonly to: string;

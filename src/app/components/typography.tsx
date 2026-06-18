@@ -49,12 +49,12 @@ export interface TypographyProps extends TypographyVariantsProps {
   readonly children: ReactNode;
 }
 
-export const Typography = ({
+export function Typography({
   as,
   variant = 'body',
   className,
   children,
-}: TypographyProps) => {
+}: TypographyProps): ReactNode {
   const Tag = as ?? DEFAULT_ELEMENTS[variant!];
 
   return (
@@ -62,4 +62,4 @@ export const Typography = ({
       {children}
     </Tag>
   );
-};
+}

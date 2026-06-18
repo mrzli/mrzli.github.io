@@ -30,16 +30,16 @@ export interface CardProps extends CardVariantsProps {
   readonly children: ReactNode;
 }
 
-export const Card = ({
+export function Card({
   as: Tag = 'div',
   className,
   children,
   variant,
   padding,
-}: CardProps) => {
+}: CardProps): ReactNode {
   return (
     <Tag className={cn(cardVariants({ variant, padding }), className)}>
       {children}
     </Tag>
   );
-};
+}
