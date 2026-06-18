@@ -1,14 +1,21 @@
+import { MainContainer, Nav, type NavItem } from '@components';
 import type { ReactNode } from 'react';
 import { Outlet } from 'react-router';
-
-import { MainContainer } from './components/layout/main-container';
-import { Nav } from './components/layout/nav';
 
 export function App(): ReactNode {
   return (
     <MainContainer>
-      <Nav />
+      <Nav items={NAV_ITEMS} />
       <Outlet />
     </MainContainer>
   );
 }
+
+const NAV_ITEMS: readonly NavItem[] = [
+  { to: '', label: 'Home' },
+  { to: 'experience', label: 'Experience' },
+  { to: 'skills', label: 'Skills' },
+  { to: 'projects', label: 'Projects' },
+  { to: 'background', label: 'Background' },
+  { to: 'test', label: 'Test' },
+];

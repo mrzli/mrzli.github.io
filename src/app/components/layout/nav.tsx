@@ -2,7 +2,16 @@ import { NavLink, ThemeToggle } from '@components';
 import { Icon } from '@iconify/react';
 import { type ReactNode, useState } from 'react';
 
-export function Nav(): ReactNode {
+export interface NavItem {
+  readonly to: string;
+  readonly label: string;
+}
+
+export interface NavProps {
+  readonly items: readonly NavItem[];
+}
+
+export function Nav({ items }: NavProps): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = (): void => {
@@ -17,7 +26,7 @@ export function Nav(): ReactNode {
     <nav>
       <div className='flex items-center justify-end gap-2 p-4 md:justify-between'>
         <div className='hidden flex-1 items-center gap-4 md:flex'>
-          {NAV_ITEMS.map((item) => (
+          {items.map((item) => (
             <NavLink key={item.to} to={item.to}>
               {item.label}
             </NavLink>
@@ -36,7 +45,7 @@ export function Nav(): ReactNode {
       </div>
       {isOpen && (
         <div className='flex flex-col gap-3 px-4 pb-4 md:hidden'>
-          {NAV_ITEMS.map((item) => (
+          {items.map((item) => (
             <NavLink key={item.to} to={item.to} onClick={closeMenu}>
               {item.label}
             </NavLink>
@@ -46,17 +55,3 @@ export function Nav(): ReactNode {
     </nav>
   );
 }
-
-interface NavItem {
-  readonly to: string;
-  readonly label: string;
-}
-
-const NAV_ITEMS: readonly NavItem[] = [
-  { to: '', label: 'Home' },
-  { to: 'experience', label: 'Experience' },
-  { to: 'skills', label: 'Skills' },
-  { to: 'projects', label: 'Projects' },
-  { to: 'background', label: 'Background' },
-  { to: 'test', label: 'Test' },
-];
