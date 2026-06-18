@@ -1,8 +1,7 @@
+import { Typography } from '@components';
 import { Icon } from '@iconify/react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
-
-import { Typography } from '../../../components';
 
 export interface RouteCardProps {
   readonly title: string;

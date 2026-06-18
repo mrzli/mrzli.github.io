@@ -1,10 +1,9 @@
+import { Card, Typography } from '@components';
 import { Icon } from '@iconify/react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import profileImage from '../../../assets/profile.jpg';
-import { Typography } from '../../components';
-import { Card } from '../../components/layout/card';
 import { IconLink } from './components/icon-link';
 import { RouteCard, type RouteCardProps } from './components/route-card';
 

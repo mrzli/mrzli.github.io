@@ -1,7 +1,6 @@
+import { NavLink, ThemeToggle } from '@components';
 import { Icon } from '@iconify/react';
 import { type ReactNode, useState } from 'react';
-
-import { NavLink, ThemeToggle } from '../../components';
 
 export function Nav(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
