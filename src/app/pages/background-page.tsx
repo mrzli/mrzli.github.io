@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
-export const BackgroundPage: FC = () => {
+export function BackgroundPage(): ReactNode {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
@@ -112,4 +112,4 @@ export const BackgroundPage: FC = () => {
       </div>
     </div>
   );
-};
+}

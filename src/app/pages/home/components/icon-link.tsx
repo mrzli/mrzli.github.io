@@ -1,12 +1,12 @@
 import { Icon, type IconifyIcon } from '@iconify/react';
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
 export interface IconLinkProps {
   readonly to: string;
   readonly icon: string | IconifyIcon;
 }
 
-export const IconLink: FC<IconLinkProps> = ({ to, icon }: IconLinkProps) => {
+export function IconLink({ to, icon }: IconLinkProps): ReactNode {
   return (
     <a
       href={to}
@@ -18,4 +18,4 @@ export const IconLink: FC<IconLinkProps> = ({ to, icon }: IconLinkProps) => {
       <Icon icon={icon} width='28' height='28' />
     </a>
   );
-};
+}

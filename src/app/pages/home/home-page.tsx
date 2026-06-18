@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import profileImage from '../../../assets/profile.jpg';
@@ -8,7 +8,7 @@ import { Card } from '../../components/layout/card';
 import { IconLink } from './components/icon-link';
 import { RouteCard, type RouteCardProps } from './components/route-card';
 
-export const HomePage: FC = () => {
+export function HomePage(): ReactNode {
   return (
     <div className='space-y-8 pb-12'>
       <section className='mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-br from-white via-slate-50 to-pink-50 shadow-xs dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900'>
@@ -187,7 +187,7 @@ export const HomePage: FC = () => {
       </Card>
     </div>
   );
-};
+}
 
 interface HighlightItem {
   readonly title: string;

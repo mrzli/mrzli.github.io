@@ -1,5 +1,5 @@
 import { Card, Typography, UnorderedList } from '@components';
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
 const thesisLinks = [
   {
@@ -44,7 +44,7 @@ const driverLicenseCategories = ['AM', 'B', 'F', 'G'] as const;
 const linkClassName =
   'text-sm font-medium text-amber-700 underline decoration-amber-400 underline-offset-4 transition hover:text-amber-800 hover:decoration-amber-500 dark:text-cyan-300 dark:decoration-cyan-700 dark:hover:text-cyan-200 dark:hover:decoration-cyan-500';
 
-export const TestPage: FC = () => {
+export function TestPage(): ReactNode {
   return (
     <div className='pt-6 pb-12'>
       <div className='flex flex-col gap-6'>
@@ -171,7 +171,7 @@ export const TestPage: FC = () => {
       </div>
     </div>
   );
-};
+}
 
 const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'Five year course, total 284 ECTS credits.',

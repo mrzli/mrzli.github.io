@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
 interface Project {
   readonly description: string;
@@ -230,7 +230,7 @@ const DATA: readonly Job[] = [
   },
 ];
 
-export const WorkHistoryPage: FC = () => {
+export function WorkHistoryPage(): ReactNode {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
@@ -272,4 +272,4 @@ export const WorkHistoryPage: FC = () => {
       ))}
     </div>
   );
-};
+}

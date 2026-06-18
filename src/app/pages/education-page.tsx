@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 
-export const EducationPage: FC = () => {
+export function EducationPage(): ReactNode {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
@@ -101,4 +101,4 @@ export const EducationPage: FC = () => {
       </p>
     </div>
   );
-};
+}

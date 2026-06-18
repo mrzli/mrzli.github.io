@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import type { FC } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import { Typography } from '../../../components';
@@ -10,7 +10,11 @@ export interface RouteCardProps {
   readonly description: string;
 }
 
-export const RouteCard: FC<RouteCardProps> = ({ title, to, description }) => {
+export function RouteCard({
+  title,
+  to,
+  description,
+}: RouteCardProps): ReactNode {
   return (
     <Link
       to={to}
@@ -28,4 +32,4 @@ export const RouteCard: FC<RouteCardProps> = ({ title, to, description }) => {
       </Typography>
     </Link>
   );
-};
+}

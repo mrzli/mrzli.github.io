@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import type { CSSProperties, FC } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import viteLogo from '/vite.svg';
 
@@ -11,7 +11,7 @@ const imageStyle: CSSProperties = {
   marginTop: '1rem',
 };
 
-export const ExamplePage: FC = () => {
+export function ExamplePage(): ReactNode {
   return (
     <div>
       <h1>template-react</h1>
@@ -35,4 +35,4 @@ export const ExamplePage: FC = () => {
       </div>
     </div>
   );
-};
+}
