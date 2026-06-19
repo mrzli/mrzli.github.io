@@ -1,4 +1,4 @@
-import { Card, Typography, UnorderedList } from '@components';
+import { Card, Tag, Typography, UnorderedList } from '@components';
 import type { ReactNode } from 'react';
 
 const thesisLinks = [
@@ -123,43 +123,27 @@ export function TestPage(): ReactNode {
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
             <Typography variant='card-title-muted'>Location</Typography>
-            <dd className='flex flex-wrap gap-2'>
-              <span className='rounded-full border border-amber-600 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200'>
-                Zagreb, Croatia
-              </span>
-            </dd>
+            <div className='flex flex-wrap gap-2'>
+              <Tag label='Zagreb, Croatia' />
+            </div>
           </div>
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
             <Typography variant='card-title-muted'>Languages</Typography>
-            <dd className='flex flex-wrap gap-2'>
-              {languages.map((language) => {
-                return (
-                  <span
-                    key={language}
-                    className='rounded-full border border-amber-600 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200'
-                  >
-                    {language}
-                  </span>
-                );
-              })}
-            </dd>
+            <div className='flex flex-wrap gap-2'>
+              {languages.map((language) => (
+                <Tag key={language} label={language} />
+              ))}
+            </div>
           </div>
 
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
             <Typography variant='card-title-muted'>Driver's license</Typography>
-            <dd className='flex flex-wrap gap-2'>
-              {driverLicenseCategories.map((category) => {
-                return (
-                  <span
-                    key={category}
-                    className='rounded-full border border-amber-600 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200'
-                  >
-                    {category}
-                  </span>
-                );
-              })}
-            </dd>
+            <div className='flex flex-wrap gap-2'>
+              {driverLicenseCategories.map((category) => (
+                <Tag key={category} label={category} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
