@@ -10,6 +10,8 @@ const cardVariants = cva('rounded-2xl', {
         'border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900',
       inner:
         'border border-slate-200/80 bg-slate-100 dark:border-slate-800 dark:bg-slate-950/70',
+      highlight:
+        'border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20',
     },
     padding: {
       small: 'p-4',
