@@ -108,51 +108,36 @@ export function TestPage(): ReactNode {
             <div className='flex flex-col gap-4'>
               {learningSources.map((item) => {
                 return (
-                  <div
-                    key={item.source}
-                    className='flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-slate-100 p-4 dark:border-slate-800 dark:bg-slate-950/70'
-                  >
-                    <Typography variant='heading-4'>{item.source}</Typography>
-                    <Typography variant='body'>{item.description}</Typography>
-                  </div>
+                  <Card key={item.source} variant='inner' padding='small'>
+                    <div className='flex flex-col gap-2'>
+                      <Typography variant='heading-4'>{item.source}</Typography>
+                      <Typography variant='body'>{item.description}</Typography>
+                    </div>
+                  </Card>
                 );
               })}
             </div>
           </div>
         </Card>
 
-        <Card className='lg:col-span-2' padding='medium'>
-          <div className='flex flex-col gap-3'>
-            <Typography variant='card-title-muted'>Location</Typography>
-            <div className='flex flex-wrap gap-2'>
-              <Tag label='Zagreb, Croatia' />
-            </div>
-          </div>
-        </Card>
-
-        <Card className='lg:col-span-2' padding='medium'>
-          <div className='flex flex-col gap-3'>
-            <Typography variant='card-title-muted'>Languages</Typography>
-            <div className='flex flex-wrap gap-2'>
-              {LANGUAGES.map((language) => (
-                <Tag key={language} label={language} />
-              ))}
-            </div>
-          </div>
-        </Card>
-
-        <Card className='lg:col-span-2' padding='medium'>
-          <div className='flex flex-col gap-3'>
-            <Typography variant='card-title-muted'>Driver's license</Typography>
-            <div className='flex flex-wrap gap-2'>
-              {DRIVER_LICENSE_CATEGORIES.map((category) => (
-                <Tag key={category} label={category} />
-              ))}
-            </div>
-          </div>
-        </Card>
+        {TAG_CARD_TAGS.map((tags) => getTagCard(tags))}
       </div>
     </PageContainer>
+  );
+}
+
+function getTagCard(tags: readonly string[]): ReactNode {
+  return (
+    <Card className='lg:col-span-2' padding='medium'>
+      <div className='flex flex-col gap-3'>
+        <Typography variant='card-title-muted'>Driver's license</Typography>
+        <div className='flex flex-wrap gap-2'>
+          {tags.map((tag) => (
+            <Tag key={tag} label={tag} />
+          ))}
+        </div>
+      </div>
+    </Card>
   );
 }
 
@@ -163,6 +148,14 @@ const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
 ];
 
+const LOCATIONS: readonly string[] = ['Zagreb, Croatia'];
+
 const LANGUAGES: readonly string[] = ['Croatian - native', 'English - fluent'];
 
 const DRIVER_LICENSE_CATEGORIES: readonly string[] = ['AM', 'B', 'F', 'G'];
+
+const TAG_CARD_TAGS: readonly (readonly string[])[] = [
+  LOCATIONS,
+  LANGUAGES,
+  DRIVER_LICENSE_CATEGORIES,
+];
