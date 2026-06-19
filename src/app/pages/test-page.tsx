@@ -42,114 +42,110 @@ const linkClassName =
 
 export function TestPage(): ReactNode {
   return (
-    <div className='pt-6 pb-12'>
-      <div className='flex flex-col gap-6'>
-        <Typography variant='page-title'>Background</Typography>
-        <div className='grid gap-4 lg:grid-cols-6'>
-          <Card className='md:col-span-3 lg:col-span-3' padding='large'>
-            <div className='flex flex-col gap-6'>
-              <div className='flex flex-col gap-2'>
-                <Typography variant='card-title-accent'>
-                  Formal Education
-                </Typography>
-                <Typography variant='heading-2'>
-                  Faculty of Electrical Engineering and Computing (FER),
-                  University of Zagreb
-                </Typography>
-                <Typography variant='body'>
-                  Graduate Engineer of Computing
-                </Typography>
-              </div>
-
-              <UnorderedList items={EDUCATION_HIGHLIGHTS} />
-
-              <Card
-                className='border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20'
-                variant='inner'
-              >
-                <div className='flex flex-col gap-3'>
-                  <Typography variant='heading-3'>Related links</Typography>
-                  <ul className='flex flex-col gap-2'>
-                    {thesisLinks.map((link) => {
-                      return (
-                        <li key={link.href}>
-                          <a
-                            href={link.href}
-                            target='_blank'
-                            rel='noreferrer'
-                            className={linkClassName}
-                          >
-                            {link.label} ↗
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </Card>
-            </div>
-          </Card>
-
-          <Card className='md:col-span-3 lg:col-span-3' padding='large'>
-            <div className='flex flex-col gap-5'>
-              <div className='flex flex-col gap-2'>
-                <Typography variant='card-title-accent'>
-                  Additional Learning
-                </Typography>
-                <Typography variant='heading-2'>
-                  Structured learning outside formal education
-                </Typography>
-              </div>
-
-              <div className='flex flex-col gap-4'>
-                {learningSources.map((item) => {
-                  return (
-                    <div
-                      key={item.source}
-                      className='flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-slate-100 p-4 dark:border-slate-800 dark:bg-slate-950/70'
-                    >
-                      <Typography variant='heading-4'>{item.source}</Typography>
-                      <Typography variant='body'>{item.description}</Typography>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </Card>
-
-          <Card className='lg:col-span-2' padding='medium'>
-            <div className='flex flex-col gap-3'>
-              <Typography variant='card-title-muted'>Location</Typography>
-              <div className='flex flex-wrap gap-2'>
-                <Tag label='Zagreb, Croatia' />
-              </div>
-            </div>
-          </Card>
-
-          <Card className='lg:col-span-2' padding='medium'>
-            <div className='flex flex-col gap-3'>
-              <Typography variant='card-title-muted'>Languages</Typography>
-              <div className='flex flex-wrap gap-2'>
-                {LANGUAGES.map((language) => (
-                  <Tag key={language} label={language} />
-                ))}
-              </div>
-            </div>
-          </Card>
-
-          <Card className='lg:col-span-2' padding='medium'>
-            <div className='flex flex-col gap-3'>
-              <Typography variant='card-title-muted'>
-                Driver's license
+    <div className='flex flex-col gap-6 pt-6 pb-12'>
+      <Typography variant='page-title'>Background</Typography>
+      <div className='grid gap-4 lg:grid-cols-6'>
+        <Card className='md:col-span-3 lg:col-span-3' padding='large'>
+          <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-2'>
+              <Typography variant='card-title-accent'>
+                Formal Education
               </Typography>
-              <div className='flex flex-wrap gap-2'>
-                {DRIVER_LICENSE_CATEGORIES.map((category) => (
-                  <Tag key={category} label={category} />
-                ))}
-              </div>
+              <Typography variant='heading-2'>
+                Faculty of Electrical Engineering and Computing (FER),
+                University of Zagreb
+              </Typography>
+              <Typography variant='body'>
+                Graduate Engineer of Computing
+              </Typography>
             </div>
-          </Card>
-        </div>
+
+            <UnorderedList items={EDUCATION_HIGHLIGHTS} />
+
+            <Card
+              className='border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20'
+              variant='inner'
+            >
+              <div className='flex flex-col gap-3'>
+                <Typography variant='heading-3'>Related links</Typography>
+                <ul className='flex flex-col gap-2'>
+                  {thesisLinks.map((link) => {
+                    return (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          target='_blank'
+                          rel='noreferrer'
+                          className={linkClassName}
+                        >
+                          {link.label} ↗
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </Card>
+          </div>
+        </Card>
+
+        <Card className='md:col-span-3 lg:col-span-3' padding='large'>
+          <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-2'>
+              <Typography variant='card-title-accent'>
+                Additional Learning
+              </Typography>
+              <Typography variant='heading-2'>
+                Structured learning outside formal education
+              </Typography>
+            </div>
+
+            <div className='flex flex-col gap-4'>
+              {learningSources.map((item) => {
+                return (
+                  <div
+                    key={item.source}
+                    className='flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-slate-100 p-4 dark:border-slate-800 dark:bg-slate-950/70'
+                  >
+                    <Typography variant='heading-4'>{item.source}</Typography>
+                    <Typography variant='body'>{item.description}</Typography>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Card>
+
+        <Card className='lg:col-span-2' padding='medium'>
+          <div className='flex flex-col gap-3'>
+            <Typography variant='card-title-muted'>Location</Typography>
+            <div className='flex flex-wrap gap-2'>
+              <Tag label='Zagreb, Croatia' />
+            </div>
+          </div>
+        </Card>
+
+        <Card className='lg:col-span-2' padding='medium'>
+          <div className='flex flex-col gap-3'>
+            <Typography variant='card-title-muted'>Languages</Typography>
+            <div className='flex flex-wrap gap-2'>
+              {LANGUAGES.map((language) => (
+                <Tag key={language} label={language} />
+              ))}
+            </div>
+          </div>
+        </Card>
+
+        <Card className='lg:col-span-2' padding='medium'>
+          <div className='flex flex-col gap-3'>
+            <Typography variant='card-title-muted'>Driver's license</Typography>
+            <div className='flex flex-wrap gap-2'>
+              {DRIVER_LICENSE_CATEGORIES.map((category) => (
+                <Tag key={category} label={category} />
+              ))}
+            </div>
+          </div>
+        </Card>
       </div>
     </div>
   );
