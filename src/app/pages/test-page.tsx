@@ -37,10 +37,6 @@ const learningSources = [
   },
 ] as const;
 
-const languages = ['Croatian - native', 'English - fluent'] as const;
-
-const driverLicenseCategories = ['AM', 'B', 'F', 'G'] as const;
-
 const linkClassName =
   'text-sm font-medium text-amber-700 underline decoration-amber-400 underline-offset-4 transition hover:text-amber-800 hover:decoration-amber-500 dark:text-cyan-300 dark:decoration-cyan-700 dark:hover:text-cyan-200 dark:hover:decoration-cyan-500';
 
@@ -131,7 +127,7 @@ export function TestPage(): ReactNode {
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
             <Typography variant='card-title-muted'>Languages</Typography>
             <div className='flex flex-wrap gap-2'>
-              {languages.map((language) => (
+              {LANGUAGES.map((language) => (
                 <Tag key={language} label={language} />
               ))}
             </div>
@@ -140,7 +136,7 @@ export function TestPage(): ReactNode {
           <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
             <Typography variant='card-title-muted'>Driver's license</Typography>
             <div className='flex flex-wrap gap-2'>
-              {driverLicenseCategories.map((category) => (
+              {DRIVER_LICENSE_CATEGORIES.map((category) => (
                 <Tag key={category} label={category} />
               ))}
             </div>
@@ -157,3 +153,7 @@ const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'The latter part of the program focused on programming, computer science, and software engineering.',
   'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
 ];
+
+const LANGUAGES: readonly string[] = ['Croatian - native', 'English - fluent'];
+
+const DRIVER_LICENSE_CATEGORIES: readonly string[] = ['AM', 'B', 'F', 'G'];
