@@ -1,5 +1,6 @@
 import {
   Card,
+  ExternalLink,
   PageContainer,
   Tag,
   Typography,
@@ -50,14 +51,11 @@ export function TestPage(): ReactNode {
                   {THESIS_LINKS.map((link) => {
                     return (
                       <li key={link.href}>
-                        <a
+                        <ExternalLink
+                          variant='highlight'
                           href={link.href}
-                          target='_blank'
-                          rel='noreferrer'
-                          className='text-sm font-medium text-amber-700 underline decoration-amber-400 underline-offset-4 transition hover:text-amber-800 hover:decoration-amber-500 dark:text-cyan-300 dark:decoration-cyan-700 dark:hover:text-cyan-200 dark:hover:decoration-cyan-500'
-                        >
-                          {link.label} ↗
-                        </a>
+                          label={link.label}
+                        />
                       </li>
                     );
                   })}
