@@ -10,19 +10,6 @@ import type { ReactNode } from 'react';
 
 import type { LinkItem } from '../types';
 
-const learningSources = [
-  {
-    source: 'Coursera',
-    description:
-      'Completed several courses focused on machine learning, algorithms, and data structures.',
-  },
-  {
-    source: 'Udemy',
-    description:
-      'Took courses related to Angular, Vue, React, Node.js, Vim, Bash, and Docker, which map closely to day-to-day engineering work.',
-  },
-] as const;
-
 export function TestPage(): ReactNode {
   return (
     <PageContainer title='Background'>
@@ -76,13 +63,21 @@ export function TestPage(): ReactNode {
               </Typography>
             </div>
 
+            <Typography variant='body'>
+              <div className='flex flex-col gap-2'>
+                {ADDITIONAL_LEARNING_PARAGRAPHS.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </Typography>
+
             <div className='flex flex-col gap-4'>
-              {learningSources.map((item) => {
+              {ADDITIONAL_LEARNING_ITEMS.map((item) => {
                 return (
-                  <Card key={item.source} variant='inner' padding='small'>
+                  <Card key={item.title} variant='inner' padding='small'>
                     <div className='flex flex-col gap-2'>
-                      <Typography variant='heading-4'>{item.source}</Typography>
-                      <Typography variant='body'>{item.description}</Typography>
+                      <Typography variant='heading-4'>{item.title}</Typography>
+                      <Typography variant='body'>{item.text}</Typography>
                     </div>
                   </Card>
                 );
@@ -114,9 +109,9 @@ function getTagCard(tags: readonly string[]): ReactNode {
 
 const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'Five year course, total 284 ECTS credits.',
-  'Built a strong foundation in mathematics, physics, and electrical engineering.',
-  'The latter part of the program focused on programming, computer science, and software engineering.',
-  'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
+  'Gives good foundation in mathematics, physics, and electrical engineering in the first two years.',
+  'Later part is focused on programming, computer science, and software engineering.',
+  'Graduation thesis was in the domain of computer graphics - a BVH animation viewer that parses motion capture files and renders the animation.',
 ];
 
 const THESIS_LINKS: readonly LinkItem[] = [
@@ -139,6 +134,36 @@ const THESIS_LINKS: readonly LinkItem[] = [
   {
     href: 'https://youtu.be/7u4C-OBQZIk',
     label: 'Short video showing the thesis application',
+  },
+];
+
+interface AdditionalLearningItem {
+  readonly title: string;
+  readonly text: string;
+}
+
+const ADDITIONAL_LEARNING_PARAGRAPHS: readonly string[] = [
+  'Here are some online courses I took on Coursera, Udemy, Frontend Masters, and others.',
+  'I did it for personal interest, or to learn something specific for work. It usually served the goal of introducing me to a framework, or giving me a deeper knowledge of a particular programming or tooling subject.',
+  'This list is not exhaustive.',
+];
+
+const ADDITIONAL_LEARNING_ITEMS: readonly AdditionalLearningItem[] = [
+  {
+    title: 'Frameworks and Libraries',
+    text: 'React, Angular, Vue, Node, RxJs.',
+  },
+  {
+    title: 'Tooling',
+    text: 'Vim, Bash, Docker, software development machine setup.',
+  },
+  {
+    title: 'Deep Dives',
+    text: 'Some courses from the "Hard Parts" series on Frontend Masters.',
+  },
+  {
+    title: 'Other Topics',
+    text: 'Compilers (simple ones), code generation, foundational machine learning course on Coursera, some algorithms and data structures courses, Data Visualization (D3), some economics and statistics classes.',
   },
 ];
 
