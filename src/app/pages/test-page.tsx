@@ -117,30 +117,38 @@ export function TestPage(): ReactNode {
             </div>
           </Card>
 
-          <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <Typography variant='card-title-muted'>Location</Typography>
-            <div className='flex flex-wrap gap-2'>
-              <Tag label='Zagreb, Croatia' />
+          <Card className='lg:col-span-2' padding='medium'>
+            <div className='flex flex-col gap-3'>
+              <Typography variant='card-title-muted'>Location</Typography>
+              <div className='flex flex-wrap gap-2'>
+                <Tag label='Zagreb, Croatia' />
+              </div>
             </div>
-          </div>
+          </Card>
 
-          <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <Typography variant='card-title-muted'>Languages</Typography>
-            <div className='flex flex-wrap gap-2'>
-              {LANGUAGES.map((language) => (
-                <Tag key={language} label={language} />
-              ))}
+          <Card className='lg:col-span-2' padding='medium'>
+            <div className='flex flex-col gap-3'>
+              <Typography variant='card-title-muted'>Languages</Typography>
+              <div className='flex flex-wrap gap-2'>
+                {LANGUAGES.map((language) => (
+                  <Tag key={language} label={language} />
+                ))}
+              </div>
             </div>
-          </div>
+          </Card>
 
-          <div className='flex flex-col gap-3 rounded-2xl border border-slate-300/80 bg-slate-50 p-5 shadow-sm shadow-slate-200/70 lg:col-span-2 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10'>
-            <Typography variant='card-title-muted'>Driver's license</Typography>
-            <div className='flex flex-wrap gap-2'>
-              {DRIVER_LICENSE_CATEGORIES.map((category) => (
-                <Tag key={category} label={category} />
-              ))}
+          <Card className='lg:col-span-2' padding='medium'>
+            <div className='flex flex-col gap-3'>
+              <Typography variant='card-title-muted'>
+                Driver's license
+              </Typography>
+              <div className='flex flex-wrap gap-2'>
+                {DRIVER_LICENSE_CATEGORIES.map((category) => (
+                  <Tag key={category} label={category} />
+                ))}
+              </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>
