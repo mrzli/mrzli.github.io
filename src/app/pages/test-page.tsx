@@ -1,4 +1,10 @@
-import { Card, Tag, Typography, UnorderedList } from '@components';
+import {
+  Card,
+  PageContainer,
+  Tag,
+  Typography,
+  UnorderedList,
+} from '@components';
 import type { ReactNode } from 'react';
 
 const thesisLinks = [
@@ -42,8 +48,7 @@ const linkClassName =
 
 export function TestPage(): ReactNode {
   return (
-    <div className='flex flex-col gap-6 pt-6 pb-12'>
-      <Typography variant='page-title'>Background</Typography>
+    <PageContainer title='Background'>
       <div className='grid gap-4 lg:grid-cols-6'>
         <Card className='md:col-span-3 lg:col-span-3' padding='large'>
           <div className='flex flex-col gap-6'>
@@ -147,7 +152,7 @@ export function TestPage(): ReactNode {
           </div>
         </Card>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 
