@@ -230,7 +230,7 @@ const DATA: readonly Job[] = [
   },
 ];
 
-export function WorkHistoryPage(): ReactNode {
+export function ExperiencePage(): ReactNode {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>

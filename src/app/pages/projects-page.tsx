@@ -58,7 +58,7 @@ const DATA: readonly Project[] = [
   },
 ];
 
-export function PersonalProjectsPage(): ReactNode {
+export function ProjectsPage(): ReactNode {
   return (
     <div>
       <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
