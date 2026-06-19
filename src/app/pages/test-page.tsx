@@ -50,10 +50,7 @@ export function TestPage(): ReactNode {
       <div className='flex flex-col gap-6'>
         <Typography variant='page-title'>Background</Typography>
         <div className='grid gap-4 lg:grid-cols-6'>
-          <Card
-            className='border-slate-300/80 bg-slate-50 shadow-md shadow-slate-200/70 md:col-span-3 lg:col-span-3 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-black/15'
-            padding='large'
-          >
+          <Card className='md:col-span-3 lg:col-span-3' padding='large'>
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-2'>
                 <Typography variant='card-title-accent'>
@@ -97,10 +94,7 @@ export function TestPage(): ReactNode {
             </div>
           </Card>
 
-          <Card
-            className='border-slate-300/80 bg-slate-50 shadow-md shadow-slate-200/70 md:col-span-3 lg:col-span-3 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-black/15'
-            padding='large'
-          >
+          <Card className='md:col-span-3 lg:col-span-3' padding='large'>
             <div className='flex flex-col gap-5'>
               <div className='flex flex-col gap-2'>
                 <Typography variant='card-title-accent'>
