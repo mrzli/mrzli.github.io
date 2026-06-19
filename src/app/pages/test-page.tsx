@@ -7,28 +7,7 @@ import {
 } from '@components';
 import type { ReactNode } from 'react';
 
-const thesisLinks = [
-  {
-    href: 'https://www.fer.unizg.hr/en',
-    label: 'Faculty of Electrical Engineering and Computing (FER)',
-  },
-  {
-    href: 'http://www.zemris.fer.hr/predmeti/rg/diplomski/08Mrzljak/bvhviewer_pages/html/index.html',
-    label: 'Short summary of the thesis on the faculty site',
-  },
-  {
-    href: 'http://www.zemris.fer.hr/predmeti/rg/diplomski/08Mrzljak/bvhviewer_pages/html/files/Diplomski.doc',
-    label: 'Full thesis (.doc file)',
-  },
-  {
-    href: 'https://github.com/mrzli/bvhviewer',
-    label: 'Source code for the thesis application',
-  },
-  {
-    href: 'https://youtu.be/7u4C-OBQZIk',
-    label: 'Short video showing the thesis application',
-  },
-] as const;
+import type { LinkItem } from '../types';
 
 const learningSources = [
   {
@@ -42,9 +21,6 @@ const learningSources = [
       'Took courses related to Angular, Vue, React, Node.js, Vim, Bash, and Docker, which map closely to day-to-day engineering work.',
   },
 ] as const;
-
-const linkClassName =
-  'text-sm font-medium text-amber-700 underline decoration-amber-400 underline-offset-4 transition hover:text-amber-800 hover:decoration-amber-500 dark:text-cyan-300 dark:decoration-cyan-700 dark:hover:text-cyan-200 dark:hover:decoration-cyan-500';
 
 export function TestPage(): ReactNode {
   return (
@@ -67,21 +43,18 @@ export function TestPage(): ReactNode {
 
             <UnorderedList items={EDUCATION_HIGHLIGHTS} />
 
-            <Card
-              className='border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20'
-              variant='inner'
-            >
+            <Card variant='highlight' padding='medium'>
               <div className='flex flex-col gap-3'>
                 <Typography variant='heading-3'>Related links</Typography>
                 <ul className='flex flex-col gap-2'>
-                  {thesisLinks.map((link) => {
+                  {THESIS_LINKS.map((link) => {
                     return (
                       <li key={link.href}>
                         <a
                           href={link.href}
                           target='_blank'
                           rel='noreferrer'
-                          className={linkClassName}
+                          className='text-sm font-medium text-amber-700 underline decoration-amber-400 underline-offset-4 transition hover:text-amber-800 hover:decoration-amber-500 dark:text-cyan-300 dark:decoration-cyan-700 dark:hover:text-cyan-200 dark:hover:decoration-cyan-500'
                         >
                           {link.label} ↗
                         </a>
@@ -146,6 +119,29 @@ const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'Built a strong foundation in mathematics, physics, and electrical engineering.',
   'The latter part of the program focused on programming, computer science, and software engineering.',
   'Graduation thesis in computer graphics: a BVH animation viewer that parses motion capture files and renders the animation.',
+];
+
+const THESIS_LINKS: readonly LinkItem[] = [
+  {
+    href: 'https://www.fer.unizg.hr/en',
+    label: 'Faculty of Electrical Engineering and Computing (FER)',
+  },
+  {
+    href: 'http://www.zemris.fer.hr/predmeti/rg/diplomski/08Mrzljak/bvhviewer_pages/html/index.html',
+    label: 'Short summary of the thesis on the faculty site',
+  },
+  {
+    href: 'http://www.zemris.fer.hr/predmeti/rg/diplomski/08Mrzljak/bvhviewer_pages/html/files/Diplomski.doc',
+    label: 'Full thesis (.doc file)',
+  },
+  {
+    href: 'https://github.com/mrzli/bvhviewer',
+    label: 'Source code for the thesis application',
+  },
+  {
+    href: 'https://youtu.be/7u4C-OBQZIk',
+    label: 'Short video showing the thesis application',
+  },
 ];
 
 const LOCATIONS: readonly string[] = ['Zagreb, Croatia'];
