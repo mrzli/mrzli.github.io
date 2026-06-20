@@ -71,8 +71,8 @@ export function BackgroundPage(): ReactNode {
 
             <Typography variant='body'>
               <div className='flex flex-col gap-2'>
-                {ADDITIONAL_LEARNING_PARAGRAPHS.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {ADDITIONAL_LEARNING_PARAGRAPHS.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </Typography>
