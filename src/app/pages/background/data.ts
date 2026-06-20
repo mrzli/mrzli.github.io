@@ -61,14 +61,8 @@ export const ADDITIONAL_LEARNING_ITEMS: readonly AdditionalLearningItem[] = [
   },
 ];
 
-const LOCATIONS: readonly string[] = ['Zagreb, Croatia'];
-
-const LANGUAGES: readonly string[] = ['Croatian - native', 'English - fluent'];
-
-const DRIVER_LICENSE_CATEGORIES: readonly string[] = ['AM', 'B', 'F', 'G'];
-
 export const TAG_CARD_DATA: readonly TagCardProps[] = [
-  { title: 'Locations', tags: LOCATIONS },
-  { title: 'Languages', tags: LANGUAGES },
-  { title: "Driver's License", tags: DRIVER_LICENSE_CATEGORIES },
+  { title: 'Locations', tags: ['Zagreb, Croatia'] },
+  { title: 'Languages', tags: ['Croatian - native', 'English - fluent'] },
+  { title: "Driver's License", tags: ['AM', 'B', 'F', 'G'] },
 ];
