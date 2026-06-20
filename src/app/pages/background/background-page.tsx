@@ -2,13 +2,13 @@ import {
   Card,
   ExternalLink,
   PageContainer,
-  TagList,
   Typography,
   UnorderedList,
 } from '@components';
 import type { ReactNode } from 'react';
 
-import type { LinkItem } from '../types';
+import type { LinkItem } from '../../types';
+import { TagCard, type TagCardProps } from './components';
 
 export function BackgroundPage(): ReactNode {
   return (
@@ -86,20 +86,11 @@ export function BackgroundPage(): ReactNode {
           </div>
         </Card>
 
-        {TAG_CARD_TAGS.map((tags) => getTagCard(tags))}
+        {TAG_CARD_DATA.map((data) => (
+          <TagCard key={data.title} {...data} />
+        ))}
       </div>
     </PageContainer>
-  );
-}
-
-function getTagCard(tags: readonly string[]): ReactNode {
-  return (
-    <Card className='lg:col-span-2' padding='medium'>
-      <div className='flex flex-col gap-3'>
-        <Typography variant='card-title-muted'>Driver's license</Typography>
-        <TagList tags={tags} />
-      </div>
-    </Card>
   );
 }
 
@@ -169,8 +160,8 @@ const LANGUAGES: readonly string[] = ['Croatian - native', 'English - fluent'];
 
 const DRIVER_LICENSE_CATEGORIES: readonly string[] = ['AM', 'B', 'F', 'G'];
 
-const TAG_CARD_TAGS: readonly (readonly string[])[] = [
-  LOCATIONS,
-  LANGUAGES,
-  DRIVER_LICENSE_CATEGORIES,
+const TAG_CARD_DATA: readonly TagCardProps[] = [
+  { title: 'Locations', tags: LOCATIONS },
+  { title: 'Languages', tags: LANGUAGES },
+  { title: "Driver's License", tags: DRIVER_LICENSE_CATEGORIES },
 ];

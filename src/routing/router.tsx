@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 
 import { App } from '../app/app';
-import { BackgroundPage } from '../app/pages/background-page';
+import { BackgroundPage } from '../app/pages/background/background-page';
 import { ExperiencePage } from '../app/pages/experience-page';
 import { HomePage } from '../app/pages/home/home-page';
 import { ProjectsPage } from '../app/pages/projects-page';
