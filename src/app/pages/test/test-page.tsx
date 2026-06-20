@@ -7,7 +7,7 @@ import {
 } from '@components';
 import type { ReactNode } from 'react';
 
-import type { LinkItem } from '../types';
+import type { LinkItem } from '../../types';
 
 export function TestPage(): ReactNode {
   return (

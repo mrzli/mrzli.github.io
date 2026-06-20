@@ -2,11 +2,11 @@ import { createBrowserRouter, Navigate } from 'react-router';
 
 import { App } from '../app/app';
 import { BackgroundPage } from '../app/pages/background/background-page';
-import { ExperiencePage } from '../app/pages/experience-page';
+import { ExperiencePage } from '../app/pages/experience/experience-page';
 import { HomePage } from '../app/pages/home/home-page';
-import { ProjectsPage } from '../app/pages/projects-page';
-import { SkillsPage } from '../app/pages/skills-page';
-import { TestPage } from '../app/pages/test-page';
+import { ProjectsPage } from '../app/pages/projects/projects-page';
+import { SkillsPage } from '../app/pages/skills/skills-page';
+import { TestPage } from '../app/pages/test/test-page';
 
 export const router = createBrowserRouter([
   {
