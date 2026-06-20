@@ -2,7 +2,7 @@ import {
   Card,
   ExternalLink,
   PageContainer,
-  Tag,
+  TagList,
   Typography,
   UnorderedList,
 } from '@components';
@@ -97,11 +97,7 @@ function getTagCard(tags: readonly string[]): ReactNode {
     <Card className='lg:col-span-2' padding='medium'>
       <div className='flex flex-col gap-3'>
         <Typography variant='card-title-muted'>Driver's license</Typography>
-        <div className='flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <Tag key={tag} label={tag} />
-          ))}
-        </div>
+        <TagList tags={tags} />
       </div>
     </Card>
   );
