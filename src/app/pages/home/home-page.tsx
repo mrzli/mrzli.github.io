@@ -4,8 +4,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import profileImage from '../../../assets/profile.jpg';
-import { IconLink } from './components/icon-link';
-import { RouteCard, type RouteCardProps } from './components/route-card';
+import { IconLink, RouteCard, type RouteCardProps } from './components';
 
 export function HomePage(): ReactNode {
   return (
