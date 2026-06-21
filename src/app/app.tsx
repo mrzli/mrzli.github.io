@@ -17,5 +17,6 @@ const NAV_ITEMS: readonly NavItem[] = [
   { to: 'skills', label: 'Skills' },
   { to: 'projects', label: 'Projects' },
   { to: 'background', label: 'Background' },
+  { to: 'values', label: 'Values' },
   { to: 'test', label: 'Test' },
 ];

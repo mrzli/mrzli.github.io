@@ -1,5 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 
+import { ValuesPage } from '@/app/pages/values/values-page';
+
 import { App } from '../app/app';
 import { BackgroundPage } from '../app/pages/background/background-page';
 import { ExperiencePage } from '../app/pages/experience/experience-page';
@@ -32,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: 'background',
         element: <BackgroundPage />,
+      },
+      {
+        path: 'values',
+        element: <ValuesPage />,
       },
       {
         path: 'test',
