@@ -39,7 +39,7 @@ export function ExperienceSection({
         from={from}
         to={to}
       />
-      <div>
+      <div className='flex flex-col gap-6'>
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}

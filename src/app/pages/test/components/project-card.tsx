@@ -28,16 +28,13 @@ export function ProjectCard({
         <TagList tags={tags} />
 
         <Card variant='inner' padding='small'>
-          <div className='flex flex-col gap-2'>
-            <Typography variant='heading-4'>My role</Typography>
-            <Typography variant='body'>
-              <div className='flex flex-col gap-2'>
-                {roleText.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </Typography>
-          </div>
+          <Typography variant='body'>
+            <div className='flex flex-col gap-2'>
+              {roleText.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </Typography>
         </Card>
       </div>
     </Card>
