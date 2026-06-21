@@ -10,19 +10,47 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       },
       {
         title: 'Libraries and Frameworks',
-        skills: ['React', 'Angular'],
+        skills: [
+          'React',
+          'Angular',
+          'Express',
+          'NestJS',
+          'Tailwind CSS',
+          'Class Variance Authority',
+          'Shadcn/UI',
+          'MUI',
+          'Ant Design',
+          'Redux',
+          'redux-observable',
+          'React Hook Form',
+          'Zod',
+          'RxJS',
+        ],
       },
       {
         title: 'Platforms',
-        skills: [],
+        skills: ['Node.js', 'Bun'],
       },
       {
         title: 'Tools',
-        skills: [],
+        skills: [
+          'ESLint',
+          'Prettier',
+          'Vite',
+          'Webpack',
+          'Jest',
+          'Vitest',
+          'Storybook',
+          'Docker',
+          'Bash',
+          'npm',
+          'pnpm',
+          'Bun Package Manager',
+        ],
       },
       {
         title: 'Databases',
-        skills: ['PostgreSQL', 'MongoDB'],
+        skills: ['PostgreSQL', 'MySQL', 'MongoDB'],
       },
       {
         title: 'CI/CD',
@@ -30,15 +58,19 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       },
       {
         title: 'Source Control',
-        skills: [],
+        skills: ['Git', 'GitHub', 'GitLab', 'Bitbucket'],
       },
       {
         title: 'IDE',
-        skills: [],
+        skills: ['Visual Studio Code', 'WebStorm', 'IntelliJ IDEA'],
       },
       {
         title: 'AI',
         skills: ['GPT-5.x', 'Claude Sonnet 4.x', 'Copilot'],
+      },
+      {
+        title: 'Operating Systems',
+        skills: ['Windows', 'macOS', 'Linux'],
       },
     ],
   },
@@ -47,39 +79,48 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
     groups: [
       {
         title: 'Programming Languages',
-        skills: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+        skills: ['Kotlin', 'Java', 'C#', 'C++'],
       },
       {
         title: 'Libraries and Frameworks',
-        skills: ['React', 'Angular'],
+        skills: [
+          'Spring Boot',
+          'JPA/Hibernate',
+          'Liquibase',
+          'Vue',
+          'Vuetify',
+          'AngularJS',
+          'ASP.NET MVC',
+          'ASP.NET Web Forms',
+          'WPF',
+          'Windows Forms',
+        ],
       },
       {
         title: 'Platforms',
-        skills: [],
+        skills: ['JVM', '.NET Framework'],
       },
       {
         title: 'Tools',
-        skills: [],
+        skills: [
+          'React Testing Library',
+          'Nx (monorepo)',
+          'Prisma',
+          'Maven',
+          'JUnit',
+        ],
       },
       {
         title: 'Databases',
-        skills: ['PostgreSQL', 'MongoDB'],
-      },
-      {
-        title: 'CI/CD',
-        skills: ['GitHub Actions'],
+        skills: ['H2', 'SQLite', 'Microsoft SQL Server'],
       },
       {
         title: 'Source Control',
-        skills: [],
+        skills: ['TFS (Microsoft)', 'SVN', 'Jazz (IBM)'],
       },
       {
         title: 'IDE',
-        skills: [],
-      },
-      {
-        title: 'AI',
-        skills: ['GPT-5.x', 'Claude Sonnet 4.x', 'Copilot'],
+        skills: ['Visual Studio', 'Eclipse'],
       },
     ],
   },
@@ -88,39 +129,37 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
     groups: [
       {
         title: 'Programming Languages',
-        skills: [],
+        skills: [
+          'Ruby',
+          'Python',
+          'Racket',
+          'F#',
+          'R',
+          'Octave',
+          'Fantom (JVM)',
+        ],
       },
       {
         title: 'Libraries and Frameworks',
-        skills: [],
-      },
-      {
-        title: 'Platforms',
-        skills: [],
+        skills: [
+          'Android SDK',
+          'libGDX (game engine)',
+          'Ruby on Rails',
+          'Sinatra',
+          'GraphQL',
+        ],
       },
       {
         title: 'Tools',
-        skills: [],
+        skills: ['Playwright', 'Cypress'],
       },
       {
         title: 'Databases',
-        skills: [],
+        skills: ['IBM DB2', 'Oracle Database'],
       },
       {
         title: 'CI/CD',
-        skills: [],
-      },
-      {
-        title: 'Source Control',
-        skills: [],
-      },
-      {
-        title: 'IDE',
-        skills: [],
-      },
-      {
-        title: 'AI',
-        skills: [],
+        skills: ['CircleCI', 'Docker Swarm'],
       },
     ],
   },
