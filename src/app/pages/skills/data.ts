@@ -25,6 +25,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'React Hook Form',
           'Zod',
           'RxJS',
+          'NgRx',
         ],
       },
       {
@@ -87,8 +88,10 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'Spring Boot',
           'JPA/Hibernate',
           'Liquibase',
+          'JSP',
           'Vue',
           'Vuetify',
+          'AG Grid',
           'AngularJS',
           'ASP.NET MVC',
           'ASP.NET Web Forms',
@@ -104,6 +107,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
         title: 'Tools',
         skills: [
           'React Testing Library',
+          'Mocha',
           'Nx (monorepo)',
           'Prisma',
           'Maven',
@@ -147,6 +151,8 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'Ruby on Rails',
           'Sinatra',
           'GraphQL',
+          'jQuary',
+          '3ds Max SDK',
         ],
       },
       {
