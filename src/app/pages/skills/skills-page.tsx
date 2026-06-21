@@ -1,161 +1,65 @@
+import { PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
-interface SubSection {
-  readonly name: string;
-  readonly items: readonly string[];
-}
-
-interface MainSection {
-  readonly name: string;
-  readonly subsections: readonly SubSection[];
-}
-
-const DATA: readonly MainSection[] = [
-  {
-    name: 'Recent and Substantial Experience',
-    subsections: [
-      {
-        name: 'Programming Languages:',
-        items: [
-          'Web Frontend Languages (JavaScript/HTML/CSS) and variations (SCSS etc.)',
-          'TypeScript',
-        ],
-      },
-      {
-        name: 'Libraries, Frameworks, Platforms, Tools:',
-        items: [
-          'React',
-          'Angular',
-          'Node',
-          'Express',
-          'NestJS',
-          'ESLint, Prettier',
-          'NX (monorepo)',
-          'RxJS',
-          'Jest',
-          'React Testing Library',
-          'Webpack',
-          'Storybook',
-          'Redux, redux-observable',
-          'Material-UI (UI component library for React)',
-          'Zod (validation)',
-          'NPM (obviously)',
-          '...',
-        ],
-      },
-      {
-        name: 'Databases:',
-        items: ['Mongo', 'PostgreSQL'],
-      },
-      {
-        name: 'CI/CD:',
-        items: ['Github Actions', 'Heroku'],
-      },
-      {
-        name: 'Source Control:',
-        items: ['Git'],
-      },
-      {
-        name: 'IDEs:',
-        items: ['Webstorm', 'Intellij IDEA'],
-      },
-    ],
-  },
-  {
-    name: 'Previous Experience',
-    subsections: [
-      {
-        name: 'Programming Languages:',
-        items: ['Kotlin', 'Java', 'C#', 'C++'],
-      },
-      {
-        name: 'Libraries, Frameworks, Platforms, Tools:',
-        items: [
-          'Spring Boot',
-          'JPA/Hibernate',
-          'Liquibase',
-          'Maven',
-          'Vue',
-          'Vuetify (UI component library for Vue)',
-          'AngularJS',
-          'JUnit',
-          'ASP.NET Web Forms',
-          'ASP.NET MVC',
-          'WPF',
-          'Windows Forms',
-        ],
-      },
-      {
-        name: 'Databases:',
-        items: ['H2', 'SQLite', 'Microsoft SQL Server'],
-      },
-      {
-        name: 'Source Control:',
-        items: ['TFS', 'SVN', 'Jazz (IBM)'],
-      },
-      {
-        name: 'IDEs:',
-        items: ['Visual Studio', 'Eclipse'],
-      },
-    ],
-  },
-  {
-    name: 'Limited Experience',
-    subsections: [
-      {
-        name: 'Programming Languages:',
-        items: ['Python', 'Ruby', 'F#', 'R', 'Octave'],
-      },
-      {
-        name: 'Libraries, Frameworks, Platforms, Tools:',
-        items: [
-          'Cypress',
-          'GraphQL',
-          'Android SDK',
-          'libGDX',
-          'Docker',
-          'Docker Swarm',
-        ],
-      },
-      {
-        name: 'Databases:',
-        items: ['MySql', 'IBM Db2', 'Oracle'],
-      },
-      {
-        name: 'CI/CD:',
-        items: ['CircleCI'],
-      },
-      {
-        name: 'IDEs:',
-        items: ['Visual Studio Code'],
-      },
-    ],
-  },
-];
+import { SkillsSection } from './components';
+import { SKILLS_SECTIONS } from './data';
 
 export function SkillsPage(): ReactNode {
   return (
-    <div>
-      <h1 className='mt-6 mb-3 text-lg font-bold text-slate-800 uppercase dark:text-slate-200'>
-        Skills
-      </h1>
-      {DATA.map((section, sectionIndex) => (
-        <div key={sectionIndex} className='mt-6'>
-          <h2 className='my-2 font-bold text-pink-600 dark:text-pink-500'>
-            {section.name}
-          </h2>
-          {section.subsections.map((sub, subIndex) => (
-            <div key={subIndex} className='my-4'>
-              {sub.name && <p className='my-2'>{sub.name}</p>}
-              <ul className='ml-6 list-disc'>
-                {sub.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
-                ))}
-              </ul>
-            </div>
+    <PageContainer title='Skills'>
+      <div className='flex flex-col gap-12'>
+        <Typography variant='body'>
+          <div className='flex flex-col gap-2'>
+            <p>
+              A list of various technologies and tools I worked with throughout
+              the years, in form of tags.
+            </p>
+            <p>
+              The data is separated into sections, from greatest relevance -
+              recent, extensive experience - down to technologies I did not work
+              on recently, or have limited experience with.
+            </p>
+            <p>
+              <span className='font-bold'>Extensive experience</span>: I worked
+              a lot with the technology, usually for multiple years, and have
+              built entire projects using it.
+            </p>
+            <p>
+              <span className='font-bold'>Limited experience</span>: It usually
+              means explored the technology on my own time and I spent weeks or
+              months learning it. I sometimes even used it professionally, but
+              only in some limited instances, not as part of daily routine. My
+              familiarity with it can vary, but it is often significant.
+            </p>
+            <p>
+              This page is here to give you a quick overview, and it might be
+              useful for a recruiter to 'check out' his boxes. Many programmers
+              will find listing languages such as HTML and CSS silly, as that
+              knowledge is implied. Additionally, learningtom hougaa a new piece
+              of technology is often the easiest thing you do on a project,
+              significantly easier than learning the codebase, the domain, and
+              occasionally - when that part is 'non-standard' and onboarding is
+              lacking - the peculiarities and details of team processes and
+              practices.
+            </p>
+            <p>
+              It may seem that I am sometimes just randomly listing everything
+              that comes to mind. For example for 'Operating Systems' I am
+              listing all three major deskop operating systems. The reason is
+              that I have used all three for multiple years each, often
+              concurrently. In the past decade, I have mostly been using macOS
+              but in recent years my primary OS is Linux - for personal use and
+              professional work. I am also sometimes forced to use Windows, so
+              that makes all of them.
+            </p>
+          </div>
+        </Typography>
+        <div className='flex flex-col gap-10'>
+          {SKILLS_SECTIONS.map((section) => (
+            <SkillsSection key={section.title} {...section} />
           ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </PageContainer>
   );
 }
