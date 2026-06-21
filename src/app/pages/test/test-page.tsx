@@ -33,12 +33,14 @@ export function TestPage(): ReactNode {
             </p>
             <p>
               This page is here to give you a quick overview, and it might be
-              useful for a recruiter to 'check out' his boxes. Learning a new
-              piece of technology is often the easiest thing you do on a
-              project, significantly easier than learning the codebase, the
-              domain, and occasionally - when that part is 'non-standard' and
-              onboarding is lacking - the peculiarities and details of team
-              processes and practices.
+              useful for a recruiter to 'check out' his boxes. Many programmers
+              will find listing languages such as HTML and CSS silly, as that
+              knowledge is implied. Additionally, learningtom hougaa a new piece of
+              technology is often the easiest thing you do on a project,
+              significantly easier than learning the codebase, the domain, and
+              occasionally - when that part is 'non-standard' and onboarding is
+              lacking - the peculiarities and details of team processes and
+              practices.
             </p>
           </div>
         </Typography>
