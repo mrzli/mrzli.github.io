@@ -22,6 +22,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'Ant Design',
           'Redux',
           'redux-observable',
+          'MobX',
           'React Hook Form',
           'Zod',
           'RxJS',
