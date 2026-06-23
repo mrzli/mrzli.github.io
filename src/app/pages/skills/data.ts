@@ -18,7 +18,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'Tailwind CSS',
           'Class Variance Authority',
           'Shadcn/UI',
-          'MUI',
+          'Material UI',
           'Ant Design',
           'Redux',
           'redux-observable',
