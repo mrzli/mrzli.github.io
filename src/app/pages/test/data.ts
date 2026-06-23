@@ -9,10 +9,63 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: 'Present',
     projects: [
       {
-        title: '',
-        text: [],
-        tags: [],
-        roleText: [],
+        title: 'Government Payments Validation Component',
+        text: [
+          'I was tasked to create a Java component (JAR file) that is used to validate input data correctness for payments to the Croatian government, government agencies, local and regional administrations etc.',
+          'Invoices have several parts that need to be validated, either in isolation, or in relation to other parts. This includes description, destination account, dates, so-called "model" and "call-to-number" fields and so on.',
+          'The validation rules needed to be easily configurable to accommodate changes in the rules.',
+          'The component was used as a part of a larger system, but was developed and could be tested completely in isolation.',
+          'The requirements were clearly defined because there are existing rules and regulations on how these payments need to be handled. This was specified in a document about 180 pages long. About 30 pages were rule specifications, the rest were relevant tables and data listings.',
+          'Conceptually, the component works simply by accepting a structured list of invoice data, and outputs a structured list of validation errors and warnings (if any), with all the relevant data attached to each issue.',
+        ],
+        tags: ['Java', 'JUnit'],
+        roleText: [
+          'This was actually a very small project. I believe it was in the very low thousands of lines of code. It took less than two weeks to implement, with extensive unit tests.',
+          "I give it so much detail because it was one of my favorite pieces of work to do and is a good example of how well and quickly things can go when you don't have to deal with legacy issues, and you have clear requirements from beginning to end.",
+          'I implemented all of it. I read the requirements document, converted all the information to large (about 3k lines) JSON configuration file, implemented the code that parses it and implements the validation.',
+          'Since the validation logic is quite complicated and the component can be tested in isolation, this is one of the best cases of a project where unit tests are very useful, very important and relatively straightforward to implement. There was a large number of tests covering all the scenarios I could think of.',
+          'The first batch of detailed manual tests done by QA releved some error, about 3 out of a 100 tested scenarios failed. Whoever did those tests did an amazing job, and provided a well structured Excel file with test results. I converted those results to CSV, and created a test context which parses it, and converts each scenario listed in the CSV to a test. It was trivial to fix the 3 failing tests, and I also had all the scenarios that passed manual testing covered by unit tests and protected against regressions.',
+          'After the above, I was very confident in the quality of the component. There were no more reported issues while I worked for that client, and probably ever since. Had there been another batch of manual tests done in a similar manner, I would just repeat the same thing (or add new cases to existing CSV), and be essentially certain that all checked scenarios would work in production, and never break in the future. It was extremely satisfying to do that work.',
+        ],
+      },
+      {
+        title: 'EU Roaming Usage and Traffic Tracking Web Application',
+        text: [
+          'This was a system built to track roaming usage for the largest Croatian telecom, commissioned during the time of significant EU roaming changes. It was used to provide stats on use, and help detect any abuse.',
+        ],
+        tags: [
+          'Java',
+          'Spring Boot',
+          'JPA/Hibernate',
+          'Querydsl',
+          'Liquibase',
+          'Jasper Reports',
+          'Maven',
+        ],
+        roleText: [
+          'I was a backend-only developer on this project. I believe frontend was done in AngularJS, but I was not involved in that part.',
+          'I implemented the entire backend, from the REST API, down to the repository (data access layer). I also implemented the reporting system, which was based on Jasper Reports.',
+        ],
+      },
+      {
+        title: 'e-Learning Web Application (MVP)',
+        text: [
+          'This was a platform for online learning, which - among other features - allowed user to view video courses, and online meetings with whiteboards. It was not a fully-featured commercial produce yet, just an MVP.',
+        ],
+        tags: [
+          'AngularJS',
+          'Java',
+          'Spring Boot',
+          'JPA/Hibernate',
+          'Querydsl',
+          'PostgreSQL',
+          'Maven',
+          'Video.js',
+          'Veeting Rooms',
+        ],
+        roleText: [
+          'Besides some initial work by other developers, I implemented the entire application. I also handled deployment, communication with clients and I was actively involved in the development of requirements.',
+        ],
       },
       {
         title: 'Other Projects',
@@ -25,7 +78,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         tags: ['C#', 'WCF', 'Ruby', 'React', 'Java', 'Alfresco'],
         roleText: [
           'I did the first service mentioned completely by myself.',
-          'The Alfresco work was just some bug fixing for a couple of weeks. It would not usually be worth mentioning, but it is an interesting example of a project I was brought onto literally a week or two before production, to a code base and the platform (Alfresco) I was unfamiliar with. I did help them, and the client was satisfied with my help, but it is not the kind of work I usually do. The help was not groundbreaking, but I was able to help with their need for additional manpower at a very late hour and on very short notice. This provided an intro to additional work for the same client.',
+          'The Alfresco work was just some bug fixing for a couple of weeks. It would not usually be worth mentioning, but it is an interesting example of a project I was brought onto literally a week or two before production, to a code base and the platform (Alfresco) I was unfamiliar with. I did help them, and the client was satisfied with my help. The help was not groundbreaking, but I was able to fix the problems they needed fixing at that time. This provided an intro to additional work for the same client. This is not the type of work I usually do, and would not normally accept doing.',
           'The last two projects were small projects, each lasting several weeks. The work on these projects was split evenly between me and another programmer.',
         ],
       },
