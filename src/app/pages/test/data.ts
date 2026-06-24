@@ -80,7 +80,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       },
       {
         title: 'Mobile Fueling Management System',
-        text: ['TODO'],
+        text: [
+          'This was a very large project used for managing the business and operations of a market leading mobile fueling company from California. It is a "startup", which at the time had several hundred employees and exponential growth.',
+          'Project involved doezens of developers.',
+          'As part of the system, there were several web applications built with Angular and React, mobile applications (both iOS and Android), and a backend system connecting all of these together, built on top of Node (Express) with a MongoDB database.',
+          'I had ownership of some parts of the system, and on occasion I was required to do code changes that would affect the functioning of the entire system, which required careful planning and execution, and - in coordination with other developers and PMs - managed to implement those without signifnicant (or any) issues - no easy task on that codebase.',
+          'I was required to do occasiona migrations on the production Mongo database via JavaScript scripts, and with careful testing and work process, was able to do those without any errors during my time at the company. Again, not an easy thing to do, with hich cost of errors.',
+          'I was the driver for some code quality improvements where that was possible, such as how we do testing, and the introduction to monorepo.',
+          'Most of my technical work was on the backend Node apllication - all layers between the REST API down to and including the database (~70%). The rest of the time, I was working on the admin web application written in Angular (~30%). I did not work on mobile applications.',
+        ],
         tags: [
           'Angular',
           'TypeScript',
@@ -92,11 +100,17 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Prettier',
           'MongoDB',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'I was a full-stack developer, with more focus on the backend.',
+          'I was also involved with interview process for new developers, as well as onboarding and mentoring.',
+          'At the time the system was already fully in production, and it was the central product for the company, which depended on it for its business operations.',
+        ],
       },
       {
         title: 'Insurance Web Platform',
-        text: ['TODO'],
+        text: [
+          'A medium sized web application (100k lines of code for frontend alone), in the insurance domain, built for a UK client. This was a kind of insurance platform, designed to connect different parties involved in the insurance process, used to search for insurance schemes etc.',
+        ],
         tags: [
           'React',
           'TypeScript',
@@ -111,19 +125,31 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Node.js',
           'Cypress',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'I was a frontend-only developer on the project. I got involved after the project had been under development for a year and a half. For most of my time on the project, I was the only frontend developer.',
+          'The frontend was in a pretty rough state when I joined. My job was refactoring large chunks of the frontend code base, from the UI down to the backend API interface.',
+          'This included refactoring of entire app sections, fixing application-wide typing issues, complete refactroging of the state management system and async (API calling) infrastructure, refactoring high level application architecture, cleaning up and improving the development and build toolchain (scripts, Webpack), introducing formatting and linting tools, adding some tests (I had good coverage of the utility code, but added onlu basic testing for components and a handful of Cypress tests for more complicated flows.',
+          'I also incuded Storybook, and with its help created component library, which was a wrapper around Material UI, but matched existing application design and styling.',
+          'And of course, when necessary, I did new development and fixes.',
+        ],
       },
       {
         title: 'Accounting Web Application',
-        text: ['TODO'],
+        text: [
+          'A large application for accounting and transactions built for a medium-sized Finnish company. The app contains dozens of screens with very complex business logc, data display and editing functionality.',
+        ],
         tags: ['Angular', 'TypeScript', 'Jest', 'RxJS', 'AG Grid'],
-        roleText: ['TODO'],
+        roleText: [
+          'I worked exclusively on the frontend.',
+          'There was some rudimentary development done before I got involved, but not much - some sporadic prototype work by a single person. After a colleague and I joined the project, the two of did most of the initial work, and were able to make some architectural choices.',
+          'After a few months, the team quickly grew to more than 10 people on the frontend alone. After this, my role was essentially that of a senior developer. I was responsible for some application-wide changes. I implemented some subsystems using patterns that were reused throughout the project, also some larger features and screens, down to simpler maintanance work when required.',
+        ],
       },
       {
         title: 'Graveyards Management Web Application',
         text: [
-          'This was a realatively small multi-tenant web application used for managing graveyards and graves, information on the deceased and the owners.',
-          'It featured an interactive maps with geospacial data for each grave, implemented with the help of OpelLayers.',
+          'This was a relatively small multi-tenant web application used for managing graveyards and graves, information on the deceased and the owners.',
+          'It featured interactive maps with geospatial data for each grave, implemented with the help of OpenLayers.',
         ],
         tags: [
           'Vue',
