@@ -92,6 +92,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'JSP',
           'Vue',
           'Vuetify',
+          'Vuex',
           'AG Grid',
           'AngularJS',
           'ASP.NET MVC',
