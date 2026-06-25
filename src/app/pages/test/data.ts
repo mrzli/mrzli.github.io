@@ -44,7 +44,12 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       },
       {
         title: 'Oracle Eloqua to Mobile Messaging Integration',
-        text: ['TODO'],
+        text: [
+          'Oracle Eloqua is a cloud-based B2B marketing automation platform that lets users design complex marketing campaigns using a visual drag-and-drop interface.',
+          'It provides core functionality through native nodes, while also supporting externally developed integrations and extensions available via the Oracle Cloud Marketplace.',
+          'This project represents an integration of Oracle Eloqua with a mobile messaging platform, allowing end users to send mobile messages (such as SMS and WhatsApp) as part of their marketing campaigns.',
+          'It is a medium sized project, with fairly complex business logic and requirements.',
+        ],
         tags: [
           'React',
           'TypeScript',
@@ -62,12 +67,28 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'OAuth 1.0',
           'OAuth 2.0',
           'JWT',
+          'Nx (monorepo)',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'This project is one of my favorites, and I am very proud of it. I will explain why. It also showcases my approach to software development and problem solving very well. This is the reason why I this will be a lengthy description.',
+          'I implemented the entire project, except the CI/CD pipeline which could have been done in isolation, and was delegated to another developer.',
+          'As difficult it is to believe that something involving Oracle could be interesting to do, this was actually a very interesting, challenging and rewarding project to work on. It was sufficiently large to meaningfully feature a lot of different aspects of software development, and sufficiently small to be able to implement it completely by myself, which is a rare combination.',
+          'As is almost always the case, not all requirements were clear, but the high level goals were understandable, achievable, and provided a good direction for the project. This allowed me to work on the project efficiently, and with a good degree of autonomy, while still being able to communicate with the client and clarify requirements when necessary, and periodically demo the progress being made.',
+          'The project was meant to be implemented in the JavaScript ecosystem, which is why I was hired, and I would have made the same choice. Another recommendation was to use MySQL as the database, which was not a hard requirement, but was fine by me. Other than that, I had complete freedom to choose the technology stack, how to structure the project, and how to work on it on a day-to-day basis.',
+          'It worked very well. The most difficult part was parsing Oracle documentation, but that was a one-time effort. The development process was very smooth after that. I used a monorepo structure, powered by Nx. I choose React for frontend, Redux / redux-observable for state management and API calls, NestJS for backend. I used Prisma for ORM.',
+          'The integration was a total of about 20k lines of very tight code, with maybe 1-2k of those being tests. The application was relatively complicated needed to handle two-way communication between Oracle Eloqua and the integration backend, two-way commnication with the mobile messaging platform, and a frontend for the end users to configure and monitor the integration which ran inside Oracle Eloqua web client as an IFrame. All of this communication was asynchronous, and the integration needed to handle large volumne of messages - hundreds of thousands per minute - without any loss or issues. This included collecting information about message deliveries and failures (reported via webhooks), and generation of related statistics.',
+          'I also did load testing at the final stages of the project, which revealed multipe race condition issues. All were my fault, some were caused by mistakes in my code, and one was even caused by the fact that a Prisma function call (which did database write and then read) was not atomic on the database level, which was surprising to me. Once detected, it was easily resolved by using a database transaction, but it was a good reminder that even when using an ORM, you needs to be aware of what is actually happening on the database level. Other were also relatively straighforward to fix once detected. I am mentioned this because these kinds of issues are usually very difficult to resovele, and sometimes completely intractable. Here, because the code was well crafted and I had a complete understanding of the code base, and a full mental model of the application, they were quite simple to fix. I am proud of this and I think it clearly showcases the importance and benefits of good software development practices.',
+          'Related to above, I added extensive tests for the backend. Besides unit tests, I had at least one test for each endpoint, and I had tests for all the complicated async flows I could think of, especially those I had race conditions on. I did not use in-memory database, but I architected the app so that both database and each external service can be cleanly mocked. Since they were code-only, they ran lightning fast, and provided a very good safety net.',
+          'Also, the application had extensive logging, critical for debugging and monitoring, and it was invaluable for detecing the race conditions mentioned above.',
+          'One additional thing to mention is the authentication protocols used. Four or five different protocols were needed in total. I needed to implement OAuth 2.0 for communication from the integration to Oracle Eloqua, OAuth 1.0a for Eloqua to the integration, API key based authentication for the integration to the mobile messaging platform, and (I believe) Basic Auth for the other direction - webhooks from the mobile messaging platform to the integration. Even frontend endpoints needed to be protected, so I implemented JWT token based authentication for the frontend to backend communication.',
+          'The integration was deployed to Azure, for both testing and production. But, as I said, I did not do that part.'
+        ],
       },
       {
         title: 'Mobile Application for Managing Electricity Consumption',
-        text: ['TODO'],
+        text: [
+          'A mobile application targeted to the general public of Norway, built for a Norwegian client. It allows users to monitor and manage their electricity consumption, choose between electricity providers, and provides various statistics and insights.',
+        ],
         tags: [
           'React Native',
           'TypeScript',
@@ -76,7 +97,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'ESLint',
           'Prettier',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'I was a frontend-only developer on the React Native mobile application. I was part of a team of 8 developers, and was responsible for implementing some of the screens and features, nothing remarkable.',
+        ],
       },
       {
         title: 'Mobile Fueling Management System',
