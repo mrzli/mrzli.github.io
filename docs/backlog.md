@@ -1,22 +1,9 @@
+- Direct navigation to a subpage does not work, fix it.
+- Implement exprerience page.
+ - Implement experience for freelance work.
+   - Add robot company experience.
+   - Add HVAC application experience.
 - Think about what to do on the home page, and how to structure it.
-- Implement background page.
-  - Think about layout.
-    - Bullet points seem plain. Ask AI to change the page and/or recommend something better.
-  - Extract to components where it makes sense. To avoid duplication.
-  - Check content and see what needs to be added.
-    - Maybe add learning from frontend masters.
-    - Maybe structure all of learning differently, to more easily see what I have learned.
-    - Add B category drivers license as note.
-    - Maybe have sections "Languages", then "Other" with location and drivers license.
-- Projects page.
-  - Similar to Background, use structure similar to there, ask AI to change the layout into something better.
-  - Note for symbol jump that I deleted the libary repo required to run it, accidentally.
-- Skills.
-  - Layout / structure, ask AI to change into something better, impelement components.
-  - Update for last few projects.
-    - Oracle Eloqua / Infobit intergation project.
-    - Robot project.
-    - 
 - Implement values page.
   - Implement values stub page, with routing etc.
     - Make sure it works with responsive design.
