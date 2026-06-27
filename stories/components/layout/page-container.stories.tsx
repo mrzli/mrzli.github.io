@@ -12,8 +12,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: 'Page Title',
-    children: (
-      <Typography variant='body'>This is the default page content.</Typography>
-    ),
+    children: <Typography variant='body'>This is the default page content.</Typography>,
   },
 };

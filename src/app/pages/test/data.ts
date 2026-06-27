@@ -81,7 +81,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Related to above, I added extensive tests for the backend. Besides unit tests, I had at least one test for each endpoint, and I had tests for all the complicated async flows I could think of, especially those I had race conditions on. I did not use in-memory database, but I architected the app so that both database and each external service can be cleanly mocked. Since they were code-only, they ran lightning fast, and provided a very good safety net.',
           'Also, the application had extensive logging, critical for debugging and monitoring, and it was invaluable for detecing the race conditions mentioned above.',
           'One additional thing to mention is the authentication protocols used. Four or five different protocols were needed in total. I needed to implement OAuth 2.0 for communication from the integration to Oracle Eloqua, OAuth 1.0a for Eloqua to the integration, API key based authentication for the integration to the mobile messaging platform, and (I believe) Basic Auth for the other direction - webhooks from the mobile messaging platform to the integration. Even frontend endpoints needed to be protected, so I implemented JWT token based authentication for the frontend to backend communication.',
-          'The integration was deployed to Azure, for both testing and production. But, as I said, I did not do that part.'
+          'The integration was deployed to Azure, for both testing and production. But, as I said, I did not do that part.',
         ],
       },
       {
@@ -89,14 +89,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         text: [
           'A mobile application targeted to the general public of Norway, built for a Norwegian client. It allows users to monitor and manage their electricity consumption, choose between electricity providers, and provides various statistics and insights.',
         ],
-        tags: [
-          'React Native',
-          'TypeScript',
-          'Expo',
-          'Jest',
-          'ESLint',
-          'Prettier',
-        ],
+        tags: ['React Native', 'TypeScript', 'Expo', 'Jest', 'ESLint', 'Prettier'],
         roleText: [
           'I was a frontend-only developer on the React Native mobile application. I was part of a team of 8 developers, and was responsible for implementing some of the screens and features, nothing remarkable.',
         ],
@@ -310,13 +303,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'This it a large scale product, with 1M+ daily views.',
           'It is the official product that allows citizens and businesses in Croatia to submit their tax forms electronically. It supports many different tax forms to handle all the relevant types of tax reporting. The application has many other features, but tax reporting (form submission) is probably the main use case.',
         ],
-        tags: [
-          'C#',
-          'ASP.NET Web Forms',
-          'jQuery',
-          'Microsoft Reports (.rdlc)',
-          'IBM DB2',
-        ],
+        tags: ['C#', 'ASP.NET Web Forms', 'jQuery', 'Microsoft Reports (.rdlc)', 'IBM DB2'],
         roleText: [
           'I fully implemented 7 of the tax forms used in production as of March 2016. Additionally, I did varying amounts of work on about 10 other forms, ranging from bug fixes, to implementing large parts of entire forms. At that time, there were a total of about 25 tax forms in the entire system.',
           'Implementing a tax form including doing a web form, XML import and export, PDF reporting, extensive server-side validation based on business and legal rules, and tax form specific changes to the data access layer.',
@@ -395,8 +382,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title:
-          'Steam Generator Walker Robot Command and Monitoring Application',
+        title: 'Steam Generator Walker Robot Command and Monitoring Application',
         text: [
           'The company was building a robot (prototype) that was able to walk on the steam generator tubes wall, and was used for probe positioning. It allowed easier inspection with reduced (or eliminated) operator exposure to ionizing radiation.',
           'This part of the project refers to a WPF desktop application that interfaces with the robot, controls it, displays its position, monitors its state and complements hardware and electronics handling of edge conditions and failure states.',
@@ -411,9 +397,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       },
       {
         title: 'Other Projects',
-        text: [
-          'There are other projects I worked on that are used in the inspection process.',
-        ],
+        text: ['There are other projects I worked on that are used in the inspection process.'],
         tags: ['C#'],
         roleText: ['Mostly bug fixes. Nothing of note.'],
       },
@@ -471,9 +455,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Some applications for a few financial institutions in Croatia (banks, funds, stock exchanges).',
         ],
         tags: ['C#', 'ASP.NET Web Forms', 'Microsoft SQL Server'],
-        roleText: [
-          'I did small tasks and bug fixes on the web applications and their databases.',
-        ],
+        roleText: ['I did small tasks and bug fixes on the web applications and their databases.'],
       },
     ],
   },

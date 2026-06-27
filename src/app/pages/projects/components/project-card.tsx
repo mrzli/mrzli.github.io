@@ -11,13 +11,7 @@ export interface ProjectCardProps {
   readonly links: readonly LinkItem[];
 }
 
-export function ProjectCard({
-  title,
-  text,
-  tags,
-  roleText,
-  links,
-}: ProjectCardProps): ReactNode {
+export function ProjectCard({ title, text, tags, roleText, links }: ProjectCardProps): ReactNode {
   return (
     <Card padding='large'>
       <div className='flex flex-col gap-4'>
@@ -46,11 +40,7 @@ export function ProjectCard({
             {links.map((link) => {
               return (
                 <div key={link.href} className='flex'>
-                  <ExternalLink
-                    variant='highlight'
-                    href={link.href}
-                    label={link.label}
-                  />
+                  <ExternalLink variant='highlight' href={link.href} label={link.label} />
                 </div>
               );
             })}

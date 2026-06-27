@@ -8,12 +8,7 @@ export interface ProjectCardProps {
   readonly roleText: readonly string[];
 }
 
-export function ProjectCard({
-  title,
-  text,
-  tags,
-  roleText,
-}: ProjectCardProps): ReactNode {
+export function ProjectCard({ title, text, tags, roleText }: ProjectCardProps): ReactNode {
   return (
     <Card padding='large'>
       <div className='flex flex-col gap-4'>

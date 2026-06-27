@@ -107,14 +107,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       },
       {
         title: 'Tools',
-        skills: [
-          'React Testing Library',
-          'Mocha',
-          'Nx (monorepo)',
-          'Prisma',
-          'Maven',
-          'JUnit',
-        ],
+        skills: ['React Testing Library', 'Mocha', 'Nx (monorepo)', 'Prisma', 'Maven', 'JUnit'],
       },
       {
         title: 'Databases',
@@ -135,15 +128,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
     groups: [
       {
         title: 'Programming Languages',
-        skills: [
-          'Ruby',
-          'Python',
-          'Racket',
-          'F#',
-          'R',
-          'Octave',
-          'Fantom (JVM)',
-        ],
+        skills: ['Ruby', 'Python', 'Racket', 'F#', 'R', 'Octave', 'Fantom (JVM)'],
       },
       {
         title: 'Libraries and Frameworks',

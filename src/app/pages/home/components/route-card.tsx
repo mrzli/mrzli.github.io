@@ -9,11 +9,7 @@ export interface RouteCardProps {
   readonly description: string;
 }
 
-export function RouteCard({
-  title,
-  to,
-  description,
-}: RouteCardProps): ReactNode {
+export function RouteCard({ title, to, description }: RouteCardProps): ReactNode {
   return (
     <Link
       to={to}

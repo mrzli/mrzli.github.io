@@ -6,12 +6,9 @@ import { cn } from '../../util';
 const cardVariants = cva('rounded-2xl', {
   variants: {
     variant: {
-      default:
-        'border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900',
-      inner:
-        'border border-slate-200/80 bg-slate-100 dark:border-slate-800 dark:bg-slate-950/70',
-      highlight:
-        'border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20',
+      default: 'border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900',
+      inner: 'border border-slate-200/80 bg-slate-100 dark:border-slate-800 dark:bg-slate-950/70',
+      highlight: 'border border-slate-200/80 bg-slate-100 dark:border-cyan-900 dark:bg-cyan-950/20',
     },
     padding: {
       small: 'p-4',
@@ -40,9 +37,5 @@ export function Card({
   variant,
   padding,
 }: CardProps): ReactNode {
-  return (
-    <Tag className={cn(cardVariants({ variant, padding }), className)}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={cn(cardVariants({ variant, padding }), className)}>{children}</Tag>;
 }

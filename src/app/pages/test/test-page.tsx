@@ -11,13 +11,9 @@ export function TestPage(): ReactNode {
         <Typography variant='body'>
           <div className='flex flex-col gap-2'>
             <p>
-              Here is a list of most of my professinal experience - paid
-              projects for end clients.
+              Here is a list of most of my professinal experience - paid projects for end clients.
             </p>
-            <p>
-              List is not exhaustive, but most of the significant projects are
-              mentioned.
-            </p>
+            <p>List is not exhaustive, but most of the significant projects are mentioned.</p>
           </div>
         </Typography>
         <div className='flex flex-col gap-10'>

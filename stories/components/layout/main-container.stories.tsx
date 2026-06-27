@@ -15,9 +15,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: (
-      <div className='h-screen bg-slate-300 dark:bg-slate-800'>
-        Main container content.
-      </div>
+      <div className='h-screen bg-slate-300 dark:bg-slate-800'>Main container content.</div>
     ),
   },
 };

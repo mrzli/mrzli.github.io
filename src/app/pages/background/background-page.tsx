@@ -1,10 +1,4 @@
-import {
-  Card,
-  ExternalLink,
-  PageContainer,
-  Typography,
-  UnorderedList,
-} from '@components';
+import { Card, ExternalLink, PageContainer, Typography, UnorderedList } from '@components';
 import type { ReactNode } from 'react';
 
 import { TagCard } from './components';
@@ -23,16 +17,11 @@ export function BackgroundPage(): ReactNode {
         <Card className='md:col-span-3 lg:col-span-3' padding='large'>
           <div className='flex flex-col gap-6'>
             <div className='flex flex-col gap-2'>
-              <Typography variant='card-title-accent'>
-                Formal Education
-              </Typography>
+              <Typography variant='card-title-accent'>Formal Education</Typography>
               <Typography variant='heading-2'>
-                Faculty of Electrical Engineering and Computing (FER),
-                University of Zagreb
+                Faculty of Electrical Engineering and Computing (FER), University of Zagreb
               </Typography>
-              <Typography variant='body'>
-                Graduate Engineer of Computing
-              </Typography>
+              <Typography variant='body'>Graduate Engineer of Computing</Typography>
             </div>
 
             <UnorderedList items={EDUCATION_HIGHLIGHTS} />
@@ -44,11 +33,7 @@ export function BackgroundPage(): ReactNode {
                   {THESIS_LINKS.map((link) => {
                     return (
                       <li key={link.href}>
-                        <ExternalLink
-                          variant='highlight'
-                          href={link.href}
-                          label={link.label}
-                        />
+                        <ExternalLink variant='highlight' href={link.href} label={link.label} />
                       </li>
                     );
                   })}
@@ -61,9 +46,7 @@ export function BackgroundPage(): ReactNode {
         <Card className='md:col-span-3 lg:col-span-3' padding='large'>
           <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
-              <Typography variant='card-title-accent'>
-                Additional Learning
-              </Typography>
+              <Typography variant='card-title-accent'>Additional Learning</Typography>
               <Typography variant='heading-2'>
                 Structured learning outside formal education
               </Typography>

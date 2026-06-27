@@ -18,9 +18,9 @@ export function HomePage(): ReactNode {
             <div className='space-y-3'>
               <Typography variant='heading-1'>Goran Mržljak</Typography>
               <Typography variant='lead' className='max-w-3xl'>
-                I build and improve production web applications, with the
-                strongest recent focus on React, TypeScript, Node.js, and the
-                engineering work that makes larger codebases easier to evolve.
+                I build and improve production web applications, with the strongest recent focus on
+                React, TypeScript, Node.js, and the engineering work that makes larger codebases
+                easier to evolve.
               </Typography>
             </div>
             <div className='flex flex-wrap gap-3'>
@@ -54,9 +54,7 @@ export function HomePage(): ReactNode {
                 <p>React-first frontend or balanced full-stack roles.</p>
               </div>
               <div>
-                <Typography variant='heading-4'>
-                  Secondary backend stack
-                </Typography>
+                <Typography variant='heading-4'>Secondary backend stack</Typography>
                 <p>Spring Boot with Kotlin or Java.</p>
               </div>
             </div>
@@ -82,10 +80,7 @@ export function HomePage(): ReactNode {
                 goran.mrzljak@gmail.com
               </a>
               <div className='flex gap-3 pt-1'>
-                <IconLink
-                  to='https://www.linkedin.com/in/goran-mrzljak'
-                  icon='mdi:linkedin'
-                />
+                <IconLink to='https://www.linkedin.com/in/goran-mrzljak' icon='mdi:linkedin' />
                 <IconLink to='https://github.com/mrzli' icon='mdi:github' />
                 <IconLink
                   to='https://stackoverflow.com/users/520229/mrzli'
@@ -130,10 +125,9 @@ export function HomePage(): ReactNode {
         <Card padding='large'>
           <Typography variant='heading-2'>Recent focus</Typography>
           <Typography variant='body' className='mt-3'>
-            Most of my recent work has been in web development, but my earlier
-            background spans a much wider set of technologies and product types.
-            The routes below go into detail; this section is meant as the fast
-            scan.
+            Most of my recent work has been in web development, but my earlier background spans a
+            much wider set of technologies and product types. The routes below go into detail; this
+            section is meant as the fast scan.
           </Typography>
           <div className='mt-5 flex flex-wrap gap-2'>
             {PRIMARY_TECHS.map((tech) => {
@@ -148,8 +142,8 @@ export function HomePage(): ReactNode {
             })}
           </div>
           <Typography variant='body' className='mt-5'>
-            Placeholder: add one short sentence here later about the exact kinds
-            of teams, products, or role scope you want next.
+            Placeholder: add one short sentence here later about the exact kinds of teams, products,
+            or role scope you want next.
           </Typography>
         </Card>
       </section>
@@ -159,8 +153,8 @@ export function HomePage(): ReactNode {
           <div>
             <Typography variant='heading-2'>Explore the rest</Typography>
             <Typography variant='body' className='mt-1'>
-              If you want the quick path, start with Experience. The remaining
-              sections are there for structured detail.
+              If you want the quick path, start with Experience. The remaining sections are there
+              for structured detail.
             </Typography>
           </div>
           <Link
@@ -195,8 +189,7 @@ interface HighlightItem {
 const HIGHLIGHTS: readonly HighlightItem[] = [
   {
     title: '14+ years',
-    description:
-      'Professional software development experience across multiple domains and stacks.',
+    description: 'Professional software development experience across multiple domains and stacks.',
   },
   {
     title: 'Frontend + backend',
@@ -254,14 +247,12 @@ const ROUTE_CARDS: readonly RouteCardProps[] = [
   {
     title: 'Projects',
     to: '/projects',
-    description:
-      'Personal projects that show initiative outside client and company work.',
+    description: 'Personal projects that show initiative outside client and company work.',
   },
   {
     title: 'Background',
     to: '/background',
-    description:
-      'Education, additional learning, and a small amount of personal context.',
+    description: 'Education, additional learning, and a small amount of personal context.',
   },
 ];
 

@@ -1,9 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import {
-  type AppDependencies,
-  createAppDependencies,
-} from './app-dependencies';
+import { type AppDependencies, createAppDependencies } from './app-dependencies';
 
 export interface AppContextValue {
   readonly appName: string;

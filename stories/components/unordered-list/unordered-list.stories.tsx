@@ -1,14 +1,8 @@
-import {
-  Typography,
-  UnorderedList,
-  type UnorderedListProps,
-} from '@components';
+import { Typography, UnorderedList, type UnorderedListProps } from '@components';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 
-const TypedUnorderedList = UnorderedList as ComponentType<
-  UnorderedListProps<string>
->;
+const TypedUnorderedList = UnorderedList as ComponentType<UnorderedListProps<string>>;
 
 const meta = {
   component: TypedUnorderedList,

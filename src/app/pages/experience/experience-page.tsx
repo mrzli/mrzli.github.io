@@ -84,12 +84,10 @@ const DATA: readonly Job[] = [
           "Some 'emergency' work on an Alfresco based web app for a client very close to production deadline.",
       },
       {
-        description:
-          'Work on backend for a talent acquisition software built using Ruby.',
+        description: 'Work on backend for a talent acquisition software built using Ruby.',
       },
       {
-        description:
-          'Small project used for talent management (HR/recruitment) built with React.',
+        description: 'Small project used for talent management (HR/recruitment) built with React.',
       },
     ],
   },
@@ -221,8 +219,7 @@ const DATA: readonly Job[] = [
     timePeriod: 'JANUARY 2007 - AUGUST 2007',
     projects: [
       {
-        description:
-          'Body animation exporter, part of a larger face and body animation system.',
+        description: 'Body animation exporter, part of a larger face and body animation system.',
         tech: 'C++, 3ds Max SDK.',
         role: 'I implemented the entire body animation exporter which converted 3ds Max Biped format to a format called MPEG-4 FBA.',
       },
@@ -240,12 +237,7 @@ export function ExperiencePage(): ReactNode {
         <div key={jobIndex}>
           <h2 className='my-2 font-bold text-pink-600 dark:text-pink-500'>
             {job.jobTitleLink ? (
-              <a
-                href={job.jobTitleLink}
-                target='_blank'
-                rel='noreferrer'
-                className='underline'
-              >
+              <a href={job.jobTitleLink} target='_blank' rel='noreferrer' className='underline'>
                 {job.jobTitle}
               </a>
             ) : (

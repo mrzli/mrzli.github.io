@@ -6,16 +6,7 @@ export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
     text: [
       'You are currently viewing it. It is just a simple static website displaying information relevant to my professional life.',
     ],
-    tags: [
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'Vite',
-      'Bun',
-      'ESLint',
-      'Prettier',
-      'Storybook',
-    ],
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Bun', 'ESLint', 'Prettier', 'Storybook'],
     roleText: [
       'I did all the development. The site is static and very simple. All of the content of the pages is simply hardcoded into the components.',
     ],
@@ -32,9 +23,7 @@ export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
   },
   {
     title: 'Symbol Jump',
-    text: [
-      'A clone of a popular game called Doodle Jump. Complete and fully featured.',
-    ],
+    text: ['A clone of a popular game called Doodle Jump. Complete and fully featured.'],
     tags: [
       'Java',
       'libGDX',
