@@ -1,8 +1,8 @@
 - Direct navigation to a subpage does not work, fix it.
 - Implement exprerience page.
- - Implement experience for freelance work.
-   - Add robot company experience.
-   - Add HVAC application experience.
+- Implement experience for freelance work.
+  - Add robot company experience.
+  - Add HVAC application experience.
 - Think about what to do on the home page, and how to structure it.
 - Implement values page.
   - Implement values stub page, with routing etc.
