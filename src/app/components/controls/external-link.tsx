@@ -1,9 +1,10 @@
+import { Icon } from '@iconify/react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import type { ReactNode } from 'react';
 
 import { cn } from '../../util';
 
-const externalLinkVariants = cva('text-sm font-medium underline underline-offset-4 transition', {
+const externalLinkVariants = cva('text-sm font-medium transition flex items-center gap-1', {
   variants: {
     variant: {
       default: 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100',
@@ -32,7 +33,8 @@ export function ExternalLink({ className, variant, label, href }: ExternalLinkPr
       target='_blank'
       rel='noreferrer'
     >
-      {label} ↗
+      {label}
+      <Icon icon='mdi:arrow-top-right' aria-hidden='true' className='inline-block size-3.5' />
     </a>
   );
 }
