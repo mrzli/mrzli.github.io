@@ -1,6 +1,6 @@
 # Site readability and navigation
 
-Status: in progress
+Status: complete
 
 Created: 2026-09-14
 
@@ -156,4 +156,4 @@ spec complete only when implementation and required verification are finished.
 
 ## Completion record
 
-SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 was committed as `8a23f80`. SRN-004a was committed as `af576e5`. SRN-005 is implemented, verified, and approved for commit. SRN-006 has not started. See the task index for progress and the individual task records for verification details.
+SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 was committed as `8a23f80`. SRN-004a was committed as `af576e5`. SRN-005 was committed as `9c0ac0c`. SRN-006 completed the local consistency review without requiring application fixes. The user approved the final review on 2026-09-15. All planned work is complete. See the task index for progress and the individual task records for verification details.

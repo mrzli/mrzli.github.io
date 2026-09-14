@@ -1,6 +1,6 @@
 # Site readability and navigation tasks
 
-Status: in progress
+Status: complete
 
 Source: [Spec](./spec.md)
 
@@ -16,8 +16,8 @@ implementation prerequisites, not permission to combine tasks.
 | 3     | [SRN-003: Make Skills quicker to scan](./tasks/SRN-003-skills-layout.md)                                            | Content order and compact category rows           | Complete |
 | 4     | [SRN-004: Simplify Projects and Background cards](./tasks/SRN-004-simplify-cards.md)                                | Reduced nesting and clear subsections             | Complete |
 | 4a    | [SRN-004a: Share project details and simplify Experience contributions](./tasks/SRN-004a-shared-project-details.md) | Shared content rendering and contribution styling | Complete |
-| 5     | [SRN-005: Link homepage highlights to Experience entries](./tasks/SRN-005-project-links.md)                         | Stable project anchors and route scrolling        | Pending  |
-| 6     | [SRN-006: Review consistency and close the spec](./tasks/SRN-006-verify-close.md)                                   | Combined review and verification record           | Pending  |
+| 5     | [SRN-005: Link homepage highlights to Experience entries](./tasks/SRN-005-project-links.md)                         | Stable project anchors and route scrolling        | Complete |
+| 6     | [SRN-006: Review consistency and close the spec](./tasks/SRN-006-verify-close.md)                                   | Combined review and verification record           | Complete |
 
 ## Working rules
 
@@ -63,4 +63,4 @@ review. They do not require an application build.
 
 ## Completion
 
-SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 was committed as `8a23f80`. The user requested an Experience follow-up before SRN-005. SRN-004a was committed as `af576e5`. SRN-005 is implemented, verified, and approved for commit. SRN-006 has not started. SRN-006 will record the final review and verification limits.
+SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 was committed as `8a23f80`. The user requested an Experience follow-up before SRN-005. SRN-004a was committed as `af576e5`. SRN-005 was committed as `9c0ac0c`. SRN-006 completed the local consistency review without requiring application fixes. The user approved the final review on 2026-09-15. All planned work is complete. See SRN-006 for the final review and verification limits.
