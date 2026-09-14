@@ -4,7 +4,17 @@ export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
   {
     title: 'Personal Website',
     text: ['This website presents my professional experience, skills, projects, and background.'],
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Bun', 'ESLint', 'Prettier', 'Storybook'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vite',
+      'Bun',
+      'Oxlint',
+      'Oxfmt',
+      'Storybook',
+      'Codex',
+    ],
     roleText: [
       'I built the entire site. It is static, with content stored in TypeScript data files and React components.',
     ],
