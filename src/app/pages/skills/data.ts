@@ -63,7 +63,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
         skills: ['Git', 'GitHub', 'GitLab', 'Bitbucket'],
       },
       {
-        title: 'IDE',
+        title: 'IDEs',
         skills: ['Visual Studio Code', 'WebStorm', 'IntelliJ IDEA'],
       },
       {
@@ -118,7 +118,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
         skills: ['TFS (Microsoft)', 'SVN', 'Jazz (IBM)'],
       },
       {
-        title: 'IDE',
+        title: 'IDEs',
         skills: ['Visual Studio', 'Eclipse'],
       },
     ],
@@ -138,7 +138,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
           'Ruby on Rails',
           'Sinatra',
           'GraphQL',
-          'jQuary',
+          'jQuery',
           '3ds Max SDK',
         ],
       },

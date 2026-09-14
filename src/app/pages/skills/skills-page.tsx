@@ -10,41 +10,27 @@ export function SkillsPage(): ReactNode {
       <div className='flex flex-col gap-12'>
         <Typography variant='body'>
           <div className='flex flex-col gap-2'>
+            <p>Technologies and tools I have used, grouped by depth and recency of experience.</p>
             <p>
-              A list of various technologies and tools I worked with throughout the years, in form
-              of tags.
+              <span className='font-bold'>Extensive experience</span>: I have used the technology
+              regularly, usually for several years, and built entire projects with it.
             </p>
             <p>
-              The data is separated into sections, from greatest relevance - recent, extensive
-              experience - down to technologies I did not work on recently, or have limited
-              experience with.
+              <span className='font-bold'>Limited experience</span>: I have usually spent weeks or
+              months exploring the technology on my own, sometimes using it professionally for
+              specific tasks. It has not been part of my daily work, though my familiarity can still
+              be substantial.
             </p>
             <p>
-              <span className='font-bold'>Extensive experience</span>: I worked a lot with the
-              technology, usually for multiple years, and have built entire projects using it.
+              This overview helps readers, including recruiters, find specific skills. It includes
+              fundamentals such as HTML and CSS, even where that knowledge might be assumed.
+              Learning a technology is often easier than understanding an existing codebase, its
+              domain, or unfamiliar team practices, especially when onboarding is limited.
             </p>
             <p>
-              <span className='font-bold'>Limited experience</span>: It usually means explored the
-              technology on my own time and I spent weeks or months learning it. I sometimes even
-              used it professionally, but only in some limited instances, not as part of daily
-              routine. My familiarity with it can vary, but it is often significant.
-            </p>
-            <p>
-              This page is here to give you a quick overview, and it might be useful for a recruiter
-              to 'check out' his boxes. Many programmers will find listing languages such as HTML
-              and CSS silly, as that knowledge is implied. Additionally, learningtom hougaa a new
-              piece of technology is often the easiest thing you do on a project, significantly
-              easier than learning the codebase, the domain, and occasionally - when that part is
-              'non-standard' and onboarding is lacking - the peculiarities and details of team
-              processes and practices.
-            </p>
-            <p>
-              It may seem that I am sometimes just randomly listing everything that comes to mind.
-              For example for 'Operating Systems' I am listing all three major deskop operating
-              systems. The reason is that I have used all three for multiple years each, often
-              concurrently. In the past decade, I have mostly been using macOS but in recent years
-              my primary OS is Linux - for personal use and professional work. I am also sometimes
-              forced to use Windows, so that makes all of them.
+              I have used Windows, macOS, and Linux for several years each, often concurrently. I
+              mainly used macOS over the past decade, but Linux has become my primary system for
+              personal and professional use in recent years. I still use Windows when required.
             </p>
           </div>
         </Typography>
