@@ -9,14 +9,15 @@ layouts or adding fragment links. Each task leaves the site working and ends at
 a separate user review and manual commit checkpoint. Dependencies indicate
 implementation prerequisites, not permission to combine tasks.
 
-| Order | Task                                                                                        | Scope                                          | Status   |
-| ----- | ------------------------------------------------------------------------------------------- | ---------------------------------------------- | -------- |
-| 1     | [SRN-001: Improve reading hierarchy and Experience](./tasks/SRN-001-reading-hierarchy.md)   | Shared prose styling and Experience headings   | Complete |
-| 2     | [SRN-002: Improve navigation and keyboard access](./tasks/SRN-002-navigation.md)            | Active routes, focus, hit areas, sticky header | Complete |
-| 3     | [SRN-003: Make Skills quicker to scan](./tasks/SRN-003-skills-layout.md)                    | Content order and compact category rows        | Complete |
-| 4     | [SRN-004: Simplify Projects and Background cards](./tasks/SRN-004-simplify-cards.md)        | Reduced nesting and clear subsections          | Complete |
-| 5     | [SRN-005: Link homepage highlights to Experience entries](./tasks/SRN-005-project-links.md) | Stable project anchors and route scrolling     | Pending  |
-| 6     | [SRN-006: Review consistency and close the spec](./tasks/SRN-006-verify-close.md)           | Combined review and verification record        | Pending  |
+| Order | Task                                                                                                                | Scope                                             | Status   |
+| ----- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | -------- |
+| 1     | [SRN-001: Improve reading hierarchy and Experience](./tasks/SRN-001-reading-hierarchy.md)                           | Shared prose styling and Experience headings      | Complete |
+| 2     | [SRN-002: Improve navigation and keyboard access](./tasks/SRN-002-navigation.md)                                    | Active routes, focus, hit areas, sticky header    | Complete |
+| 3     | [SRN-003: Make Skills quicker to scan](./tasks/SRN-003-skills-layout.md)                                            | Content order and compact category rows           | Complete |
+| 4     | [SRN-004: Simplify Projects and Background cards](./tasks/SRN-004-simplify-cards.md)                                | Reduced nesting and clear subsections             | Complete |
+| 4a    | [SRN-004a: Share project details and simplify Experience contributions](./tasks/SRN-004a-shared-project-details.md) | Shared content rendering and contribution styling | Complete |
+| 5     | [SRN-005: Link homepage highlights to Experience entries](./tasks/SRN-005-project-links.md)                         | Stable project anchors and route scrolling        | Pending  |
+| 6     | [SRN-006: Review consistency and close the spec](./tasks/SRN-006-verify-close.md)                                   | Combined review and verification record           | Pending  |
 
 ## Working rules
 
@@ -62,4 +63,4 @@ review. They do not require an application build.
 
 ## Completion
 
-SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 is implemented, verified, and approved for commit. Work is paused at the user's request. SRN-005 and SRN-006 have not started. SRN-006 will record the final review and verification limits.
+SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 was committed as `8a23f80`. The user requested an Experience follow-up before SRN-005. SRN-004a is implemented, verified, and approved for commit. SRN-005 and SRN-006 have not started. SRN-006 will record the final review and verification limits.
