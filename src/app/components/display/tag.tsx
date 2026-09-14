@@ -6,7 +6,7 @@ export interface TagProps {
 
 export function Tag({ label }: TagProps): ReactNode {
   return (
-    <span className='rounded-full border border-amber-600 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-200'>
+    <span className='rounded-full border border-slate-200 bg-slate-100 px-2.5 py-0.5 text-xs leading-5 font-medium text-slate-600 dark:border-slate-700/60 dark:bg-slate-800/60 dark:text-slate-300'>
       {label}
     </span>
   );
