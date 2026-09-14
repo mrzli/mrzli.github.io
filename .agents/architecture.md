@@ -1,0 +1,26 @@
+# Architecture
+
+## Application Structure
+
+- `src/main.tsx` imports global styles and invokes `src/setup/run.tsx` to mount React, the application context, and the router.
+- Keep startup and dependency wiring under `src/setup/`. The dependency container is currently empty. Add services only when required by a feature.
+- Define routes in `src/routing/router.tsx`. `src/app/app.tsx` owns the shared layout, navigation items, and route outlet.
+- Keep pages under `src/app/pages/<page>/`, page-specific components under that page's `components/`, and structured content in its `data.ts` where practical.
+- Keep reusable UI under `src/app/components/`, shared application types under `src/app/types/`, and shared utilities under `src/app/util/`.
+- Keep imported assets under `src/assets/` and directly served files, including the downloadable CV, under `public/`.
+- Keep component examples under `stories/` and Storybook configuration under `.storybook/`.
+
+## State and Dependencies
+
+- Keep state local and lift it only when needed. Introduce global state only for shared cross-route concerns that require it.
+- Use the existing application context when application-wide dependencies are needed.
+- Minimize dependencies. Favor lightweight, maintained libraries and existing project or browser APIs when sufficient.
+- When proposing a dependency, include a short justification and tradeoff.
+- If environment configuration is needed, use `import.meta.env`. Only expose client-safe variables through the `VITE_` prefix. Frontend bundles must not contain secrets.
+
+## Routing and Deployment
+
+- Use React Router links for internal navigation and anchors for external URLs, contact links, and static downloads.
+- Keep the router basename aligned with Vite's base URL.
+- The build copies `dist/index.html` to `dist/404.html` to support direct navigation on GitHub Pages. Preserve this behavior when changing build or routing configuration.
+- `.github/workflows/main.yml` builds and deploys to GitHub Pages on pushes to `master` or manual dispatch.
