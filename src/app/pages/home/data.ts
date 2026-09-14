@@ -23,7 +23,7 @@ export const WORK_HIGHLIGHTS: readonly WorkHighlight[] = [
     title: 'Building monitoring & control',
     focus: 'Product development',
     description:
-      'Developed React interfaces and supporting backend changes for a multinational’s HVAC platform, helping bring the product toward its first release.',
+      "Developed React interfaces and supporting backend changes for a multinational's HVAC platform, helping bring the product toward its first release.",
   },
 ];
 

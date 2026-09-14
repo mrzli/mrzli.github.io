@@ -24,12 +24,12 @@ export function HomePage(): ReactNode {
                 I build web applications and make complex codebases easier to work with.
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                My main tools are React, TypeScript, and Node.js. I work across the stack, from
-                interfaces and APIs to databases, with experience taking projects from scratch to
-                production and improving systems already in use.
+                My main tools are React, TypeScript, and Node.js. I work across interfaces, APIs,
+                and databases, build applications from scratch to production and improve systems
+                already in use.
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                I’m comfortable with both AI agent-assisted development and writing code without AI
+                I'm comfortable with both AI agent-assisted development and writing code without AI
                 assistance.
               </Typography>
             </div>
@@ -139,13 +139,13 @@ export function HomePage(): ReactNode {
         <Card as='section' padding='large' className='space-y-4'>
           <Typography variant='heading-2'>Working together</Typography>
           <Typography variant='body'>
-            I’m interested in hands-on senior development work, whether frontend-only, backend-only,
-            or full-stack. I also bring substantial earlier experience with Kotlin, Java, and Spring
+            I'm interested in hands-on senior development work, whether frontend-only, backend-only,
+            or full-stack. I also have substantial earlier experience with Kotlin, Java, and Spring
             Boot.
           </Typography>
           <Typography variant='body'>
             Alongside delivery, I contribute to architecture, code reviews, testing, and developer
-            tooling. I’ve worked independently and in larger teams, including mentoring, onboarding,
+            tooling. I've worked independently and in larger teams, including mentoring, onboarding,
             and interviewing developers.
           </Typography>
           <Card variant='highlight' padding='small' className='space-y-2'>
@@ -153,7 +153,7 @@ export function HomePage(): ReactNode {
               Contract work
             </Typography>
             <Typography variant='body'>
-              B2B contracts, full-time, part-time, or fixed-price projects. Remote, with hybrid work
+              B2B contracts for full-time, part-time, or fixed-price work. Remote, with hybrid work
               possible in Zagreb.
             </Typography>
             <a
