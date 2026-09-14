@@ -11,7 +11,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Large HVAC System Site Monitoring and Control Web Application',
         text: [
-          'An integrated application for monitoring and controlling HVAC equipment across entire buildings and sites. Developed for a large multinational. The software developed is part of a system including HVAC equipment offered as a full solution to customers operating facilities such as hotels.',
+          'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
+          'In a software engineering context and my experience this was not a complicated project, but required a level of patience for a while when it came to fully understanding the domain and use some of the technologies and tooling native that domain.'
         ],
         tags: [
           'React',
@@ -31,13 +32,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'ChatGPT',
         ],
         roleText: [
-          'I developed React components, implemented UI designs, and extended existing features, including backend changes needed to support them. My work combined feature delivery and resolving application issues within the FIN Framework ecosystem, helping bring the product toward its first release.',
+          'I did normal web development work. I was brought onboard to help an existing team which worked on the project for some time. I developed some sections of the frontend, implemented components and controls, aligned to UI designs, fixed issues as the arose or were assigned to me.',
         ],
       },
       {
         title: 'Automated Warehouse Robotics System Web Application',
         text: [
-          'A web application for managing robots and robot fleets within an integrated warehouse automation system. The system supports goods handling and movement within large warehouses, enabling robots to operate autonomously for extended periods.',
+          'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
+          'This was very complicated project overall, dealing with automation, planning, orhestration of warehouse robots, computer vision etc. I dealt almost exclusively with the frontend. The frontend itself had several parallel repos and branches that needed to be maintained simultaneously. Each had around 100kloc, although much of the code was similar between the versions.',
+          'Several dozen people worked actively on it. Frontend was handled by myself and one other developer. There was no clear seniority here. He was with the company for several years before I came along and had greater domain knowledge. I had greater software development breadth and depth of knowledge due to more more overall years and more diverse experience, and different approach to work overall.'
         ],
         tags: [
           'Angular',
@@ -53,8 +56,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'ChatGPT',
         ],
         roleText: [
-          'I independently completed a challenging Angular migration from version 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. The migration’s feasibility was initially uncertain, but I completed it without observed regressions, removing a major blocker for the system’s security audit.',
-          'I carefully organized the changes so the migration could be repeated across related robot and fleet-management applications and branches. I also resolved application issues and implemented client-requested features, including a simplified dock-monitoring and truck-reception interface, and frontend support for pallet stacking and related robot operations.',
+          "I was brought in to improve the project frontend overall, and in particular to resolve a major blocking issue they had with their software.",
+          "I independently migrated the application from Angular 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. The migration's feasibility was initially uncertain, but I completed it without observed regressions, removing a major blocker for the system's security audit.",
+          'I organized the changes so the migration could be repeated across related robot and fleet management applications and branches. I also fixed issues and implemented client requests, including a simpler interface for dock monitoring and truck reception, and frontend support for pallet stacking and related robot operations.',
         ],
       },
       {

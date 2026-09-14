@@ -10,10 +10,8 @@ export function ExperiencePage(): ReactNode {
       <div className='flex flex-col gap-12'>
         <Typography variant='body'>
           <div className='flex flex-col gap-2'>
-            <p>
-              Here is a list of most of my professinal experience - paid projects for end clients.
-            </p>
-            <p>List is not exhaustive, but most of the significant projects are mentioned.</p>
+            <p>Selected paid client projects from my professional experience.</p>
+            <p>This list covers most of my significant projects, but is not exhaustive.</p>
           </div>
         </Typography>
         <div className='flex flex-col gap-10'>
