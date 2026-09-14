@@ -15,8 +15,7 @@
     "fix": "bun run fmt && bun run lint:fix",
     "check": "bun run fmt:check && bun run lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "backport": "./.setup/backport.sh . ../../templates/template-react"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
