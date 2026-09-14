@@ -46,45 +46,47 @@ export function HomePage(): ReactNode {
             </div>
           </div>
 
-          <div className='flex flex-col items-start gap-4 border-t border-slate-200 pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6 dark:border-slate-800'>
+          <div className='flex items-start gap-4 border-t border-slate-200 pt-6 lg:flex-col lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6 dark:border-slate-800'>
             <img
               alt='Goran Mržljak'
               src={profileImage}
               width={176}
               height={176}
-              className='size-32 rounded-2xl object-cover sm:size-44'
+              className='size-24 shrink-0 rounded-2xl object-cover sm:size-44'
             />
-            <Typography variant='body' className='flex items-center gap-1.5'>
-              <Icon icon='mdi:map-marker-outline' aria-hidden='true' className='size-4' />
-              Zagreb, Croatia
-            </Typography>
-            <div className='flex flex-col items-start gap-2'>
-              <a
-                href='mailto:goran.mrzljak@gmail.com'
-                className='text-sm font-medium break-all text-amber-700 hover:underline dark:text-cyan-300'
-              >
-                goran.mrzljak@gmail.com
-              </a>
-              <a href='tel:+385912243145' className='text-sm hover:underline'>
-                +385 91 224 3145
-              </a>
-            </div>
-            <div className='flex gap-3'>
-              <IconLink
-                to='https://www.linkedin.com/in/goran-mrzljak'
-                icon='mdi:linkedin'
-                label='LinkedIn'
-              />
-              <IconLink to='https://github.com/mrzli' icon='mdi:github' label='GitHub' />
-              <IconLink
-                to='https://stackoverflow.com/users/520229/mrzli'
-                icon='mdi:stackoverflow'
-                label='Stack Overflow'
-              />
+            <div className='min-w-0 space-y-4'>
+              <Typography variant='body' className='flex items-center gap-1.5'>
+                <Icon icon='mdi:map-marker-outline' aria-hidden='true' className='size-4' />
+                Zagreb, Croatia
+              </Typography>
+              <div className='flex flex-col items-start gap-2'>
+                <a
+                  href='mailto:goran.mrzljak@gmail.com'
+                  className='text-sm font-medium break-all text-amber-700 hover:underline dark:text-cyan-300'
+                >
+                  goran.mrzljak@gmail.com
+                </a>
+                <a href='tel:+385912243145' className='text-sm hover:underline'>
+                  +385 91 224 3145
+                </a>
+              </div>
+              <div className='flex gap-3'>
+                <IconLink
+                  to='https://www.linkedin.com/in/goran-mrzljak'
+                  icon='mdi:linkedin'
+                  label='LinkedIn'
+                />
+                <IconLink to='https://github.com/mrzli' icon='mdi:github' label='GitHub' />
+                <IconLink
+                  to='https://stackoverflow.com/users/520229/mrzli'
+                  icon='mdi:stackoverflow'
+                  label='Stack Overflow'
+                />
+              </div>
             </div>
           </div>
         </div>
-        <dl className='mt-8 grid gap-5 border-t border-slate-200 pt-6 sm:grid-cols-3 dark:border-slate-800'>
+        <dl className='mt-8 grid gap-5 border-t border-slate-200 pt-6 lg:grid-cols-3 dark:border-slate-800'>
           <div>
             <Typography as='dt' variant='card-title-muted'>
               Professional experience

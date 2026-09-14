@@ -8,16 +8,16 @@ export interface WorkHighlight {
 
 export const WORK_HIGHLIGHTS: readonly WorkHighlight[] = [
   {
-    title: 'Warehouse robotics',
-    focus: 'Modernization',
-    description:
-      'Migrated a robot-management application from Angular 8 to 18, resolving over a thousand errors and removing a major blocker for its security audit.',
-  },
-  {
     title: 'Marketing integration',
     focus: 'Full-stack delivery',
     description:
       'Built an Eloqua messaging integration with React and NestJS, including authentication, asynchronous message processing, and extensive backend tests.',
+  },
+  {
+    title: 'Warehouse robotics',
+    focus: 'Modernization',
+    description:
+      'Migrated a robot-management application from Angular 8 to 18, resolving over a thousand errors and removing a major blocker for its security audit.',
   },
   {
     title: 'Building monitoring & control',
