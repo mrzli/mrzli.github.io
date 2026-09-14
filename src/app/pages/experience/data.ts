@@ -2,9 +2,9 @@ import type { ExperienceSectionProps } from './components';
 
 export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
   {
-    title: 'Freelance software developer / Self Employed',
+    title: 'Freelance Software Developer / Self-Employed',
     location: 'Remote',
-    role: 'Full Stack Web Developer (Primarily)',
+    role: 'Primarily Full-Stack Web Developer',
     from: { year: 2016, month: 1 },
     to: 'Present',
     projects: [
@@ -64,10 +64,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Oracle Eloqua to Mobile Messaging Integration',
         text: [
-          'Oracle Eloqua is a cloud-based B2B marketing automation platform that lets users design complex marketing campaigns using a visual drag-and-drop interface.',
-          'It provides core functionality through native nodes, while also supporting externally developed integrations and extensions available via the Oracle Cloud Marketplace.',
-          'This project represents an integration of Oracle Eloqua with a mobile messaging platform, allowing end users to send mobile messages (such as SMS and WhatsApp) as part of their marketing campaigns.',
-          'It is a medium sized project, with fairly complex business logic and requirements.',
+          'Oracle Eloqua is a cloud-based B2B marketing automation platform for designing campaigns through a visual drag-and-drop interface. Alongside its built-in nodes, it supports third-party integrations and extensions through the Oracle Cloud Marketplace.',
+          'This integration connects Eloqua to a mobile messaging platform, allowing users to send SMS and WhatsApp messages as part of their campaigns. It was a medium-sized project with complex business logic and requirements.',
         ],
         tags: [
           'React',
@@ -89,40 +87,35 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Nx (monorepo)',
         ],
         roleText: [
-          'This project is one of my favorites, and I am very proud of it. I will explain why. It also showcases my approach to software development and problem solving very well. This is the reason why I this will be a lengthy description.',
-          'I implemented the entire project, except the CI/CD pipeline which could have been done in isolation, and was delegated to another developer.',
-          'As difficult it is to believe that something involving Oracle could be interesting to do, this was actually a very interesting, challenging and rewarding project to work on. It was sufficiently large to meaningfully feature a lot of different aspects of software development, and sufficiently small to be able to implement it completely by myself, which is a rare combination.',
-          'As is almost always the case, not all requirements were clear, but the high level goals were understandable, achievable, and provided a good direction for the project. This allowed me to work on the project efficiently, and with a good degree of autonomy, while still being able to communicate with the client and clarify requirements when necessary, and periodically demo the progress being made.',
-          'The project was meant to be implemented in the JavaScript ecosystem, which is why I was hired, and I would have made the same choice. Another recommendation was to use MySQL as the database, which was not a hard requirement, but was fine by me. Other than that, I had complete freedom to choose the technology stack, how to structure the project, and how to work on it on a day-to-day basis.',
-          'It worked very well. The most difficult part was parsing Oracle documentation, but that was a one-time effort. The development process was very smooth after that. I used a monorepo structure, powered by Nx. I choose React for frontend, Redux / redux-observable for state management and API calls, NestJS for backend. I used Prisma for ORM.',
-          'The integration was a total of about 20k lines of very tight code, with maybe 1-2k of those being tests. The application was relatively complicated needed to handle two-way communication between Oracle Eloqua and the integration backend, two-way commnication with the mobile messaging platform, and a frontend for the end users to configure and monitor the integration which ran inside Oracle Eloqua web client as an IFrame. All of this communication was asynchronous, and the integration needed to handle large volumne of messages - hundreds of thousands per minute - without any loss or issues. This included collecting information about message deliveries and failures (reported via webhooks), and generation of related statistics.',
-          'I also did load testing at the final stages of the project, which revealed multipe race condition issues. All were my fault, some were caused by mistakes in my code, and one was even caused by the fact that a Prisma function call (which did database write and then read) was not atomic on the database level, which was surprising to me. Once detected, it was easily resolved by using a database transaction, but it was a good reminder that even when using an ORM, you needs to be aware of what is actually happening on the database level. Other were also relatively straighforward to fix once detected. I am mentioned this because these kinds of issues are usually very difficult to resovele, and sometimes completely intractable. Here, because the code was well crafted and I had a complete understanding of the code base, and a full mental model of the application, they were quite simple to fix. I am proud of this and I think it clearly showcases the importance and benefits of good software development practices.',
-          'Related to above, I added extensive tests for the backend. Besides unit tests, I had at least one test for each endpoint, and I had tests for all the complicated async flows I could think of, especially those I had race conditions on. I did not use in-memory database, but I architected the app so that both database and each external service can be cleanly mocked. Since they were code-only, they ran lightning fast, and provided a very good safety net.',
-          'Also, the application had extensive logging, critical for debugging and monitoring, and it was invaluable for detecing the race conditions mentioned above.',
-          'One additional thing to mention is the authentication protocols used. Four or five different protocols were needed in total. I needed to implement OAuth 2.0 for communication from the integration to Oracle Eloqua, OAuth 1.0a for Eloqua to the integration, API key based authentication for the integration to the mobile messaging platform, and (I believe) Basic Auth for the other direction - webhooks from the mobile messaging platform to the integration. Even frontend endpoints needed to be protected, so I implemented JWT token based authentication for the frontend to backend communication.',
-          'The integration was deployed to Azure, for both testing and production. But, as I said, I did not do that part.',
+          'I implemented the entire integration except the CI/CD pipeline, which was handled separately by another developer. It remains one of my favorite projects: broad enough to involve many aspects of software development, but small enough for me to build on my own.',
+          'The high-level goals were clear and achievable, even though some requirements needed clarification. I worked autonomously, parsed the documentation, clarified details with the client, and gave regular progress demos.',
+          'The client required JavaScript and recommended MySQL, choices I was happy with. Otherwise, I was free to choose the stack, structure, and development process. Understanding the Oracle documentation was the hardest initial task. Development went smoothly after that.',
+          'I used an Nx monorepo, React for the frontend, Redux and redux-observable for state management and API calls, NestJS for the backend, and Prisma as the ORM.',
+          'The codebase was about 20,000 lines, including roughly 1,000-2,000 lines of tests. It handled asynchronous, two-way communication with both Eloqua and the messaging platform. A React frontend embedded in the Eloqua web client as an iframe let users configure and monitor the integration.',
+          'The integration needed to process hundreds of thousands of messages per minute without loss, collect delivery and failure reports through webhooks, and generate statistics.',
+          'Load testing near the end of development revealed several race conditions caused by mistakes in my implementation. One involved a Prisma call that wrote and then read data without an atomic database operation. I fixed it with a transaction, a reminder to understand the database behavior behind ORM calls. The other issues were also straightforward to fix once detected. Knowing the whole codebase and its execution flows made these usually difficult problems manageable.',
+          'I added extensive backend tests: unit tests, at least one test per endpoint, and tests for the complex asynchronous flows I could identify, especially those where race conditions had occurred. I designed the database and external service interfaces to be mockable rather than using an in-memory database. This kept the tests fast and provided a useful regression safety net.',
+          'Extensive logging supported debugging and monitoring and helped identify the race conditions.',
+          'Authentication included OAuth 2.0 for requests to Eloqua, OAuth 1.0a for requests from Eloqua, API keys for requests to the messaging platform, and, as I recall, Basic Auth for incoming messaging webhooks. I used JWT authentication between the frontend and backend.',
+          'Another developer handled deployment to Azure for testing and production.',
         ],
       },
       {
         title: 'Mobile Application for Managing Electricity Consumption',
         text: [
-          'A mobile application targeted to the general public of Norway, built for a Norwegian client. It allows users to monitor and manage their electricity consumption, choose between electricity providers, and provides various statistics and insights.',
+          'A mobile application built for a Norwegian client, to be used by the Norwegian public. Users can monitor and manage electricity consumption, choose providers, and view statistics and insights.',
         ],
         tags: ['React Native', 'TypeScript', 'Expo', 'Jest', 'ESLint', 'Prettier'],
         roleText: [
-          'I was a frontend-only developer on the React Native mobile application. I was part of a team of 8 developers, and was responsible for implementing some of the screens and features, nothing remarkable.',
+          'I worked exclusively on the React Native frontend as part of a team of eight developers, implementing screens and features.',
         ],
       },
       {
         title: 'Mobile Fueling Management System',
         text: [
-          'This was a very large project used for managing the business and operations of a market leading mobile fueling company from California. It is a "startup", which at the time had several hundred employees and exponential growth.',
-          'Project involved doezens of developers.',
-          'As part of the system, there were several web applications built with Angular and React, mobile applications (both iOS and Android), and a backend system connecting all of these together, built on top of Node (Express) with a MongoDB database.',
-          'I had ownership of some parts of the system, and on occasion I was required to do code changes that would affect the functioning of the entire system, which required careful planning and execution, and - in coordination with other developers and PMs - managed to implement those without signifnicant (or any) issues - no easy task on that codebase.',
-          'I was required to do occasiona migrations on the production Mongo database via JavaScript scripts, and with careful testing and work process, was able to do those without any errors during my time at the company. Again, not an easy thing to do, with hich cost of errors.',
-          'I was the driver for some code quality improvements where that was possible, such as how we do testing, and the introduction to monorepo.',
-          'Most of my technical work was on the backend Node apllication - all layers between the REST API down to and including the database (~70%). The rest of the time, I was working on the admin web application written in Angular (~30%). I did not work on mobile applications.',
+          'A large system for managing the business and operations of a leading mobile fueling company in California. At the time, the startup had several hundred employees and was growing exponentially.',
+          'Dozens of developers worked on the system, which included Angular and React web applications, iOS and Android apps, and a shared Node.js backend built with Express and MongoDB.',
+          "The system was already in production and central to the company's operations.",
         ],
         tags: [
           'Angular',
@@ -136,15 +129,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'MongoDB',
         ],
         roleText: [
-          'I was a full-stack developer, with more focus on the backend.',
-          'I was also involved with interview process for new developers, as well as onboarding and mentoring.',
-          'At the time the system was already fully in production, and it was the central product for the company, which depended on it for its business operations.',
+          'I worked across the stack, spending about 70% of my time on the Node.js backend, from the REST API to the database, and 30% on the Angular administration app. I did not work on the mobile apps.',
+          'I owned parts of the system and occasionally made changes affecting the whole application. Careful planning and coordination with developers and project managers allowed me to deliver these without significant issues.',
+          'I also ran production MongoDB migrations using JavaScript scripts. Errors would have been costly, but careful testing and execution kept these migrations error-free during my time at the company.',
+          'I drove improvements to testing practices and the introduction of a monorepo where the codebase allowed it. I also interviewed, onboarded, and mentored developers.',
         ],
       },
       {
         title: 'Insurance Web Platform',
         text: [
-          'A medium sized web application (100k lines of code for frontend alone), in the insurance domain, built for a UK client. This was a kind of insurance platform, designed to connect different parties involved in the insurance process, used to search for insurance schemes etc.',
+          'A web platform built for a UK client to connect parties in the insurance process and search for insurance schemes. The frontend alone contained about 100,000 lines of code.',
         ],
         tags: [
           'React',
@@ -161,30 +155,27 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Cypress',
         ],
         roleText: [
-          'I was a frontend-only developer on the project. I got involved after the project had been under development for a year and a half. For most of my time on the project, I was the only frontend developer.',
-          'The frontend was in a pretty rough state when I joined. My job was refactoring large chunks of the frontend code base, from the UI down to the backend API interface.',
-          'This included refactoring of entire app sections, fixing application-wide typing issues, complete refactroging of the state management system and async (API calling) infrastructure, refactoring high level application architecture, cleaning up and improving the development and build toolchain (scripts, Webpack), introducing formatting and linting tools, adding some tests (I had good coverage of the utility code, but added onlu basic testing for components and a handful of Cypress tests for more complicated flows.',
-          'I also incuded Storybook, and with its help created component library, which was a wrapper around Material UI, but matched existing application design and styling.',
-          'And of course, when necessary, I did new development and fixes.',
+          'I joined after a year and a half of development and worked exclusively on the frontend. For most of my time on the project, I was the only frontend developer.',
+          'The frontend needed substantial restructuring, from the UI to the backend API interface. I refactored entire application sections, fixed typing issues throughout the app, rebuilt state management and asynchronous API handling, and reorganized the top-level architecture.',
+          'I improved development scripts and the Webpack build, introduced formatting and linting, and added tests. Utility code had good coverage, while component coverage was basic, with a handful of Cypress tests for more complex flows.',
+          'Using Storybook, I built a component library around Material UI that matched the existing application design. I also developed features and fixed bugs.',
         ],
       },
       {
         title: 'Accounting Web Application',
         text: [
-          'A large application for accounting and transactions built for a medium-sized Finnish company. The app contains dozens of screens with very complex business logc, data display and editing functionality.',
+          'A large accounting and transactions application for a medium-sized Finnish company, with dozens of screens containing complex business logic and data viewing and editing features.',
         ],
         tags: ['Angular', 'TypeScript', 'Jest', 'RxJS', 'AG Grid'],
         roleText: [
-          'I worked exclusively on the frontend.',
-          'There was some rudimentary development done before I got involved, but not much - some sporadic prototype work by a single person. After a colleague and I joined the project, the two of did most of the initial work, and were able to make some architectural choices.',
-          'After a few months, the team quickly grew to more than 10 people on the frontend alone. After this, my role was essentially that of a senior developer. I was responsible for some application-wide changes. I implemented some subsystems using patterns that were reused throughout the project, also some larger features and screens, down to simpler maintanance work when required.',
+          'I worked exclusively on the frontend. A colleague and I joined after limited prototype development and did most of the initial implementation, with room to make architectural decisions.',
+          'Within a few months, the frontend team grew to more than ten people. As a senior developer, I made application-wide changes, implemented subsystems and reusable patterns, built larger features and screens, and handled maintenance.',
         ],
       },
       {
-        title: 'Graveyards Management Web Application',
+        title: 'Graveyard Management Web Application',
         text: [
-          'This was a relatively small multi-tenant web application used for managing graveyards and graves, information on the deceased and the owners.',
-          'It featured interactive maps with geospatial data for each grave, implemented with the help of OpenLayers.',
+          'A small multi-tenant application for managing graveyards, graves, and information about the deceased and grave owners. It included interactive OpenLayers maps with geospatial data for each grave.',
         ],
         tags: [
           'Vue',
@@ -203,32 +194,30 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Docker Swarm',
         ],
         roleText: [
-          'I implemented almost the entire application (95% or more).',
-          'I used Vue with TypeScript for the frontend, Vuex for state management, Vuetify for UI components, OpenLayers for the interactive maps, and Jest for unit testing.',
-          'I built the backend using Kotlin Spring Boot. Liquibase for database setup and migrations. PosgtreSQL was the production database, while H2 in-memory database was used for development. These could be easily swapped due to Liquibase abstractions.',
-          'Jasper Reports were used for PDF reporting.',
-          'I implemented detailed backend integration tests using Jest and TypeScript. It is unconventional, but I did it as an expriement, and since such tests are more flexible and familiar to me, it worked very well. They test entire backend stack, the tests covered large part of the backend functionality, and worked reasonably well with an in-memory H2 database.',
-          'Docker and Docker Swarm was used only for development, to try to automate certain tasks and experiment with a more automated deployment process.',
-          'In the end, for the purposes of this project, a semi-manual deployment process was sufficient. Most of it was handled with scripts, but it still required a manual action to deploy.',
+          'I implemented at least 95% of the application.',
+          'The frontend used Vue and TypeScript, Vuex for state management, Vuetify for UI components, OpenLayers for maps, and Jest for unit tests.',
+          'I built the backend with Kotlin and Spring Boot, using Liquibase for database setup and migrations. PostgreSQL served production and an in-memory H2 database supported development. Liquibase abstractions made switching between them straightforward. Jasper Reports handled PDF reporting.',
+          'As an experiment, I wrote backend integration tests in Jest and TypeScript, tools I found flexible and familiar. The tests exercised the full backend stack, covered much of its functionality, and worked well with an in-memory H2 database.',
+          'I used Docker and Docker Swarm only in development to automate tasks and experiment with deployment. Production used a partly manual process: scripts handled most steps, but deployment required a manual action. This was sufficient for the project.',
         ],
       },
       {
         title: 'Parking Mobile Application',
         text: [
-          'A mobile application for buying parking tickers for lots and garages in the city of Zagreb (capital of Croatia). To be used by general public.',
+          'A public mobile application for buying parking tickets for lots and garages in Zagreb, Croatia.',
         ],
         tags: ['Java'],
         roleText: [
-          'I implemented the central message hub of this system - the part that connects all the system endpoints, and represents the top layer of the backend.',
-          'This part includes the web API (REST), to be used by the mobile frontends (Android and iOS), backend validations, and it directly interfaces with parking service provider APIs. It also communicates with the payment providers - indirectly, through a component built by another programmer, and to the data access layer.',
-          'I did not work on the mobile application itself.',
+          'I built the central message hub connecting the system endpoints and forming the top layer of the backend.',
+          'This included the REST API for the Android and iOS apps, backend validation, and direct integration with parking provider APIs. It also connected to the data access layer and to payment providers through a component built by another developer.',
+          'I did not work on the mobile apps themselves.',
         ],
       },
       {
         title: 'NIAS (SSO System) Interface',
         text: [
-          'Croatia has a national Single Sign-On system called NIAS (National Identification and Authentication System). Multiple accredited providers can provide authentication services to NIAS, government itself, but also banks and other trusted providers.',
-          "This project represents integration of Croatian Postal Service as a provider into NIAS. It allows an existing user of NIAS to log into the client's (Postal Service's) system and have it validate user's credentials.",
+          "NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. Accredited authentication providers include the government, banks, and other trusted organizations.",
+          "This project integrated the Croatian Postal Service as a NIAS provider and allowed existing NIAS users to sign in to the Postal Service's system and have their credentials validated.",
         ],
         tags: ['Java', 'JSP', 'SOAP'],
         roleText: ['I implemented the entire project.'],
@@ -236,27 +225,24 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Government Payments Validation Component',
         text: [
-          'I was tasked to create a Java component (JAR file) that is used to validate input data correctness for payments to the Croatian government, government agencies, local and regional administrations etc.',
-          'Invoices have several parts that need to be validated, either in isolation, or in relation to other parts. This includes description, destination account, dates, so-called "model" and "call-to-number" fields and so on.',
-          'The validation rules needed to be easily configurable to accommodate changes in the rules.',
-          'The component was used as a part of a larger system, but was developed and could be tested completely in isolation.',
-          'The requirements were clearly defined because there are existing rules and regulations on how these payments need to be handled. This was specified in a document about 180 pages long. About 30 pages were rule specifications, the rest were relevant tables and data listings.',
-          'Conceptually, the component works simply by accepting a structured list of invoice data, and outputs a structured list of validation errors and warnings (if any), with all the relevant data attached to each issue.',
+          'A Java component (JAR) for validating payments to the Croatian government, agencies, and local and regional administrations.',
+          'It checked invoice fields individually and in combination, including descriptions, destination accounts, dates, and the "model" and "call-to-number" fields. The rules needed to be easy to reconfigure when requirements changed.',
+          'The component belonged to a larger system but could be developed and tested independently. It accepted structured invoice data and returned validation errors and warnings with details for each issue.',
+          'Requirements came from a document of about 180 pages: roughly 30 pages of rules, with supporting tables and data making up the rest.',
         ],
         tags: ['Java', 'JUnit'],
         roleText: [
-          'This was actually a very small project. I believe it was in the very low thousands of lines of code. It took less than two weeks to implement, with extensive unit tests.',
-          "I give it so much detail because it was one of my favorite pieces of work to do and is a good example of how well and quickly things can go when you don't have to deal with legacy issues, and you have clear requirements from beginning to end.",
-          'I implemented all of it. I read the requirements document, converted all the information to a large (about 3k lines) JSON configuration file covering all the rules, implemented the code that parses it and implements the validation.',
-          'Since the validation logic is quite complicated and the component can be tested in isolation, this is one of the best cases of a project where unit tests are very useful, very important and relatively straightforward to implement. There was a large number of tests covering all the scenarios I could think of.',
-          'The first batch of detailed manual tests done by QA releved some error, about 3 out of a 100 tested scenarios failed. Whoever did those tests did an amazing job, and provided a well structured Excel file with test results. I converted those results to CSV, and created a test context which parses it, and converts each scenario listed in the CSV to a test. It was trivial to fix the 3 failing tests, and I also had all the scenarios that passed manual testing covered by unit tests and protected against regressions.',
-          'After the above, I was very confident in the quality of the component. There were no more reported issues while I worked for that client, and probably ever since. Had there been another batch of manual tests done in a similar manner, I would just repeat the same thing (or add new cases to existing CSV), and be essentially certain that all checked scenarios would work in production, and never break in the future. It was extremely satisfying to do that work.',
+          'I implemented the entire component in less than two weeks, including extensive unit tests. As I recall, it contained a few thousand lines of code. Clear requirements and no legacy constraints made it one of my favorite projects.',
+          'I translated the requirements into a JSON configuration file of about 3,000 lines, then wrote the code to parse it and apply the validation rules.',
+          'The complex logic and isolated interface made unit tests especially useful and straightforward to write. I covered all the scenarios I could identify.',
+          'Detailed manual testing by QA found about three failures in 100 scenarios. The results arrived in a well-structured Excel file, which I converted to CSV and used to generate automated tests. I fixed the three failures and gained regression coverage for every scenario QA had checked.',
+          'No further issues were reported while I worked for the client. Further QA results in the same format could have been added to the CSV to extend coverage. Having a repeatable way to turn manual checks into regression tests made this work particularly satisfying.',
         ],
       },
       {
         title: 'EU Roaming Usage and Traffic Tracking Web Application',
         text: [
-          'This was a system built to track roaming usage for the largest Croatian telecom, commissioned during the time of significant EU roaming changes. It was used to provide stats on use, and help detect any abuse.',
+          "A roaming usage tracking system for Croatia's largest telecom, commissioned during significant changes to EU roaming rules. It provided usage statistics and helped detect abuse.",
         ],
         tags: [
           'Java',
@@ -268,14 +254,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Maven',
         ],
         roleText: [
-          'I was a backend-only developer on this project. I believe frontend was done in AngularJS, but I was not involved in that part.',
-          'I implemented the entire backend, from the REST API, down to the repository (data access layer). I also implemented the reporting system, which was based on Jasper Reports.',
+          'I worked exclusively on the backend. I believe the frontend used AngularJS, but I was not involved in it.',
+          'I implemented the entire backend, from the REST API to the repository layer, and the reporting system using Jasper Reports.',
         ],
       },
       {
         title: 'e-Learning Web Application (MVP)',
         text: [
-          'This was a platform for online learning, which - among other features - allowed user to view video courses, and online meetings with whiteboards. It was not a fully-featured commercial produce yet, just an MVP.',
+          'An online learning MVP with video courses and online meetings with whiteboards. It had not yet become a full commercial product.',
         ],
         tags: [
           'AngularJS',
@@ -289,22 +275,22 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Veeting Rooms',
         ],
         roleText: [
-          'Besides some initial work by other developers, I implemented the entire application. I also handled deployment, communication with clients and I was actively involved in the development of requirements.',
+          'After some initial work by other developers, I implemented the rest of the application. I also handled deployment, communicated with clients, and helped define requirements.',
         ],
       },
       {
         title: 'Other Projects',
         text: [
-          'Simple service used for exporting data from database in JSON format, built using C# and WCF. The target database is Microsoft SQL Server.',
-          'Some emergency work on an Alfresco based web app for a client very close to production deadline.',
-          'Work on backend for a talent acquisition software built using Ruby.',
-          'Small project used for talent management (HR/recruitment) built with React.',
+          'A C# and WCF service for exporting Microsoft SQL Server data as JSON.',
+          'Urgent fixes to an Alfresco web application shortly before its production deadline.',
+          'A Ruby backend for talent acquisition software.',
+          'A small React application for talent management and recruitment.',
         ],
         tags: ['C#', 'WCF', 'Ruby', 'React', 'Java', 'Alfresco'],
         roleText: [
-          'I did the first service mentioned completely by myself.',
-          'The Alfresco work was just some bug fixing for a couple of weeks. It would not usually be worth mentioning, but it is an interesting example of a project I was brought onto literally a week or two before production, to a code base and the platform (Alfresco) I was unfamiliar with. I did help them, and the client was satisfied with my help. The help was not groundbreaking, but I was able to fix the problems they needed fixing at that time. This provided an intro to additional work for the same client. This is not the type of work I usually do, and would not normally accept doing.',
-          'The last two projects were small projects, each lasting several weeks. The work on these projects was split evenly between me and another programmer.',
+          'I built the data export service on my own.',
+          'I joined the Alfresco project one or two weeks before production, with no prior knowledge of its codebase or platform. I spent a couple of weeks fixing the issues the client needed resolved. The client was satisfied, which led to further work. This kind of last-minute assignment is unusual for me and not work I would normally accept.',
+          'The two talent management projects each lasted several weeks. Another developer and I split the work evenly.',
         ],
       },
     ],
@@ -319,19 +305,18 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: "Croatia's Ministry of Finance e-Tax Web Application",
         text: [
-          'This it a large scale product, with 1M+ daily views.',
-          'It is the official product that allows citizens and businesses in Croatia to submit their tax forms electronically. It supports many different tax forms to handle all the relevant types of tax reporting. The application has many other features, but tax reporting (form submission) is probably the main use case.',
+          'A large application with more than one million daily views, allowing Croatian citizens and businesses to submit tax forms electronically. It supported many types of tax reporting alongside other features, with form submission probably its main use case.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', 'jQuery', 'Microsoft Reports (.rdlc)', 'IBM DB2'],
         roleText: [
-          'I fully implemented 7 of the tax forms used in production as of March 2016. Additionally, I did varying amounts of work on about 10 other forms, ranging from bug fixes, to implementing large parts of entire forms. At that time, there were a total of about 25 tax forms in the entire system.',
-          'Implementing a tax form including doing a web form, XML import and export, PDF reporting, extensive server-side validation based on business and legal rules, and tax form specific changes to the data access layer.',
+          'I fully implemented seven tax forms in production as of March 2016 and contributed to about ten others, from bug fixes to substantial implementation. The system contained about 25 forms at the time.',
+          'Each form required a web interface, XML import and export, PDF reporting, extensive server-side validation against business and legal rules, and changes to the data access layer.',
         ],
       },
       {
         title: 'Location and Building Permits Web Application',
         text: [
-          "This is a relatively simple application used for submission of data relevant to different types of location and building permits. It was built for Croatia's Ministry of Construction and Physical Planning, to be used by citizens (general population).",
+          "A relatively simple public application for submitting data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.",
         ],
         tags: [
           'C#',
@@ -342,21 +327,21 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Oracle Database',
         ],
         roleText: [
-          'I implemented large chunks of the project. Much of the UI part (views, models, controllers), significant part of the underlying business logic, the entire data access layer and PDF reporting.',
+          'I implemented much of the UI, including views, models, and controllers, a substantial part of the business logic, the entire data access layer, and PDF reporting.',
         ],
       },
       {
         title: 'Other Projects',
         text: [
-          'Ny time on this job was spent on many other projects as well. This included full stack development on two other very large ASP.NET Web Forms applications to be used by the employees of Ministry of Construction and Physical Planning. These are different applications from the one mentioned above.',
-          'Several WCF and ASMX web services as part of the above projects or as standalone components in a larger system.',
-          'Software components used for XML processing: validation, data manipulation, data to XML export, XML to database import.',
-          'Various programs for offline data processing and validation, email error reporting etc.',
+          'Two large ASP.NET Web Forms applications for employees of the Ministry of Construction and Physical Planning, separate from the public permits application.',
+          'WCF and ASMX web services, both within these projects and as standalone components of larger systems.',
+          'XML processing components for validation, data manipulation, database export to XML, and XML import into databases.',
+          'Programs for offline data processing, validation, and error reporting by email.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', '.NET COM', 'WCF'],
         roleText: [
-          'Regarding the two large ASP.NET Web forms application. These applications were mostly in maintanance phase. While I did some larger chunks of work there, most of my work was just bug fixes and small feature development.',
-          'A lot of the rest were mini projects by themselves (although fitting into largers systems). They usually lasted a few days to few weeks. I mostly implemented those completely by myself.',
+          'I worked across the stack on the two Web Forms applications, which were mainly in maintenance. Most tasks were bug fixes and small features, with some larger implementations.',
+          'Most of the other components were small projects within larger systems, lasting a few days to a few weeks. I usually implemented them on my own.',
         ],
       },
     ],
@@ -371,12 +356,11 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Excel Component for Spreadsheet Data Manipulation',
         text: [
-          'This project was a piece of software that enabled easier programmatic access to Microsoft Excel spreadsheet data. It allowed the user to read, write, manipulate and convert data and print.',
+          'A component for programmatic access to Microsoft Excel spreadsheets, supporting reading, writing, data manipulation, conversion, and printing.',
         ],
         tags: ['C#', 'Web Forms', 'WPF', 'Windows Forms'],
         roleText: [
-          'I did various tasks I was assigned to do.',
-          'Example: Implementation of export from Excel format to a Windows Forms DataGrid. The goal was to match the DataGrid output to resemble the original Excel content, formatting and styling as close as possible.',
+          'I handled various development tasks, including exporting Excel data to a Windows Forms DataGrid while matching the original content, formatting, and styles as closely as possible.',
         ],
       },
     ],
@@ -391,34 +375,33 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Steam Generator Damage Analysis Application',
         text: [
-          'This was a large WPF desktop application used by operators to observe inspection data to perform damage anaysis of staam generators in nuclear power plants.',
+          'A large WPF desktop application for operators to review inspection data and analyze damage in nuclear power plant steam generators.',
         ],
         tags: ['C#', 'WPF', 'Cinch (MVVM framework)'],
         roleText: [
-          'I developed a large part of the entire application.',
-          'I created several custom WPF controls with display 2D and 3D signal charts and plots. Processing and display of the data was very resource intensive, so rendering was done in a separate thread to keep the application responsive.',
-          'I worked on data persistence and data versioning system, app subsystem for signal filtering and mixing, and in general many WPF views and systems of the application throughout its entire stack, from the UI down the persistence layer.',
+          'I developed a large part of the application.',
+          'I created custom WPF controls for 2D and 3D signal charts and plots. Rendering ran on a separate thread to keep the application responsive during intensive data processing and display.',
+          'I worked on data persistence and versioning, signal filtering and mixing, and many WPF views and subsystems, from the UI to the persistence layer.',
         ],
       },
       {
         title: 'Steam Generator Walker Robot Command and Monitoring Application',
         text: [
-          'The company was building a robot (prototype) that was able to walk on the steam generator tubes wall, and was used for probe positioning. It allowed easier inspection with reduced (or eliminated) operator exposure to ionizing radiation.',
-          'This part of the project refers to a WPF desktop application that interfaces with the robot, controls it, displays its position, monitors its state and complements hardware and electronics handling of edge conditions and failure states.',
+          'A prototype robot for positioning inspection probes could walk along a steam generator tube wall, reducing or eliminating operator exposure to ionizing radiation.',
+          'The WPF desktop application controlled the robot, displayed its position, monitored its state, and complemented hardware and electronic handling of edge cases and failures.',
         ],
         tags: ['C#', 'WPF', 'Cinch (MVVM framework)'],
         roleText: [
-          'I implemented the large majority of the application code.',
-          'I created the entire GUI, which mostly consists of custom controls with specialized graphical display. Again, some of the more complex controls required multi-threading to keep the application responsive.',
-          'I also either implemted from scratch, or fully rewrote nearly all of the backend code, down to the elctronics controller interface.',
-          'The C-like electronics controller code was written by another programmer. I maintained it and implemented required changes and fixes as necessary, but I was not its original author.',
+          'I implemented most of the application, including the entire GUI. It consisted mainly of custom graphical controls, with multithreading for the more complex displays to keep the application responsive.',
+          'I built or fully rewrote nearly all the backend code down to the electronics controller interface.',
+          'Another developer wrote the original controller code in a C-like language. I maintained it and made the required changes and fixes.',
         ],
       },
       {
         title: 'Other Projects',
-        text: ['There are other projects I worked on that are used in the inspection process.'],
+        text: ['Other applications used in the nuclear inspection process.'],
         tags: ['C#'],
-        roleText: ['Mostly bug fixes. Nothing of note.'],
+        roleText: ['My work was mainly bug fixes.'],
       },
     ],
   },
@@ -432,31 +415,31 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Fuel Dispenser Configuration and Control Web Application',
         text: [
-          'This was a web application that allowed the user to configure and monitor the operation of fuel stations fuel dispenser drivers.',
+          'A web application for configuring and monitoring fuel dispenser drivers at fuel stations.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', 'PostgreSQL'],
         roleText: [
-          'I implemented substantial sections of the project, and was responsible for the maintenance of the entire project.',
+          'I implemented substantial parts of the application and maintained the entire project.',
         ],
       },
       {
         title: 'Fuel Dispenser Configuration and Control Desktop Application',
         text: [
-          'Similar in purpose to the above web application, used for different drivers and clients.',
+          'A desktop application with a similar purpose to the web application, serving different drivers and clients.',
         ],
         tags: ['C#', 'Windows Forms', 'SQLite'],
         roleText: [
-          'I created the entire application. It had custom GUI controls for displaying fuel dispenser state and enabled control over it. Used SQLite for data storage.',
+          'I built the entire application, with custom controls for displaying and controlling fuel dispenser state and SQLite for storage.',
         ],
       },
       {
         title: 'Various Projects',
         text: [
-          'I worked on several fuel displenser driver, and small tools used for regex validation, manipulation of Windows registry entries etc.',
+          'Fuel dispenser drivers and small tools for tasks such as regex validation and editing Windows registry entries.',
         ],
         tags: ['C#', 'C++'],
         roleText: [
-          'Mostyl bug fixing and maintanance. I did a full implementation of some of the tools.',
+          'I mainly fixed bugs and handled maintenance. I also built some of the tools in full.',
         ],
       },
     ],
@@ -471,10 +454,12 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Various Projects',
         text: [
-          'Some applications for a few financial institutions in Croatia (banks, funds, stock exchanges).',
+          'Web applications for Croatian financial institutions, including banks, funds, and stock exchanges.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', 'Microsoft SQL Server'],
-        roleText: ['I did small tasks and bug fixes on the web applications and their databases.'],
+        roleText: [
+          'I handled small development tasks and bug fixes in the applications and their databases.',
+        ],
       },
     ],
   },
@@ -488,7 +473,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Body Animation Exporter',
         text: [
-          'This project was a body animation exporter. It allowed exporting of body animation data built inside 3ds Max (3ds Max Biped format) into a format called MPEG-4 FBA, used by a larger face and body animation system.',
+          'An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system.',
         ],
         tags: ['C++', '3ds Max SDK'],
         roleText: ['I implemented the entire exporter.'],
