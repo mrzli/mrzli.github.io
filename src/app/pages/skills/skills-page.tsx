@@ -16,10 +16,23 @@ export function SkillsPage(): ReactNode {
               regularly, usually for several years, and built entire projects with it.
             </p>
             <p>
-              <span className='font-bold'>Limited experience</span>: I have usually spent weeks or
-              months exploring the technology on my own, sometimes using it professionally for
-              specific tasks. It has not been part of my daily work, though my familiarity can still
-              be substantial.
+              <span className='font-bold'>Limited experience</span>: Usually weeks or months
+              exploring the technology on my own, sometimes using it professionally for specific
+              tasks.
+            </p>
+          </div>
+        </Typography>
+        <div className='flex flex-col gap-10'>
+          {SKILLS_SECTIONS.map((section) => (
+            <SkillsSection key={section.title} {...section} />
+          ))}
+        </div>
+        <section className='flex flex-col gap-4'>
+          <Typography variant='heading-2'>More about my experience</Typography>
+          <Typography variant='prose' as='div' className='space-y-4'>
+            <p>
+              Technologies listed under limited experience have not been part of my daily work,
+              though my familiarity can still be substantial.
             </p>
             <p>
               This overview helps readers, including recruiters, find specific skills. It includes
@@ -32,13 +45,8 @@ export function SkillsPage(): ReactNode {
               mainly used macOS over the past decade, but Linux has become my primary system for
               personal and professional use in recent years. I still use Windows when required.
             </p>
-          </div>
-        </Typography>
-        <div className='flex flex-col gap-10'>
-          {SKILLS_SECTIONS.map((section) => (
-            <SkillsSection key={section.title} {...section} />
-          ))}
-        </div>
+          </Typography>
+        </section>
       </div>
     </PageContainer>
   );
