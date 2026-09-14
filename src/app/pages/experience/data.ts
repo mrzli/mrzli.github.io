@@ -12,7 +12,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         title: 'Large HVAC System Site Monitoring and Control Web Application',
         text: [
           'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
-          'In a software engineering context and my experience this was not a complicated project, but required a level of patience for a while when it came to fully understanding the domain and use some of the technologies and tooling native that domain.'
+          'The software development was straightforward for my level of experience. Learning the domain and its specialized technologies and tools took time and patience.',
         ],
         tags: [
           'React',
@@ -32,15 +32,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'ChatGPT',
         ],
         roleText: [
-          'I did normal web development work. I was brought onboard to help an existing team which worked on the project for some time. I developed some sections of the frontend, implemented components and controls, aligned to UI designs, fixed issues as the arose or were assigned to me.',
+          'I joined an established team to help with day-to-day web development. I built frontend sections, components, and controls to match UI designs, and fixed issues as they arose or were assigned to me.',
         ],
       },
       {
         title: 'Automated Warehouse Robotics System Web Application',
         text: [
           'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
-          'This was very complicated project overall, dealing with automation, planning, orhestration of warehouse robots, computer vision etc. I dealt almost exclusively with the frontend. The frontend itself had several parallel repos and branches that needed to be maintained simultaneously. Each had around 100kloc, although much of the code was similar between the versions.',
-          'Several dozen people worked actively on it. Frontend was handled by myself and one other developer. There was no clear seniority here. He was with the company for several years before I came along and had greater domain knowledge. I had greater software development breadth and depth of knowledge due to more more overall years and more diverse experience, and different approach to work overall.'
+          'The system was complex, covering automation, planning, robot orchestration, and computer vision. I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
+          'Several dozen people worked on the project, with two of us handling the frontend. Neither was clearly senior to the other. My colleague had several years at the company and deeper domain knowledge. I brought broader and deeper software development experience from more years across varied projects, along with a different approach to the work.',
         ],
         tags: [
           'Angular',
@@ -56,7 +56,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'ChatGPT',
         ],
         roleText: [
-          "I was brought in to improve the project frontend overall, and in particular to resolve a major blocking issue they had with their software.",
+          'I joined to improve the frontend, particularly to resolve a major blocker: the Angular migration.',
           "I independently migrated the application from Angular 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. The migration's feasibility was initially uncertain, but I completed it without observed regressions, removing a major blocker for the system's security audit.",
           'I organized the changes so the migration could be repeated across related robot and fleet management applications and branches. I also fixed issues and implemented client requests, including a simpler interface for dock monitoring and truck reception, and frontend support for pallet stacking and related robot operations.',
         ],
@@ -88,7 +88,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
         roleText: [
           'I implemented the entire integration except the CI/CD pipeline, which was handled separately by another developer. It remains one of my favorite projects: broad enough to involve many aspects of software development, but small enough for me to build on my own.',
-          'The high-level goals were clear and achievable, even though some requirements needed clarification. I worked autonomously, parsed the documentation, clarified details with the client, and gave regular progress demos.',
+          'The high-level goals were clear and achievable, even though some requirements needed clarification. I worked autonomously, studied the documentation, clarified details with the client, and gave regular progress demos.',
           'The client required JavaScript and recommended MySQL, choices I was happy with. Otherwise, I was free to choose the stack, structure, and development process. Understanding the Oracle documentation was the hardest initial task. Development went smoothly after that.',
           'I used an Nx monorepo, React for the frontend, Redux and redux-observable for state management and API calls, NestJS for the backend, and Prisma as the ORM.',
           'The codebase was about 20,000 lines, including roughly 1,000-2,000 lines of tests. It handled asynchronous, two-way communication with both Eloqua and the messaging platform. A React frontend embedded in the Eloqua web client as an iframe let users configure and monitor the integration.',
@@ -103,7 +103,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
       {
         title: 'Mobile Application for Managing Electricity Consumption',
         text: [
-          'A mobile application built for a Norwegian client, to be used by the Norwegian public. Users can monitor and manage electricity consumption, choose providers, and view statistics and insights.',
+          'A mobile application built for a Norwegian client and intended for the Norwegian public. Users can monitor and manage electricity consumption, choose providers, and view statistics and insights.',
         ],
         tags: ['React Native', 'TypeScript', 'Expo', 'Jest', 'ESLint', 'Prettier'],
         roleText: [
