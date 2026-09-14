@@ -8,7 +8,6 @@ import { ExperiencePage } from '../app/pages/experience/experience-page';
 import { HomePage } from '../app/pages/home/home-page';
 import { ProjectsPage } from '../app/pages/projects/projects-page';
 import { SkillsPage } from '../app/pages/skills/skills-page';
-import { TestPage } from '../app/pages/test/test-page';
 
 export const router = createBrowserRouter(
   [
@@ -39,10 +38,6 @@ export const router = createBrowserRouter(
         {
           path: 'values',
           element: <ValuesPage />,
-        },
-        {
-          path: 'test',
-          element: <TestPage />,
         },
         {
           path: '*',
