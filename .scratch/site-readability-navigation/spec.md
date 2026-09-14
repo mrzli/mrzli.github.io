@@ -86,7 +86,7 @@ for each small category.
 ### 4. Projects and Background cards
 
 Keep outer cards but reduce nested borders. On Projects, use a clear project
-heading, description, tags, a simple My role subsection, and a bottom row of links.
+heading, description, tags, contribution text distinguished by a subtle left border and inset spacing, and a bottom row of links.
 Use spacing and a separator if needed rather than separate cards for the role and
 links. Preserve link labels, destinations, and external-link behavior.
 
@@ -154,4 +154,4 @@ spec complete only when implementation and required verification are finished.
 
 ## Completion record
 
-SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 is implemented, verified, and approved for commit. SRN-004 through SRN-006 have not started. See the task index for progress and the individual task records for verification details.
+SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 is implemented, verified, and approved for commit. Work is paused at the user's request. SRN-005 and SRN-006 have not started. See the task index for progress and the individual task records for verification details.

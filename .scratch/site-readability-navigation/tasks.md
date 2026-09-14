@@ -14,7 +14,7 @@ implementation prerequisites, not permission to combine tasks.
 | 1     | [SRN-001: Improve reading hierarchy and Experience](./tasks/SRN-001-reading-hierarchy.md)   | Shared prose styling and Experience headings   | Complete |
 | 2     | [SRN-002: Improve navigation and keyboard access](./tasks/SRN-002-navigation.md)            | Active routes, focus, hit areas, sticky header | Complete |
 | 3     | [SRN-003: Make Skills quicker to scan](./tasks/SRN-003-skills-layout.md)                    | Content order and compact category rows        | Complete |
-| 4     | [SRN-004: Simplify Projects and Background cards](./tasks/SRN-004-simplify-cards.md)        | Reduced nesting and clear subsections          | Pending  |
+| 4     | [SRN-004: Simplify Projects and Background cards](./tasks/SRN-004-simplify-cards.md)        | Reduced nesting and clear subsections          | Complete |
 | 5     | [SRN-005: Link homepage highlights to Experience entries](./tasks/SRN-005-project-links.md) | Stable project anchors and route scrolling     | Pending  |
 | 6     | [SRN-006: Review consistency and close the spec](./tasks/SRN-006-verify-close.md)           | Combined review and verification record        | Pending  |
 
@@ -62,4 +62,4 @@ review. They do not require an application build.
 
 ## Completion
 
-SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 is implemented, verified, and approved for commit. SRN-004 through SRN-006 have not started. SRN-006 will record the final review and verification limits.
+SRN-001 was committed as `b4d1f58`. SRN-002 was committed as `23c4b4d`. SRN-003 was committed as `505920f`. SRN-004 is implemented, verified, and approved for commit. Work is paused at the user's request. SRN-005 and SRN-006 have not started. SRN-006 will record the final review and verification limits.

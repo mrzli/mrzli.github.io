@@ -2,7 +2,7 @@ import type { ProjectCardProps } from './components';
 
 export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
   {
-    title: 'Personal Website',
+    title: 'Personal website',
     text: ['This website presents my professional experience, skills, projects, and background.'],
     tags: [
       'React',

@@ -13,9 +13,11 @@ export interface ProjectCardProps {
 
 export function ProjectCard({ title, text, tags, roleText, links }: ProjectCardProps): ReactNode {
   return (
-    <Card padding='large'>
-      <div className='flex flex-col gap-4'>
-        <Typography variant='card-title-accent'>{title}</Typography>
+    <Card as='article' padding='large' className='flex flex-col'>
+      <div className='flex flex-1 flex-col gap-5'>
+        <Typography variant='heading-3' as='h2' className='text-amber-700 dark:text-amber-300'>
+          {title}
+        </Typography>
         <Typography variant='prose' as='div'>
           <div className='flex flex-col gap-4'>
             {text.map((paragraph, index) => (
@@ -25,27 +27,30 @@ export function ProjectCard({ title, text, tags, roleText, links }: ProjectCardP
         </Typography>
         <TagList tags={tags} />
 
-        <Card variant='inner' padding='small'>
-          <Typography variant='prose' as='div'>
-            <div className='flex flex-col gap-4'>
-              {roleText.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
-          </Typography>
-        </Card>
+        <Typography
+          variant='prose'
+          as='div'
+          className='space-y-4 border-l-2 border-slate-300 pl-4 dark:border-slate-600'
+        >
+          {roleText.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </Typography>
 
-        <Card variant='highlight' padding='small'>
-          <ul className='flex flex-col gap-2'>
-            {links.map((link) => {
-              return (
-                <div key={link.href} className='flex'>
-                  <ExternalLink variant='highlight' href={link.href} label={link.label} />
-                </div>
-              );
-            })}
-          </ul>
-        </Card>
+        <ul className='mt-auto flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200 pt-4 dark:border-slate-800'>
+          {links.map((link) => {
+            return (
+              <li key={link.href}>
+                <ExternalLink
+                  variant='highlight'
+                  href={link.href}
+                  label={link.label}
+                  className='rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
+                />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </Card>
   );

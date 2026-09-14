@@ -28,20 +28,23 @@ export function BackgroundPage(): ReactNode {
               <UnorderedList items={EDUCATION_HIGHLIGHTS} />
             </Typography>
 
-            <Card variant='highlight' padding='medium'>
-              <div className='flex flex-col gap-3'>
-                <Typography variant='heading-3'>Related links</Typography>
-                <ul className='flex flex-col gap-2'>
-                  {THESIS_LINKS.map((link) => {
-                    return (
-                      <li key={link.href}>
-                        <ExternalLink variant='highlight' href={link.href} label={link.label} />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </Card>
+            <section className='flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-slate-800'>
+              <Typography variant='heading-3'>Related links</Typography>
+              <ul className='flex flex-col gap-2'>
+                {THESIS_LINKS.map((link) => {
+                  return (
+                    <li key={link.href}>
+                      <ExternalLink
+                        variant='highlight'
+                        href={link.href}
+                        label={link.label}
+                        className='rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
           </div>
         </Card>
 
@@ -62,15 +65,15 @@ export function BackgroundPage(): ReactNode {
               </div>
             </Typography>
 
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-5 border-t border-slate-200 pt-5 dark:border-slate-800'>
               {ADDITIONAL_LEARNING_ITEMS.map((item) => {
                 return (
-                  <Card key={item.title} variant='inner' padding='small'>
-                    <div className='flex flex-col gap-2'>
-                      <Typography variant='heading-4'>{item.title}</Typography>
-                      <Typography variant='prose'>{item.text}</Typography>
-                    </div>
-                  </Card>
+                  <section key={item.title} className='flex flex-col gap-2'>
+                    <Typography variant='heading-4' as='h3'>
+                      {item.title}
+                    </Typography>
+                    <Typography variant='prose'>{item.text}</Typography>
+                  </section>
                 );
               })}
             </div>
