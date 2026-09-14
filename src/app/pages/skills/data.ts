@@ -68,7 +68,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       },
       {
         title: 'AI',
-        skills: ['GPT-5.x', 'Claude Sonnet 4.x', 'Copilot'],
+        skills: ['Codex', 'Copilot'],
       },
       {
         title: 'Operating Systems',
@@ -153,6 +153,10 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       {
         title: 'CI/CD',
         skills: ['CircleCI', 'Docker Swarm'],
+      },
+      {
+        title: 'AI',
+        skills: ['Claude', 'Cursor'],
       },
     ],
   },
