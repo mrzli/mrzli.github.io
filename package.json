@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build:cv": "latexmk -cd -pdf -interaction=nonstopmode -halt-on-error -outdir=../../tmp/cv public/data/CV.tex && cp tmp/cv/CV.pdf public/data/CV.pdf",
     "preview": "vite preview",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
