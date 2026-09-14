@@ -10,7 +10,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     projects: [
       {
         title: 'Large HVAC System Site Monitoring and Control Web Application',
-        text: ['TODO'],
+        text: [
+          'An integrated application for monitoring and controlling HVAC equipment across entire buildings and sites. Developed for a large multinational. The software developed is part of a system including HVAC equipment offered as a full solution to customers operating facilities such as hotels.',
+        ],
         tags: [
           'React',
           'TypeScript',
@@ -24,12 +26,19 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Axon',
           'Project Haystack',
           'Folio',
+          'Copilot',
+          'Claude',
+          'ChatGPT',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'I developed React components, implemented UI designs, and extended existing features, including backend changes needed to support them. My work combined feature delivery and resolving application issues within the FIN Framework ecosystem, helping bring the product toward its first release.',
+        ],
       },
       {
         title: 'Automated Warehouse Robotics System Web Application',
-        text: ['TODO'],
+        text: [
+          'A web application for managing robots and robot fleets within an integrated warehouse automation system. The system supports goods handling and movement within large warehouses, enabling robots to operate autonomously for extended periods.',
+        ],
         tags: [
           'Angular',
           'TypeScript',
@@ -39,8 +48,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Python',
           'PostgreSQL',
           'Docker',
+          'Copilot',
+          'Claude',
+          'ChatGPT',
         ],
-        roleText: ['TODO'],
+        roleText: [
+          'I independently completed a challenging Angular migration from version 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. The migration’s feasibility was initially uncertain, but I completed it without observed regressions, removing a major blocker for the system’s security audit.',
+          'I carefully organized the changes so the migration could be repeated across related robot and fleet-management applications and branches. I also resolved application issues and implemented client-requested features, including a simplified dock-monitoring and truck-reception interface, and frontend support for pallet stacking and related robot operations.',
+        ],
       },
       {
         title: 'Oracle Eloqua to Mobile Messaging Integration',
