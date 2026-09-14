@@ -154,4 +154,4 @@ spec complete only when implementation and required verification are finished.
 
 ## Completion record
 
-SRN-001 is implemented, verified, and approved for commit. The remaining tasks have not started. See the task index for progress and the individual task records for verification details.
+SRN-001 was committed as `b4d1f58`. SRN-002 is implemented, verified, and approved for commit. SRN-003 through SRN-006 have not started. See the task index for progress and the individual task records for verification details.

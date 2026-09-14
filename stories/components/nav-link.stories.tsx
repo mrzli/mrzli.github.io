@@ -23,3 +23,7 @@ export const Default: Story = {
     children: 'About',
   },
 };
+
+export const ActiveHome: Story = {
+  args: { to: '/', children: 'Home' },
+};

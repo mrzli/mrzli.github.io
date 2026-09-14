@@ -5,8 +5,8 @@ import { MemoryRouter } from 'react-router';
 const meta = {
   component: Nav,
   decorators: [
-    (Story) => (
-      <MemoryRouter>
+    (Story, context) => (
+      <MemoryRouter initialEntries={[context.parameters.route ?? '/']}>
         <Story />
       </MemoryRouter>
     ),
@@ -27,4 +27,26 @@ export const Default: Story = {
       { to: 'background', label: 'Background' },
     ],
   },
+};
+
+export const ExperienceActive: Story = {
+  args: Default.args,
+  parameters: { route: '/experience' },
+};
+
+export const LongPage: Story = {
+  args: Default.args,
+  render: (args) => (
+    <div className='min-h-[200vh]'>
+      <Nav {...args} />
+      <p className='py-8'>Scroll to check sticky navigation. Resize to inspect the mobile menu.</p>
+      <a href='#page-end' className='text-cyan-700 underline dark:text-cyan-300'>
+        Jump to the final section
+      </a>
+      <div className='h-screen' />
+      <h2 id='page-end' className='py-8'>
+        Final section
+      </h2>
+    </div>
+  ),
 };
