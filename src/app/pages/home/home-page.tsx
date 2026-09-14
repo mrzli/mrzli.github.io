@@ -8,6 +8,8 @@ import { IconLink, RouteCard } from './components';
 import { PRIMARY_TECHS, ROUTE_CARDS, WORK_HIGHLIGHTS } from './data';
 
 export function HomePage(): ReactNode {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className='space-y-8 pt-6 pb-12'>
       <Card as='section' padding='large' className='overflow-hidden sm:p-8'>
@@ -88,15 +90,15 @@ export function HomePage(): ReactNode {
               Professional experience
             </Typography>
             <Typography as='dd' variant='heading-3' className='mt-2'>
-              18+ years
+              {currentYear - 2008} years
             </Typography>
           </div>
           <div>
             <Typography as='dt' variant='card-title-muted'>
-              Independent work
+              Contract work
             </Typography>
             <Typography as='dd' variant='heading-3' className='mt-2'>
-              Freelance since 2016
+              {currentYear - 2016} years
             </Typography>
           </div>
           <div>
