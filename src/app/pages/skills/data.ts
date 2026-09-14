@@ -68,7 +68,7 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
       },
       {
         title: 'AI',
-        skills: ['Codex', 'Copilot'],
+        skills: ['Codex CLI', 'Copilot'],
       },
       {
         title: 'Operating Systems',
