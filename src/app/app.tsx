@@ -1,12 +1,13 @@
 import { MainContainer, Nav, type NavItem } from '@components';
 import type { ReactNode } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, ScrollRestoration } from 'react-router';
 
 export function App(): ReactNode {
   return (
     <MainContainer>
       <Nav items={NAV_ITEMS} />
       <Outlet />
+      <ScrollRestoration />
     </MainContainer>
   );
 }

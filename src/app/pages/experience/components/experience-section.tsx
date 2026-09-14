@@ -4,6 +4,7 @@ import { type DateRangeBound, ExperienceSectionHeader } from './experience-secti
 import { ProjectCard } from './project-card';
 
 export interface ProjectItem {
+  readonly id?: string;
   readonly title: string;
   readonly text: readonly string[];
   readonly tags: readonly string[];

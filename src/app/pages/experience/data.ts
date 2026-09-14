@@ -1,4 +1,5 @@
 import type { ExperienceSectionProps } from './components';
+import { EXPERIENCE_PROJECT_ANCHORS } from './project-anchors';
 
 export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
   {
@@ -36,6 +37,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
+        id: EXPERIENCE_PROJECT_ANCHORS.robotics,
         title: 'Automated warehouse robotics system web application',
         text: [
           'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
@@ -62,6 +64,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
+        id: EXPERIENCE_PROJECT_ANCHORS.eloqua,
         title: 'Oracle Eloqua to mobile messaging integration',
         text: [
           'Oracle Eloqua is a cloud-based B2B marketing automation platform for designing campaigns through a visual drag-and-drop interface. Alongside its built-in nodes, it supports third-party integrations and extensions through the Oracle Cloud Marketplace.',
@@ -111,6 +114,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
+        id: EXPERIENCE_PROJECT_ANCHORS.fueling,
         title: 'Mobile fueling management system',
         text: [
           'A large system for managing the business and operations of a leading mobile fueling company in California. At the time, the startup had several hundred employees and was growing exponentially.',

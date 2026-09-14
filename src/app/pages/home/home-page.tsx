@@ -128,7 +128,19 @@ export function HomePage(): ReactNode {
               <Typography variant='card-title-accent' as='p'>
                 {highlight.focus}
               </Typography>
-              <Typography variant='heading-3'>{highlight.title}</Typography>
+              <Typography variant='heading-3'>
+                <Link
+                  to={highlight.to}
+                  className='rounded-sm decoration-slate-400 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:decoration-slate-500 dark:focus-visible:outline-cyan-300'
+                >
+                  {highlight.title}
+                  <Icon
+                    icon='mdi:arrow-top-right'
+                    aria-hidden='true'
+                    className='ml-1 inline-block size-4 text-slate-500 dark:text-slate-400'
+                  />
+                </Link>
+              </Typography>
               <Typography variant='body'>{highlight.description}</Typography>
             </Card>
           ))}
