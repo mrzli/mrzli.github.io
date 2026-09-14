@@ -71,3 +71,33 @@ export const Body: Story = {
     children: 'Body text used for general content.',
   },
 };
+
+export const Prose: Story = {
+  args: {
+    variant: 'prose',
+    children:
+      'The integration coordinated asynchronous campaign flows between Oracle Eloqua and a messaging platform. Campaigns involved hundreds of thousands of messages, with delivery reports arriving through webhooks. Careful handling of concurrent operations and race conditions kept those flows reliable. Backend tests covered endpoints and complex asynchronous scenarios, while logging supported debugging and monitoring.',
+  },
+};
+
+export const ProseParagraphs: Story = {
+  args: {
+    variant: 'prose',
+    as: 'div',
+    className: 'space-y-4',
+    children: (
+      <>
+        <p>
+          I joined an existing frontend project to improve its structure and development workflow.
+          The work ranged from application-wide typing and state management changes to reusable
+          components and individual screens.
+        </p>
+        <p>
+          A component library in Storybook helped keep the interface consistent. Tests covered the
+          utility code, with basic component coverage and a small number of checks for more complex
+          user flows.
+        </p>
+      </>
+    ),
+  },
+};

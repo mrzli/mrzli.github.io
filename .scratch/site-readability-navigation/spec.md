@@ -1,6 +1,6 @@
 # Site readability and navigation
 
-Status: planned
+Status: in progress
 
 Created: 2026-09-14
 
@@ -45,14 +45,13 @@ pixel measurements or current wording.
 
 ### 1. Reading hierarchy and typography
 
-Use 16px text with approximately 1.75 line height for detailed prose. Constrain
-long reading blocks to roughly 65–75 characters per line on wide screens without
-restricting the full page, card grids, or tag lists. Use the existing Typography
+Use 16px text with approximately 1.75 line height for detailed prose. Let prose fill its containing card. A separate narrow text measure left
+the current full-width cards visually unbalanced during user review. Use the existing Typography
 component, adding a prose variant only where needed to keep compact descriptions
 and metadata distinct. Keep the homepage's compact card copy and 12px tags.
 
 On Experience, render project names as sentence-case headings around 18–20px.
-Preserve acronyms, product names, and proper nouns. Reserve small uppercase labels
+Use the existing amber palette for Experience project headings. Preserve acronyms, product names, and proper nouns. Reserve small uppercase labels
 for short categories. Give employer, role, location, and dates distinct positions
 with a clear semantic hierarchy: page h1, employer h2, project h3.
 
@@ -155,4 +154,4 @@ spec complete only when implementation and required verification are finished.
 
 ## Completion record
 
-Not started.
+SRN-001 is implemented, verified, and approved for commit. The remaining tasks have not started. See the task index for progress and the individual task records for verification details.

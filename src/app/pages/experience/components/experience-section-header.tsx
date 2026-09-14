@@ -24,19 +24,17 @@ export function ExperienceSectionHeader({
   to,
 }: ExperienceSectionHeaderProps): ReactNode {
   return (
-    <div className='flex flex-col gap-2'>
-      <Typography variant='heading-4'>
-        <span className='font-bold'>
-          {title}, {location}
-        </span>
-        {' - '}
-        <span>{role}</span>
-      </Typography>
-      <Typography variant='body'>
-        <span className='uppercase'>
+    <div className='grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6'>
+      <div className='space-y-1'>
+        <Typography variant='heading-2'>{title}</Typography>
+        <Typography variant='prose'>{role}</Typography>
+      </div>
+      <div className='space-y-1 sm:text-right'>
+        <Typography variant='body'>{location}</Typography>
+        <Typography variant='body'>
           {formatDateRangeBound(from)} - {formatDateRangeBound(to)}
-        </span>
-      </Typography>
+        </Typography>
+      </div>
     </div>
   );
 }

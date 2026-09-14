@@ -24,7 +24,9 @@ export function BackgroundPage(): ReactNode {
               <Typography variant='body'>Graduate Engineer of Computing</Typography>
             </div>
 
-            <UnorderedList items={EDUCATION_HIGHLIGHTS} />
+            <Typography variant='prose' as='div'>
+              <UnorderedList items={EDUCATION_HIGHLIGHTS} />
+            </Typography>
 
             <Card variant='highlight' padding='medium'>
               <div className='flex flex-col gap-3'>
@@ -52,8 +54,8 @@ export function BackgroundPage(): ReactNode {
               </Typography>
             </div>
 
-            <Typography variant='body'>
-              <div className='flex flex-col gap-2'>
+            <Typography variant='prose' as='div'>
+              <div className='flex flex-col gap-4'>
                 {ADDITIONAL_LEARNING_PARAGRAPHS.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -66,7 +68,7 @@ export function BackgroundPage(): ReactNode {
                   <Card key={item.title} variant='inner' padding='small'>
                     <div className='flex flex-col gap-2'>
                       <Typography variant='heading-4'>{item.title}</Typography>
-                      <Typography variant='body'>{item.text}</Typography>
+                      <Typography variant='prose'>{item.text}</Typography>
                     </div>
                   </Card>
                 );

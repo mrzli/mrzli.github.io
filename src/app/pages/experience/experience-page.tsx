@@ -8,8 +8,8 @@ export function ExperiencePage(): ReactNode {
   return (
     <PageContainer title='Experience'>
       <div className='flex flex-col gap-12'>
-        <Typography variant='body'>
-          <div className='flex flex-col gap-2'>
+        <Typography variant='prose' as='div'>
+          <div className='flex flex-col gap-4'>
             <p>Selected paid client projects from my professional experience.</p>
             <p>This list covers most of my significant projects, but is not exhaustive.</p>
           </div>

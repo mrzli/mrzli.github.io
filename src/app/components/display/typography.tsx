@@ -19,6 +19,7 @@ const typographyVariants = cva('', {
         'text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400',
       lead: 'text-lg leading-8 text-slate-700 dark:text-slate-300',
       body: 'text-sm leading-6 text-slate-700 dark:text-slate-300',
+      prose: 'text-base leading-7 text-slate-700 dark:text-slate-300',
     },
   },
   defaultVariants: {
@@ -38,6 +39,7 @@ const DEFAULT_ELEMENTS: Record<NonNullable<TypographyVariantsProps['variant']>, 
   'card-title-muted': 'span',
   lead: 'p',
   body: 'p',
+  prose: 'p',
 };
 
 export interface TypographyProps extends TypographyVariantsProps {

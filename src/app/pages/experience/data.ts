@@ -9,7 +9,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: 'Present',
     projects: [
       {
-        title: 'Large HVAC System Site Monitoring and Control Web Application',
+        title: 'Large HVAC system site monitoring and control web application',
         text: [
           'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
           'The software development was straightforward for my level of experience. Learning the domain and its specialized technologies and tools took time and patience.',
@@ -36,7 +36,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Automated Warehouse Robotics System Web Application',
+        title: 'Automated warehouse robotics system web application',
         text: [
           'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
           'The system was complex, covering automation, planning, robot orchestration, and computer vision. I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
@@ -62,7 +62,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Oracle Eloqua to Mobile Messaging Integration',
+        title: 'Oracle Eloqua to mobile messaging integration',
         text: [
           'Oracle Eloqua is a cloud-based B2B marketing automation platform for designing campaigns through a visual drag-and-drop interface. Alongside its built-in nodes, it supports third-party integrations and extensions through the Oracle Cloud Marketplace.',
           'This integration connects Eloqua to a mobile messaging platform, allowing users to send SMS and WhatsApp messages as part of their campaigns. It was a medium-sized project with complex business logic and requirements.',
@@ -101,7 +101,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Mobile Application for Managing Electricity Consumption',
+        title: 'Mobile application for managing electricity consumption',
         text: [
           'A mobile application built for a Norwegian client and intended for the Norwegian public. Users can monitor and manage electricity consumption, choose providers, and view statistics and insights.',
         ],
@@ -111,7 +111,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Mobile Fueling Management System',
+        title: 'Mobile fueling management system',
         text: [
           'A large system for managing the business and operations of a leading mobile fueling company in California. At the time, the startup had several hundred employees and was growing exponentially.',
           'Dozens of developers worked on the system, which included Angular and React web applications, iOS and Android apps, and a shared Node.js backend built with Express and MongoDB.',
@@ -136,7 +136,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Insurance Web Platform',
+        title: 'Insurance web platform',
         text: [
           'A web platform built for a UK client to connect parties in the insurance process and search for insurance schemes. The frontend alone contained about 100,000 lines of code.',
         ],
@@ -162,7 +162,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Accounting Web Application',
+        title: 'Accounting web application',
         text: [
           'A large accounting and transactions application for a medium-sized Finnish company, with dozens of screens containing complex business logic and data viewing and editing features.',
         ],
@@ -173,7 +173,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Graveyard Management Web Application',
+        title: 'Graveyard management web application',
         text: [
           'A small multi-tenant application for managing graveyards, graves, and information about the deceased and grave owners. It included interactive OpenLayers maps with geospatial data for each grave.',
         ],
@@ -202,7 +202,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Parking Mobile Application',
+        title: 'Parking mobile application',
         text: [
           'A public mobile application for buying parking tickets for lots and garages in Zagreb, Croatia.',
         ],
@@ -214,7 +214,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'NIAS (SSO System) Interface',
+        title: 'NIAS (SSO system) interface',
         text: [
           "NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. Accredited authentication providers include the government, banks, and other trusted organizations.",
           "This project integrated the Croatian Postal Service as a NIAS provider and allowed existing NIAS users to sign in to the Postal Service's system and have their credentials validated.",
@@ -223,7 +223,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         roleText: ['I implemented the entire project.'],
       },
       {
-        title: 'Government Payments Validation Component',
+        title: 'Government payments validation component',
         text: [
           'A Java component (JAR) for validating payments to the Croatian government, agencies, and local and regional administrations.',
           'It checked invoice fields individually and in combination, including descriptions, destination accounts, dates, and the "model" and "call-to-number" fields. The rules needed to be easy to reconfigure when requirements changed.',
@@ -240,7 +240,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'EU Roaming Usage and Traffic Tracking Web Application',
+        title: 'EU roaming usage and traffic tracking web application',
         text: [
           "A roaming usage tracking system for Croatia's largest telecom, commissioned during significant changes to EU roaming rules. It provided usage statistics and helped detect abuse.",
         ],
@@ -259,7 +259,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'e-Learning Web Application (MVP)',
+        title: 'E-learning web application (MVP)',
         text: [
           'An online learning MVP with video courses and online meetings with whiteboards. It had not yet become a full commercial product.',
         ],
@@ -279,7 +279,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Other Projects',
+        title: 'Other projects',
         text: [
           'A C# and WCF service for exporting Microsoft SQL Server data as JSON.',
           'Urgent fixes to an Alfresco web application shortly before its production deadline.',
@@ -303,7 +303,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2016, month: 5 },
     projects: [
       {
-        title: "Croatia's Ministry of Finance e-Tax Web Application",
+        title: "Croatia's Ministry of Finance e-Tax web application",
         text: [
           'A large application with more than one million daily views, allowing Croatian citizens and businesses to submit tax forms electronically. It supported many types of tax reporting alongside other features, with form submission probably its main use case.',
         ],
@@ -314,7 +314,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Location and Building Permits Web Application',
+        title: 'Location and building permits web application',
         text: [
           "A relatively simple public application for submitting data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.",
         ],
@@ -331,7 +331,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Other Projects',
+        title: 'Other projects',
         text: [
           'Two large ASP.NET Web Forms applications for employees of the Ministry of Construction and Physical Planning, separate from the public permits application.',
           'WCF and ASMX web services, both within these projects and as standalone components of larger systems.',
@@ -354,7 +354,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2013, month: 1 },
     projects: [
       {
-        title: 'Excel Component for Spreadsheet Data Manipulation',
+        title: 'Excel component for spreadsheet data manipulation',
         text: [
           'A component for programmatic access to Microsoft Excel spreadsheets, supporting reading, writing, data manipulation, conversion, and printing.',
         ],
@@ -373,7 +373,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2012, month: 10 },
     projects: [
       {
-        title: 'Steam Generator Damage Analysis Application',
+        title: 'Steam generator damage analysis application',
         text: [
           'A large WPF desktop application for operators to review inspection data and analyze damage in nuclear power plant steam generators.',
         ],
@@ -385,7 +385,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Steam Generator Walker Robot Command and Monitoring Application',
+        title: 'Steam generator walker robot command and monitoring application',
         text: [
           'A prototype robot for positioning inspection probes could walk along a steam generator tube wall, reducing or eliminating operator exposure to ionizing radiation.',
           'The WPF desktop application controlled the robot, displayed its position, monitored its state, and complemented hardware and electronic handling of edge cases and failures.',
@@ -398,7 +398,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Other Projects',
+        title: 'Other projects',
         text: ['Other applications used in the nuclear inspection process.'],
         tags: ['C#'],
         roleText: ['My work was mainly bug fixes.'],
@@ -413,7 +413,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2009, month: 11 },
     projects: [
       {
-        title: 'Fuel Dispenser Configuration and Control Web Application',
+        title: 'Fuel dispenser configuration and control web application',
         text: [
           'A web application for configuring and monitoring fuel dispenser drivers at fuel stations.',
         ],
@@ -423,7 +423,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Fuel Dispenser Configuration and Control Desktop Application',
+        title: 'Fuel dispenser configuration and control desktop application',
         text: [
           'A desktop application with a similar purpose to the web application, serving different drivers and clients.',
         ],
@@ -433,7 +433,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         ],
       },
       {
-        title: 'Various Projects',
+        title: 'Various projects',
         text: [
           'Fuel dispenser drivers and small tools for tasks such as regex validation and editing Windows registry entries.',
         ],
@@ -452,7 +452,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2008, month: 10 },
     projects: [
       {
-        title: 'Various Projects',
+        title: 'Various projects',
         text: [
           'Web applications for Croatian financial institutions, including banks, funds, and stock exchanges.',
         ],
@@ -471,7 +471,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
     to: { year: 2007, month: 8 },
     projects: [
       {
-        title: 'Body Animation Exporter',
+        title: 'Body animation exporter',
         text: [
           'An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system.',
         ],

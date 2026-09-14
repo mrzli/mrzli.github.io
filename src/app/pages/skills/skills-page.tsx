@@ -8,8 +8,8 @@ export function SkillsPage(): ReactNode {
   return (
     <PageContainer title='Skills'>
       <div className='flex flex-col gap-12'>
-        <Typography variant='body'>
-          <div className='flex flex-col gap-2'>
+        <Typography variant='prose' as='div'>
+          <div className='flex flex-col gap-4'>
             <p>Technologies and tools I have used, grouped by depth and recency of experience.</p>
             <p>
               <span className='font-bold'>Extensive experience</span>: I have used the technology
