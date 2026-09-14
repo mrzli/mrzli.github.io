@@ -139,9 +139,9 @@ export function HomePage(): ReactNode {
         <Card as='section' padding='large' className='space-y-4'>
           <Typography variant='heading-2'>Working together</Typography>
           <Typography variant='body'>
-            I’m interested in hands-on senior development work, with a preference for React-focused
-            frontend or balanced full-stack roles. I also bring substantial earlier experience with
-            Kotlin, Java, and Spring Boot.
+            I’m interested in hands-on senior development work, whether frontend-only, backend-only,
+            or full-stack. I also bring substantial earlier experience with Kotlin, Java, and Spring
+            Boot.
           </Typography>
           <Typography variant='body'>
             Alongside delivery, I contribute to architecture, code reviews, testing, and developer
