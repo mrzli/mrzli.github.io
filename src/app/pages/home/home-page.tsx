@@ -28,6 +28,10 @@ export function HomePage(): ReactNode {
                 interfaces and APIs to databases, with experience taking projects from scratch to
                 production and improving systems already in use.
               </Typography>
+              <Typography variant='body' className='max-w-2xl'>
+                I’m comfortable with both AI agent-assisted development and writing code without AI
+                assistance.
+              </Typography>
             </div>
             <TagList tags={PRIMARY_TECHS} />
             <div className='flex flex-wrap items-center gap-5'>
@@ -76,7 +80,7 @@ export function HomePage(): ReactNode {
                   icon='mdi:linkedin'
                   label='LinkedIn'
                 />
-                <IconLink to='https://github.com/mrzli' icon='mdi:github' label='GitHub' />
+                <IconLink to='https://github.com/mrzli/repos' icon='mdi:github' label='GitHub' />
                 <IconLink
                   to='https://stackoverflow.com/users/520229/mrzli'
                   icon='mdi:stackoverflow'
