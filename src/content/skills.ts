@@ -1,6 +1,6 @@
-import type { SkillsSectionProps } from './components';
+import type { SkillSection } from './types';
 
-export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
+export const SKILLS_SECTIONS: readonly SkillSection[] = [
   {
     title: 'Extensive and Recent Experience',
     groups: [
@@ -161,3 +161,6 @@ export const SKILLS_SECTIONS: readonly SkillsSectionProps[] = [
     ],
   },
 ];
+
+export const OPERATING_SYSTEM_EXPERIENCE: string =
+  'I have years of experience with Windows, macOS, and Linux, often using them alongside each other. After mainly using macOS for a decade, I now use Linux as my primary system for work and personal use, and Windows when required.';

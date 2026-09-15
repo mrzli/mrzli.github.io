@@ -1,17 +1,11 @@
 import { Card, Typography } from '@components';
 import type { ReactNode } from 'react';
 
+import type { SkillSection } from '@/content/types';
+
 import { SkillsRow } from './skills-row';
 
-export interface SkillsSectionGroup {
-  readonly title: string;
-  readonly skills: readonly string[];
-}
-
-export interface SkillsSectionProps {
-  readonly title: string;
-  readonly groups: readonly SkillsSectionGroup[];
-}
+export type SkillsSectionProps = SkillSection;
 
 export function SkillsSection({ title, groups }: SkillsSectionProps): ReactNode {
   return (

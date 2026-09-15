@@ -1,8 +1,9 @@
 import { PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
+import { OPERATING_SYSTEM_EXPERIENCE, SKILLS_SECTIONS } from '@/content/skills';
+
 import { SkillsSection } from './components';
-import { SKILLS_SECTIONS } from './data';
 
 export function SkillsPage(): ReactNode {
   return (
@@ -29,11 +30,7 @@ export function SkillsPage(): ReactNode {
         <section className='flex flex-col gap-4'>
           <Typography variant='heading-2'>Operating systems</Typography>
           <Typography variant='prose' as='div' className='space-y-4'>
-            <p>
-              I have years of experience with Windows, macOS, and Linux, often using them alongside
-              each other. After mainly using macOS for a decade, I now use Linux as my primary
-              system for work and personal use, and Windows when required.
-            </p>
+            <p>{OPERATING_SYSTEM_EXPERIENCE}</p>
           </Typography>
         </section>
       </div>

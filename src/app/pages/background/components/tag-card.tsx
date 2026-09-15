@@ -1,10 +1,9 @@
 import { Card, TagList, Typography } from '@components';
 import type { ReactNode } from 'react';
 
-export interface TagCardProps {
-  readonly title: string;
-  readonly tags: readonly string[];
-}
+import type { BackgroundGroup } from '@/content/types';
+
+export type TagCardProps = BackgroundGroup;
 
 export function TagCard({ title, tags }: TagCardProps): ReactNode {
   return (

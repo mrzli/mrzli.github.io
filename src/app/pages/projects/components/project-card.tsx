@@ -1,15 +1,9 @@
 import { Card, ExternalLink, ProjectDetails } from '@components';
 import type { ReactNode } from 'react';
 
-import type { LinkItem } from '../../../types';
+import type { PersonalProject } from '@/content/types';
 
-export interface ProjectCardProps {
-  readonly title: string;
-  readonly text: readonly string[];
-  readonly tags: readonly string[];
-  readonly roleText: readonly string[];
-  readonly links: readonly LinkItem[];
-}
+export type ProjectCardProps = PersonalProject;
 
 export function ProjectCard({ title, text, tags, roleText, links }: ProjectCardProps): ReactNode {
   return (

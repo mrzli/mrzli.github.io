@@ -1,8 +1,8 @@
 import { Card, ProjectDetails } from '@components';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { EXPERIENCE_SECTIONS } from '../../../src/app/pages/experience/data';
-import { PROJECT_ITEMS } from '../../../src/app/pages/projects/data';
+import { EXPERIENCE_SECTIONS } from '@/content/experience';
+import { PROJECT_ITEMS } from '@/content/projects';
 
 const meta = {
   component: ProjectDetails,

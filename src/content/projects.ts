@@ -1,6 +1,7 @@
-import type { ProjectCardProps } from './components';
+import { PROFILE } from './profile';
+import type { PersonalProject } from './types';
 
-export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
+export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Personal website',
     text: ['This website presents my professional experience, skills, projects, and background.'],
@@ -21,7 +22,7 @@ export const PROJECT_ITEMS: readonly ProjectCardProps[] = [
     links: [
       {
         label: 'Site',
-        href: 'https://mrzli.github.io/',
+        href: PROFILE.website,
       },
       {
         label: 'Source Code',

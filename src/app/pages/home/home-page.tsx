@@ -3,9 +3,12 @@ import { Icon } from '@iconify/react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
+import { PRIMARY_TECHS } from '@/content/primary-technologies';
+import { PROFILE, EXPERIENCE_START_YEARS } from '@/content/profile';
+
 import profileImage from '../../../assets/profile.jpg';
 import { IconLink, RouteCard } from './components';
-import { PRIMARY_TECHS, ROUTE_CARDS, WORK_HIGHLIGHTS } from './data';
+import { ROUTE_CARDS, WORK_HIGHLIGHTS } from './data';
 
 export function HomePage(): ReactNode {
   const currentYear = new Date().getFullYear();
@@ -16,21 +19,18 @@ export function HomePage(): ReactNode {
         <div className='grid gap-8 lg:grid-cols-[minmax(0,1fr)_15rem]'>
           <div className='space-y-6'>
             <Typography variant='card-title-accent' as='p'>
-              Senior software developer
+              {PROFILE.title}
             </Typography>
             <div className='space-y-4'>
-              <Typography variant='heading-1'>Goran Mržljak</Typography>
+              <Typography variant='heading-1'>{PROFILE.name}</Typography>
               <Typography variant='lead' className='max-w-2xl'>
-                I build web applications and make complex codebases easier to work with.
+                {PROFILE.lead}
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                My main tools are React, TypeScript, and Node.js. I work across interfaces, APIs,
-                and databases, build applications from scratch to production and improve systems
-                already in use.
+                {PROFILE.summary}
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                I'm comfortable with both AI agent-assisted development and writing code without AI
-                assistance.
+                {PROFILE.ai}
               </Typography>
             </div>
             <TagList tags={PRIMARY_TECHS} />
@@ -52,7 +52,7 @@ export function HomePage(): ReactNode {
 
           <div className='flex items-start gap-4 border-t border-slate-200 pt-6 lg:flex-col lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6 dark:border-slate-800'>
             <img
-              alt='Goran Mržljak'
+              alt={PROFILE.name}
               src={profileImage}
               width={176}
               height={176}
@@ -61,28 +61,27 @@ export function HomePage(): ReactNode {
             <div className='min-w-0 space-y-4'>
               <Typography variant='body' className='flex items-center gap-1.5'>
                 <Icon icon='mdi:map-marker-outline' aria-hidden='true' className='size-4' />
-                Zagreb, Croatia
+                {PROFILE.location}
               </Typography>
               <div className='flex flex-col items-start gap-2'>
                 <a
-                  href='mailto:goran.mrzljak@gmail.com'
+                  href={`mailto:${PROFILE.email}`}
                   className='text-sm font-medium break-all text-amber-700 hover:underline dark:text-cyan-300'
                 >
-                  goran.mrzljak@gmail.com
+                  {PROFILE.email}
                 </a>
-                <a href='tel:+385912243145' className='text-sm hover:underline'>
-                  +385 91 224 3145
+                <a
+                  href={`tel:${PROFILE.phone.replaceAll(' ', '')}`}
+                  className='text-sm hover:underline'
+                >
+                  {PROFILE.phone}
                 </a>
               </div>
               <div className='flex gap-3'>
+                <IconLink to={PROFILE.linkedin} icon='mdi:linkedin' label='LinkedIn' />
+                <IconLink to={PROFILE.github} icon='mdi:github' label='GitHub' />
                 <IconLink
-                  to='https://www.linkedin.com/in/goran-mrzljak'
-                  icon='mdi:linkedin'
-                  label='LinkedIn'
-                />
-                <IconLink to='https://github.com/mrzli/repos' icon='mdi:github' label='GitHub' />
-                <IconLink
-                  to='https://stackoverflow.com/users/520229/mrzli'
+                  to={PROFILE.stackOverflow}
                   icon='mdi:stackoverflow'
                   label='Stack Overflow'
                 />
@@ -96,7 +95,7 @@ export function HomePage(): ReactNode {
               Professional experience
             </Typography>
             <Typography as='dd' variant='heading-3' className='mt-2'>
-              {currentYear - 2008} years
+              {currentYear - EXPERIENCE_START_YEARS.professional} years
             </Typography>
           </div>
           <div>
@@ -104,7 +103,7 @@ export function HomePage(): ReactNode {
               Contract work
             </Typography>
             <Typography as='dd' variant='heading-3' className='mt-2'>
-              {currentYear - 2016} years
+              {currentYear - EXPERIENCE_START_YEARS.contracting} years
             </Typography>
           </div>
           <div>
@@ -150,24 +149,15 @@ export function HomePage(): ReactNode {
       <div className='grid gap-6 lg:grid-cols-2'>
         <Card as='section' padding='large' className='space-y-4'>
           <Typography variant='heading-2'>Hire me</Typography>
-          <Typography variant='body'>
-            I'm looking for hands-on senior development work: frontend, backend, or full-stack.
-          </Typography>
-          <Typography variant='body'>
-            I can build your application from start to finish or join an existing team. I can define
-            the technical architecture, help turn requirements into a working product, and support
-            the team through mentoring, onboarding, and developer interviews.
-          </Typography>
+          <Typography variant='body'>{PROFILE.availability}</Typography>
+          <Typography variant='body'>{PROFILE.services}</Typography>
           <Card variant='highlight' padding='small' className='space-y-2'>
             <Typography variant='card-title-accent' as='h3'>
               Contract details
             </Typography>
-            <Typography variant='body'>
-              B2B contracts for full-time, part-time, or fixed-price work. Remote, with hybrid work
-              possible in Zagreb.
-            </Typography>
+            <Typography variant='body'>{PROFILE.contracts}</Typography>
             <a
-              href='mailto:goran.mrzljak@gmail.com'
+              href={`mailto:${PROFILE.email}`}
               className='inline-flex items-center gap-2 text-sm font-medium text-amber-700 hover:underline dark:text-cyan-300'
             >
               Get in touch

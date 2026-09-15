@@ -1,8 +1,9 @@
 import { PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
+import { EXPERIENCE_SECTIONS } from '@/content/experience';
+
 import { ExperienceSection } from './components';
-import { EXPERIENCE_SECTIONS } from './data';
 
 export function ExperiencePage(): ReactNode {
   return (

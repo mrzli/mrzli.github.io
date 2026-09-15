@@ -1,14 +1,16 @@
 import { Card, ExternalLink, PageContainer, Typography, UnorderedList } from '@components';
 import type { ReactNode } from 'react';
 
-import { TagCard } from './components';
 import {
   ADDITIONAL_LEARNING_ITEMS,
   ADDITIONAL_LEARNING_PARAGRAPHS,
+  EDUCATION,
   EDUCATION_HIGHLIGHTS,
   TAG_CARD_DATA,
   THESIS_LINKS,
-} from './data';
+} from '@/content/background';
+
+import { TagCard } from './components';
 
 export function BackgroundPage(): ReactNode {
   return (
@@ -18,10 +20,8 @@ export function BackgroundPage(): ReactNode {
           <div className='flex flex-col gap-6'>
             <div className='flex flex-col gap-2'>
               <Typography variant='card-title-accent'>Formal Education</Typography>
-              <Typography variant='heading-2'>
-                Faculty of Electrical Engineering and Computing (FER), University of Zagreb
-              </Typography>
-              <Typography variant='body'>Graduate Engineer of Computing</Typography>
+              <Typography variant='heading-2'>{EDUCATION.institution}</Typography>
+              <Typography variant='body'>{EDUCATION.qualification}</Typography>
             </div>
 
             <Typography variant='prose' as='div'>

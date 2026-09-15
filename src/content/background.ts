@@ -1,5 +1,5 @@
-import type { LinkItem } from '../../types';
-import type { TagCardProps } from './components';
+import { PROFILE } from './profile';
+import type { BackgroundGroup, LinkItem } from './types';
 
 export const EDUCATION_HIGHLIGHTS: readonly string[] = [
   'Five-year degree program, totaling 284 ECTS credits.',
@@ -60,8 +60,13 @@ export const ADDITIONAL_LEARNING_ITEMS: readonly AdditionalLearningItem[] = [
   },
 ];
 
-export const TAG_CARD_DATA: readonly TagCardProps[] = [
-  { title: 'Location', tags: ['Zagreb, Croatia'] },
+export const TAG_CARD_DATA: readonly BackgroundGroup[] = [
+  { title: 'Location', tags: [PROFILE.location] },
   { title: 'Languages', tags: ['Croatian - native', 'English - fluent'] },
   { title: "Driver's License", tags: ['AM', 'B', 'F', 'G'] },
 ];
+
+export const EDUCATION = {
+  institution: 'Faculty of Electrical Engineering and Computing (FER), University of Zagreb',
+  qualification: 'Graduate Engineer of Computing',
+} as const;

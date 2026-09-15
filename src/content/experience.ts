@@ -1,12 +1,13 @@
-import type { ExperienceSectionProps } from './components';
+import { EXPERIENCE_START_YEARS } from './profile';
 import { EXPERIENCE_PROJECT_ANCHORS } from './project-anchors';
+import type { ExperienceEntry } from './types';
 
-export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
+export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   {
     title: 'Freelance Software Developer / Self-Employed',
     location: 'Remote',
     role: 'Primarily Full-Stack Web Developer',
-    from: { year: 2016, month: 1 },
+    from: { year: EXPERIENCE_START_YEARS.contracting, month: 1 },
     to: 'Present',
     projects: [
       {

@@ -1,4 +1,5 @@
-import { EXPERIENCE_PROJECT_ANCHORS } from '../experience/project-anchors';
+import { EXPERIENCE_PROJECT_ANCHORS } from '@/content/project-anchors';
+
 import type { RouteCardProps } from './components';
 
 export interface WorkHighlight {
@@ -30,15 +31,6 @@ export const WORK_HIGHLIGHTS: readonly WorkHighlight[] = [
     description:
       'Owned backend subsystems in a live Node.js and MongoDB platform for a mobile fueling company. Delivered system-wide changes and production database migrations, coordinating with a large development team.',
   },
-];
-
-export const PRIMARY_TECHS: readonly string[] = [
-  'React',
-  'TypeScript',
-  'Angular',
-  'Node.js',
-  'NestJS',
-  'PostgreSQL',
 ];
 
 export const ROUTE_CARDS: readonly RouteCardProps[] = [

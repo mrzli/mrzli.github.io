@@ -1,8 +1,9 @@
 import { PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
+import { PROJECT_ITEMS } from '@/content/projects';
+
 import { ProjectCard } from './components';
-import { PROJECT_ITEMS } from './data';
 
 export function ProjectsPage(): ReactNode {
   return (

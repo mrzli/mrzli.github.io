@@ -1,12 +1,7 @@
 import { Typography } from '@components';
 import type { ReactNode } from 'react';
 
-export interface MonthYear {
-  readonly year: number;
-  readonly month: number;
-}
-
-export type DateRangeBound = MonthYear | 'Present';
+import type { DateRangeBound } from '@/content/types';
 
 export interface ExperienceSectionHeaderProps {
   readonly title: string;

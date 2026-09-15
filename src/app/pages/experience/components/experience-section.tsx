@@ -1,24 +1,11 @@
 import type { ReactNode } from 'react';
 
-import { type DateRangeBound, ExperienceSectionHeader } from './experience-section-header';
+import type { ExperienceEntry } from '@/content/types';
+
+import { ExperienceSectionHeader } from './experience-section-header';
 import { ProjectCard } from './project-card';
 
-export interface ProjectItem {
-  readonly id?: string;
-  readonly title: string;
-  readonly text: readonly string[];
-  readonly tags: readonly string[];
-  readonly roleText: readonly string[];
-}
-
-export interface ExperienceSectionProps {
-  readonly title: string;
-  readonly location: string;
-  readonly role: string;
-  readonly from: DateRangeBound;
-  readonly to: DateRangeBound;
-  readonly projects: readonly ProjectItem[];
-}
+export type ExperienceSectionProps = ExperienceEntry;
 
 export function ExperienceSection({
   title,
