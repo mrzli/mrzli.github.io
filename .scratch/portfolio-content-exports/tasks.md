@@ -1,25 +1,25 @@
 # Portfolio content and export tasks
 
-Status: planned
+Status: in progress
 
 Source: [Spec](./spec.md)
 
 Implement in the listed order. Each task is a separate review checkpoint.
 Dependencies describe prerequisites, not permission to combine tasks.
-All tasks are unstarted. This planning request does not authorize implementation.
+PCE-001 is implemented and awaiting review. Later tasks remain unstarted.
 
-| Order | Task                                                                                      | Status  |
-| ----- | ----------------------------------------------------------------------------------------- | ------- |
-| 1     | [PCE-001: Replace the template README](./tasks/PCE-001-readme.md)                         | Planned |
-| 2     | [PCE-002: Refine the professional title and Skills copy](./tasks/PCE-002-title-skills.md) | Planned |
-| 3     | [PCE-003: Shorten the Oracle Eloqua entry](./tasks/PCE-003-eloqua.md)                     | Planned |
-| 4     | [PCE-004: Establish shared professional content](./tasks/PCE-004-shared-content.md)       | Planned |
-| 5     | [PCE-005: Implement shared LaTeX and PDF generation](./tasks/PCE-005-cv-generation.md)    | Planned |
-| 6     | [PCE-006: Write and render the concise CV](./tasks/PCE-006-concise-cv.md)                 | Planned |
-| 7     | [PCE-007: Write and render the detailed CV](./tasks/PCE-007-detailed-cv.md)               | Planned |
-| 8     | [PCE-008: Expose concise and detailed CV downloads](./tasks/PCE-008-cv-downloads.md)      | Planned |
-| 9     | [PCE-009: Generate the LinkedIn Markdown export](./tasks/PCE-009-linkedin.md)             | Planned |
-| 10    | [PCE-010: Verify consistency and close the spec](./tasks/PCE-010-verify-close.md)         | Planned |
+| Order | Task                                                                                      | Status          |
+| ----- | ----------------------------------------------------------------------------------------- | --------------- |
+| 1     | [PCE-001: Replace the template README](./tasks/PCE-001-readme.md)                         | Awaiting review |
+| 2     | [PCE-002: Refine the professional title and Skills copy](./tasks/PCE-002-title-skills.md) | Planned         |
+| 3     | [PCE-003: Shorten the Oracle Eloqua entry](./tasks/PCE-003-eloqua.md)                     | Planned         |
+| 4     | [PCE-004: Establish shared professional content](./tasks/PCE-004-shared-content.md)       | Planned         |
+| 5     | [PCE-005: Implement shared LaTeX and PDF generation](./tasks/PCE-005-cv-generation.md)    | Planned         |
+| 6     | [PCE-006: Write and render the concise CV](./tasks/PCE-006-concise-cv.md)                 | Planned         |
+| 7     | [PCE-007: Write and render the detailed CV](./tasks/PCE-007-detailed-cv.md)               | Planned         |
+| 8     | [PCE-008: Expose concise and detailed CV downloads](./tasks/PCE-008-cv-downloads.md)      | Planned         |
+| 9     | [PCE-009: Generate the LinkedIn Markdown export](./tasks/PCE-009-linkedin.md)             | Planned         |
+| 10    | [PCE-010: Verify consistency and close the spec](./tasks/PCE-010-verify-close.md)         | Planned         |
 
 ## Working rules
 
@@ -57,5 +57,6 @@ Keep logs, rendered inspection images, and other intermediates outside public.
 
 ## Progress record
 
-Planning files created on 2026-09-15. No implementation or export regeneration
-has started. No task has been reviewed as implemented or committed.
+Planning files were committed as de7b621. PCE-001 is implemented and awaiting
+review. No implementation task has been committed. Export generation and
+PCE-002 through PCE-010 have not started.

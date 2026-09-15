@@ -21,7 +21,7 @@ Completed implementation, README.md, relevant .agents/ instructions, final publi
 - [ ] Regenerate both CVs and LinkedIn using documented commands. Confirm public has only the intended new exports and no build intermediates.
 - [ ] Confirm exported TeX compiles with documented standard dependencies and no project-private layout fragments. Inspect final PDFs, text extraction, links, page breaks, and readable type.
 - [ ] Verify both website downloads, existing selected-work anchors, responsive layout, themes, and relevant keyboard interactions. Preserve GitHub Pages fallback behavior.
-- [ ] Review README and lasting project instructions for accurate content locations, generation prerequisites/commands, generated-file ownership, and separately authored summary maintenance.
+- [ ] Confirm the README briefly covers generating TeX and LinkedIn Markdown and compiling both CV PDFs, with working usage commands. Keep detailed content locations, prerequisites, generated-file ownership, and summary maintenance in the appropriate project/workflow documentation.
 - [ ] Reuse earlier passing checks when unaffected. Record any missing browser, TeX, hosting, or LinkedIn account verification explicitly.
 - [ ] Update the task index and spec status only after implementation and required verification finish. Leave the task uncommitted for user review.
 

@@ -18,4 +18,4 @@
 ## Configuration
 
 - Preserve `bunfig.toml` and `.vscode/settings.json`, if present, unless the user explicitly requests changing them.
-- Use the actual source and `package.json` to establish current behavior. The root README is template documentation, and `docs/backlog.md` may include already implemented work.
+- Use the actual source and `package.json` to establish current behavior.

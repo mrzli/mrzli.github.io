@@ -1,6 +1,6 @@
 # Portfolio content and exports
 
-Status: planned
+Status: in progress
 
 Created: 2026-09-15
 
@@ -36,6 +36,17 @@ start implementation.
   the PDF back. The ordinary website build does not generate the CV.
 
 ## Approved content decisions
+
+### README scope after review
+
+Keep the README short: website purpose, bun run dev, and automatic deployment to
+GitHub Pages on pushes to master. Omit command catalogs, content-file maps, and
+export implementation details. This supersedes the original broader README task.
+Once exports are implemented, add a short README section explaining generation
+of the TeX text files and LinkedIn Markdown, and compilation of the TeX files
+into the concise and detailed CV PDFs. Include only the relevant usage commands.
+Keep deeper maintenance details in project instructions or separate workflow
+documentation. Do not describe future generation features as available now.
 
 ### Audience and website copy
 
@@ -185,7 +196,7 @@ validation. No LinkedIn API, account updates, blog, or publishing is involved.
 Implement one task at a time in order. Leave each task working and independently
 reviewable, update its record, and stop for review. Do not commit until the user
 requests it. A request to commit does not itself authorize the next task.
-The current authorization is to create these planning files only.
+PCE-001 is authorized and awaiting review. Later tasks require authorization.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production

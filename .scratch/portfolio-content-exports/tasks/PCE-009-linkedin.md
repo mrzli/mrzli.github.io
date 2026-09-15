@@ -22,6 +22,7 @@ Shared content and LinkedIn-specific copy, a small Markdown generator, package.j
 - [ ] Separate Markdown field labels and count notes from the actual copyable text. Make titles, company, dates, and descriptions easy to identify.
 - [ ] Validate Headline at 220 characters, About at 2,600, and each Experience description at 2,000 as initial working limits. Verify any other constrained fields against current evidence and record sources/date and unverified assumptions.
 - [ ] Fail/report over-limit content without silent truncation. Keep the validation small, with limits maintained in code rather than a configurable framework.
+- [ ] Once implemented, extend the short README export section with the LinkedIn Markdown generation command and its purpose: manually copying profile text into LinkedIn.
 - [ ] Generate LinkedIn.md deterministically from source and document the command, editing workflow, and manual copy step. No API, account access, publishing, or blog.
 - [ ] Record whether the single contracting entry remains useful within its limit. If the draft needs a structural change, bring the concrete copy to review before splitting entries.
 

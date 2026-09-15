@@ -18,6 +18,7 @@ package.json, shared content, new generation scripts and LaTeX template files, R
 
 - [ ] Implement one repository-owned LaTeX layout and a small deterministic generator that supports concise and detailed selections. Use standard documented dependencies instead of an untracked resume class.
 - [ ] Generate TeX from shared content with correct escaping, Unicode name handling, dates, and configurable selection through ordinary code. No build-time AI or generic export framework.
+- [ ] Once implemented, add a brief README explanation and usage command for generating TeX text files and compiling them into CV PDFs. Keep internal implementation details out of the README.
 - [ ] Extend the existing build:cv workflow. Keep the ordinary website build independent of LaTeX and document real commands/prerequisites.
 - [ ] Compile into tmp/cv and publish only complete successful outputs. A failure must exit unsuccessfully without replacing a good public export.
 - [ ] Make exported TeX self-contained apart from standard dependencies. Keep templates, logs, auxiliary files, and intermediate PDFs outside public.
