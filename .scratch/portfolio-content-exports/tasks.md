@@ -6,13 +6,13 @@ Source: [Spec](./spec.md)
 
 Implement in the listed order. Each task is a separate review checkpoint.
 Dependencies describe prerequisites, not permission to combine tasks.
-PCE-001 is complete. PCE-002 is complete and approved for commit. Later tasks remain unstarted.
+PCE-001 and PCE-002 are complete. PCE-003 is complete. Later tasks remain unstarted.
 
 | Order | Task                                                                                      | Status   |
 | ----- | ----------------------------------------------------------------------------------------- | -------- |
 | 1     | [PCE-001: Replace the template README](./tasks/PCE-001-readme.md)                         | Complete |
 | 2     | [PCE-002: Refine the professional title and Skills copy](./tasks/PCE-002-title-skills.md) | Complete |
-| 3     | [PCE-003: Shorten the Oracle Eloqua entry](./tasks/PCE-003-eloqua.md)                     | Planned  |
+| 3     | [PCE-003: Shorten the Oracle Eloqua entry](./tasks/PCE-003-eloqua.md)                     | Complete |
 | 4     | [PCE-004: Establish shared professional content](./tasks/PCE-004-shared-content.md)       | Planned  |
 | 5     | [PCE-005: Implement shared LaTeX and PDF generation](./tasks/PCE-005-cv-generation.md)    | Planned  |
 | 6     | [PCE-006: Write and render the concise CV](./tasks/PCE-006-concise-cv.md)                 | Planned  |
@@ -57,6 +57,5 @@ Keep logs, rendered inspection images, and other intermediates outside public.
 
 ## Progress record
 
-Planning files were committed as de7b621. The user committed PCE-001 as 71ffb86.
-PCE-002 is complete and approved for commit. PCE-003 through PCE-010
-have not started.
+Planning files were committed as de7b621. PCE-001 was committed by the user as
+71ffb86 and PCE-002 as 7e3bf3a. PCE-003 is complete and approved for commit. PCE-004 through PCE-010 have not started.

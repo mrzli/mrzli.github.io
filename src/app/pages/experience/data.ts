@@ -67,8 +67,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
         id: EXPERIENCE_PROJECT_ANCHORS.eloqua,
         title: 'Oracle Eloqua to mobile messaging integration',
         text: [
-          'Oracle Eloqua is a cloud-based B2B marketing automation platform for designing campaigns through a visual drag-and-drop interface. Alongside its built-in nodes, it supports third-party integrations and extensions through the Oracle Cloud Marketplace.',
-          'This integration connects Eloqua to a mobile messaging platform, allowing users to send SMS and WhatsApp messages as part of their campaigns. It was a medium-sized project with complex business logic and requirements.',
+          'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users could send SMS and WhatsApp messages within their campaigns. An embedded React interface let users configure and monitor the integration.',
         ],
         tags: [
           'React',
@@ -90,17 +89,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceSectionProps[] = [
           'Nx (monorepo)',
         ],
         roleText: [
-          'I implemented the entire integration except the CI/CD pipeline, which was handled separately by another developer. It remains one of my favorite projects: broad enough to involve many aspects of software development, but small enough for me to build on my own.',
-          'The high-level goals were clear and achievable, even though some requirements needed clarification. I worked autonomously, studied the documentation, clarified details with the client, and gave regular progress demos.',
-          'The client required JavaScript and recommended MySQL, choices I was happy with. Otherwise, I was free to choose the stack, structure, and development process. Understanding the Oracle documentation was the hardest initial task. Development went smoothly after that.',
-          'I used an Nx monorepo, React for the frontend, Redux and redux-observable for state management and API calls, NestJS for the backend, and Prisma as the ORM.',
-          'The codebase was about 20,000 lines, including roughly 1,000-2,000 lines of tests. It handled asynchronous, two-way communication with both Eloqua and the messaging platform. A React frontend embedded in the Eloqua web client as an iframe let users configure and monitor the integration.',
-          'Campaign flows involved hundreds of thousands of messages that needed to be processed within a short period. The main challenge was coordinating concurrent, asynchronous operations and preventing race conditions while keeping campaigns moving without message loss. The integration also collected delivery and failure reports through webhooks and generated statistics.',
-          'Load testing near the end of development revealed several race conditions caused by mistakes in my implementation. One involved a Prisma call that wrote and then read data without an atomic database operation. I fixed it with a transaction, a reminder to understand the database behavior behind ORM calls. The other issues were also straightforward to fix once detected. Knowing the whole codebase and its execution flows made these usually difficult problems manageable.',
-          'I added extensive backend tests: unit tests, at least one test per endpoint, and tests for the complex asynchronous flows I could identify, especially those where race conditions had occurred. I designed the database and external service interfaces to be mockable rather than using an in-memory database. This kept the tests fast and provided a useful regression safety net.',
-          'Extensive logging supported debugging and monitoring and helped identify the race conditions.',
-          'Authentication included OAuth 2.0 for requests to Eloqua, OAuth 1.0a for requests from Eloqua, API keys for requests to the messaging platform, and, as I recall, Basic Auth for incoming messaging webhooks. I used JWT authentication between the frontend and backend.',
-          'Another developer handled deployment to Azure for testing and production.',
+          'I independently built the integration, from the frontend and backend to the database and external APIs. Within broad constraints, such as using JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, gave periodic progress demos and produced the resulting integration.',
+          'The roughly 20,000-line application coordinated two-way asynchronous communication between both platforms. Campaign flows involved hundreds of thousands of messages that needed to be processed in a relatively short amount of time, reliably and consistently, along with all of the callbacks and interactions they produced. One of the technical challenges was coordinating concurrent operations and preventing race conditions so campaigns could progress without losing messages. Webhooks supplied delivery and failure reports for statistics.',
+          'Load testing exposed race conditions that I fixed and covered with regression tests. I added extensive backend coverage, including unit tests, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast, while detailed logging supported debugging and monitoring.',
+          'Different connections required separate authentication protocols. For this project, I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming messaging webhooks used Basic Auth, as I recall.',
         ],
       },
       {
