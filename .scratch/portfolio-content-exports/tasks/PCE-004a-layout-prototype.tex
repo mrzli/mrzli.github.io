@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[left=23mm,right=23mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\definecolor{accent}{HTML}{243B53}
+\definecolor{muted}{HTML}{292524}
+\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Goran Mržljak — CV layout review},pdfauthor={Goran Mržljak}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.07}
+\pagestyle{plain}
+\clubpenalty=10000
+\widowpenalty=10000
+\newcommand{\cvsection}[1]{\par\addvspace{14pt}{\large\bfseries #1}\par\nopagebreak\vskip 3pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
+\newcommand{\employer}[4]{\par\addvspace{9pt}\textbf{#1}\hfill #2\par\nopagebreak\vspace{-3pt}{\itshape #3}\hfill {\color{muted}#4}\par\nopagebreak}
+\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\itshape\color{muted}#2}\par\nopagebreak}
+\newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Goran Mržljak}\par
+\vspace{2pt}
+{\large Senior software developer}\par
+\vspace{5pt}
+Zagreb, Croatia\enspace $\cdot$\enspace \href{tel:+385912243145}{+385 91 224 3145}\enspace $\cdot$\enspace \href{mailto:goran.mrzljak@gmail.com}{goran.mrzljak@gmail.com}\par
+\href{https://mrzli.github.io/}{mrzli.github.io}\enspace $\cdot$\enspace \href{https://github.com/mrzli/repos}{GitHub}\enspace $\cdot$\enspace \href{https://www.linkedin.com/in/goran-mrzljak}{LinkedIn}
+\end{center}
+\cvsection{Profile}
+I build web applications from start to finish or join existing teams, working on
+frontend, backend, or the full stack. I can define the technical architecture,
+help clarify requirements, and support a team through mentoring and onboarding.
+\begin{points}
+\item \the\numexpr\year-2008\relax\ years of professional experience. Independent contracting since 2016.
+\item Hands-on development with AI coding agents or without AI assistance.
+\item B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb.
+\end{points}
+\cvsection{Core technologies}
+\textbf{Development}\enspace React, TypeScript, Angular, Node.js, NestJS, PostgreSQL\par
+\textbf{Tools}\enspace Jest, Docker, Git, Codex CLI, Copilot
+\cvsection{Work experience}
+\employer{Independent contractor}{January 2016 -- Present}{Senior software developer}{Remote}
+\project{HVAC monitoring and control}{React, TypeScript, MobX, Tailwind CSS}
+An application for monitoring and controlling HVAC equipment across buildings
+and sites, developed for a large multinational.
+\begin{points}
+\item Built frontend sections, components, and controls to match UI designs, and
+fixed issues as part of an established team.
+\end{points}
+\project{Warehouse robotics}{Angular, TypeScript, RxJS}
+A web application for managing robots and fleets, with roughly 100,000 lines of
+frontend code in each of several related repositories.
+\begin{points}
+\item Independently migrated Angular 8 to 18, resolving over a thousand errors
+without observed regressions and removing a major blocker for the security audit.
+\item Organized the migration for reuse across related applications and branches.
+\end{points}
+\newpage
+\cvsection{Work experience continued}
+{\textbf{Independent contractor}\hfill January 2016 -- Present}\par
+\project{Oracle Eloqua messaging integration}{React, NestJS, TypeScript, MySQL, Jest}
+An integration enabling SMS and WhatsApp messaging within Oracle Eloqua campaigns.
+\begin{points}
+\item Independently built the frontend, backend, database, and API integrations,
+making technical and architectural decisions and clarifying requirements with the client.
+\item Coordinated asynchronous flows involving hundreds of thousands of messages.
+Resolved race conditions and added extensive backend and regression tests.
+\end{points}
+\project{Mobile fueling operations}{Node.js, Express, MongoDB, Angular}
+A production platform supporting the operations of a large mobile fueling company.
+\begin{points}
+\item Owned backend subsystems, delivered changes affecting the whole application,
+and ran production database migrations with careful testing and coordination.
+\item Worked on the Angular administration app and interviewed, onboarded, and
+mentored developers.
+\end{points}
+\cvsection{Earlier employment}
+\employer{APIS IT}{November 2013 -- May 2016}{C\# Developer}{Zagreb, Croatia}
+Implemented seven complete e-Tax forms and contributed to about ten others,
+covering web interfaces, XML import and export, PDF reports, server-side
+validation, and data access.
+\employer{INETEC d.o.o.}{November 2009 -- October 2012}{C\# Windows Desktop (WPF) Developer}{Zagreb, Croatia}
+Developed substantial parts of nuclear inspection software, including custom
+2D and 3D signal charts, multithreaded rendering, signal processing, and persistence.
+\cvsection{Education}
+\textbf{Faculty of Electrical Engineering and Computing (FER)}\par
+University of Zagreb\par
+Graduate Engineer of Computing. Five-year degree program, 284 ECTS credits.
+\end{document}
