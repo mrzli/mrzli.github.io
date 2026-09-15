@@ -1,6 +1,6 @@
 # PCE-001: Replace the template README
 
-Status: awaiting review
+Status: complete
 
 Depends on: none
 
@@ -29,7 +29,7 @@ package.json and the GitHub Actions workflow. No application build is required.
 
 ## Completion record
 
-Implemented on 2026-09-15. Awaiting user review, uncommitted.
+Implemented and reviewed on 2026-09-15. Committed by the user as 71ffb86.
 
 - Simplified the README following user review to purpose, development, and automatic deployment.
   This replaces the original task's broader documentation scope.

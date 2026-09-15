@@ -12,13 +12,12 @@ export function SkillsPage(): ReactNode {
           <div className='flex flex-col gap-4'>
             <p>Technologies and tools I have used, grouped by depth and recency of experience.</p>
             <p>
-              <span className='font-bold'>Extensive experience</span>: I have used the technology
-              regularly, usually for several years, and built entire projects with it.
+              <span className='font-bold'>Extensive experience</span>: Substantial hands-on
+              experience through regular use.
             </p>
             <p>
-              <span className='font-bold'>Limited experience</span>: Usually weeks or months
-              exploring the technology on my own, sometimes using it professionally for specific
-              tasks.
+              <span className='font-bold'>Limited experience</span>: Shorter exploration or use for
+              specific tasks.
             </p>
           </div>
         </Typography>
@@ -28,22 +27,12 @@ export function SkillsPage(): ReactNode {
           ))}
         </div>
         <section className='flex flex-col gap-4'>
-          <Typography variant='heading-2'>More about my experience</Typography>
+          <Typography variant='heading-2'>Operating systems</Typography>
           <Typography variant='prose' as='div' className='space-y-4'>
             <p>
-              Technologies listed under limited experience have not been part of my daily work,
-              though my familiarity can still be substantial.
-            </p>
-            <p>
-              This overview helps readers, including recruiters, find specific skills. It includes
-              fundamentals such as HTML and CSS, even where that knowledge might be assumed.
-              Learning a technology is often easier than understanding an existing codebase, its
-              domain, or unfamiliar team practices, especially when onboarding is limited.
-            </p>
-            <p>
-              I have used Windows, macOS, and Linux for several years each, often concurrently. I
-              mainly used macOS over the past decade, but Linux has become my primary system for
-              personal and professional use in recent years. I still use Windows when required.
+              I have years of experience with Windows, macOS, and Linux, often using them alongside
+              each other. After mainly using macOS for a decade, I now use Linux as my primary
+              system for work and personal use, and Windows when required.
             </p>
           </Typography>
         </section>

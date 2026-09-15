@@ -196,7 +196,7 @@ validation. No LinkedIn API, account updates, blog, or publishing is involved.
 Implement one task at a time in order. Leave each task working and independently
 reviewable, update its record, and stop for review. Do not commit until the user
 requests it. A request to commit does not itself authorize the next task.
-PCE-001 is authorized and awaiting review. Later tasks require authorization.
+PCE-001 and PCE-002 are complete. PCE-003 is authorized as the next separate task.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production

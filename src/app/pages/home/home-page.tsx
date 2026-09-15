@@ -16,7 +16,7 @@ export function HomePage(): ReactNode {
         <div className='grid gap-8 lg:grid-cols-[minmax(0,1fr)_15rem]'>
           <div className='space-y-6'>
             <Typography variant='card-title-accent' as='p'>
-              Senior full-stack web developer
+              Senior software developer
             </Typography>
             <div className='space-y-4'>
               <Typography variant='heading-1'>Goran Mržljak</Typography>
