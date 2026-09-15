@@ -22,7 +22,7 @@ Keep existing project anchors stable when editing titles. Experience totals use
 the current year minus 2008 for professional work and minus 2016 for contracting.
 These summary years do not replace the more precise employment dates.
 
-The website facts take precedence over the older CV. CV and LinkedIn generation
-will be connected in later tasks. Their separately authored summaries and selections
-will be added when each export is implemented. A change to a shared fact will still
+The website facts take precedence over the older CV. The [CV generator](./cv-generation.md)
+now consumes shared records using temporary layout-review selections. Final CV
+summaries and LinkedIn generation will follow in their separate tasks. A change to a shared fact will still
 require checking any summaries that mention it in prose.

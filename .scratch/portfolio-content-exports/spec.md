@@ -217,7 +217,8 @@ reviewable, update its record, and stop for review. Do not commit until the user
 requests it. A request to commit does not itself authorize the next task.
 PCE-001 through PCE-004 are complete. PCE-004A is the next review checkpoint.
 The PCE-004A prototype is approved: Palatino, navy (#243B53) rules and links,
-and dark charcoal secondary text. PCE-005 is authorized next.
+and dark charcoal secondary text. PCE-005 is complete.
+PCE-006 has not started.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production

@@ -1,0 +1,25 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[left=23mm,right=23mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\definecolor{accent}{HTML}{243B53}
+\definecolor{muted}{HTML}{292524}
+\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Curriculum vitae},pdfauthor={%%AUTHOR%%}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.07}
+\pagestyle{plain}
+\clubpenalty=10000
+\widowpenalty=10000
+\newcommand{\cvsection}[1]{\par\addvspace{14pt}{\large\bfseries #1}\par\nopagebreak\vskip 3pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
+\newcommand{\employer}[4]{\par\addvspace{9pt}\textbf{#1}\hfill #2\par\nopagebreak\vspace{-3pt}{\itshape #3}\hfill {\color{muted}#4}\par\nopagebreak}
+\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\itshape\color{muted}#2}\par\nopagebreak}
+\newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
+\begin{document}
+%%BODY%%
+\end{document}
