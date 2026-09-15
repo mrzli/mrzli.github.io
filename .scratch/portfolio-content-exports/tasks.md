@@ -6,7 +6,8 @@ Source: [Spec](./spec.md)
 
 Implement in the listed order. Each task is a separate review checkpoint.
 Dependencies describe prerequisites, not permission to combine tasks.
-PCE-001 through PCE-003 are complete. PCE-004 is complete. Later tasks remain unstarted.
+PCE-001 through PCE-004 are complete. PCE-004A is inserted before PCE-005
+to review the CV layout before generator implementation. Remaining tasks are planned.
 
 | Order | Task                                                                                      | Status   |
 | ----- | ----------------------------------------------------------------------------------------- | -------- |
@@ -14,17 +15,20 @@ PCE-001 through PCE-003 are complete. PCE-004 is complete. Later tasks remain un
 | 2     | [PCE-002: Refine the professional title and Skills copy](./tasks/PCE-002-title-skills.md) | Complete |
 | 3     | [PCE-003: Shorten the Oracle Eloqua entry](./tasks/PCE-003-eloqua.md)                     | Complete |
 | 4     | [PCE-004: Establish shared professional content](./tasks/PCE-004-shared-content.md)       | Complete |
-| 5     | [PCE-005: Implement shared LaTeX and PDF generation](./tasks/PCE-005-cv-generation.md)    | Planned  |
-| 6     | [PCE-006: Write and render the concise CV](./tasks/PCE-006-concise-cv.md)                 | Planned  |
-| 7     | [PCE-007: Write and render the detailed CV](./tasks/PCE-007-detailed-cv.md)               | Planned  |
-| 8     | [PCE-008: Expose concise and detailed CV downloads](./tasks/PCE-008-cv-downloads.md)      | Planned  |
-| 9     | [PCE-009: Generate the LinkedIn Markdown export](./tasks/PCE-009-linkedin.md)             | Planned  |
-| 10    | [PCE-010: Verify consistency and close the spec](./tasks/PCE-010-verify-close.md)         | Planned  |
+| 5     | [PCE-004A: Review the CV layout against the original](./tasks/PCE-004a-cv-layout.md)      | Planned  |
+| 6     | [PCE-005: Implement shared LaTeX and PDF generation](./tasks/PCE-005-cv-generation.md)    | Planned  |
+| 7     | [PCE-006: Write and render the concise CV](./tasks/PCE-006-concise-cv.md)                 | Planned  |
+| 8     | [PCE-007: Write and render the detailed CV](./tasks/PCE-007-detailed-cv.md)               | Planned  |
+| 9     | [PCE-008: Expose concise and detailed CV downloads](./tasks/PCE-008-cv-downloads.md)      | Planned  |
+| 10    | [PCE-009: Generate the LinkedIn Markdown export](./tasks/PCE-009-linkedin.md)             | Planned  |
+| 11    | [PCE-010: Verify consistency and close the spec](./tasks/PCE-010-verify-close.md)         | Planned  |
 
 ## Working rules
 
 - Read the project instructions before each task and use writing-text for prose.
-- Treat website facts as authoritative over the old CV. Preserve the decisions in the spec.
+- Treat website facts as authoritative over the old CV. Use the original CV at
+  c37ee5b as the visual baseline and review the PCE-004A prototype before building
+  the generator. Preserve the decisions in the spec.
 - Implement one task, record checks and outstanding issues, update this index,
   and stop for review. Commit only when requested. Continue only when authorized.
 - Keep shared facts separate from the task-specific work of authoring export copy.
@@ -58,4 +62,7 @@ Keep logs, rendered inspection images, and other intermediates outside public.
 ## Progress record
 
 Planning files were committed as de7b621. PCE-001 was committed as 71ffb86,
-PCE-002 as 7e3bf3a, and PCE-003 as 64ce81e. PCE-004 is complete and approved for commit. PCE-005 through PCE-010 have not started.
+PCE-002 as 7e3bf3a, PCE-003 as 64ce81e, and PCE-004 as c37ee5b.
+The first generator implementation and concise CV draft were reverted after
+the user rejected the visual result. PCE-004A adds a layout review using the
+original CV as the baseline. PCE-004A and PCE-005 through PCE-010 are planned.

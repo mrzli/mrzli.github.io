@@ -19,6 +19,7 @@ Shared content and detailed CV summaries/selections, shared LaTeX template if ne
 - [ ] Cover the career timeline and significant projects with more context and contributions than the concise CV. Reuse suitable wording and shared facts.
 - [ ] Treat four or five pages as an expectation, not a cap or minimum. Remove repetition and low-value detail rather than useful content solely for page count.
 - [ ] Use the same generator and layout as the concise CV, with appropriate content-driven page breaks. Do not create a second template or separate fact store.
+- [ ] Preserve the reviewed design and the original CV's visual strengths across the longer document. Check density, hierarchy, and continuation pages, rather than simply adding more paragraphs.
 - [ ] Keep the website the fullest account. Do not copy every paragraph automatically or duplicate overview/detail sections.
 - [ ] Produce self-contained CV-detailed.tex and the final PDF, with no public intermediates. Document the generation command.
 - [ ] Recheck the concise output if template or shared facts change.

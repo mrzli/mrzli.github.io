@@ -135,6 +135,25 @@ Existing unrelated public assets stay in place.
 
 ### CV content and layout
 
+Use the original `public/data/CV.pdf` and `public/data/CV.tex` at commit
+`c37ee5b` as the visual baseline. The website remains authoritative for facts.
+Inspect the original PDF before designing the replacement. Preserve or improve
+its typography, hierarchy, spacing, alignment, and scanning rhythm. Recreating
+its visual strengths with standard LaTeX dependencies is preferable to replacing
+it with a generic document layout.
+
+Before implementing the generator, complete PCE-004A: prepare a representative
+PDF layout using real content and compare it visually with the original. Include
+the opening page and a continuation page with experience entries. Keep the
+prototype outside public and obtain user review of the layout before PCE-005.
+Build the generator around the approved design. Do not restore the rejected
+generator or CV layout by default.
+
+Page count and successful compilation are not measures of design quality.
+Avoid dense paragraph dumps, excessive bold headings, and repetitive stacked
+employer/role blocks. Assess hierarchy, balance, and ease of scanning against
+the original and the approved prototype throughout both CV content tasks.
+
 Use single-column A4, restrained color, readable type, and clear headings.
 Do not add a broad sidebar. Include contact details with website/GitHub links,
 a brief summary, core skills, experience, and education. Give experience most space.
@@ -196,7 +215,8 @@ validation. No LinkedIn API, account updates, blog, or publishing is involved.
 Implement one task at a time in order. Leave each task working and independently
 reviewable, update its record, and stop for review. Do not commit until the user
 requests it. A request to commit does not itself authorize the next task.
-PCE-001 through PCE-004 are complete. PCE-005 is authorized as the next separate task.
+PCE-001 through PCE-004 are complete. PCE-004A is the next review checkpoint.
+This revision updates planning only. Layout and generator implementation have not started.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production
@@ -219,7 +239,7 @@ relevant lasting project instructions as the implemented workflow becomes concre
 
 ## Completion criteria
 
-All ten tasks satisfy their checklists and have review records. Both PDFs and
+All eleven tasks satisfy their checklists and have review records. Both PDFs and
 TeX files regenerate from shared source content, LinkedIn Markdown covers the
 agreed fields, public contains no new intermediates, and website download links
 clearly distinguish concise and detailed CVs. Mark complete only after the final
