@@ -1,6 +1,6 @@
 # Portfolio content and exports
 
-Status: in progress
+Status: verified, awaiting final review
 
 Created: 2026-09-15
 
@@ -222,10 +222,12 @@ validation. No LinkedIn API, account updates, blog, or publishing is involved.
 Implement one task at a time in order. Leave each task working and independently
 reviewable, update its record, and stop for review. Do not commit until the user
 requests it. A request to commit does not itself authorize the next task.
-PCE-001 through PCE-004 are complete. PCE-004A is the next review checkpoint.
-The PCE-004A prototype is approved: Palatino, navy (#243B53) rules and links,
-and dark charcoal secondary text. PCE-005 is complete.
-PCE-006 is complete. PCE-007 is complete. PCE-008 is complete. PCE-009 is complete.
+PCE-001 through PCE-009, including the approved PCE-004A design review, are complete.
+PCE-010 verification is finished. The final short CV is two pages and the detailed
+CV is seven pages, using the approved Palatino, navy, and charcoal design.
+Both CV formats and the LinkedIn export regenerate successfully. See the
+[PCE-010 verification record](./tasks/PCE-010-verify-close.md) for evidence and
+limitations. Final user review and commit are the only remaining checkpoint.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production

@@ -14,7 +14,7 @@ Edit reusable professional facts and website prose in `src/content/`:
 | `projects.ts`             | Personal projects and their links.                                                              |
 | `background.ts`           | Education, learning, languages, and other background facts.                                     |
 | `project-anchors.ts`      | Stable IDs for the three homepage project links.                                                |
-| `types.ts`                | Content types shared by the website and future exports.                                         |
+| `types.ts`                | Content types shared by the website and exports.                                                |
 
 These are plain TypeScript modules. They do not depend on React, browser globals,
 or component props, so Bun scripts can import them directly. Pages and Storybook
