@@ -16,6 +16,7 @@ export function renderCv(document: CvDocument): string {
     link(profile.linkedin, 'LinkedIn'),
   ].join(String.raw` \enspace $\cdot$\enspace `);
   const body = [
+    ...(document.variant === 'concise' ? [String.raw`\setlength{\parskip}{4pt}`] : []),
     String.raw`\begin{center}`,
     String.raw`{\LARGE\bfseries ${escapeLatex(profile.name)}}\par`,
     String.raw`\vspace{2pt}{\large ${escapeLatex(profile.title)}}\par`,
@@ -26,8 +27,8 @@ export function renderCv(document: CvDocument): string {
     ...document.summary.map(paragraph),
     bulletList([
       `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
-      profile.ai,
-      profile.contracts,
+      document.ai,
+      document.contracts,
     ]),
     String.raw`\cvsection{Core technologies}`,
     String.raw`\textbf{Development}\enspace ${escapeLatex(document.technologies.join(', '))}\par`,
@@ -42,8 +43,12 @@ export function renderCv(document: CvDocument): string {
     ]),
     String.raw`\cvsection{Education}`,
     String.raw`\textbf{${escapeLatex(document.education.institution)}}\par`,
-    paragraph(document.education.qualification),
-    ...document.educationHighlights.map(paragraph),
+    ...(document.variant === 'concise'
+      ? [paragraph([document.education.qualification, ...document.educationHighlights].join('. '))]
+      : [
+          paragraph(document.education.qualification),
+          ...document.educationHighlights.map(paragraph),
+        ]),
   ].join('\n');
   return readFileSync(new URL('./template.tex', import.meta.url), 'utf8')
     .replace('%%AUTHOR%%', () => escapeLatex(profile.name))

@@ -6,6 +6,7 @@ Edit reusable professional facts and website prose in `src/content/`:
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | `profile.ts`              | Name, professional title, contacts, introduction, work preferences, and experience start years. |
 | `experience.ts`           | Employment dates, roles, client projects, technologies, and contributions.                      |
+| `cv-concise.ts`           | Concise CV introduction, work preferences, and selected tools.                                  |
 | `skills.ts`               | Skill classifications and operating-system experience.                                          |
 | `primary-technologies.ts` | The selected technologies shown on Home.                                                        |
 | `projects.ts`             | Personal projects and their links.                                                              |
@@ -23,6 +24,9 @@ the current year minus 2008 for professional work and minus 2016 for contracting
 These summary years do not replace the more precise employment dates.
 
 The website facts take precedence over the older CV. The [CV generator](./cv-generation.md)
-now consumes shared records using temporary layout-review selections. Final CV
-summaries and LinkedIn generation will follow in their separate tasks. A change to a shared fact will still
-require checking any summaries that mention it in prose.
+consumes shared records. Concise project copy lives in each project's optional
+`concise` field in `experience.ts`. Earlier employers use `conciseTitle` and
+`conciseSummary`. These fields select entries without changing website wording.
+The concise introduction and tool selection live in `cv-concise.ts`. Detailed CV
+content and LinkedIn generation will follow separately. A change to a shared fact
+still requires checking any summaries that mention it in prose.

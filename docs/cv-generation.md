@@ -1,17 +1,16 @@
 # CV generation
 
-Run `bun run build:cv` to generate concise and detailed CV drafts from shared
+Run `bun run build:cv` to generate the concise CV and detailed draft from shared
 portfolio content. Both use the reviewed Palatino layout with navy rules and links.
 The command prints a fresh output directory such as
 `tmp/cv/build_20260915-213005`. The timestamp uses local time to the second.
 Sort the timestamped folder names to find the latest run. If a folder already
 exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffix.
 
-These are generation samples, not complete CVs. The concise sample reproduces
-four contracting projects and two earlier employers from the layout review.
-The detailed sample uses the fuller website text for those entries. Final
-selections and wording belong to the separate concise and detailed CV tasks.
-The existing public downloads remain unchanged until those tasks.
+The concise CV contains five contracting projects and the complete professional
+employment timeline since 2008, with education, on two A4 pages. Its TeX and PDF
+are available in `public/data/`. The detailed version remains a generation sample
+with four contracting projects and two earlier employers until its content task.
 
 ## Commands
 
@@ -58,18 +57,22 @@ needed. Every build uses a fresh directory to avoid stale output masking failure
 ## Editing
 
 - Professional facts: [shared content](./content.md).
-- Temporary layout-review copy and selected entries: `scripts/cv/draft-content.ts`.
-  Selections reference the shared experience records. Review these references if
-  entries are reordered. This sample is not the final export content model.
+- Concise wording: `src/content/cv-concise.ts` and the optional `concise`,
+  `conciseTitle`, and `conciseSummary` fields alongside records in `src/content/experience.ts`.
+- Detailed draft selections: `scripts/cv/draft-content.ts`. These still reference
+  shared experience entries by position and need review if entries are reordered.
+  They will be replaced during the detailed CV task.
 - Variant selection and year calculations: `scripts/cv/document.ts`.
 - TeX rendering: `scripts/cv/render.ts`.
 - Shared visual template: `scripts/cv/template.tex`, based on the approved
   `.scratch/portfolio-content-exports/tasks/PCE-004a-layout-prototype.tex`.
 - Compilation and publication: `scripts/cv/build.ts`.
 
-The concise sample retains the prototype's explicit continuation-page break.
-The detailed sample flows automatically. Final pagination will be reviewed with
-each variant's actual content. Do not shrink text to force a target page count.
+The concise CV starts its continuation page after the first three contracting
+projects. It uses 4-point paragraph spacing, with the approved 11-point Palatino
+body, margins, and section hierarchy. The detailed sample retains 5-point spacing
+and automatic flow. Review pagination when content changes. Do not shrink text
+to force a target page count.
 
 Edit source content and regenerate. Generated TeX and PDFs are not authoritative.
 Experience totals use the current year minus 2008 and 2016. The same content and

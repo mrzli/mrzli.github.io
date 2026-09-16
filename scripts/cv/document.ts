@@ -1,4 +1,5 @@
 import { EDUCATION, EDUCATION_HIGHLIGHTS } from '../../src/content/background';
+import { CONCISE_CV } from '../../src/content/cv-concise';
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
 import { PRIMARY_TECHS } from '../../src/content/primary-technologies';
 import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
@@ -12,6 +13,8 @@ export interface CvDocument {
   readonly variant: CvVariant;
   readonly profile: typeof PROFILE;
   readonly summary: readonly string[];
+  readonly ai: string;
+  readonly contracts: string;
   readonly technologies: readonly string[];
   readonly tools: readonly string[];
   readonly contracting: ExperienceEntry;
@@ -41,30 +44,52 @@ export interface CvDraftProject {
   readonly source: ProjectDescription;
   readonly title: string;
   readonly technologies: readonly string[];
-  readonly context: string;
-  readonly contributions: readonly string[];
 }
 
 export function createCvDocument(variant: CvVariant, year = new Date().getFullYear()): CvDocument {
   return {
     variant,
     profile: PROFILE,
-    summary: DRAFT_SUMMARY,
+    summary: variant === 'concise' ? CONCISE_CV.summary : DRAFT_SUMMARY,
+    ai: variant === 'concise' ? CONCISE_CV.ai : PROFILE.ai,
+    contracts: variant === 'concise' ? CONCISE_CV.contracts : PROFILE.contracts,
     technologies: PRIMARY_TECHS,
-    tools: ['Jest', 'Docker', 'Git', 'Codex CLI', 'Copilot'],
+    tools: CONCISE_CV.tools,
     contracting: EXPERIENCE_SECTIONS[0],
-    projects: DRAFT_PROJECTS.map((project, index) => ({
-      title: project.title,
-      technologies: project.technologies,
-      context: variant === 'concise' ? [project.context] : project.source.text,
-      contributions: variant === 'concise' ? project.contributions : project.source.roleText,
-      startContinuationPage: variant === 'concise' && index === 2,
-    })),
-    earlierExperience: DRAFT_EARLIER_EXPERIENCE.map((entry) => ({
-      employment: entry.employment,
-      title: entry.title,
-      text: variant === 'concise' ? [entry.summary] : entry.employment.projects[0].roleText,
-    })),
+    projects:
+      variant === 'concise'
+        ? EXPERIENCE_SECTIONS[0].projects
+            .flatMap((project) => (project.concise ? [project.concise] : []))
+            .map((project, index) => ({
+              ...project,
+              context: project.context ? [project.context] : [],
+              startContinuationPage: index === 3,
+            }))
+        : DRAFT_PROJECTS.map((project) => ({
+            title: project.title,
+            technologies: project.technologies,
+            context: project.source.text,
+            contributions: project.source.roleText,
+            startContinuationPage: false,
+          })),
+    earlierExperience:
+      variant === 'concise'
+        ? EXPERIENCE_SECTIONS.flatMap((entry) =>
+            entry.conciseSummary
+              ? [
+                  {
+                    employment: entry,
+                    title: entry.conciseTitle ?? entry.title,
+                    text: [entry.conciseSummary],
+                  },
+                ]
+              : [],
+          )
+        : DRAFT_EARLIER_EXPERIENCE.map((entry) => ({
+            employment: entry.employment,
+            title: entry.title,
+            text: entry.employment.projects[0].roleText,
+          })),
     education: EDUCATION,
     educationHighlights:
       variant === 'concise' ? EDUCATION_HIGHLIGHTS.slice(0, 1) : EDUCATION_HIGHLIGHTS,

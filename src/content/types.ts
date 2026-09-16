@@ -1,4 +1,6 @@
 export interface ExperienceEntry {
+  readonly conciseTitle?: string;
+  readonly conciseSummary?: string;
   readonly title: string;
   readonly location: string;
   readonly role: string;
@@ -19,11 +21,19 @@ export type PersonalProject = ProjectDescription & {
 };
 
 export interface ProjectDescription {
+  readonly concise?: ConciseProject;
   readonly id?: string;
   readonly title: string;
   readonly text: readonly string[];
   readonly tags: readonly string[];
   readonly roleText: readonly string[];
+}
+
+export interface ConciseProject {
+  readonly title: string;
+  readonly technologies: readonly string[];
+  readonly context: string;
+  readonly contributions: readonly string[];
 }
 
 export interface LinkItem {

@@ -12,6 +12,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     projects: [
       {
         title: 'Large HVAC system site monitoring and control web application',
+        concise: {
+          title: 'HVAC monitoring and control',
+          technologies: ['React', 'TypeScript', 'MobX'],
+          context: '',
+          contributions: [
+            "Built interfaces and controls for a multinational's HVAC monitoring application within an established team.",
+          ],
+        },
         text: [
           'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
           'The software development was straightforward for my level of experience. Learning the domain and its specialized technologies and tools took time and patience.',
@@ -40,6 +48,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.robotics,
         title: 'Automated warehouse robotics system web application',
+        concise: {
+          title: 'Warehouse robotics',
+          technologies: ['Angular', 'TypeScript', 'RxJS'],
+          context:
+            'Robot and fleet management with roughly 100,000 lines of frontend code per repository.',
+          contributions: [
+            'Independently migrated Angular 8 to 18, resolving over a thousand errors without observed regressions and removing a major security-audit blocker.',
+            'Organized the migration for reuse across related applications and branches.',
+          ],
+        },
         text: [
           'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
           'The system was complex, covering automation, planning, robot orchestration, and computer vision. I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
@@ -67,6 +85,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.eloqua,
         title: 'Oracle Eloqua to mobile messaging integration',
+        concise: {
+          title: 'Oracle Eloqua messaging integration',
+          technologies: ['React', 'NestJS', 'TypeScript', 'MySQL', 'Jest'],
+          context: 'SMS and WhatsApp messaging within marketing campaigns.',
+          contributions: [
+            'Independently built the integration, defined its architecture, and clarified requirements with the client.',
+            'Coordinated asynchronous flows involving hundreds of thousands of messages. Resolved race conditions, implemented multiple authentication protocols, and added extensive backend tests.',
+          ],
+        },
         text: [
           'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users could send SMS and WhatsApp messages within their campaigns. An embedded React interface let users configure and monitor the integration.',
         ],
@@ -109,6 +136,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.fueling,
         title: 'Mobile fueling management system',
+        concise: {
+          title: 'Mobile fueling operations',
+          technologies: ['Node.js', 'Express', 'MongoDB', 'Angular'],
+          context: 'A production platform supporting a large mobile fueling company.',
+          contributions: [
+            'Owned backend subsystems, delivered system-wide changes, and ran production database migrations. Also worked on the Angular administration app.',
+            'Improved testing practices and interviewed, onboarded, and mentored developers.',
+          ],
+        },
         text: [
           'A large system for managing the business and operations of a leading mobile fueling company in California. At the time, the startup had several hundred employees and was growing exponentially.',
           'Dozens of developers worked on the system, which included Angular and React web applications, iOS and Android apps, and a shared Node.js backend built with Express and MongoDB.',
@@ -171,6 +207,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       },
       {
         title: 'Graveyard management web application',
+        concise: {
+          title: 'Graveyard management',
+          technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL'],
+          context: '',
+          contributions: [
+            'Built at least 95% of a multi-tenant application with maps and PDF reports. Added frontend unit tests and backend integration tests using Jest and TypeScript.',
+          ],
+        },
         text: [
           'A small multi-tenant application for managing graveyards, graves, and information about the deceased and grave owners. It included interactive OpenLayers maps with geospatial data for each grave.',
         ],
@@ -294,6 +338,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   },
   {
     title: 'APIS IT',
+    conciseTitle: 'APIS IT',
+    conciseSummary:
+      'Implemented seven complete e-Tax forms and contributed to about ten others, covering web interfaces, XML, PDF reports, validation, and data access.',
     location: 'Zagreb (Croatia)',
     role: 'C# Developer',
     from: { year: 2013, month: 11 },
@@ -345,6 +392,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   },
   {
     title: 'Gemmeus d.o.o.',
+    conciseTitle: 'Gemmeus d.o.o.',
+    conciseSummary: 'Developed C# spreadsheet features, including Excel-to-Windows Forms export.',
     location: 'Remote',
     role: 'C# Developer',
     from: { year: 2012, month: 10 },
@@ -364,6 +413,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   },
   {
     title: 'INETEC - Institute for Nuclear Technology d.o.o.',
+    conciseTitle: 'INETEC d.o.o.',
+    conciseSummary:
+      'Built substantial parts of nuclear inspection software: 2D/3D signal charts, multithreaded rendering, signal processing, and persistence.',
     location: 'Zagreb (Croatia)',
     role: 'C# Windows Desktop (WPF) Developer',
     from: { year: 2009, month: 11 },
@@ -404,6 +456,9 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   },
   {
     title: 'Ultra d.o.o.',
+    conciseTitle: 'Ultra d.o.o.',
+    conciseSummary:
+      'Built a complete Windows Forms application for fuel-dispenser control, including custom controls and SQLite storage.',
     location: 'Karlovac (Croatia)',
     role: 'C# Windows Desktop and Web Developer',
     from: { year: 2008, month: 10 },
@@ -443,6 +498,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   },
   {
     title: 'Ekobit d.o.o.',
+    conciseTitle: 'Ekobit d.o.o.',
+    conciseSummary: 'Developed ASP.NET and database features for Croatian financial institutions.',
     location: 'Zagreb (Croatia)',
     role: 'C# Web Developer',
     from: { year: 2008, month: 2 },
