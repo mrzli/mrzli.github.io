@@ -28,3 +28,14 @@ The command prints their directory under `tmp/cv/`. Use `bun run build:cv --tex-
 for text files alone. PDF compilation requires LaTeX and `latexmk`. Both CVs
 are available in `public/data/`.
 See [CV generation](./docs/cv-generation.md) for prerequisites and updating downloads.
+
+## LinkedIn text
+
+Generate a Markdown file with profile text to copy into LinkedIn manually:
+
+```bash
+bun run build:linkedin
+```
+
+The file is `public/data/linkedin.md`. It includes field labels and length checks.
+See [LinkedIn generation](./docs/linkedin-generation.md) for editing and copying it.

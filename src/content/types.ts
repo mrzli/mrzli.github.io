@@ -21,6 +21,7 @@ export type PersonalProject = ProjectDescription & {
 };
 
 export interface ProjectDescription {
+  readonly linkedinHighlight?: string;
   readonly concise?: ConciseProject;
   readonly detailed?: DetailedProject;
   readonly id?: string;

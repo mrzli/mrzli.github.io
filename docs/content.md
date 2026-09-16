@@ -6,6 +6,7 @@ Edit reusable professional facts and website prose in `src/content/`:
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | `profile.ts`              | Name, professional title, contacts, introduction, work preferences, and experience start years. |
 | `experience.ts`           | Employment dates, roles, client projects, technologies, and contributions.                      |
+| `linkedin.ts`             | LinkedIn profile wording, field selection, working limits, and skill order.                     |
 | `cv-detailed.ts`          | Detailed CV profile, skill selection, languages, and thesis links.                              |
 | `cv-concise.ts`           | Concise CV introduction, work preferences, and selected tools.                                  |
 | `skills.ts`               | Skill classifications and operating-system experience.                                          |
@@ -33,5 +34,7 @@ selected for the detailed CV have a `detailed` field. It can override the displa
 title, technology selection, context, or contributions. Omitted fields reuse
 website wording. Detailed profile, skills, languages, and thesis links are selected
 in `cv-detailed.ts`, reusing the shared source and its skill classifications.
-LinkedIn generation will follow separately. A change to a shared fact
+The [LinkedIn generator](./linkedin-generation.md) uses `linkedin.ts` and each
+selected contract project's `linkedinHighlight`. Earlier employment reuses concise
+summaries. A change to a shared fact
 still requires checking any summaries that mention it in prose.

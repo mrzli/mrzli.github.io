@@ -12,6 +12,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     projects: [
       {
         title: 'Large HVAC system site monitoring and control web application',
+        linkedinHighlight:
+          "Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.",
         detailed: {
           title: 'HVAC monitoring and control',
           technologies: [
@@ -65,6 +67,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.robotics,
         title: 'Automated warehouse robotics system web application',
+        linkedinHighlight:
+          'Independently migrated Angular 8 to 18 in a warehouse robotics frontend of roughly 100,000 lines per repository. Resolved over a thousand errors without observed regressions, removing a major security-audit blocker.',
         detailed: {
           title: 'Warehouse robotics',
           technologies: ['Angular', 'TypeScript', 'RxJS', 'Docker', 'PostgreSQL'],
@@ -114,6 +118,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.eloqua,
         title: 'Oracle Eloqua to mobile messaging integration',
+        linkedinHighlight:
+          'Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.',
         detailed: {
           title: 'Oracle Eloqua messaging integration',
           technologies: [
@@ -198,6 +204,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.fueling,
         title: 'Mobile fueling management system',
+        linkedinHighlight:
+          'Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.',
         detailed: {
           title: 'Mobile fueling operations',
           technologies: [
@@ -324,6 +332,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       },
       {
         title: 'Graveyard management web application',
+        linkedinHighlight:
+          'Built at least 95% of a multi-tenant graveyard management application with Vue, Kotlin/Spring Boot, PostgreSQL, maps, PDF reports, and frontend and backend tests.',
         detailed: {
           title: 'Graveyard management',
           technologies: [
