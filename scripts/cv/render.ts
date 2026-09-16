@@ -16,7 +16,9 @@ export function renderCv(document: CvDocument): string {
     link(profile.linkedin, 'LinkedIn'),
   ].join(String.raw` \enspace $\cdot$\enspace `);
   const body = [
-    ...(document.variant === 'concise' ? [String.raw`\setlength{\parskip}{4pt}`] : []),
+    ...(document.variant === 'concise'
+      ? [String.raw`\setlength{\parskip}{4pt}`]
+      : [DETAILED_PAGINATION]),
     String.raw`\begin{center}`,
     String.raw`{\LARGE\bfseries ${escapeLatex(profile.name)}}\par`,
     String.raw`\vspace{2pt}{\large ${escapeLatex(profile.title)}}\par`,
@@ -36,19 +38,45 @@ export function renderCv(document: CvDocument): string {
     String.raw`\cvsection{Work experience}`,
     employer(contracting, 'Independent contractor', profile.title),
     ...document.projects.map((project) => renderProject(project, contracting)),
+    ...(document.variant === 'detailed' ? [String.raw`\newpage`] : []),
     String.raw`\cvsection{Earlier employment}`,
     ...document.earlierExperience.flatMap((entry) => [
       employer(entry.employment, entry.title, entry.employment.role),
       ...entry.text.map(paragraph),
+      ...entry.projects.map((project) => renderProject(project, entry.employment)),
     ]),
     String.raw`\cvsection{Education}`,
     String.raw`\textbf{${escapeLatex(document.education.institution)}}\par`,
     ...(document.variant === 'concise'
       ? [paragraph([document.education.qualification, ...document.educationHighlights].join('. '))]
       : [
-          paragraph(document.education.qualification),
-          ...document.educationHighlights.map(paragraph),
+          paragraph(`${document.education.qualification}. ${document.educationHighlights[0]}`),
+          ...document.educationHighlights.slice(1).map(paragraph),
         ]),
+    ...(document.thesisLinks.length
+      ? [
+          document.thesisLinks
+            .map((item) => link(item.href, item.label))
+            .join(String.raw` \enspace $\cdot$\enspace `),
+          String.raw`\par`,
+        ]
+      : []),
+    ...(document.languages.length
+      ? [String.raw`\textbf{Languages}: ${escapeLatex(document.languages.join(' · '))}\par`]
+      : []),
+    ...(document.skills.length
+      ? [
+          String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{2pt}`,
+          ...document.skills.flatMap((section) => [
+            String.raw`\par\addvspace{9pt}\textbf{${escapeLatex(section.title)}}\par\nopagebreak`,
+            ...section.groups.map(
+              (group) =>
+                String.raw`\textit{${escapeLatex(group.title)}}: ${escapeLatex(group.skills.join(', '))}\par`,
+            ),
+          ]),
+          String.raw`\endgroup`,
+        ]
+      : []),
   ].join('\n');
   return readFileSync(new URL('./template.tex', import.meta.url), 'utf8')
     .replace('%%AUTHOR%%', () => escapeLatex(profile.name))
@@ -138,3 +166,14 @@ const LATEX_ESCAPES: Readonly<Record<string, string>> = {
   '^': String.raw`\textasciicircum{}`,
   '~': String.raw`\textasciitilde{}`,
 };
+
+const DETAILED_PAGINATION = String.raw`
+\setlength{\emergencystretch}{2em}
+\newcommand{\cvneedspace}[1]{\par\begingroup\dimen0=\pagegoal\advance\dimen0 by -\pagetotal\ifdim\dimen0<#1\newpage\fi\endgroup}
+\let\cvsectionoriginal\cvsection
+\renewcommand{\cvsection}[1]{\cvneedspace{6\baselineskip}\cvsectionoriginal{#1}}
+\let\employeroriginal\employer
+\renewcommand{\employer}[4]{\cvneedspace{9\baselineskip}\employeroriginal{#1}{#2}{#3}{#4}}
+\let\projectoriginal\project
+\renewcommand{\project}[2]{\cvneedspace{7\baselineskip}\projectoriginal{#1}{#2}}
+`;

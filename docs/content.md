@@ -6,6 +6,7 @@ Edit reusable professional facts and website prose in `src/content/`:
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | `profile.ts`              | Name, professional title, contacts, introduction, work preferences, and experience start years. |
 | `experience.ts`           | Employment dates, roles, client projects, technologies, and contributions.                      |
+| `cv-detailed.ts`          | Detailed CV profile, skill selection, languages, and thesis links.                              |
 | `cv-concise.ts`           | Concise CV introduction, work preferences, and selected tools.                                  |
 | `skills.ts`               | Skill classifications and operating-system experience.                                          |
 | `primary-technologies.ts` | The selected technologies shown on Home.                                                        |
@@ -27,6 +28,10 @@ The website facts take precedence over the older CV. The [CV generator](./cv-gen
 consumes shared records. Concise project copy lives in each project's optional
 `concise` field in `experience.ts`. Earlier employers use `conciseTitle` and
 `conciseSummary`. These fields select entries without changing website wording.
-The concise introduction and tool selection live in `cv-concise.ts`. Detailed CV
-content and LinkedIn generation will follow separately. A change to a shared fact
+The concise introduction and tool selection live in `cv-concise.ts`. Projects
+selected for the detailed CV have a `detailed` field. It can override the display
+title, technology selection, context, or contributions. Omitted fields reuse
+website wording. Detailed profile, skills, languages, and thesis links are selected
+in `cv-detailed.ts`, reusing the shared source and its skill classifications.
+LinkedIn generation will follow separately. A change to a shared fact
 still requires checking any summaries that mention it in prose.

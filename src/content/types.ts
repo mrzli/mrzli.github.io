@@ -22,6 +22,7 @@ export type PersonalProject = ProjectDescription & {
 
 export interface ProjectDescription {
   readonly concise?: ConciseProject;
+  readonly detailed?: DetailedProject;
   readonly id?: string;
   readonly title: string;
   readonly text: readonly string[];
@@ -34,6 +35,13 @@ export interface ConciseProject {
   readonly technologies: readonly string[];
   readonly context: string;
   readonly contributions: readonly string[];
+}
+
+export interface DetailedProject {
+  readonly title?: string;
+  readonly technologies?: readonly string[];
+  readonly context?: readonly string[];
+  readonly contributions?: readonly string[];
 }
 
 export interface LinkItem {

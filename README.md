@@ -18,13 +18,13 @@ GitHub Pages through [GitHub Actions](./.github/workflows/main.yml).
 
 ## CV generation
 
-Generate the concise CV and detailed draft as TeX text files and PDFs:
+Generate the concise and detailed CVs as TeX text files and PDFs:
 
 ```bash
 bun run build:cv
 ```
 
 The command prints their directory under `tmp/cv/`. Use `bun run build:cv --tex-only`
-for text files alone. PDF compilation requires LaTeX and `latexmk`. The concise
-CV is in `public/data/`; the detailed version is still a sample.
+for text files alone. PDF compilation requires LaTeX and `latexmk`. Both CVs
+are available in `public/data/`.
 See [CV generation](./docs/cv-generation.md) for prerequisites and updating downloads.
