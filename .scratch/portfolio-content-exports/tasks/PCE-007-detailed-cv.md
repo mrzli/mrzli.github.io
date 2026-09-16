@@ -17,7 +17,7 @@ Shared content and detailed CV summaries/selections, shared LaTeX template if ne
 ## Acceptance checklist
 
 - [ ] Cover the career timeline and significant projects with more context and contributions than the concise CV. Reuse suitable wording and shared facts.
-- [ ] Treat four or five pages as an expectation, not a cap or minimum. Remove repetition and low-value detail rather than useful content solely for page count.
+- [ ] Allow seven or eight pages when useful content warrants it, without treating that as a target or hard limit. Do not force four or five pages or shrink text to fit. Remove repetition and low-value detail rather than useful content solely for page count.
 - [ ] Use the same generator and layout as the concise CV, with appropriate content-driven page breaks. Do not create a second template or separate fact store.
 - [ ] Preserve the reviewed design and the original CV's visual strengths across the longer document. Check density, hierarchy, and continuation pages, rather than simply adding more paragraphs.
 - [ ] Keep the website the fullest account. Do not copy every paragraph automatically or duplicate overview/detail sections.

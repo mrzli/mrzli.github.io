@@ -163,9 +163,12 @@ Select the strongest work while keeping the career timeline understandable.
 Omit driving-license categories unless relevant. Do not shrink text to force a fit.
 
 The detailed CV contains the timeline and significant projects, with more context
-and contributions. Four or five pages is a useful expectation, not a minimum or
-hard maximum. Remove information because it is repetitive or unhelpful, not only
-to hit a page count. It need not copy every website paragraph.
+and contributions. Seven or eight pages is acceptable when useful content warrants
+it, given that the original CV is seven pages. This is neither a target nor a hard
+limit. Do not force the detailed version into four or five pages or shrink text
+to reduce its length. Remove repetition and unhelpful detail, preserve useful
+content, and let readable layout determine the page count. It need not copy every
+website paragraph.
 
 Reconcile old CV claims against the site, including newer HVAC/robotics work,
 Oracle Eloqua concurrency wording, graveyard-project tests, and current skills.
