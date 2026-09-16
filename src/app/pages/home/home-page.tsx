@@ -34,7 +34,7 @@ export function HomePage(): ReactNode {
               </Typography>
             </div>
             <TagList tags={PRIMARY_TECHS} />
-            <div className='flex flex-wrap items-center gap-5'>
+            <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
               <Link
                 to='/experience'
                 className='inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white'
@@ -43,9 +43,14 @@ export function HomePage(): ReactNode {
                 <Icon icon='mdi:arrow-right' aria-hidden='true' className='size-4' />
               </Link>
               <ExternalLink
-                href={`${import.meta.env.BASE_URL}data/CV.pdf`}
-                label='Read CV (PDF)'
-                variant='highlight'
+                href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-short.pdf`}
+                label='Short CV · PDF'
+                variant='outline'
+              />
+              <ExternalLink
+                href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-detailed.pdf`}
+                variant='outline'
+                label='Detailed CV · PDF'
               />
             </div>
           </div>

@@ -24,3 +24,11 @@ export const Highlight: Story = {
     href: 'https://www.example.com',
   },
 };
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    label: 'Short CV · PDF',
+    href: '/data/cv-goran-mrzljak-short.pdf',
+  },
+};

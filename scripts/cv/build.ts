@@ -23,7 +23,7 @@ export function buildCv(sources: readonly CvSource[], options: CvBuildOptions): 
   const directory = createBuildDirectory(options.workDirectory);
   const files: string[] = [];
   for (const source of sources) {
-    const basename = source.variant === 'concise' ? 'CV' : 'CV-detailed';
+    const basename = `cv-goran-mrzljak-${source.variant === 'concise' ? 'short' : 'detailed'}`;
     const texName = `${basename}.tex`;
     writeFileSync(join(directory, texName), source.tex);
     files.push(texName);

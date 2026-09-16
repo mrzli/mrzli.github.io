@@ -123,8 +123,12 @@ error and must not replace a good public export with incomplete output.
 
 Use tmp/cv for LaTeX intermediates. Finished public/data outputs are:
 
-- CV.tex and CV.pdf for the primary concise CV.
-- CV-detailed.tex and CV-detailed.pdf for the secondary detailed CV.
+- cv-goran-mrzljak-short.tex and cv-goran-mrzljak-short.pdf for the concise CV.
+- cv-goran-mrzljak-detailed.tex and cv-goran-mrzljak-detailed.pdf for the detailed CV.
+- List short CV first. Both CV links use matching outlined button styles, including the PDF hint.
+  Keep View experience filled. Stack all three full width on narrow screens and use
+  a single row when space permits, with consistent action heights.
+  Do not retain duplicate files at the old URLs.
 - LinkedIn.md for the manual profile update.
 
 Each exported .tex must be compilable with the documented standard dependencies
@@ -221,7 +225,7 @@ requests it. A request to commit does not itself authorize the next task.
 PCE-001 through PCE-004 are complete. PCE-004A is the next review checkpoint.
 The PCE-004A prototype is approved: Palatino, navy (#243B53) rules and links,
 and dark charcoal secondary text. PCE-005 is complete.
-PCE-006 is complete. PCE-007 is complete. PCE-008 has not started.
+PCE-006 is complete. PCE-007 is complete. PCE-008 is complete.
 
 Documentation-only tasks need formatting, link/path checks, and consistency
 review. Application changes need applicable formatting, lint, and production

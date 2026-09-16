@@ -23,7 +23,7 @@ bun run build:cv detailed
 bun run build:cv --tex-only
 ```
 
-Outputs are `CV.tex` and `CV.pdf`, or `CV-detailed.tex` and `CV-detailed.pdf`.
+The `concise` command generates the short CV. Outputs are `cv-goran-mrzljak-short.tex` and `cv-goran-mrzljak-short.pdf`, or `cv-goran-mrzljak-detailed.tex` and `cv-goran-mrzljak-detailed.pdf`.
 TeX-only mode needs Bun. PDF builds also need `latexmk` and pdfLaTeX, with:
 
 - Standard `article`, T1 font encoding, and UTF-8 input support.
@@ -36,7 +36,7 @@ to another directory or machine and compile it without repository templates or
 `resume.cls`:
 
 ```bash
-latexmk -norc -pdf -interaction=nonstopmode -halt-on-error -no-shell-escape CV.tex
+latexmk -norc -pdf -interaction=nonstopmode -halt-on-error -no-shell-escape cv-goran-mrzljak-short.tex
 ```
 
 ## Update downloads after content review
