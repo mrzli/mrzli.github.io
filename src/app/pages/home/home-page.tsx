@@ -32,35 +32,33 @@ export function HomePage(): ReactNode {
                 {PROFILE.ai}
               </Typography>
             </div>
-            <div className='space-y-4'>
-              <div className='flex flex-wrap items-center gap-x-6 gap-y-2'>
-                <Link
-                  to='/experience'
-                  className='inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white'
-                >
-                  View experience
-                  <Icon icon='mdi:arrow-right' aria-hidden='true' className='size-4' />
-                </Link>
-                <Link
-                  to='/skills'
-                  className='inline-flex items-center gap-2 rounded-sm py-3 text-sm font-medium text-amber-700 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 dark:text-cyan-300 dark:focus-visible:outline-cyan-300'
-                >
-                  View skills
-                  <Icon icon='mdi:arrow-right' aria-hidden='true' className='size-4' />
-                </Link>
-              </div>
-              <div className='flex flex-wrap items-center gap-3'>
-                <ExternalLink
-                  href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-short.pdf`}
-                  label='Short CV · PDF'
-                  variant='outline'
-                />
-                <ExternalLink
-                  href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-detailed.pdf`}
-                  variant='outline'
-                  label='Detailed CV · PDF'
-                />
-              </div>
+            <div className='grid auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2'>
+              <Link
+                to='/experience'
+                className='inline-flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white'
+              >
+                View experience
+                <Icon icon='mdi:arrow-right' aria-hidden='true' className='size-4' />
+              </Link>
+              <Link
+                to='/skills'
+                className='inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-amber-700 ring-1 ring-slate-300 transition-colors ring-inset hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 dark:text-cyan-300 dark:ring-slate-600 dark:hover:bg-slate-800 dark:focus-visible:outline-cyan-300'
+              >
+                View skills
+                <Icon icon='mdi:arrow-right' aria-hidden='true' className='size-4' />
+              </Link>
+              <ExternalLink
+                href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-short.pdf`}
+                label='Short CV · PDF'
+                variant='outline'
+                className='justify-center gap-2'
+              />
+              <ExternalLink
+                href={`${import.meta.env.BASE_URL}data/cv-goran-mrzljak-detailed.pdf`}
+                variant='outline'
+                label='Detailed CV · PDF'
+                className='justify-center gap-2'
+              />
             </div>
           </div>
 
