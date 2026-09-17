@@ -26,9 +26,9 @@ export const PROFILE: Profile = {
   github: 'https://github.com/mrzli/repos',
   linkedin: 'https://www.linkedin.com/in/goran-mrzljak',
   stackOverflow: 'https://stackoverflow.com/users/520229/mrzli',
-  lead: 'I build web applications and make complex codebases easier to work with.',
+  lead: 'I build software and make complex codebases easier to work with.',
   summary:
-    'My main tools are React, TypeScript, and Node.js. I work across interfaces, APIs, and databases, build applications from scratch to production and improve systems already in use.',
+    'My recent work centers on React, TypeScript, and Node.js. I work across interfaces, APIs, and databases, build applications from scratch to production and improve systems already in use.',
   ai: "I'm comfortable with both AI agent-assisted development and writing code without AI assistance.",
   availability:
     "I'm looking for hands-on senior development work: frontend, backend, or full-stack.",

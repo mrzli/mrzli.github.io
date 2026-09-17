@@ -1,9 +1,8 @@
-import { Card, ExternalLink, TagList, Typography } from '@components';
+import { Card, ExternalLink, Typography } from '@components';
 import { Icon } from '@iconify/react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
-import { PRIMARY_TECHS } from '@/content/primary-technologies';
 import { PROFILE, EXPERIENCE_START_YEARS } from '@/content/profile';
 
 import profileImage from '../../../assets/profile.jpg';
@@ -33,7 +32,6 @@ export function HomePage(): ReactNode {
                 {PROFILE.ai}
               </Typography>
             </div>
-            <TagList tags={PRIMARY_TECHS} />
             <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
               <Link
                 to='/experience'
@@ -108,7 +106,7 @@ export function HomePage(): ReactNode {
               Contract work
             </Typography>
             <Typography as='dd' variant='heading-3' className='mt-2'>
-              {currentYear - EXPERIENCE_START_YEARS.contracting} years
+              Since {EXPERIENCE_START_YEARS.contracting}
             </Typography>
           </div>
           <div>
