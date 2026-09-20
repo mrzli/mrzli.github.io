@@ -134,13 +134,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             'Nx',
           ],
           context: [
-            'An integration connecting Oracle Eloqua to a mobile messaging service, allowing users to send SMS and WhatsApp messages within marketing campaigns. An embedded React interface supported configuration and monitoring.',
+            'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users can send SMS and WhatsApp messages within their campaigns. Users configure and monitor the integration through an embedded React interface, implemented as part of the project.',
           ],
           contributions: [
-            'I independently built the frontend, backend, database, and external API integrations. Within platform constraints, I made technical and architectural decisions, clarified requirements with the client, and demonstrated progress.',
-            'The roughly 20,000-line application coordinated two-way asynchronous communication. Campaign flows involved hundreds of thousands of messages, callbacks, and delivery reports. I coordinated concurrent operations and prevented race conditions so campaigns could progress without losing messages.',
-            'Load testing exposed race conditions that I fixed and covered with regression tests. Backend coverage included unit tests, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests fast, and detailed logging supported diagnosis.',
-            'I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, API keys for the messaging platform, and JWT between the embedded frontend and backend.',
+            'I independently built the integration, including the frontend, backend, database, and external API connections. Within broad constraints, including requirements to use JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, and gave regular progress demos.',
+            'The roughly 20,000-line application coordinated two-way asynchronous communication between the platforms. Campaigns involved sending hundreds of thousands of messages within a short time frame. I designed the integration to handle these messages and the resulting callbacks and interactions reliably, coordinating concurrent operations and preventing race conditions to avoid losing messages or delivery status updates. The messaging platform sent delivery and failure reports through webhooks, which the integration used to compile campaign statistics.',
+            'Once the main functionality was in place, load testing exposed race conditions that I then fixed and covered with regression tests. I added extensive backend tests covering individual units, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast. Detailed logging helped diagnose complex issues, including those race conditions, and supported monitoring.',
+            'The integration required different authentication methods for its connections to each platform and between its own frontend and backend. I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming webhook requests from the messaging platform were authenticated using HTTP Basic Auth.',
           ],
         },
         concise: {
@@ -153,7 +153,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           ],
         },
         text: [
-          'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users could send SMS and WhatsApp messages within their campaigns. An embedded React interface let users configure and monitor the integration.',
+          'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users can send SMS and WhatsApp messages within their campaigns. Users configure and monitor the integration through an embedded React interface, implemented as part of the project.',
         ],
         tags: [
           'React',
@@ -175,10 +175,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'Nx (monorepo)',
         ],
         roleText: [
-          'I independently built the integration, from the frontend and backend to the database and external APIs. Within broad constraints, such as using JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, gave periodic progress demos and produced the resulting integration.',
-          'The roughly 20,000-line application coordinated two-way asynchronous communication between both platforms. Campaign flows involved hundreds of thousands of messages that needed to be processed in a relatively short amount of time, reliably and consistently, along with all of the callbacks and interactions they produced. One of the technical challenges was coordinating concurrent operations and preventing race conditions so campaigns could progress without losing messages. Webhooks supplied delivery and failure reports for statistics.',
-          'Load testing exposed race conditions that I fixed and covered with regression tests. I added extensive backend coverage, including unit tests, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast, while detailed logging supported debugging and monitoring.',
-          'Different connections required separate authentication protocols. For this project, I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming messaging webhooks used Basic Auth, as I recall.',
+          'I independently built the integration, including the frontend, backend, database, and external API connections. Within broad constraints, including requirements to use JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, and gave regular progress demos.',
+          'The roughly 20,000-line application coordinated two-way asynchronous communication between the platforms. Campaigns involved sending hundreds of thousands of messages within a short time frame. I designed the integration to handle these messages and the resulting callbacks and interactions reliably, coordinating concurrent operations and preventing race conditions to avoid losing messages or delivery status updates. The messaging platform sent delivery and failure reports through webhooks, which the integration used to compile campaign statistics.',
+          'Once the main functionality was in place, load testing exposed race conditions that I then fixed and covered with regression tests. I added extensive backend tests covering individual units, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast. Detailed logging helped diagnose complex issues, including those race conditions, and supported monitoring.',
+          'The integration required different authentication methods for its connections to each platform and between its own frontend and backend. I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming webhook requests from the messaging platform were authenticated using HTTP Basic Auth.',
         ],
       },
       {
