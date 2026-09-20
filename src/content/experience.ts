@@ -182,23 +182,23 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
-        title: 'Mobile application for managing electricity consumption',
+        title: 'Electricity consumption mobile application',
         detailed: {
           title: 'Electricity consumption mobile application',
           technologies: ['React Native', 'TypeScript', 'Expo', 'Jest'],
           context: [
-            'A mobile application for the Norwegian public to monitor consumption, choose electricity providers, and view statistics and insights.',
+            'A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.',
           ],
           contributions: [
-            'I worked exclusively on the React Native frontend in a team of eight developers, implementing screens and features.',
+            'I worked exclusively on the React Native frontend, implementing screens and features as part of a team of eight developers.',
           ],
         },
         text: [
-          'A mobile application built for a Norwegian client and intended for the Norwegian public. Users can monitor and manage electricity consumption, choose providers, and view statistics and insights.',
+          'A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.',
         ],
         tags: ['React Native', 'TypeScript', 'Expo', 'Jest', 'ESLint', 'Prettier'],
         roleText: [
-          'I worked exclusively on the React Native frontend as part of a team of eight developers, implementing screens and features.',
+          'I worked exclusively on the React Native frontend, implementing screens and features as part of a team of eight developers.',
         ],
       },
       {
