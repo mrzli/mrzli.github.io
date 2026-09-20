@@ -222,10 +222,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             'A production system supporting the operations of a leading mobile fueling company in California. The company had several hundred employees, with dozens of developers working on its web applications, mobile apps, and shared backend.',
           ],
           contributions: [
-            'I spent about 70% of my time on the Node.js backend, from REST APIs to the database, and 30% on the Angular administration app.',
-            'I owned parts of the system and delivered changes affecting the whole application. Careful planning with developers and project managers allowed these changes to proceed without significant issues.',
-            'I ran production MongoDB migrations using JavaScript scripts. Careful testing and execution kept those migrations error-free during my time at the company.',
-            'I drove improvements to testing practices and the introduction of a monorepo where practical. I also interviewed, onboarded, and mentored developers.',
+            'I spent about 70% of my time on the Node.js backend and 30% on the Angular administration app. My backend work covered all layers, from REST APIs to database access.',
+            'I was responsible for parts of the system and occasionally made changes affecting the whole application. I planned and coordinated these changes with developers and project managers, delivering them without significant issues.',
+            'I ran production MongoDB migrations using scripts written in JavaScript. Through careful testing and execution, I completed these migrations without errors during my time at the company.',
+            'I drove improvements to testing practices and the introduction of a monorepo where practical. I also interviewed, onboarded, and mentored other developers.',
           ],
         },
         concise: {
@@ -238,9 +238,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           ],
         },
         text: [
-          'A large system for managing the business and operations of a leading mobile fueling company in California. At the time, the startup had several hundred employees and was growing exponentially.',
-          'Dozens of developers worked on the system, which included Angular and React web applications, iOS and Android apps, and a shared Node.js backend built with Express and MongoDB.',
-          "The system was already in production and central to the company's operations.",
+          'A production system central to the business and operations of a leading mobile fueling company in California. At the time, the company had several hundred employees and was growing rapidly.',
+          'Dozens of developers worked on this system, which included Angular and React web applications, iOS and Android apps, and a shared backend using Node.js, Express, and MongoDB.',
         ],
         tags: [
           'Angular',
@@ -254,10 +253,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'MongoDB',
         ],
         roleText: [
-          'I worked across the stack, spending about 70% of my time on the Node.js backend, from the REST API to the database, and 30% on the Angular administration app. I did not work on the mobile apps.',
-          'I owned parts of the system and occasionally made changes affecting the whole application. Careful planning and coordination with developers and project managers allowed me to deliver these without significant issues.',
-          'I also ran production MongoDB migrations using JavaScript scripts. Errors would have been costly, but careful testing and execution kept these migrations error-free during my time at the company.',
-          'I drove improvements to testing practices and the introduction of a monorepo where the codebase allowed it. I also interviewed, onboarded, and mentored developers.',
+          'I worked across the stack, spending about 70% of my time on the Node.js backend and 30% on the Angular administration app. My backend work covered all layers, from REST APIs to database access.',
+          'I was responsible for parts of the system and occasionally made changes affecting the whole application. I planned and coordinated these changes with developers and project managers, delivering them without significant issues.',
+          'I also ran production MongoDB migrations using scripts written in JavaScript. Through careful testing and execution, I completed these migrations without errors during my time at the company.',
+          'I drove improvements to testing practices and the introduction of a monorepo where the codebase allowed it. I also interviewed, onboarded, and mentored other developers.',
         ],
       },
       {
