@@ -397,21 +397,20 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           title: 'Parking payments backend',
           technologies: ['Java', 'REST APIs'],
           context: [
-            'A public mobile application for buying parking tickets for lots and garages in Zagreb.',
+            'A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.',
           ],
           contributions: [
-            'I built the central message hub connecting system endpoints and forming the top layer of the backend. It exposed the REST API for Android and iOS, validated requests, and integrated directly with parking provider APIs.',
-            "It connected to the data access layer and to payment providers through another developer's component. My work was on the backend, not the mobile apps.",
+            "I built the backend's central integration layer, connecting the Android and iOS apps with parking providers, payment processing, and data access.",
+            'This included the REST API used by the mobile apps, backend validation, direct integration with parking provider APIs, and integration with payment providers through a component built by another developer.',
           ],
         },
         text: [
-          'A public mobile application for buying parking tickets for lots and garages in Zagreb, Croatia.',
+          'A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.',
         ],
         tags: ['Java'],
         roleText: [
-          'I built the central message hub connecting the system endpoints and forming the top layer of the backend.',
-          'This included the REST API for the Android and iOS apps, backend validation, and direct integration with parking provider APIs. It also connected to the data access layer and to payment providers through a component built by another developer.',
-          'I did not work on the mobile apps themselves.',
+          "I built the backend's central integration layer, connecting the Android and iOS apps with parking providers, payment processing, and data access.",
+          'This included the REST API used by the mobile apps, backend validation, direct integration with parking provider APIs, and integration with payment providers through a component built by another developer.',
         ],
       },
       {
