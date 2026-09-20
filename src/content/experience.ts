@@ -415,7 +415,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
-        title: 'NIAS (SSO system) interface',
+        title: 'NIAS single sign-on integration',
         detailed: {
           title: 'National single sign-on integration',
           technologies: ['Java', 'JSP', 'SOAP'],
@@ -423,15 +423,15 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             "An integration with NIAS, Croatia's National Identification and Authentication System, for the Croatian Postal Service.",
           ],
           contributions: [
-            "I implemented the entire integration. It allowed existing NIAS users to sign in to the Postal Service's system and enabled the Postal Service to act as a credentials provider for other NIAS services.",
+            'I implemented the entire integration, enabling users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.',
           ],
         },
         text: [
-          "NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. Accredited authentication providers include the government, banks, and other trusted organizations.",
-          "This project integrated the Croatian Postal Service as a NIAS provider and allowed existing NIAS users to sign in to the Postal Service's system and have their credentials validated.",
+          "NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. It supports authentication through accredited providers, including government institutions, banks, and other trusted organizations.",
+          'This integration enabled users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.',
         ],
         tags: ['Java', 'JSP', 'SOAP'],
-        roleText: ['I implemented the entire project.'],
+        roleText: ['I implemented the entire integration.'],
       },
       {
         title: 'Government payments validation component',
