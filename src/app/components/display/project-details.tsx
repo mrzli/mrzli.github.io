@@ -31,16 +31,17 @@ export function ProjectDetails({
           <p key={index}>{paragraph}</p>
         ))}
       </Typography>
+      <div className='space-y-2 border-l-2 border-slate-300 pl-4 dark:border-slate-600'>
+        <Typography variant='card-title-muted' as={headingAs === 'h2' ? 'h3' : 'h4'}>
+          My contribution
+        </Typography>
+        <Typography variant='prose' as='div' className='space-y-4'>
+          {roleText.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </Typography>
+      </div>
       <TagList tags={tags} />
-      <Typography
-        variant='prose'
-        as='div'
-        className='space-y-4 border-l-2 border-slate-300 pl-4 dark:border-slate-600'
-      >
-        {roleText.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-      </Typography>
     </>
   );
 }
