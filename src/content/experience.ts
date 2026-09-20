@@ -566,11 +566,12 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         title: "Croatia's Ministry of Finance e-Tax web application",
         detailed: { title: 'e-Tax platform' },
         text: [
-          'A large application with more than one million daily views, allowing Croatian citizens and businesses to submit tax forms electronically. It supported many types of tax reporting alongside other features, with form submission probably its main use case.',
+          "The Croatian Ministry of Finance's official e-Tax web application, used by citizens and businesses to submit tax forms electronically. Already a large application when I worked on it, it received more than one million page views per day.",
+          'Alongside other features, it implemented a wide range of tax forms covering different types of tax reporting.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', 'jQuery', 'Microsoft Reports (.rdlc)', 'IBM DB2'],
         roleText: [
-          'I fully implemented seven tax forms in production as of March 2016 and contributed to about ten others, from bug fixes to substantial implementation. The system contained about 25 forms at the time.',
+          'I fully implemented seven tax forms that were in production as of March 2016. I also contributed to about ten others, from bug fixes to substantial implementation. The system contained about 25 tax forms in total at the time.',
           'Each form required a web interface, XML import and export, PDF reporting, extensive server-side validation against business and legal rules, and changes to the data access layer.',
         ],
       },
@@ -578,7 +579,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         title: 'Location and building permits web application',
         detailed: { title: 'Location and building permits' },
         text: [
-          "A relatively simple public application for submitting data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.",
+          "A web application for members of the public to submit data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.",
         ],
         tags: [
           'C#',
@@ -595,14 +596,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         title: 'Other projects',
         text: [
-          'Two large ASP.NET Web Forms applications for employees of the Ministry of Construction and Physical Planning, separate from the public permits application.',
-          'WCF and ASMX web services, both within these projects and as standalone components of larger systems.',
+          'Two additional large ASP.NET Web Forms applications for employees of the Ministry of Construction and Physical Planning.',
+          'WCF and ASMX web services built both as part of these applications and as standalone components of larger systems.',
           'XML processing components for validation, data manipulation, database export to XML, and XML import into databases.',
           'Programs for offline data processing, validation, and error reporting by email.',
         ],
         tags: ['C#', 'ASP.NET Web Forms', '.NET COM', 'WCF'],
         roleText: [
-          'I worked across the stack on the two Web Forms applications, which were mainly in maintenance. Most tasks were bug fixes and small features, with some larger implementations.',
+          'I worked across the stack on the two Web Forms applications, which were mainly in maintenance mode. Most tasks were bug fixes and small features, with some larger implementations.',
           'Most of the other components were small projects within larger systems, lasting a few days to a few weeks. I usually implemented them on my own.',
         ],
       },
@@ -657,8 +658,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         title: 'Steam generator walker robot command and monitoring application',
         detailed: { title: 'Inspection robot control' },
         text: [
-          'A prototype robot for positioning inspection probes could walk along a steam generator tube wall, reducing or eliminating operator exposure to ionizing radiation.',
-          'The WPF desktop application controlled the robot, displayed its position, monitored its state, and complemented hardware and electronic handling of edge cases and failures.',
+          "A WPF desktop application for controlling and monitoring a prototype robot used in steam generator inspections. It displayed the robot's position and state and complemented hardware and electronic handling of edge cases and failures.",
+          'The robot was designed to walk along a steam generator tube wall to position inspection probes, reducing or eliminating operator exposure to ionizing radiation.',
         ],
         tags: ['C#', 'WPF', 'Cinch (MVVM framework)'],
         roleText: [
@@ -666,12 +667,6 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'I built or fully rewrote nearly all the backend code down to the electronics controller interface.',
           'Another developer wrote the original controller code in a C-like language. I maintained it and made the required changes and fixes.',
         ],
-      },
-      {
-        title: 'Other projects',
-        text: ['Other applications used in the nuclear inspection process.'],
-        tags: ['C#'],
-        roleText: ['My work was mainly bug fixes.'],
       },
     ],
   },
