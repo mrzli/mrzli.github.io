@@ -494,14 +494,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'Maven',
         ],
         roleText: [
-          'I worked exclusively on the backend. I believe the frontend used AngularJS, but I was not involved in it.',
-          'I implemented the entire backend, from the REST API to the repository layer, and the reporting system using Jasper Reports.',
+          'I implemented the entire backend, from the REST API to the repository layer, and built the reporting system using Jasper Reports.',
         ],
       },
       {
-        title: 'E-learning web application (MVP)',
+        title: 'E-learning web application',
         detailed: {
-          title: 'E-learning MVP',
+          title: 'E-learning web application',
           technologies: [
             'AngularJS',
             'Java',
@@ -511,14 +510,14 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             'Veeting Rooms',
           ],
           context: [
-            'An online learning MVP with video courses and online meetings with whiteboards.',
+            'A web application for online learning, with video courses and online meetings with whiteboards.',
           ],
           contributions: [
-            'After initial work by other developers, I implemented the rest of the application. I also handled deployment, communicated with clients, and helped define requirements.',
+            'I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.',
           ],
         },
         text: [
-          'An online learning MVP with video courses and online meetings with whiteboards. It had not yet become a full commercial product.',
+          'A web application for online learning, with video courses and online meetings with whiteboards.',
         ],
         tags: [
           'AngularJS',
@@ -532,12 +531,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'Veeting Rooms',
         ],
         roleText: [
-          'After some initial work by other developers, I implemented the rest of the application. I also handled deployment, communicated with clients, and helped define requirements.',
+          'I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.',
         ],
       },
       {
         title: 'Other projects',
         text: [
+          'Examples of smaller client assignments.',
           'A C# and WCF service for exporting Microsoft SQL Server data as JSON.',
           'Urgent fixes to an Alfresco web application shortly before its production deadline.',
           'A Ruby backend for talent acquisition software.',
@@ -546,7 +546,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['C#', 'WCF', 'Ruby', 'React', 'Java', 'Alfresco'],
         roleText: [
           'I built the data export service on my own.',
-          'I joined the Alfresco project one or two weeks before production, with no prior knowledge of its codebase or platform. I spent a couple of weeks fixing the issues the client needed resolved. The client was satisfied, which led to further work. This kind of last-minute assignment is unusual for me and not work I would normally accept.',
+          'I joined an Alfresco project one or two weeks before its planned production release, with no prior experience of the platform or codebase. During that time, I resolved the issues the client needed fixed. Based on the results, the client commissioned further work on other projects.',
           'The two talent management projects each lasted several weeks. Another developer and I split the work evenly.',
         ],
       },
