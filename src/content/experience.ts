@@ -333,7 +333,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         title: 'Graveyard management web application',
         linkedinHighlight:
-          'Built at least 95% of a multi-tenant graveyard management application with Vue, Kotlin/Spring Boot, PostgreSQL, maps, PDF reports, and frontend and backend tests.',
+          'Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.',
         detailed: {
           title: 'Graveyard management',
           technologies: [
@@ -347,13 +347,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             'Jest',
           ],
           context: [
-            'A multi-tenant application for managing graveyards, graves, and information about the deceased and grave owners, with interactive maps and geospatial data for each grave.',
+            'A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.',
           ],
           contributions: [
-            'I implemented at least 95% of the application. The frontend used Vue, Vuex, Vuetify, and OpenLayers, with Jest unit tests.',
-            'I built the Kotlin/Spring Boot backend, using Liquibase for schema changes and migrations. PostgreSQL served production, while an in-memory H2 database supported development and testing. Jasper Reports produced PDF reports.',
-            'I wrote backend integration tests in Jest and TypeScript, exercising the full backend stack and much of its functionality against H2.',
-            'I used Docker and Docker Swarm in development for automation and deployment experiments. Production deployment remained partly manual, with scripts handling most steps.',
+            'I implemented nearly the entire application, both frontend and backend. I built the frontend with Vue, Vuex, Vuetify, and OpenLayers, and wrote unit tests with Jest.',
+            'I built the backend with Kotlin and Spring Boot, using Liquibase for schema changes and migrations. I used PostgreSQL in production, an in-memory H2 database for development and testing, and Jasper Reports for PDF reports.',
+            "I wrote backend integration tests in Jest and TypeScript. These integration tests covered much of the backend's functionality across all layers, using an in-memory H2 database.",
+            'I used Docker and Docker Swarm only in development for automation and deployment experiments. Production deployment was partly manual, with scripts handling most steps.',
           ],
         },
         concise: {
@@ -361,11 +361,11 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL'],
           context: '',
           contributions: [
-            'Built at least 95% of a multi-tenant application with maps and PDF reports. Added frontend unit tests and backend integration tests using Jest and TypeScript.',
+            'Built nearly all of a multi-tenant application with maps and PDF reports. Added frontend unit tests and backend integration tests using Jest and TypeScript.',
           ],
         },
         text: [
-          'A small multi-tenant application for managing graveyards, graves, and information about the deceased and grave owners. It included interactive OpenLayers maps with geospatial data for each grave.',
+          'A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.',
         ],
         tags: [
           'Vue',
@@ -384,11 +384,11 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'Docker Swarm',
         ],
         roleText: [
-          'I implemented at least 95% of the application.',
-          'The frontend used Vue and TypeScript, Vuex for state management, Vuetify for UI components, OpenLayers for maps, and Jest for unit tests.',
-          'I built the backend with Kotlin and Spring Boot, using Liquibase for database setup and migrations. PostgreSQL served production and an in-memory H2 database supported development. Liquibase abstractions made switching between them straightforward. Jasper Reports handled PDF reporting.',
-          'As an experiment, I wrote backend integration tests in Jest and TypeScript, tools I found flexible and familiar. The tests exercised the full backend stack, covered much of its functionality, and worked well with an in-memory H2 database.',
-          'I used Docker and Docker Swarm only in development to automate tasks and experiment with deployment. Production used a partly manual process: scripts handled most steps, but deployment required a manual action. This was sufficient for the project.',
+          'I implemented nearly the entire application, both frontend and backend.',
+          'I built the frontend with Vue and TypeScript, using Vuex for state management, Vuetify for UI components, and OpenLayers for maps. I wrote unit tests with Jest.',
+          'I built the backend with Kotlin and Spring Boot, using Liquibase for database setup and migrations. I used PostgreSQL in production and an in-memory H2 database for development and testing. Liquibase made switching between the databases straightforward. I generated PDF reports with Jasper Reports.',
+          "As an experiment, I wrote backend integration tests in Jest and TypeScript because I found these tools flexible and familiar. These integration tests covered much of the backend's functionality across all layers, using an in-memory H2 database.",
+          'I used Docker and Docker Swarm only in development for automation and deployment experiments. Production deployment was partly manual, with scripts handling most steps.',
         ],
       },
       {
