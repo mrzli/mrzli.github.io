@@ -314,20 +314,20 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           title: 'Accounting and transactions',
           technologies: ['Angular', 'TypeScript', 'RxJS', 'Jest', 'AG Grid'],
           context: [
-            'A large accounting application for a Finnish company, with dozens of screens containing complex business logic, forms, and data viewing and editing features.',
+            'A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.',
           ],
           contributions: [
-            'A colleague and I joined after limited prototype development and did most of the initial frontend implementation, with room to make architectural decisions.',
-            'As the frontend team grew to more than ten developers, I implemented application-wide changes, reusable subsystems and patterns, larger features and screens, and maintenance work.',
+            'I worked exclusively on the frontend. A colleague and I joined after limited prototype development. We implemented most of the initial frontend and contributed to architectural decisions.',
+            'Within a few months, the frontend team grew to more than ten people. From then on, my work included changes across the application, building subsystems and reusable patterns, developing larger features and screens, and maintenance.',
           ],
         },
         text: [
-          'A large accounting and transactions application for a medium-sized Finnish company, with dozens of screens containing complex business logic and data viewing and editing features.',
+          'A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.',
         ],
         tags: ['Angular', 'TypeScript', 'Jest', 'RxJS', 'AG Grid'],
         roleText: [
-          'I worked exclusively on the frontend. A colleague and I joined after limited prototype development and did most of the initial implementation, with room to make architectural decisions.',
-          'Within a few months, the frontend team grew to more than ten people. As a senior developer, I made application-wide changes, implemented subsystems and reusable patterns, built larger features and screens, and handled maintenance.',
+          'I worked exclusively on the frontend. A colleague and I joined after limited prototype development. We implemented most of the initial frontend and contributed to architectural decisions.',
+          'Within a few months, the frontend team grew to more than ten people. From then on, my work included changes across the application, building subsystems and reusable patterns, developing larger features and screens, and maintenance.',
         ],
       },
       {
