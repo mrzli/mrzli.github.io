@@ -275,17 +275,17 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
             'Cypress',
           ],
           context: [
-            'A platform for a UK client connecting parties in the insurance process and supporting searches for insurance schemes. The frontend contained about 100,000 lines of code.',
+            'A web platform for a UK client that connected parties involved in the insurance process and supported searches for insurance schemes. The frontend contained about 100,000 lines of code.',
           ],
           contributions: [
-            'I joined after a year and a half of development and worked exclusively on the frontend, mostly as its sole developer.',
-            'I refactored application sections, fixed typing issues throughout the codebase, rebuilt state management and asynchronous API handling, and reorganized the frontend architecture.',
-            'I improved the build and development tooling, introduced linting and formatting, and added tests. Utility code had good coverage, with basic component coverage and a handful of Cypress tests for larger flows.',
-            'I built a Storybook component library around Material UI that matched the existing design, while continuing feature development and bug fixes.',
+            'The project had been in development for a year and a half when I joined. My work focused exclusively on the frontend. For most of my time on the project, I was the only developer working on it.',
+            'At the time I joined, the frontend had numerous bugs and structural issues. I restructured much of it while also developing new features. I refactored application sections, resolved deep-rooted problems with TypeScript typing throughout the codebase, fixed other bugs, rebuilt state management and asynchronous API handling, and reorganized the overall frontend architecture.',
+            'I improved the build and development tooling, introduced linting and formatting, and added tests. I achieved good test coverage for utility code, added basic component tests, and wrote a handful of Cypress tests for more complex flows.',
+            'I built a component library using Material UI and Storybook that matched the existing application design.',
           ],
         },
         text: [
-          'A web platform built for a UK client to connect parties in the insurance process and search for insurance schemes. The frontend alone contained about 100,000 lines of code.',
+          'A web platform for a UK client that connected parties involved in the insurance process and supported searches for insurance schemes. The frontend contained about 100,000 lines of code.',
         ],
         tags: [
           'React',
@@ -302,10 +302,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'Cypress',
         ],
         roleText: [
-          'I joined after a year and a half of development and worked exclusively on the frontend. For most of my time on the project, I was the only frontend developer.',
-          'The frontend needed substantial restructuring, from the UI to the backend API interface. I refactored entire application sections, fixed typing issues throughout the app, rebuilt state management and asynchronous API handling, and reorganized the top-level architecture.',
-          'I improved development scripts and the Webpack build, introduced formatting and linting, and added tests. Utility code had good coverage, while component coverage was basic, with a handful of Cypress tests for more complex flows.',
-          'Using Storybook, I built a component library around Material UI that matched the existing application design. I also developed features and fixed bugs.',
+          'The project had been in development for a year and a half when I joined. My work focused exclusively on the frontend. For most of my time on the project, I was the only developer working on it.',
+          'At the time I joined, the frontend had numerous bugs and structural issues. I restructured much of it, from the UI to API integration, while also developing new features. This included refactoring entire application sections, resolving deep-rooted problems with TypeScript typing throughout the codebase, fixing other bugs, rebuilding state management and asynchronous API handling, and reorganizing the overall frontend architecture.',
+          'I improved development scripts and the Webpack build, introduced formatting and linting, and added tests. I achieved good test coverage for utility code, added basic component tests, and wrote a handful of Cypress tests for more complex flows.',
+          'I built a component library using Material UI and Storybook that matched the existing application design.',
         ],
       },
       {
