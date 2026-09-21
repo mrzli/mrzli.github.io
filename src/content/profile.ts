@@ -10,6 +10,7 @@ export interface Profile {
   readonly stackOverflow: string;
   readonly lead: string;
   readonly summary: string;
+  readonly additionalExperience: string;
   readonly ai: string;
   readonly availability: string;
   readonly services: string;
@@ -28,8 +29,9 @@ export const PROFILE: Profile = {
   stackOverflow: 'https://stackoverflow.com/users/520229/mrzli',
   lead: 'I build software and make complex codebases easier to work with.',
   summary:
-    'My recent work centers on React, TypeScript, and Node.js. I work across interfaces, APIs, and databases, build applications from scratch to production and improve systems already in use.',
-  ai: "I'm comfortable with both AI agent-assisted development and writing code without AI assistance.",
+    'My recent work centers on React, TypeScript, and Node.js. I develop both frontend and backend, building new applications from scratch and bringing them into production. I can also redesign and restructure existing complex systems. I favor clear architecture and clean, readable code that makes systems easier to understand, maintain, and extend.',
+  additionalExperience: 'My experience also includes desktop and mobile applications.',
+  ai: 'I use AI coding agents in my development workflow, drawing on years of experience gained before these tools were available. I can also work without AI assistance when required.',
   availability:
     "I'm looking for hands-on senior development work: frontend, backend, or full-stack.",
   services:

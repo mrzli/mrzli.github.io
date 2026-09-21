@@ -29,6 +29,9 @@ export function HomePage(): ReactNode {
                 {PROFILE.summary}
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
+                {PROFILE.additionalExperience}
+              </Typography>
+              <Typography variant='body' className='max-w-2xl'>
                 {PROFILE.ai}
               </Typography>
             </div>
