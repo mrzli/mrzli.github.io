@@ -92,8 +92,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           ],
         },
         text: [
-          'A web application for managing robots and fleets in a warehouse automation system. The robots handle and move goods in large warehouses, operating autonomously for extended periods.',
-          'The system was complex, covering automation, planning, robot orchestration, and computer vision. I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
+          'A web application for monitoring and managing fleets of autonomous warehouse robots.',
+          'The application is part of a larger warehouse automation product. The product combines physical robots with a stack of software components that enable autonomous warehouse operations. The web application provides the user interface to this system.',
+          'This entire system is a very large project developed by dozens of people.',
+          'I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
           'Several dozen people worked on the project, with two of us handling the frontend. Neither was clearly senior to the other. My colleague had several years at the company and deeper domain knowledge. I brought broader and deeper software development experience from more years across varied projects, along with a different approach to the work.',
         ],
         tags: [
