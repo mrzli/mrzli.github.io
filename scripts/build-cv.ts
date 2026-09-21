@@ -1,7 +1,8 @@
 import { fileURLToPath } from 'node:url';
 
+import { CV_VARIANTS, type CvVariant } from '../src/content/exports/types';
 import { buildCv } from './cv/build';
-import { createCvDocument, CV_VARIANTS, type CvVariant } from './cv/document';
+import { createCvDocument } from './cv/document';
 import { renderCv } from './cv/render';
 
 try {

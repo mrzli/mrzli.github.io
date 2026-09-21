@@ -3,11 +3,8 @@ import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import {
-  createLinkedInSections,
-  LINKEDIN_LIMITS,
-  type LinkedInSection,
-} from '../../src/content/linkedin';
+import { createLinkedInSections, LINKEDIN_LIMITS } from '../../src/content/exports/linkedin';
+import type { LinkedInSection } from '../../src/content/exports/types';
 import { exportLinkedIn, renderLinkedIn } from './export';
 
 verify();

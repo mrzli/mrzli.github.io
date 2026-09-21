@@ -1,7 +1,7 @@
 import { mkdirSync, renameSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-import type { LinkedInSection } from '../../src/content/linkedin';
+import type { LinkedInSection } from '../../src/content/exports/types';
 
 export function exportLinkedIn(
   sections: readonly LinkedInSection[],

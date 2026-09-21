@@ -1,13 +1,18 @@
+import type { ExperienceKey, ExperienceProjectKey } from './experience-keys';
+
 export interface ExperienceEntry {
-  readonly conciseTitle?: string;
-  readonly conciseSummary?: string;
+  readonly contentKey: ExperienceKey;
   readonly title: string;
   readonly location: string;
   readonly role: string;
   readonly from: DateRangeBound;
   readonly to: DateRangeBound;
-  readonly projects: readonly ProjectDescription[];
+  readonly projects: readonly ExperienceProject[];
 }
+
+export type ExperienceProject = ProjectDescription & {
+  readonly contentKey: ExperienceProjectKey;
+};
 
 export type DateRangeBound = MonthYear | 'Present';
 
@@ -21,28 +26,11 @@ export type PersonalProject = ProjectDescription & {
 };
 
 export interface ProjectDescription {
-  readonly linkedinHighlight?: string;
-  readonly concise?: ConciseProject;
-  readonly detailed?: DetailedProject;
   readonly id?: string;
   readonly title: string;
   readonly text: readonly string[];
   readonly roleText: readonly string[];
   readonly tags: readonly string[];
-}
-
-export interface ConciseProject {
-  readonly title: string;
-  readonly technologies: readonly string[];
-  readonly context: string;
-  readonly contributions: readonly string[];
-}
-
-export interface DetailedProject {
-  readonly title?: string;
-  readonly technologies?: readonly string[];
-  readonly context?: readonly string[];
-  readonly contributions?: readonly string[];
 }
 
 export interface LinkItem {

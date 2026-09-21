@@ -5,10 +5,11 @@ not LaTeX. Open the Markdown preview, then copy the contents of each text block
 into its named LinkedIn field. Do not copy the headings, counts, notes, or fences.
 The command does not access LinkedIn or update an account.
 
-Edit `src/content/linkedin.ts` for the headline, About composition, field selection,
-and skill order. Contract project highlights live in `linkedinHighlight` beside
-the corresponding projects in `src/content/experience.ts`. Earlier employment
-reuses suitable concise summaries. Names, dates, contacts, education, and languages
+Edit `src/content/exports/linkedin.ts` for the headline, About composition, field
+selection, skill order, and project highlights. Highlights reference shared
+projects through their stable `contentKey`. Earlier employment reuses the summaries
+in `src/content/exports/experience.ts`. Export types live in
+`src/content/exports/types.ts`. Names, dates, contacts, education, and languages
 come from the shared source. Review tailored summaries when a fact changes.
 
 The contracting entry stays a single ongoing role. Its dates intentionally retain

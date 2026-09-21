@@ -37,8 +37,8 @@ function verify(): void {
   assert.ok(extracted.includes('14 years of contract work'));
   const concise = renderCv(document);
   const detailed = renderCv(createCvDocument('detailed', 2030));
-  assert.ok(!concise.includes('Load testing exposed race conditions'));
-  assert.ok(detailed.includes('Load testing exposed race conditions'));
+  assert.ok(!concise.includes('load testing exposed race conditions'));
+  assert.ok(detailed.includes('load testing exposed race conditions'));
 
   const standalone = join(root, 'standalone');
   mkdirSync(standalone);

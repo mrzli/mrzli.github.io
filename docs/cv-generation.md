@@ -59,11 +59,13 @@ needed. Every build uses a fresh directory to avoid stale output masking failure
 ## Editing
 
 - Professional facts: [shared content](./content.md).
-- Concise wording: `src/content/cv-concise.ts` and the optional `concise`,
-  `conciseTitle`, and `conciseSummary` fields alongside records in `src/content/experience.ts`.
-- Detailed wording: optional `detailed` fields in `src/content/experience.ts`.
-  Fields not overridden reuse website wording. `src/content/cv-detailed.ts` selects
-  the profile, skills, languages, and thesis links from shared content.
+- Concise wording and project selection: `src/content/exports/cv-concise.ts`.
+- Detailed wording and project selection: `src/content/exports/cv-detailed.ts`.
+  Fields not overridden reuse website wording. This file also selects the profile,
+  skills, languages, and thesis links from shared content.
+- Employer titles and summaries: `src/content/exports/experience.ts`, shared with LinkedIn.
+- Export types and CV variants: `src/content/exports/types.ts`.
+- Stable record keys: `src/content/experience-keys.ts` and each record's `contentKey`.
 - Variant selection and year calculations: `scripts/cv/document.ts`.
 - TeX rendering: `scripts/cv/render.ts`.
 - Shared visual template: `scripts/cv/template.tex`, based on the approved

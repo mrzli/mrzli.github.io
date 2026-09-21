@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
+import type { CvDocument, CvProject } from '../../src/content/exports/types';
 import type { DateRangeBound, ExperienceEntry } from '../../src/content/types';
-import type { CvDocument, CvProject } from './document';
 
 export function renderCv(document: CvDocument): string {
   const { profile, contracting } = document;

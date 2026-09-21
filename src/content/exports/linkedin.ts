@@ -1,20 +1,11 @@
-import { EDUCATION, EDUCATION_HIGHLIGHTS, TAG_CARD_DATA } from './background';
-import { EXPERIENCE_SECTIONS } from './experience';
-import { PROFILE, EXPERIENCE_START_YEARS } from './profile';
-import { SKILLS_SECTIONS } from './skills';
-import type { DateRangeBound } from './types';
-
-export interface LinkedInSection {
-  readonly title: string;
-  readonly note?: string;
-  readonly fields: readonly LinkedInField[];
-}
-
-export interface LinkedInField {
-  readonly label: string;
-  readonly value: string;
-  readonly limit?: number;
-}
+import { EDUCATION, EDUCATION_HIGHLIGHTS, TAG_CARD_DATA } from '../background';
+import { EXPERIENCE_SECTIONS } from '../experience';
+import type { ExperienceProjectKey } from '../experience-keys';
+import { PROFILE, EXPERIENCE_START_YEARS } from '../profile';
+import { SKILLS_SECTIONS } from '../skills';
+import type { DateRangeBound } from '../types';
+import { EXPORT_EXPERIENCE_SUMMARIES } from './experience';
+import type { LinkedInSection } from './types';
 
 export const LINKEDIN_LIMITS = {
   headline: 220,
@@ -51,6 +42,19 @@ const PRIORITIZED_SKILLS: readonly string[] = [
   'Copilot',
 ];
 
+export const LINKEDIN_PROJECT_HIGHLIGHTS: Readonly<Partial<Record<ExperienceProjectKey, string>>> =
+  {
+    hvac: "Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.",
+    'warehouse-robotics':
+      'Independently migrated Angular 8 to 18 in a warehouse robotics frontend of roughly 100,000 lines per repository. Resolved over a thousand errors without observed regressions, removing a major security-audit blocker.',
+    eloqua:
+      'Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.',
+    'mobile-fueling':
+      'Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.',
+    'graveyard-management':
+      'Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.',
+  };
+
 export function createLinkedInSections(
   currentYear = new Date().getFullYear(),
 ): readonly LinkedInSection[] {
@@ -64,9 +68,10 @@ export function createLinkedInSections(
       );
     }
   }
-  const highlights = contracting.projects.flatMap((project) =>
-    project.linkedinHighlight ? [`• ${project.linkedinHighlight}`] : [],
-  );
+  const highlights = contracting.projects.flatMap((project) => {
+    const highlight = LINKEDIN_PROJECT_HIGHLIGHTS[project.contentKey];
+    return highlight ? [`• ${highlight}`] : [];
+  });
   return [
     {
       title: 'Introduction',
@@ -125,7 +130,8 @@ export function createLinkedInSections(
     ...earlier
       .filter((entry) => entry !== student)
       .map((entry): LinkedInSection => {
-        if (!entry.conciseSummary) {
+        const summary = EXPORT_EXPERIENCE_SUMMARIES[entry.contentKey]?.summary;
+        if (!summary) {
           throw new Error(`Missing LinkedIn summary for ${entry.title}`);
         }
         return {
@@ -138,7 +144,7 @@ export function createLinkedInSections(
             { label: 'Location / workplace', value: entry.location },
             {
               label: 'Description',
-              value: entry.conciseSummary,
+              value: summary,
               limit: LINKEDIN_LIMITS.experienceDescription,
             },
           ],

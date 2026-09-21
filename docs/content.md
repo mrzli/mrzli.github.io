@@ -6,13 +6,11 @@ Edit reusable professional facts and website prose in `src/content/`:
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | `profile.ts`              | Name, professional title, contacts, introduction, work preferences, and experience start years. |
 | `experience.ts`           | Employment dates, roles, client projects, technologies, and contributions.                      |
-| `linkedin.ts`             | LinkedIn profile wording, field selection, working limits, and skill order.                     |
-| `cv-detailed.ts`          | Detailed CV profile, skill selection, languages, and thesis links.                              |
-| `cv-concise.ts`           | Concise CV introduction, work preferences, and selected tools.                                  |
 | `skills.ts`               | Skill classifications and operating-system experience.                                          |
 | `primary-technologies.ts` | The selected technologies shown on Home.                                                        |
 | `projects.ts`             | Personal projects and their links.                                                              |
 | `background.ts`           | Education, learning, languages, and other background facts.                                     |
+| `experience-keys.ts`      | Stable keys connecting experience records with tailored export content.                         |
 | `project-anchors.ts`      | Stable IDs for the three homepage project links.                                                |
 | `types.ts`                | Content types shared by the website and exports.                                                |
 
@@ -25,16 +23,29 @@ Keep existing project anchors stable when editing titles. Experience totals use
 the current year minus 2008 for professional work and minus 2016 for contracting.
 These summary years do not replace the more precise employment dates.
 
-The website facts take precedence over the older CV. The [CV generator](./cv-generation.md)
-consumes shared records. Concise project copy lives in each project's optional
-`concise` field in `experience.ts`. Earlier employers use `conciseTitle` and
-`conciseSummary`. These fields select entries without changing website wording.
-The concise introduction and tool selection live in `cv-concise.ts`. Projects
-selected for the detailed CV have a `detailed` field. It can override the display
-title, technology selection, context, or contributions. Omitted fields reuse
-website wording. Detailed profile, skills, languages, and thesis links are selected
-in `cv-detailed.ts`, reusing the shared source and its skill classifications.
-The [LinkedIn generator](./linkedin-generation.md) uses `linkedin.ts` and each
-selected contract project's `linkedinHighlight`. Earlier employment reuses concise
-summaries. A change to a shared fact
-still requires checking any summaries that mention it in prose.
+The website facts take precedence over the older CV. Export-specific content and
+types live in `src/content/exports/`:
+
+| File             | Content                                                                                 |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| `cv-concise.ts`  | Concise CV profile, tools, project selection, and project wording.                      |
+| `cv-detailed.ts` | Detailed CV profile, skills, languages, thesis links, project selection, and overrides. |
+| `linkedin.ts`    | LinkedIn profile composition, project highlights, field limits, and skill order.        |
+| `experience.ts`  | Employer display titles and summaries shared by CV and LinkedIn exports.                |
+| `types.ts`       | Export-specific content, document, field, and build types, plus CV variants.            |
+
+Experience entries and their projects have a stable `contentKey`. Export constants
+use these keys rather than display titles or array positions. Keep keys stable
+when editing titles. The separate optional project `id` remains a public page
+anchor and does not change when export content changes.
+
+The [CV generator](./cv-generation.md) selects projects through the concise and
+detailed project maps. Detailed fields omitted from an override reuse website
+wording. Both variants follow the shared experience order. The
+[LinkedIn generator](./linkedin-generation.md) reads its project highlights and
+shared export employer summaries from the exports directory.
+
+Export modules may import shared content. Shared website content must not import
+export modules. Shared dates, contacts, education, and professional facts remain
+in the parent directory. When a shared fact changes, review tailored export copy
+that mentions it. Rendering, compilation, and file publication stay in `scripts/`.

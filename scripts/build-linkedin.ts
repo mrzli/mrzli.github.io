@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 
-import { createLinkedInSections } from '../src/content/linkedin';
+import { createLinkedInSections } from '../src/content/exports/linkedin';
 import { exportLinkedIn } from './linkedin/export';
 
 try {

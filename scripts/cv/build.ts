@@ -2,18 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { copyFileSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import type { CvVariant } from './document';
-
-export interface CvSource {
-  readonly variant: CvVariant;
-  readonly tex: string;
-}
-
-export interface CvBuildOptions {
-  readonly workDirectory: string;
-  readonly publishDirectory?: string;
-  readonly texOnly?: boolean;
-}
+import type { CvSource, CvBuildOptions } from '../../src/content/exports/types';
 
 export function buildCv(sources: readonly CvSource[], options: CvBuildOptions): string {
   if (options.texOnly && options.publishDirectory) {

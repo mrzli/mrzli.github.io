@@ -4,6 +4,7 @@ import type { ExperienceEntry } from './types';
 
 export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
   {
+    contentKey: 'contracting',
     title: 'Freelance Software Developer / Self-Employed',
     location: 'Remote',
     role: 'Primarily Full-Stack Web Developer',
@@ -11,34 +12,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     to: 'Present',
     projects: [
       {
+        contentKey: 'hvac',
         title: 'Large HVAC system site monitoring and control web application',
-        linkedinHighlight:
-          "Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.",
-        detailed: {
-          title: 'HVAC monitoring and control',
-          technologies: [
-            'React',
-            'TypeScript',
-            'MobX',
-            'Tailwind CSS',
-            'FIN Framework',
-            'Project Haystack',
-          ],
-          context: [
-            'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It formed part of a hardware and software solution for facilities such as hotels and office buildings.',
-          ],
-          contributions: [
-            'I joined an established team and built frontend sections, components, and controls to match UI designs. I fixed issues as they arose and worked with the specialist domain, technologies, and tools used by the platform.',
-          ],
-        },
-        concise: {
-          title: 'HVAC monitoring and control',
-          technologies: ['React', 'TypeScript', 'MobX'],
-          context: '',
-          contributions: [
-            "Built interfaces and controls for a multinational's HVAC monitoring application within an established team.",
-          ],
-        },
         text: [
           'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
           'The software development was straightforward for my level of experience. Learning the domain and its specialized technologies and tools took time and patience.',
@@ -66,31 +41,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       },
       {
         id: EXPERIENCE_PROJECT_ANCHORS.robotics,
+        contentKey: 'warehouse-robotics',
         title: 'Automated warehouse robotics system web application',
-        linkedinHighlight:
-          'Independently migrated Angular 8 to 18 in a warehouse robotics frontend of roughly 100,000 lines per repository. Resolved over a thousand errors without observed regressions, removing a major security-audit blocker.',
-        detailed: {
-          title: 'Warehouse robotics',
-          technologies: ['Angular', 'TypeScript', 'RxJS', 'Docker', 'PostgreSQL'],
-          context: [
-            'A web application for managing autonomous warehouse robots and fleets. The wider system covered automation, planning, robot orchestration, and computer vision. Several related frontend repositories each contained about 100,000 lines of code, much of it shared across versions.',
-          ],
-          contributions: [
-            'I worked almost exclusively on the frontend, as one of two frontend developers in a project involving several dozen people.',
-            'I independently migrated Angular 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. I completed the migration without observed regressions, removing a major blocker for the security audit.',
-            'I organized the changes for reuse across related robot and fleet applications and branches. I also implemented client requests, including dock monitoring and truck reception interfaces, pallet stacking support, and other robot operations.',
-          ],
-        },
-        concise: {
-          title: 'Warehouse robotics',
-          technologies: ['Angular', 'TypeScript', 'RxJS'],
-          context:
-            'Robot and fleet management with roughly 100,000 lines of frontend code per repository.',
-          contributions: [
-            'Independently migrated Angular 8 to 18, resolving over a thousand errors without observed regressions and removing a major security-audit blocker.',
-            'Organized the migration for reuse across related applications and branches.',
-          ],
-        },
         text: [
           'A web application for monitoring and managing fleets of autonomous warehouse robots.',
           'The application is part of a larger warehouse automation product. The product combines physical robots with a stack of software components that enable autonomous warehouse operations. The web application provides the user interface to this system.',
@@ -119,41 +71,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       },
       {
         id: EXPERIENCE_PROJECT_ANCHORS.eloqua,
+        contentKey: 'eloqua',
         title: 'Oracle Eloqua to mobile messaging integration',
-        linkedinHighlight:
-          'Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.',
-        detailed: {
-          title: 'Oracle Eloqua messaging integration',
-          technologies: [
-            'React',
-            'TypeScript',
-            'NestJS',
-            'MySQL',
-            'Prisma',
-            'Jest',
-            'OAuth',
-            'JWT',
-            'Nx',
-          ],
-          context: [
-            'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users can send SMS and WhatsApp messages within their campaigns. Users configure and monitor the integration through an embedded React interface, implemented as part of the project.',
-          ],
-          contributions: [
-            'I independently built the integration, including the frontend, backend, database, and external API connections. Within broad constraints, including requirements to use JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, and gave regular progress demos.',
-            'The roughly 20,000-line application coordinated two-way asynchronous communication between the platforms. Campaigns involved sending hundreds of thousands of messages within a short time frame. I designed the integration to handle these messages and the resulting callbacks and interactions reliably, coordinating concurrent operations and preventing race conditions to avoid losing messages or delivery status updates. The messaging platform sent delivery and failure reports through webhooks, which the integration used to compile campaign statistics.',
-            'Once the main functionality was in place, load testing exposed race conditions that I then fixed and covered with regression tests. I added extensive backend tests covering individual units, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast. Detailed logging helped diagnose complex issues, including those race conditions, and supported monitoring.',
-            'The integration required different authentication methods for its connections to each platform and between its own frontend and backend. I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming webhook requests from the messaging platform were authenticated using HTTP Basic Auth.',
-          ],
-        },
-        concise: {
-          title: 'Oracle Eloqua messaging integration',
-          technologies: ['React', 'NestJS', 'TypeScript', 'MySQL', 'Jest'],
-          context: 'SMS and WhatsApp messaging within marketing campaigns.',
-          contributions: [
-            'Independently built the integration, defined its architecture, and clarified requirements with the client.',
-            'Coordinated asynchronous flows involving hundreds of thousands of messages. Resolved race conditions, implemented multiple authentication protocols, and added extensive backend tests.',
-          ],
-        },
         text: [
           'An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users can send SMS and WhatsApp messages within their campaigns. Users configure and monitor the integration through an embedded React interface, implemented as part of the project.',
         ],
@@ -184,17 +103,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'electricity-consumption',
         title: 'Electricity consumption mobile application',
-        detailed: {
-          title: 'Electricity consumption mobile application',
-          technologies: ['React Native', 'TypeScript', 'Expo', 'Jest'],
-          context: [
-            'A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.',
-          ],
-          contributions: [
-            'I worked exclusively on the React Native frontend, implementing screens and features as part of a team of eight developers.',
-          ],
-        },
         text: [
           'A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.',
         ],
@@ -205,40 +115,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       },
       {
         id: EXPERIENCE_PROJECT_ANCHORS.fueling,
+        contentKey: 'mobile-fueling',
         title: 'Mobile fueling management system',
-        linkedinHighlight:
-          'Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.',
-        detailed: {
-          title: 'Mobile fueling operations',
-          technologies: [
-            'Node.js',
-            'Express',
-            'MongoDB',
-            'Angular',
-            'TypeScript',
-            'NgRx',
-            'Mocha',
-            'Nx',
-          ],
-          context: [
-            'A production system supporting the operations of a leading mobile fueling company in California. The company had several hundred employees, with dozens of developers working on its web applications, mobile apps, and shared backend.',
-          ],
-          contributions: [
-            'I spent about 70% of my time on the Node.js backend and 30% on the Angular administration app. My backend work covered all layers, from REST APIs to database access.',
-            'I was responsible for parts of the system and occasionally made changes affecting the whole application. I planned and coordinated these changes with developers and project managers, delivering them without significant issues.',
-            'I ran production MongoDB migrations using scripts written in JavaScript. Through careful testing and execution, I completed these migrations without errors during my time at the company.',
-            'I drove improvements to testing practices and the introduction of a monorepo where practical. I also interviewed, onboarded, and mentored other developers.',
-          ],
-        },
-        concise: {
-          title: 'Mobile fueling operations',
-          technologies: ['Node.js', 'Express', 'MongoDB', 'Angular'],
-          context: 'A production platform supporting a large mobile fueling company.',
-          contributions: [
-            'Owned backend subsystems, delivered system-wide changes, and ran production database migrations. Also worked on the Angular administration app.',
-            'Improved testing practices and interviewed, onboarded, and mentored developers.',
-          ],
-        },
         text: [
           'A production system central to the business and operations of a leading mobile fueling company in California. At the time, the company had several hundred employees and was growing rapidly.',
           'Dozens of developers worked on this system, which included Angular and React web applications, iOS and Android apps, and a shared backend using Node.js, Express, and MongoDB.',
@@ -262,29 +140,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'insurance',
         title: 'Insurance web platform',
-        detailed: {
-          title: 'Insurance platform',
-          technologies: [
-            'React',
-            'TypeScript',
-            'Redux',
-            'RxJS',
-            'Storybook',
-            'Material UI',
-            'Jest',
-            'Cypress',
-          ],
-          context: [
-            'A web platform for a UK client that connected parties involved in the insurance process and supported searches for insurance schemes. The frontend contained about 100,000 lines of code.',
-          ],
-          contributions: [
-            'The project had been in development for a year and a half when I joined. My work focused exclusively on the frontend. For most of my time on the project, I was the only developer working on it.',
-            'At the time I joined, the frontend had numerous bugs and structural issues. I restructured much of it while also developing new features. I refactored application sections, resolved deep-rooted problems with TypeScript typing throughout the codebase, fixed other bugs, rebuilt state management and asynchronous API handling, and reorganized the overall frontend architecture.',
-            'I improved the build and development tooling, introduced linting and formatting, and added tests. I achieved good test coverage for utility code, added basic component tests, and wrote a handful of Cypress tests for more complex flows.',
-            'I built a component library using Material UI and Storybook that matched the existing application design.',
-          ],
-        },
         text: [
           'A web platform for a UK client that connected parties involved in the insurance process and supported searches for insurance schemes. The frontend contained about 100,000 lines of code.',
         ],
@@ -310,18 +167,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'accounting',
         title: 'Accounting web application',
-        detailed: {
-          title: 'Accounting and transactions',
-          technologies: ['Angular', 'TypeScript', 'RxJS', 'Jest', 'AG Grid'],
-          context: [
-            'A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.',
-          ],
-          contributions: [
-            'I worked exclusively on the frontend. A colleague and I joined after limited prototype development. We implemented most of the initial frontend and contributed to architectural decisions.',
-            'Within a few months, the frontend team grew to more than ten people. From then on, my work included changes across the application, building subsystems and reusable patterns, developing larger features and screens, and maintenance.',
-          ],
-        },
         text: [
           'A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.',
         ],
@@ -332,39 +179,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['Angular', 'TypeScript', 'Jest', 'RxJS', 'AG Grid'],
       },
       {
+        contentKey: 'graveyard-management',
         title: 'Graveyard management web application',
-        linkedinHighlight:
-          'Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.',
-        detailed: {
-          title: 'Graveyard management',
-          technologies: [
-            'Vue',
-            'TypeScript',
-            'OpenLayers',
-            'Kotlin',
-            'Spring Boot',
-            'PostgreSQL',
-            'Liquibase',
-            'Jest',
-          ],
-          context: [
-            'A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.',
-          ],
-          contributions: [
-            'I implemented nearly the entire application, both frontend and backend. I built the frontend with Vue, Vuex, Vuetify, and OpenLayers, and wrote unit tests with Jest.',
-            'I built the backend with Kotlin and Spring Boot, using Liquibase for schema changes and migrations. I used PostgreSQL in production, an in-memory H2 database for development and testing, and Jasper Reports for PDF reports.',
-            "I wrote backend integration tests in Jest and TypeScript. These integration tests covered much of the backend's functionality across all layers, using an in-memory H2 database.",
-            'I used Docker and Docker Swarm only in development for automation and deployment experiments. Production deployment was partly manual, with scripts handling most steps.',
-          ],
-        },
-        concise: {
-          title: 'Graveyard management',
-          technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL'],
-          context: '',
-          contributions: [
-            'Built nearly all of a multi-tenant application with maps and PDF reports. Added frontend unit tests and backend integration tests using Jest and TypeScript.',
-          ],
-        },
         text: [
           'A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.',
         ],
@@ -393,18 +209,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'parking',
         title: 'Parking mobile application',
-        detailed: {
-          title: 'Parking payments backend',
-          technologies: ['Java', 'REST APIs'],
-          context: [
-            'A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.',
-          ],
-          contributions: [
-            "I built the backend's central integration layer, connecting the Android and iOS apps with parking providers, payment processing, and data access.",
-            'This included the REST API used by the mobile apps, backend validation, direct integration with parking provider APIs, and integration with payment providers through a component built by another developer.',
-          ],
-        },
         text: [
           'A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.',
         ],
@@ -415,17 +221,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['Java'],
       },
       {
+        contentKey: 'nias',
         title: 'NIAS single sign-on integration',
-        detailed: {
-          title: 'National single sign-on integration',
-          technologies: ['Java', 'JSP', 'SOAP'],
-          context: [
-            "An integration with NIAS, Croatia's National Identification and Authentication System, for the Croatian Postal Service.",
-          ],
-          contributions: [
-            'I implemented the entire integration, enabling users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.',
-          ],
-        },
         text: [
           "NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. It supports authentication through accredited providers, including government institutions, banks, and other trusted organizations.",
           'This integration enabled users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.',
@@ -434,19 +231,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['Java', 'JSP', 'SOAP'],
       },
       {
+        contentKey: 'government-payments',
         title: 'Government payments validation component',
-        detailed: {
-          title: 'Government payments validation',
-          technologies: ['Java', 'JUnit', 'JSON'],
-          context: [
-            'A reusable component validating payments to the Croatian government, agencies, and local and regional administrations. It checked individual invoice fields and combinations against configurable rules, returning structured errors and warnings.',
-          ],
-          contributions: [
-            'I implemented the component and extensive unit tests in less than two weeks. Requirements came from about 180 pages of rules, supporting tables, and data.',
-            'I translated the rules into a JSON configuration of about 3,000 lines and wrote the logic to parse and apply them.',
-            'QA found about three failures in 100 manual scenarios. I converted their spreadsheet results to CSV-backed automated tests, fixed the failures, and retained every scenario as regression coverage. No further issues were reported after that.',
-          ],
-        },
         text: [
           'A Java component (JAR) for validating payments to the Croatian government, agencies, and local and regional administrations.',
           'It accepted structured invoice data and checked individual fields and their combinations, including payment descriptions, destination accounts, dates, and payment references. It returned errors and warnings with details for each issue. The validation rules needed to be easy to update as requirements changed.',
@@ -461,24 +247,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['Java', 'JUnit'],
       },
       {
+        contentKey: 'eu-roaming',
         title: 'EU roaming usage and traffic tracking web application',
-        detailed: {
-          title: 'EU roaming usage and traffic tracking',
-          technologies: [
-            'Java',
-            'Spring Boot',
-            'JPA/Hibernate',
-            'Querydsl',
-            'Liquibase',
-            'Jasper Reports',
-          ],
-          context: [
-            "A system for Croatia's largest telecom, providing roaming usage statistics and helping detect abuse during changes to EU roaming rules.",
-          ],
-          contributions: [
-            'I implemented the entire backend for its administration application, from the REST API to the repository layer, and built its reporting system with Jasper Reports.',
-          ],
-        },
         text: [
           "A roaming usage tracking system for Croatia's largest telecom, commissioned during significant changes to EU roaming rules. It provided usage statistics and helped detect abuse.",
         ],
@@ -496,24 +266,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'e-learning',
         title: 'E-learning web application',
-        detailed: {
-          title: 'E-learning web application',
-          technologies: [
-            'AngularJS',
-            'Java',
-            'Spring Boot',
-            'PostgreSQL',
-            'Video.js',
-            'Veeting Rooms',
-          ],
-          context: [
-            'A web application for online learning, with video courses and online meetings with whiteboards.',
-          ],
-          contributions: [
-            'I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.',
-          ],
-        },
         text: [
           'A web application for online learning, with video courses and online meetings with whiteboards.',
         ],
@@ -533,6 +287,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'other-contracts',
         title: 'Other projects',
         text: [
           'Examples of smaller client assignments.',
@@ -551,18 +306,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'apis-it',
     title: 'APIS IT',
-    conciseTitle: 'APIS IT',
-    conciseSummary:
-      'Implemented seven complete e-Tax forms and contributed to about ten others, covering web interfaces, XML, PDF reports, validation, and data access.',
     location: 'Zagreb (Croatia)',
     role: 'C# Developer',
     from: { year: 2013, month: 11 },
     to: { year: 2016, month: 5 },
     projects: [
       {
+        contentKey: 'e-tax',
         title: "Croatia's Ministry of Finance e-Tax web application",
-        detailed: { title: 'e-Tax platform' },
         text: [
           "The Croatian Ministry of Finance's official e-Tax web application, used by citizens and businesses to submit tax forms electronically. Already a large application when I worked on it, it received more than one million page views per day.",
           'Alongside other features, it implemented a wide range of tax forms covering different types of tax reporting.',
@@ -574,8 +327,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['C#', 'ASP.NET Web Forms', 'jQuery', 'Microsoft Reports (.rdlc)', 'IBM DB2'],
       },
       {
+        contentKey: 'building-permits',
         title: 'Location and building permits web application',
-        detailed: { title: 'Location and building permits' },
         text: [
           "A web application for members of the public to submit data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.",
         ],
@@ -592,6 +345,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
       },
       {
+        contentKey: 'other-apis',
         title: 'Other projects',
         text: [
           'Two additional large ASP.NET Web Forms applications for employees of the Ministry of Construction and Physical Planning.',
@@ -608,17 +362,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'gemmeus',
     title: 'Gemmeus d.o.o.',
-    conciseTitle: 'Gemmeus d.o.o.',
-    conciseSummary: 'Developed C# spreadsheet features, including Excel-to-Windows Forms export.',
     location: 'Remote',
     role: 'C# Developer',
     from: { year: 2012, month: 10 },
     to: { year: 2013, month: 1 },
     projects: [
       {
+        contentKey: 'spreadsheet',
         title: 'Excel component for spreadsheet data manipulation',
-        detailed: { title: 'Spreadsheet component' },
         text: [
           'A component for programmatic access to Microsoft Excel spreadsheets, supporting reading, writing, data manipulation, conversion, and printing.',
         ],
@@ -630,18 +383,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'inetec',
     title: 'INETEC - Institute for Nuclear Technology d.o.o.',
-    conciseTitle: 'INETEC d.o.o.',
-    conciseSummary:
-      'Built substantial parts of nuclear inspection software: 2D/3D signal charts, multithreaded rendering, signal processing, and persistence.',
     location: 'Zagreb (Croatia)',
     role: 'C# Windows Desktop (WPF) Developer',
     from: { year: 2009, month: 11 },
     to: { year: 2012, month: 10 },
     projects: [
       {
+        contentKey: 'damage-analysis',
         title: 'Steam generator damage analysis application',
-        detailed: { title: 'Nuclear inspection and damage analysis' },
         text: [
           'A large WPF desktop application for operators to review inspection data and analyze damage in nuclear power plant steam generators.',
         ],
@@ -653,8 +404,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['C#', 'WPF', 'Cinch (MVVM framework)'],
       },
       {
+        contentKey: 'inspection-robot',
         title: 'Steam generator walker robot command and monitoring application',
-        detailed: { title: 'Inspection robot control' },
         text: [
           "A WPF desktop application for controlling and monitoring a prototype robot used in steam generator inspections. It displayed the robot's position and state and complemented hardware and electronic handling of edge cases and failures.",
           'The robot was designed to walk along a steam generator tube wall to position inspection probes, reducing or eliminating operator exposure to ionizing radiation.',
@@ -669,18 +420,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'ultra',
     title: 'Ultra d.o.o.',
-    conciseTitle: 'Ultra d.o.o.',
-    conciseSummary:
-      'Built a complete Windows Forms application for fuel-dispenser control, including custom controls and SQLite storage.',
     location: 'Karlovac (Croatia)',
     role: 'C# Windows Desktop and Web Developer',
     from: { year: 2008, month: 10 },
     to: { year: 2009, month: 11 },
     projects: [
       {
+        contentKey: 'fuel-dispenser-web',
         title: 'Fuel dispenser configuration and control web application',
-        detailed: { title: 'Fuel dispenser web application' },
         text: [
           'A web application for configuring and monitoring fuel dispenser drivers at fuel stations.',
         ],
@@ -690,8 +439,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['C#', 'ASP.NET Web Forms', 'PostgreSQL'],
       },
       {
+        contentKey: 'fuel-dispenser-desktop',
         title: 'Fuel dispenser configuration and control desktop application',
-        detailed: { title: 'Fuel dispenser desktop application' },
         text: [
           'A desktop application with a similar purpose to the web application, serving different drivers and clients.',
         ],
@@ -701,6 +450,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         tags: ['C#', 'Windows Forms', 'SQLite'],
       },
       {
+        contentKey: 'other-ultra',
         title: 'Various projects',
         text: [
           'Fuel dispenser drivers and small tools for tasks such as regex validation and editing Windows registry entries.',
@@ -713,17 +463,16 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'ekobit',
     title: 'Ekobit d.o.o.',
-    conciseTitle: 'Ekobit d.o.o.',
-    conciseSummary: 'Developed ASP.NET and database features for Croatian financial institutions.',
     location: 'Zagreb (Croatia)',
     role: 'C# Web Developer',
     from: { year: 2008, month: 2 },
     to: { year: 2008, month: 10 },
     projects: [
       {
+        contentKey: 'financial-web',
         title: 'Various projects',
-        detailed: { title: 'Financial web applications' },
         text: [
           'Web applications for Croatian financial institutions, including banks, funds, and stock exchanges.',
         ],
@@ -735,6 +484,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     ],
   },
   {
+    contentKey: 'visage',
     title: 'Visage Technologies (Student Project)',
     location: 'Zagreb (Croatia)',
     role: 'C++ Developer',
@@ -742,8 +492,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     to: { year: 2007, month: 8 },
     projects: [
       {
+        contentKey: 'body-animation',
         title: 'Body animation exporter',
-        detailed: { title: 'Body animation exporter' },
         text: [
           'An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system.',
         ],
