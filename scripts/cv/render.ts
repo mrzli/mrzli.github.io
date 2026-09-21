@@ -51,6 +51,7 @@ export function renderCv(document: CvDocument): string {
     employer(contracting, 'Independent contractor', profile.title),
     ...document.projects.map((project) => renderProject(project, contracting)),
     ...document.earlierExperience.flatMap((entry) => [
+      String.raw`\employerseparator`,
       employer(entry.employment, entry.title, entry.employment.role),
       ...entry.text.map(paragraph),
       ...entry.projects.map((project) => renderProject(project, entry.employment)),
@@ -184,6 +185,8 @@ const DETAILED_PAGINATION = String.raw`
 \renewcommand{\cvsection}[1]{\cvneedspace{6\baselineskip}\cvsectionoriginal{#1}}
 \let\employeroriginal\employer
 \renewcommand{\employer}[4]{\cvneedspace{9\baselineskip}\employeroriginal{#1}{#2}{#3}{#4}}
+\let\employerseparatororiginal\employerseparator
+\renewcommand{\employerseparator}{\cvneedspace{11\baselineskip}\employerseparatororiginal}
 \let\projectoriginal\project
 \renewcommand{\project}[2]{\cvneedspace{7\baselineskip}\projectoriginal{#1}{#2}}
 `;

@@ -9,6 +9,7 @@
 \pdfgentounicode=1
 \definecolor{accent}{HTML}{243B53}
 \definecolor{muted}{HTML}{292524}
+\definecolor{separator}{HTML}{CBD0D5}
 \hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Curriculum vitae},pdfauthor={Goran Mržljak}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
@@ -18,6 +19,7 @@
 \widowpenalty=10000
 \newcommand{\cvsection}[1]{\par\addvspace{16pt}{\LARGE\bfseries\color{accent}\strut #1}\par\nopagebreak\vskip 1pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
 \newcommand{\employer}[4]{\par\addvspace{13pt}{\Large\bfseries #1}\hfill {\small\color{muted}#2}\par\nopagebreak\vspace{-3pt}#3\hfill {\small\color{muted}#4}\par\nopagebreak}
+\newcommand{\employerseparator}{\par\addvspace{14pt}{\color{separator}\hrule height .4pt}\nopagebreak}
 \newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\color{muted}\raggedright #2\par}\nopagebreak}
 \newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
 \begin{document}
@@ -28,6 +30,8 @@
 \renewcommand{\cvsection}[1]{\cvneedspace{6\baselineskip}\cvsectionoriginal{#1}}
 \let\employeroriginal\employer
 \renewcommand{\employer}[4]{\cvneedspace{9\baselineskip}\employeroriginal{#1}{#2}{#3}{#4}}
+\let\employerseparatororiginal\employerseparator
+\renewcommand{\employerseparator}{\cvneedspace{11\baselineskip}\employerseparatororiginal}
 \let\projectoriginal\project
 \renewcommand{\project}[2]{\cvneedspace{7\baselineskip}\projectoriginal{#1}{#2}}
 
@@ -138,6 +142,7 @@ A web application for online learning, with video courses and online meetings wi
 \begin{points}
 \item I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.
 \end{points}
+\employerseparator
 \employer{APIS IT}{November 2013 -- May 2016}{C\# Developer}{Zagreb (Croatia)}
 \project{e-Tax platform}{C\#, ASP.NET Web Forms, jQuery, Microsoft Reports (.rdlc), IBM DB2}
 The Croatian Ministry of Finance's official e-Tax web application, used by citizens and businesses to submit tax forms electronically. Already a large application when I worked on it, it received more than one million page views per day.\par
@@ -151,12 +156,14 @@ A web application for members of the public to submit data for location and buil
 \begin{points}
 \item I implemented much of the UI, including views, models, and controllers, a substantial part of the business logic, the entire data access layer, and PDF reporting.
 \end{points}
+\employerseparator
 \employer{Gemmeus d.o.o.}{October 2012 -- January 2013}{C\# Developer}{Remote}
 \project{Spreadsheet component}{C\#, Web Forms, WPF, Windows Forms}
 A component for programmatic access to Microsoft Excel spreadsheets, supporting reading, writing, data manipulation, conversion, and printing.\par
 \begin{points}
 \item I handled various development tasks, including exporting Excel data to a Windows Forms DataGrid while matching the original content, formatting, and styles as closely as possible.
 \end{points}
+\employerseparator
 \employer{INETEC d.o.o.}{November 2009 -- October 2012}{C\# Windows Desktop (WPF) Developer}{Zagreb (Croatia)}
 \project{Nuclear inspection and damage analysis}{C\#, WPF, Cinch (MVVM framework)}
 A large WPF desktop application for operators to review inspection data and analyze damage in nuclear power plant steam generators.\par
@@ -173,6 +180,7 @@ The robot was designed to walk along a steam generator tube wall to position ins
 \item I built or fully rewrote nearly all the backend code down to the electronics controller interface.
 \item Another developer wrote the original controller code in a C-like language. I maintained it and made the required changes and fixes.
 \end{points}
+\employerseparator
 \employer{Ultra d.o.o.}{October 2008 -- November 2009}{C\# Windows Desktop and Web Developer}{Karlovac (Croatia)}
 \project{Fuel dispenser web application}{C\#, ASP.NET Web Forms, PostgreSQL}
 A web application for configuring and monitoring fuel dispenser drivers at fuel stations.\par
@@ -184,12 +192,14 @@ A desktop application with a similar purpose to the web application, serving dif
 \begin{points}
 \item I built the entire application, with custom controls for displaying and controlling fuel dispenser state and SQLite for storage.
 \end{points}
+\employerseparator
 \employer{Ekobit d.o.o.}{February 2008 -- October 2008}{C\# Web Developer}{Zagreb (Croatia)}
 \project{Financial web applications}{C\#, ASP.NET Web Forms, Microsoft SQL Server}
 Web applications for Croatian financial institutions, including banks, funds, and stock exchanges.\par
 \begin{points}
 \item I handled small development tasks and bug fixes in the applications and their databases.
 \end{points}
+\employerseparator
 \employer{Visage Technologies (Student Project)}{January 2007 -- August 2007}{C++ Developer}{Zagreb (Croatia)}
 \project{Body animation exporter}{C++, 3ds Max SDK}
 An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system.\par

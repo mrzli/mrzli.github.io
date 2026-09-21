@@ -9,6 +9,7 @@
 \pdfgentounicode=1
 \definecolor{accent}{HTML}{243B53}
 \definecolor{muted}{HTML}{292524}
+\definecolor{separator}{HTML}{CBD0D5}
 \hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Curriculum vitae},pdfauthor={%%AUTHOR%%}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
@@ -18,6 +19,7 @@
 \widowpenalty=10000
 \newcommand{\cvsection}[1]{\par\addvspace{16pt}{\LARGE\bfseries\color{accent}\strut #1}\par\nopagebreak\vskip 1pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
 \newcommand{\employer}[4]{\par\addvspace{13pt}{\Large\bfseries #1}\hfill {\small\color{muted}#2}\par\nopagebreak\vspace{-3pt}#3\hfill {\small\color{muted}#4}\par\nopagebreak}
+\newcommand{\employerseparator}{\par\addvspace{14pt}{\color{separator}\hrule height .4pt}\nopagebreak}
 \newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\color{muted}\raggedright #2\par}\nopagebreak}
 \newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
 \begin{document}

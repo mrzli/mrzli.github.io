@@ -71,6 +71,7 @@ separate Core technologies section.
 
 Roles and project technologies use upright text. Dates and locations stay
 right-aligned in smaller text, and technology lists use smaller, left-aligned text.
+Thin light-gray rules separate employers. Projects within an employer use whitespace.
 
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
