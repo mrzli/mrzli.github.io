@@ -10,16 +10,16 @@ export interface ProjectDetailsProps {
   readonly title: string;
   readonly headingAs: ProjectHeadingElement;
   readonly text: readonly string[];
-  readonly tags: readonly string[];
   readonly roleText: readonly string[];
+  readonly tags: readonly string[];
 }
 
 export function ProjectDetails({
   title,
   headingAs,
   text,
-  tags,
   roleText,
+  tags,
 }: ProjectDetailsProps): ReactNode {
   return (
     <>

@@ -5,11 +5,11 @@ import type { PersonalProject } from '@/content/types';
 
 export type ProjectCardProps = PersonalProject;
 
-export function ProjectCard({ title, text, tags, roleText, links }: ProjectCardProps): ReactNode {
+export function ProjectCard({ title, text, roleText, tags, links }: ProjectCardProps): ReactNode {
   return (
     <Card as='article' padding='large' className='flex flex-col'>
       <div className='flex flex-1 flex-col gap-5'>
-        <ProjectDetails title={title} headingAs='h2' text={text} tags={tags} roleText={roleText} />
+        <ProjectDetails title={title} headingAs='h2' text={text} roleText={roleText} tags={tags} />
 
         <ul className='mt-auto flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200 pt-4 dark:border-slate-800'>
           {links.map((link) => {

@@ -27,8 +27,8 @@ export const PersonalProject: Story = {
     title: personalProject.title,
     headingAs: 'h2',
     text: personalProject.text,
-    tags: personalProject.tags,
     roleText: personalProject.roleText,
+    tags: personalProject.tags,
   },
 };
 
@@ -41,7 +41,7 @@ export const LongExperience: Story = {
     title: integration.title,
     headingAs: 'h3',
     text: integration.text,
-    tags: integration.tags,
     roleText: integration.roleText,
+    tags: integration.tags,
   },
 };
