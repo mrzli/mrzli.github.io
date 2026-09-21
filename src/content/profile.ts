@@ -29,13 +29,13 @@ export const PROFILE: Profile = {
   stackOverflow: 'https://stackoverflow.com/users/520229/mrzli',
   lead: 'I build software and make complex codebases easier to work with.',
   summary:
-    'My recent work centers on React, TypeScript, and Node.js. I develop both frontend and backend, building new applications from scratch and bringing them into production. I can also redesign and restructure existing complex systems. I favor clear architecture and clean, readable code that makes systems easier to understand, maintain, and extend.',
+    "Recently, I've worked mainly with React, TypeScript, and Node.js. I develop both frontend and backend, building applications from scratch and bringing them into production. I can also redesign and restructure complex existing systems. I favor clear architecture and readable code that makes systems easier to understand, maintain, and extend.",
   additionalExperience: 'My experience also includes desktop and mobile applications.',
-  ai: 'I use AI coding agents in my development workflow, drawing on years of experience gained before these tools were available. I can also work without AI assistance when required.',
+  ai: 'I use AI coding agents regularly and for a growing range of tasks. The skills I developed before these tools existed complement them well. I can also work without AI assistance when required.',
   availability:
     "I'm looking for hands-on senior development work: frontend, backend, or full-stack.",
   services:
-    'I can build your application from start to finish or join an existing team. I can define the technical architecture, help turn requirements into a working product, and support the team through mentoring, onboarding, and developer interviews.',
+    'I work independently or within established teams. I design application architecture, help clarify requirements, mentor and onboard developers, and conduct developer interviews.',
   contracts:
     'B2B contracts for full-time, part-time, or fixed-price work. Remote, with hybrid work possible in Zagreb, Croatia.',
 };

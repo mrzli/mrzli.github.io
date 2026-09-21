@@ -80,7 +80,7 @@ export const DETAILED_CV = {
     `${PROFILE.lead} I have ${professionalYears} years of professional experience, including ${contractingYears} years of independent contract work.`,
     PROFILE.summary,
     PROFILE.additionalExperience,
-    'I work independently or within established teams. I define technical architecture, clarify requirements, and support teams through mentoring, onboarding, and developer interviews.',
+    PROFILE.services,
   ],
   contracts:
     'B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.',
