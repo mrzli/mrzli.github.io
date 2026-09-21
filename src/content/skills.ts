@@ -2,14 +2,14 @@ import type { SkillSection } from './types';
 
 export const SKILLS_SECTIONS: readonly SkillSection[] = [
   {
-    title: 'Extensive and Recent Experience',
+    title: 'Extensive and recent experience',
     groups: [
       {
-        title: 'Programming Languages',
+        title: 'Programming languages',
         skills: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
       },
       {
-        title: 'Libraries and Frameworks',
+        title: 'Libraries and frameworks',
         skills: [
           'React',
           'Angular',
@@ -59,7 +59,7 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
         skills: ['GitHub Actions'],
       },
       {
-        title: 'Source Control',
+        title: 'Source control',
         skills: ['Git', 'GitHub', 'GitLab', 'Bitbucket'],
       },
       {
@@ -71,20 +71,20 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
         skills: ['Codex CLI', 'Copilot'],
       },
       {
-        title: 'Operating Systems',
+        title: 'Operating systems',
         skills: ['Windows', 'macOS', 'Linux'],
       },
     ],
   },
   {
-    title: 'Extensive Experience, Not Recent',
+    title: 'Extensive experience, not recent',
     groups: [
       {
-        title: 'Programming Languages',
+        title: 'Programming languages',
         skills: ['Kotlin', 'Java', 'C#', 'C++'],
       },
       {
-        title: 'Libraries and Frameworks',
+        title: 'Libraries and frameworks',
         skills: [
           'Spring Boot',
           'JPA/Hibernate',
@@ -114,7 +114,7 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
         skills: ['H2', 'SQLite', 'Microsoft SQL Server'],
       },
       {
-        title: 'Source Control',
+        title: 'Source control',
         skills: ['TFS (Microsoft)', 'SVN', 'Jazz (IBM)'],
       },
       {
@@ -124,14 +124,14 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
     ],
   },
   {
-    title: 'Limited Experience',
+    title: 'Limited experience',
     groups: [
       {
-        title: 'Programming Languages',
+        title: 'Programming languages',
         skills: ['Ruby', 'Python', 'Racket', 'F#', 'R', 'Octave', 'Fantom (JVM)'],
       },
       {
-        title: 'Libraries and Frameworks',
+        title: 'Libraries and frameworks',
         skills: [
           'Android SDK',
           'libGDX (game engine)',
@@ -163,4 +163,4 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
 ];
 
 export const OPERATING_SYSTEM_EXPERIENCE: string =
-  'I have years of experience with Windows, macOS, and Linux, often using them alongside each other. After mainly using macOS for a decade, I now use Linux as my primary system for work and personal use, and Windows when required.';
+  'I have years of experience with Windows, macOS, and Linux, often using them alongside each other. After a decade primarily on macOS, I switched to Linux as my main system for work and personal use. I use Windows when needed.';

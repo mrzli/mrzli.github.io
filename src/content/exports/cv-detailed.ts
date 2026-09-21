@@ -80,7 +80,7 @@ export const DETAILED_CV = {
   skills: SKILLS_SECTIONS.map((section) => ({
     ...section,
     groups: section.groups
-      .filter((group) => !['Source Control', 'IDEs'].includes(group.title))
+      .filter((group) => !['Source control', 'IDEs'].includes(group.title))
       .map((group) => ({
         ...group,
         skills: group.skills.filter((skill) => SELECTED_SKILLS.has(skill)),
