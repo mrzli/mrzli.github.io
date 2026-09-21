@@ -10,6 +10,7 @@
 \definecolor{accent}{HTML}{243B53}
 \definecolor{muted}{HTML}{292524}
 \definecolor{separator}{HTML}{CBD0D5}
+\definecolor{technology}{HTML}{555F69}
 \hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Curriculum vitae},pdfauthor={Goran Mržljak}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
@@ -20,7 +21,7 @@
 \newcommand{\cvsection}[1]{\par\addvspace{16pt}{\LARGE\bfseries\color{accent}\strut #1}\par\nopagebreak\vskip 1pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
 \newcommand{\employer}[4]{\par\addvspace{13pt}{\Large\bfseries #1}\hfill {\small\color{muted}#2}\par\nopagebreak\vspace{-3pt}#3\hfill {\small\color{muted}#4}\par\nopagebreak}
 \newcommand{\employerseparator}{\par\addvspace{14pt}{\color{separator}\hrule height .4pt}\nopagebreak}
-\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\color{muted}\raggedright #2\par}\nopagebreak}
+\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\color{technology}\raggedright #2\par}\nopagebreak}
 \newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
 \begin{document}
 
@@ -59,19 +60,19 @@ Detailed CV & \href{https://mrzli.github.io/data/cv-goran-mrzljak-detailed.pdf}{
 \end{tabular}\par
 \cvsection{Work experience}
 \employer{Independent contractor}{January 2016 -- Present}{Senior software developer}{Remote}
-\project{HVAC monitoring and control}{React, TypeScript, MobX, Tailwind CSS, FIN Framework, Project Haystack}
+\project{HVAC monitoring and control}{React · TypeScript · MobX · Tailwind CSS · FIN Framework · Project Haystack}
 An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It formed part of a hardware and software solution for facilities such as hotels and office buildings.\par
 \begin{points}
 \item I joined an established team and built frontend sections, components, and controls to match UI designs. I fixed issues as they arose and worked with the specialist domain, technologies, and tools used by the platform.
 \end{points}
-\project{Warehouse robotics}{Angular, TypeScript, RxJS, Docker, PostgreSQL}
+\project{Warehouse robotics}{Angular · TypeScript · RxJS · Docker · PostgreSQL}
 A web application for managing autonomous warehouse robots and fleets. The wider system covered automation, planning, robot orchestration, and computer vision. Several related frontend repositories each contained about 100,000 lines of code, much of it shared across versions.\par
 \begin{points}
 \item I worked almost exclusively on the frontend, as one of two frontend developers in a project involving several dozen people.
 \item I independently migrated Angular 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. I completed the migration without observed regressions, removing a major blocker for the security audit.
 \item I organized the changes for reuse across related robot and fleet applications and branches. I also implemented client requests, including dock monitoring and truck reception interfaces, pallet stacking support, and other robot operations.
 \end{points}
-\project{Oracle Eloqua messaging integration}{React, TypeScript, NestJS, MySQL, Prisma, Jest, OAuth, JWT, Nx}
+\project{Oracle Eloqua messaging integration}{React · TypeScript · NestJS · MySQL · Prisma · Jest · OAuth · JWT · Nx}
 An integration connecting Oracle Eloqua, a B2B marketing automation platform, to a mobile messaging service so users can send SMS and WhatsApp messages within their campaigns. Users configure and monitor the integration through an embedded React interface, implemented as part of the project.\par
 \begin{points}
 \item I independently built the integration, including the frontend, backend, database, and external API connections. Within broad constraints, including requirements to use JavaScript and MySQL, I made all technical and architectural decisions. I worked from general goals and platform documentation, clarified requirements with the client, and gave regular progress demos.
@@ -79,12 +80,12 @@ An integration connecting Oracle Eloqua, a B2B marketing automation platform, to
 \item Once the main functionality was in place, load testing exposed race conditions that I then fixed and covered with regression tests. I added extensive backend tests covering individual units, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast. Detailed logging helped diagnose complex issues, including those race conditions, and supported monitoring.
 \item The integration required different authentication methods for its connections to each platform and between its own frontend and backend. I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming webhook requests from the messaging platform were authenticated using HTTP Basic Auth.
 \end{points}
-\project{Electricity consumption mobile application}{React Native, TypeScript, Expo, Jest}
+\project{Electricity consumption mobile application}{React Native · TypeScript · Expo · Jest}
 A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.\par
 \begin{points}
 \item I worked exclusively on the React Native frontend, implementing screens and features as part of a team of eight developers.
 \end{points}
-\project{Mobile fueling operations}{Node.js, Express, MongoDB, Angular, TypeScript, NgRx, Mocha, Nx}
+\project{Mobile fueling operations}{Node.js · Express · MongoDB · Angular · TypeScript · NgRx · Mocha · Nx}
 A production system supporting the operations of a leading mobile fueling company in California. The company had several hundred employees, with dozens of developers working on its web applications, mobile apps, and shared backend.\par
 \begin{points}
 \item I spent about 70\% of my time on the Node.js backend and 30\% on the Angular administration app. My backend work covered all layers, from REST APIs to database access.
@@ -92,7 +93,7 @@ A production system supporting the operations of a leading mobile fueling compan
 \item I ran production MongoDB migrations using scripts written in JavaScript. Through careful testing and execution, I completed these migrations without errors during my time at the company.
 \item I drove improvements to testing practices and the introduction of a monorepo where practical. I also interviewed, onboarded, and mentored other developers.
 \end{points}
-\project{Insurance platform}{React, TypeScript, Redux, RxJS, Storybook, Material UI, Jest, Cypress}
+\project{Insurance platform}{React · TypeScript · Redux · RxJS · Storybook · Material UI · Jest · Cypress}
 A web platform for a UK client that connected parties involved in the insurance process and supported searches for insurance schemes. The frontend contained about 100,000 lines of code.\par
 \begin{points}
 \item The project had been in development for a year and a half when I joined. My work focused exclusively on the frontend. For most of my time on the project, I was the only developer working on it.
@@ -100,13 +101,13 @@ A web platform for a UK client that connected parties involved in the insurance 
 \item I improved the build and development tooling, introduced linting and formatting, and added tests. I achieved good test coverage for utility code, added basic component tests, and wrote a handful of Cypress tests for more complex flows.
 \item I built a component library using Material UI and Storybook that matched the existing application design.
 \end{points}
-\project{Accounting and transactions}{Angular, TypeScript, RxJS, Jest, AG Grid}
+\project{Accounting and transactions}{Angular · TypeScript · RxJS · Jest · AG Grid}
 A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.\par
 \begin{points}
 \item I worked exclusively on the frontend. A colleague and I joined after limited prototype development. We implemented most of the initial frontend and contributed to architectural decisions.
 \item Within a few months, the frontend team grew to more than ten people. From then on, my work included changes across the application, building subsystems and reusable patterns, developing larger features and screens, and maintenance.
 \end{points}
-\project{Graveyard management}{Vue, TypeScript, OpenLayers, Kotlin, Spring Boot, PostgreSQL, Liquibase, Jest}
+\project{Graveyard management}{Vue · TypeScript · OpenLayers · Kotlin · Spring Boot · PostgreSQL · Liquibase · Jest}
 A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.\par
 \begin{points}
 \item I implemented nearly the entire application, both frontend and backend. I built the frontend with Vue, Vuex, Vuetify, and OpenLayers, and wrote unit tests with Jest.
@@ -114,65 +115,65 @@ A multi-tenant web application for managing graveyards, graves, and information 
 \item I wrote backend integration tests in Jest and TypeScript. These integration tests covered much of the backend's functionality across all layers, using an in-memory H2 database.
 \item I used Docker and Docker Swarm only in development for automation and deployment experiments. Production deployment was partly manual, with scripts handling most steps.
 \end{points}
-\project{Parking payments backend}{Java, REST APIs}
+\project{Parking payments backend}{Java · REST APIs}
 A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.\par
 \begin{points}
 \item I built the backend's central integration layer, connecting the Android and iOS apps with parking providers, payment processing, and data access.
 \item This included the REST API used by the mobile apps, backend validation, direct integration with parking provider APIs, and integration with payment providers through a component built by another developer.
 \end{points}
-\project{National single sign-on integration}{Java, JSP, SOAP}
+\project{National single sign-on integration}{Java · JSP · SOAP}
 An integration with NIAS, Croatia's National Identification and Authentication System, for the Croatian Postal Service.\par
 \begin{points}
 \item I implemented the entire integration, enabling users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.
 \end{points}
-\project{Government payments validation}{Java, JUnit, JSON}
+\project{Government payments validation}{Java · JUnit · JSON}
 A reusable component validating payments to the Croatian government, agencies, and local and regional administrations. It checked individual invoice fields and combinations against configurable rules, returning structured errors and warnings.\par
 \begin{points}
 \item I implemented the component and extensive unit tests in less than two weeks. Requirements came from about 180 pages of rules, supporting tables, and data.
 \item I translated the rules into a JSON configuration of about 3,000 lines and wrote the logic to parse and apply them.
 \item QA found about three failures in 100 manual scenarios. I converted their spreadsheet results to CSV-backed automated tests, fixed the failures, and retained every scenario as regression coverage. No further issues were reported after that.
 \end{points}
-\project{EU roaming usage and traffic tracking}{Java, Spring Boot, JPA/Hibernate, Querydsl, Liquibase, Jasper Reports}
+\project{EU roaming usage and traffic tracking}{Java · Spring Boot · JPA/Hibernate · Querydsl · Liquibase · Jasper Reports}
 A system for Croatia's largest telecom, providing roaming usage statistics and helping detect abuse during changes to EU roaming rules.\par
 \begin{points}
 \item I implemented the entire backend for its administration application, from the REST API to the repository layer, and built its reporting system with Jasper Reports.
 \end{points}
-\project{E-learning web application}{AngularJS, Java, Spring Boot, PostgreSQL, Video.js, Veeting Rooms}
+\project{E-learning web application}{AngularJS · Java · Spring Boot · PostgreSQL · Video.js · Veeting Rooms}
 A web application for online learning, with video courses and online meetings with whiteboards.\par
 \begin{points}
 \item I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.
 \end{points}
 \employerseparator
 \employer{APIS IT}{November 2013 -- May 2016}{C\# Developer}{Zagreb (Croatia)}
-\project{e-Tax platform}{C\#, ASP.NET Web Forms, jQuery, Microsoft Reports (.rdlc), IBM DB2}
+\project{e-Tax platform}{C\# · ASP.NET Web Forms · jQuery · Microsoft Reports (.rdlc) · IBM DB2}
 The Croatian Ministry of Finance's official e-Tax web application, used by citizens and businesses to submit tax forms electronically. Already a large application when I worked on it, it received more than one million page views per day.\par
 Alongside other features, it implemented a wide range of tax forms covering different types of tax reporting.\par
 \begin{points}
 \item I fully implemented seven tax forms that were in production as of March 2016. I also contributed to about ten others, from bug fixes to substantial implementation. The system contained about 25 tax forms in total at the time.
 \item Each form required a web interface, XML import and export, PDF reporting, extensive server-side validation against business and legal rules, and changes to the data access layer.
 \end{points}
-\project{Location and building permits}{C\#, ASP.NET MVC, jQuery, Fluent Validation, Aspose.Words, Oracle Database}
+\project{Location and building permits}{C\# · ASP.NET MVC · jQuery · Fluent Validation · Aspose.Words · Oracle Database}
 A web application for members of the public to submit data for location and building permits, built for Croatia's Ministry of Construction and Physical Planning.\par
 \begin{points}
 \item I implemented much of the UI, including views, models, and controllers, a substantial part of the business logic, the entire data access layer, and PDF reporting.
 \end{points}
 \employerseparator
 \employer{Gemmeus d.o.o.}{October 2012 -- January 2013}{C\# Developer}{Remote}
-\project{Spreadsheet component}{C\#, Web Forms, WPF, Windows Forms}
+\project{Spreadsheet component}{C\# · Web Forms · WPF · Windows Forms}
 A component for programmatic access to Microsoft Excel spreadsheets, supporting reading, writing, data manipulation, conversion, and printing.\par
 \begin{points}
 \item I handled various development tasks, including exporting Excel data to a Windows Forms DataGrid while matching the original content, formatting, and styles as closely as possible.
 \end{points}
 \employerseparator
 \employer{INETEC d.o.o.}{November 2009 -- October 2012}{C\# Windows Desktop (WPF) Developer}{Zagreb (Croatia)}
-\project{Nuclear inspection and damage analysis}{C\#, WPF, Cinch (MVVM framework)}
+\project{Nuclear inspection and damage analysis}{C\# · WPF · Cinch (MVVM framework)}
 A large WPF desktop application for operators to review inspection data and analyze damage in nuclear power plant steam generators.\par
 \begin{points}
 \item I developed a large part of the application.
 \item I created custom WPF controls for 2D and 3D signal charts and plots. Rendering ran on a separate thread to keep the application responsive during intensive data processing and display.
 \item I worked on data persistence and versioning, signal filtering and mixing, and many WPF views and subsystems, from the UI to the persistence layer.
 \end{points}
-\project{Inspection robot control}{C\#, WPF, Cinch (MVVM framework)}
+\project{Inspection robot control}{C\# · WPF · Cinch (MVVM framework)}
 A WPF desktop application for controlling and monitoring a prototype robot used in steam generator inspections. It displayed the robot's position and state and complemented hardware and electronic handling of edge cases and failures.\par
 The robot was designed to walk along a steam generator tube wall to position inspection probes, reducing or eliminating operator exposure to ionizing radiation.\par
 \begin{points}
@@ -182,26 +183,26 @@ The robot was designed to walk along a steam generator tube wall to position ins
 \end{points}
 \employerseparator
 \employer{Ultra d.o.o.}{October 2008 -- November 2009}{C\# Windows Desktop and Web Developer}{Karlovac (Croatia)}
-\project{Fuel dispenser web application}{C\#, ASP.NET Web Forms, PostgreSQL}
+\project{Fuel dispenser web application}{C\# · ASP.NET Web Forms · PostgreSQL}
 A web application for configuring and monitoring fuel dispenser drivers at fuel stations.\par
 \begin{points}
 \item I implemented substantial parts of the application and maintained the entire project.
 \end{points}
-\project{Fuel dispenser desktop application}{C\#, Windows Forms, SQLite}
+\project{Fuel dispenser desktop application}{C\# · Windows Forms · SQLite}
 A desktop application with a similar purpose to the web application, serving different drivers and clients.\par
 \begin{points}
 \item I built the entire application, with custom controls for displaying and controlling fuel dispenser state and SQLite for storage.
 \end{points}
 \employerseparator
 \employer{Ekobit d.o.o.}{February 2008 -- October 2008}{C\# Web Developer}{Zagreb (Croatia)}
-\project{Financial web applications}{C\#, ASP.NET Web Forms, Microsoft SQL Server}
+\project{Financial web applications}{C\# · ASP.NET Web Forms · Microsoft SQL Server}
 Web applications for Croatian financial institutions, including banks, funds, and stock exchanges.\par
 \begin{points}
 \item I handled small development tasks and bug fixes in the applications and their databases.
 \end{points}
 \employerseparator
 \employer{Visage Technologies (Student Project)}{January 2007 -- August 2007}{C++ Developer}{Zagreb (Croatia)}
-\project{Body animation exporter}{C++, 3ds Max SDK}
+\project{Body animation exporter}{C++ · 3ds Max SDK}
 An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system.\par
 \begin{points}
 \item I implemented the entire exporter.

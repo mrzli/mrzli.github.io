@@ -130,7 +130,7 @@ function renderProject(project: CvProject, contracting: ExperienceEntry): string
           employer(contracting, 'Independent contractor', contracting.role),
         ]
       : []),
-    String.raw`\project{${escapeLatex(project.title)}}{${escapeLatex(project.technologies.join(', '))}}`,
+    String.raw`\project{${escapeLatex(project.title)}}{${escapeLatex(project.technologies.join(' · '))}}`,
     ...project.context.map(paragraph),
     bulletList(project.contributions),
   ].join('\n');
