@@ -47,13 +47,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'A web application for monitoring and managing fleets of autonomous warehouse robots.',
           'The application is part of a larger warehouse automation product. The product combines physical robots with a large stack of software components that enable autonomous warehouse operations. The web application provides the user interface to this system.',
           'This entire system is a very large project developed by dozens of people.',
-          'I worked almost exclusively on the frontend, maintaining several parallel repositories and branches. Each contained about 100,000 lines of code, much of it shared across versions.',
-          'Several dozen people worked on the project, with two of us handling the frontend. Neither was clearly senior to the other. My colleague had several years at the company and deeper domain knowledge. I brought broader and deeper software development experience from more years across varied projects, along with a different approach to the work.',
         ],
         roleText: [
-          'I joined to improve the frontend, particularly to resolve a major blocker: the Angular migration.',
-          "I independently migrated the application from Angular 8 to 18, resolving over a thousand errors and refactoring libraries where necessary. The migration's feasibility was initially uncertain, but I completed it without observed regressions, removing a major blocker for the system's security audit.",
-          'I organized the changes so the migration could be repeated across related robot and fleet management applications and branches. I also fixed issues and implemented client requests, including a simpler interface for dock monitoring and truck reception, and frontend support for pallet stacking and related robot operations.',
+          "The project had been in development for several years when I joined. I was brought on to resolve certain existing issues and make broader improvements to the frontend's structure, maintainability, and developer experience.",
+          'I worked almost exclusively on the frontend alongside one other developer. He had more knowledge of the domain and the project. I had deeper and more varied experience in software development overall.',
+          'The frontend had several variants maintained in separate repositories and branches. Each contained more than 100,000 lines of code, with much of the code similar across variants.',
+          'The company needed to pass a security audit, but the frontend still used Angular 8, a version many years out of date. Upgrading it was necessary to pass the audit and had become a major blocker. I independently migrated all frontend variants to Angular 18, working carefully and systematically so that most of the process could be replicated across variants. Each required resolving over a thousand errors, adapting code to breaking changes across major dependency versions, and refactoring where necessary. There were doubts about whether the migration could be completed in a reasonable timeframe, but I completed it across all variants without any observed regressions, removing the blocker.',
+          'Beyond that, I implemented substantial frontend features and subsystems based on client requirements and handled routine maintenance and bug fixes.',
         ],
         tags: [
           'Angular',
