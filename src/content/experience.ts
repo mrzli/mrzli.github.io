@@ -42,7 +42,7 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
       {
         id: EXPERIENCE_PROJECT_ANCHORS.robotics,
         contentKey: 'warehouse-robotics',
-        title: 'Automated warehouse robotics system web application',
+        title: 'Warehouse robotics web application',
         text: [
           'A web application for monitoring and managing fleets of autonomous warehouse robots.',
           'The application is part of a larger warehouse automation product. The product combines physical robots with a stack of software components that enable autonomous warehouse operations. The web application provides the user interface to this system.',
