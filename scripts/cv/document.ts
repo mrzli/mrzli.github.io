@@ -4,7 +4,6 @@ import { CONCISE_CV, CONCISE_CV_PROJECTS } from '../../src/content/exports/cv-co
 import { DETAILED_CV, DETAILED_CV_PROJECTS } from '../../src/content/exports/cv-detailed';
 import { EXPORT_EXPERIENCE_SUMMARIES } from '../../src/content/exports/experience';
 import type { CvDocument, CvVariant, CvProject } from '../../src/content/exports/types';
-import { PRIMARY_TECHS } from '../../src/content/primary-technologies';
 import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
 import type { ExperienceProject } from '../../src/content/types';
 
@@ -20,8 +19,6 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
         : DETAILED_CV.summary(professionalYears, contractingYears),
     ai: variant === 'concise' ? CONCISE_CV.ai : PROFILE.ai,
     contracts: variant === 'concise' ? CONCISE_CV.contracts : DETAILED_CV.contracts,
-    technologies: PRIMARY_TECHS,
-    tools: CONCISE_CV.tools,
     contracting: EXPERIENCE_SECTIONS[0],
     projects:
       variant === 'concise'

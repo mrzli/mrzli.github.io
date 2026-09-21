@@ -64,6 +64,11 @@ clickable full URLs for the personal website, GitHub, LinkedIn, Short CV, and
 Detailed CV. Both CV links appear in either variant and point to the published
 downloads, so readers can find newer versions. The addresses are also readable in print.
 
+Section headings use larger navy text and a rule. Employer headings are one size
+smaller, with project headings in bold body-sized text beneath them. Technologies
+appear under individual projects and in the detailed skills section, without a
+separate Core technologies section.
+
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
 - Detailed wording and project selection: `src/content/exports/cv-detailed.ts`.

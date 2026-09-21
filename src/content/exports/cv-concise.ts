@@ -6,7 +6,6 @@ export const CONCISE_CV = {
   ],
   ai: 'Development with AI coding agents or without AI assistance.',
   contracts: 'B2B contracts: full-time, part-time, or fixed-price. Remote; hybrid in Zagreb.',
-  tools: ['Jest', 'Docker', 'Git', 'Codex CLI', 'Copilot'],
 } as const;
 
 export const CONCISE_CV_PROJECTS: Readonly<Partial<Record<ExperienceProjectKey, ConciseProject>>> =

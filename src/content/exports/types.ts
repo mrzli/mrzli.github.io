@@ -11,8 +11,6 @@ export interface CvDocument {
   readonly summary: readonly string[];
   readonly ai: string;
   readonly contracts: string;
-  readonly technologies: readonly string[];
-  readonly tools: readonly string[];
   readonly contracting: ExperienceEntry;
   readonly projects: readonly CvProject[];
   readonly earlierExperience: readonly CvEarlierExperience[];

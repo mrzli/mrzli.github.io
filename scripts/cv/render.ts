@@ -47,9 +47,6 @@ export function renderCv(document: CvDocument): string {
       (item) => String.raw`${escapeLatex(item.label)} & ${link(item.href, item.href)} \\`,
     ),
     String.raw`\end{tabular}\par`,
-    String.raw`\cvsection{Core technologies}`,
-    String.raw`\textbf{Development}\enspace ${escapeLatex(document.technologies.join(', '))}\par`,
-    String.raw`\textbf{Tools}\enspace ${escapeLatex(document.tools.join(', '))}\par`,
     String.raw`\cvsection{Work experience}`,
     employer(contracting, 'Independent contractor', profile.title),
     ...document.projects.map((project) => renderProject(project, contracting)),
@@ -131,7 +128,7 @@ function renderProject(project: CvProject, contracting: ExperienceEntry): string
     ...(project.startContinuationPage
       ? [
           String.raw`\newpage\cvsection{Work experience continued}`,
-          String.raw`\textbf{Independent contractor}\hfill ${dateRange(contracting)}\par`,
+          employer(contracting, 'Independent contractor', contracting.role),
         ]
       : []),
     String.raw`\project{${escapeLatex(project.title)}}{${escapeLatex(project.technologies.join(', '))}}`,
