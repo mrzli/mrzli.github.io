@@ -50,8 +50,6 @@ export function renderCv(document: CvDocument): string {
     String.raw`\cvsection{Work experience}`,
     employer(contracting, 'Independent contractor', profile.title),
     ...document.projects.map((project) => renderProject(project, contracting)),
-    ...(document.variant === 'detailed' ? [String.raw`\newpage`] : []),
-    String.raw`\cvsection{Earlier employment}`,
     ...document.earlierExperience.flatMap((entry) => [
       employer(entry.employment, entry.title, entry.employment.role),
       ...entry.text.map(paragraph),

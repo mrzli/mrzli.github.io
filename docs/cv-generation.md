@@ -87,7 +87,8 @@ The concise CV starts its continuation page after the first three contracting
 projects. It uses 4-point paragraph spacing, with the approved 11-point Palatino
 body, margins, and section hierarchy. Detailed retains 5-point body paragraph spacing,
 with compact spacing for skill lists. Its headings reserve enough room for the
-following text, and earlier employment begins on a new page. Review pagination
+following text. Earlier employers follow contracting projects within Work experience,
+without a separate section or forced page break. Review pagination
 when content changes. Do not shrink text
 to force a target page count.
 
