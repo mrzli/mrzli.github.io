@@ -9,12 +9,17 @@ import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
 import type { ExperienceProject } from '../../src/content/types';
 
 export function createCvDocument(variant: CvVariant, year = new Date().getFullYear()): CvDocument {
+  const professionalYears = year - EXPERIENCE_START_YEARS.professional;
+  const contractingYears = year - EXPERIENCE_START_YEARS.contracting;
   return {
     variant,
     profile: PROFILE,
-    summary: variant === 'concise' ? CONCISE_CV.summary : DETAILED_CV.summary,
+    summary:
+      variant === 'concise'
+        ? CONCISE_CV.summary
+        : DETAILED_CV.summary(professionalYears, contractingYears),
     ai: variant === 'concise' ? CONCISE_CV.ai : PROFILE.ai,
-    contracts: variant === 'concise' ? CONCISE_CV.contracts : PROFILE.contracts,
+    contracts: variant === 'concise' ? CONCISE_CV.contracts : DETAILED_CV.contracts,
     technologies: PRIMARY_TECHS,
     tools: CONCISE_CV.tools,
     contracting: EXPERIENCE_SECTIONS[0],
@@ -50,8 +55,8 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
       variant === 'concise'
         ? EDUCATION_HIGHLIGHTS.slice(0, 1)
         : [EDUCATION_HIGHLIGHTS[0], EDUCATION_HIGHLIGHTS[3]],
-    professionalYears: year - EXPERIENCE_START_YEARS.professional,
-    contractingYears: year - EXPERIENCE_START_YEARS.contracting,
+    professionalYears,
+    contractingYears,
     skills: variant === 'detailed' ? DETAILED_CV.skills : [],
     languages: variant === 'detailed' ? DETAILED_CV.languages : [],
     thesisLinks: variant === 'detailed' ? DETAILED_CV.thesisLinks : [],

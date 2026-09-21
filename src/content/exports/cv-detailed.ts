@@ -76,7 +76,13 @@ const SELECTED_SKILLS = new Set([
 ]);
 
 export const DETAILED_CV = {
-  summary: [PROFILE.availability, PROFILE.services],
+  summary: (professionalYears: number, contractingYears: number): readonly string[] => [
+    `${PROFILE.lead} I have ${professionalYears} years of professional experience, including ${contractingYears} years of independent contract work.`,
+    'My recent work centers on React, TypeScript, and Node.js. I work across interfaces, APIs, and databases, building applications from scratch to production and improving systems already in use. My experience also includes desktop and mobile applications.',
+    'I work independently or within established teams. I define technical architecture, clarify requirements, and support teams through mentoring, onboarding, and developer interviews.',
+  ],
+  contracts:
+    'B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.',
   skills: SKILLS_SECTIONS.map((section) => ({
     ...section,
     groups: section.groups

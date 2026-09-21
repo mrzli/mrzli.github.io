@@ -11,10 +11,18 @@ export function renderCv(document: CvDocument): string {
     link(`mailto:${profile.email}`, profile.email),
   ].join(String.raw` \enspace $\cdot$\enspace `);
   const links = [
-    link(profile.website, profile.website.replace(/^https?:\/\//, '').replace(/\/$/, '')),
-    link(profile.github, 'GitHub'),
-    link(profile.linkedin, 'LinkedIn'),
-  ].join(String.raw` \enspace $\cdot$\enspace `);
+    { label: 'Personal website', href: profile.website },
+    { label: 'GitHub', href: profile.github },
+    { label: 'LinkedIn', href: profile.linkedin },
+    {
+      label: 'Short CV',
+      href: new URL('data/cv-goran-mrzljak-short.pdf', profile.website).href,
+    },
+    {
+      label: 'Detailed CV',
+      href: new URL('data/cv-goran-mrzljak-detailed.pdf', profile.website).href,
+    },
+  ];
   const body = [
     ...(document.variant === 'concise'
       ? [String.raw`\setlength{\parskip}{4pt}`]
@@ -23,15 +31,22 @@ export function renderCv(document: CvDocument): string {
     String.raw`{\LARGE\bfseries ${escapeLatex(profile.name)}}\par`,
     String.raw`\vspace{2pt}{\large ${escapeLatex(profile.title)}}\par`,
     String.raw`\vspace{5pt}${contact}\par`,
-    links,
     String.raw`\end{center}`,
     String.raw`\cvsection{Profile}`,
     ...document.summary.map(paragraph),
     bulletList([
-      `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
+      document.variant === 'detailed'
+        ? profile.availability
+        : `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
       document.ai,
       document.contracts,
     ]),
+    String.raw`\cvsection{Links}`,
+    String.raw`\begin{tabular}{@{}l@{\hspace{1em}}l@{}}`,
+    ...links.map(
+      (item) => String.raw`${escapeLatex(item.label)} & ${link(item.href, item.href)} \\`,
+    ),
+    String.raw`\end{tabular}\par`,
     String.raw`\cvsection{Core technologies}`,
     String.raw`\textbf{Development}\enspace ${escapeLatex(document.technologies.join(', '))}\par`,
     String.raw`\textbf{Tools}\enspace ${escapeLatex(document.tools.join(', '))}\par`,

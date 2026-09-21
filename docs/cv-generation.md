@@ -58,6 +58,12 @@ needed. Every build uses a fresh directory to avoid stale output masking failure
 
 ## Editing
 
+Location, phone, and email appear in the centered header. A separate Links section
+after the profile uses a compact, borderless table with aligned labels and
+clickable full URLs for the personal website, GitHub, LinkedIn, Short CV, and
+Detailed CV. Both CV links appear in either variant and point to the published
+downloads, so readers can find newer versions. The addresses are also readable in print.
+
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
 - Detailed wording and project selection: `src/content/exports/cv-detailed.ts`.
