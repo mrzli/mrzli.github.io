@@ -17,8 +17,8 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \newcommand{\cvsection}[1]{\par\addvspace{16pt}{\LARGE\bfseries\color{accent}\strut #1}\par\nopagebreak\vskip 1pt{\color{accent}\hrule height .5pt}\vskip 6pt\nopagebreak}
-\newcommand{\employer}[4]{\par\addvspace{13pt}{\Large\bfseries #1}\hfill #2\par\nopagebreak\vspace{-3pt}{\itshape #3}\hfill {\color{muted}#4}\par\nopagebreak}
-\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\itshape\color{muted}#2}\par\nopagebreak}
+\newcommand{\employer}[4]{\par\addvspace{13pt}{\Large\bfseries #1}\hfill {\small\color{muted}#2}\par\nopagebreak\vspace{-3pt}#3\hfill {\small\color{muted}#4}\par\nopagebreak}
+\newcommand{\project}[2]{\par\addvspace{8pt}\textbf{#1}\par\nopagebreak\vspace{-3pt}{\small\color{muted}\raggedright #2\par}\nopagebreak}
 \newenvironment{points}{\begin{list}{\textbullet}{\setlength{\leftmargin}{14pt}\setlength{\labelsep}{6pt}\setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}}}{\end{list}}
 \begin{document}
 

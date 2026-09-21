@@ -69,6 +69,9 @@ smaller, with project headings in bold body-sized text beneath them. Technologie
 appear under individual projects and in the detailed skills section, without a
 separate Core technologies section.
 
+Roles and project technologies use upright text. Dates and locations stay
+right-aligned in smaller text, and technology lists use smaller, left-aligned text.
+
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
 - Detailed wording and project selection: `src/content/exports/cv-detailed.ts`.
