@@ -12,7 +12,14 @@ Edit reusable professional facts and website prose in `src/content/`:
 | `background.ts`           | Education, learning, languages, and other background facts.                                     |
 | `experience-keys.ts`      | Stable keys connecting experience records with tailored export content.                         |
 | `project-anchors.ts`      | Stable IDs for the three homepage project links.                                                |
-| `types.ts`                | Content types shared by the website and exports.                                                |
+| `types/`                  | Content types shared by the website and exports.                                                |
+
+Shared types are grouped under `types/`, with `index.ts` exporting every type:
+`date.ts` for `MonthYear`, `experience.ts` for experience entries, projects, and
+date ranges, `personal-projects.ts` for personal projects, `project.ts` for the
+shared project description, `links.ts` for shared links, and `skills.ts` and
+`background.ts` for their page content. Import shared types through
+`src/content/types`. Export-specific types stay in `exports/types.ts`.
 
 These are plain TypeScript modules. They do not depend on React, browser globals,
 or component props, so Bun scripts can import them directly. Pages and Storybook
