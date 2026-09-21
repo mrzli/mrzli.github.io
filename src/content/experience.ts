@@ -13,13 +13,13 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
     projects: [
       {
         contentKey: 'hvac',
-        title: 'Large HVAC system site monitoring and control web application',
+        title: 'HVAC monitoring and control web application',
         text: [
-          'An application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
-          'The software development was straightforward for my level of experience. Learning the domain and its specialized technologies and tools took time and patience.',
+          'A web application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
         ],
         roleText: [
-          'I joined an established team to help with day-to-day web development. I built frontend sections, components, and controls to match UI designs, and fixed issues as they arose or were assigned to me.',
+          'I joined an established team to help with day-to-day frontend development. I built application sections, components, and controls to match UI designs, and fixed bugs.',
+          'The development work was straightforward, while learning the domain and its specialized technologies and tools took time.',
         ],
         tags: [
           'React',
