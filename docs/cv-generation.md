@@ -7,12 +7,13 @@ The command prints a fresh output directory such as
 Sort the timestamped folder names to find the latest run. If a folder already
 exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffix.
 
-The concise CV contains five contracting projects and the complete professional
-employment timeline since 2008, with education, on two A4 pages. Its TeX and PDF
-are available in `public/data/`. The detailed CV includes every employment and project from the website, with
-all technology tags, descriptions, and contributions, followed by education
-and the full website skills list. Its TeX and PDF are also in
-`public/data/`. Page counts follow the content rather than a hard limit.
+The short CV currently starts from exactly the same content and layout as the detailed
+CV, ready for later trimming. Only the short CV adds notes beneath Work experience
+and Skills linking to the detailed CV. All content is still present. Both include every employment and project from the
+website, with all technology tags, descriptions, and contributions, followed by
+education, the full website skills list, and personal information. Their TeX and
+PDF files are available in `public/data/`. Page counts follow the content rather
+than a hard limit.
 
 ## Commands
 
@@ -77,10 +78,9 @@ Skills use borderless tables with upright, muted-gray category labels on the lef
 on the right, grouped by depth and recency of experience. All categories and skills
 come from the website. Its separate operating-system experience paragraph is omitted.
 Thin light-gray rules separate employers. Projects within an employer use whitespace.
-Detailed project contributions use an indented block with a small uppercase
+Project contributions use an indented block with a small uppercase
 "MY CONTRIBUTION" label and a gray border along the full left edge. Blocks can
-continue across pages between paragraphs without repeating the label. The short CV
-retains contribution bullets.
+continue across pages between paragraphs without repeating the label.
 Contribution blocks have slightly more space above them than ordinary paragraphs,
 with a substantially larger gap before the next project heading.
 The profile's work preferences and contract details form a compact inset block with a thin gray
@@ -89,11 +89,12 @@ Section rules sit close to their headings, with extra space before headings
 to distinguish successive sections, employers, and projects.
 
 - Professional facts: [shared content](./content.md).
-- Concise wording and project selection: `src/content/exports/cv-concise.ts`.
-- Detailed work experience: `src/content/experience.ts`, shared with the website in full.
-- Detailed profile, skills, languages, and thesis links: `src/content/exports/cv-detailed.ts`.
+- Earlier short CV wording and project selection: `src/content/exports/cv-concise.ts`,
+  retained but currently unused. This file also holds the active short CV section notes.
+- Work experience for both variants: `src/content/experience.ts`, shared with the website in full.
+- Profile, skills, and personal information for both variants: `src/content/exports/cv-detailed.ts`.
   Its earlier project selections and overrides remain available but are not used.
-- Short CV employer titles and summaries: `src/content/exports/experience.ts`, shared with LinkedIn.
+- Earlier CV employer titles and summaries: `src/content/exports/experience.ts`, still used by LinkedIn.
 - Export types and CV variants: `src/content/exports/types.ts`.
 - Stable record keys: `src/content/experience-keys.ts` and each record's `contentKey`.
 - Variant selection and year calculations: `scripts/cv/document.ts`.
@@ -102,12 +103,9 @@ to distinguish successive sections, employers, and projects.
   `.scratch/portfolio-content-exports/tasks/PCE-004a-layout-prototype.tex`.
 - Compilation and publication: `scripts/cv/build.ts`.
 
-The concise CV starts its continuation page after the first three contracting
-projects. It uses 4-point paragraph spacing, with 11-point TeX Gyre Heros
-body, margins, and section hierarchy. Detailed uses default line spacing and standard
-LaTeX font-size commands and small, medium, and large spacing presets. Paragraphs
-remain unindented with a small gap. Its headings reserve enough room for the
-following text. Earlier employers follow contracting projects within Work experience,
+Both variants use 11-point TeX Gyre Heros body text, default line spacing, and standard
+LaTeX font-size commands and spacing presets. Paragraphs remain unindented with a
+small gap. Headings reserve enough room for the following text. Earlier employers follow contracting projects within Work experience,
 without a separate section or forced page break. Review pagination
 when content changes. Do not shrink text
 to force a target page count.
@@ -120,7 +118,7 @@ Review separately authored summaries when the facts they describe change.
 Education currently shows the institution and the first qualification paragraph only.
 Thesis details and thesis links are omitted from the CV. Their source data remains
 available. A Personal information section after Skills uses the website data for
-name, location, languages, and driving-licence categories in a borderless table.
+name, location, nationality, languages, and driving-licence categories in a borderless table.
 
 ## Verification
 

@@ -35,7 +35,7 @@ types live in `src/content/exports/`:
 
 | File             | Content                                                                                      |
 | ---------------- | -------------------------------------------------------------------------------------------- |
-| `cv-concise.ts`  | Concise CV profile, tools, project selection, and project wording.                           |
+| `cv-concise.ts`  | Earlier short CV profile and project wording, retained but currently unused.                 |
 | `cv-detailed.ts` | Detailed CV profile, skills, languages, thesis links, and retained unused project overrides. |
 | `linkedin.ts`    | LinkedIn profile composition, project highlights, field limits, and skill order.             |
 | `experience.ts`  | Employer display titles and summaries shared by CV and LinkedIn exports.                     |
@@ -46,11 +46,13 @@ use these keys rather than display titles or array positions. Keep keys stable
 when editing titles. The separate optional project `id` remains a public page
 anchor and does not change when export content changes.
 
-The [CV generator](./cv-generation.md) selects short CV projects through the concise
-project map. The detailed CV uses every employment and project from `experience.ts`,
-including all titles, roles, tags, descriptions, and contributions. Its earlier
-project overrides remain in the codebase but are not used. Both variants follow
-the shared experience order. The
+The [CV generator](./cv-generation.md) currently gives the short and detailed CVs
+the same full content and layout as a starting point for shortening the short version.
+The short CV also has notes beneath Work experience and Skills linking to the detailed CV.
+Both use every employment and project from `experience.ts`, including all titles,
+roles, tags, descriptions, and contributions, in the shared experience order.
+Earlier CV project selections and overrides remain in the codebase but are not used.
+The
 [LinkedIn generator](./linkedin-generation.md) reads its project highlights and
 shared export employer summaries from the exports directory.
 

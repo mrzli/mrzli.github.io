@@ -28,15 +28,16 @@ function verify(): void {
   assert.throws(() => formatDate({ year: 2008, month: 13 }), /Invalid month/);
   assert.equal(renderCv(document), renderCv(document));
   const specialText = String.raw`C# & C++: 100% of $5_000 {value} ~ ^ \ path`;
-  const tex = renderCv({ ...document, summary: [specialText] });
+  const tex = renderCv({ ...document, summary: [...document.summary, specialText] });
   const output = buildCv([{ variant: 'concise', tex }], { workDirectory: root });
   const extracted = execFileSync('pdftotext', [join(output, 'cv-goran-mrzljak-short.pdf'), '-'], {
     encoding: 'utf8',
   });
   assert.ok(extracted.includes('Goran Mržljak'));
   assert.ok(extracted.includes(specialText));
-  assert.ok(extracted.includes('22 years of professional experience'));
-  assert.ok(extracted.includes('14 years of contract work'));
+  const normalizedText = extracted.replace(/\s+/g, ' ');
+  assert.ok(normalizedText.includes('22 years of professional experience'));
+  assert.ok(normalizedText.includes('14 years of independent contract work'));
   const concise = renderCv(document);
   const detailedDocument = createCvDocument('detailed', 2030);
   assert.deepEqual(detailedDocument.skills, SKILLS_SECTIONS);
@@ -66,7 +67,18 @@ function verify(): void {
       }
     });
   });
-  assert.ok(!concise.includes('load testing exposed race conditions'));
+  const selectionNotes = concise
+    .split('\n')
+    .filter((line) => line.startsWith('{\\small\\color{technology}Selected'));
+  assert.equal(selectionNotes.length, 2);
+  assert.equal(
+    concise
+      .split('\n')
+      .filter((line) => !selectionNotes.includes(line))
+      .join('\n'),
+    detailed,
+  );
+  assert.deepEqual({ ...document, variant: 'detailed' }, detailedDocument);
   assert.ok(detailed.includes('load testing exposed race conditions'));
 
   const standalone = join(root, 'standalone');

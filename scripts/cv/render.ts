@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 
-import type { CvDocument, CvProject, CvVariant } from '../../src/content/exports/types';
+import { CONCISE_CV_SECTION_NOTES } from '../../src/content/exports/cv-concise';
+import type { CvDocument, CvProject } from '../../src/content/exports/types';
 import type { DateRangeBound, ExperienceEntry } from '../../src/content/types';
 
 export function renderCv(document: CvDocument): string {
@@ -23,10 +24,10 @@ export function renderCv(document: CvDocument): string {
       href: new URL('data/cv-goran-mrzljak-detailed.pdf', profile.website).href,
     },
   ];
+  const sectionNote = (note: { readonly beforeLink: string; readonly afterLink: string }): string =>
+    String.raw`{\small\color{technology}${escapeLatex(note.beforeLink)}${link(new URL('data/cv-goran-mrzljak-detailed.pdf', profile.website).href, 'detailed CV')}${escapeLatex(note.afterLink)}\par}`;
   const body = [
-    ...(document.variant === 'concise'
-      ? [String.raw`\setlength{\parskip}{4pt}`]
-      : [DETAILED_PAGINATION]),
+    PAGINATION,
     String.raw`\begin{center}`,
     String.raw`{\LARGE\bfseries ${escapeLatex(profile.name)}}\par`,
     String.raw`\smallskip{\large ${escapeLatex(profile.title)}}\par`,
@@ -35,12 +36,7 @@ export function renderCv(document: CvDocument): string {
     String.raw`\cvsection{Profile}`,
     ...document.summary.map(paragraph),
     paragraph(document.ai),
-    String.raw`\profilepoints{${[
-      document.variant === 'detailed'
-        ? profile.availability
-        : `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
-      document.contracts,
-    ]
+    String.raw`\profilepoints{${[profile.availability, document.contracts]
       .map(escapeLatex)
       .join(String.raw`\par `)}}`,
     String.raw`\cvsection{Links}`,
@@ -50,28 +46,19 @@ export function renderCv(document: CvDocument): string {
     ),
     String.raw`\end{tabular}\par`,
     String.raw`\cvsection{Work experience}`,
-    employer(
-      contracting,
-      document.variant === 'detailed' ? contracting.title : 'Independent contractor',
-      document.variant === 'detailed' ? contracting.role : profile.title,
-    ),
-    ...document.projects.map((project) => renderProject(project, contracting, document.variant)),
+    ...(document.variant === 'concise' ? [sectionNote(CONCISE_CV_SECTION_NOTES.experience)] : []),
+    employer(contracting, contracting.title, contracting.role),
+    ...document.projects.map(renderProject),
     ...document.earlierExperience.flatMap((entry) => [
       String.raw`\employerseparator`,
       employer(entry.employment, entry.title, entry.employment.role),
       ...entry.text.map(paragraph),
-      ...entry.projects.map((project) =>
-        renderProject(project, entry.employment, document.variant),
-      ),
+      ...entry.projects.map(renderProject),
     ]),
     String.raw`\cvsection{Education}`,
     String.raw`\textbf{${escapeLatex(document.education.institution)}}\par`,
-    ...(document.variant === 'concise'
-      ? [paragraph([document.education.qualification, ...document.educationHighlights].join('. '))]
-      : [
-          paragraph(`${document.education.qualification}. ${document.educationHighlights[0]}`),
-          ...document.educationHighlights.slice(1).map(paragraph),
-        ]),
+    paragraph(`${document.education.qualification}. ${document.educationHighlights[0]}`),
+    ...document.educationHighlights.slice(1).map(paragraph),
     ...(document.thesisLinks.length
       ? [
           document.thesisLinks
@@ -85,8 +72,9 @@ export function renderCv(document: CvDocument): string {
       : []),
     ...(document.skills.length
       ? [
-          ...(document.variant === 'detailed' ? [String.raw`\cvneedspace{12\baselineskip}`] : []),
+          String.raw`\cvneedspace{12\baselineskip}`,
           String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{\smallskipamount}`,
+          ...(document.variant === 'concise' ? [sectionNote(CONCISE_CV_SECTION_NOTES.skills)] : []),
           ...document.skills.flatMap((section) => [
             String.raw`\begin{skillstable}{${escapeLatex(section.title)}}`,
             ...section.groups.map(
@@ -124,17 +112,6 @@ function paragraph(text: string): string {
   return `${escapeLatex(text)}\\par`;
 }
 
-function bulletList(items: readonly string[]): string {
-  if (items.length === 0) {
-    return '';
-  }
-  return [
-    String.raw`\begin{points}`,
-    ...items.map((item) => String.raw`\item ${escapeLatex(item)}`),
-    String.raw`\end{points}`,
-  ].join('\n');
-}
-
 function employer(entry: ExperienceEntry, title: string, role: string): string {
   return String.raw`\employer{${escapeLatex(title)}}{${dateRange(entry)}}{${escapeLatex(role)}}{${escapeLatex(entry.location)}}`;
 }
@@ -143,21 +120,11 @@ function dateRange(entry: ExperienceEntry): string {
   return `${escapeLatex(formatDate(entry.from))} -- ${escapeLatex(formatDate(entry.to))}`;
 }
 
-function renderProject(
-  project: CvProject,
-  contracting: ExperienceEntry,
-  variant: CvVariant,
-): string {
+function renderProject(project: CvProject): string {
   return [
-    ...(project.startContinuationPage
-      ? [
-          String.raw`\newpage\cvsection{Work experience continued}`,
-          employer(contracting, 'Independent contractor', contracting.role),
-        ]
-      : []),
     String.raw`\project{${escapeLatex(project.title)}}{${escapeLatex(project.technologies.join(' · '))}}`,
     ...project.context.map(paragraph),
-    ...(variant === 'detailed' && project.contributions.length > 0
+    ...(project.contributions.length > 0
       ? [
           String.raw`\begin{contribution}`,
           ...project.contributions.map((text, index) =>
@@ -167,7 +134,7 @@ function renderProject(
           ),
           String.raw`\end{contribution}`,
         ]
-      : [bulletList(project.contributions)]),
+      : []),
   ].join('\n');
 }
 
@@ -213,7 +180,7 @@ const LATEX_ESCAPES: Readonly<Record<string, string>> = {
   '~': String.raw`\textasciitilde{}`,
 };
 
-const DETAILED_PAGINATION = String.raw`
+const PAGINATION = String.raw`
 \setlength{\emergencystretch}{2em}
 \newcommand{\cvneedspace}[1]{\par\begingroup\dimen0=\pagegoal\advance\dimen0 by -\pagetotal\ifdim\dimen0<#1\newpage\fi\endgroup}
 \let\cvsectionoriginal\cvsection

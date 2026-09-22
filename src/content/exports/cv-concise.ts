@@ -55,3 +55,14 @@ export const CONCISE_CV_PROJECTS: Readonly<Partial<Record<ExperienceProjectKey, 
       ],
     },
   };
+
+export const CONCISE_CV_SECTION_NOTES = {
+  experience: {
+    beforeLink: 'Selected projects are shown below. See the ',
+    afterLink: ' for the full project history.',
+  },
+  skills: {
+    beforeLink: 'Selected skills are listed below. See the ',
+    afterLink: ' for the full list.',
+  },
+} as const;
