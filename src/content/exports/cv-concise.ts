@@ -125,3 +125,17 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
   contributions: [],
   startContinuationPage: false,
 };
+
+export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
+  Partial<Record<ExperienceProjectKey, CvProject>>
+> = {
+  'graveyard-management': {
+    title: 'Graveyard management web application',
+    technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'Jest'],
+    context: [
+      'I built nearly the entire frontend and backend of a multi-tenant graveyard management application, including interactive maps, PDF reporting, and database migrations. I wrote frontend unit tests and backend integration tests covering much of the application across all layers.',
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
+};

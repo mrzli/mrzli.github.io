@@ -87,18 +87,11 @@ function verify(): void {
     },
     detailedDocument,
   );
-  const retainedKeys = [
-    'hvac',
-    'warehouse-robotics',
-    'eloqua',
-    'mobile-fueling',
-    'insurance',
-    'graveyard-management',
-  ];
+  const retainedKeys = ['hvac', 'warehouse-robotics', 'eloqua', 'mobile-fueling', 'insurance'];
   const retainedProjects = detailedDocument.projects.filter((_, index) =>
     retainedKeys.includes(EXPERIENCE_SECTIONS[0].projects[index].contentKey),
   );
-  assert.deepEqual(document.projects.slice(0, -1), retainedProjects);
+  assert.deepEqual(document.projects.slice(0, 5), retainedProjects);
   assert.equal(document.projects.length, 7);
   assert.equal(document.projects.at(-1)?.title, 'Other projects');
   assert.ok(detailed.includes('load testing exposed race conditions'));

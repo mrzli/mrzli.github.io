@@ -3,6 +3,7 @@ import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
 import {
   CONCISE_CV_SKILLS,
   CONCISE_CV_PROJECT_KEYS,
+  CONCISE_CV_PROJECT_OVERRIDES,
   CONCISE_CV_OTHER_PROJECTS,
   CONCISE_CV_EARLIER_EXPERIENCE,
 } from '../../src/content/exports/cv-concise';
@@ -24,11 +25,12 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
     projects:
       variant === 'concise'
         ? [
-            ...detailedProjects(
-              EXPERIENCE_SECTIONS[0].projects.filter((project) =>
-                CONCISE_CV_PROJECT_KEYS.includes(project.contentKey),
+            ...EXPERIENCE_SECTIONS[0].projects
+              .filter((project) => CONCISE_CV_PROJECT_KEYS.includes(project.contentKey))
+              .flatMap(
+                (project) =>
+                  CONCISE_CV_PROJECT_OVERRIDES[project.contentKey] ?? detailedProjects([project]),
               ),
-            ),
             CONCISE_CV_OTHER_PROJECTS,
           ]
         : detailedProjects(EXPERIENCE_SECTIONS[0].projects),
