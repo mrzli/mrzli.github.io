@@ -129,6 +129,15 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
 export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
   Partial<Record<ExperienceProjectKey, CvProject>>
 > = {
+  hvac: {
+    title: 'HVAC monitoring and control web application',
+    technologies: ['React', 'TypeScript', 'MobX', 'Tailwind CSS', 'FIN Framework', 'Copilot'],
+    context: [
+      "I worked within an established team on a web application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. I built frontend sections, components, and controls to match UI designs and fixed bugs, working with the platform's specialized technologies and tools.",
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
   'warehouse-robotics': {
     title: 'Warehouse robotics web application',
     technologies: ['Angular', 'TypeScript', 'RxJS'],

@@ -87,11 +87,18 @@ function verify(): void {
     },
     detailedDocument,
   );
-  const retainedKeys = ['hvac'];
-  const retainedProjects = detailedDocument.projects.filter((_, index) =>
-    retainedKeys.includes(EXPERIENCE_SECTIONS[0].projects[index].contentKey),
+  assert.ok(document.projects.every((project) => project.contributions.length === 0));
+  assert.deepEqual(
+    document.projects.slice(0, 6).map((project) => project.title),
+    [
+      'HVAC monitoring and control web application',
+      'Warehouse robotics web application',
+      'Oracle Eloqua to mobile messaging integration',
+      'Mobile fueling management system',
+      'Insurance web platform',
+      'Graveyard management web application',
+    ],
   );
-  assert.deepEqual(document.projects.slice(0, 1), retainedProjects);
   assert.equal(document.projects.length, 7);
   assert.equal(document.projects.at(-1)?.title, 'Other projects');
   assert.ok(detailed.includes('load testing exposed race conditions'));
