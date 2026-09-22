@@ -78,8 +78,8 @@ Detailed project contributions use an indented block with a small uppercase
 "MY CONTRIBUTION" label and a gray border along the full left edge. Blocks can
 continue across pages between paragraphs without repeating the label. The short CV
 retains contribution bullets.
-Contribution blocks sit close to their descriptions, with a larger gap before
-the next project heading.
+Contribution blocks have slightly more space above them than ordinary paragraphs,
+with a substantially larger gap before the next project heading.
 The profile's work preferences and contract details form a compact inset block with a thin gray
 left border, without a label or bullet markers.
 Section rules sit close to their headings, with extra space before headings

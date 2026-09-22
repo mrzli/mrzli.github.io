@@ -29,7 +29,7 @@
 \newcommand{\borderedlast}[1]{\begingroup\sbox{\borderedtext}{\parbox[t]{\dimexpr\textwidth-10pt\relax}{\setlength{\parskip}{\dimexpr\smallskipamount+1pt\relax}\strut #1\unskip\strut}}\hbox{{\color{separator}\vrule width .75pt height \ht\borderedtext depth \dimexpr\dp\borderedtext-\dp\strutbox\relax}\hspace{9.25pt}\usebox{\borderedtext}}\endgroup}
 \newcommand{\profilepoints}[1]{\par\addvspace{\medskipamount}\borderedlast{#1}\par}
 \newenvironment{points}{\begin{itemize}}{\end{itemize}}
-\newenvironment{contribution}{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}\setlength{\LTpre}{\smallskipamount}\setlength{\LTpost}{\smallskipamount}\begin{longtable}{@{{\color{separator}\vrule width .75pt}\hspace{9.25pt}}p{\dimexpr\textwidth-10pt\relax}@{}}\multicolumn{1}{@{{\color{separator}\vrule width .75pt height 5.5pt depth 4.5pt}\hspace{9.25pt}}l@{}}{{\scriptsize\color{technology}MY CONTRIBUTION}}\tabularnewline*\endfirsthead\endhead}{\end{longtable}}
+\newenvironment{contribution}{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}\setlength{\LTpre}{8pt}\setlength{\LTpost}{\smallskipamount}\begin{longtable}{@{{\color{separator}\vrule width .75pt}\hspace{9.25pt}}p{\dimexpr\textwidth-10pt\relax}@{}}\multicolumn{1}{@{{\color{separator}\vrule width .75pt height 5.5pt depth 6.5pt}\hspace{9.25pt}}l@{}}{{\scriptsize\color{technology}MY CONTRIBUTION}}\tabularnewline*\endfirsthead\endhead}{\end{longtable}}
 \begin{document}
 %%BODY%%
 \end{document}
