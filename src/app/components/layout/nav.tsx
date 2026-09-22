@@ -60,14 +60,14 @@ export function Nav({ items }: NavProps): ReactNode {
           ref={menuButtonRef}
           type='button'
           onClick={toggleMenu}
-          className='flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-lg bg-slate-50/90 text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700 md:hidden dark:bg-slate-950/90 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white dark:focus-visible:outline-cyan-300'
+          className='flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-lg bg-slate-50/90 text-slate-600 ring-1 ring-slate-300 transition-colors ring-inset hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700 md:hidden dark:bg-slate-950/90 dark:text-slate-300 dark:ring-slate-600 dark:hover:bg-slate-800 dark:hover:text-white dark:focus-visible:outline-cyan-300'
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           aria-controls={menuId}
         >
           <Icon icon={isOpen ? 'mdi:close' : 'mdi:menu'} className='h-5 w-5' />
         </button>
-        <div className='rounded-lg bg-slate-50/90 md:bg-transparent dark:bg-slate-950/90 md:dark:bg-transparent'>
+        <div className='rounded-lg bg-slate-50/90 ring-1 ring-slate-300 ring-inset md:bg-transparent md:ring-0 dark:bg-slate-950/90 dark:ring-slate-600 md:dark:bg-transparent'>
           <ThemeToggle />
         </div>
       </div>
