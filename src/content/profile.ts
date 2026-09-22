@@ -37,7 +37,7 @@ export const PROFILE: Profile = {
   services:
     'I work independently or within established teams. I design application architecture, help clarify requirements, mentor and onboard developers, and conduct developer interviews.',
   contracts:
-    'B2B contracts for full-time, part-time, or fixed-price work. Remote, with hybrid work possible in Zagreb, Croatia.',
+    'B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.',
 };
 
 export const EXPERIENCE_START_YEARS = {
