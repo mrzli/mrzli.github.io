@@ -98,6 +98,17 @@ export function renderCv(document: CvDocument): string {
           String.raw`\endgroup`,
         ]
       : []),
+    ...(document.personalInformation.length
+      ? [
+          String.raw`\cvsection{Personal information}`,
+          String.raw`\begin{tabular}{@{}>{\raggedright\arraybackslash\leavevmode\color{technology}}p{.3\textwidth}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{\dimexpr.7\textwidth-12pt\relax}@{}}`,
+          ...document.personalInformation.map(
+            (item) =>
+              String.raw`${escapeLatex(item.title)} & ${escapeLatex(item.tags.join(' · '))}\tabularnewline[3pt]`,
+          ),
+          String.raw`\end{tabular}\par`,
+        ]
+      : []),
   ].join('\n');
   return readFileSync(new URL('./template.tex', import.meta.url), 'utf8')
     .replace('%%AUTHOR%%', () => escapeLatex(profile.name))

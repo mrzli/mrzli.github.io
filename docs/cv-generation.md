@@ -118,8 +118,9 @@ year produce identical TeX. PDF metadata may include the compilation time.
 Review separately authored summaries when the facts they describe change.
 
 Education currently shows the institution and the first qualification paragraph only.
-Thesis details, thesis links, and languages are omitted from the CV. Their source
-data remains available for later placement.
+Thesis details and thesis links are omitted from the CV. Their source data remains
+available. A Personal information section after Skills uses the website data for
+name, location, languages, and driving-licence categories in a borderless table.
 
 ## Verification
 

@@ -14,6 +14,7 @@ export const DETAILED_CV = {
   contracts:
     'B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.',
   skills: SKILLS_SECTIONS,
+  personalInformation: [{ title: 'Name', tags: [PROFILE.name] }, ...TAG_CARD_DATA],
   languages: TAG_CARD_DATA.find((group) => group.title === 'Languages')?.tags ?? [],
   thesisLinks: THESIS_LINKS.filter((item) =>
     ['Thesis summary on the faculty site', 'Thesis application source code'].includes(item.label),

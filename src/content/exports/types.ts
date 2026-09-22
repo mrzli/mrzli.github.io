@@ -1,6 +1,6 @@
 import type { EDUCATION } from '../background';
 import type { PROFILE } from '../profile';
-import type { ExperienceEntry, SkillSection, LinkItem } from '../types';
+import type { ExperienceEntry, SkillSection, LinkItem, BackgroundGroup } from '../types';
 
 export const CV_VARIANTS = ['concise', 'detailed'] as const;
 export type CvVariant = (typeof CV_VARIANTS)[number];
@@ -19,6 +19,7 @@ export interface CvDocument {
   readonly professionalYears: number;
   readonly contractingYears: number;
   readonly skills: readonly SkillSection[];
+  readonly personalInformation: readonly BackgroundGroup[];
   readonly languages: readonly string[];
   readonly thesisLinks: readonly LinkItem[];
 }

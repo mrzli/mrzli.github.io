@@ -52,6 +52,7 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
     professionalYears,
     contractingYears,
     skills: variant === 'detailed' ? DETAILED_CV.skills : [],
+    personalInformation: variant === 'detailed' ? DETAILED_CV.personalInformation : [],
     languages: [],
     thesisLinks: [],
   };
