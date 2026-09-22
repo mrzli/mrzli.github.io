@@ -80,6 +80,10 @@ continue across pages between paragraphs without repeating the label. The short 
 retains contribution bullets.
 Contribution blocks sit close to their descriptions, with a larger gap before
 the next project heading.
+The profile's three closing points form a compact inset block with a thin gray
+left border, without a label or bullet markers.
+Section rules sit close to their headings, with extra space before headings
+to distinguish successive sections, employers, and projects.
 
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.

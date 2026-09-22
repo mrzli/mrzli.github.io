@@ -34,13 +34,15 @@ export function renderCv(document: CvDocument): string {
     String.raw`\end{center}`,
     String.raw`\cvsection{Profile}`,
     ...document.summary.map(paragraph),
-    bulletList([
+    String.raw`\begin{profilepoints}`,
+    ...[
       document.variant === 'detailed'
         ? profile.availability
         : `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
       document.ai,
       document.contracts,
-    ]),
+    ].map(paragraph),
+    String.raw`\end{profilepoints}`,
     String.raw`\cvsection{Links}`,
     String.raw`\begin{tabular}{@{}l@{\hspace{1em}}l@{}}`,
     ...links.map(
@@ -143,7 +145,7 @@ function renderProject(
           String.raw`\begin{contribution}`,
           ...project.contributions.map(
             (text, index) =>
-              String.raw`${escapeLatex(text)}${index < project.contributions.length - 1 ? String.raw`\rule[-\dimexpr\dp\strutbox+\smallskipamount\relax]{0pt}{\smallskipamount}` : ''}\tabularnewline`,
+              String.raw`${escapeLatex(text)}${index < project.contributions.length - 1 ? String.raw`\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}` : ''}\tabularnewline`,
           ),
           String.raw`\end{contribution}`,
         ]
