@@ -53,12 +53,10 @@ Its skills include only extensive and recent experience, without the group subti
 The detailed CV uses every employment and project from `experience.ts`, including all titles,
 roles, tags, descriptions, and contributions, in the shared experience order.
 Earlier CV project selections and overrides remain in the codebase but are not used.
-The
-[LinkedIn generator](./linkedin-generation.md) reads its project highlights and
-shared export employer summaries from the exports directory. Its About section
-reuses the CV profile, and its six Projects entries reuse the short CV descriptions.
-Projects include instructions for association with the contracting role and up to
-five suggested skills each.
+The [LinkedIn generator](./linkedin-generation.md) consumes the current short CV
+document directly. It retains its project selection, descriptions, technology
+lists, education, and combined earlier-roles summary. Standalone Skills sections
+are omitted. It does not use the older employer summaries or detailed project text.
 
 Export modules may import shared content. Shared website content must not import
 export modules. Shared dates, contacts, education, and professional facts remain

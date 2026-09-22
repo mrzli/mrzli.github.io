@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url';
 
 import { createLinkedInSections } from '../src/content/exports/linkedin';
+import { createCvDocument } from './cv/document';
 import { exportLinkedIn } from './linkedin/export';
 
 try {
@@ -9,7 +10,7 @@ try {
   }
   const destination = fileURLToPath(new URL('../public/data/linkedin.md', import.meta.url));
   exportLinkedIn(
-    createLinkedInSections(),
+    createLinkedInSections(createCvDocument('concise')),
     destination,
     fileURLToPath(new URL('../tmp/linkedin/', import.meta.url)),
   );

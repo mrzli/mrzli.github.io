@@ -93,6 +93,12 @@ function isCompactField(field: LinkedInField): boolean {
       'Stack Overflow',
       'Portfolio URL',
       'GitHub URL',
+      'Nationality',
+      'Languages',
+      "Driver's License",
+      'LinkedIn',
+      'Short CV',
+      'Detailed CV',
     ].includes(field.label) || /^(Skill|Language) \d+$/.test(field.label)
   );
 }

@@ -8,25 +8,21 @@ Counts include spaces and line breaks and use UTF-16 code units (conservative fo
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Name | <code>Goran Mržljak</code> |  |  |
+| Name | <code>Goran Mržljak</code> | Location | <code>Zagreb, Croatia</code> |
 
 ### Headline
 
-99 / 220 characters (working limit).
+25 / 220 characters (working limit).
 
 ```text
-Senior software developer | React, TypeScript, Node.js | Frontend, backend & full-stack development
+Senior software developer
 ```
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Location | <code>Zagreb, Croatia</code> |  |  |
 
 ## About
 
 ### About
 
-1186 / 2600 characters (working limit).
+1133 / 2600 characters (working limit).
 
 ```text
 I build software and make complex codebases easier to work with. I have 18 years of professional experience, including 10 years of independent contract work.
@@ -42,258 +38,215 @@ I use AI coding agents regularly and for a growing range of tasks. The skills I 
 I'm looking for hands-on senior development work: frontend, backend, or full-stack.
  
 B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.
- 
-Work and project details: https://mrzli.github.io/
 ```
 
-## Experience — independent contracting
+## Experience — Freelance Software Developer / Self-Employed
 
-Use one ongoing entry. “Self-employed” is a suggested company label, not a client company. Select the matching employment type in LinkedIn. Keep the source dates, including the overlap with APIS IT.
+The project descriptions below reproduce the short CV. Add them as separate Projects associated with this Self-employed entry because they exceed one employment description when combined.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Title | <code>Senior software developer / Independent contractor</code> | Company | <code>Self-employed</code> |
+| Title | <code>Primarily Full-Stack Web Developer</code> | Company | <code>Self-employed</code> |
 | Start date | <code>January 2016</code> | End date | <code>Present</code> |
 | Location / workplace | <code>Remote</code> |  |  |
 
-### Description
-
-1732 / 2000 characters (working limit).
-
-```text
-I deliver frontend, backend, and full-stack work for clients, independently or within their teams. My responsibilities include technical architecture, requirements clarification, implementation, and mentoring.
- 
-• Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.
- 
-• Independently migrated all four similar warehouse robotics frontend variants from Angular 8 to 18, each with more than 100,000 lines of code. Resolved over a thousand errors per variant without observed regressions, removing a major security-audit blocker.
- 
-• Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.
- 
-• Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.
- 
-• Restructured substantial parts of a roughly 100,000-line React frontend for a UK insurance platform, resolving many existing TypeScript issues and rebuilding state management and API handling.
- 
-• Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.
- 
-Further work includes government services, accounting, parking payments, telecom reporting, e-learning, and recruitment.
- 
-More projects and technical detail: https://mrzli.github.io/experience
-```
-
-## Experience — APIS IT
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Title | <code>C# Developer</code> | Company | <code>APIS IT</code> |
-| Start date | <code>November 2013</code> | End date | <code>May 2016</code> |
-| Location / workplace | <code>Zagreb (Croatia)</code> |  |  |
-
-### Description
-
-147 / 2000 characters (working limit).
-
-```text
-Implemented seven complete e-Tax forms and contributed to about ten others, covering web interfaces, XML, PDF reports, validation, and data access.
-```
-
-## Experience — Gemmeus d.o.o.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Title | <code>C# Developer</code> | Company | <code>Gemmeus d.o.o.</code> |
-| Start date | <code>October 2012</code> | End date | <code>January 2013</code> |
-| Location / workplace | <code>Remote</code> |  |  |
-
-### Description
-
-75 / 2000 characters (working limit).
-
-```text
-Developed C# spreadsheet features, including Excel-to-Windows Forms export.
-```
-
-## Experience — INETEC - Institute for Nuclear Technology d.o.o.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Title | <code>C# Windows Desktop (WPF) Developer</code> | Company | <code>INETEC - Institute for Nuclear Technology d.o.o.</code> |
-| Start date | <code>November 2009</code> | End date | <code>October 2012</code> |
-| Location / workplace | <code>Zagreb (Croatia)</code> |  |  |
-
-### Description
-
-137 / 2000 characters (working limit).
-
-```text
-Built substantial parts of nuclear inspection software: 2D/3D signal charts, multithreaded rendering, signal processing, and persistence.
-```
-
-## Experience — Ultra d.o.o.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Title | <code>C# Windows Desktop and Web Developer</code> | Company | <code>Ultra d.o.o.</code> |
-| Start date | <code>October 2008</code> | End date | <code>November 2009</code> |
-| Location / workplace | <code>Karlovac (Croatia)</code> |  |  |
-
-### Description
-
-116 / 2000 characters (working limit).
-
-```text
-Built a complete Windows Forms application for fuel-dispenser control, including custom controls and SQLite storage.
-```
-
-## Experience — Ekobit d.o.o.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Title | <code>C# Web Developer</code> | Company | <code>Ekobit d.o.o.</code> |
-| Start date | <code>February 2008</code> | End date | <code>October 2008</code> |
-| Location / workplace | <code>Zagreb (Croatia)</code> |  |  |
-
-### Description
-
-76 / 2000 characters (working limit).
-
-```text
-Developed ASP.NET and database features for Croatian financial institutions.
-```
-
 ## Project — HVAC monitoring and control web application
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>HVAC monitoring and control web application</code> |  |  |
+| Project name | <code>HVAC monitoring and control web application</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+61 characters. Limit not checked.
+
+```text
+React, TypeScript, MobX, Tailwind CSS, FIN Framework, Copilot
+```
 
 ### Description
 
-304 characters. Limit not checked.
+304 / 2000 characters (working limit).
 
 ```text
 I worked in an established team developing a web application for a large multinational to monitor and control HVAC equipment across buildings and sites. Using the platform's specialized technologies and tools, I built sections of the frontend, components, and controls to match UI designs and fixed bugs.
 ```
 
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>React</code> |
-| Skill 2 | <code>TypeScript</code> | Skill 3 | <code>MobX</code> |
-| Skill 4 | <code>Tailwind CSS</code> | Skill 5 | <code>FIN Framework</code> |
-
 ## Project — Warehouse robotics web application
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>Warehouse robotics web application</code> |  |  |
+| Project name | <code>Warehouse robotics web application</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+25 characters. Limit not checked.
+
+```text
+Angular, TypeScript, RxJS
+```
 
 ### Description
 
-695 characters. Limit not checked.
+695 / 2000 characters (working limit).
 
 ```text
 I joined an established warehouse automation project to resolve frontend issues and improve maintainability and developer experience. I independently migrated all four frontend variants from Angular 8 to 18. Each had more than 100,000 lines of code, although much of it was similar across variants. The migrations required resolving over a thousand errors per variant, adapting code to major dependency changes, and refactoring. I completed them without observed regressions, removing a major blocker for a security audit. Beyond the migration, my work included implementing substantial frontend features and subsystems based on client requirements, along with ongoing maintenance and bug fixes.
 ```
 
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>Angular</code> |
-| Skill 2 | <code>TypeScript</code> | Skill 3 | <code>RxJS</code> |
-
 ## Project — Oracle Eloqua to mobile messaging integration
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>Oracle Eloqua to mobile messaging integration</code> |  |  |
+| Project name | <code>Oracle Eloqua to mobile messaging integration</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+58 characters. Limit not checked.
+
+```text
+React, TypeScript, NestJS, MySQL, Prisma, Jest, OAuth, JWT
+```
 
 ### Description
 
-508 characters. Limit not checked.
+508 / 2000 characters (working limit).
 
 ```text
 I independently built an integration for sending SMS and WhatsApp messages within Oracle Eloqua marketing campaigns. I clarified requirements with the client, defined the architecture, and implemented the frontend, backend, database, and external API connections. The application coordinated asynchronous flows involving hundreds of thousands of messages. I resolved race conditions, implemented multiple authentication methods, and wrote extensive backend tests covering endpoints and complex message flows.
 ```
 
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>React</code> |
-| Skill 2 | <code>TypeScript</code> | Skill 3 | <code>NestJS</code> |
-| Skill 4 | <code>MySQL</code> | Skill 5 | <code>Prisma</code> |
-
 ## Project — Mobile fueling management system
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>Mobile fueling management system</code> |  |  |
+| Project name | <code>Mobile fueling management system</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+52 characters. Limit not checked.
+
+```text
+Node.js, Express, MongoDB, Angular, TypeScript, NgRx
+```
 
 ### Description
 
-389 characters. Limit not checked.
+389 / 2000 characters (working limit).
 
 ```text
 I worked on the backend and Angular administration app of a production system for a leading mobile fueling company in California. I was responsible for backend subsystems and coordinated changes across the application. I wrote and ran migration scripts against the production MongoDB database without issues, improved testing practices, and interviewed, onboarded, and mentored developers.
 ```
 
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>Node.js</code> |
-| Skill 2 | <code>Express</code> | Skill 3 | <code>MongoDB</code> |
-| Skill 4 | <code>Angular</code> | Skill 5 | <code>TypeScript</code> |
-
 ## Project — Insurance web platform
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>Insurance web platform</code> |  |  |
+| Project name | <code>Insurance web platform</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+60 characters. Limit not checked.
+
+```text
+React, TypeScript, Redux, RxJS, Material UI, Storybook, Jest
+```
 
 ### Description
 
-465 characters. Limit not checked.
+465 / 2000 characters (working limit).
 
 ```text
 I restructured substantial parts of a roughly 100,000-line frontend for a UK insurance platform. For most of my time on the project, I was its sole frontend developer. While developing new features, I resolved many of the existing TypeScript issues, rebuilt state management and API handling, and reorganized parts of the frontend architecture. I also improved build tooling, introduced automated tests, and built a component library with Material UI and Storybook.
 ```
 
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>React</code> |
-| Skill 2 | <code>TypeScript</code> | Skill 3 | <code>Redux</code> |
-| Skill 4 | <code>RxJS</code> | Skill 5 | <code>Material UI</code> |
-
 ## Project — Graveyard management web application
 
-Add this in Projects. Under Associated with, select your Self-employed experience entry. Add the suggested skills individually using the closest available names. They also appear in your profile Skills section. Project dates are not recorded in the source, so they are omitted.
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Project name | <code>Graveyard management web application</code> |  |  |
+| Project name | <code>Graveyard management web application</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+54 characters. Limit not checked.
+
+```text
+Vue, TypeScript, Kotlin, Spring Boot, PostgreSQL, Jest
+```
 
 ### Description
 
-274 characters. Limit not checked.
+274 / 2000 characters (working limit).
 
 ```text
 I built nearly the entire frontend and backend of a multi-tenant graveyard management application, including interactive maps, PDF reports, and database migrations. I wrote frontend unit tests and backend integration tests covering much of the application across all layers.
 ```
 
+## Project — Other projects
+
+Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
+
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Associated with | <code>Self-employed</code> | Skill 1 | <code>Vue</code> |
-| Skill 2 | <code>TypeScript</code> | Skill 3 | <code>Kotlin</code> |
-| Skill 4 | <code>Spring Boot</code> | Skill 5 | <code>PostgreSQL</code> |
+| Project name | <code>Other projects</code> | Associated with | <code>Self-employed</code> |
+
+### Technologies
+
+81 characters. Limit not checked.
+
+```text
+TypeScript, React, React Native, Angular, Java, Spring Boot, PostgreSQL, C#, Ruby
+```
+
+### Description
+
+673 / 2000 characters (working limit).
+
+```text
+I developed software for electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment. My work ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.
+ 
+I independently built a configurable Java component for government payment validation from a specification of about 180 pages, with extensive automated tests, in less than two weeks. I added all 100 QA scenarios to the regression suite and fixed the reported failures. No further issues were reported.
+```
+
+## Experience — Earlier software development roles
+
+This is the combined earlier-roles entry from the short CV, not a single employer. No company name is supplied.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Title | <code>C# Software Developer</code> | Start date | <code>January 2007</code> |
+| End date | <code>May 2016</code> | Location / workplace | <code>Croatia and remote</code> |
+| Project name | <code>Web and desktop applications</code> |  |  |
+
+### Technologies
+
+47 characters. Limit not checked.
+
+```text
+C#, .NET, ASP.NET, WPF, Windows Forms, C++, SQL
+```
+
+### Description
+
+412 / 2000 characters (working limit).
+
+```text
+I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.
+```
 
 ## Education
-
-Education dates are not recorded in the shared source, so they are omitted. Keep or enter your actual dates. The student project is included here, rather than presented as employment.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
@@ -301,38 +254,30 @@ Education dates are not recorded in the shared source, so they are omitted. Keep
 
 ### Description
 
-407 / 1000 characters (working limit).
+52 / 1000 characters (working limit).
 
 ```text
 Five-year degree program, totaling 284 ECTS credits.
- 
-For my thesis in computer graphics, I built a BVH animation viewer that parses motion capture files and renders the animation.
- 
-Visage Technologies (Student Project), January 2007 to August 2007: An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for a larger face and body animation system. I implemented the entire exporter.
 ```
 
-## Languages
-
-These are the source descriptions. Choose the corresponding proficiency in LinkedIn rather than copying an invented proficiency rating.
+## Personal information
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Language 1 | <code>Croatian - native</code> | Language 2 | <code>English - fluent</code> |
+| Name | <code>Goran Mržljak</code> | Location | <code>Zagreb, Croatia</code> |
+| Nationality | <code>Croatian</code> | Languages | <code>Croatian - native, English - fluent</code> |
+| Driver's License | <code>AM, B, F, G</code> |  |  |
 
 ## Contact information
-
-Set contact visibility in LinkedIn as you prefer. These values already appear on the website.
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
 | Email | <code>goran.mrzljak@gmail.com</code> | Phone | <code>+385 91 224 3145</code> |
-| Website | <code>https://mrzli.github.io/</code> | GitHub | <code>https://github.com/mrzli/repos</code> |
-| Stack Overflow | <code>https://stackoverflow.com/users/520229/mrzli</code> |  |  |
 
-## Featured — suggested links
-
-Add the portfolio first. It provides both CV downloads. GitHub is an optional second link. These are suggestions, not separate experience entries.
+## Links
 
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Portfolio URL | <code>https://mrzli.github.io/</code> | GitHub URL | <code>https://github.com/mrzli/repos</code> |
+| Website | <code>https://mrzli.github.io/</code> | GitHub | <code>https://github.com/mrzli/repos</code> |
+| LinkedIn | <code>https://www.linkedin.com/in/goran-mrzljak</code> | Short CV | <code>https://mrzli.github.io/data/cv-goran-mrzljak-short.pdf</code> |
+| Detailed CV | <code>https://mrzli.github.io/data/cv-goran-mrzljak-detailed.pdf</code> |  |  |

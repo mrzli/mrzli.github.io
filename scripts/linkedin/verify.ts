@@ -11,9 +11,10 @@ import { exportLinkedIn, renderLinkedIn } from './export';
 verify();
 
 function verify(): void {
-  const sections = createLinkedInSections(2030);
+  const shortCv = createCvDocument('concise', 2030);
+  const sections = createLinkedInSections(shortCv);
   const markdown = renderLinkedIn(sections);
-  assert.equal(markdown, renderLinkedIn(createLinkedInSections(2030)));
+  assert.equal(markdown, renderLinkedIn(createLinkedInSections(shortCv)));
   const blocks = [...markdown.matchAll(/^```text\n([\s\S]*?)\n```$/gm)].map((match) => match[1]);
   const values = [...markdown.matchAll(/^```text\n([\s\S]*?)\n```$|<code>(.*?)<\/code>/gm)].map(
     (match) =>
@@ -31,17 +32,25 @@ function verify(): void {
     ),
   );
   const experience = sections.filter((section) => section.title.startsWith('Experience'));
-  assert.equal(experience.length, 6);
+  assert.equal(experience.length, 2);
   assert.equal(
     experience[0].fields.find((field) => field.label === 'Start date')?.value,
     'January 2016',
   );
   assert.equal(experience[0].fields.find((field) => field.label === 'End date')?.value, 'Present');
   assert.ok(!experience.some((section) => section.title.includes('Student')));
-  assert.ok(
+  const earlier = shortCv.earlierExperience[0];
+  assert.equal(experience[1].title, `Experience — ${earlier.title}`);
+  assert.equal(
+    experience[1].fields.find((field) => field.label === 'Description')?.value,
+    [...earlier.projects[0].context, ...earlier.projects[0].contributions].join('\n\u00a0\n'),
+  );
+  assert.ok(!experience[1].fields.some((field) => field.label === 'Company'));
+  assert.equal(
     sections
       .find((section) => section.title === 'Education')
-      ?.fields.some((field) => field.value.includes('Student Project')),
+      ?.fields.find((field) => field.label === 'Description')?.value,
+    shortCv.educationHighlights.join('\n\u00a0\n'),
   );
 
   for (const section of sections) {
@@ -52,9 +61,8 @@ function verify(): void {
     }
   }
 
-  const shortCv = createCvDocument('concise', 2030);
   const projects = sections.filter((section) => section.title.startsWith('Project — '));
-  assert.equal(projects.length, 6);
+  assert.equal(projects.length, shortCv.projects.length);
   for (const [index, project] of projects.entries()) {
     const source = shortCv.projects[index];
     assert.equal(
@@ -71,21 +79,16 @@ function verify(): void {
       project.fields.find((field) => field.label === 'Associated with')?.value,
       'Self-employed',
     );
-    const skills = project.fields.filter((field) => field.label.startsWith('Skill '));
-    assert.ok(skills.length <= 5);
-    assert.ok(skills.every((field) => source.technologies.includes(field.value)));
+    assert.equal(
+      project.fields.find((field) => field.label === 'Technologies')?.value,
+      source.technologies.join(', '),
+    );
     assert.ok(!project.fields.some((field) => field.label.includes('date')));
   }
   const about = sections.find((section) => section.title === 'About')?.fields[0].value;
   assert.equal(
     about?.replaceAll('\n\u00a0\n', '\n\n'),
-    [
-      ...shortCv.summary,
-      shortCv.ai,
-      shortCv.profile.availability,
-      shortCv.contracts,
-      `Work and project details: ${shortCv.profile.website}`,
-    ].join('\n\n'),
+    [...shortCv.summary, shortCv.ai, shortCv.profile.availability, shortCv.contracts].join('\n\n'),
   );
 
   for (const [field, limit] of Object.entries(LINKEDIN_LIMITS)) {
@@ -113,9 +116,12 @@ function verify(): void {
     ]).includes('````text\nLiteral ``` inside text\n````'),
   );
 
-  assert.equal(about?.split('\n\u00a0\n').length, 8);
+  assert.equal(about?.split('\n\u00a0\n').length, 7);
   assert.ok(markdown.includes(`${about?.length} / 2600 characters`));
   assert.ok(blocks.includes(about!));
+
+  assert.ok(!sections.some((section) => section.title.startsWith('Skills')));
+  assert.throws(() => createLinkedInSections(createCvDocument('detailed')), /short CV/);
 
   const compact = renderLinkedIn([
     {

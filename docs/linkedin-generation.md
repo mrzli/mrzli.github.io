@@ -11,31 +11,29 @@ These spaces count toward the character limit and are intended to preserve
 paragraph gaps in LinkedIn. This workaround still needs verification in the
 user's account. The command does not access LinkedIn or update an account.
 
-Edit `src/content/exports/linkedin.ts` for the headline, About composition, field
-selection, project skills, and project highlights. About reuses the CV profile. Six
-Projects entries reuse the short CV titles and descriptions through their stable
-`contentKey`. The contracting description contains shorter highlights. Earlier employment reuses the summaries
-in `src/content/exports/experience.ts`. Export types live in
-`src/content/exports/types.ts`. Names, dates, contacts, education, and languages
-come from the shared source. Review tailored summaries when a fact changes.
+The generator passes the current short CV document from
+`scripts/cv/document.ts` to `createLinkedInSections`. LinkedIn no longer uses the
+old employer summaries or separate project highlights. Changes to short CV
+content therefore carry through to this export.
 
-The contracting entry stays a single ongoing role. Its dates intentionally retain
-the overlap with APIS IT. The student project appears in Education. Education dates
-are absent from the shared source and are not inferred. Skills are suggestions to
-match against LinkedIn's selector, not claims that every spelling exists there.
-Each project suggests up to five of its technology tags as skills. Add these in
-the project's Skills field using LinkedIn's available names. They also appear in
-the profile Skills section. Technologies from earlier projects do not change the
-website's experience classifications.
+The export retains the short CV's profile, seven contracting project entries
+(including Other projects), and one combined earlier-roles entry. Project and
+earlier-role descriptions retain the CV wording. The combined earlier role is
+not presented as a single real company. The file supplies no invented company
+name for it. Contracting projects remain separate LinkedIn Projects because
+their combined descriptions exceed one employment field.
 
-Create the Self-employed experience entry before adding the six projects. In each
-project's Associated with field, select that experience entry. Project dates are
-not recorded in the source and are not inferred from the overall employment dates.
-These are manual instructions, not account updates. LinkedIn's
-[Projects help](https://www.linkedin.com/help/linkedin/answer/a8064614), checked on
-2026-09-22, documents association and up to five skills per project. It does not
-state text limits for projects, so project names and descriptions show counts
-without claiming a verified limit. The website retains the full project history.
+Technology lists retain all CV tags. Select up to five in each project's skill
+selector. Standalone Skills sections and About skill fields are omitted. Education uses only the CV qualification
+and its accompanying description. Contact details, links, and personal
+information also come from the CV document.
+
+Project descriptions have a 2,000-character working limit, supported by
+[this project-section guide](https://resumeworded.com/how-to-add-projects-to-linkedin-key-advice).
+[LinkedIn's Projects help](https://www.linkedin.com/help/linkedin/answer/a8064614)
+documents project association and up to five skills per project, but does not
+state the numeric description limit. Dates for individual contracting projects
+are not in the CV and are omitted. Nothing is posted to LinkedIn automatically.
 
 Generation is deterministic for the same source and year. About totals use the
 current year minus the shared start years. Long fields display character counts. Short fields are still limit-checked without
@@ -59,6 +57,7 @@ Fields without a supported numeric limit show counts only, not a pass claim.
 | Headline                |           220 |
 | About                   |         2,600 |
 | Experience description  |         2,000 |
+| Project description     |         2,000 |
 | Position title, company |      100 each |
 | School, degree          |      100 each |
 | Education description   |         1,000 |
