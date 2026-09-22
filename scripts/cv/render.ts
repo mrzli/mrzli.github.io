@@ -34,11 +34,11 @@ export function renderCv(document: CvDocument): string {
     String.raw`\end{center}`,
     String.raw`\cvsection{Profile}`,
     ...document.summary.map(paragraph),
+    paragraph(document.ai),
     String.raw`\profilepoints{${[
       document.variant === 'detailed'
         ? profile.availability
         : `${document.professionalYears} years of professional experience. ${document.contractingYears} years of contract work.`,
-      document.ai,
       document.contracts,
     ]
       .map(escapeLatex)
