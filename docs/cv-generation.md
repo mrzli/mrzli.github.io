@@ -9,7 +9,7 @@ exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffi
 
 The short CV currently starts from exactly the same content and layout as the detailed
 CV, ready for later trimming. Only the short CV adds notes beneath Work experience
-and Skills linking to the detailed CV. Contracting projects remain complete. The short CV includes only extensive and recent
+and Skills linking to the detailed CV. Six contracting projects retain their full text for now. The short CV includes only extensive and recent
 skills, with category labels but no group subtitle. The detailed CV includes every employment and project from the
 website, with all technology tags, descriptions, and contributions, followed by
 education, skills, and personal information. The detailed CV retains the full website skills list. Their TeX and
@@ -141,3 +141,8 @@ The short CV combines APIS IT and all earlier roles into one entry, covering
 January 2007 to May 2016, including the Visage student project. It uses a short
 technology list and one paragraph combining project descriptions and contributions.
 The detailed CV and website retain each original entry.
+
+The short CV keeps HVAC, warehouse robotics, Eloqua, mobile fueling, insurance,
+and graveyard management as individual contracting projects. The remaining
+contracting work is summarized in one Other projects entry. Selections and the
+combined summary live in `src/content/exports/cv-concise.ts`.

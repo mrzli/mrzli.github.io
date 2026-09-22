@@ -95,11 +95,6 @@ The roughly 20,000-line application coordinated two-way asynchronous communicati
 Once the main functionality was in place, load testing exposed race conditions that I then fixed and covered with regression tests. I added extensive backend tests covering individual units, every endpoint, and complex asynchronous flows. Mockable database and service interfaces kept tests clean and fast. Detailed logging helped diagnose complex issues, including those race conditions, and supported monitoring.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 \multicolumn{1}{@{}l@{}}{\borderedlast{The integration required different authentication methods for its connections to each platform and between its own frontend and backend. I implemented OAuth 2.0 for requests to Oracle Eloqua, OAuth 1.0a for requests from Eloqua, and API keys for the messaging platform. JWT authenticated communication between the embedded frontend and backend. Incoming webhook requests from the messaging platform were authenticated using HTTP Basic Auth.}}\tabularnewline
 \end{contribution}
-\project{Electricity consumption mobile application}{React Native · TypeScript · Expo · Jest · ESLint · Prettier}
-A mobile application built for a Norwegian client, helping consumers in Norway monitor and manage electricity consumption, choose electricity providers, and view statistics and insights.\par
-\begin{contribution}
-\multicolumn{1}{@{}l@{}}{\borderedlast{I worked exclusively on the React Native frontend, implementing screens and features as part of a team of eight developers.}}\tabularnewline
-\end{contribution}
 \project{Mobile fueling management system}{Angular · TypeScript · NgRx · Mocha · Express · Nx · ESLint · Prettier · MongoDB}
 A production system central to the business and operations of a leading mobile fueling company in California. At the time, the company had several hundred employees and was growing rapidly.\par
 Dozens of developers worked on this system, which included Angular and React web applications, iOS and Android apps, and a shared backend using Node.js, Express, and MongoDB.\par
@@ -117,12 +112,6 @@ At the time I joined, the frontend had numerous bugs and structural issues. I re
 I improved development scripts and the Webpack build, introduced formatting and linting, and added tests. I achieved good test coverage for utility code, added basic component tests, and wrote a handful of Cypress tests for more complex flows.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 \multicolumn{1}{@{}l@{}}{\borderedlast{I built a component library using Material UI and Storybook that matched the existing application design.}}\tabularnewline
 \end{contribution}
-\project{Accounting web application}{Angular · TypeScript · Jest · RxJS · AG Grid}
-A large accounting and transactions application for a medium-sized Finnish company. It included dozens of screens for viewing and editing financial data, with complex business rules.\par
-\begin{contribution}
-I worked exclusively on the frontend. A colleague and I joined after limited prototype development. We implemented most of the initial frontend and contributed to architectural decisions.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-\multicolumn{1}{@{}l@{}}{\borderedlast{Within a few months, the frontend team grew to more than ten people. From then on, my work included changes across the application, building subsystems and reusable patterns, developing larger features and screens, and maintenance.}}\tabularnewline
-\end{contribution}
 \project{Graveyard management web application}{Vue · TypeScript · Vuetify · Vuex · Jest · OpenLayers · Spring Boot · Kotlin · Liquibase · PostgreSQL · H2 · Jasper Reports · Docker · Docker Swarm}
 A multi-tenant web application for managing graveyards, graves, and information about the deceased and grave owners. Interactive maps showed geospatial data for each grave.\par
 \begin{contribution}
@@ -132,49 +121,9 @@ I built the backend with Kotlin and Spring Boot, using Liquibase for database se
 As an experiment, I wrote backend integration tests in Jest and TypeScript because I found these tools flexible and familiar. These integration tests covered much of the backend's functionality across all layers, using an in-memory H2 database.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 \multicolumn{1}{@{}l@{}}{\borderedlast{I used Docker and Docker Swarm only in development for automation and deployment experiments. Production deployment was partly manual, with scripts handling most steps.}}\tabularnewline
 \end{contribution}
-\project{Parking mobile application}{Java}
-A mobile application for the general public to buy parking tickets for parking lots and garages in Zagreb, Croatia.\par
-\begin{contribution}
-I built the backend's central integration layer, connecting the Android and iOS apps with parking providers, payment processing, and data access.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-\multicolumn{1}{@{}l@{}}{\borderedlast{This included the REST API used by the mobile apps, backend validation, direct integration with parking provider APIs, and integration with payment providers through a component built by another developer.}}\tabularnewline
-\end{contribution}
-\project{NIAS single sign-on integration}{Java · JSP · SOAP}
-NIAS (National Identification and Authentication System) is Croatia's national single sign-on system. It supports authentication through accredited providers, including government institutions, banks, and other trusted organizations.\par
-This integration enabled users to access government services connected to NIAS using credentials issued by the Croatian Postal Service.\par
-\begin{contribution}
-\multicolumn{1}{@{}l@{}}{\borderedlast{I implemented the entire integration.}}\tabularnewline
-\end{contribution}
-\project{Government payments validation component}{Java · JUnit}
-A Java component (JAR) for validating payments to the Croatian government, agencies, and local and regional administrations.\par
-It accepted structured invoice data and checked individual fields and their combinations, including payment descriptions, destination accounts, dates, and payment references. It returned errors and warnings with details for each issue. The validation rules needed to be easy to update as requirements changed.\par
-Although part of a larger system, the component could be developed and tested independently.\par
-\begin{contribution}
-I implemented the entire component and extensive unit tests in less than two weeks. The specification contained about 180 pages: roughly 30 pages of rules, followed by supporting tables and data.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-I translated those rules into a JSON configuration of about 3,000 lines and wrote the logic to parse and apply it. The component's isolated interface made it straightforward to test the complex validation logic, and I covered all the scenarios I could identify.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-QA then tested 100 scenarios manually and found about three failures. I converted their Excel results to CSV and used them to generate automated tests. After fixing the failures, every QA scenario became part of the regression suite. No further issues were reported after that.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-\multicolumn{1}{@{}l@{}}{\borderedlast{I enjoyed this project because the requirements were clear and I could focus on implementation. Thorough testing gave me very high confidence that the code would work reliably despite the complexity of the validation rules.}}\tabularnewline
-\end{contribution}
-\project{EU roaming usage and traffic tracking web application}{Java · Spring Boot · JPA/Hibernate · Querydsl · Liquibase · Jasper Reports · Maven}
-A roaming usage tracking system for Croatia's largest telecom, commissioned during significant changes to EU roaming rules. It provided usage statistics and helped detect abuse.\par
-\begin{contribution}
-\multicolumn{1}{@{}l@{}}{\borderedlast{I implemented the entire backend, from the REST API to the repository layer, and built the reporting system using Jasper Reports.}}\tabularnewline
-\end{contribution}
-\project{E-learning web application}{AngularJS · Java · Spring Boot · JPA/Hibernate · Querydsl · PostgreSQL · Maven · Video.js · Veeting Rooms}
-A web application for online learning, with video courses and online meetings with whiteboards.\par
-\begin{contribution}
-\multicolumn{1}{@{}l@{}}{\borderedlast{I took over the application after limited initial development by others and implemented or rewrote nearly all of it while working toward an MVP. I also handled deployment and collaborated directly with the client to define requirements.}}\tabularnewline
-\end{contribution}
-\project{Other projects}{C\# · WCF · Ruby · React · Java · Alfresco}
-Examples of smaller client assignments.\par
-A C\# and WCF service for exporting Microsoft SQL Server data as JSON.\par
-Urgent fixes to an Alfresco web application shortly before its production deadline.\par
-A Ruby backend for talent acquisition software.\par
-A small React application for talent management and recruitment.\par
-\begin{contribution}
-I built the data export service on my own.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-I joined an Alfresco project one or two weeks before its planned production release, with no prior experience of the platform or codebase. During that time, I resolved the issues the client needed fixed. Based on the results, the client commissioned further work on other projects.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-\multicolumn{1}{@{}l@{}}{\borderedlast{The two talent management projects each lasted several weeks. Another developer and I split the work evenly.}}\tabularnewline
-\end{contribution}
+\project{Other projects}{TypeScript · React · React Native · Angular · Java · Spring Boot · PostgreSQL · C\# · Ruby}
+I worked on electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment software. My contributions ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.\par
+For government payment validation, I independently translated a specification of about 180 pages into a configurable Java component with extensive automated tests in less than two weeks. I incorporated all 100 QA scenarios into the regression suite, fixed the reported failures, and had no further issues reported.\par
 \employerseparator
 \employer{Earlier software development roles}{January 2007 -- May 2016}{C\# Software Developer}{Croatia and remote}
 \project{Web and desktop applications}{C\# · .NET · ASP.NET · WPF · Windows Forms · C++ · SQL}

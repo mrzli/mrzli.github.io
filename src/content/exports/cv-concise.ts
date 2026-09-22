@@ -1,7 +1,7 @@
 import { EXPERIENCE_SECTIONS } from '../experience';
 import type { ExperienceProjectKey } from '../experience-keys';
 import { SKILLS_SECTIONS } from '../skills';
-import type { ConciseProject, CvEarlierExperience } from './types';
+import type { ConciseProject, CvEarlierExperience, CvProject } from './types';
 export const CONCISE_CV = {
   summary: [
     'I build complete web applications independently or within a team: frontend, backend, or full stack. I define architecture, modernize systems, and mentor developers.',
@@ -94,4 +94,34 @@ export const CONCISE_CV_EARLIER_EXPERIENCE: CvEarlierExperience = {
       startContinuationPage: false,
     },
   ],
+};
+
+export const CONCISE_CV_PROJECT_KEYS: readonly ExperienceProjectKey[] = [
+  'hvac',
+  'warehouse-robotics',
+  'eloqua',
+  'mobile-fueling',
+  'insurance',
+  'graveyard-management',
+];
+
+export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
+  title: 'Other projects',
+  technologies: [
+    'TypeScript',
+    'React',
+    'React Native',
+    'Angular',
+    'Java',
+    'Spring Boot',
+    'PostgreSQL',
+    'C#',
+    'Ruby',
+  ],
+  context: [
+    'I worked on electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment software. My contributions ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.',
+    'For government payment validation, I independently translated a specification of about 180 pages into a configurable Java component with extensive automated tests in less than two weeks. I incorporated all 100 QA scenarios into the regression suite, fixed the reported failures, and had no further issues reported.',
+  ],
+  contributions: [],
+  startContinuationPage: false,
 };

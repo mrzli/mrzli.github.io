@@ -2,6 +2,8 @@ import { EDUCATION, EDUCATION_HIGHLIGHTS } from '../../src/content/background';
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
 import {
   CONCISE_CV_SKILLS,
+  CONCISE_CV_PROJECT_KEYS,
+  CONCISE_CV_OTHER_PROJECTS,
   CONCISE_CV_EARLIER_EXPERIENCE,
 } from '../../src/content/exports/cv-concise';
 import { DETAILED_CV } from '../../src/content/exports/cv-detailed';
@@ -19,7 +21,17 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
     ai: PROFILE.ai,
     contracts: DETAILED_CV.contracts,
     contracting: EXPERIENCE_SECTIONS[0],
-    projects: detailedProjects(EXPERIENCE_SECTIONS[0].projects),
+    projects:
+      variant === 'concise'
+        ? [
+            ...detailedProjects(
+              EXPERIENCE_SECTIONS[0].projects.filter((project) =>
+                CONCISE_CV_PROJECT_KEYS.includes(project.contentKey),
+              ),
+            ),
+            CONCISE_CV_OTHER_PROJECTS,
+          ]
+        : detailedProjects(EXPERIENCE_SECTIONS[0].projects),
     earlierExperience:
       variant === 'concise'
         ? [CONCISE_CV_EARLIER_EXPERIENCE]

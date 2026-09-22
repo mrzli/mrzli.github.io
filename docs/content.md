@@ -66,3 +66,8 @@ The short CV combines APIS IT and all earlier roles into one entry, covering
 January 2007 to May 2016, including the Visage student project. It uses a short
 technology list and one paragraph combining project descriptions and contributions.
 The detailed CV and website retain each original entry.
+
+The short CV keeps HVAC, warehouse robotics, Eloqua, mobile fueling, insurance,
+and graveyard management as individual contracting projects. The remaining
+contracting work is summarized in one Other projects entry. Selections and the
+combined summary live in `src/content/exports/cv-concise.ts`.
