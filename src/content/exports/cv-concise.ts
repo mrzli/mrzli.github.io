@@ -1,4 +1,5 @@
 import type { ExperienceProjectKey } from '../experience-keys';
+import { SKILLS_SECTIONS } from '../skills';
 import type { ConciseProject } from './types';
 export const CONCISE_CV = {
   summary: [
@@ -66,3 +67,7 @@ export const CONCISE_CV_SECTION_NOTES = {
     afterLink: ' for the full list.',
   },
 } as const;
+
+export const CONCISE_CV_SKILLS = SKILLS_SECTIONS.filter(
+  (section) => section.title === 'Extensive and recent experience',
+);

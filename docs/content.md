@@ -48,7 +48,8 @@ anchor and does not change when export content changes.
 
 The [CV generator](./cv-generation.md) currently gives the short and detailed CVs
 the same full content and layout as a starting point for shortening the short version.
-The short CV also has notes beneath Work experience and Skills linking to the detailed CV.
+The short CV has notes beneath Work experience and Skills linking to the detailed CV.
+Its skills include only extensive and recent experience, without the group subtitle.
 Both use every employment and project from `experience.ts`, including all titles,
 roles, tags, descriptions, and contributions, in the shared experience order.
 Earlier CV project selections and overrides remain in the codebase but are not used.

@@ -1,5 +1,6 @@
 import { EDUCATION, EDUCATION_HIGHLIGHTS } from '../../src/content/background';
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
+import { CONCISE_CV_SKILLS } from '../../src/content/exports/cv-concise';
 import { DETAILED_CV } from '../../src/content/exports/cv-detailed';
 import type { CvDocument, CvVariant, CvProject } from '../../src/content/exports/types';
 import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
@@ -26,7 +27,7 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
     educationHighlights: EDUCATION_HIGHLIGHTS.slice(0, 1),
     professionalYears,
     contractingYears,
-    skills: DETAILED_CV.skills,
+    skills: variant === 'concise' ? CONCISE_CV_SKILLS : DETAILED_CV.skills,
     personalInformation: DETAILED_CV.personalInformation,
     languages: [],
     thesisLinks: [],

@@ -75,10 +75,15 @@ function verify(): void {
     concise
       .split('\n')
       .filter((line) => !selectionNotes.includes(line))
-      .join('\n'),
-    detailed,
+      .join('\n')
+      .replace(/\\cvsection\{Skills\}[\s\S]*?(?=\\cvsection\{Personal information\})/, ''),
+    detailed.replace(/\\cvsection\{Skills\}[\s\S]*?(?=\\cvsection\{Personal information\})/, ''),
   );
-  assert.deepEqual({ ...document, variant: 'detailed' }, detailedDocument);
+  assert.deepEqual(document.skills, [SKILLS_SECTIONS[0]]);
+  assert.deepEqual(
+    { ...document, variant: 'detailed', skills: detailedDocument.skills },
+    detailedDocument,
+  );
   assert.ok(detailed.includes('load testing exposed race conditions'));
 
   const standalone = join(root, 'standalone');

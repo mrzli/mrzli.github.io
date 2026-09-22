@@ -25,7 +25,7 @@ export function renderCv(document: CvDocument): string {
     },
   ];
   const sectionNote = (note: { readonly beforeLink: string; readonly afterLink: string }): string =>
-    String.raw`{\small\color{technology}${escapeLatex(note.beforeLink)}${link(new URL('data/cv-goran-mrzljak-detailed.pdf', profile.website).href, 'detailed CV')}${escapeLatex(note.afterLink)}\par}`;
+    String.raw`{\small\color{technology}${escapeLatex(note.beforeLink)}${link(new URL('data/cv-goran-mrzljak-detailed.pdf', profile.website).href, 'detailed CV')}${escapeLatex(note.afterLink)}\par}\nobreak\vspace{6pt}`;
   const body = [
     PAGINATION,
     String.raw`\begin{center}`,
@@ -76,7 +76,7 @@ export function renderCv(document: CvDocument): string {
           String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{\smallskipamount}`,
           ...(document.variant === 'concise' ? [sectionNote(CONCISE_CV_SECTION_NOTES.skills)] : []),
           ...document.skills.flatMap((section) => [
-            String.raw`\begin{skillstable}{${escapeLatex(section.title)}}`,
+            String.raw`\begin{skillstable}{${document.variant === 'concise' ? '' : escapeLatex(section.title)}}`,
             ...section.groups.map(
               (group) =>
                 String.raw`${escapeLatex(group.title)} & ${escapeLatex(group.skills.join(', '))}\tabularnewline[3pt]`,

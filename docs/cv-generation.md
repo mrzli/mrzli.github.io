@@ -9,9 +9,10 @@ exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffi
 
 The short CV currently starts from exactly the same content and layout as the detailed
 CV, ready for later trimming. Only the short CV adds notes beneath Work experience
-and Skills linking to the detailed CV. All content is still present. Both include every employment and project from the
+and Skills linking to the detailed CV. Work experience remains complete. The short CV includes only extensive and recent
+skills, with category labels but no group subtitle. Both include every employment and project from the
 website, with all technology tags, descriptions, and contributions, followed by
-education, the full website skills list, and personal information. Their TeX and
+education, skills, and personal information. The detailed CV retains the full website skills list. Their TeX and
 PDF files are available in `public/data/`. Page counts follow the content rather
 than a hard limit.
 
