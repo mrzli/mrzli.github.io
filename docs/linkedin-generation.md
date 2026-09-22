@@ -13,14 +13,14 @@ user's account. The command does not access LinkedIn or update an account.
 
 The generator uses the current short CV document from `scripts/cv/document.ts`
 for the introduction, About, dates, grouped earlier experience, education, and
-personal and contact information. The contracting description uses the restored
-LinkedIn summary and six brief highlights in `src/content/exports/linkedin.ts`.
+personal and contact information. The contracting description uses a project-focused list with one sentence for each of the 13 named contracting projects in `src/content/exports/linkedin.ts`.
 
 The export contains two experience entries: Senior software developer for
 independent contracting, and C# Software Developer for the combined earlier
 roles. The earlier entry is not presented as one real employer, so no company
 name is supplied. Each entry includes a direct website URL, also placed at the
-end of its description. Contracting links to `experience#contracting`; earlier
+end of its description. The earlier-role description explains that the link
+opens at APIS IT and that the other roles follow below. Contracting links to `experience#contracting`; earlier
 work links to `experience#apis-it`, the first employment in that group.
 
 Each experience includes a selected skills list to add individually to that

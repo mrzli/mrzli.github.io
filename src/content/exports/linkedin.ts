@@ -35,17 +35,30 @@ const LINKEDIN_CONTRACTING_SKILLS: readonly string[] = [
 ];
 
 const LINKEDIN_PROJECT_HIGHLIGHTS: Readonly<Partial<Record<ExperienceProjectKey, string>>> = {
-  hvac: "Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.",
+  hvac: 'HVAC monitoring: Worked on a React web application for monitoring and controlling HVAC equipment across buildings and sites.',
   'warehouse-robotics':
-    'Independently migrated all four similar warehouse robotics frontend variants from Angular 8 to 18, each with more than 100,000 lines of code. Resolved over a thousand errors per variant without observed regressions, removing a major security-audit blocker.',
+    'Warehouse robotics: Worked on a web application for monitoring and managing fleets of autonomous warehouse robots. Upgraded this large application from Angular 8 to 18 to help it pass a security audit.',
   eloqua:
-    'Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.',
+    'Oracle Eloqua messaging: Built a React and NestJS application that integrates SMS and WhatsApp messaging into Oracle Eloqua marketing campaigns.',
+  'electricity-consumption':
+    'Electricity consumption: Worked on a React Native mobile app for monitoring and managing electricity use in Norway.',
   'mobile-fueling':
-    'Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.',
+    'Mobile fueling: Worked on the Node.js backend and Angular administration application of a mobile fueling management system.',
   insurance:
-    'Restructured substantial parts of a roughly 100,000-line React frontend for a UK insurance platform, resolving many existing TypeScript issues and rebuilding state management and API handling.',
+    'Insurance platform: Restructured and improved the React frontend of a UK insurance web platform.',
+  accounting:
+    'Accounting: Developed the Angular frontend of an accounting and financial transactions application for a Finnish company.',
   'graveyard-management':
-    'Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.',
+    'Graveyard management: Developed the frontend and backend of a multi-tenant graveyard management application using Vue, Kotlin, and Spring Boot.',
+  parking:
+    'Parking payments: Built the Java backend integration connecting mobile apps with parking providers and payment processing in Zagreb.',
+  nias: 'NIAS single sign-on: Built a Java integration enabling access to Croatian government services through NIAS.',
+  'government-payments':
+    'Government payment validation: Developed a configurable Java component for validating government payment data.',
+  'eu-roaming':
+    'EU roaming: Built the Java and Spring Boot backend and reporting system for a telecom roaming usage tracking application.',
+  'e-learning':
+    'E-learning: Developed an AngularJS and Java/Spring Boot application for video courses and online meetings.',
 };
 
 export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection[] {
@@ -90,12 +103,9 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
         {
           label: 'Description',
           limit: LINKEDIN_LIMITS.experienceDescription,
-          value: [
-            'I deliver frontend, backend, and full-stack work for clients, independently or within their teams. My responsibilities include technical architecture, requirements clarification, implementation, and mentoring.',
-            ...highlights,
-            'Further work includes government services, accounting, parking payments, telecom reporting, e-learning, and recruitment.',
-            `More projects and technical detail: ${contractingUrl}`,
-          ].join('\n\u00a0\n'),
+          value: [...highlights, `More projects and technical detail: ${contractingUrl}`].join(
+            '\n\u00a0\n',
+          ),
         },
         { label: 'Skills', value: LINKEDIN_CONTRACTING_SKILLS.join(', ') },
       ],
@@ -113,7 +123,7 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
           label: 'Description',
           value: [
             ...entry.projects.flatMap((project) => [...project.context, ...project.contributions]),
-            `More work and technical detail: ${earlierUrl}`,
+            `Full descriptions: ${earlierUrl}\nThis link opens at APIS IT. Scroll down for the other roles included here.`,
           ].join('\n\u00a0\n'),
           limit: LINKEDIN_LIMITS.experienceDescription,
         },

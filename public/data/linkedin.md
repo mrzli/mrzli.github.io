@@ -50,24 +50,34 @@ B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work po
 
 ### Description
 
-1744 / 2000 characters (working limit).
+1790 / 2000 characters (working limit).
 
 ```text
-I deliver frontend, backend, and full-stack work for clients, independently or within their teams. My responsibilities include technical architecture, requirements clarification, implementation, and mentoring.
+• HVAC monitoring: Worked on a React web application for monitoring and controlling HVAC equipment across buildings and sites.
  
-• Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.
+• Warehouse robotics: Worked on a web application for monitoring and managing fleets of autonomous warehouse robots. Upgraded this large application from Angular 8 to 18 to help it pass a security audit.
  
-• Independently migrated all four similar warehouse robotics frontend variants from Angular 8 to 18, each with more than 100,000 lines of code. Resolved over a thousand errors per variant without observed regressions, removing a major security-audit blocker.
+• Oracle Eloqua messaging: Built a React and NestJS application that integrates SMS and WhatsApp messaging into Oracle Eloqua marketing campaigns.
  
-• Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.
+• Electricity consumption: Worked on a React Native mobile app for monitoring and managing electricity use in Norway.
  
-• Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.
+• Mobile fueling: Worked on the Node.js backend and Angular administration application of a mobile fueling management system.
  
-• Restructured substantial parts of a roughly 100,000-line React frontend for a UK insurance platform, resolving many existing TypeScript issues and rebuilding state management and API handling.
+• Insurance platform: Restructured and improved the React frontend of a UK insurance web platform.
  
-• Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.
+• Accounting: Developed the Angular frontend of an accounting and financial transactions application for a Finnish company.
  
-Further work includes government services, accounting, parking payments, telecom reporting, e-learning, and recruitment.
+• Graveyard management: Developed the frontend and backend of a multi-tenant graveyard management application using Vue, Kotlin, and Spring Boot.
+ 
+• Parking payments: Built the Java backend integration connecting mobile apps with parking providers and payment processing in Zagreb.
+ 
+• NIAS single sign-on: Built a Java integration enabling access to Croatian government services through NIAS.
+ 
+• Government payment validation: Developed a configurable Java component for validating government payment data.
+ 
+• EU roaming: Built the Java and Spring Boot backend and reporting system for a telecom roaming usage tracking application.
+ 
+• E-learning: Developed an AngularJS and Java/Spring Boot application for video courses and online meetings.
  
 More projects and technical detail: https://mrzli.github.io/experience#contracting
 ```
@@ -92,12 +102,13 @@ This is the combined earlier-roles entry from the short CV, not a single employe
 
 ### Description
 
-489 / 2000 characters (working limit).
+551 / 2000 characters (working limit).
 
 ```text
 I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.
  
-More work and technical detail: https://mrzli.github.io/experience#apis-it
+Full descriptions: https://mrzli.github.io/experience#apis-it
+This link opens at APIS IT. Scroll down for the other roles included here.
 ```
 
 ### Skills

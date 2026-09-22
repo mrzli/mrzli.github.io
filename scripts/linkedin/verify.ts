@@ -46,7 +46,7 @@ function verify(): void {
     [
       ...earlier.projects[0].context,
       ...earlier.projects[0].contributions,
-      `More work and technical detail: ${shortCv.profile.website}experience#apis-it`,
+      `Full descriptions: ${shortCv.profile.website}experience#apis-it\nThis link opens at APIS IT. Scroll down for the other roles included here.`,
     ].join('\n\u00a0\n'),
   );
   assert.ok(!experience[1].fields.some((field) => field.label === 'Company'));
@@ -78,14 +78,15 @@ function verify(): void {
       url,
     );
     assert.ok(
-      experience[index].fields.find((field) => field.label === 'Description')?.value.endsWith(url),
+      experience[index].fields.find((field) => field.label === 'Description')?.value.includes(url),
     );
   }
   const contractingDescription = experience[0].fields.find(
     (field) => field.label === 'Description',
   )!.value;
-  assert.equal(contractingDescription.split('• ').length - 1, 6);
-  assert.ok(contractingDescription.includes('technical architecture'));
+  assert.equal(contractingDescription.split('• ').length - 1, 13);
+  assert.ok(contractingDescription.startsWith('• HVAC monitoring:'));
+  assert.ok(contractingDescription.includes('Government payment validation:'));
   const contractingSkills = experience[0].fields
     .find((field) => field.label === 'Skills')!
     .value.split(', ');
