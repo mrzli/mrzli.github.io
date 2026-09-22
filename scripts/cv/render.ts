@@ -29,8 +29,8 @@ export function renderCv(document: CvDocument): string {
       : [DETAILED_PAGINATION]),
     String.raw`\begin{center}`,
     String.raw`{\LARGE\bfseries ${escapeLatex(profile.name)}}\par`,
-    String.raw`\vspace{2pt}{\large ${escapeLatex(profile.title)}}\par`,
-    String.raw`\vspace{5pt}${contact}\par`,
+    String.raw`\smallskip{\large ${escapeLatex(profile.title)}}\par`,
+    String.raw`\medskip ${contact}\par`,
     String.raw`\end{center}`,
     String.raw`\cvsection{Profile}`,
     ...document.summary.map(paragraph),
@@ -79,9 +79,9 @@ export function renderCv(document: CvDocument): string {
       : []),
     ...(document.skills.length
       ? [
-          String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{2pt}`,
+          String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{\smallskipamount}`,
           ...document.skills.flatMap((section) => [
-            String.raw`\par\addvspace{9pt}\textbf{${escapeLatex(section.title)}}\par\nopagebreak`,
+            String.raw`\par\addvspace{\medskipamount}\textbf{${escapeLatex(section.title)}}\par\nopagebreak`,
             ...section.groups.map(
               (group) =>
                 String.raw`\textit{${escapeLatex(group.title)}}: ${escapeLatex(group.skills.join(', '))}\par`,
@@ -143,7 +143,7 @@ function renderProject(
           String.raw`\begin{contribution}`,
           ...project.contributions.map(
             (text, index) =>
-              String.raw`${escapeLatex(text)}${index < project.contributions.length - 1 ? String.raw`\rule[-9pt]{0pt}{9pt}` : ''}\tabularnewline`,
+              String.raw`${escapeLatex(text)}${index < project.contributions.length - 1 ? String.raw`\rule[-\dimexpr\dp\strutbox+\smallskipamount\relax]{0pt}{\smallskipamount}` : ''}\tabularnewline`,
           ),
           String.raw`\end{contribution}`,
         ]

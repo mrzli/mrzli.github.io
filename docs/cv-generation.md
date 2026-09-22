@@ -1,7 +1,7 @@
 # CV generation
 
 Run `bun run build:cv` to generate the concise and detailed CVs from shared
-portfolio content. Both use the reviewed Palatino layout with navy rules and links.
+portfolio content. Both use a TeX Gyre Heros sans-serif template with navy rules and links.
 The command prints a fresh output directory such as
 `tmp/cv/build_20260915-213005`. The timestamp uses local time to the second.
 Sort the timestamped folder names to find the latest run. If a folder already
@@ -27,7 +27,7 @@ The `concise` command generates the short CV. Outputs are `cv-goran-mrzljak-shor
 TeX-only mode needs Bun. PDF builds also need `latexmk` and pdfLaTeX, with:
 
 - Standard `article`, T1 font encoding, and UTF-8 input support.
-- `mathpazo` (PSNFSS) and the Palatino font files.
+- `tgheros` and the TeX Gyre Heros font files.
 - `geometry`, `xcolor`, and `hyperref`.
 - `array` and `longtable` for contribution borders that continue across pages.
 - `glyphtounicode.tex` for text extraction.
@@ -96,9 +96,10 @@ the next project heading.
 - Compilation and publication: `scripts/cv/build.ts`.
 
 The concise CV starts its continuation page after the first three contracting
-projects. It uses 4-point paragraph spacing, with the approved 11-point Palatino
-body, margins, and section hierarchy. Detailed retains 5-point body paragraph spacing,
-with compact spacing for skill lists. Its headings reserve enough room for the
+projects. It uses 4-point paragraph spacing, with 11-point TeX Gyre Heros
+body, margins, and section hierarchy. Detailed uses default line spacing and standard
+LaTeX font-size commands and small, medium, and large spacing presets. Paragraphs
+remain unindented with a small gap. Its headings reserve enough room for the
 following text. Earlier employers follow contracting projects within Work experience,
 without a separate section or forced page break. Review pagination
 when content changes. Do not shrink text
