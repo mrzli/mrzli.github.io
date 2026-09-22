@@ -129,6 +129,15 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
 export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
   Partial<Record<ExperienceProjectKey, CvProject>>
 > = {
+  insurance: {
+    title: 'Insurance web platform',
+    technologies: ['React', 'TypeScript', 'Redux', 'RxJS', 'Material UI', 'Storybook', 'Jest'],
+    context: [
+      'I restructured substantial parts of a roughly 100,000-line frontend for a UK insurance platform, working as its sole frontend developer for most of my time on the project. Alongside new features, I resolved many of its TypeScript issues, rebuilt state management and API handling, and reorganized parts of the frontend architecture. I also improved build tooling, introduced automated tests, and built a component library with Material UI and Storybook.',
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
   'graveyard-management': {
     title: 'Graveyard management web application',
     technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'Jest'],
