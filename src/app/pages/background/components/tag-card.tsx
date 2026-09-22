@@ -7,7 +7,7 @@ export type TagCardProps = BackgroundGroup;
 
 export function TagCard({ title, tags }: TagCardProps): ReactNode {
   return (
-    <Card className='lg:col-span-2' padding='medium'>
+    <Card padding='medium'>
       <div className='flex flex-col gap-3'>
         <Typography variant='card-title-muted'>{title}</Typography>
         <TagList tags={tags} />

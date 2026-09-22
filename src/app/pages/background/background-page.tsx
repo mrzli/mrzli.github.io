@@ -15,8 +15,8 @@ import { TagCard } from './components';
 export function BackgroundPage(): ReactNode {
   return (
     <PageContainer title='Background'>
-      <div className='grid gap-4 lg:grid-cols-6'>
-        <Card className='md:col-span-3 lg:col-span-3' padding='large'>
+      <div className='grid gap-4 md:grid-cols-2'>
+        <Card padding='large'>
           <div className='flex flex-col gap-6'>
             <div className='flex flex-col gap-2'>
               <Typography variant='card-title-accent'>Formal Education</Typography>
@@ -48,7 +48,7 @@ export function BackgroundPage(): ReactNode {
           </div>
         </Card>
 
-        <Card className='md:col-span-3 lg:col-span-3' padding='large'>
+        <Card padding='large'>
           <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-2'>
               <Typography variant='card-title-accent'>Additional Learning</Typography>
@@ -80,9 +80,11 @@ export function BackgroundPage(): ReactNode {
           </div>
         </Card>
 
-        {TAG_CARD_DATA.map((data) => (
-          <TagCard key={data.title} {...data} />
-        ))}
+        <div className='grid gap-4 sm:grid-cols-2 md:col-span-2 xl:grid-cols-4'>
+          {TAG_CARD_DATA.map((data) => (
+            <TagCard key={data.title} {...data} />
+          ))}
+        </div>
       </div>
     </PageContainer>
   );

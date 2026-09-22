@@ -62,6 +62,7 @@ export const ADDITIONAL_LEARNING_ITEMS: readonly AdditionalLearningItem[] = [
 
 export const TAG_CARD_DATA: readonly BackgroundGroup[] = [
   { title: 'Location', tags: [PROFILE.location] },
+  { title: 'Nationality', tags: ['Croatian'] },
   { title: 'Languages', tags: ['Croatian - native', 'English - fluent'] },
   { title: "Driver's License", tags: ['AM', 'B', 'F', 'G'] },
 ];
