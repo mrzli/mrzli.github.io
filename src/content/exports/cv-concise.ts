@@ -129,6 +129,15 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
 export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
   Partial<Record<ExperienceProjectKey, CvProject>>
 > = {
+  eloqua: {
+    title: 'Oracle Eloqua to mobile messaging integration',
+    technologies: ['React', 'TypeScript', 'NestJS', 'MySQL', 'Prisma', 'Jest', 'OAuth', 'JWT'],
+    context: [
+      'I independently designed and built a full-stack integration enabling SMS and WhatsApp messaging within Oracle Eloqua marketing campaigns. I defined the architecture, clarified requirements with the client, and implemented the frontend, backend, database, and external API connections. The application coordinated asynchronous flows involving hundreds of thousands of messages. I resolved race conditions, implemented multiple authentication methods, and wrote extensive backend tests covering endpoints and complex message flows.',
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
   'mobile-fueling': {
     title: 'Mobile fueling management system',
     technologies: ['Node.js', 'Express', 'MongoDB', 'Angular', 'TypeScript', 'NgRx'],

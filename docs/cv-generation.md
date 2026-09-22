@@ -9,7 +9,7 @@ exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffi
 
 The short CV currently starts from exactly the same content and layout as the detailed
 CV, ready for later trimming. Only the short CV adds notes beneath Work experience
-and Skills linking to the detailed CV. Retained contracting projects are being shortened individually. Graveyard management, insurance, and mobile fueling each use a single paragraph combining the description and contribution, with selected technologies. The short CV includes only extensive and recent
+and Skills linking to the detailed CV. Retained contracting projects are being shortened individually. Graveyard management, insurance, mobile fueling, and Eloqua each use a single paragraph combining the description and contribution, with selected technologies. The short CV includes only extensive and recent
 skills, with category labels but no group subtitle. The detailed CV includes every employment and project from the
 website, with all technology tags, descriptions, and contributions, followed by
 education, skills, and personal information. The detailed CV retains the full website skills list. Their TeX and
