@@ -5,6 +5,7 @@ import { join } from 'node:path';
 
 import { createLinkedInSections, LINKEDIN_LIMITS } from '../../src/content/exports/linkedin';
 import type { LinkedInSection } from '../../src/content/exports/types';
+import { createCvDocument } from '../cv/document';
 import { exportLinkedIn, renderLinkedIn } from './export';
 
 verify();
@@ -14,11 +15,15 @@ function verify(): void {
   const markdown = renderLinkedIn(sections);
   assert.equal(markdown, renderLinkedIn(createLinkedInSections(2030)));
   const blocks = [...markdown.matchAll(/^```text\n([\s\S]*?)\n```$/gm)].map((match) => match[1]);
+  const values = [...markdown.matchAll(/^```text\n([\s\S]*?)\n```$|<code>(.*?)<\/code>/gm)].map(
+    (match) =>
+      match[1] ?? match[2].replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code))),
+  );
   assert.deepEqual(
-    blocks,
+    values,
     sections.flatMap((section) => section.fields.map((field) => field.value)),
   );
-  assert.ok(blocks.includes('Goran Mržljak'));
+  assert.ok(values.includes('Goran Mržljak'));
   assert.ok(
     blocks.some(
       (block) =>
@@ -37,6 +42,50 @@ function verify(): void {
     sections
       .find((section) => section.title === 'Education')
       ?.fields.some((field) => field.value.includes('Student Project')),
+  );
+
+  for (const section of sections) {
+    for (const field of section.fields) {
+      if (field.label === 'About' || field.label === 'Description') {
+        assert.ok(!field.value.includes('\n\n'), `Unprotected paragraph gap in ${section.title}`);
+      }
+    }
+  }
+
+  const shortCv = createCvDocument('concise', 2030);
+  const projects = sections.filter((section) => section.title.startsWith('Project — '));
+  assert.equal(projects.length, 6);
+  for (const [index, project] of projects.entries()) {
+    const source = shortCv.projects[index];
+    assert.equal(
+      project.fields.find((field) => field.label === 'Project name')?.value,
+      source.title,
+    );
+    assert.equal(
+      project.fields
+        .find((field) => field.label === 'Description')
+        ?.value.replaceAll('\n\u00a0\n', '\n\n'),
+      [...source.context, ...source.contributions].join('\n\n'),
+    );
+    assert.equal(
+      project.fields.find((field) => field.label === 'Associated with')?.value,
+      'Self-employed',
+    );
+    const skills = project.fields.filter((field) => field.label.startsWith('Skill '));
+    assert.ok(skills.length <= 5);
+    assert.ok(skills.every((field) => source.technologies.includes(field.value)));
+    assert.ok(!project.fields.some((field) => field.label.includes('date')));
+  }
+  const about = sections.find((section) => section.title === 'About')?.fields[0].value;
+  assert.equal(
+    about?.replaceAll('\n\u00a0\n', '\n\n'),
+    [
+      ...shortCv.summary,
+      shortCv.ai,
+      shortCv.profile.availability,
+      shortCv.contracts,
+      `Work and project details: ${shortCv.profile.website}`,
+    ].join('\n\n'),
   );
 
   for (const [field, limit] of Object.entries(LINKEDIN_LIMITS)) {
@@ -63,6 +112,27 @@ function verify(): void {
       { title: 'Fences', fields: [{ label: 'Text', value: 'Literal ``` inside text' }] },
     ]).includes('````text\nLiteral ``` inside text\n````'),
   );
+
+  assert.equal(about?.split('\n\u00a0\n').length, 8);
+  assert.ok(markdown.includes(`${about?.length} / 2600 characters`));
+  assert.ok(blocks.includes(about!));
+
+  const compact = renderLinkedIn([
+    {
+      title: 'Compact fields',
+      fields: [
+        { label: 'Company', value: 'A | B & <C>_*' },
+        { label: 'Location', value: 'Zagreb, Croatia' },
+        { label: 'Start date', value: 'January 2016' },
+      ],
+    },
+  ]);
+  assert.ok(
+    compact.includes(
+      '| Company | <code>A &#124; B &#38; &#60;C&#62;&#95;&#42;</code> | Location | <code>Zagreb, Croatia</code> |',
+    ),
+  );
+  assert.ok(compact.includes('| Start date | <code>January 2016</code> |  |  |'));
 
   const root = mkdtempSync(join(tmpdir(), 'portfolio-linkedin-'));
   const destination = join(root, 'public', 'linkedin.md');

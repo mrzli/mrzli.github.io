@@ -1,13 +1,20 @@
 # LinkedIn profile export
 
 Run `bun run build:linkedin` to generate `public/data/linkedin.md`. It requires Bun,
-not LaTeX. Open the Markdown preview, then copy the contents of each text block
-into its named LinkedIn field. Do not copy the headings, counts, notes, or fences.
-The command does not access LinkedIn or update an account.
+not LaTeX. Open the Markdown preview. Short fields appear in tables, two per row,
+so titles, companies, dates, locations, and skills take less vertical space.
+Copy each table value into its matching LinkedIn field. Longer fields retain
+code blocks with copy buttons. Do not copy the headings, counts, notes, or fences.
+About and all descriptions use code blocks with a non-breaking space (U+00A0)
+on each otherwise empty line. Use their copy buttons in VS Code's Markdown preview.
+These spaces count toward the character limit and are intended to preserve
+paragraph gaps in LinkedIn. This workaround still needs verification in the
+user's account. The command does not access LinkedIn or update an account.
 
 Edit `src/content/exports/linkedin.ts` for the headline, About composition, field
-selection, skill order, and project highlights. Highlights reference shared
-projects through their stable `contentKey`. Earlier employment reuses the summaries
+selection, project skills, and project highlights. About reuses the CV profile. Six
+Projects entries reuse the short CV titles and descriptions through their stable
+`contentKey`. The contracting description contains shorter highlights. Earlier employment reuses the summaries
 in `src/content/exports/experience.ts`. Export types live in
 `src/content/exports/types.ts`. Names, dates, contacts, education, and languages
 come from the shared source. Review tailored summaries when a fact changes.
@@ -16,10 +23,23 @@ The contracting entry stays a single ongoing role. Its dates intentionally retai
 the overlap with APIS IT. The student project appears in Education. Education dates
 are absent from the shared source and are not inferred. Skills are suggestions to
 match against LinkedIn's selector, not claims that every spelling exists there.
-The website retains the fuller skill classifications and project details.
+Each project suggests up to five of its technology tags as skills. Add these in
+the project's Skills field using LinkedIn's available names. They also appear in
+the profile Skills section. Technologies from earlier projects do not change the
+website's experience classifications.
+
+Create the Self-employed experience entry before adding the six projects. In each
+project's Associated with field, select that experience entry. Project dates are
+not recorded in the source and are not inferred from the overall employment dates.
+These are manual instructions, not account updates. LinkedIn's
+[Projects help](https://www.linkedin.com/help/linkedin/answer/a8064614), checked on
+2026-09-22, documents association and up to five skills per project. It does not
+state text limits for projects, so project names and descriptions show counts
+without claiming a verified limit. The website retains the full project history.
 
 Generation is deterministic for the same source and year. About totals use the
-current year minus the shared start years. Counts include spaces and newlines,
+current year minus the shared start years. Long fields display character counts. Short fields are still limit-checked without
+showing counts in the tables. Counts include spaces and newlines,
 using JavaScript UTF-16 length. This counts non-BMP characters such as emoji as
 two units, conservatively. Croatian characters such as ž count as one.
 
@@ -67,5 +87,5 @@ source does not specify one.
 
 Run `bun scripts/linkedin/verify.ts` for deterministic output, field boundaries,
 Unicode, overflow reporting, preservation of the previous file on validation
-failure, and exact Markdown code-block contents. Application build and lint also
+failure, and exact table values and code-block contents. Application build and lint also
 cover the generator. Review the resulting prose before copying it into LinkedIn.
