@@ -39,7 +39,10 @@ export const LongPage: Story = {
   render: (args) => (
     <div className='min-h-[200vh]'>
       <Nav {...args} />
-      <p className='py-8'>Scroll to check sticky navigation. Resize to inspect the mobile menu.</p>
+      <p className='py-8'>
+        On mobile, scroll down to hide navigation and up to show it. Open the menu to keep
+        navigation visible. On desktop, navigation stays visible.
+      </p>
       <a href='#page-end' className='text-cyan-700 underline dark:text-cyan-300'>
         Jump to the final section
       </a>

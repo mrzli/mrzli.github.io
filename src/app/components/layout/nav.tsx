@@ -2,6 +2,9 @@ import { NavLink, ThemeToggle } from '@components';
 import { Icon } from '@iconify/react';
 import { type ReactNode, useId, useRef, useState } from 'react';
 
+import { cn } from '@/app/util';
+import { useHideOnScroll } from '@/hooks';
+
 export interface NavItem {
   readonly to: string;
   readonly label: string;
@@ -13,6 +16,7 @@ export interface NavProps {
 
 export function Nav({ items }: NavProps): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
+  const isHidden = useHideOnScroll(isOpen);
   const menuId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -28,7 +32,10 @@ export function Nav({ items }: NavProps): ReactNode {
   return (
     <nav
       aria-label='Main navigation'
-      className='sticky top-0 z-20 border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950'
+      className={cn(
+        'sticky top-0 z-20 border-b border-slate-200 bg-slate-50 transition-transform duration-200 has-focus-visible:translate-y-0 motion-reduce:transition-none md:translate-y-0 dark:border-slate-800 dark:bg-slate-950',
+        isHidden && '-translate-y-full',
+      )}
       onKeyDown={(event) => {
         if (event.key === 'Escape' && isOpen) {
           event.preventDefault();
