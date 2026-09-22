@@ -10,8 +10,8 @@ exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffi
 The concise CV contains five contracting projects and the complete professional
 employment timeline since 2008, with education, on two A4 pages. Its TeX and PDF
 are available in `public/data/`. The detailed CV includes every employment and project from the website, with
-all technology tags, descriptions, and contributions, followed by education,
-languages, and selected skills. Its TeX and PDF are also in
+all technology tags, descriptions, and contributions, followed by education
+and selected skills. Its TeX and PDF are also in
 `public/data/`. Page counts follow the content rather than a hard limit.
 
 ## Commands
@@ -113,6 +113,10 @@ Edit source content and regenerate. Generated TeX and PDFs are not authoritative
 Experience totals use the current year minus 2008 and 2016. The same content and
 year produce identical TeX. PDF metadata may include the compilation time.
 Review separately authored summaries when the facts they describe change.
+
+Education currently shows the institution and the first qualification paragraph only.
+Thesis details, thesis links, and languages are omitted from the CV. Their source
+data remains available for later placement.
 
 ## Verification
 

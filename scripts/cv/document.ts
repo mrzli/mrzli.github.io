@@ -48,15 +48,12 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
             projects: detailedProjects(entry.projects),
           })),
     education: EDUCATION,
-    educationHighlights:
-      variant === 'concise'
-        ? EDUCATION_HIGHLIGHTS.slice(0, 1)
-        : [EDUCATION_HIGHLIGHTS[0], EDUCATION_HIGHLIGHTS[3]],
+    educationHighlights: EDUCATION_HIGHLIGHTS.slice(0, 1),
     professionalYears,
     contractingYears,
     skills: variant === 'detailed' ? DETAILED_CV.skills : [],
-    languages: variant === 'detailed' ? DETAILED_CV.languages : [],
-    thesisLinks: variant === 'detailed' ? DETAILED_CV.thesisLinks : [],
+    languages: [],
+    thesisLinks: [],
   };
 }
 
