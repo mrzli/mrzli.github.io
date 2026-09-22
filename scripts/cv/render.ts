@@ -50,7 +50,11 @@ export function renderCv(document: CvDocument): string {
     ),
     String.raw`\end{tabular}\par`,
     String.raw`\cvsection{Work experience}`,
-    employer(contracting, 'Independent contractor', profile.title),
+    employer(
+      contracting,
+      document.variant === 'detailed' ? contracting.title : 'Independent contractor',
+      document.variant === 'detailed' ? contracting.role : profile.title,
+    ),
     ...document.projects.map((project) => renderProject(project, contracting, document.variant)),
     ...document.earlierExperience.flatMap((entry) => [
       String.raw`\employerseparator`,

@@ -9,9 +9,9 @@ exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffi
 
 The concise CV contains five contracting projects and the complete professional
 employment timeline since 2008, with education, on two A4 pages. Its TeX and PDF
-are available in `public/data/`. The detailed CV currently spans seven pages,
-covering thirteen contracting projects, all earlier employers, the student
-project, education, languages, and selected skills. Its TeX and PDF are also in
+are available in `public/data/`. The detailed CV includes every employment and project from the website, with
+all technology tags, descriptions, and contributions, followed by education,
+languages, and selected skills. Its TeX and PDF are also in
 `public/data/`. Page counts follow the content rather than a hard limit.
 
 ## Commands
@@ -80,17 +80,17 @@ continue across pages between paragraphs without repeating the label. The short 
 retains contribution bullets.
 Contribution blocks sit close to their descriptions, with a larger gap before
 the next project heading.
-The profile's three closing points form a compact inset block with a thin gray
+The profile's work preferences and contract details form a compact inset block with a thin gray
 left border, without a label or bullet markers.
 Section rules sit close to their headings, with extra space before headings
 to distinguish successive sections, employers, and projects.
 
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
-- Detailed wording and project selection: `src/content/exports/cv-detailed.ts`.
-  Fields not overridden reuse website wording. This file also selects the profile,
-  skills, languages, and thesis links from shared content.
-- Employer titles and summaries: `src/content/exports/experience.ts`, shared with LinkedIn.
+- Detailed work experience: `src/content/experience.ts`, shared with the website in full.
+- Detailed profile, skills, languages, and thesis links: `src/content/exports/cv-detailed.ts`.
+  Its earlier project selections and overrides remain available but are not used.
+- Short CV employer titles and summaries: `src/content/exports/experience.ts`, shared with LinkedIn.
 - Export types and CV variants: `src/content/exports/types.ts`.
 - Stable record keys: `src/content/experience-keys.ts` and each record's `contentKey`.
 - Variant selection and year calculations: `scripts/cv/document.ts`.

@@ -33,22 +33,24 @@ These summary years do not replace the more precise employment dates.
 The website facts take precedence over the older CV. Export-specific content and
 types live in `src/content/exports/`:
 
-| File             | Content                                                                                 |
-| ---------------- | --------------------------------------------------------------------------------------- |
-| `cv-concise.ts`  | Concise CV profile, tools, project selection, and project wording.                      |
-| `cv-detailed.ts` | Detailed CV profile, skills, languages, thesis links, project selection, and overrides. |
-| `linkedin.ts`    | LinkedIn profile composition, project highlights, field limits, and skill order.        |
-| `experience.ts`  | Employer display titles and summaries shared by CV and LinkedIn exports.                |
-| `types.ts`       | Export-specific content, document, field, and build types, plus CV variants.            |
+| File             | Content                                                                                      |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| `cv-concise.ts`  | Concise CV profile, tools, project selection, and project wording.                           |
+| `cv-detailed.ts` | Detailed CV profile, skills, languages, thesis links, and retained unused project overrides. |
+| `linkedin.ts`    | LinkedIn profile composition, project highlights, field limits, and skill order.             |
+| `experience.ts`  | Employer display titles and summaries shared by CV and LinkedIn exports.                     |
+| `types.ts`       | Export-specific content, document, field, and build types, plus CV variants.                 |
 
 Experience entries and their projects have a stable `contentKey`. Export constants
 use these keys rather than display titles or array positions. Keep keys stable
 when editing titles. The separate optional project `id` remains a public page
 anchor and does not change when export content changes.
 
-The [CV generator](./cv-generation.md) selects projects through the concise and
-detailed project maps. Detailed fields omitted from an override reuse website
-wording. Both variants follow the shared experience order. The
+The [CV generator](./cv-generation.md) selects short CV projects through the concise
+project map. The detailed CV uses every employment and project from `experience.ts`,
+including all titles, roles, tags, descriptions, and contributions. Its earlier
+project overrides remain in the codebase but are not used. Both variants follow
+the shared experience order. The
 [LinkedIn generator](./linkedin-generation.md) reads its project highlights and
 shared export employer summaries from the exports directory.
 

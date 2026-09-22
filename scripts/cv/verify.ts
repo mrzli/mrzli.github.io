@@ -11,9 +11,10 @@ import {
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
+import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
 import { buildCv } from './build';
 import { createCvDocument } from './document';
-import { formatDate, renderCv } from './render';
+import { escapeLatex, formatDate, renderCv } from './render';
 
 verify();
 
@@ -36,7 +37,33 @@ function verify(): void {
   assert.ok(extracted.includes('22 years of professional experience'));
   assert.ok(extracted.includes('14 years of contract work'));
   const concise = renderCv(document);
-  const detailed = renderCv(createCvDocument('detailed', 2030));
+  const detailedDocument = createCvDocument('detailed', 2030);
+  const detailed = renderCv(detailedDocument);
+  const employments = [
+    detailedDocument.contracting,
+    ...detailedDocument.earlierExperience.map((entry) => entry.employment),
+  ];
+  assert.deepEqual(employments, EXPERIENCE_SECTIONS);
+  const projects = [
+    detailedDocument.projects,
+    ...detailedDocument.earlierExperience.map((entry) => entry.projects),
+  ];
+  EXPERIENCE_SECTIONS.forEach((employment, employmentIndex) => {
+    assert.equal(projects[employmentIndex].length, employment.projects.length);
+    for (const value of [employment.title, employment.role, employment.location]) {
+      assert.ok(detailed.includes(escapeLatex(value)), `Missing employment content: ${value}`);
+    }
+    employment.projects.forEach((project, projectIndex) => {
+      const exported = projects[employmentIndex][projectIndex];
+      assert.equal(exported.title, project.title);
+      assert.deepEqual(exported.technologies, project.tags);
+      assert.deepEqual(exported.context, project.text);
+      assert.deepEqual(exported.contributions, project.roleText);
+      for (const value of [project.title, ...project.tags, ...project.text, ...project.roleText]) {
+        assert.ok(detailed.includes(escapeLatex(value)), `Missing project content: ${value}`);
+      }
+    });
+  });
   assert.ok(!concise.includes('load testing exposed race conditions'));
   assert.ok(detailed.includes('load testing exposed race conditions'));
 

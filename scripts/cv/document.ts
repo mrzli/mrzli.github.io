@@ -1,7 +1,7 @@
 import { EDUCATION, EDUCATION_HIGHLIGHTS } from '../../src/content/background';
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
 import { CONCISE_CV, CONCISE_CV_PROJECTS } from '../../src/content/exports/cv-concise';
-import { DETAILED_CV, DETAILED_CV_PROJECTS } from '../../src/content/exports/cv-detailed';
+import { DETAILED_CV } from '../../src/content/exports/cv-detailed';
 import { EXPORT_EXPERIENCE_SUMMARIES } from '../../src/content/exports/experience';
 import type { CvDocument, CvVariant, CvProject } from '../../src/content/exports/types';
 import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
@@ -43,7 +43,7 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
           })
         : EXPERIENCE_SECTIONS.slice(1).map((entry) => ({
             employment: entry,
-            title: EXPORT_EXPERIENCE_SUMMARIES[entry.contentKey]?.title ?? entry.title,
+            title: entry.title,
             text: [],
             projects: detailedProjects(entry.projects),
           })),
@@ -61,18 +61,11 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
 }
 
 function detailedProjects(projects: readonly ExperienceProject[]): readonly CvProject[] {
-  return projects.flatMap((project) => {
-    const detailed = DETAILED_CV_PROJECTS[project.contentKey];
-    return detailed
-      ? [
-          {
-            title: detailed.title ?? project.title,
-            technologies: detailed.technologies ?? project.tags,
-            context: detailed.context ?? project.text,
-            contributions: detailed.contributions ?? project.roleText,
-            startContinuationPage: false,
-          },
-        ]
-      : [];
-  });
+  return projects.map((project) => ({
+    title: project.title,
+    technologies: project.tags,
+    context: project.text,
+    contributions: project.roleText,
+    startContinuationPage: false,
+  }));
 }
