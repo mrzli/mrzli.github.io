@@ -129,6 +129,15 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
 export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
   Partial<Record<ExperienceProjectKey, CvProject>>
 > = {
+  'mobile-fueling': {
+    title: 'Mobile fueling management system',
+    technologies: ['Node.js', 'Express', 'MongoDB', 'Angular', 'TypeScript', 'NgRx'],
+    context: [
+      'I worked across the backend and Angular administration app of a production system supporting a leading mobile fueling company in California. I was responsible for backend subsystems, coordinated changes across the application, and wrote and ran migration scripts against the production MongoDB database without issues. I also improved testing practices and interviewed, onboarded, and mentored developers.',
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
   insurance: {
     title: 'Insurance web platform',
     technologies: ['React', 'TypeScript', 'Redux', 'RxJS', 'Material UI', 'Storybook', 'Jest'],
