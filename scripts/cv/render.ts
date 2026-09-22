@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 
-import type { CvDocument, CvProject } from '../../src/content/exports/types';
+import type { CvDocument, CvProject, CvVariant } from '../../src/content/exports/types';
 import type { DateRangeBound, ExperienceEntry } from '../../src/content/types';
 
 export function renderCv(document: CvDocument): string {
@@ -49,12 +49,14 @@ export function renderCv(document: CvDocument): string {
     String.raw`\end{tabular}\par`,
     String.raw`\cvsection{Work experience}`,
     employer(contracting, 'Independent contractor', profile.title),
-    ...document.projects.map((project) => renderProject(project, contracting)),
+    ...document.projects.map((project) => renderProject(project, contracting, document.variant)),
     ...document.earlierExperience.flatMap((entry) => [
       String.raw`\employerseparator`,
       employer(entry.employment, entry.title, entry.employment.role),
       ...entry.text.map(paragraph),
-      ...entry.projects.map((project) => renderProject(project, entry.employment)),
+      ...entry.projects.map((project) =>
+        renderProject(project, entry.employment, document.variant),
+      ),
     ]),
     String.raw`\cvsection{Education}`,
     String.raw`\textbf{${escapeLatex(document.education.institution)}}\par`,
@@ -122,7 +124,11 @@ function dateRange(entry: ExperienceEntry): string {
   return `${escapeLatex(formatDate(entry.from))} -- ${escapeLatex(formatDate(entry.to))}`;
 }
 
-function renderProject(project: CvProject, contracting: ExperienceEntry): string {
+function renderProject(
+  project: CvProject,
+  contracting: ExperienceEntry,
+  variant: CvVariant,
+): string {
   return [
     ...(project.startContinuationPage
       ? [
@@ -132,7 +138,16 @@ function renderProject(project: CvProject, contracting: ExperienceEntry): string
       : []),
     String.raw`\project{${escapeLatex(project.title)}}{${escapeLatex(project.technologies.join(' · '))}}`,
     ...project.context.map(paragraph),
-    bulletList(project.contributions),
+    ...(variant === 'detailed' && project.contributions.length > 0
+      ? [
+          String.raw`\begin{contribution}`,
+          ...project.contributions.map(
+            (text, index) =>
+              String.raw`${escapeLatex(text)}${index < project.contributions.length - 1 ? String.raw`\rule[-9pt]{0pt}{9pt}` : ''}\tabularnewline`,
+          ),
+          String.raw`\end{contribution}`,
+        ]
+      : [bulletList(project.contributions)]),
   ].join('\n');
 }
 
@@ -189,4 +204,6 @@ const DETAILED_PAGINATION = String.raw`
 \renewcommand{\employerseparator}{\cvneedspace{11\baselineskip}\employerseparatororiginal}
 \let\projectoriginal\project
 \renewcommand{\project}[2]{\cvneedspace{7\baselineskip}\projectoriginal{#1}{#2}}
+\let\contributionoriginal\contribution
+\renewcommand{\contribution}{\cvneedspace{5\baselineskip}\contributionoriginal}
 `;

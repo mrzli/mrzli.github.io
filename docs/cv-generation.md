@@ -29,6 +29,7 @@ TeX-only mode needs Bun. PDF builds also need `latexmk` and pdfLaTeX, with:
 - Standard `article`, T1 font encoding, and UTF-8 input support.
 - `mathpazo` (PSNFSS) and the Palatino font files.
 - `geometry`, `xcolor`, and `hyperref`.
+- `array` and `longtable` for contribution borders that continue across pages.
 - `glyphtounicode.tex` for text extraction.
 
 Exported TeX is self-contained apart from those standard dependencies. Copy it
@@ -73,6 +74,12 @@ Roles and project technologies use upright text. Dates and locations stay
 right-aligned in smaller text, and technology lists use smaller, left-aligned text.
 Technology names use a muted gray and centered dot separators.
 Thin light-gray rules separate employers. Projects within an employer use whitespace.
+Detailed project contributions use an indented block with a small uppercase
+"MY CONTRIBUTION" label and a gray border along the full left edge. Blocks can
+continue across pages between paragraphs without repeating the label. The short CV
+retains contribution bullets.
+Contribution blocks sit close to their descriptions, with a larger gap before
+the next project heading.
 
 - Professional facts: [shared content](./content.md).
 - Concise wording and project selection: `src/content/exports/cv-concise.ts`.
