@@ -1,6 +1,6 @@
 # LinkedIn profile copy
 
-Generated from shared portfolio content. Short fields are grouped in tables. Copy each value into its matching LinkedIn field. For longer text, use the code block copy button in the Markdown preview. About and all descriptions contain a non-breaking space on each blank line to try to preserve paragraph gaps when pasted into LinkedIn. Labels, counts, and notes are not profile text. Skills and languages are individual entries, not a single description.
+Generated from shared portfolio content. Short fields are grouped in tables. Copy each value into its matching LinkedIn field. For longer text, use the code block copy button in the Markdown preview. About and all descriptions contain a non-breaking space on each blank line to try to preserve paragraph gaps when pasted into LinkedIn. Labels, counts, and notes are not profile text.
 
 Counts include spaces and line breaks and use UTF-16 code units (conservative for emoji). Limits are local working limits, not verification in your account. Unchecked fields show counts only. See [generation notes and limit sources](../../docs/linkedin-generation.md).
 
@@ -42,182 +42,42 @@ B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work po
 
 ## Experience — Freelance Software Developer / Self-Employed
 
-The project descriptions below reproduce the short CV. Add them as separate Projects associated with this Self-employed entry because they exceed one employment description when combined.
-
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
-| Title | <code>Primarily Full-Stack Web Developer</code> | Company | <code>Self-employed</code> |
+| Title | <code>Senior software developer</code> | Company | <code>Self-employed</code> |
 | Start date | <code>January 2016</code> | End date | <code>Present</code> |
-| Location / workplace | <code>Remote</code> |  |  |
-
-## Project — HVAC monitoring and control web application
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>HVAC monitoring and control web application</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-61 characters. Limit not checked.
-
-```text
-React, TypeScript, MobX, Tailwind CSS, FIN Framework, Copilot
-```
+| Location / workplace | <code>Remote</code> | Website URL | <code>https://mrzli.github.io/experience#contracting</code> |
 
 ### Description
 
-304 / 2000 characters (working limit).
+1744 / 2000 characters (working limit).
 
 ```text
-I worked in an established team developing a web application for a large multinational to monitor and control HVAC equipment across buildings and sites. Using the platform's specialized technologies and tools, I built sections of the frontend, components, and controls to match UI designs and fixed bugs.
-```
-
-## Project — Warehouse robotics web application
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Warehouse robotics web application</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-25 characters. Limit not checked.
-
-```text
-Angular, TypeScript, RxJS
-```
-
-### Description
-
-695 / 2000 characters (working limit).
-
-```text
-I joined an established warehouse automation project to resolve frontend issues and improve maintainability and developer experience. I independently migrated all four frontend variants from Angular 8 to 18. Each had more than 100,000 lines of code, although much of it was similar across variants. The migrations required resolving over a thousand errors per variant, adapting code to major dependency changes, and refactoring. I completed them without observed regressions, removing a major blocker for a security audit. Beyond the migration, my work included implementing substantial frontend features and subsystems based on client requirements, along with ongoing maintenance and bug fixes.
-```
-
-## Project — Oracle Eloqua to mobile messaging integration
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Oracle Eloqua to mobile messaging integration</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-58 characters. Limit not checked.
-
-```text
-React, TypeScript, NestJS, MySQL, Prisma, Jest, OAuth, JWT
-```
-
-### Description
-
-508 / 2000 characters (working limit).
-
-```text
-I independently built an integration for sending SMS and WhatsApp messages within Oracle Eloqua marketing campaigns. I clarified requirements with the client, defined the architecture, and implemented the frontend, backend, database, and external API connections. The application coordinated asynchronous flows involving hundreds of thousands of messages. I resolved race conditions, implemented multiple authentication methods, and wrote extensive backend tests covering endpoints and complex message flows.
-```
-
-## Project — Mobile fueling management system
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Mobile fueling management system</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-52 characters. Limit not checked.
-
-```text
-Node.js, Express, MongoDB, Angular, TypeScript, NgRx
-```
-
-### Description
-
-389 / 2000 characters (working limit).
-
-```text
-I worked on the backend and Angular administration app of a production system for a leading mobile fueling company in California. I was responsible for backend subsystems and coordinated changes across the application. I wrote and ran migration scripts against the production MongoDB database without issues, improved testing practices, and interviewed, onboarded, and mentored developers.
-```
-
-## Project — Insurance web platform
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Insurance web platform</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-60 characters. Limit not checked.
-
-```text
-React, TypeScript, Redux, RxJS, Material UI, Storybook, Jest
-```
-
-### Description
-
-465 / 2000 characters (working limit).
-
-```text
-I restructured substantial parts of a roughly 100,000-line frontend for a UK insurance platform. For most of my time on the project, I was its sole frontend developer. While developing new features, I resolved many of the existing TypeScript issues, rebuilt state management and API handling, and reorganized parts of the frontend architecture. I also improved build tooling, introduced automated tests, and built a component library with Material UI and Storybook.
-```
-
-## Project — Graveyard management web application
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Graveyard management web application</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-54 characters. Limit not checked.
-
-```text
-Vue, TypeScript, Kotlin, Spring Boot, PostgreSQL, Jest
-```
-
-### Description
-
-274 / 2000 characters (working limit).
-
-```text
-I built nearly the entire frontend and backend of a multi-tenant graveyard management application, including interactive maps, PDF reports, and database migrations. I wrote frontend unit tests and backend integration tests covering much of the application across all layers.
-```
-
-## Project — Other projects
-
-Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Project name | <code>Other projects</code> | Associated with | <code>Self-employed</code> |
-
-### Technologies
-
-81 characters. Limit not checked.
-
-```text
-TypeScript, React, React Native, Angular, Java, Spring Boot, PostgreSQL, C#, Ruby
-```
-
-### Description
-
-673 / 2000 characters (working limit).
-
-```text
-I developed software for electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment. My work ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.
+I deliver frontend, backend, and full-stack work for clients, independently or within their teams. My responsibilities include technical architecture, requirements clarification, implementation, and mentoring.
  
-I independently built a configurable Java component for government payment validation from a specification of about 180 pages, with extensive automated tests, in less than two weeks. I added all 100 QA scenarios to the regression suite and fixed the reported failures. No further issues were reported.
+• Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.
+ 
+• Independently migrated all four similar warehouse robotics frontend variants from Angular 8 to 18, each with more than 100,000 lines of code. Resolved over a thousand errors per variant without observed regressions, removing a major security-audit blocker.
+ 
+• Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.
+ 
+• Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.
+ 
+• Restructured substantial parts of a roughly 100,000-line React frontend for a UK insurance platform, resolving many existing TypeScript issues and rebuilding state management and API handling.
+ 
+• Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.
+ 
+Further work includes government services, accounting, parking payments, telecom reporting, e-learning, and recruitment.
+ 
+More projects and technical detail: https://mrzli.github.io/experience#contracting
+```
+
+### Skills
+
+144 characters. Limit not checked.
+
+```text
+TypeScript, JavaScript, React, Angular, Node.js, NestJS, Vue, React Native, Java, Kotlin, Spring Boot, PostgreSQL, MySQL, MongoDB, Jest, Copilot
 ```
 
 ## Experience — Earlier software development roles
@@ -228,22 +88,24 @@ This is the combined earlier-roles entry from the short CV, not a single employe
 | --- | --- | --- | --- |
 | Title | <code>C# Software Developer</code> | Start date | <code>January 2007</code> |
 | End date | <code>May 2016</code> | Location / workplace | <code>Croatia and remote</code> |
-| Project name | <code>Web and desktop applications</code> |  |  |
+| Website URL | <code>https://mrzli.github.io/experience#apis-it</code> |  |  |
 
-### Technologies
+### Description
+
+489 / 2000 characters (working limit).
+
+```text
+I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.
+ 
+More work and technical detail: https://mrzli.github.io/experience#apis-it
+```
+
+### Skills
 
 47 characters. Limit not checked.
 
 ```text
 C#, .NET, ASP.NET, WPF, Windows Forms, C++, SQL
-```
-
-### Description
-
-412 / 2000 characters (working limit).
-
-```text
-I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.
 ```
 
 ## Education
@@ -273,72 +135,6 @@ Five-year degree program, totaling 284 ECTS credits.
 | Field | Value | Field | Value |
 | --- | --- | --- | --- |
 | Email | <code>goran.mrzljak@gmail.com</code> | Phone | <code>+385 91 224 3145</code> |
-
-## Website links — Freelance Software Developer / Self-Employed
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#contracting</code> | HVAC monitoring and control web application URL | <code>https://mrzli.github.io/experience#hvac</code> |
-| Warehouse robotics web application URL | <code>https://mrzli.github.io/experience#warehouse-robotics</code> | Oracle Eloqua to mobile messaging integration URL | <code>https://mrzli.github.io/experience#oracle-eloqua-messaging</code> |
-| Electricity consumption mobile application URL | <code>https://mrzli.github.io/experience#electricity-consumption</code> | Mobile fueling management system URL | <code>https://mrzli.github.io/experience#mobile-fueling</code> |
-| Insurance web platform URL | <code>https://mrzli.github.io/experience#insurance</code> | Accounting web application URL | <code>https://mrzli.github.io/experience#accounting</code> |
-| Graveyard management web application URL | <code>https://mrzli.github.io/experience#graveyard-management</code> | Parking mobile application URL | <code>https://mrzli.github.io/experience#parking</code> |
-| NIAS single sign-on integration URL | <code>https://mrzli.github.io/experience#nias</code> | Government payments validation component URL | <code>https://mrzli.github.io/experience#government-payments</code> |
-| EU roaming usage and traffic tracking web application URL | <code>https://mrzli.github.io/experience#eu-roaming</code> | E-learning web application URL | <code>https://mrzli.github.io/experience#e-learning</code> |
-| Other projects URL | <code>https://mrzli.github.io/experience#other-contracts</code> |  |  |
-
-## Website links — APIS IT
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#apis-it</code> | Croatia's Ministry of Finance e-Tax web application URL | <code>https://mrzli.github.io/experience#e-tax</code> |
-| Location and building permits web application URL | <code>https://mrzli.github.io/experience#building-permits</code> | Other projects URL | <code>https://mrzli.github.io/experience#other-apis</code> |
-
-## Website links — Gemmeus d.o.o.
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#gemmeus</code> | Excel component for spreadsheet data manipulation URL | <code>https://mrzli.github.io/experience#spreadsheet</code> |
-
-## Website links — INETEC - Institute for Nuclear Technology d.o.o.
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#inetec</code> | Steam generator damage analysis application URL | <code>https://mrzli.github.io/experience#damage-analysis</code> |
-| Steam generator walker robot command and monitoring application URL | <code>https://mrzli.github.io/experience#inspection-robot</code> |  |  |
-
-## Website links — Ultra d.o.o.
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#ultra</code> | Fuel dispenser configuration and control web application URL | <code>https://mrzli.github.io/experience#fuel-dispenser-web</code> |
-| Fuel dispenser configuration and control desktop application URL | <code>https://mrzli.github.io/experience#fuel-dispenser-desktop</code> | Various projects URL | <code>https://mrzli.github.io/experience#other-ultra</code> |
-
-## Website links — Ekobit d.o.o.
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#ekobit</code> | Various projects URL | <code>https://mrzli.github.io/experience#financial-web</code> |
-
-## Website links — Visage Technologies (Student Project)
-
-Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
-
-| Field | Value | Field | Value |
-| --- | --- | --- | --- |
-| Employment URL | <code>https://mrzli.github.io/experience#visage</code> | Body animation exporter URL | <code>https://mrzli.github.io/experience#body-animation</code> |
 
 ## Links
 

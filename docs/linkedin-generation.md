@@ -11,32 +11,26 @@ These spaces count toward the character limit and are intended to preserve
 paragraph gaps in LinkedIn. This workaround still needs verification in the
 user's account. The command does not access LinkedIn or update an account.
 
-The generator passes the current short CV document from
-`scripts/cv/document.ts` to `createLinkedInSections`. LinkedIn no longer uses the
-old employer summaries or separate project highlights. Changes to short CV
-content therefore carry through to this export.
+The generator uses the current short CV document from `scripts/cv/document.ts`
+for the introduction, About, dates, grouped earlier experience, education, and
+personal and contact information. The contracting description uses the restored
+LinkedIn summary and six brief highlights in `src/content/exports/linkedin.ts`.
 
-The export retains the short CV's profile, seven contracting project entries
-(including Other projects), and one combined earlier-roles entry. Project and
-earlier-role descriptions retain the CV wording. The combined earlier role is
-not presented as a single real company. The file supplies no invented company
-name for it. Contracting projects remain separate LinkedIn Projects because
-their combined descriptions exceed one employment field.
+The export contains two experience entries: Senior software developer for
+independent contracting, and C# Software Developer for the combined earlier
+roles. The earlier entry is not presented as one real employer, so no company
+name is supplied. Each entry includes a direct website URL, also placed at the
+end of its description. Contracting links to `experience#contracting`; earlier
+work links to `experience#apis-it`, the first employment in that group.
 
-Technology lists retain all CV tags. Select up to five in each project's skill
-selector. Standalone Skills sections and About skill fields are omitted. Education uses only the CV qualification
-and its accompanying description. Contact details, links, and personal
-information also come from the CV document.
+Each experience includes a selected skills list to add individually to that
+experience in LinkedIn. Contracting skills are curated from the short CV project
+tags. Earlier-role skills use the short CV group’s technology list. These lists
+are separate from the description and are not capped at five skills.
 
-Project descriptions have a 2,000-character working limit, supported by
-[this project-section guide](https://resumeworded.com/how-to-add-projects-to-linkedin-key-advice).
-[LinkedIn's Projects help](https://www.linkedin.com/help/linkedin/answer/a8064614)
-documents project association and up to five skills per project, but does not
-state the numeric description limit. Dates for individual contracting projects
-are not in the CV and are omitted. The Website links sections list direct URLs for every website employment and
-project, including the underlying entries combined in the short CV. They are
-reference links and do not change the short CV descriptions. Nothing is posted
-to LinkedIn automatically.
+Separate Projects, project reference lists, and standalone Skills sections are
+omitted. Education, personal information, contact details, and general links
+remain available. Nothing is posted to LinkedIn automatically.
 
 Generation is deterministic for the same source and year. About totals use the
 current year minus the shared start years. Long fields display character counts. Short fields are still limit-checked without
@@ -60,7 +54,6 @@ Fields without a supported numeric limit show counts only, not a pass claim.
 | Headline                |           220 |
 | About                   |         2,600 |
 | Experience description  |         2,000 |
-| Project description     |         2,000 |
 | Position title, company |      100 each |
 | School, degree          |      100 each |
 | Education description   |         1,000 |

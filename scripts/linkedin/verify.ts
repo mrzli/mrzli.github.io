@@ -43,7 +43,11 @@ function verify(): void {
   assert.equal(experience[1].title, `Experience — ${earlier.title}`);
   assert.equal(
     experience[1].fields.find((field) => field.label === 'Description')?.value,
-    [...earlier.projects[0].context, ...earlier.projects[0].contributions].join('\n\u00a0\n'),
+    [
+      ...earlier.projects[0].context,
+      ...earlier.projects[0].contributions,
+      `More work and technical detail: ${shortCv.profile.website}experience#apis-it`,
+    ].join('\n\u00a0\n'),
   );
   assert.ok(!experience[1].fields.some((field) => field.label === 'Company'));
   assert.equal(
@@ -61,30 +65,39 @@ function verify(): void {
     }
   }
 
-  const projects = sections.filter((section) => section.title.startsWith('Project — '));
-  assert.equal(projects.length, shortCv.projects.length);
-  for (const [index, project] of projects.entries()) {
-    const source = shortCv.projects[index];
+  assert.ok(!sections.some((section) => section.title.startsWith('Project — ')));
+  assert.ok(!sections.some((section) => section.title.startsWith('Website links — ')));
+  assert.equal(
+    experience[0].fields.find((field) => field.label === 'Title')?.value,
+    'Senior software developer',
+  );
+  for (const [index, anchor] of ['contracting', 'apis-it'].entries()) {
+    const url = `${shortCv.profile.website}experience#${anchor}`;
     assert.equal(
-      project.fields.find((field) => field.label === 'Project name')?.value,
-      source.title,
+      experience[index].fields.find((field) => field.label === 'Website URL')?.value,
+      url,
     );
-    assert.equal(
-      project.fields
-        .find((field) => field.label === 'Description')
-        ?.value.replaceAll('\n\u00a0\n', '\n\n'),
-      [...source.context, ...source.contributions].join('\n\n'),
+    assert.ok(
+      experience[index].fields.find((field) => field.label === 'Description')?.value.endsWith(url),
     );
-    assert.equal(
-      project.fields.find((field) => field.label === 'Associated with')?.value,
-      'Self-employed',
-    );
-    assert.equal(
-      project.fields.find((field) => field.label === 'Technologies')?.value,
-      source.technologies.join(', '),
-    );
-    assert.ok(!project.fields.some((field) => field.label.includes('date')));
   }
+  const contractingDescription = experience[0].fields.find(
+    (field) => field.label === 'Description',
+  )!.value;
+  assert.equal(contractingDescription.split('• ').length - 1, 6);
+  assert.ok(contractingDescription.includes('technical architecture'));
+  const contractingSkills = experience[0].fields
+    .find((field) => field.label === 'Skills')!
+    .value.split(', ');
+  const sourceSkills = new Set(shortCv.projects.flatMap((project) => project.technologies));
+  assert.ok(contractingSkills.length > 5 && contractingSkills.length < sourceSkills.size);
+  assert.equal(new Set(contractingSkills).size, contractingSkills.length);
+  assert.ok(contractingSkills.includes('JavaScript'));
+  assert.ok(contractingSkills.every((skill) => skill === 'JavaScript' || sourceSkills.has(skill)));
+  assert.equal(
+    experience[1].fields.find((field) => field.label === 'Skills')?.value,
+    earlier.projects[0].technologies.join(', '),
+  );
   const about = sections.find((section) => section.title === 'About')?.fields[0].value;
   assert.equal(
     about?.replaceAll('\n\u00a0\n', '\n\n'),

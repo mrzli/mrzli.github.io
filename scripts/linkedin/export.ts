@@ -33,7 +33,7 @@ export function renderLinkedIn(sections: readonly LinkedInSection[]): string {
   return (
     [
       '# LinkedIn profile copy',
-      'Generated from shared portfolio content. Short fields are grouped in tables. Copy each value into its matching LinkedIn field. For longer text, use the code block copy button in the Markdown preview. About and all descriptions contain a non-breaking space on each blank line to try to preserve paragraph gaps when pasted into LinkedIn. Labels, counts, and notes are not profile text. Skills and languages are individual entries, not a single description.',
+      'Generated from shared portfolio content. Short fields are grouped in tables. Copy each value into its matching LinkedIn field. For longer text, use the code block copy button in the Markdown preview. About and all descriptions contain a non-breaking space on each blank line to try to preserve paragraph gaps when pasted into LinkedIn. Labels, counts, and notes are not profile text.',
       'Counts include spaces and line breaks and use UTF-16 code units (conservative for emoji). Limits are local working limits, not verification in your account. Unchecked fields show counts only. See [generation notes and limit sources](../../docs/linkedin-generation.md).',
       ...sections.flatMap((section) => [
         `## ${section.title}`,

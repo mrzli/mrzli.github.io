@@ -1,5 +1,5 @@
 import { EXPERIENCE_SECTIONS } from '../experience';
-import { getExperienceProjectAnchor } from '../project-anchors';
+import type { ExperienceProjectKey } from '../experience-keys';
 import type { DateRangeBound } from '../types';
 import type { CvDocument, LinkedInSection } from './types';
 
@@ -7,7 +7,6 @@ export const LINKEDIN_LIMITS = {
   headline: 220,
   about: 2600,
   experienceDescription: 2000,
-  projectDescription: 2000,
   positionTitle: 100,
   company: 100,
   school: 100,
@@ -16,11 +15,50 @@ export const LINKEDIN_LIMITS = {
   skill: 80,
 } as const;
 
+const LINKEDIN_CONTRACTING_SKILLS: readonly string[] = [
+  'TypeScript',
+  'JavaScript',
+  'React',
+  'Angular',
+  'Node.js',
+  'NestJS',
+  'Vue',
+  'React Native',
+  'Java',
+  'Kotlin',
+  'Spring Boot',
+  'PostgreSQL',
+  'MySQL',
+  'MongoDB',
+  'Jest',
+  'Copilot',
+];
+
+const LINKEDIN_PROJECT_HIGHLIGHTS: Readonly<Partial<Record<ExperienceProjectKey, string>>> = {
+  hvac: "Built React and TypeScript interfaces and controls for a multinational's HVAC monitoring platform within an established team.",
+  'warehouse-robotics':
+    'Independently migrated all four similar warehouse robotics frontend variants from Angular 8 to 18, each with more than 100,000 lines of code. Resolved over a thousand errors per variant without observed regressions, removing a major security-audit blocker.',
+  eloqua:
+    'Independently built a React/NestJS integration for SMS and WhatsApp campaigns in Oracle Eloqua. Defined the architecture and clarified requirements. Coordinated asynchronous flows involving hundreds of thousands of messages, handled race conditions and authentication, and added extensive backend tests.',
+  'mobile-fueling':
+    'Owned Node.js backend subsystems, delivered system-wide changes, and ran production MongoDB migrations for a mobile fueling platform. Also worked on its Angular administration app, improved testing, and interviewed, onboarded, and mentored developers.',
+  insurance:
+    'Restructured substantial parts of a roughly 100,000-line React frontend for a UK insurance platform, resolving many existing TypeScript issues and rebuilding state management and API handling.',
+  'graveyard-management':
+    'Built nearly all of a multi-tenant graveyard management application using Vue, Kotlin/Spring Boot, and PostgreSQL, with maps, PDF reports, and frontend and backend tests.',
+};
+
 export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection[] {
   if (cv.variant !== 'concise') {
     throw new Error('LinkedIn must be generated from the short CV.');
   }
   const { profile, contracting } = cv;
+  const contractingUrl = new URL('experience#contracting', profile.website).href;
+  const earlierUrl = new URL('experience#apis-it', profile.website).href;
+  const highlights = EXPERIENCE_SECTIONS[0].projects.flatMap((project) => {
+    const highlight = LINKEDIN_PROJECT_HIGHLIGHTS[project.contentKey];
+    return highlight ? [`• ${highlight}`] : [];
+  });
   return [
     {
       title: 'Introduction',
@@ -42,29 +80,26 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
     },
     {
       title: `Experience — ${contracting.title}`,
-      note: 'The project descriptions below reproduce the short CV. Add them as separate Projects associated with this Self-employed entry because they exceed one employment description when combined.',
       fields: [
-        { label: 'Title', value: contracting.role, limit: LINKEDIN_LIMITS.positionTitle },
+        { label: 'Title', value: profile.title, limit: LINKEDIN_LIMITS.positionTitle },
         { label: 'Company', value: 'Self-employed', limit: LINKEDIN_LIMITS.company },
         { label: 'Start date', value: formatDate(contracting.from) },
         { label: 'End date', value: formatDate(contracting.to) },
         { label: 'Location / workplace', value: contracting.location },
-      ],
-    },
-    ...cv.projects.map((project): LinkedInSection => ({
-      title: `Project — ${project.title}`,
-      note: 'Copy the description into Projects and select Self-employed under Associated with. Technologies reproduce the CV tags. Choose up to five for the project skill selector.',
-      fields: [
-        { label: 'Project name', value: project.title },
-        { label: 'Associated with', value: 'Self-employed' },
-        { label: 'Technologies', value: project.technologies.join(', ') },
+        { label: 'Website URL', value: contractingUrl },
         {
           label: 'Description',
-          value: [...project.context, ...project.contributions].join('\n\u00a0\n'),
-          limit: LINKEDIN_LIMITS.projectDescription,
+          limit: LINKEDIN_LIMITS.experienceDescription,
+          value: [
+            'I deliver frontend, backend, and full-stack work for clients, independently or within their teams. My responsibilities include technical architecture, requirements clarification, implementation, and mentoring.',
+            ...highlights,
+            'Further work includes government services, accounting, parking payments, telecom reporting, e-learning, and recruitment.',
+            `More projects and technical detail: ${contractingUrl}`,
+          ].join('\n\u00a0\n'),
         },
+        { label: 'Skills', value: LINKEDIN_CONTRACTING_SKILLS.join(', ') },
       ],
-    })),
+    },
     ...cv.earlierExperience.map((entry): LinkedInSection => ({
       title: `Experience — ${entry.title}`,
       note: 'This is the combined earlier-roles entry from the short CV, not a single employer. No company name is supplied.',
@@ -73,15 +108,19 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
         { label: 'Start date', value: formatDate(entry.employment.from) },
         { label: 'End date', value: formatDate(entry.employment.to) },
         { label: 'Location / workplace', value: entry.employment.location },
-        ...entry.projects.flatMap((project) => [
-          { label: 'Project name', value: project.title },
-          { label: 'Technologies', value: project.technologies.join(', ') },
-          {
-            label: 'Description',
-            value: [...project.context, ...project.contributions].join('\n\u00a0\n'),
-            limit: LINKEDIN_LIMITS.experienceDescription,
-          },
-        ]),
+        { label: 'Website URL', value: earlierUrl },
+        {
+          label: 'Description',
+          value: [
+            ...entry.projects.flatMap((project) => [...project.context, ...project.contributions]),
+            `More work and technical detail: ${earlierUrl}`,
+          ].join('\n\u00a0\n'),
+          limit: LINKEDIN_LIMITS.experienceDescription,
+        },
+        {
+          label: 'Skills',
+          value: [...new Set(entry.projects.flatMap((project) => project.technologies))].join(', '),
+        },
       ],
     })),
     {
@@ -110,20 +149,6 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
         { label: 'Phone', value: profile.phone },
       ],
     },
-    ...EXPERIENCE_SECTIONS.map((entry): LinkedInSection => ({
-      title: `Website links — ${entry.title}`,
-      note: 'Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.',
-      fields: [
-        {
-          label: 'Employment URL',
-          value: new URL(`experience#${entry.contentKey}`, profile.website).href,
-        },
-        ...entry.projects.map((project) => ({
-          label: `${project.title} URL`,
-          value: new URL(`experience#${getExperienceProjectAnchor(project)}`, profile.website).href,
-        })),
-      ],
-    })),
     {
       title: 'Links',
       fields: [
