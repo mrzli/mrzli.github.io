@@ -1,6 +1,9 @@
 import { EDUCATION, EDUCATION_HIGHLIGHTS } from '../../src/content/background';
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
-import { CONCISE_CV_SKILLS } from '../../src/content/exports/cv-concise';
+import {
+  CONCISE_CV_SKILLS,
+  CONCISE_CV_EARLIER_EXPERIENCE,
+} from '../../src/content/exports/cv-concise';
 import { DETAILED_CV } from '../../src/content/exports/cv-detailed';
 import type { CvDocument, CvVariant, CvProject } from '../../src/content/exports/types';
 import { PROFILE, EXPERIENCE_START_YEARS } from '../../src/content/profile';
@@ -17,12 +20,15 @@ export function createCvDocument(variant: CvVariant, year = new Date().getFullYe
     contracts: DETAILED_CV.contracts,
     contracting: EXPERIENCE_SECTIONS[0],
     projects: detailedProjects(EXPERIENCE_SECTIONS[0].projects),
-    earlierExperience: EXPERIENCE_SECTIONS.slice(1).map((entry) => ({
-      employment: entry,
-      title: entry.title,
-      text: [],
-      projects: detailedProjects(entry.projects),
-    })),
+    earlierExperience:
+      variant === 'concise'
+        ? [CONCISE_CV_EARLIER_EXPERIENCE]
+        : EXPERIENCE_SECTIONS.slice(1).map((entry) => ({
+            employment: entry,
+            title: entry.title,
+            text: [],
+            projects: detailedProjects(entry.projects),
+          })),
     education: EDUCATION,
     educationHighlights: EDUCATION_HIGHLIGHTS.slice(0, 1),
     professionalYears,

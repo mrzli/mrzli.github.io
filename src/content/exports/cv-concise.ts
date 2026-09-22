@@ -1,6 +1,7 @@
+import { EXPERIENCE_SECTIONS } from '../experience';
 import type { ExperienceProjectKey } from '../experience-keys';
 import { SKILLS_SECTIONS } from '../skills';
-import type { ConciseProject } from './types';
+import type { ConciseProject, CvEarlierExperience } from './types';
 export const CONCISE_CV = {
   summary: [
     'I build complete web applications independently or within a team: frontend, backend, or full stack. I define architecture, modernize systems, and mentor developers.',
@@ -71,3 +72,26 @@ export const CONCISE_CV_SECTION_NOTES = {
 export const CONCISE_CV_SKILLS = SKILLS_SECTIONS.filter(
   (section) => section.title === 'Extensive and recent experience',
 );
+
+export const CONCISE_CV_EARLIER_EXPERIENCE: CvEarlierExperience = {
+  employment: {
+    title: 'Earlier software development roles',
+    role: 'C# Software Developer',
+    location: 'Croatia and remote',
+    from: EXPERIENCE_SECTIONS.find((entry) => entry.contentKey === 'visage')!.from,
+    to: EXPERIENCE_SECTIONS.find((entry) => entry.contentKey === 'apis-it')!.to,
+  },
+  title: 'Earlier software development roles',
+  text: [],
+  projects: [
+    {
+      title: 'Web and desktop applications',
+      technologies: ['C#', '.NET', 'ASP.NET', 'WPF', 'Windows Forms', 'C++', 'SQL'],
+      context: [
+        'I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. My work covered user interfaces, business logic, databases, reporting, and hardware integration. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software.',
+      ],
+      contributions: [],
+      startContinuationPage: false,
+    },
+  ],
+};

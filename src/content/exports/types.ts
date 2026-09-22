@@ -33,7 +33,7 @@ export interface CvProject {
 }
 
 export interface CvEarlierExperience {
-  readonly employment: ExperienceEntry;
+  readonly employment: Omit<ExperienceEntry, 'contentKey' | 'projects'>;
   readonly title: string;
   readonly text: readonly string[];
   readonly projects: readonly CvProject[];

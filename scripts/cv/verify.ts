@@ -71,17 +71,19 @@ function verify(): void {
     .split('\n')
     .filter((line) => line.startsWith('{\\small\\color{technology}Selected'));
   assert.equal(selectionNotes.length, 2);
-  assert.equal(
-    concise
-      .split('\n')
-      .filter((line) => !selectionNotes.includes(line))
-      .join('\n')
-      .replace(/\\cvsection\{Skills\}[\s\S]*?(?=\\cvsection\{Personal information\})/, ''),
-    detailed.replace(/\\cvsection\{Skills\}[\s\S]*?(?=\\cvsection\{Personal information\})/, ''),
-  );
+  assert.equal(document.earlierExperience.length, 1);
+  assert.ok(normalizedText.includes('Earlier software development roles'));
+  assert.ok(normalizedText.includes('January 2007'));
+  assert.ok(normalizedText.includes('May 2016'));
+  assert.ok(!concise.includes('\\employer{APIS IT}'));
   assert.deepEqual(document.skills, [SKILLS_SECTIONS[0]]);
   assert.deepEqual(
-    { ...document, variant: 'detailed', skills: detailedDocument.skills },
+    {
+      ...document,
+      variant: 'detailed',
+      skills: detailedDocument.skills,
+      earlierExperience: detailedDocument.earlierExperience,
+    },
     detailedDocument,
   );
   assert.ok(detailed.includes('load testing exposed race conditions'));

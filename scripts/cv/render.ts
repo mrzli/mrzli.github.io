@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs';
 
 import { CONCISE_CV_SECTION_NOTES } from '../../src/content/exports/cv-concise';
-import type { CvDocument, CvProject } from '../../src/content/exports/types';
-import type { DateRangeBound, ExperienceEntry } from '../../src/content/types';
+import type { CvDocument, CvProject, CvEarlierExperience } from '../../src/content/exports/types';
+import type { DateRangeBound } from '../../src/content/types';
 
 export function renderCv(document: CvDocument): string {
   const { profile, contracting } = document;
@@ -112,11 +112,11 @@ function paragraph(text: string): string {
   return `${escapeLatex(text)}\\par`;
 }
 
-function employer(entry: ExperienceEntry, title: string, role: string): string {
+function employer(entry: CvEarlierExperience['employment'], title: string, role: string): string {
   return String.raw`\employer{${escapeLatex(title)}}{${dateRange(entry)}}{${escapeLatex(role)}}{${escapeLatex(entry.location)}}`;
 }
 
-function dateRange(entry: ExperienceEntry): string {
+function dateRange(entry: CvEarlierExperience['employment']): string {
   return `${escapeLatex(formatDate(entry.from))} -- ${escapeLatex(formatDate(entry.to))}`;
 }
 
