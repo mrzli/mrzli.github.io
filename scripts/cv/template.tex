@@ -24,7 +24,9 @@
 \newcommand{\employer}[4]{\par\addvspace{\dimexpr\medskipamount+\smallskipamount\relax}{\Large\bfseries #1}\hfill {\small\color{muted}#2}\par\nopagebreak#3\hfill {\small\color{muted}#4}\par\nopagebreak}
 \newcommand{\employerseparator}{\par\addvspace{\bigskipamount}{\color{separator}\hrule height .4pt}\nopagebreak}
 \newcommand{\project}[2]{\par\addvspace{\dimexpr\bigskipamount+\smallskipamount\relax}\textbf{#1}\par\nopagebreak{\small\color{technology}\raggedright #2\par}\nopagebreak}
-\newenvironment{profilepoints}{\par\addvspace{\medskipamount}\begin{tabular}{@{{\color{separator}\vrule width 1.5pt}\hspace{10.5pt}}>{\setlength{\parskip}{\dimexpr\smallskipamount+1pt\relax}}p{\dimexpr\textwidth-12pt\relax}@{}}}{\end{tabular}\par}
+\newsavebox{\borderedtext}
+\newcommand{\borderedlast}[1]{\begingroup\sbox{\borderedtext}{\parbox[t]{\dimexpr\textwidth-12pt\relax}{\setlength{\parskip}{\dimexpr\smallskipamount+1pt\relax}\strut #1\unskip\strut}}\hbox{{\color{separator}\vrule width 1.5pt height \ht\borderedtext depth \dimexpr\dp\borderedtext-\dp\strutbox\relax}\hspace{10.5pt}\usebox{\borderedtext}}\endgroup}
+\newcommand{\profilepoints}[1]{\par\addvspace{\medskipamount}\borderedlast{#1}\par}
 \newenvironment{points}{\begin{itemize}}{\end{itemize}}
 \newenvironment{contribution}{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}\setlength{\LTpre}{\smallskipamount}\setlength{\LTpost}{\smallskipamount}\begin{longtable}{@{{\color{separator}\vrule width 1.5pt}\hspace{10.5pt}}p{\dimexpr\textwidth-12pt\relax}@{}}\multicolumn{1}{@{{\color{separator}\vrule width 1.5pt height 5.5pt depth 4.5pt}\hspace{10.5pt}}l@{}}{{\scriptsize\color{technology}MY CONTRIBUTION}}\tabularnewline*\endfirsthead\endhead}{\end{longtable}}
 \begin{document}
