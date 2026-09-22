@@ -85,13 +85,15 @@ export function renderCv(document: CvDocument): string {
       : []),
     ...(document.skills.length
       ? [
+          ...(document.variant === 'detailed' ? [String.raw`\cvneedspace{12\baselineskip}`] : []),
           String.raw`\cvsection{Skills}\begingroup\setlength{\parskip}{\smallskipamount}`,
           ...document.skills.flatMap((section) => [
-            String.raw`\par\addvspace{\medskipamount}\textbf{${escapeLatex(section.title)}}\par\nopagebreak`,
+            String.raw`\begin{skillstable}{${escapeLatex(section.title)}}`,
             ...section.groups.map(
               (group) =>
-                String.raw`\textit{${escapeLatex(group.title)}}: ${escapeLatex(group.skills.join(', '))}\par`,
+                String.raw`${escapeLatex(group.title)} & ${escapeLatex(group.skills.join(', '))}\tabularnewline[3pt]`,
             ),
+            String.raw`\end{skillstable}`,
           ]),
           String.raw`\endgroup`,
         ]

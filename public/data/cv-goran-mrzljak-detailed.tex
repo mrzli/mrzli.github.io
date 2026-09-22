@@ -30,6 +30,7 @@
 \newcommand{\profilepoints}[1]{\par\addvspace{\medskipamount}\borderedlast{#1}\par}
 \newenvironment{points}{\begin{itemize}}{\end{itemize}}
 \newenvironment{contribution}{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}\setlength{\LTpre}{8pt}\setlength{\LTpost}{\smallskipamount}\begin{longtable}{@{{\color{separator}\vrule width .75pt}\hspace{9.25pt}}p{\dimexpr\textwidth-10pt\relax}@{}}\multicolumn{1}{@{{\color{separator}\vrule width .75pt height 5.5pt depth 6.5pt}\hspace{9.25pt}}l@{}}{{\scriptsize\color{technology}MY CONTRIBUTION}}\tabularnewline*\endfirsthead\endhead}{\end{longtable}}
+\newenvironment{skillstable}[1]{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt plus 1fill}\setlength{\LTpre}{\medskipamount}\setlength{\LTpost}{0pt}\begin{longtable}{@{}>{\raggedright\arraybackslash\leavevmode\color{technology}}p{.3\textwidth}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{\dimexpr.7\textwidth-12pt\relax}@{}}\multicolumn{2}{@{}l@{}}{\textbf{#1}}\tabularnewline*[6pt]\endfirsthead\endhead}{\end{longtable}}
 \begin{document}
 
 \setlength{\emergencystretch}{2em}
@@ -254,27 +255,36 @@ An exporter that converted body animations from 3ds Max Biped to MPEG-4 FBA for 
 \cvsection{Education}
 \textbf{Faculty of Electrical Engineering and Computing (FER), University of Zagreb}\par
 Graduate Engineer of Computing. Five-year degree program, totaling 284 ECTS credits.\par
+\cvneedspace{12\baselineskip}
 \cvsection{Skills}\begingroup\setlength{\parskip}{\smallskipamount}
-\par\addvspace{\medskipamount}\textbf{Extensive and recent experience}\par\nopagebreak
-\textit{Programming languages}: TypeScript, JavaScript, HTML, CSS\par
-\textit{Libraries and frameworks}: React, Angular, Express, NestJS, Tailwind CSS, Material UI, Redux, MobX, RxJS, NgRx\par
-\textit{Platforms}: Node.js, Bun\par
-\textit{Tools}: ESLint, Prettier, Vite, Webpack, Jest, Vitest, Storybook, Docker, Bash\par
-\textit{Databases}: PostgreSQL, MySQL, MongoDB\par
-\textit{CI/CD}: GitHub Actions\par
-\textit{AI}: Codex CLI, Copilot\par
-\textit{Operating systems}: Windows, macOS, Linux\par
-\par\addvspace{\medskipamount}\textbf{Extensive experience, not recent}\par\nopagebreak
-\textit{Programming languages}: Kotlin, Java, C\#, C++\par
-\textit{Libraries and frameworks}: Spring Boot, JPA/Hibernate, Liquibase, Vue, AngularJS, ASP.NET MVC, ASP.NET Web Forms, WPF, Windows Forms\par
-\textit{Platforms}: JVM, .NET Framework\par
-\textit{Tools}: React Testing Library, Mocha, Nx (monorepo), Prisma, Maven, JUnit\par
-\textit{Databases}: H2, SQLite, Microsoft SQL Server\par
-\par\addvspace{\medskipamount}\textbf{Limited experience}\par\nopagebreak
-\textit{Programming languages}: Ruby, Python\par
-\textit{Libraries and frameworks}: Android SDK, GraphQL\par
-\textit{Tools}: Playwright, Cypress\par
-\textit{Databases}: IBM DB2, Oracle Database\par
-\textit{AI}: Claude, Cursor\par
+\begin{skillstable}{Extensive and recent experience}
+Programming languages & TypeScript, JavaScript, HTML, CSS\tabularnewline[3pt]
+Libraries and frameworks & React, Angular, Express, NestJS, Tailwind CSS, Class Variance Authority, Shadcn/UI, Material UI, Ant Design, Redux, redux-observable, MobX, React Hook Form, Zod, RxJS, NgRx\tabularnewline[3pt]
+Platforms & Node.js, Bun\tabularnewline[3pt]
+Tools & ESLint, Prettier, Vite, Webpack, Jest, Vitest, Storybook, Docker, Bash, npm, pnpm, Bun Package Manager\tabularnewline[3pt]
+Databases & PostgreSQL, MySQL, MongoDB\tabularnewline[3pt]
+CI/CD & GitHub Actions\tabularnewline[3pt]
+Source control & Git, GitHub, GitLab, Bitbucket\tabularnewline[3pt]
+IDEs & Visual Studio Code, WebStorm, IntelliJ IDEA\tabularnewline[3pt]
+AI & Codex CLI, Copilot\tabularnewline[3pt]
+Operating systems & Windows, macOS, Linux\tabularnewline[3pt]
+\end{skillstable}
+\begin{skillstable}{Extensive experience, not recent}
+Programming languages & Kotlin, Java, C\#, C++\tabularnewline[3pt]
+Libraries and frameworks & Spring Boot, JPA/Hibernate, Liquibase, JSP, Vue, Vuetify, Vuex, AG Grid, AngularJS, ASP.NET MVC, ASP.NET Web Forms, WPF, Windows Forms\tabularnewline[3pt]
+Platforms & JVM, .NET Framework\tabularnewline[3pt]
+Tools & React Testing Library, Mocha, Nx (monorepo), Prisma, Maven, JUnit\tabularnewline[3pt]
+Databases & H2, SQLite, Microsoft SQL Server\tabularnewline[3pt]
+Source control & TFS (Microsoft), SVN, Jazz (IBM)\tabularnewline[3pt]
+IDEs & Visual Studio, Eclipse\tabularnewline[3pt]
+\end{skillstable}
+\begin{skillstable}{Limited experience}
+Programming languages & Ruby, Python, Racket, F\#, R, Octave, Fantom (JVM)\tabularnewline[3pt]
+Libraries and frameworks & Android SDK, libGDX (game engine), Ruby on Rails, Sinatra, GraphQL, jQuery, 3ds Max SDK\tabularnewline[3pt]
+Tools & Playwright, Cypress\tabularnewline[3pt]
+Databases & IBM DB2, Oracle Database\tabularnewline[3pt]
+CI/CD & CircleCI, Docker Swarm\tabularnewline[3pt]
+AI & Claude, Cursor\tabularnewline[3pt]
+\end{skillstable}
 \endgroup
 \end{document}

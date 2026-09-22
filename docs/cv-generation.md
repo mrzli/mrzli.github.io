@@ -11,7 +11,7 @@ The concise CV contains five contracting projects and the complete professional
 employment timeline since 2008, with education, on two A4 pages. Its TeX and PDF
 are available in `public/data/`. The detailed CV includes every employment and project from the website, with
 all technology tags, descriptions, and contributions, followed by education
-and selected skills. Its TeX and PDF are also in
+and the full website skills list. Its TeX and PDF are also in
 `public/data/`. Page counts follow the content rather than a hard limit.
 
 ## Commands
@@ -73,6 +73,9 @@ separate Core technologies section.
 Roles and project technologies use upright text. Dates and locations stay
 right-aligned in smaller text, and technology lists use smaller, left-aligned text.
 Technology names use a muted gray and centered dot separators.
+Skills use borderless tables with upright, muted-gray category labels on the left and aligned skill lists
+on the right, grouped by depth and recency of experience. All categories and skills
+come from the website. Its separate operating-system experience paragraph is omitted.
 Thin light-gray rules separate employers. Projects within an employer use whitespace.
 Detailed project contributions use an indented block with a small uppercase
 "MY CONTRIBUTION" label and a gray border along the full left edge. Blocks can

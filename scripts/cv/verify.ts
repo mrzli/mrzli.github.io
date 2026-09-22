@@ -12,6 +12,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { EXPERIENCE_SECTIONS } from '../../src/content/experience';
+import { SKILLS_SECTIONS } from '../../src/content/skills';
 import { buildCv } from './build';
 import { createCvDocument } from './document';
 import { escapeLatex, formatDate, renderCv } from './render';
@@ -38,6 +39,7 @@ function verify(): void {
   assert.ok(extracted.includes('14 years of contract work'));
   const concise = renderCv(document);
   const detailedDocument = createCvDocument('detailed', 2030);
+  assert.deepEqual(detailedDocument.skills, SKILLS_SECTIONS);
   const detailed = renderCv(detailedDocument);
   const employments = [
     detailedDocument.contracting,
