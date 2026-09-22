@@ -88,7 +88,7 @@ export const CONCISE_CV_EARLIER_EXPERIENCE: CvEarlierExperience = {
       title: 'Web and desktop applications',
       technologies: ['C#', '.NET', 'ASP.NET', 'WPF', 'Windows Forms', 'C++', 'SQL'],
       context: [
-        'I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. My work covered user interfaces, business logic, databases, reporting, and hardware integration. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software.',
+        'I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.',
       ],
       contributions: [],
       startContinuationPage: false,
@@ -119,8 +119,8 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
     'Ruby',
   ],
   context: [
-    'I worked on electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment software. My contributions ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.',
-    'For government payment validation, I independently translated a specification of about 180 pages into a configurable Java component with extensive automated tests in less than two weeks. I incorporated all 100 QA scenarios into the regression suite, fixed the reported failures, and had no further issues reported.',
+    'I developed software for electricity consumption, accounting, parking payments, national single sign-on, government payment validation, telecom reporting, e-learning, and recruitment. My work ranged from mobile and web frontends to complete backends, integrations, and applications. I also built data export tools and resolved urgent issues before a production release.',
+    'I independently built a configurable Java component for government payment validation from a specification of about 180 pages, with extensive automated tests, in less than two weeks. I added all 100 QA scenarios to the regression suite and fixed the reported failures. No further issues were reported.',
   ],
   contributions: [],
   startContinuationPage: false,
@@ -133,7 +133,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'HVAC monitoring and control web application',
     technologies: ['React', 'TypeScript', 'MobX', 'Tailwind CSS', 'FIN Framework', 'Copilot'],
     context: [
-      "I worked within an established team on a web application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. I built frontend sections, components, and controls to match UI designs and fixed bugs, working with the platform's specialized technologies and tools.",
+      "I worked in an established team developing a web application for a large multinational to monitor and control HVAC equipment across buildings and sites. Using the platform's specialized technologies and tools, I built sections of the frontend, components, and controls to match UI designs and fixed bugs.",
     ],
     contributions: [],
     startContinuationPage: false,
@@ -142,7 +142,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'Warehouse robotics web application',
     technologies: ['Angular', 'TypeScript', 'RxJS'],
     context: [
-      'I joined an established warehouse automation project to resolve frontend issues and improve maintainability and developer experience. I independently migrated all frontend variants from Angular 8 to 18. Each contained more than 100,000 lines of code, although much of the code was similar across variants. Each migration required resolving over a thousand errors, adapting dependencies across major versions, and refactoring code. I completed the migrations without observed regressions, removing a major blocker for a security audit. Beyond the migration, I implemented substantial frontend features and subsystems based on client requirements and handled ongoing maintenance and bug fixes.',
+      'I joined an established warehouse automation project to resolve frontend issues and improve maintainability and developer experience. I independently migrated all four frontend variants from Angular 8 to 18. Each had more than 100,000 lines of code, although much of it was similar across variants. The migrations required resolving over a thousand errors per variant, adapting code to major dependency changes, and refactoring. I completed them without observed regressions, removing a major blocker for a security audit. Beyond the migration, my work included implementing substantial frontend features and subsystems based on client requirements, along with ongoing maintenance and bug fixes.',
     ],
     contributions: [],
     startContinuationPage: false,
@@ -151,7 +151,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'Oracle Eloqua to mobile messaging integration',
     technologies: ['React', 'TypeScript', 'NestJS', 'MySQL', 'Prisma', 'Jest', 'OAuth', 'JWT'],
     context: [
-      'I independently designed and built a full-stack integration enabling SMS and WhatsApp messaging within Oracle Eloqua marketing campaigns. I defined the architecture, clarified requirements with the client, and implemented the frontend, backend, database, and external API connections. The application coordinated asynchronous flows involving hundreds of thousands of messages. I resolved race conditions, implemented multiple authentication methods, and wrote extensive backend tests covering endpoints and complex message flows.',
+      'I independently built an integration for sending SMS and WhatsApp messages within Oracle Eloqua marketing campaigns. I clarified requirements with the client, defined the architecture, and implemented the frontend, backend, database, and external API connections. The application coordinated asynchronous flows involving hundreds of thousands of messages. I resolved race conditions, implemented multiple authentication methods, and wrote extensive backend tests covering endpoints and complex message flows.',
     ],
     contributions: [],
     startContinuationPage: false,
@@ -160,7 +160,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'Mobile fueling management system',
     technologies: ['Node.js', 'Express', 'MongoDB', 'Angular', 'TypeScript', 'NgRx'],
     context: [
-      'I worked across the backend and Angular administration app of a production system supporting a leading mobile fueling company in California. I was responsible for backend subsystems, coordinated changes across the application, and wrote and ran migration scripts against the production MongoDB database without issues. I also improved testing practices and interviewed, onboarded, and mentored developers.',
+      'I worked on the backend and Angular administration app of a production system for a leading mobile fueling company in California. I was responsible for backend subsystems and coordinated changes across the application. I wrote and ran migration scripts against the production MongoDB database without issues, improved testing practices, and interviewed, onboarded, and mentored developers.',
     ],
     contributions: [],
     startContinuationPage: false,
@@ -169,7 +169,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'Insurance web platform',
     technologies: ['React', 'TypeScript', 'Redux', 'RxJS', 'Material UI', 'Storybook', 'Jest'],
     context: [
-      'I restructured substantial parts of a roughly 100,000-line frontend for a UK insurance platform, working as its sole frontend developer for most of my time on the project. Alongside new features, I resolved many of its TypeScript issues, rebuilt state management and API handling, and reorganized parts of the frontend architecture. I also improved build tooling, introduced automated tests, and built a component library with Material UI and Storybook.',
+      'I restructured substantial parts of a roughly 100,000-line frontend for a UK insurance platform. For most of my time on the project, I was its sole frontend developer. While developing new features, I resolved many of the existing TypeScript issues, rebuilt state management and API handling, and reorganized parts of the frontend architecture. I also improved build tooling, introduced automated tests, and built a component library with Material UI and Storybook.',
     ],
     contributions: [],
     startContinuationPage: false,
@@ -178,7 +178,7 @@ export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
     title: 'Graveyard management web application',
     technologies: ['Vue', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'Jest'],
     context: [
-      'I built nearly the entire frontend and backend of a multi-tenant graveyard management application, including interactive maps, PDF reporting, and database migrations. I wrote frontend unit tests and backend integration tests covering much of the application across all layers.',
+      'I built nearly the entire frontend and backend of a multi-tenant graveyard management application, including interactive maps, PDF reports, and database migrations. I wrote frontend unit tests and backend integration tests covering much of the application across all layers.',
     ],
     contributions: [],
     startContinuationPage: false,
