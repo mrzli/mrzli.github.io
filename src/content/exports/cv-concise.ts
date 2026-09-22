@@ -129,6 +129,15 @@ export const CONCISE_CV_OTHER_PROJECTS: CvProject = {
 export const CONCISE_CV_PROJECT_OVERRIDES: Readonly<
   Partial<Record<ExperienceProjectKey, CvProject>>
 > = {
+  'warehouse-robotics': {
+    title: 'Warehouse robotics web application',
+    technologies: ['Angular', 'TypeScript', 'RxJS'],
+    context: [
+      'I joined an established warehouse automation project to resolve frontend issues and improve maintainability and developer experience. I independently migrated all frontend variants from Angular 8 to 18. Each contained more than 100,000 lines of code, although much of the code was similar across variants. Each migration required resolving over a thousand errors, adapting dependencies across major versions, and refactoring code. I completed the migrations without observed regressions, removing a major blocker for a security audit. Beyond the migration, I implemented substantial frontend features and subsystems based on client requirements and handled ongoing maintenance and bug fixes.',
+    ],
+    contributions: [],
+    startContinuationPage: false,
+  },
   eloqua: {
     title: 'Oracle Eloqua to mobile messaging integration',
     technologies: ['React', 'TypeScript', 'NestJS', 'MySQL', 'Prisma', 'Jest', 'OAuth', 'JWT'],
