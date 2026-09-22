@@ -12,10 +12,10 @@ Counts include spaces and line breaks and use UTF-16 code units (conservative fo
 
 ### Headline
 
-25 / 220 characters (working limit).
+96 / 220 characters (working limit).
 
 ```text
-Senior software developer
+Senior software developer | React, Angular, Node.js | Frontend, backend & full-stack development
 ```
 
 ## About

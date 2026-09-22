@@ -78,7 +78,11 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
       fields: [
         { label: 'Name', value: profile.name },
         { label: 'Location', value: profile.location },
-        { label: 'Headline', value: profile.title, limit: LINKEDIN_LIMITS.headline },
+        {
+          label: 'Headline',
+          value: `${profile.title} | React, Angular, Node.js | Frontend, backend & full-stack development`,
+          limit: LINKEDIN_LIMITS.headline,
+        },
       ],
     },
     {
