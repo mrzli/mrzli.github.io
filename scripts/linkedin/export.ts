@@ -99,7 +99,9 @@ function isCompactField(field: LinkedInField): boolean {
       'LinkedIn',
       'Short CV',
       'Detailed CV',
-    ].includes(field.label) || /^(Skill|Language) \d+$/.test(field.label)
+    ].includes(field.label) ||
+    field.label.endsWith(' URL') ||
+    /^(Skill|Language) \d+$/.test(field.label)
   );
 }
 

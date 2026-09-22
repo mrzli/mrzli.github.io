@@ -33,7 +33,10 @@ Project descriptions have a 2,000-character working limit, supported by
 [LinkedIn's Projects help](https://www.linkedin.com/help/linkedin/answer/a8064614)
 documents project association and up to five skills per project, but does not
 state the numeric description limit. Dates for individual contracting projects
-are not in the CV and are omitted. Nothing is posted to LinkedIn automatically.
+are not in the CV and are omitted. The Website links sections list direct URLs for every website employment and
+project, including the underlying entries combined in the short CV. They are
+reference links and do not change the short CV descriptions. Nothing is posted
+to LinkedIn automatically.
 
 Generation is deterministic for the same source and year. About totals use the
 current year minus the shared start years. Long fields display character counts. Short fields are still limit-checked without

@@ -43,8 +43,10 @@ types live in `src/content/exports/`:
 
 Experience entries and their projects have a stable `contentKey`. Export constants
 use these keys rather than display titles or array positions. Keep keys stable
-when editing titles. The separate optional project `id` remains a public page
-anchor and does not change when export content changes.
+when editing titles. Every employment uses its stable `contentKey` as its page anchor. Every project
+uses its optional `id` or falls back to its stable `contentKey`. Headings link to
+these anchors, with scroll spacing for the sticky navigation. Existing Eloqua,
+robotics, and fueling anchors remain unchanged.
 
 The [CV generator](./cv-generation.md) currently gives the short and detailed CVs
 the same full content and layout as a starting point for shortening the short version.

@@ -274,6 +274,72 @@ Five-year degree program, totaling 284 ECTS credits.
 | --- | --- | --- | --- |
 | Email | <code>goran.mrzljak@gmail.com</code> | Phone | <code>+385 91 224 3145</code> |
 
+## Website links — Freelance Software Developer / Self-Employed
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#contracting</code> | HVAC monitoring and control web application URL | <code>https://mrzli.github.io/experience#hvac</code> |
+| Warehouse robotics web application URL | <code>https://mrzli.github.io/experience#warehouse-robotics</code> | Oracle Eloqua to mobile messaging integration URL | <code>https://mrzli.github.io/experience#oracle-eloqua-messaging</code> |
+| Electricity consumption mobile application URL | <code>https://mrzli.github.io/experience#electricity-consumption</code> | Mobile fueling management system URL | <code>https://mrzli.github.io/experience#mobile-fueling</code> |
+| Insurance web platform URL | <code>https://mrzli.github.io/experience#insurance</code> | Accounting web application URL | <code>https://mrzli.github.io/experience#accounting</code> |
+| Graveyard management web application URL | <code>https://mrzli.github.io/experience#graveyard-management</code> | Parking mobile application URL | <code>https://mrzli.github.io/experience#parking</code> |
+| NIAS single sign-on integration URL | <code>https://mrzli.github.io/experience#nias</code> | Government payments validation component URL | <code>https://mrzli.github.io/experience#government-payments</code> |
+| EU roaming usage and traffic tracking web application URL | <code>https://mrzli.github.io/experience#eu-roaming</code> | E-learning web application URL | <code>https://mrzli.github.io/experience#e-learning</code> |
+| Other projects URL | <code>https://mrzli.github.io/experience#other-contracts</code> |  |  |
+
+## Website links — APIS IT
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#apis-it</code> | Croatia's Ministry of Finance e-Tax web application URL | <code>https://mrzli.github.io/experience#e-tax</code> |
+| Location and building permits web application URL | <code>https://mrzli.github.io/experience#building-permits</code> | Other projects URL | <code>https://mrzli.github.io/experience#other-apis</code> |
+
+## Website links — Gemmeus d.o.o.
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#gemmeus</code> | Excel component for spreadsheet data manipulation URL | <code>https://mrzli.github.io/experience#spreadsheet</code> |
+
+## Website links — INETEC - Institute for Nuclear Technology d.o.o.
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#inetec</code> | Steam generator damage analysis application URL | <code>https://mrzli.github.io/experience#damage-analysis</code> |
+| Steam generator walker robot command and monitoring application URL | <code>https://mrzli.github.io/experience#inspection-robot</code> |  |  |
+
+## Website links — Ultra d.o.o.
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#ultra</code> | Fuel dispenser configuration and control web application URL | <code>https://mrzli.github.io/experience#fuel-dispenser-web</code> |
+| Fuel dispenser configuration and control desktop application URL | <code>https://mrzli.github.io/experience#fuel-dispenser-desktop</code> | Various projects URL | <code>https://mrzli.github.io/experience#other-ultra</code> |
+
+## Website links — Ekobit d.o.o.
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#ekobit</code> | Various projects URL | <code>https://mrzli.github.io/experience#financial-web</code> |
+
+## Website links — Visage Technologies (Student Project)
+
+Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.
+
+| Field | Value | Field | Value |
+| --- | --- | --- | --- |
+| Employment URL | <code>https://mrzli.github.io/experience#visage</code> | Body animation exporter URL | <code>https://mrzli.github.io/experience#body-animation</code> |
+
 ## Links
 
 | Field | Value | Field | Value |

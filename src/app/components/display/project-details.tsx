@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router';
 
 import { TagList } from '../layout/tag-list';
 import { Typography } from './typography';
@@ -8,6 +9,7 @@ type ProjectHeadingElement = (typeof PROJECT_HEADING_ELEMENTS)[number];
 
 export interface ProjectDetailsProps {
   readonly title: string;
+  readonly titleHref?: string;
   readonly headingAs: ProjectHeadingElement;
   readonly text: readonly string[];
   readonly roleText: readonly string[];
@@ -16,6 +18,7 @@ export interface ProjectDetailsProps {
 
 export function ProjectDetails({
   title,
+  titleHref,
   headingAs,
   text,
   roleText,
@@ -24,7 +27,16 @@ export function ProjectDetails({
   return (
     <>
       <Typography variant='heading-3' as={headingAs} className='text-amber-700 dark:text-amber-300'>
-        {title}
+        {titleHref ? (
+          <Link
+            to={titleHref}
+            className='rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
+          >
+            {title}
+          </Link>
+        ) : (
+          title
+        )}
       </Typography>
       <Typography variant='prose' as='div' className='space-y-4'>
         {text.map((paragraph, index) => (

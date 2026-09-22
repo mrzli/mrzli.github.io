@@ -1,9 +1,11 @@
 import { Typography } from '@components';
 import type { ReactNode } from 'react';
+import { Link } from 'react-router';
 
 import type { DateRangeBound } from '@/content/types';
 
 export interface ExperienceSectionHeaderProps {
+  readonly anchor: string;
   readonly title: string;
   readonly location: string;
   readonly role: string;
@@ -12,6 +14,7 @@ export interface ExperienceSectionHeaderProps {
 }
 
 export function ExperienceSectionHeader({
+  anchor,
   title,
   location,
   role,
@@ -21,7 +24,14 @@ export function ExperienceSectionHeader({
   return (
     <div className='grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6'>
       <div className='space-y-1'>
-        <Typography variant='heading-2'>{title}</Typography>
+        <Typography variant='heading-2'>
+          <Link
+            to={`#${anchor}`}
+            className='rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4'
+          >
+            {title}
+          </Link>
+        </Typography>
         <Typography variant='prose'>{role}</Typography>
       </div>
       <div className='space-y-1 sm:text-right'>

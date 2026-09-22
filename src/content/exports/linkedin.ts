@@ -1,3 +1,5 @@
+import { EXPERIENCE_SECTIONS } from '../experience';
+import { getExperienceProjectAnchor } from '../project-anchors';
 import type { DateRangeBound } from '../types';
 import type { CvDocument, LinkedInSection } from './types';
 
@@ -108,6 +110,20 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
         { label: 'Phone', value: profile.phone },
       ],
     },
+    ...EXPERIENCE_SECTIONS.map((entry): LinkedInSection => ({
+      title: `Website links — ${entry.title}`,
+      note: 'Direct links to the full website entries. These are reference links, not additional LinkedIn experience descriptions.',
+      fields: [
+        {
+          label: 'Employment URL',
+          value: new URL(`experience#${entry.contentKey}`, profile.website).href,
+        },
+        ...entry.projects.map((project) => ({
+          label: `${project.title} URL`,
+          value: new URL(`experience#${getExperienceProjectAnchor(project)}`, profile.website).href,
+        })),
+      ],
+    })),
     {
       title: 'Links',
       fields: [

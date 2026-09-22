@@ -1,5 +1,6 @@
 import { Card, ProjectDetails } from '@components';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { MemoryRouter } from 'react-router';
 
 import { EXPERIENCE_SECTIONS } from '@/content/experience';
 import { PROJECT_ITEMS } from '@/content/projects';
@@ -44,4 +45,15 @@ export const LongExperience: Story = {
     roleText: integration.roleText,
     tags: integration.tags,
   },
+};
+
+export const LinkedHeading: Story = {
+  args: { ...LongExperience.args, titleHref: '#oracle-eloqua-messaging' },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
