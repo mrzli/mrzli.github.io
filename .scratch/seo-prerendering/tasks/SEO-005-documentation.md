@@ -22,15 +22,15 @@ and this spec/task set.
       inspecting HTML, and using the static preview in dedicated documentation.
 - [ ] Document canonical slash URLs, Values indexing policy, 404 behavior, the
       static artifact layout, build-date content, and post-deployment checks.
-- [ ] Keep the README concise and its commands accurate. Keep export workflows
-      unchanged and explain that JavaScript interactions still hydrate normally.
+- [ ] Keep the README concise and its commands accurate. Document the export-link convention from SEO-003A, retain the generation
+      commands, and explain that JavaScript interactions still hydrate normally.
 - [ ] Review all project instructions for consistency with implemented startup,
       routing, exports, validation, and deployment. Remove superseded fallback rules
       without rewriting historical completed specs.
 - [ ] Review the diff for unintended content, design, dependency, and generated
       export changes. Record anything unresolved instead of marking it passed.
 - [ ] Update local task records with evidence and set the spec/index to
-      `locally verified, deployment verification pending` when SEO-001–005 pass.
+      `locally verified, deployment verification pending` when SEO-001–005, including SEO-003A, pass.
 - [ ] Leave SEO-006 pending until the implementation is deployed and inspected.
       Record that no commit, push, or deployment was performed unless requested.
 

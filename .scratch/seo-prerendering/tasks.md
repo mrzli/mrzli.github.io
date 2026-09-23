@@ -14,9 +14,10 @@ requested. Production verification is a separate follow-up.
 | 1     | [SEO-001: Prepare deterministic rendering](./tasks/SEO-001-rendering.md)             | Browser APIs, theme initialization, time-dependent content             | Complete    |
 | 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Complete    |
 | 3     | [SEO-003: Add metadata and discovery files](./tasks/SEO-003-metadata.md)             | Titles, descriptions, canonical URLs, social tags, sitemap, robots     | Complete    |
-| 4     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Not started |
-| 5     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Not started |
-| 6     | [SEO-006: Verify deployed GitHub Pages](./tasks/SEO-006-production.md)               | Public responses and discovery after deployment                        | Not started |
+| 4     | [SEO-003A: Update links in generated documents](./tasks/SEO-003A-export-links.md)    | Canonical page links in LinkedIn and affected CV exports               | Not started |
+| 5     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Not started |
+| 6     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Not started |
+| 7     | [SEO-006: Verify deployed GitHub Pages](./tasks/SEO-006-production.md)               | Public responses and discovery after deployment                        | Not started |
 
 ## Working rules
 
@@ -59,6 +60,7 @@ consistency review. Do not repeat passing builds without a new change or concern
 ## Progress record
 
 Planning documents were committed as `a7fe5aa` on `seo-prerendering`. SEO-001 was
-committed as `aa6ca51` and SEO-002 as `9511188`. SEO-003 is implemented and locally
-verified, and remains uncommitted for review. SEO-004 through SEO-006 have not
-started. See the completed task records for checks and limitations.
+committed as `aa6ca51`, SEO-002 as `9511188`, and SEO-003 as `f7fb665`.
+SEO-003A was added for canonical links in generated documents and is next.
+SEO-003A and SEO-004 through SEO-006 have not started. See the completed task
+records for checks and limitations.

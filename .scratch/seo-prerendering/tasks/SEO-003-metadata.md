@@ -95,3 +95,5 @@ Verification:
 
 No deployment or public indexing verification was performed. Broader interaction
 coverage remains SEO-004 and deployed verification remains SEO-006.
+
+Committed as `f7fb665` on 2026-09-23 before adding the export-link follow-up task.

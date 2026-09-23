@@ -108,7 +108,10 @@ Use trailing slashes for canonical page URLs and generated internal page links
 to match directory-index hosting. Existing slashless URLs and fragment links
 must continue to reach the same content, allowing a host redirect to the slash
 form. Preserve fragment IDs, query strings, and browser history behavior.
-Do not rewrite historical exports solely to normalize their existing links.
+Normalize portfolio page links in current generated documents, especially the
+LinkedIn export, through SEO-003A. Preserve fragments, queries, external links,
+and static download URLs. Regenerate affected current artifacts from their
+sources. Do not rewrite historical exports.
 
 Publish only the static client artifact, including any framework data files
 needed for client navigation. Prefer retaining `dist` as the published artifact
@@ -213,8 +216,10 @@ and place detailed maintenance guidance in a dedicated document.
   professional claims.
 - No hosting migration, backend, CMS, React Server Components, analytics,
   scheduled rebuilds, or Search Console account setup.
-- No CV regeneration, export changes, new social image, or structured-data
-  expansion in this migration.
+- Export changes are limited to canonical portfolio page links in SEO-003A,
+  resulting character counts, and regeneration of affected current documents.
+  No professional content or export layout changes, new social image, or
+  structured-data expansion.
 - No promise of ranking, indexing speed, social preview appearance, or a specific
   performance score. Investigate regressions without adding unrelated optimization.
 - No commits, push, or deployment as part of writing or implementing this plan
@@ -240,7 +245,7 @@ local checks or wait for search rankings to declare implementation complete.
 
 ## Completion criteria
 
-Tasks SEO-001 through SEO-005 establish a locally verified implementation with
+Tasks SEO-001 through SEO-005, including SEO-003A, establish a locally verified implementation with
 all required acceptance checks passed or explicitly unresolved. SEO-006 records
 production verification only after deployment. Use `locally verified, deployment
 verification pending` when local work is finished but production is unverified.
@@ -254,7 +259,7 @@ dependency, deployment, or project-instruction changes have been made.
 
 ## Implementation progress
 
-Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, and SEO-002 as
-`9511188`. SEO-003 adds page metadata and discovery files. It is locally verified
-and remains uncommitted for review. See the task records for evidence and
-limitations. SEO-004 through SEO-006 have not started.
+Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, SEO-002 as `9511188`,
+and SEO-003 as `f7fb665`. SEO-003A was added at the user's request to update
+canonical page links in generated documents, especially LinkedIn. It is planned
+before SEO-004. SEO-003A and SEO-004 through SEO-006 have not started.

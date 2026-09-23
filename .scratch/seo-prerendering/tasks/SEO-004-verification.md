@@ -2,7 +2,7 @@
 
 Status: not started
 
-Depends on: SEO-002, SEO-003
+Depends on: SEO-002, SEO-003, SEO-003A
 
 Source: [Task index](../tasks.md) · [Spec](../spec.md)
 
@@ -32,8 +32,9 @@ works. Fix migration regressions found here before local closure.
       refresh, and back/forward. Preserve header clearance and scroll restoration.
 - [ ] Verify metadata throughout client navigation and preview cancellation,
       Values exclusion, and not-found handling.
-- [ ] Confirm export sources and public downloads are unchanged and no browser or
-      router dependency was introduced into shared content modules.
+- [ ] Confirm export changes are limited to the canonical-link updates and
+      affected artifact regeneration recorded in SEO-003A. Confirm no browser or
+      router runtime dependency was introduced into shared content modules.
 - [ ] Record actual commands, viewport sizes, browsers, failures, fixes, and
       limitations. Distinguish local static checks from deployed GitHub Pages checks.
 
