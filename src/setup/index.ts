@@ -1,3 +1,3 @@
 export * from './app-context';
 export * from './app-dependencies';
-export * from './run';
+export * from './app-provider';

@@ -10,7 +10,7 @@
 ## Meaningful Coverage
 
 - Verify affected interactions, keyboard access, responsive layouts, and light/dark themes as relevant to the change.
-- For routing changes, check navigation within the app and direct entry or refresh on the affected route. Local Vite behavior alone does not establish GitHub Pages fallback behavior.
+- For routing changes, check navigation within the app and direct entry or refresh on the affected route. Inspect generated HTML without JavaScript and check the static artifact using `bun run preview`. Local behavior alone does not establish deployed GitHub Pages responses.
 - Add or update automated tests for meaningful logic changes when test infrastructure exists. Do not introduce a test framework solely for a small content or styling edit.
 - Prefer user-visible behavior over implementation details. Do not write tests that merely restate the implementation.
 - If automated tests are introduced, co-locate component-specific tests where practical and place shared test helpers under `test/`.

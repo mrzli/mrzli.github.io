@@ -1,6 +1,6 @@
 # SEO and static prerendering tasks
 
-Status: SEO-001 complete
+Status: SEO-001 and SEO-002 complete
 
 Source: [Spec](./spec.md)
 
@@ -12,7 +12,7 @@ requested. Production verification is a separate follow-up.
 | Order | Task                                                                                 | Scope                                                                  | Status      |
 | ----- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ----------- |
 | 1     | [SEO-001: Prepare deterministic rendering](./tasks/SEO-001-rendering.md)             | Browser APIs, theme initialization, time-dependent content             | Complete    |
-| 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Not started |
+| 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Complete    |
 | 3     | [SEO-003: Add metadata and discovery files](./tasks/SEO-003-metadata.md)             | Titles, descriptions, canonical URLs, social tags, sitemap, robots     | Not started |
 | 4     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Not started |
 | 5     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Not started |
@@ -58,6 +58,7 @@ consistency review. Do not repeat passing builds without a new change or concern
 
 ## Progress record
 
-Planning documents were committed as `a7fe5aa` on `seo-prerendering`. SEO-001 is
-implemented, locally verified, and approved for commit on 2026-09-23.
-SEO-002 through SEO-006 have not started. See SEO-001 for checks and limitations.
+Planning documents were committed as `a7fe5aa` on `seo-prerendering`. SEO-001 was
+committed as `aa6ca51` on 2026-09-23. SEO-002 is implemented and locally verified,
+and remains uncommitted for review. SEO-003 through SEO-006 have not started.
+See the completed task records for checks and limitations.

@@ -11,21 +11,21 @@ export interface WorkHighlight {
 
 export const WORK_HIGHLIGHTS: readonly WorkHighlight[] = [
   {
-    to: `/experience#${EXPERIENCE_PROJECT_ANCHORS.eloqua}`,
+    to: `/experience/#${EXPERIENCE_PROJECT_ANCHORS.eloqua}`,
     title: 'Eloqua messaging integration',
     focus: 'Full-stack delivery',
     description:
       'Independently built an Oracle Eloqua messaging integration with React and NestJS. Coordinated complex asynchronous campaign flows involving hundreds of thousands of messages, with careful race-condition handling, authentication, and extensive backend tests.',
   },
   {
-    to: `/experience#${EXPERIENCE_PROJECT_ANCHORS.robotics}`,
+    to: `/experience/#${EXPERIENCE_PROJECT_ANCHORS.robotics}`,
     title: 'Warehouse robotics',
     focus: 'Modernization',
     description:
       'Independently migrated a robot-management frontend of roughly 100,000 lines from Angular 8 to 18, resolving over a thousand errors without observed regressions and removing a major blocker for its security audit.',
   },
   {
-    to: `/experience#${EXPERIENCE_PROJECT_ANCHORS.fueling}`,
+    to: `/experience/#${EXPERIENCE_PROJECT_ANCHORS.fueling}`,
     title: 'Mobile fueling operations',
     focus: 'Production systems',
     description:
@@ -36,22 +36,22 @@ export const WORK_HIGHLIGHTS: readonly WorkHighlight[] = [
 export const ROUTE_CARDS: readonly RouteCardProps[] = [
   {
     title: 'Experience',
-    to: '/experience',
+    to: '/experience/',
     description: 'Client projects, technical decisions, and my role in each.',
   },
   {
     title: 'Skills',
-    to: '/skills',
+    to: '/skills/',
     description: 'Technologies grouped by depth and recency of experience.',
   },
   {
     title: 'Projects',
-    to: '/projects',
+    to: '/projects/',
     description: 'Personal work, from this website to games, with source code.',
   },
   {
     title: 'Background',
-    to: '/background',
+    to: '/background/',
     description: 'Computing degree, continued learning, and personal context.',
   },
 ];

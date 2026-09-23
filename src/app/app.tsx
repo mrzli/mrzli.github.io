@@ -1,15 +1,29 @@
 import { MainContainer, Nav, type NavItem } from '@components';
 import type { ReactNode } from 'react';
-import { Outlet, ScrollRestoration, useRoutes } from 'react-router';
+import { Outlet } from 'react-router';
 
 import { useSwipeNavigation } from '@/hooks';
-import { PAGE_ROUTES } from '@/routing/page-routes';
+import { PAGE_PATHS } from '@/routing/page-paths';
+import { SwipePreview } from '@/routing/swipe-preview';
 
 export function App(): ReactNode {
   const { handlers, preview } = useSwipeNavigation(NAV_ITEMS);
   return (
     <MainContainer>
       <Nav items={NAV_ITEMS} />
+      <noscript>
+        <style>{'nav[aria-label="Main navigation"] button { display: none; }'}</style>
+        <nav
+          aria-label='Main navigation without JavaScript'
+          className='flex flex-wrap gap-4 p-4 md:hidden'
+        >
+          {NAV_ITEMS.map((item) => (
+            <a key={item.to} href={item.to}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </noscript>
       <div {...handlers} className={`${handlers.className} relative overflow-clip`}>
         <div
           style={{
@@ -34,20 +48,15 @@ export function App(): ReactNode {
           </div>
         )}
       </div>
-      <ScrollRestoration />
     </MainContainer>
   );
 }
 
-function SwipePreview({ path }: { readonly path: string }): ReactNode {
-  return useRoutes(PAGE_ROUTES, path);
-}
-
 const NAV_ITEMS: readonly NavItem[] = [
-  { to: '', label: 'Home' },
-  { to: 'experience', label: 'Experience' },
-  { to: 'skills', label: 'Skills' },
-  { to: 'projects', label: 'Projects' },
-  { to: 'background', label: 'Background' },
-  // { to: 'values', label: 'Values' },
+  { to: PAGE_PATHS.home, label: 'Home' },
+  { to: PAGE_PATHS.experience, label: 'Experience' },
+  { to: PAGE_PATHS.skills, label: 'Skills' },
+  { to: PAGE_PATHS.projects, label: 'Projects' },
+  { to: PAGE_PATHS.background, label: 'Background' },
+  // { to: PAGE_PATHS.values, label: 'Values' },
 ];

@@ -254,6 +254,7 @@ dependency, deployment, or project-instruction changes have been made.
 
 ## Implementation progress
 
-Planning was committed as `a7fe5aa`. SEO-001 prepares deterministic theme and
-year rendering and is locally verified and approved for commit. See its task record for evidence and limitations. The framework
-migration and deployment changes have not started.
+Planning was committed as `a7fe5aa` and SEO-001 as `aa6ca51`. SEO-002 implements
+Framework Mode, static route output, and deployment packaging. It is locally
+verified and remains uncommitted for review. See the task records for evidence
+and limitations. SEO-003 through SEO-006 have not started.

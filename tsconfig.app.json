@@ -5,6 +5,7 @@
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
     "types": ["vite/client"],
+    "rootDirs": [".", "./.react-router/types"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -27,5 +28,5 @@
       "@components/*": ["./src/app/components/*"]
     }
   },
-  "include": ["src", "stories"]
+  "include": ["src", "stories", ".react-router/types/**/*"]
 }

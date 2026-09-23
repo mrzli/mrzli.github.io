@@ -35,6 +35,6 @@
 
 ## Files and Imports
 
-- Use kebab-case for TypeScript and TSX filenames, and named exports for components and hooks.
+- Use kebab-case for TypeScript and TSX filenames, and named exports for components and hooks. Framework route modules and configuration files use required default exports. Keep framework loader, metadata, and document exports at those boundaries.
 - Keep relative imports extensionless, following this project's Vite convention.
 - Use the existing `@/*`, `@components`, and `@components/*` aliases where appropriate. Follow nearby imports and existing barrel exports.

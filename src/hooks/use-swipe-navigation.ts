@@ -285,13 +285,15 @@ function getSwipeDestination(
   horizontalDistance: number,
 ): string | undefined {
   const normalizedPath = pathname.replace(/\/$/, '') || '/';
-  const currentIndex = pages.findIndex((page) => `/${page.to}` === normalizedPath);
+  const currentIndex = pages.findIndex(
+    (page) => (page.to.replace(/\/$/, '') || '/') === normalizedPath,
+  );
   if (currentIndex < 0 || pages.length < 2) {
     return undefined;
   }
   const step = horizontalDistance < 0 ? 1 : -1;
   const nextIndex = (currentIndex + step + pages.length) % pages.length;
-  return `/${pages[nextIndex].to}`;
+  return pages[nextIndex].to;
 }
 
 function isInteractiveTarget(target: EventTarget, boundary: HTMLElement): boolean {

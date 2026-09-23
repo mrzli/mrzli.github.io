@@ -124,3 +124,5 @@ not staged or committed.
 The user approved committing SEO-001 and starting SEO-002. cycleTheme now uses
 useCallback with theme as its dependency. Scoped formatting, lint, and the
 production build passed after that follow-up.
+
+Committed as `aa6ca51` on 2026-09-23 before starting SEO-002.

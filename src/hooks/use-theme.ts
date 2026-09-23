@@ -2,6 +2,7 @@ import { useCallback, useLayoutEffect, useState } from 'react';
 
 import type { Theme } from '@/app/types/theme';
 import { preferenceStorage } from '@/app/util/preference-storage';
+import { DARK_MODE_MEDIA_QUERY, THEME_STORAGE_KEY } from '@/app/util/theme-preference';
 
 import { useHydrated } from './use-hydrated';
 
@@ -9,9 +10,6 @@ export interface ThemeControls {
   readonly theme: Theme;
   readonly cycleTheme: () => void;
 }
-
-const THEME_STORAGE_KEY = 'theme';
-const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 export function useTheme(): ThemeControls {
   const isHydrated = useHydrated();

@@ -3,12 +3,12 @@
 ## Purpose
 
 - This is Goran Mržljak's personal portfolio and online CV, published to GitHub Pages.
-- It is a static client-rendered site. Portfolio content lives in TypeScript data files and React components. There is no backend, database, or CMS.
+- It is a static site prerendered at build time and hydrated by React in the browser. Portfolio content lives in TypeScript data files and React components. There is no backend, database, or CMS.
 
 ## Tech Stack
 
 - React with TypeScript and ECMAScript modules.
-- React Router for browser routing.
+- React Router Framework Mode for routing and static prerendering.
 - Vite for development and production builds.
 - Tailwind CSS through the Vite plugin, Class Variance Authority for component variants, and `clsx` with `tailwind-merge` for class composition.
 - Iconify for icons.
