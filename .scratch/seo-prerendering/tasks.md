@@ -1,6 +1,6 @@
 # SEO and static prerendering tasks
 
-Status: locally verified, deployment verification pending
+Status: complete, locally and production-verified
 
 Source: [Spec](./spec.md)
 
@@ -9,15 +9,15 @@ reviewable site. Once the user authorizes the complete migration, continue throu
 local tasks without mandatory commit checkpoints. Do not commit or deploy unless
 requested. Production verification is a separate follow-up.
 
-| Order | Task                                                                                 | Scope                                                                  | Status      |
-| ----- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ----------- |
-| 1     | [SEO-001: Prepare deterministic rendering](./tasks/SEO-001-rendering.md)             | Browser APIs, theme initialization, time-dependent content             | Complete    |
-| 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Complete    |
-| 3     | [SEO-003: Add metadata and discovery files](./tasks/SEO-003-metadata.md)             | Titles, descriptions, canonical URLs, social tags, sitemap, robots     | Complete    |
-| 4     | [SEO-003A: Update links in generated documents](./tasks/SEO-003A-export-links.md)    | Canonical page links in LinkedIn and affected CV exports               | Complete    |
-| 5     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Complete    |
-| 6     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Complete    |
-| 7     | [SEO-006: Verify deployed GitHub Pages](./tasks/SEO-006-production.md)               | Public responses and discovery after deployment                        | Not started |
+| Order | Task                                                                                 | Scope                                                                  | Status   |
+| ----- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | -------- |
+| 1     | [SEO-001: Prepare deterministic rendering](./tasks/SEO-001-rendering.md)             | Browser APIs, theme initialization, time-dependent content             | Complete |
+| 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Complete |
+| 3     | [SEO-003: Add metadata and discovery files](./tasks/SEO-003-metadata.md)             | Titles, descriptions, canonical URLs, social tags, sitemap, robots     | Complete |
+| 4     | [SEO-003A: Update links in generated documents](./tasks/SEO-003A-export-links.md)    | Canonical page links in LinkedIn and affected CV exports               | Complete |
+| 5     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Complete |
+| 6     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Complete |
+| 7     | [SEO-006: Verify deployed GitHub Pages](./tasks/SEO-006-production.md)               | Public responses and discovery after deployment                        | Complete |
 
 ## Working rules
 
@@ -61,8 +61,11 @@ consistency review. Do not repeat passing builds without a new change or concern
 
 Planning documents were committed as `a7fe5aa` on `seo-prerendering`. SEO-001 was
 committed as `aa6ca51`, SEO-002 as `9511188`, and SEO-003 as `f7fb665`.
-The export-link plan was committed as `e333a61`, SEO-003A as `456f68e`, and
-SEO-004 records as `b5d4ad7`. SEO-005 documentation and local closure are complete
-and remain uncommitted for review. SEO-006 is pending deployment of the migrated
-site. No push or deployment was performed. See the task records for checks and
-limitations and [Rendering and SEO](../../docs/rendering-and-seo.md) for maintenance.
+The export-link plan was committed as `e333a61`, SEO-003A as `456f68e`, SEO-004
+records as `b5d4ad7`, and SEO-005 as `3affb44`.
+
+The user deployed `3affb44`. SEO-006 verified that revision publicly on
+2026-09-23. All tasks are complete. Production-verification records remain
+uncommitted for review. Search Console and indexing outcomes remain external
+follow-ups. See [SEO-006](./tasks/SEO-006-production.md) for deployment evidence
+and [Rendering and SEO](../../docs/rendering-and-seo.md) for maintenance.

@@ -1,6 +1,6 @@
 # SEO and static prerendering
 
-Status: locally verified, deployment verification pending
+Status: complete, locally and production-verified
 
 Created: 2026-09-22
 
@@ -261,11 +261,11 @@ alone made no application, dependency, deployment, or project-instruction change
 
 Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, SEO-002 as `9511188`,
 and SEO-003 as `f7fb665`. The export-link plan was committed as `e333a61`,
-SEO-003A as `456f68e`, and SEO-004 records as `b5d4ad7`. SEO-005 documentation
-and local closure are complete, with changes uncommitted for review.
+SEO-003A as `456f68e`, SEO-004 records as `b5d4ad7`, and SEO-005 as `3affb44`.
 
-The local implementation and verification tasks have passed. Maintenance guidance
-is in [Rendering and SEO](../../docs/rendering-and-seo.md). See SEO-004 and SEO-005
-for verification evidence and known limitations. SEO-006 remains pending until
-the migrated revision is deployed and its public responses are checked. No push
-or deployment was performed. The full specification is not yet production-verified.
+The user deployed `3affb44`, and SEO-006 verified that revision on GitHub Pages
+on 2026-09-23. Required implementation, local checks, and production checks have
+passed. The production-verification record remains uncommitted for review.
+See [SEO-006](./tasks/SEO-006-production.md) for evidence and limitations, and
+[Rendering and SEO](../../docs/rendering-and-seo.md) for maintenance. Search
+Console actions, indexing, and rankings remain separate external follow-ups.

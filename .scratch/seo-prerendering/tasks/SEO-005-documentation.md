@@ -86,3 +86,5 @@ Remaining limitations:
   recorded deprecation, empty MDX glob, and chunk-size warnings remain.
 - Search Console actions and indexing/ranking outcomes are separate external
   follow-ups, not completed by this local work.
+
+Committed as `3affb44` before the user deployed the migration for SEO-006.

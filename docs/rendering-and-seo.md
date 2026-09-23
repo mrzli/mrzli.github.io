@@ -153,7 +153,8 @@ sitemap.xml, robots.txt, direct fragments, and browser interactions.
 
 Local verification does not establish deployed responses. The migration's local
 checks are recorded in [SEO-004](../.scratch/seo-prerendering/tasks/SEO-004-verification.md).
-[SEO-006](../.scratch/seo-prerendering/tasks/SEO-006-production.md) remains pending
-until the migrated site is deployed and checked. Search Console inspection and
+Production verification is recorded in
+[SEO-006](../.scratch/seo-prerendering/tasks/SEO-006-production.md), including the
+deployed revision and verification date. Search Console inspection and
 sitemap submission are optional account follow-ups. Indexing and rankings are
 not guaranteed by the build or metadata.
