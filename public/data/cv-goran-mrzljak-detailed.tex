@@ -30,7 +30,7 @@
 \newcommand{\profilepoints}[1]{\par\addvspace{\medskipamount}\borderedlast{#1}\par}
 \newenvironment{points}{\begin{itemize}}{\end{itemize}}
 \newenvironment{contribution}{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}\setlength{\LTpre}{8pt}\setlength{\LTpost}{\smallskipamount}\begin{longtable}{@{{\color{separator}\vrule width .75pt}\hspace{9.25pt}}p{\dimexpr\textwidth-10pt\relax}@{}}\multicolumn{1}{@{{\color{separator}\vrule width .75pt height 5.5pt depth 6.5pt}\hspace{9.25pt}}l@{}}{{\scriptsize\color{technology}MY CONTRIBUTION}}\tabularnewline*\endfirsthead\endhead}{\end{longtable}}
-\newenvironment{skillstable}[1]{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt plus 1fill}\setlength{\LTpre}{\medskipamount}\setlength{\LTpost}{0pt}\begin{longtable}{@{}>{\raggedright\arraybackslash\leavevmode\color{technology}}p{.3\textwidth}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{\dimexpr.7\textwidth-12pt\relax}@{}}\multicolumn{2}{@{}l@{}}{\textbf{#1}}\tabularnewline*[6pt]\endfirsthead\endhead}{\end{longtable}}
+\newenvironment{skillstable}[1]{\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt plus 1fill}\setlength{\LTpre}{\medskipamount}\setlength{\LTpost}{0pt}\begin{longtable}{@{}>{\raggedright\arraybackslash\leavevmode\color{technology}}p{.3\textwidth}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{\dimexpr.7\textwidth-12pt\relax}@{}}\if\relax\detokenize{#1}\relax\else\multicolumn{2}{@{}l@{}}{\textbf{#1}}\tabularnewline*[6pt]\fi\endfirsthead\endhead}{\end{longtable}}
 \begin{document}
 
 \setlength{\emergencystretch}{2em}
@@ -53,10 +53,10 @@
 \end{center}
 \cvsection{Profile}
 I build software and make complex codebases easier to work with. I have 18 years of professional experience, including 10 years of independent contract work.\par
-Recently, I've worked mainly with React, TypeScript, and Node.js. I develop both frontend and backend, building applications from scratch and bringing them into production. I can also redesign and restructure complex existing systems. I favor clear architecture and readable code that makes systems easier to understand, maintain, and extend.\par
+Recently, I've worked mainly with React, TypeScript, and Node.js. I build frontend and backend applications from scratch through to production, and redesign and restructure existing systems. I favor clear architecture and readable code that is easy to maintain and extend.\par
 My experience also includes desktop and mobile applications.\par
 I work independently or within established teams. I design application architecture, help clarify requirements, mentor and onboard developers, and conduct developer interviews.\par
-I use AI coding agents regularly and for a growing range of tasks. The skills I developed before these tools existed complement them well. I can also work without AI assistance when required.\par
+I use AI coding agents regularly in my development work.\par
 \profilepoints{I'm looking for hands-on senior development work: frontend, backend, or full-stack.\par B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.}
 \cvsection{Links}
 \begin{tabular}{@{}l@{\hspace{1em}}l@{}}
@@ -71,8 +71,8 @@ Detailed CV & \href{https://mrzli.github.io/data/cv-goran-mrzljak-detailed.pdf}{
 \project{HVAC monitoring and control web application}{React · TypeScript · MobX · Tailwind CSS · Jest · ESLint · Prettier · Fantom · FIN Framework · Axon · Project Haystack · Folio · Copilot · Claude · ChatGPT}
 A web application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.\par
 \begin{contribution}
-I joined an established team to help with day-to-day frontend development. I built application sections, components, and controls to match UI designs, and fixed bugs.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-\multicolumn{1}{@{}l@{}}{\borderedlast{The development work was straightforward, while learning the domain and its specialized technologies and tools took time.}}\tabularnewline
+I joined an established team and built frontend sections, components, and controls to match UI designs, and fixed bugs.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
+\multicolumn{1}{@{}l@{}}{\borderedlast{The work involved learning the HVAC domain and the platform's specialized technologies and tools.}}\tabularnewline
 \end{contribution}
 \project{Warehouse robotics web application}{Angular · TypeScript · RxJS · ESLint · Prettier · Python · PostgreSQL · Docker · Copilot · Claude · ChatGPT}
 A web application for monitoring and managing fleets of autonomous warehouse robots.\par
@@ -80,10 +80,10 @@ The application is part of a larger warehouse automation product that combines p
 The overall system is a very large project developed by dozens of people.\par
 \begin{contribution}
 The project had been in development for several years by the time I joined. I was brought on to resolve existing issues and improve the frontend's structure, maintainability, and developer experience.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-I worked almost exclusively on the frontend alongside one other developer. He knew the domain and project better. I had deeper and more varied software development experience overall.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
+I worked almost exclusively on the frontend alongside one other developer.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 The frontend had several variants maintained in separate repositories and branches. Each contained more than 100,000 lines of code, much of it similar across variants.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 The company needed to pass a security audit, but the frontend still used Angular 8, a version many years out of date. The upgrade was necessary to pass the audit and had become a major blocker.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
-I independently migrated all frontend variants to Angular 18. I worked carefully and systematically so that most of the process could be replicated across variants. Each required resolving over a thousand errors, adapting code to breaking changes across major dependency versions, and refactoring where necessary. Despite initial doubts about whether the migration could be completed in a reasonable timeframe, I completed it across all variants without observed regressions, removing the blocker.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
+I independently migrated all frontend variants to Angular 18. I worked carefully and systematically so that most of the process could be replicated across variants. Each required resolving over a thousand errors, adapting code to breaking changes across major dependency versions, and refactoring where necessary. I completed the migration across all variants without observed regressions, removing the security-audit blocker.\rule[-\dimexpr\dp\strutbox+\smallskipamount+1pt\relax]{0pt}{\smallskipamount}\tabularnewline
 \multicolumn{1}{@{}l@{}}{\borderedlast{Beyond that, I implemented substantial frontend features and subsystems based on client requirements and handled routine maintenance and bug fixes.}}\tabularnewline
 \end{contribution}
 \project{Oracle Eloqua to mobile messaging integration}{React · TypeScript · Redux · redux-observable · RxJS · Tailwind CSS · NestJS · Prisma · Jest · ESLint · Prettier · MySQL · Docker · OAuth 1.0 · OAuth 2.0 · JWT · Nx (monorepo)}

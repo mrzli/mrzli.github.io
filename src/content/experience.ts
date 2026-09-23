@@ -18,8 +18,8 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
           'A web application for monitoring and controlling HVAC equipment across buildings and sites, developed for a large multinational. It is part of a complete hardware and software solution for facilities such as hotels and office buildings.',
         ],
         roleText: [
-          'I joined an established team to help with day-to-day frontend development. I built application sections, components, and controls to match UI designs, and fixed bugs.',
-          'The development work was straightforward, while learning the domain and its specialized technologies and tools took time.',
+          'I joined an established team and built frontend sections, components, and controls to match UI designs, and fixed bugs.',
+          "The work involved learning the HVAC domain and the platform's specialized technologies and tools.",
         ],
         tags: [
           'React',
@@ -50,10 +50,10 @@ export const EXPERIENCE_SECTIONS: readonly ExperienceEntry[] = [
         ],
         roleText: [
           "The project had been in development for several years by the time I joined. I was brought on to resolve existing issues and improve the frontend's structure, maintainability, and developer experience.",
-          'I worked almost exclusively on the frontend alongside one other developer. He knew the domain and project better. I had deeper and more varied software development experience overall.',
+          'I worked almost exclusively on the frontend alongside one other developer.',
           'The frontend had several variants maintained in separate repositories and branches. Each contained more than 100,000 lines of code, much of it similar across variants.',
           'The company needed to pass a security audit, but the frontend still used Angular 8, a version many years out of date. The upgrade was necessary to pass the audit and had become a major blocker.',
-          'I independently migrated all frontend variants to Angular 18. I worked carefully and systematically so that most of the process could be replicated across variants. Each required resolving over a thousand errors, adapting code to breaking changes across major dependency versions, and refactoring where necessary. Despite initial doubts about whether the migration could be completed in a reasonable timeframe, I completed it across all variants without observed regressions, removing the blocker.',
+          'I independently migrated all frontend variants to Angular 18. I worked carefully and systematically so that most of the process could be replicated across variants. Each required resolving over a thousand errors, adapting code to breaking changes across major dependency versions, and refactoring where necessary. I completed the migration across all variants without observed regressions, removing the security-audit blocker.',
           'Beyond that, I implemented substantial frontend features and subsystems based on client requirements and handled routine maintenance and bug fixes.',
         ],
         tags: [

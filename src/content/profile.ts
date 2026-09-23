@@ -29,9 +29,9 @@ export const PROFILE: Profile = {
   stackOverflow: 'https://stackoverflow.com/users/520229/mrzli',
   lead: 'I build software and make complex codebases easier to work with.',
   summary:
-    "Recently, I've worked mainly with React, TypeScript, and Node.js. I develop both frontend and backend, building applications from scratch and bringing them into production. I can also redesign and restructure complex existing systems. I favor clear architecture and readable code that makes systems easier to understand, maintain, and extend.",
+    "Recently, I've worked mainly with React, TypeScript, and Node.js. I build frontend and backend applications from scratch through to production, and redesign and restructure existing systems. I favor clear architecture and readable code that is easy to maintain and extend.",
   additionalExperience: 'My experience also includes desktop and mobile applications.',
-  ai: 'I use AI coding agents regularly and for a growing range of tasks. The skills I developed before these tools existed complement them well. I can also work without AI assistance when required.',
+  ai: 'I use AI coding agents regularly in my development work.',
   availability:
     "I'm looking for hands-on senior development work: frontend, backend, or full-stack.",
   services:
