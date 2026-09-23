@@ -1,6 +1,6 @@
 # SEO and static prerendering
 
-Status: in progress, SEO-001 through SEO-003A complete
+Status: in progress, SEO-001 through SEO-004 complete
 
 Created: 2026-09-22
 
@@ -260,6 +260,8 @@ dependency, deployment, or project-instruction changes have been made.
 ## Implementation progress
 
 Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, SEO-002 as `9511188`,
-and SEO-003 as `f7fb665`. The export-link task/spec updates were committed as
-`e333a61`. SEO-003A is implemented and locally verified, with implementation
-uncommitted for review. SEO-004 through SEO-006 have not started.
+and SEO-003 as `f7fb665`. The export-link plan was committed as `e333a61` and
+SEO-003A as `456f68e`. SEO-004 passed local static-delivery and interaction
+verification without application changes. Its records remain uncommitted for
+review. SEO-005 documentation/closure and SEO-006 deployed verification remain
+pending.

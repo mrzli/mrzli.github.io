@@ -1,6 +1,6 @@
 # SEO and static prerendering tasks
 
-Status: SEO-001 through SEO-003A complete
+Status: SEO-001 through SEO-004 complete
 
 Source: [Spec](./spec.md)
 
@@ -15,7 +15,7 @@ requested. Production verification is a separate follow-up.
 | 2     | [SEO-002: Migrate routing and static output](./tasks/SEO-002-framework.md)           | Framework Mode, hydration, route files, GitHub Pages packaging         | Complete    |
 | 3     | [SEO-003: Add metadata and discovery files](./tasks/SEO-003-metadata.md)             | Titles, descriptions, canonical URLs, social tags, sitemap, robots     | Complete    |
 | 4     | [SEO-003A: Update links in generated documents](./tasks/SEO-003A-export-links.md)    | Canonical page links in LinkedIn and affected CV exports               | Complete    |
-| 5     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Not started |
+| 5     | [SEO-004: Verify behavior and static delivery](./tasks/SEO-004-verification.md)      | HTML checks, browser regression review, response codes                 | Complete    |
 | 6     | [SEO-005: Document and close local implementation](./tasks/SEO-005-documentation.md) | Maintenance guidance, instruction consistency, local completion record | Not started |
 | 7     | [SEO-006: Verify deployed GitHub Pages](./tasks/SEO-006-production.md)               | Public responses and discovery after deployment                        | Not started |
 
@@ -61,7 +61,7 @@ consistency review. Do not repeat passing builds without a new change or concern
 
 Planning documents were committed as `a7fe5aa` on `seo-prerendering`. SEO-001 was
 committed as `aa6ca51`, SEO-002 as `9511188`, and SEO-003 as `f7fb665`.
-The export-link task/spec updates were committed as `e333a61`. SEO-003A is
-implemented and locally verified, with implementation uncommitted for review.
-SEO-004 through SEO-006 have not started. See the completed task records for
-checks and limitations.
+The export-link plan was committed as `e333a61` and SEO-003A as `456f68e`.
+SEO-004 passed local verification without requiring application changes. Its
+records remain uncommitted for review. SEO-005 and SEO-006 have not started.
+See the completed task records for checks and limitations.

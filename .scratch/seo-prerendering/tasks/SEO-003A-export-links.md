@@ -98,3 +98,5 @@ Verification:
 
 Nothing was posted to LinkedIn or deployed. Public hosting verification remains
 SEO-006. SEO-004 is the next implementation task.
+
+Committed as `456f68e` on 2026-09-23 before starting SEO-004.
