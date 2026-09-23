@@ -4,6 +4,7 @@ import { type AppDependencies, createAppDependencies } from './app-dependencies'
 
 export interface AppContextValue {
   readonly appName: string;
+  readonly initialYear: number;
   readonly dependencies: AppDependencies;
 }
 
@@ -17,11 +18,12 @@ export const useAppContext = (): AppContextValue => {
   return context;
 };
 
-export const createAppContextValue = (): AppContextValue => {
+export const createAppContextValue = (initialYear: number): AppContextValue => {
   const dependencies = createAppDependencies();
 
   return {
     appName: 'Goran Mržljak - CV',
+    initialYear,
     dependencies,
   };
 };

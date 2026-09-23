@@ -12,7 +12,7 @@ export const run = async () => {
     throw new Error('Root element not found');
   }
 
-  const value = createAppContextValue();
+  const value = createAppContextValue(new Date().getFullYear());
 
   const content = (
     <StrictMode>

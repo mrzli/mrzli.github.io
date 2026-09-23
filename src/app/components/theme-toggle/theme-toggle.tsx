@@ -1,47 +1,12 @@
 import { Icon } from '@iconify/react';
-import { type ReactNode, useEffect, useLayoutEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 
-import {
-  applyTheme,
-  DARK_MODE_MEDIA_QUERY,
-  getInitialTheme,
-  getNextTheme,
-  THEME_STORAGE_KEY,
-  themeToIcon,
-} from './helpers';
-import type { Theme } from './types';
+import { useTheme } from '@/hooks';
+
+import { themeToIcon } from './helpers';
 
 export function ThemeToggle(): ReactNode {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
-
-  useLayoutEffect(() => {
-    applyTheme(theme);
-
-    if (theme !== 'system') {
-      return undefined;
-    }
-
-    const mediaQueryList = window.matchMedia(DARK_MODE_MEDIA_QUERY);
-    const handleChange = (): void => {
-      applyTheme('system');
-    };
-
-    mediaQueryList.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQueryList.removeEventListener('change', handleChange);
-    };
-  }, [theme]);
-
-  useEffect(() => {
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  }, [theme]);
-
-  const cycleTheme = (): void => {
-    setTheme((currentTheme) => {
-      return getNextTheme(currentTheme);
-    });
-  };
+  const { theme, cycleTheme } = useTheme();
 
   return (
     <button

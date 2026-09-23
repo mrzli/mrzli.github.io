@@ -4,6 +4,7 @@
 
 - `src/main.tsx` imports global styles and invokes `src/setup/run.tsx` to mount React, the application context, and the router.
 - Keep startup and dependency wiring under `src/setup/`. The dependency container is currently empty. Add services only when required by a feature.
+- Supply the initial year once through `AppContext` at startup. Keep browser values and hydration handling inside focused hooks under `src/hooks/`, such as `useCurrentYear` and `useTheme`. Components consume these hooks without hydration checks.
 - Define routes in `src/routing/router.tsx`. `src/app/app.tsx` owns the shared layout, navigation items, and route outlet.
 - Keep pages under `src/app/pages/<page>/` and page-specific components under that page's `components/`. Keep page-specific navigation and presentation copy in the page or its `data.ts`.
 - Keep reusable professional facts, descriptions, and content types under `src/content/`. These modules must be usable by Bun scripts without React, browser globals, or component imports. Pages, stories, and exports consume this shared source. See `docs/content.md` for editing locations.

@@ -1,6 +1,6 @@
 # SEO and static prerendering
 
-Status: draft, implementation not started
+Status: in progress, SEO-001 complete
 
 Created: 2026-09-22
 
@@ -140,6 +140,12 @@ a stored preference before reading it. Handle unavailable storage gracefully.
 If early initialization changes the root class, keep any hydration exception
 limited to that known root attribute.
 
+Supply the initial year once through the application context. Home consumes
+`useCurrentYear()` without receiving a year prop or checking hydration.
+ThemeToggle consumes `useTheme()` for the theme and cycle action. Keep storage
+failures in the small preference-storage adapter and browser synchronization
+inside the hooks. Components do not import the internal hydration hook.
+
 Serialize a build-time year for the initial experience count. After hydration,
 the browser may update it to its current year, preserving the existing behavior
 without a New Year or timezone hydration mismatch. Static HTML reflects the
@@ -245,3 +251,9 @@ indexing remains an external outcome, not a completion prerequisite.
 
 Drafted from the current source and the migration discussion. No application,
 dependency, deployment, or project-instruction changes have been made.
+
+## Implementation progress
+
+Planning was committed as `a7fe5aa`. SEO-001 prepares deterministic theme and
+year rendering and is locally verified and approved for commit. See its task record for evidence and limitations. The framework
+migration and deployment changes have not started.

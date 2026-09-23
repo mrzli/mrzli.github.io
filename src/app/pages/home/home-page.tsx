@@ -4,13 +4,14 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import { PROFILE, EXPERIENCE_START_YEARS } from '@/content/profile';
+import { useCurrentYear } from '@/hooks';
 
 import profileImage from '../../../assets/profile.jpg';
 import { IconLink, RouteCard } from './components';
 import { ROUTE_CARDS, WORK_HIGHLIGHTS } from './data';
 
 export function HomePage(): ReactNode {
-  const currentYear = new Date().getFullYear();
+  const currentYear = useCurrentYear();
 
   return (
     <div className='space-y-8 pt-6 pb-12'>

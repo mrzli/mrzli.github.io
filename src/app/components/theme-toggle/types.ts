@@ -1,3 +1,3 @@
-export type Theme = 'light' | 'dark' | 'system';
+export const THEME_ICONS = ['mdi:weather-sunny', 'mdi:weather-night', 'mdi:monitor'] as const;
 
-export type ThemeIcon = 'mdi:weather-sunny' | 'mdi:weather-night' | 'mdi:monitor';
+export type ThemeIcon = (typeof THEME_ICONS)[number];
