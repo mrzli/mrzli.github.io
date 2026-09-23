@@ -90,7 +90,13 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
       fields: [
         {
           label: 'About',
-          value: [...cv.summary, cv.ai, profile.availability, cv.contracts].join('\n\u00a0\n'),
+          value: [
+            ...cv.summary,
+            cv.ai,
+            profile.availability,
+            cv.contracts,
+            `Work and project details: ${profile.website}`,
+          ].join('\n\u00a0\n'),
           limit: LINKEDIN_LIMITS.about,
         },
       ],

@@ -22,7 +22,7 @@ Senior software developer | React, Angular, Node.js | Frontend, backend & full-s
 
 ### About
 
-1133 / 2600 characters (working limit).
+1186 / 2600 characters (working limit).
 
 ```text
 I build software and make complex codebases easier to work with. I have 18 years of professional experience, including 10 years of independent contract work.
@@ -38,6 +38,8 @@ I use AI coding agents regularly and for a growing range of tasks. The skills I 
 I'm looking for hands-on senior development work: frontend, backend, or full-stack.
  
 B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work possible in Zagreb, Croatia.
+ 
+Work and project details: https://mrzli.github.io/
 ```
 
 ## Experience — Freelance Software Developer / Self-Employed

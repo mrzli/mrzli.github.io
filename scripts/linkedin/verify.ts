@@ -102,7 +102,13 @@ function verify(): void {
   const about = sections.find((section) => section.title === 'About')?.fields[0].value;
   assert.equal(
     about?.replaceAll('\n\u00a0\n', '\n\n'),
-    [...shortCv.summary, shortCv.ai, shortCv.profile.availability, shortCv.contracts].join('\n\n'),
+    [
+      ...shortCv.summary,
+      shortCv.ai,
+      shortCv.profile.availability,
+      shortCv.contracts,
+      `Work and project details: ${shortCv.profile.website}`,
+    ].join('\n\n'),
   );
 
   for (const [field, limit] of Object.entries(LINKEDIN_LIMITS)) {
@@ -130,7 +136,7 @@ function verify(): void {
     ]).includes('````text\nLiteral ``` inside text\n````'),
   );
 
-  assert.equal(about?.split('\n\u00a0\n').length, 7);
+  assert.equal(about?.split('\n\u00a0\n').length, 8);
   assert.ok(markdown.includes(`${about?.length} / 2600 characters`));
   assert.ok(blocks.includes(about!));
 
