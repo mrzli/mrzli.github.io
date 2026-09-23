@@ -117,3 +117,5 @@ Verification:
 No deployment or public GitHub Pages response checks were performed. Full
 interaction regression coverage remains SEO-004 and deployed verification remains
 SEO-006. Titles, descriptions, canonicals, sitemap, and robots.txt remain SEO-003.
+
+Committed as `9511188` on 2026-09-23 before starting SEO-003.

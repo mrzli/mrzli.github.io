@@ -8,3 +8,6 @@ export const PAGE_PATHS = {
 } as const;
 
 export const STATIC_PAGE_PATHS = Object.values(PAGE_PATHS);
+
+export const INDEXABLE_PAGE_PATHS = STATIC_PAGE_PATHS.filter((path) => path !== PAGE_PATHS.values);
+export type IndexablePagePath = (typeof INDEXABLE_PAGE_PATHS)[number];
