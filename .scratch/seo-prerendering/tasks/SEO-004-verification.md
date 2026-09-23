@@ -130,3 +130,5 @@ Scope and limitations:
   auditing third-party destinations. No deployment, public response audit, or
   search-engine indexing check was performed. Those hosting checks remain SEO-006.
 - SEO-005 documentation and local closure remain pending.
+
+Committed as `b5d4ad7` on 2026-09-23 before starting SEO-005.

@@ -1,6 +1,6 @@
 # SEO and static prerendering
 
-Status: in progress, SEO-001 through SEO-004 complete
+Status: locally verified, deployment verification pending
 
 Created: 2026-09-22
 
@@ -18,7 +18,7 @@ and Archon's `.scratch/archon-cli-simplification/`: a spec, an ordered task inde
 and individual tasks with acceptance checklists and verification records.
 Creating these documents does not start implementation or authorize deployment.
 
-## Current findings
+## Initial findings (before migration)
 
 - `index.html` contains an empty root and the title `Portfolio`.
   `src/setup/run.tsx` uses `createRoot`, and `src/routing/router.tsx` creates a
@@ -254,14 +254,18 @@ indexing remains an external outcome, not a completion prerequisite.
 
 ## Planning record
 
-Drafted from the current source and the migration discussion. No application,
-dependency, deployment, or project-instruction changes have been made.
+Drafted from the source and migration discussion before implementation. Planning
+alone made no application, dependency, deployment, or project-instruction changes.
 
 ## Implementation progress
 
 Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, SEO-002 as `9511188`,
-and SEO-003 as `f7fb665`. The export-link plan was committed as `e333a61` and
-SEO-003A as `456f68e`. SEO-004 passed local static-delivery and interaction
-verification without application changes. Its records remain uncommitted for
-review. SEO-005 documentation/closure and SEO-006 deployed verification remain
-pending.
+and SEO-003 as `f7fb665`. The export-link plan was committed as `e333a61`,
+SEO-003A as `456f68e`, and SEO-004 records as `b5d4ad7`. SEO-005 documentation
+and local closure are complete, with changes uncommitted for review.
+
+The local implementation and verification tasks have passed. Maintenance guidance
+is in [Rendering and SEO](../../docs/rendering-and-seo.md). See SEO-004 and SEO-005
+for verification evidence and known limitations. SEO-006 remains pending until
+the migrated revision is deployed and its public responses are checked. No push
+or deployment was performed. The full specification is not yet production-verified.
