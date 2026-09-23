@@ -74,7 +74,20 @@ page's title or indexing policy.
 Edit metadata in `page-metadata.ts`. Titles and descriptions use existing content
 and profile facts. Canonical and Open Graph URLs use `PROFILE.website`, including
 in local builds. Query strings and fragments do not become part of the canonical.
-The site currently supplies summary-card metadata without a social image.
+Indexable pages share a 1200×630 PNG social card with Open Graph and Twitter
+image tags. Edit [social-preview.svg](../src/assets/social-preview.svg) and
+regenerate the committed PNG with librsvg (requires DejaVu Sans):
+
+```bash
+rsvg-convert src/assets/social-preview.svg -o public/social-preview.png
+```
+
+Keep card text aligned with profile facts. The site build copies the PNG without
+requiring image tools. The homepage also supplies `ProfilePage` JSON-LD with a
+`Person` entity, using the shared profile and existing portrait. Other routes do
+not inherit that markup. Do not add invented credentials or modification dates.
+After editing, inspect the built HTML and validate the JSON-LD with Google's
+[Rich Results Test](https://search.google.com/test/rich-results).
 
 ## Static hosting contract
 

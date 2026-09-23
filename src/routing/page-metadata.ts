@@ -1,5 +1,6 @@
 import type { MetaDescriptor } from 'react-router';
 
+import profileImage from '../assets/profile.jpg';
 import { PROFILE } from '../content/profile';
 import { PAGE_PATHS, type IndexablePagePath } from './page-paths';
 
@@ -11,7 +12,7 @@ interface PageMetadata {
 const PAGE_METADATA = {
   [PAGE_PATHS.home]: {
     title: `${PROFILE.name} | ${PROFILE.title}`,
-    description: `${PROFILE.name}, ${PROFILE.title.toLowerCase()} based in ${PROFILE.location}. Explore professional experience, technical skills, personal projects, and background.`,
+    description: `${PROFILE.name}, ${PROFILE.title.toLowerCase()} in ${PROFILE.location}. React, TypeScript, and Node.js development. Available for remote B2B contracts.`,
   },
   [PAGE_PATHS.experience]: {
     title: `Experience | ${PROFILE.name}`,
@@ -34,8 +35,10 @@ const PAGE_METADATA = {
 export function getPageMetadata(path: IndexablePagePath): MetaDescriptor[] {
   const { title, description } = PAGE_METADATA[path];
   const url = new URL(path, PROFILE.website).href;
+  const socialImage = new URL('/social-preview.png', PROFILE.website).href;
+  const socialImageAlt = `${PROFILE.name} | ${PROFILE.title} | ${PROFILE.location}`;
 
-  return [
+  const metadata: MetaDescriptor[] = [
     { title },
     { name: 'description', content: description },
     { tagName: 'link', rel: 'canonical', href: url },
@@ -43,8 +46,40 @@ export function getPageMetadata(path: IndexablePagePath): MetaDescriptor[] {
     { property: 'og:description', content: description },
     { property: 'og:url', content: url },
     { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary' },
+    { property: 'og:image', content: socialImage },
+    { property: 'og:image:type', content: 'image/png' },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    { property: 'og:image:alt', content: socialImageAlt },
+    { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: socialImage },
+    { name: 'twitter:image:alt', content: socialImageAlt },
   ];
+
+  if (path === PAGE_PATHS.home) {
+    metadata.push({
+      'script:ld+json': {
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        '@id': `${url}#profile`,
+        url,
+        name: title,
+        description,
+        mainEntity: {
+          '@type': 'Person',
+          '@id': `${url}#person`,
+          name: PROFILE.name,
+          jobTitle: PROFILE.title,
+          description: PROFILE.lead,
+          url,
+          image: new URL(profileImage, PROFILE.website).href,
+          sameAs: [PROFILE.linkedin, PROFILE.github, PROFILE.stackOverflow],
+        },
+      },
+    });
+  }
+
+  return metadata;
 }
