@@ -20,8 +20,8 @@ independent contracting, and C# Software Developer for the combined earlier
 roles. The earlier entry is not presented as one real employer, so no company
 name is supplied. Each entry includes a direct website URL, also placed at the
 end of its description. The earlier-role description explains that the link
-opens at APIS IT and that the other roles follow below. Contracting links to `experience#contracting`; earlier
-work links to `experience#apis-it`, the first employment in that group.
+opens at APIS IT and that the other roles follow below. Contracting links to `experience/#contracting`; earlier
+work links to `experience/#apis-it`, the first employment in that group.
 
 Each experience includes a selected skills list to add individually to that
 experience in LinkedIn. Contracting skills are curated from the short CV project

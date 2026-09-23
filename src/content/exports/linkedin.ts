@@ -66,8 +66,8 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
     throw new Error('LinkedIn must be generated from the short CV.');
   }
   const { profile, contracting } = cv;
-  const contractingUrl = new URL('experience#contracting', profile.website).href;
-  const earlierUrl = new URL('experience#apis-it', profile.website).href;
+  const contractingUrl = new URL('experience/#contracting', profile.website).href;
+  const earlierUrl = new URL('experience/#apis-it', profile.website).href;
   const highlights = EXPERIENCE_SECTIONS[0].projects.flatMap((project) => {
     const highlight = LINKEDIN_PROJECT_HIGHLIGHTS[project.contentKey];
     return highlight ? [`• ${highlight}`] : [];

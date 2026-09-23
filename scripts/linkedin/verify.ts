@@ -46,7 +46,7 @@ function verify(): void {
     [
       ...earlier.projects[0].context,
       ...earlier.projects[0].contributions,
-      `Full descriptions: ${shortCv.profile.website}experience#apis-it\nThis link opens at APIS IT. Scroll down for the other roles included here.`,
+      `Full descriptions: ${shortCv.profile.website}experience/#apis-it\nThis link opens at APIS IT. Scroll down for the other roles included here.`,
     ].join('\n\u00a0\n'),
   );
   assert.ok(!experience[1].fields.some((field) => field.label === 'Company'));
@@ -72,7 +72,7 @@ function verify(): void {
     'Senior software developer',
   );
   for (const [index, anchor] of ['contracting', 'apis-it'].entries()) {
-    const url = `${shortCv.profile.website}experience#${anchor}`;
+    const url = `${shortCv.profile.website}experience/#${anchor}`;
     assert.equal(
       experience[index].fields.find((field) => field.label === 'Website URL')?.value,
       url,

@@ -46,11 +46,11 @@ B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work po
 | --- | --- | --- | --- |
 | Title | <code>Senior software developer</code> | Company | <code>Self-employed</code> |
 | Start date | <code>January 2016</code> | End date | <code>Present</code> |
-| Location / workplace | <code>Remote</code> | Website URL | <code>https://mrzli.github.io/experience#contracting</code> |
+| Location / workplace | <code>Remote</code> | Website URL | <code>https://mrzli.github.io/experience/#contracting</code> |
 
 ### Description
 
-1790 / 2000 characters (working limit).
+1791 / 2000 characters (working limit).
 
 ```text
 • HVAC monitoring: Worked on a React web application for monitoring and controlling HVAC equipment across buildings and sites.
@@ -79,7 +79,7 @@ B2B contracts: full-time, part-time, or fixed-price. Remote, with hybrid work po
  
 • E-learning: Developed an AngularJS and Java/Spring Boot application for video courses and online meetings.
  
-More projects and technical detail: https://mrzli.github.io/experience#contracting
+More projects and technical detail: https://mrzli.github.io/experience/#contracting
 ```
 
 ### Skills
@@ -98,16 +98,16 @@ This is the combined earlier-roles entry from the short CV, not a single employe
 | --- | --- | --- | --- |
 | Title | <code>C# Software Developer</code> | Start date | <code>January 2007</code> |
 | End date | <code>May 2016</code> | Location / workplace | <code>Croatia and remote</code> |
-| Website URL | <code>https://mrzli.github.io/experience#apis-it</code> |  |  |
+| Website URL | <code>https://mrzli.github.io/experience/#apis-it</code> |  |  |
 
 ### Description
 
-551 / 2000 characters (working limit).
+552 / 2000 characters (working limit).
 
 ```text
 I developed web and desktop software for government services, financial institutions, nuclear inspection, fuel dispenser monitoring and control, spreadsheet processing, and 3D animation. I built complete applications and components, implemented substantial parts of larger systems, and maintained existing software. My work covered user interfaces, business logic, databases, reporting, and hardware integration.
  
-Full descriptions: https://mrzli.github.io/experience#apis-it
+Full descriptions: https://mrzli.github.io/experience/#apis-it
 This link opens at APIS IT. Scroll down for the other roles included here.
 ```
 

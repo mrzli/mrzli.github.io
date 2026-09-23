@@ -1,6 +1,6 @@
 # SEO and static prerendering
 
-Status: in progress, SEO-001 through SEO-003 complete
+Status: in progress, SEO-001 through SEO-003A complete
 
 Created: 2026-09-22
 
@@ -260,6 +260,6 @@ dependency, deployment, or project-instruction changes have been made.
 ## Implementation progress
 
 Planning was committed as `a7fe5aa`, SEO-001 as `aa6ca51`, SEO-002 as `9511188`,
-and SEO-003 as `f7fb665`. SEO-003A was added at the user's request to update
-canonical page links in generated documents, especially LinkedIn. It is planned
-before SEO-004. SEO-003A and SEO-004 through SEO-006 have not started.
+and SEO-003 as `f7fb665`. The export-link task/spec updates were committed as
+`e333a61`. SEO-003A is implemented and locally verified, with implementation
+uncommitted for review. SEO-004 through SEO-006 have not started.
