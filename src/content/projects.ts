@@ -18,6 +18,7 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
       'Oxfmt',
       'Storybook',
       'Codex',
+      'Claude Code',
     ],
     links: [
       {
