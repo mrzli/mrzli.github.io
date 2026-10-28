@@ -9,7 +9,7 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
       'It sets up my AI agents the same way everywhere too: the same skills and global instructions, applied to every running agent session with one command.',
     ],
     roleText: [
-      'I designed and maintain all of it, including the archon command-line program. It syncs all my repositories, opens project workspaces with an editor, Git client, shell, and AI agent ready, and gains a command whenever I notice a task I repeat.',
+      'The idea, the design, and every decision are mine, drawn from years of setting up machines by hand. AI agents wrote almost all of the code under my direction, including the archon command-line program. It syncs all my repositories, opens project workspaces with an editor, Git client, shell, and AI agent ready, and gains a command whenever I notice a task I repeat.',
     ],
     tags: ['Ruby', 'Bash', 'Arch Linux', 'Omarchy', 'Hyprland', 'Claude Code', 'Codex'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/archon' }],
@@ -21,7 +21,7 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
       'They let me keep discussing the next work item while background agents implement the agreed ones, and branch a hard question into its own session without losing the main thread.',
     ],
     roleText: [
-      'I wrote and maintain the whole collection. I improve it from evidence in my own sessions, such as where I had to correct an agent, and routing tests check that an agent picks the right skill for a request.',
+      'I decide how I want to work and what each skill must do. AI agents write and revise the skills under my direction. They also review my sessions and the collection and propose improvements, and I choose which to adopt. Routing tests check that an agent picks the right skill for a request.',
     ],
     tags: ['Claude Code', 'Codex', 'Markdown', 'Bash'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/skills' }],
