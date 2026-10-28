@@ -5,9 +5,8 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Archon',
     text: [
-      'A new computer becomes my full development setup in minutes, and every machine I use stays identical. The whole workstation is defined as code, and one setup script brings any machine to that state, however often I run it.',
-      'Every AI agent gets the same skills and instructions, and one command applies a change to all running sessions.',
-      'Its command-line program syncs all my repositories and opens each project with an editor, Git client, shell, and AI agent ready.',
+      'A new computer becomes my full development setup in minutes, and every machine I use stays identical.',
+      'One setup script brings any Omarchy machine to the state defined in code, AI agents included. One command syncs all my projects, and another opens them ready to work.',
     ],
     roleText: [
       'I guide its development, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
@@ -18,8 +17,8 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Agent Skills',
     text: [
-      'The skills I use every day to direct AI coding agents. They take a feature from shaping through design, implementation, review, and release, and each one names the skill to use next.',
-      'They let me keep discussing the next work item while background agents implement the agreed ones, and branch a hard question into its own session without losing the main thread.',
+      'Implementation runs in parallel in the background while I keep working. Once I agree on a change, an agent builds, verifies, and commits it on its own, and I move straight on to the next decision.',
+      'Conversations stay on one thread. A side question splits off into its own session and comes back as a short summary of what was decided, and work for another repository goes there as a handoff.',
     ],
     roleText: [
       'I decide how I want to work and what each skill must do. AI agents write and revise the skills under my direction. They also review my sessions and the collection and propose improvements, and I choose which to adopt. Routing tests check that an agent picks the right skill for a request.',
