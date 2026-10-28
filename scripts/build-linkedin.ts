@@ -12,7 +12,7 @@ try {
   exportLinkedIn(
     createLinkedInSections(createCvDocument('concise')),
     destination,
-    fileURLToPath(new URL('../tmp/linkedin/', import.meta.url)),
+    fileURLToPath(new URL('../.scratch/temp/linkedin/', import.meta.url)),
   );
   console.log(`Generated ${destination}. Copy the field text into LinkedIn manually.`);
 } catch (error) {

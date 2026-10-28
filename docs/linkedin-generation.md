@@ -39,7 +39,7 @@ using JavaScript UTF-16 length. This counts non-BMP characters such as emoji as
 two units, conservatively. Croatian characters such as ž count as one.
 
 Validation reports every field exceeding its working limit and stops before
-writing the public file. It never truncates text. Staging stays under tmp/linkedin.
+writing the public file. It never truncates text. Staging stays under `.scratch/temp/linkedin/`.
 Only the final Markdown is published locally; there are no public intermediates.
 
 ## Working limits and evidence

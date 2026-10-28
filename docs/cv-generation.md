@@ -3,7 +3,7 @@
 Run `bun run build:cv` to generate the concise and detailed CVs from shared
 portfolio content. Both use a TeX Gyre Heros sans-serif template with navy rules and links.
 The command prints a fresh output directory such as
-`tmp/cv/build_20260915-213005`. The timestamp uses local time to the second.
+`.scratch/temp/cv/build_20260915-213005`. The timestamp uses local time to the second.
 Sort the timestamped folder names to find the latest run. If a folder already
 exists, the new folder gets `-01`, then `-02`, and so on. The first has no suffix.
 
@@ -56,7 +56,7 @@ location of the diagnostic logs, leaving existing downloads intact. `--tex-only`
 cannot be combined with `--publish`. Only finished TeX and PDF files are copied.
 
 The website and GitHub Pages builds use the checked-in downloads. They do not
-invoke LaTeX. Intermediates stay under `tmp/cv/` and can be removed when no longer
+invoke LaTeX. Intermediates stay under `.scratch/temp/cv/` and can be removed when no longer
 needed. Every build uses a fresh directory to avoid stale output masking failures.
 
 ## Editing

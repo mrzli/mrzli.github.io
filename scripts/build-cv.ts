@@ -26,7 +26,7 @@ function main(): void {
   const directory = buildCv(
     variants.map((variant) => ({ variant, tex: renderCv(createCvDocument(variant)) })),
     {
-      workDirectory: fileURLToPath(new URL('../tmp/cv/', import.meta.url)),
+      workDirectory: fileURLToPath(new URL('../.scratch/temp/cv/', import.meta.url)),
       publishDirectory: args.includes('--publish')
         ? fileURLToPath(new URL('../public/data/', import.meta.url))
         : undefined,

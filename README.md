@@ -24,7 +24,7 @@ Generate the concise and detailed CVs as TeX text files and PDFs:
 bun run build:cv
 ```
 
-The command prints their directory under `tmp/cv/`. Use `bun run build:cv --tex-only`
+The command prints their directory under `.scratch/temp/cv/`. Use `bun run build:cv --tex-only`
 for text files alone. PDF compilation requires LaTeX and `latexmk`. Both CVs
 are available in `public/data/`.
 See [CV generation](./docs/cv-generation.md) for prerequisites and updating downloads.
