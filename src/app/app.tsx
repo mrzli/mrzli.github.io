@@ -57,6 +57,7 @@ const NAV_ITEMS: readonly NavItem[] = [
   { to: PAGE_PATHS.experience, label: 'Experience' },
   { to: PAGE_PATHS.skills, label: 'Skills' },
   { to: PAGE_PATHS.projects, label: 'Projects' },
+  { to: PAGE_PATHS.howIWork, label: 'How I Work' },
   { to: PAGE_PATHS.background, label: 'Background' },
   // { to: PAGE_PATHS.values, label: 'Values' },
 ];

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { BackgroundPage } from '@/app/pages/background/background-page';
 import { ExperiencePage } from '@/app/pages/experience/experience-page';
 import { HomePage } from '@/app/pages/home/home-page';
+import { HowIWorkPage } from '@/app/pages/how-i-work/how-i-work-page';
 import { ProjectsPage } from '@/app/pages/projects/projects-page';
 import { SkillsPage } from '@/app/pages/skills/skills-page';
 
@@ -21,6 +22,9 @@ export function SwipePreview({ path }: { readonly path: string }): ReactNode {
     }
     case PAGE_PATHS.projects: {
       return <ProjectsPage />;
+    }
+    case PAGE_PATHS.howIWork: {
+      return <HowIWorkPage />;
     }
     case PAGE_PATHS.background: {
       return <BackgroundPage />;

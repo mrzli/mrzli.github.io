@@ -3,6 +3,7 @@ export const PAGE_PATHS = {
   experience: '/experience/',
   skills: '/skills/',
   projects: '/projects/',
+  howIWork: '/how-i-work/',
   background: '/background/',
   values: '/values/',
 } as const;

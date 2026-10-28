@@ -7,6 +7,7 @@ export default [
   route(PAGE_PATHS.experience, 'routing/pages/experience.tsx'),
   route(PAGE_PATHS.skills, 'routing/pages/skills.tsx'),
   route(PAGE_PATHS.projects, 'routing/pages/projects.tsx'),
+  route(PAGE_PATHS.howIWork, 'routing/pages/how-i-work.tsx'),
   route(PAGE_PATHS.background, 'routing/pages/background.tsx'),
   route(PAGE_PATHS.values, 'routing/pages/values.tsx'),
   route('*', 'routing/pages/not-found.tsx'),
