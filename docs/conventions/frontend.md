@@ -20,6 +20,5 @@
 
 ## Portfolio Content
 
-- Keep professional claims, dates, project descriptions, and contact details grounded in user-provided information or existing content. Do not invent qualifications or experience.
 - Keep related page content and static assets consistent when the task affects them.
 - A route's existence does not imply it belongs in navigation. The Values route is currently a stub, its navigation entry is disabled, and its prerendered HTML is marked `noindex`.

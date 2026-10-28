@@ -1,14 +1,50 @@
-# Project Instructions
+# Project instructions
 
-Before every task, read each file below completely and in order, even if it appears unrelated:
+This is Goran Mržljak's portfolio and online CV, a static site prerendered at
+build time, hydrated by React, and published to GitHub Pages. It has no
+backend, database, or CMS.
 
-1. `.agents/general.md`
-2. `.agents/code-style.md`
-3. `.agents/architecture.md`
-4. `.agents/frontend.md`
-5. `.agents/testing.md`
-6. `.agents/validation.md`
-7. `.agents/agent-behavior.md`
+Read these before the work they cover:
 
-Do not begin task work until all seven files have been read. Treat their combined contents as the
-project instructions. When they conflict, the later file takes precedence.
+- [The code style guide](docs/conventions/code-style.md) before editing
+  TypeScript or TSX.
+- [The frontend guide](docs/conventions/frontend.md) before changing
+  components, pages, styling, or interaction.
+- [The architecture](docs/architecture.md) before adding files, routes,
+  content, dependencies, or build and deployment changes.
+- [The testing guide](docs/conventions/testing.md) before verifying a UI,
+  routing, or logic change.
+- [The content guide](docs/content.md) before editing professional content,
+  and the [CV](docs/cv-generation.md) and
+  [LinkedIn](docs/linkedin-generation.md) guides before changing those exports.
+
+# Constraints
+
+- Keep professional claims, dates, project descriptions, and contact details
+  grounded in information the user gave or in existing content. Do not invent
+  qualifications or experience.
+- Preserve `bunfig.toml` and `.vscode/settings.json`, if present, unless the
+  user asks to change them.
+- Use Bun and the scripts in `package.json`, not npm, pnpm, or Yarn.
+
+# Required checks
+
+Run the checks for the strictest kind of change, the one furthest down, before
+committing or handing back:
+
+- **Docs only** (`.md` files): `bun run fmt:check`. Also check that referenced
+  paths and commands exist.
+- **Code, configuration, or build files**: `bun run check` (formatting and
+  Oxlint) and `bun run build` (route types, TypeScript for `src/` and
+  `stories/`, prerendering, and packaging).
+- **Stories or Storybook configuration**: also `bun run build-storybook`.
+
+The repository has no `test`, `typecheck`, or `preflight` scripts, so never
+report those as run. Browser checks are in
+[the testing guide](docs/conventions/testing.md).
+
+Invoke checks as direct commands, without redirection, pipes, environment
+assignments, or chaining, so approval prefixes can match.
+
+`bun run fmt`, `bun run lint:fix`, and `bun run fix` modify files. Limit their
+scope when possible and review the diff for unrelated changes.

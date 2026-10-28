@@ -27,5 +27,5 @@
 - Keep page metadata in `src/routing/page-metadata.ts` and expose it through route-module `meta` exports, outside page bodies and swipe previews. Use `PROFILE.website` for the production origin and `INDEXABLE_PAGE_PATHS` for indexable routes. The packaging script generates sitemap.xml and robots.txt from those shared values.
 - Keep the router basename aligned with Vite's base URL. Internal page URLs use trailing slashes. Preserve fragments and queries through navigation and static directory redirects.
 - Use `ssr: false` with explicit prerender paths in `react-router.config.ts`. The build packages only `.react-router/build/client/` into `dist/`, excluding the generated SPA fallback. Serve each page from its directory-index HTML and retain its route data and assets. Keep the standalone `public/404.html` and client not-found route marked `noindex`.
-- Use `bun run preview` to serve the built files with real 404 responses and no SPA fallback. Storybook uses `.storybook/vite.config.ts` without the React Router plugin.
+- Storybook uses `.storybook/vite.config.ts` without the React Router plugin.
 - `.github/workflows/main.yml` builds and deploys to GitHub Pages on pushes to `master` or manual dispatch.
