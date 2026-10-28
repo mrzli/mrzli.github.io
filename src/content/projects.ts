@@ -5,9 +5,9 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Archon',
     text: [
-      'My development workstation, defined as code. A fresh machine reaches my full setup within minutes, and one idempotent setup script keeps every machine I work on identical.',
-      'It sets up my AI agents the same way everywhere too: the same skills and global instructions, applied to every running agent session with one command.',
-      'Its command-line program syncs all my repositories and opens project workspaces with an editor, Git client, shell, and AI agent ready.',
+      'A new computer becomes my full development setup in minutes, and every machine I use stays identical. The whole workstation is defined as code, and one setup script brings any machine to that state, however often I run it.',
+      'Every AI agent gets the same skills and instructions, and one command applies a change to all running sessions.',
+      'Its command-line program syncs all my repositories and opens each project with an editor, Git client, shell, and AI agent ready.',
     ],
     roleText: [
       'I guide its development, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
