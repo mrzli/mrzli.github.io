@@ -7,9 +7,10 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
     text: [
       'My development workstation, defined as code. A fresh machine reaches my full setup within minutes, and one idempotent setup script keeps every machine I work on identical.',
       'It sets up my AI agents the same way everywhere too: the same skills and global instructions, applied to every running agent session with one command.',
+      'Its command-line program syncs all my repositories and opens project workspaces with an editor, Git client, shell, and AI agent ready.',
     ],
     roleText: [
-      'The idea, the design, and every decision are mine, drawn from years of setting up machines by hand. AI agents wrote almost all of the code under my direction, including the archon command-line program. It syncs all my repositories, opens project workspaces with an editor, Git client, shell, and AI agent ready, and gains a command whenever I notice a task I repeat.',
+      'I guide its development, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
     ],
     tags: ['Ruby', 'Bash', 'Arch Linux', 'Omarchy', 'Hyprland', 'Claude Code', 'Codex'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/archon' }],
