@@ -3,7 +3,7 @@
 ## General Style
 
 - Use TypeScript-first patterns and keep types explicit at module boundaries, including component props.
-- Avoid one-letter variable names. Avoid inline comments unless requested.
+- Avoid one-letter variable names. Write comments as [the documentation guide](documentation.md#code-comments) describes.
 - Match the existing style in touched files. Let Oxfmt handle formatting and import ordering.
 
 ## Declaration Order

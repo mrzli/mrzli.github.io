@@ -14,6 +14,8 @@ Read these before the work they cover:
   content, dependencies, or build and deployment changes.
 - [The testing guide](docs/conventions/testing.md) before verifying a UI,
   routing, or logic change.
+- [The documentation guide](docs/conventions/documentation.md) before writing
+  or changing docs or comments.
 - [The content guide](docs/content.md) before editing professional content,
   and the [CV](docs/cv-generation.md) and
   [LinkedIn](docs/linkedin-generation.md) guides before changing those exports.
