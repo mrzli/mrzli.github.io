@@ -4,5 +4,5 @@
   "singleQuote": true,
   "sortImports": true,
   "sortTailwindcss": true,
-  "ignorePatterns": ["_old/**", "public/data/linkedin.md", "public/google*.html"]
+  "ignorePatterns": ["public/data/linkedin.md", "public/google*.html"]
 }
