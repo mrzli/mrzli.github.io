@@ -22,7 +22,7 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
       'Complex discussions can branch into a tree of sessions. I can dig deep into one topic, or explore several at different levels, without losing the main thread, and every decision flows back into it.',
     ],
     roleText: [
-      'Some skills started from public collections and were adapted to how I work. Others took shape from my daily use. AI agents write and revise them and take part in deciding what each skill should do. I set the direction, and their proposals are often right.',
+      'Some skills started from public collections and were adapted to how I work. Others I asked for explicitly, by explaining a problem I kept running into. AI agents write the skills, and refining them is partly automatic: agents review my sessions and propose improvements, which are often right. I steer that process and decide where it matters.',
     ],
     tags: ['Claude Code', 'Codex', 'Markdown', 'Bash'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/skills' }],
