@@ -1,10 +1,17 @@
-import { useAppContext } from '@/setup/app-context';
+import { useSyncExternalStore } from 'react';
 
-import { useHydrated } from './use-hydrated';
+import { useAppContext } from '@/setup/app-context';
 
 export function useCurrentYear(): number {
   const { initialYear } = useAppContext();
-  const isHydrated = useHydrated();
 
-  return isHydrated ? new Date().getFullYear() : initialYear;
+  return useSyncExternalStore(subscribe, getClientSnapshot, () => initialYear);
+}
+
+function subscribe(): () => void {
+  return () => {};
+}
+
+function getClientSnapshot(): number {
+  return new Date().getFullYear();
 }
