@@ -45,8 +45,5 @@ The repository has no `test`, `typecheck`, or `preflight` scripts, so never
 report those as run. Browser checks are in
 [the testing guide](docs/conventions/testing.md).
 
-Invoke checks as direct commands, without redirection, pipes, environment
-assignments, or chaining, so approval prefixes can match.
-
 `bun run fmt`, `bun run lint:fix`, and `bun run fix` modify files. Limit their
 scope when possible and review the diff for unrelated changes.
