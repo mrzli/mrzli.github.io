@@ -5,8 +5,8 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Archon',
     text: [
-      'A new computer becomes my full development setup in minutes, and every Omarchy machine I use stays identical, down to my AI agent configuration.',
-      'Day-to-day work is just as easy. All my repositories stay in sync, and any set of projects opens as a ready workspace, with an editor, terminal, and AI agent in place.',
+      'A new computer becomes my full development setup in minutes, and every Omarchy machine I use stays identical, including my AI agent configuration.',
+      "One command keeps all my projects in sync. Another opens the ones I'm working on as workspaces, each with an editor, terminal, and AI agent ready.",
     ],
     roleText: [
       'I guide its development, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
