@@ -28,7 +28,7 @@ const PAGE_METADATA = {
   },
   [PAGE_PATHS.howIWork]: {
     title: `How I Work | ${PROFILE.name}`,
-    description: `How ${PROFILE.name} builds software by directing AI coding agents, with reusable agent skills, versioned agent rules, and required checks.`,
+    description: `How ${PROFILE.name} moved from writing code by hand to directing AI coding agents, with a workstation defined as code, reusable agent skills, and versioned agent rules.`,
   },
   [PAGE_PATHS.background]: {
     title: `Background | ${PROFILE.name}`,

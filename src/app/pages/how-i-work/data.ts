@@ -1,47 +1,83 @@
 import type { LinkItem } from '@/content/types';
 
-export interface WorkPracticeTopic {
+export interface WorkSection {
+  readonly label: string;
+  readonly title: string;
+  readonly paragraphs: readonly string[];
+  readonly topics: readonly WorkTopic[];
+  readonly links: readonly LinkItem[];
+}
+
+export interface WorkTopic {
   readonly title: string;
   readonly text: string;
 }
 
-export const AGENTIC_DEVELOPMENT_INTRO =
-  'I build software by directing AI coding agents, mainly Claude Code, through the whole cycle: clarifying requirements, design, planning, implementation, and review. I make the decisions and judge the results.';
-
-export const AGENTIC_DEVELOPMENT_TOPICS: readonly WorkPracticeTopic[] = [
+export const WORK_SECTIONS: readonly WorkSection[] = [
   {
-    title: 'What I keep for myself',
-    text: 'I own the requirements, architecture, naming, and scope, and I decide whether a result is good enough. Agents propose and implement. I approve or reject their proposals, have them report every choice they made beyond what I approved, and correct their mistakes.',
+    label: 'Transition',
+    title: 'From writing code to directing agents',
+    paragraphs: [
+      'For most of my career, I wrote every line by hand. I cared about clean, readable code and clear architecture, and I restructured codebases that had lost both. Later, I started using AI agents for parts of the work.',
+      'Starting in September 2026, my process changed completely within about a month. Agents now write almost all of the code, and my work is deciding what to build, how it should be structured, and whether the result is good enough.',
+      'It keeps changing from week to week, so this page describes where it stands at the moment.',
+    ],
+    topics: [],
+    links: [],
   },
   {
-    title: 'A system, not ad hoc prompting',
-    text: 'I maintain a public collection of over 30 agent skills, reusable instructions an agent loads for one kind of task. They cover planning, implementation, code and architecture review, bug fixing, and implementing agreed work in the background while the discussion continues. Routing tests check that an agent picks the right skill for a request.',
+    label: 'Workstation',
+    title: 'A workstation defined as code',
+    paragraphs: [
+      'I used to hate setting up a computer. Reinstalling meant a long, tedious job of installing every tool and recreating every setting by hand, so formatting a drive felt like a nightmare. I wanted that to be painless.',
+      'Now my whole workstation is defined in one repository, Archon, and the machine follows it. One setup script brings a new Omarchy machine to my full setup within minutes, and an update takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I switch between machines freely.',
+      'Every change to how I work starts there, from the software I install to the skills and instructions my AI agents use, so every machine works the same way.',
+    ],
+    topics: [],
+    links: [
+      {
+        href: 'https://github.com/mrzli/archon',
+        label: 'Archon on GitHub',
+      },
+    ],
   },
   {
-    title: 'Instructions kept like code',
-    text: 'My global agent rules are versioned in Git and installed with my workstation setup, so every project and machine uses the same rules. They define when an agent must ask for approval, how it reports its choices, that it ranks options by the quality of the result rather than the effort, and how it keeps Git history linear.',
-  },
-  {
-    title: 'Quality controls',
-    text: 'Each project states which checks each kind of change requires. I review changes before they are merged, check user interface changes in a real browser, and keep each self-contained change in its own commit.',
-  },
-  {
-    title: 'Improving the process',
-    text: 'After finishing work, I look at where it went wrong or slowed down, such as recurring agent mistakes or weak verification, and adjust the skills and rules to match.',
-  },
-  {
-    title: 'What this means for clients',
-    text: 'My architecture and code standards are the same as before. More of my time goes to requirements, design, and review.',
-  },
-];
-
-export const AGENTIC_DEVELOPMENT_LINKS: readonly LinkItem[] = [
-  {
-    href: 'https://github.com/mrzli/skills',
-    label: 'Agent skills on GitHub',
-  },
-  {
-    href: 'https://github.com/mrzli/archon',
-    label: 'Workstation setup and agent rules on GitHub',
+    label: 'Agentic Development',
+    title: 'How I direct AI coding agents',
+    paragraphs: [
+      'I build software by directing AI coding agents, mainly Claude Code, through the whole cycle: clarifying requirements, design, planning, implementation, and review. I make the decisions and judge the results.',
+    ],
+    topics: [
+      {
+        title: 'What I keep for myself',
+        text: 'I own the requirements, architecture, naming, and scope, and I decide whether a result is good enough. Agents propose and implement. I approve or reject their proposals, have them report every choice they made beyond what I approved, and correct their mistakes.',
+      },
+      {
+        title: 'A system, not ad hoc prompting',
+        text: 'I maintain a public collection of over 30 agent skills, reusable instructions an agent loads for one kind of task. They cover planning, implementation, code and architecture review, bug fixing, and implementing agreed work in the background while the discussion continues. Routing tests check that an agent picks the right skill for a request.',
+      },
+      {
+        title: 'Instructions kept like code',
+        text: 'My global agent rules are versioned in Git and installed with my workstation setup, so every project and machine uses the same rules. They define when an agent must ask for approval, how it reports its choices, that it ranks options by the quality of the result rather than the effort, and how it keeps Git history linear.',
+      },
+      {
+        title: 'Quality controls',
+        text: 'Each project states which checks each kind of change requires. I review changes before they are merged, check user interface changes in a real browser, and keep each self-contained change in its own commit.',
+      },
+      {
+        title: 'Improving the process',
+        text: 'After finishing work, I look at where it went wrong or slowed down, such as recurring agent mistakes or weak verification, and adjust the skills and rules to match.',
+      },
+      {
+        title: 'What this means for clients',
+        text: 'My architecture and code standards are the same as before. More of my time goes to requirements, design, and review.',
+      },
+    ],
+    links: [
+      {
+        href: 'https://github.com/mrzli/skills',
+        label: 'Agent skills on GitHub',
+      },
+    ],
   },
 ];
