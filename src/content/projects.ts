@@ -19,7 +19,7 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
     text: [
       'Skills that guide AI coding agents through engineering work, from clarifying a feature through design, implementation, and review.',
       'The main one runs work in parallel in the background. I queue an agreed change, and an agent implements and verifies it on its own branch, then rebases it onto mine, so it arrives finished while I keep working.',
-      'A side topic can split off into its own session, and only what was decided there comes back to the main conversation.',
+      'Discussions branch into a tree of sessions. I can dig deep into one topic, or explore several at different levels, without losing the main thread, and every decision flows back into it.',
     ],
     roleText: [
       'I decide how I want to work and what each skill must do. AI agents write and revise the skills under my direction. They also review my sessions and the collection and propose improvements, and I choose which to adopt. Routing tests check that an agent picks the right skill for a request.',
