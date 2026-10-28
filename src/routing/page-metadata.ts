@@ -24,7 +24,7 @@ const PAGE_METADATA = {
   },
   [PAGE_PATHS.projects]: {
     title: `Projects | ${PROFILE.name}`,
-    description: `Personal software projects by ${PROFILE.name}, including this portfolio website and games for Android and desktop, with source code links.`,
+    description: `Personal software projects by ${PROFILE.name}, including a workstation defined as code, AI agent skills, this portfolio website, and games for Android and desktop, with source code links.`,
   },
   [PAGE_PATHS.howIWork]: {
     title: `How I Work | ${PROFILE.name}`,

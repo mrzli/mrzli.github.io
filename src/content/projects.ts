@@ -3,6 +3,30 @@ import type { PersonalProject } from './types';
 
 export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
+    title: 'Archon',
+    text: [
+      'My development workstation, defined as code. A fresh machine reaches my full setup within minutes, and one idempotent setup script keeps every machine I work on identical.',
+      'It sets up my AI agents the same way everywhere too: the same skills and global instructions, applied to every running agent session with one command.',
+    ],
+    roleText: [
+      'I designed and maintain all of it, including the archon command-line program. It syncs all my repositories, opens project workspaces with an editor, Git client, shell, and AI agent ready, and gains a command whenever I notice a task I repeat.',
+    ],
+    tags: ['Ruby', 'Bash', 'Arch Linux', 'Omarchy', 'Hyprland', 'Claude Code', 'Codex'],
+    links: [{ label: 'Source Code', href: 'https://github.com/mrzli/archon' }],
+  },
+  {
+    title: 'Agent Skills',
+    text: [
+      'The skills I use every day to direct AI coding agents. They take a feature from shaping through design, implementation, review, and release, and each one names the skill to use next.',
+      'They let me keep discussing the next work item while background agents implement the agreed ones, and branch a hard question into its own session without losing the main thread.',
+    ],
+    roleText: [
+      'I wrote and maintain the whole collection. I improve it from evidence in my own sessions, such as where I had to correct an agent, and routing tests check that an agent picks the right skill for a request.',
+    ],
+    tags: ['Claude Code', 'Codex', 'Markdown', 'Bash'],
+    links: [{ label: 'Source Code', href: 'https://github.com/mrzli/skills' }],
+  },
+  {
     title: 'Personal website',
     text: ['This website presents my professional experience, skills, projects, and background.'],
     roleText: [
