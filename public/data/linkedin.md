@@ -12,17 +12,17 @@ Counts include spaces and line breaks and use UTF-16 code units (conservative fo
 
 ### Headline
 
-96 / 220 characters (working limit).
+140 / 220 characters (working limit).
 
 ```text
-Senior software developer | React, Angular, Node.js | Frontend, backend & full-stack development
+Senior software developer | React, Angular, Node.js | Frontend, backend & full-stack development | Agentic development with AI coding agents
 ```
 
 ## About
 
 ### About
 
-981 / 2600 characters (working limit).
+1134 / 2600 characters (working limit).
 
 ```text
 I build software and make complex codebases easier to work with. I have 18 years of professional experience, including 10 years of independent contract work.
@@ -33,7 +33,7 @@ My experience also includes desktop and mobile applications.
  
 I work independently or within established teams. I design application architecture, help clarify requirements, mentor and onboard developers, and conduct developer interviews.
  
-I use AI coding agents regularly in my development work.
+I now build software by directing AI coding agents, mainly Claude Code, through a system of reusable skills and rules that I maintain. I still own the architecture and decide whether the result is good enough.
  
 I'm looking for hands-on senior development work: frontend, backend, or full-stack.
  
