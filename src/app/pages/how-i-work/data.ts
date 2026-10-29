@@ -17,7 +17,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
   {
     label: 'Transition',
     title: 'The month everything changed',
-    paragraphs: ['For me, that was October 2026. Here is how the journey went.'],
+    paragraphs: ['For me, that was October 2026. Here is how I got to that point.'],
     subsections: [
       {
         title: 'By hand',
@@ -34,7 +34,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'Functions and tests',
         paragraphs: [
-          'By the first half of 2025, I was using models to write self-contained functions and full unit test files. The code was not always perfect, but it removed much of the tedium.',
+          'By the first half of 2025, I was using models to write self-contained functions and full unit test files. The code they produced was not always perfect, but it removed much of the tedium.',
         ],
       },
       {
@@ -48,7 +48,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
         title: 'Learning to trust agents',
         paragraphs: [
           'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks to learn to let them work on their own and trust the result.',
-          'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content, though the content is still mine.',
+          'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content.',
         ],
       },
       {
@@ -61,7 +61,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'What comes next',
         paragraphs: [
-          'I have worked this new way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. There could be much more to gain from the process itself, not just from models and tools, which are bound to keep improving too.',
+          'I have worked this new way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. There could be much more to gain from the process itself, not just from models and tools, which are bound to keep improving too. It is an exciting time to be building software, and I am curious where it goes next.',
         ],
       },
     ],
