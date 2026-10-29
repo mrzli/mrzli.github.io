@@ -91,8 +91,9 @@ export function createLinkedInSections(cv: CvDocument): readonly LinkedInSection
         {
           label: 'About',
           value: [
-            ...cv.summary,
+            cv.summary[0],
             cv.ai,
+            ...cv.summary.slice(1),
             profile.availability,
             cv.contracts,
             `Work and project details: ${profile.website}`,
