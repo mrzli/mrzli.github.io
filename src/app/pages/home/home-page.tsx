@@ -27,10 +27,10 @@ export function HomePage(): ReactNode {
                 {PROFILE.lead}
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                {PROFILE.summary}
+                {PROFILE.ai}
               </Typography>
               <Typography variant='body' className='max-w-2xl'>
-                {PROFILE.ai}
+                {PROFILE.summary}
               </Typography>
             </div>
             <div className='grid auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2'>
