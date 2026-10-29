@@ -29,7 +29,7 @@ export const PROFILE: Profile = {
   stackOverflow: 'https://stackoverflow.com/users/520229/mrzli',
   lead: 'I build software and make complex codebases easier to work with.',
   summary:
-    "In client work, I've worked mainly with React, TypeScript, and Node.js. I build frontend and backend applications from scratch through to production, and redesign and restructure existing systems. I favor clear architecture and readable code that is easy to maintain and extend.",
+    'My client work has centered on React, TypeScript, and Node.js. I build frontend and backend applications from scratch through to production, and redesign and restructure existing systems. I favor clear architecture and readable code that is easy to maintain and extend.',
   additionalExperience: 'My experience also includes desktop and mobile applications.',
   ai: 'I now build software by directing AI coding agents, mainly Claude Code, through a system of reusable skills and rules that I maintain. I still own the architecture and decide whether the result is good enough.',
   availability:
