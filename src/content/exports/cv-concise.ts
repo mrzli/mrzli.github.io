@@ -2,13 +2,6 @@ import { EXPERIENCE_SECTIONS } from '../experience';
 import type { ExperienceProjectKey } from '../experience-keys';
 import { SKILLS_SECTIONS } from '../skills';
 import type { ConciseProject, CvEarlierExperience, CvProject } from './types';
-export const CONCISE_CV = {
-  summary: [
-    'I build complete web applications independently or within a team: frontend, backend, or full stack. I define architecture, modernize systems, and mentor developers.',
-  ],
-  ai: 'Development with AI coding agents or without AI assistance.',
-  contracts: 'B2B contracts: full-time, part-time, or fixed-price. Remote; hybrid in Zagreb.',
-} as const;
 
 export const CONCISE_CV_PROJECTS: Readonly<Partial<Record<ExperienceProjectKey, ConciseProject>>> =
   {
