@@ -16,11 +16,13 @@ export interface WorkTopic {
 export const WORK_SECTIONS: readonly WorkSection[] = [
   {
     label: 'Transition',
-    title: 'The month everything changed for me',
+    title: 'The month everything changed',
     paragraphs: [
-      'October 2026.',
-      "For most of my career, I wrote every line by hand, with nothing more than the editor's own autocomplete. I cared about clean, readable code and clear architecture, and I restructured codebases that had lost both.",
-      "Around 2023, GitHub Copilot's suggestions started to help. By 2025, it could write a whole function or a test file in one go. Over the 2025 winter break, with better models, I built a small application of about 3,000 lines with tests, deciding what it should do and how while the agent wrote the code. Back at work, I could often hand an agent an issue and have it solved. In the summer of 2026, I started giving tasks to Codex, and in September, GPT-6 Astra took over most of the tedious work, including much of the work on this website.",
+      'For me, that was October 2026.',
+      "For most of my career, every character of source code I wrote was a deterministic, conscious decision. Much of it I typed directly by hand. Some parts I produced with the help of tooling - autocomplete, code snippets or code generators. I cared about clean, readable code and clear architecture, and when the code base that did not fit that description and I was able to improve it, I had to do that completely manually.",
+      "Sometime during 2023 or 2024, GitHub Copilot's suggestions started to help. At that point, pressing tabs to autocomplete lines and code sections was the limit of my AI usage in software development. Still, even just that was useful.",
+      // "During the first half of 2025, I mostly",
+      "By 2025, it could write a whole function or a test file in one go. Over the 2025 winter break, with better models, I built a small application of about 3,000 lines with tests, deciding what it should do and how while the agent wrote the code. Back at work, I could often hand an agent an issue and have it solved. In the summer of 2026, I started giving tasks to Codex, and in September, GPT-6 Astra took over most of the tedious work, including much of the work on this website.",
       'Then, in October, I started using Claude Opus 5.5 in Claude Code, and I have written almost no code by hand since. My time goes to deciding what to build, making the architectural decisions, guiding the agents, and improving how they work.',
       'It keeps changing from week to week, so this page describes where it stands at the moment.',
     ],
