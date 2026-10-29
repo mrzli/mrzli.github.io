@@ -28,33 +28,33 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'AI autocomplete',
         paragraphs: [
-          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. That was the limit of my AI use in development, but even that was useful.",
+          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. Autocomplete was the extent of my AI use in development, but even that was useful.",
         ],
       },
       {
         title: 'Functions and tests',
         paragraphs: [
-          'By the first half of 2025, I was using models to write self-contained functions and full unit test files. They were not perfect, but they removed much of the tedium.',
+          'By the first half of 2025, I was using models to write self-contained functions and full unit test files. The code was not always perfect, but it removed much of the tedium.',
         ],
       },
       {
         title: 'Directing an agent',
         paragraphs: [
-          'Over the 2026 New Year holidays, I had a few days to experiment. The models and tools had improved a lot. With light effort over about ten days, I built a small application of about 3,000 lines, including tests. I guided the agent explicitly, telling it what to build and how, and it wrote the code.',
+          'Over the 2026 New Year holidays, I had a few days to experiment. The models and tools had improved a lot. With light effort over about ten days, I built a small application of about 3,000 lines, including tests. I guided the agent explicitly, telling it what to build and how, and it wrote the code. That was my first real wow moment.',
           'Back on client projects, agents could often fully resolve small, well-defined issues.',
         ],
       },
       {
         title: 'Learning to trust agents',
         paragraphs: [
-          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. I already trusted agents with real work, but it took a few weeks to trust them with this much autonomy.',
+          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks to learn to let them work on their own and trust the result.',
           'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content, though the content is still mine.',
         ],
       },
       {
         title: 'Takeoff',
         paragraphs: [
-          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well, and my process changed dramatically, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and so far the limit seems to be how fast I can think through features and architecture.",
+          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well. At the same time, my process changed dramatically, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and so far the only limit seems to be how fast I can think through features and architecture.",
           'My productivity has grown immensely, even compared with a month or two ago. The caveat is that this was on a personal project, free of the constraints, justified or otherwise, that come with client work.',
         ],
       },
