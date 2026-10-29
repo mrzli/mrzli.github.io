@@ -18,15 +18,65 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
     label: 'Transition',
     title: 'The month everything changed',
     paragraphs: [
-      'For me, that was October 2026.',
-      'For most of my career, every character of source code I wrote was a deterministic, conscious decision. Much of it I typed directly by hand. Some parts I produced with the help of tooling - autocomplete, code snippets or code generators. I cared about clean, readable code and clear architecture, and when the code base that did not fit that description and I was able to improve it, I had to do that completely manually.',
-      "Sometime during 2023 or 2024, GitHub Copilot's suggestions started to help. At that point, pressing tabs to autocomplete lines and code sections was the limit of my AI usage in software development. Still, even just that was useful.",
-      // "During the first half of 2025, I mostly",
-      'By 2025, it could write a whole function or a test file in one go. Over the 2025 winter break, with better models, I built a small application of about 3,000 lines with tests, deciding what it should do and how while the agent wrote the code. Back at work, I could often hand an agent an issue and have it solved. In the summer of 2026, I started giving tasks to Codex, and in September, GPT-6 Astra took over most of the tedious work, including much of the work on this website.',
-      'Then, in October, I started using Claude Opus 5.5 in Claude Code, and I have written almost no code by hand since. My time goes to deciding what to build, making the architectural decisions, guiding the agents, and improving how they work.',
-      'It keeps changing from week to week, so this page describes where it stands at the moment.',
+      'For me at least, that was October 2026.',
+      'But a few steps came before that.',
+      'Compared to some, I am a late adopter - below is my personal timeline.',
     ],
-    subsections: [],
+    subsections: [
+      {
+        title: 'The old days',
+        paragraphs: [
+          'For most of my career, every character of source code I wrote was a deterministic, conscious decision. Much of it I typed directly by hand. Some parts I produced with the help of tooling - autocomplete, code snippets or code generators.',
+          'I cared about clean, readable code and clear architecture, and when the code base that did not fit that description and I was able to improve it, I had to do that completely manually.',
+        ],
+      },
+      {
+        title: 'AI autocomplete',
+        paragraphs: [
+          "Sometime during 2023 or 2024, GitHub Copilot's suggestions started to help. At that point, pressing tabs to autocomplete lines and code sections was the limit of my AI usage in software development. Still, even just that was useful.",
+        ],
+      },
+      {
+        title: 'Functions and tests',
+        paragraphs: [
+          "During the first half of 2025, the most advanced use I got from the models is for them to write self-contained functions, whether it's something general such binary search, or something domain specific but still pure.",
+          'They were also good at writing full unit test files for such function, though not perfect. Still they performed well enough to remove a lot of tedium from that task.',
+        ],
+      },
+      {
+        title: 'Agentic era begins',
+        paragraphs: [
+          'The next clear step up for me can during the 2026 new year when I had a few days of to experiment. The models and tooling were much better.',
+          'I used them to built a small application of about 3,000 lines with tests. The effort was light and most of it was spread up over 10 days or so. I guided the models directly, deciding what they should do and how while the agent wrote the code.',
+          'Back on paid projects, I could hand an agent an issue and have it solved much of the time.',
+        ],
+      },
+      {
+        title: 'Experimentation and awe',
+        paragraphs: [
+          'In the summer of 2026, I started expriementing with Codex, and the newer models, such as 5.6 Sol and later Astra. I was not focused on this work, so it took a couple of weeks for me to start trusting it to do the work, but by the end of summer I was very impressed with what the models could do.',
+          'By the end, my flow was to ask it to do something, wait for the result, then repeat. Still sequential, but very powerful. In the end, it helped me finish this site, and at that point it did all the coding for me, and helped me structure and write the content, although that part is still mine.',
+        ],
+      },
+      {
+        title: 'The singularity',
+        paragraphs: [
+          'Well kind of. It would be closer to the truth if I were not the limiting factor.',
+          'In early October 2026 I decided to try out the new Anthropic models, Opus 5.5. And it works spectacularly well.',
+          "It is not just the model, my process has improved dramatically, in what is apparently a positive-feedback loop. I still can't truly multitask, but I can multiplex my work, design features while the models implement what was agreed, potentially in parallel.",
+          'I can guide the models with structure, rules, verfications, learn how I can best consume the information it returns to me and instruct it to facilitate that.',
+          'Development became increadibly fun this last month. I can essentially say what I want and get it. The limit is how fast I can think about features and architecture (which I still partially design).',
+          'The apparent productivity increase has been immense, even compared to just a month or two ago, but I would like to caveat that claim with the fact that my recent experimentation was done on a personal project, without the justified and unjustified limitations one usually has when working for clients, especially the inert kind.',
+        ],
+      },
+      {
+        title: 'The future',
+        paragraphs: [
+          'I have been in the latest era of agent-assisted development for just a few weeks. The exuberance may fade as I adjust to it, but the feeling is that of having just touched the surface of what is possible.',
+          "There seems to still be much to gain in the individual process alone, so even if model and tooling development completely stopped, my impression is that we are far from the limit. Let's see how this plays out.",
+        ],
+      },
+    ],
     links: [],
   },
   {
