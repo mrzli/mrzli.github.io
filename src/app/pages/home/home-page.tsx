@@ -180,7 +180,7 @@ export function HomePage(): ReactNode {
         </Card>
         <section className='space-y-4'>
           <Typography variant='heading-2'>More about my work</Typography>
-          <div className='grid gap-3 sm:grid-cols-2'>
+          <div className='grid gap-3 sm:grid-cols-2 sm:*:last:odd:col-span-2'>
             {ROUTE_CARDS.map((routeCard) => (
               <RouteCard key={routeCard.to} {...routeCard} />
             ))}

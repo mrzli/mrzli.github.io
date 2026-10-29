@@ -50,6 +50,11 @@ export const ROUTE_CARDS: readonly RouteCardProps[] = [
     description: 'Personal work, from this website to games, with source code.',
   },
   {
+    title: 'How I Work',
+    to: '/how-i-work/',
+    description: 'How I moved from writing code to directing AI agents.',
+  },
+  {
     title: 'Background',
     to: '/background/',
     description: 'Computing degree, continued learning, and personal context.',
