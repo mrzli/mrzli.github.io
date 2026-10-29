@@ -34,8 +34,9 @@ export function renderCv(document: CvDocument): string {
     String.raw`\medskip ${contact}\par`,
     String.raw`\end{center}`,
     String.raw`\cvsection{Profile}`,
-    ...document.summary.map(paragraph),
+    paragraph(document.summary[0]),
     paragraph(document.ai),
+    ...document.summary.slice(1).map(paragraph),
     String.raw`\profilepoints{${[profile.availability, document.contracts]
       .map(escapeLatex)
       .join(String.raw`\par `)}}`,
