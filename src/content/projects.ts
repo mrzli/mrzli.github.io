@@ -5,11 +5,11 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
   {
     title: 'Archon',
     text: [
-      'A new computer becomes my full development setup in minutes, and every Omarchy machine I use stays identical, including my AI agent configuration.',
-      'It includes a command-line tool for managing projects and workspaces. It clones and updates all my repositories, shows which ones have unfinished work, and opens the selected projects as workspaces laid out for agentic work.',
+      'This project converts a raw Omarchy installation to my full development setup in minutes, including my AI agent configuration.',
+      'It sets up a CLI tool with commands for many useful purposes, such as cloning and updating all of my projects at once, and opening up selected projects as workspaces laid out for agentic work.',
     ],
     roleText: [
-      'I guide its development, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
+      'I say what I want, and AI agents implement it. Each change starts from something I need or something that gets in my way.',
     ],
     tags: ['Ruby', 'Bash', 'Arch Linux', 'Omarchy', 'Hyprland', 'Claude Code', 'Codex'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/archon' }],
@@ -18,12 +18,12 @@ export const PROJECT_ITEMS: readonly PersonalProject[] = [
     title: 'Agent Skills',
     text: [
       'Skills that guide AI coding agents through engineering work, from clarifying a feature through design, implementation, and review.',
-      'The main one runs work in parallel in the background. I queue an agreed change, and an agent implements and verifies it on its own branch, then rebases it onto mine, so it arrives finished while I keep working.',
-      'Complex discussions can branch into a tree of sessions. I can dig deep into one topic, or explore several at different levels, without losing the main thread, and every decision flows back into it.',
+      'Common flow is to run work in parallel in the background. I queue an agreed change, and an agent implements and verifies it on its own branch and worktree, then rebases it onto the main branch, so it arrives finished while I keep working.',
+      'Complex discussions can be branched into a tree of sessions. I can dig deep into one topic, or explore several at different levels, without losing the main thread, and every decision flows back into it.',
     ],
     roleText: [
       'Some skills started from public collections and were adapted to how I work. Others I asked for explicitly, by explaining a problem I kept running into.',
-      'AI agents write the skills, and refining them is partly automatic: agents review my sessions and propose improvements, which are often right. I steer that process and decide where it matters.',
+      'AI agents write the skills, and refining them is partly automatic: agents review my sessions and propose improvements, which often make sense. I steer that process and make decisions when required.',
     ],
     tags: ['Claude Code', 'Codex', 'Markdown', 'Bash'],
     links: [{ label: 'Source Code', href: 'https://github.com/mrzli/skills' }],
