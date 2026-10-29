@@ -9,7 +9,7 @@ export function WorkSectionCard({
   label,
   title,
   paragraphs,
-  topics,
+  subsections,
   links,
 }: WorkSectionCardProps): ReactNode {
   return (
@@ -27,13 +27,17 @@ export function WorkSectionCard({
           </Typography>
         </div>
 
-        {topics.length > 0 && (
+        {subsections.length > 0 && (
           <div className='flex flex-col gap-5'>
-            {topics.map((topic) => {
+            {subsections.map((subsection) => {
               return (
-                <section key={topic.title} className='flex flex-col gap-2'>
-                  <Typography variant='heading-3'>{topic.title}</Typography>
-                  <Typography variant='prose'>{topic.text}</Typography>
+                <section key={subsection.title} className='flex flex-col gap-2'>
+                  <Typography variant='heading-3'>{subsection.title}</Typography>
+                  <Typography variant='prose' as='div' className='space-y-4'>
+                    {subsection.paragraphs.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </Typography>
                 </section>
               );
             })}
