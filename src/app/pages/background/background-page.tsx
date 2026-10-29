@@ -1,4 +1,4 @@
-import { Card, ExternalLink, PageContainer, Typography, UnorderedList } from '@components';
+import { Card, LinkList, PageContainer, Typography, UnorderedList } from '@components';
 import type { ReactNode } from 'react';
 
 import {
@@ -30,20 +30,7 @@ export function BackgroundPage(): ReactNode {
 
             <section className='flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-slate-800'>
               <Typography variant='heading-3'>Related links</Typography>
-              <ul className='flex flex-col gap-2'>
-                {THESIS_LINKS.map((link) => {
-                  return (
-                    <li key={link.href}>
-                      <ExternalLink
-                        variant='highlight'
-                        href={link.href}
-                        label={link.label}
-                        className='rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
-                      />
-                    </li>
-                  );
-                })}
-              </ul>
+              <LinkList links={THESIS_LINKS} />
             </section>
           </div>
         </Card>

@@ -1,4 +1,4 @@
-import { Card, ExternalLink, ProjectDetails } from '@components';
+import { Card, LinkList, ProjectDetails } from '@components';
 import type { ReactNode } from 'react';
 
 import type { PersonalProject } from '@/content/types';
@@ -11,20 +11,11 @@ export function ProjectCard({ title, text, roleText, tags, links }: ProjectCardP
       <div className='flex flex-1 flex-col gap-5'>
         <ProjectDetails title={title} headingAs='h2' text={text} roleText={roleText} tags={tags} />
 
-        <ul className='mt-auto flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200 pt-4 dark:border-slate-800'>
-          {links.map((link) => {
-            return (
-              <li key={link.href}>
-                <ExternalLink
-                  variant='highlight'
-                  href={link.href}
-                  label={link.label}
-                  className='rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
-                />
-              </li>
-            );
-          })}
-        </ul>
+        <LinkList
+          layout='row'
+          links={links}
+          className='mt-auto border-t border-slate-200 pt-4 dark:border-slate-800'
+        />
       </div>
     </Card>
   );

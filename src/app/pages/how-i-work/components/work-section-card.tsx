@@ -1,4 +1,4 @@
-import { Card, ExternalLink, Typography } from '@components';
+import { Card, LinkList, Typography } from '@components';
 import type { ReactNode } from 'react';
 
 import type { WorkSection } from '../data';
@@ -45,20 +45,10 @@ export function WorkSectionCard({
         )}
 
         {links.length > 0 && (
-          <ul className='flex flex-col gap-2 border-t border-slate-200 pt-5 dark:border-slate-800'>
-            {links.map((link) => {
-              return (
-                <li key={link.href}>
-                  <ExternalLink
-                    variant='highlight'
-                    href={link.href}
-                    label={link.label}
-                    className='rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
-                  />
-                </li>
-              );
-            })}
-          </ul>
+          <LinkList
+            links={links}
+            className='border-t border-slate-200 pt-5 dark:border-slate-800'
+          />
         )}
       </div>
     </Card>
