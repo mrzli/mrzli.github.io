@@ -48,7 +48,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
         title: 'Learning to trust agents',
         paragraphs: [
           'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks to learn to let them work on their own and trust the result.',
-          'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content.',
+          "By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. Working that way, Codex wrote all the code for this site's later features and improvements, a substantial share of the whole, and helped me structure its content.",
         ],
       },
       {
@@ -61,7 +61,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'What comes next',
         paragraphs: [
-          'I have worked this new way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. There could be much more to gain from the process itself, not just from models and tools, which are bound to keep improving too. It is an exciting time to be building software, and I am curious where it goes next.',
+          'I have worked this new way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. There could be much more to gain from the process itself, not just from models and tools, which are bound to keep improving too. I am looking forward to finding out how far this goes.',
         ],
       },
     ],
