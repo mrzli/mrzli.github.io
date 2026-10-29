@@ -68,7 +68,7 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
       },
       {
         title: 'AI',
-        skills: ['Codex CLI', 'Copilot'],
+        skills: ['Claude Code', 'Codex', 'Copilot'],
       },
       {
         title: 'Operating systems',
@@ -156,7 +156,7 @@ export const SKILLS_SECTIONS: readonly SkillSection[] = [
       },
       {
         title: 'AI',
-        skills: ['Claude', 'Cursor'],
+        skills: ['Cursor'],
       },
     ],
   },
