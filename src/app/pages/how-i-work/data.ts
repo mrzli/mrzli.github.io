@@ -28,7 +28,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'AI autocomplete',
         paragraphs: [
-          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. That was my only use of AI in development, and it was already useful.",
+          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. That was the limit of my AI use in development, but even that was useful.",
         ],
       },
       {
@@ -47,21 +47,21 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'Learning to trust agents',
         paragraphs: [
-          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks before I trusted them with real work.',
+          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. I already trusted agents with real work, but it took a few weeks to trust them with this much autonomy.',
           'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content, though the content is still mine.',
         ],
       },
       {
         title: 'Takeoff',
         paragraphs: [
-          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well, and my process improved just as much, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and the limit is how fast I can think through features and architecture.",
-          'My productivity has grown immensely, even compared with a month or two ago. The caveat is that this was on a personal project, without the constraints, justified or not, that come with client work.',
+          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well, and my process changed dramatically, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and so far the limit seems to be how fast I can think through features and architecture.",
+          'My productivity has grown immensely, even compared with a month or two ago. The caveat is that this was on a personal project, free of the constraints, justified or otherwise, that come with client work.',
         ],
       },
       {
         title: 'What comes next',
         paragraphs: [
-          'I have worked this way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface, and I suspect there is more to gain from the process itself, not only from better models.',
+          'I have worked this new way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. There could be much more to gain from the process itself, not just from models and tools, which are bound to keep improving too.',
         ],
       },
     ],
