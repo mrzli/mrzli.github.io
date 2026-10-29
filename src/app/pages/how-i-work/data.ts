@@ -17,54 +17,51 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
   {
     label: 'Transition',
     title: 'The month everything changed',
-    paragraphs: [
-      'For me, that was October 2026. I adopted AI later than many developers, and a few steps came before it.',
-    ],
+    paragraphs: ['For me, that was October 2026. Here is how the journey went.'],
     subsections: [
       {
-        title: 'The old days',
+        title: 'By hand',
         paragraphs: [
-          'For most of my career, every line of code was a conscious decision. I typed most of it by hand, with help from autocomplete, snippets, and code generators. I cared about clean, readable code and clear architecture, and when a codebase lacked both, I restructured it by hand.',
+          'For most of my career, every line of code was a conscious decision. I typed most of it by hand, with help from autocomplete, snippets, and code generators. I cared about clean, readable code and clear architecture, and when a codebase lacked both, I had to restructure it by hand.',
         ],
       },
       {
         title: 'AI autocomplete',
         paragraphs: [
-          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. Accepting them with Tab was all I used AI for, and even that was useful.",
+          "Around 2023 or 2024, GitHub Copilot's suggestions started to help. That was my only use of AI in development, and it was already useful.",
         ],
       },
       {
         title: 'Functions and tests',
         paragraphs: [
-          'By the first half of 2025, models could write self-contained functions, from a binary search to pure domain logic, and whole unit test files for them. They were not perfect, but they removed much of the tedium.',
+          'By the first half of 2025, I was using models to write self-contained functions and full unit test files. They were not perfect, but they removed much of the tedium.',
         ],
       },
       {
-        title: 'Agentic era begins',
+        title: 'Directing an agent',
         paragraphs: [
-          'Over the 2026 New Year holidays, I had a few days to experiment, and the models and tools had improved a lot. With light effort over about ten days, I built a small application of about 3,000 lines with tests. I decided what to build and how, and the agent wrote the code.',
-          'Back on client projects, an agent could often solve an issue I handed it.',
+          'Over the 2026 New Year holidays, I had a few days to experiment. The models and tools had improved a lot. With light effort over about ten days, I built a small application of about 3,000 lines, including tests. I guided the agent explicitly, telling it what to build and how, and it wrote the code.',
+          'Back on client projects, agents could often fully resolve small, well-defined issues.',
         ],
       },
       {
-        title: 'Experimentation and awe',
+        title: 'Learning to trust agents',
         paragraphs: [
-          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks before I trusted them with real work, but by the end of the summer they impressed me.',
-          'I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content, though the content is still mine.',
+          'In the summer of 2026, I started experimenting with Codex and newer models, GPT-5.6 Sol and later GPT-6 Astra. It took a few weeks before I trusted them with real work.',
+          'By the end of the summer, I still worked one request at a time: ask, wait for the result, repeat. That way, Codex wrote all the code for the rest of this site and helped me structure its content, though the content is still mine.',
         ],
       },
       {
-        title: 'The singularity',
+        title: 'Takeoff',
         paragraphs: [
-          'Well, kind of. It would be closer if I were not the limiting factor.',
-          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and it works remarkably well. My process improved just as much, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and the limit is how fast I can think through features and architecture.",
+          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well, and my process improved just as much, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and the limit is how fast I can think through features and architecture.",
           'My productivity has grown immensely, even compared with a month or two ago. The caveat is that this was on a personal project, without the constraints, justified or not, that come with client work.',
         ],
       },
       {
-        title: 'The future',
+        title: 'What comes next',
         paragraphs: [
-          'I have worked this way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface. Even if models and tools stopped improving, my own process has plenty of room to grow.',
+          'I have worked this way for only a few weeks, and the excitement may fade. Still, it feels like I have only scratched the surface, and I suspect there is more to gain from the process itself, not only from better models.',
         ],
       },
     ],
