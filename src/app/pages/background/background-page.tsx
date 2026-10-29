@@ -1,4 +1,13 @@
-import { Card, LinkList, PageContainer, Typography, UnorderedList } from '@components';
+import {
+  Card,
+  CardHeader,
+  PageContainer,
+  ProseParagraphs,
+  RelatedLinks,
+  Subsection,
+  Typography,
+  UnorderedList,
+} from '@components';
 import type { ReactNode } from 'react';
 
 import {
@@ -18,51 +27,34 @@ export function BackgroundPage(): ReactNode {
       <div className='grid gap-4 md:grid-cols-2'>
         <Card padding='large'>
           <div className='flex flex-col gap-6'>
-            <div className='flex flex-col gap-2'>
-              <Typography variant='card-title-accent'>Formal Education</Typography>
-              <Typography variant='heading-2'>{EDUCATION.institution}</Typography>
-              <Typography variant='body'>{EDUCATION.qualification}</Typography>
-            </div>
+            <CardHeader
+              label='Formal Education'
+              title={EDUCATION.institution}
+              subtitle={EDUCATION.qualification}
+            />
 
             <Typography variant='prose' as='div'>
               <UnorderedList items={EDUCATION_HIGHLIGHTS} />
             </Typography>
 
-            <section className='flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-slate-800'>
-              <Typography variant='heading-3'>Related links</Typography>
-              <LinkList links={THESIS_LINKS} />
-            </section>
+            <RelatedLinks links={THESIS_LINKS} />
           </div>
         </Card>
 
         <Card padding='large'>
-          <div className='flex flex-col gap-5'>
-            <div className='flex flex-col gap-2'>
-              <Typography variant='card-title-accent'>Additional Learning</Typography>
-              <Typography variant='heading-2'>
-                Structured learning outside formal education
-              </Typography>
+          <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-3'>
+              <CardHeader
+                label='Additional Learning'
+                title='Structured learning outside formal education'
+              />
+              <ProseParagraphs paragraphs={ADDITIONAL_LEARNING_PARAGRAPHS} />
             </div>
 
-            <Typography variant='prose' as='div'>
-              <div className='flex flex-col gap-4'>
-                {ADDITIONAL_LEARNING_PARAGRAPHS.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </Typography>
-
             <div className='flex flex-col gap-5 border-t border-slate-200 pt-5 dark:border-slate-800'>
-              {ADDITIONAL_LEARNING_ITEMS.map((item) => {
-                return (
-                  <section key={item.title} className='flex flex-col gap-2'>
-                    <Typography variant='heading-4' as='h3'>
-                      {item.title}
-                    </Typography>
-                    <Typography variant='prose'>{item.text}</Typography>
-                  </section>
-                );
-              })}
+              {ADDITIONAL_LEARNING_ITEMS.map((item) => (
+                <Subsection key={item.title} title={item.title} paragraphs={[item.text]} />
+              ))}
             </div>
           </div>
         </Card>
