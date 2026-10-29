@@ -12,7 +12,7 @@ interface PageMetadata {
 const PAGE_METADATA = {
   [PAGE_PATHS.home]: {
     title: `${PROFILE.name} | ${PROFILE.title}`,
-    description: `${PROFILE.name}, ${PROFILE.title.toLowerCase()} in ${PROFILE.location}. React, TypeScript, and Node.js development. Available for remote B2B contracts.`,
+    description: `${PROFILE.name}, ${PROFILE.title.toLowerCase()} in ${PROFILE.location}. React, TypeScript, and Node.js development, built by directing AI coding agents. Available for remote B2B contracts.`,
   },
   [PAGE_PATHS.experience]: {
     title: `Experience | ${PROFILE.name}`,
