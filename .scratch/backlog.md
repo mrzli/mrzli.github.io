@@ -25,6 +25,3 @@
          - Non-solicitation clauses.
        - Do not tolerate:
          - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
-6. Review the TypeScript and code style rules in `flashcards-fe`, `flashcards-be`, and the `trading-app` tooling, and decide which to adopt here.
-   - One candidate: avoid `null`, which code in this project currently uses often.
-   - Record adopted rules in `docs/conventions/code-style.md`, then align existing code.
