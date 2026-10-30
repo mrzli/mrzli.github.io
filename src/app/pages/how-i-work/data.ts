@@ -79,7 +79,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
         paragraphs: [
           'I used to hate setting up a computer. Reinstalling meant installing every tool and recreating every setting by hand, which was long and annoying.',
           'I also wanted protection from losing data or time when a computer breaks or goes missing. That is rare, but disruptive if it ever happens.',
-          'I work on more than one computer at a time, so I wanted each of them set up the same way.',
+          'Additionally, I work on more than one computer at a time, so I wanted each of them set up the same way.',
         ],
       },
       {
