@@ -8,3 +8,9 @@ html {
   overflow-anchor: none;
   @apply bg-slate-50 dark:bg-slate-950;
 }
+
+/* The header is always visible, so focusing inside it must not scroll the page to clear the
+   scroll padding above. */
+nav[aria-label='Main navigation'] * {
+  scroll-margin-top: -5rem;
+}
