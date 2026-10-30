@@ -1,5 +1,6 @@
 import { type KeyboardEvent, type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 
+import { cn } from '@/app/util';
 import { type ScrollChapter, useScrollChapters } from '@/hooks';
 
 const CHAPTER_SCROLL_GAP_PX = 16;
@@ -121,9 +122,13 @@ export function ScrollChapters(): ReactNode {
               className='group flex h-3 min-w-0 flex-1 cursor-pointer items-end outline-none'
             >
               <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
-                {index <= currentIndex && (
-                  <span className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300' />
-                )}
+                <span
+                  className={cn(
+                    'block h-full transition-colors duration-300 ease-out motion-reduce:transition-none',
+                    index <= currentIndex &&
+                      'bg-amber-600 group-hover:bg-amber-500 group-focus-visible:bg-amber-500 dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300',
+                  )}
+                />
               </span>
             </button>
           );
