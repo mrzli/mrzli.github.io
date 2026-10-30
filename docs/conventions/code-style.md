@@ -5,6 +5,12 @@
 - Use TypeScript-first patterns and keep types explicit at module boundaries, including component props.
 - Avoid one-letter variable names. Write comments as [the documentation guide](documentation.md#code-comments) describes.
 - Match the existing style in touched files. Let Oxfmt handle formatting and import ordering.
+- Name a magic number or string as a constant: a value whose meaning the literal alone does not show, or that must stay in step with another place. Not every literal needs a name. 0 and 1 often do not, but can.
+- A rename renames everything named after the old name in the same change, including locals, parameters, stories, docs, and comments.
+
+## Data and State
+
+- Prefer immutable values and pure functions. Mutate only where performance measurably needs it or the framework requires it, such as React state and refs.
 
 ## Declaration Order
 
@@ -23,13 +29,13 @@
 
 ## Control Flow and Functions
 
-- Use blocks for every switch case, branch, and loop, even when optional.
+- Use blocks for every switch case, branch, and loop, even when optional. Oxlint's `curly` rule enforces branch and loop braces, and `no-case-declarations` requires case blocks around declarations. Other case blocks are a review check.
 - Use block bodies for lambdas returning `void` or `Promise<void>`, and when a return value is intentionally ignored, such as event handlers.
 
 ## Type Usage
 
-- Use `readonly` fields, arrays, and tuples when possible.
-- Prefer `undefined` for optional application values. Keep `null` where required by React or browser APIs, including refs and render results, and handle it at those boundaries.
+- Use `readonly` fields, arrays, and tuples when possible. Use `Readonly<T>`, `ReadonlyArray<T>`, `ReadonlyMap<K, V>`, and `ReadonlySet<T>` for read-only data and at function boundaries, and `as const` for fixed configuration objects. Keep mutable types only where the code modifies the data, such as local builders.
+- Use `undefined` for a missing value, never `null`. Where React, a browser API, or a library requires `null`, keep it in that boundary's type, such as `RefObject<HTMLElement | null>`, and convert it to `undefined` at the closest point. Oxlint's `unicorn/no-null` rejects `null` values but allows `useRef(null)` and comparisons such as `element.closest(selector) === null`.
 - Prefer interfaces when either interfaces or types are appropriate. If interface inheritance would be needed, prefer a type with an intersection.
 - Use type-only imports for dependencies needed only as types.
 
