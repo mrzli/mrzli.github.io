@@ -71,7 +71,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
     label: 'Workstation',
     title: 'A workstation defined as code',
     paragraphs: [
-      'My workstation is the platform for everything else on this page. I define it as code in one repository, Archon, and the machine follows it.',
+      'My workstation is the platform for everything else on this page. I define it as code in one repository, [Archon](https://github.com/mrzli/archon), and the machine follows it.',
     ],
     subsections: [
       {
@@ -83,14 +83,14 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'The system',
         paragraphs: [
-          'I use Omarchy, a ready-made Arch Linux setup built around the Hyprland window manager. Archon builds on it, adding the software and configuration I use and removing what I do not.',
+          'I use [Omarchy](https://omarchy.org/), a ready-made Arch Linux setup built around the Hyprland window manager. Archon builds on it, adding the software and configuration I use and removing what I do not.',
         ],
       },
       {
         title: 'What Archon does for me',
         paragraphs: [
           'A new computer becomes my full workstation within minutes, and an update takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I can switch between machines freely.',
-          'Every machine has the same tools and settings, including my AI agent skills and instructions. When I change how the agents work, every running agent session picks up the change at once.',
+          'Every machine has the same tools and settings, including my [AI agent skills](https://github.com/mrzli/skills) and instructions. When I change how the agents work, every running agent session picks up the change at once.',
           'All my projects live in one place and stay in sync, and I can see at a glance where work is left unfinished. The projects I am working on open as workspaces, each with an editor, a Git client, a shell, and an AI agent ready.',
         ],
       },
@@ -124,7 +124,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'A system, not ad hoc prompting',
         paragraphs: [
-          'I maintain a public collection of over 30 agent skills, reusable instructions an agent loads for one kind of task. They cover planning, implementation, code and architecture review, bug fixing, and implementing agreed work in the background while the discussion continues. Routing tests check that an agent picks the right skill for a request.',
+          'I maintain a public collection of over 30 [agent skills](https://github.com/mrzli/skills), reusable instructions an agent loads for one kind of task. They cover planning, implementation, code and architecture review, bug fixing, and implementing agreed work in the background while the discussion continues. Routing tests check that an agent picks the right skill for a request.',
         ],
       },
       {
