@@ -71,11 +71,30 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
     label: 'Workstation',
     title: 'A workstation defined as code',
     paragraphs: [
-      'I used to hate setting up a computer. Reinstalling meant a long, tedious job of installing every tool and recreating every setting by hand, so formatting a drive felt like a nightmare. I wanted that to be painless.',
-      'Now my whole workstation is defined in one repository, Archon, and the machine follows it. One setup script brings a new Omarchy machine to my full setup within minutes, and an update takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I switch between machines freely.',
-      'Every change to how I work starts there, from the software I install to the skills and instructions my AI agents use, so every machine works the same way.',
+      'My workstation is the platform for everything else on this page. I define it as code in one repository, Archon, and the machine follows it.',
     ],
-    subsections: [],
+    subsections: [
+      {
+        title: 'The problem',
+        paragraphs: [
+          'I used to hate setting up a computer. Reinstalling meant a long, tedious job of installing every tool and recreating every setting by hand, so formatting a drive felt like a nightmare. I also work on more than one computer at a time, and I wanted each of them set up the same way.',
+        ],
+      },
+      {
+        title: 'The system',
+        paragraphs: [
+          'I use Omarchy, a ready-made Arch Linux setup built around the Hyprland window manager. Archon builds on it, adding the software and configuration I use and removing what I do not.',
+        ],
+      },
+      {
+        title: 'What Archon does for me',
+        paragraphs: [
+          'A new computer becomes my full workstation within minutes, and an update takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I can switch between machines freely.',
+          'Every machine has the same tools and settings, including my AI agent skills and instructions. When I change how the agents work, every running agent session picks up the change at once.',
+          'All my projects live in one place and stay in sync, and I can see at a glance where work is left unfinished. The projects I am working on open as workspaces, each with an editor, a Git client, a shell, and an AI agent ready.',
+        ],
+      },
+    ],
     links: [
       {
         href: 'https://github.com/mrzli/archon',
