@@ -15,7 +15,7 @@ interface ActiveChapter {
 }
 
 export function ScrollChapters(): ReactNode {
-  const { chapters, progress } = useScrollChapters();
+  const { chapters, currentIndex } = useScrollChapters();
   const [active, setActive] = useState<ActiveChapter | null>(null);
   const [tooltipLeft, setTooltipLeft] = useState(0);
   // The bar is one tab stop. The arrow keys move between chapters, and the focusable chapter is the
@@ -53,15 +53,11 @@ export function ScrollChapters(): ReactNode {
     clientX - (containerRef.current?.getBoundingClientRect().left ?? 0);
 
   const activeChapter = active ? chapters[active.index] : undefined;
-  const readingIndex = Math.max(
-    0,
-    chapters.findIndex((chapter) => progress < chapter.end),
-  );
   const tabStopIndex =
-    focusIndex !== null && focusIndex < chapters.length ? focusIndex : readingIndex;
+    focusIndex !== null && focusIndex < chapters.length ? focusIndex : currentIndex;
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {
-    const current = focusIndex ?? readingIndex;
+    const current = focusIndex ?? currentIndex;
     const next =
       event.key === 'ArrowRight'
         ? Math.min(chapters.length - 1, current + 1)
@@ -96,8 +92,6 @@ export function ScrollChapters(): ReactNode {
         }}
       >
         {chapters.map((chapter, index) => {
-          const length = chapter.end - chapter.start;
-          const fill = Math.min(1, Math.max(0, (progress - chapter.start) / length));
           const label = chapter.parentTitle
             ? `${chapter.parentTitle}: ${chapter.title}`
             : chapter.title;
@@ -109,7 +103,6 @@ export function ScrollChapters(): ReactNode {
               }}
               type='button'
               tabIndex={index === tabStopIndex ? 0 : -1}
-              style={{ flexGrow: length, flexBasis: 0 }}
               aria-label={`Go to ${label}`}
               onClick={() => {
                 scrollToChapter(chapter);
@@ -125,13 +118,12 @@ export function ScrollChapters(): ReactNode {
               onBlur={() => {
                 setActive(null);
               }}
-              className='group flex h-3 min-w-0 cursor-pointer items-end outline-none'
+              className='group flex h-3 min-w-0 flex-1 cursor-pointer items-end outline-none'
             >
               <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
-                <span
-                  className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300'
-                  style={{ width: `${fill * 100}%` }}
-                />
+                {index <= currentIndex && (
+                  <span className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300' />
+                )}
               </span>
             </button>
           );
