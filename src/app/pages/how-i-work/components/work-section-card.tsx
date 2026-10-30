@@ -14,14 +14,14 @@ export function WorkSectionCard({
 }: WorkSectionCardProps): ReactNode {
   return (
     <Card as='section' padding='large'>
-      <div className='flex max-w-3xl flex-col gap-6'>
+      <div className='flex max-w-2xl flex-col gap-8'>
         <div className='flex flex-col gap-3'>
           <CardHeader label={label} title={title} />
           <ProseParagraphs paragraphs={paragraphs} />
         </div>
 
         {subsections.length > 0 && (
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-8'>
             {subsections.map((subsection) => (
               <Subsection key={subsection.title} {...subsection} />
             ))}

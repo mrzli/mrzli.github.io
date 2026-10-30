@@ -51,7 +51,7 @@ export function BackgroundPage(): ReactNode {
               <ProseParagraphs paragraphs={ADDITIONAL_LEARNING_PARAGRAPHS} />
             </div>
 
-            <div className='flex flex-col gap-5 border-t border-slate-200 pt-5 dark:border-slate-800'>
+            <div className='flex flex-col gap-8 border-t border-slate-200 pt-5 dark:border-slate-800'>
               {ADDITIONAL_LEARNING_ITEMS.map((item) => (
                 <Subsection key={item.title} title={item.title} paragraphs={[item.text]} />
               ))}
