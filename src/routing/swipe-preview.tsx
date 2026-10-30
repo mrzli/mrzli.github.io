@@ -30,7 +30,7 @@ export function SwipePreview({ path }: { readonly path: string }): ReactNode {
       return <BackgroundPage />;
     }
     default: {
-      return null;
+      return undefined;
     }
   }
 }

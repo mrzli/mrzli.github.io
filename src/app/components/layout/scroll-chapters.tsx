@@ -16,12 +16,12 @@ interface ActiveChapter {
 }
 
 export function ScrollChapters(): ReactNode {
-  const [active, setActive] = useState<ActiveChapter | null>(null);
+  const [active, setActive] = useState<ActiveChapter | undefined>();
   const [tooltipLeft, setTooltipLeft] = useState(0);
   // The bar is one tab stop. The arrow keys move between chapters, and the focusable chapter is the
   // last one focused, or the chapter being read.
-  const [focusIndex, setFocusIndex] = useState<number | null>(null);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [focusIndex, setFocusIndex] = useState<number | undefined>();
+  const buttonRefs = useRef<(HTMLButtonElement | undefined)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const { chapters, fills, currentIndex } = useScrollChapters(containerRef, CHAPTER_SCROLL_GAP_PX);
@@ -50,7 +50,7 @@ export function ScrollChapters(): ReactNode {
 
   const activeChapter = active ? chapters[active.index] : undefined;
   const tabStopIndex =
-    focusIndex !== null && focusIndex < chapters.length ? focusIndex : currentIndex;
+    focusIndex !== undefined && focusIndex < chapters.length ? focusIndex : currentIndex;
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {
     const current = focusIndex ?? currentIndex;
@@ -80,11 +80,11 @@ export function ScrollChapters(): ReactNode {
         onKeyDown={handleKeyDown}
         onBlur={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) {
-            setFocusIndex(null);
+            setFocusIndex(undefined);
           }
         }}
         onMouseLeave={() => {
-          setActive(null);
+          setActive(undefined);
         }}
       >
         {chapters.map((chapter, index) => {
@@ -95,7 +95,7 @@ export function ScrollChapters(): ReactNode {
             <button
               key={`${index}-${chapter.title}`}
               ref={(element) => {
-                buttonRefs.current[index] = element;
+                buttonRefs.current[index] = element ?? undefined;
               }}
               type='button'
               tabIndex={index === tabStopIndex ? 0 : -1}
@@ -116,7 +116,7 @@ export function ScrollChapters(): ReactNode {
                 }
               }}
               onBlur={() => {
-                setActive(null);
+                setActive(undefined);
               }}
               className='group flex h-3 min-w-0 flex-1 cursor-pointer items-end outline-none'
             >

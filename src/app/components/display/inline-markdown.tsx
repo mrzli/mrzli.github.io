@@ -1,11 +1,11 @@
 import Markdown from 'markdown-to-jsx/react';
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 
 import { InlineLink } from '../controls/inline-link';
 
 const INLINE_MARKDOWN_OPTIONS = {
   forceInline: true,
-  wrapper: null,
+  wrapper: Fragment,
   disableParsingRawHTML: true,
   overrides: {
     a: InlineLink,
