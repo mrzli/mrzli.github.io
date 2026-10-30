@@ -78,7 +78,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
         title: 'The problem',
         paragraphs: [
           'I used to hate setting up a computer. Reinstalling meant installing every tool and recreating every setting by hand, which was long and annoying.',
-          'I also wanted protection from losing data or time when a computer breaks or goes missing. That is rare, but disruptive if it ever happens.',
+          'I also wanted protection from losing data or time in case a computer ever breaks or goes missing. Such events are rare, but disruptive.',
           'Additionally, I work on more than one computer at a time, so I wanted each of them set up the same way.',
         ],
       },
@@ -91,9 +91,10 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'What Archon does for me',
         paragraphs: [
-          'A new computer becomes my full workstation within minutes, and an update takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I can switch between machines freely.',
+          'A new computer becomes my development workstation with one setup run. The initial setup usually takes a few minutes to download and install everything, and any later setup usually takes seconds. My code and data are online too, so a broken or lost computer costs me nothing important, and I can switch between machines freely.',
           'Every machine has the same tools and settings, including my [AI agent skills](https://github.com/mrzli/skills) and instructions. When I change how the agents work, every running agent session picks up the change at once.',
-          'All my projects live in one place and stay in sync, and I can see at a glance where work is left unfinished. The projects I am working on open as workspaces, each with an editor, a Git client, a shell, and an AI agent ready.',
+          'All my projects live in one place and stay in sync, and I can see at a glance where work is left unfinished. I keep my secrets, such as API tokens, in one place and sync them to all my projects with one command.',
+          'One command opens the projects I am working on as workspaces, each with an editor, a Git client, a shell, and an AI agent ready.',
         ],
       },
     ],
