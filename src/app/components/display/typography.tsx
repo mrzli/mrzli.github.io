@@ -19,7 +19,7 @@ const typographyVariants = cva('', {
         'text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-slate-400',
       lead: 'text-lg leading-8 text-slate-700 dark:text-slate-300',
       body: 'text-sm leading-6 text-slate-700 dark:text-slate-300',
-      prose: 'text-base leading-relaxed text-slate-700 dark:text-slate-300',
+      prose: 'text-[1.0625rem] leading-relaxed text-slate-700 dark:text-slate-300',
     },
   },
   defaultVariants: {

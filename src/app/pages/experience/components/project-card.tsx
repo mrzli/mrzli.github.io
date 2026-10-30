@@ -25,6 +25,7 @@ export function ProjectCard({
           text={text}
           roleText={roleText}
           tags={tags}
+          split
         />
       </div>
     </Card>
