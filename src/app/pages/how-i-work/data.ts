@@ -85,7 +85,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'The system',
         paragraphs: [
-          'I use Omarchy, a ready-made Arch Linux setup built around the Hyprland window manager. Linux gives me complete flexibility, and Omarchy is modern and beautiful and comes set up close to how I want to work, so I get everything I need with little effort. It is a perfect fit for me. Archon builds on it, adding the software and configuration I use and removing what I do not.',
+          'I use Omarchy, a ready-made Arch Linux setup built around the Hyprland window manager. Linux gives me complete flexibility, and Omarchy is modern, looks and feels great, and comes set up close to how I want to work, so I get everything I need with little effort. It is a perfect fit for me. Archon builds on it, adding the software and configuration I use and removing what I do not.',
         ],
       },
       {
