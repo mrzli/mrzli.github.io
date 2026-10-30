@@ -71,7 +71,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
     label: 'Workstation',
     title: 'A workstation defined as code',
     paragraphs: [
-      'I want to spend my time on development, not on setting up and maintaining computers. That is why I define my whole workstation as code, in a repository called [Archon](https://github.com/mrzli/archon) that builds on the base [Omarchy](https://omarchy.org/) system.',
+      'I would rather solve a problem properly once than keep dealing with it again and again. Setting up and maintaining computers was one of those problems, so I define my whole workstation as code, in a repository called [Archon](https://github.com/mrzli/archon) that builds on the base [Omarchy](https://omarchy.org/) system.',
     ],
     subsections: [
       {
