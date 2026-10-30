@@ -22,11 +22,15 @@ export function InlineLink({ href, children }: InlineLinkProps): ReactNode {
   return (
     <a href={href} target='_blank' rel='noreferrer' className={INLINE_LINK_CLASS_NAME}>
       {children}
-      <Icon
-        icon='mdi:arrow-top-right'
-        aria-hidden='true'
-        className='ml-0.5 inline-block size-3.5 align-baseline'
-      />
+      {/* The word joiner inside a no-wrap span keeps the icon on the same line as the last word. */}
+      <span className='whitespace-nowrap'>
+        {'\u2060'}
+        <Icon
+          icon='mdi:arrow-top-right'
+          aria-hidden='true'
+          className='ml-0.5 inline-block size-3.5 align-baseline'
+        />
+      </span>
     </a>
   );
 }
