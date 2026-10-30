@@ -54,7 +54,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'Takeoff',
         paragraphs: [
-          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well. At the same time, my process changed dramatically, in the feedback loop described below. Development has become incredibly fun: I say what I want and get it, and so far the only limit seems to be how fast I can think through features and architecture.",
+          "In early October 2026, I tried Anthropic's Claude Opus 5.5, and from there things took off quickly. The model works remarkably well. At the same time, my process changed dramatically. Development has become incredibly fun: I say what I want and get it, and so far the only limit seems to be how fast I can think through features and architecture.",
           'My productivity has grown immensely, even compared with a month or two ago. The caveat is that this was on a personal project, free of the constraints, justified or otherwise, that come with client work.',
         ],
       },
@@ -102,63 +102,6 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         href: 'https://github.com/mrzli/archon',
         label: 'Archon on GitHub',
-      },
-    ],
-  },
-  {
-    label: 'Agentic Development',
-    title: 'How I direct AI coding agents',
-    paragraphs: [
-      'I build software by directing AI coding agents, mainly Claude Code, through the whole cycle: clarifying requirements, design, planning, implementation, and review. I make the decisions and judge the results.',
-    ],
-    subsections: [
-      {
-        title: 'What I keep for myself',
-        paragraphs: [
-          'I own the requirements, architecture, naming, and scope, and I decide whether a result is good enough. Agents propose and implement. I approve or reject their proposals, have them report every choice they made beyond what I approved, and correct their mistakes.',
-        ],
-      },
-      {
-        title: 'Working in parallel',
-        paragraphs: [
-          'I cannot truly multitask, but I can multiplex. I design the next feature with one agent while others implement what we already agreed, sometimes several changes at once.',
-        ],
-      },
-      {
-        title: 'A system, not ad hoc prompting',
-        paragraphs: [
-          'I maintain a public collection of over 30 [agent skills](https://github.com/mrzli/skills), reusable instructions an agent loads for one kind of task. They cover planning, implementation, code and architecture review, bug fixing, and implementing agreed work in the background while the discussion continues. Routing tests check that an agent picks the right skill for a request.',
-        ],
-      },
-      {
-        title: 'Instructions kept like code',
-        paragraphs: [
-          'My global agent rules are versioned in Git and installed with my workstation setup, so every project and machine uses the same rules. They define when an agent must ask for approval, how it reports its choices, that it ranks options by the quality of the result rather than the effort, and how it keeps Git history linear. They also shape how agents report back so that I can take in results quickly. For example, every question and option gets a short ID that I can answer in a word.',
-        ],
-      },
-      {
-        title: 'Quality controls',
-        paragraphs: [
-          'Each project states which checks each kind of change requires. I review changes before they are merged, check user interface changes in a real browser, and keep each self-contained change in its own commit.',
-        ],
-      },
-      {
-        title: 'Improving the process',
-        paragraphs: [
-          'After finishing work, I look at where it went wrong or slowed down, such as recurring agent mistakes or weak verification, and adjust the skills and rules to match. Each improvement makes the next one easier. Better skills make the agents work better, a better project workflow makes changes faster and verification cheaper, and a better architecture makes new features easier to add.',
-        ],
-      },
-      {
-        title: 'What this means for clients',
-        paragraphs: [
-          'My architecture and code standards are the same as before. More of my time goes to requirements, design, and review.',
-        ],
-      },
-    ],
-    links: [
-      {
-        href: 'https://github.com/mrzli/skills',
-        label: 'Agent skills on GitHub',
       },
     ],
   },
