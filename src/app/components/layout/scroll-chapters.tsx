@@ -124,7 +124,7 @@ export function ScrollChapters(): ReactNode {
               <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
                 <span
                   className={cn(
-                    'block h-full transition-colors duration-300 ease-out motion-reduce:transition-none',
+                    'block h-full transition-colors duration-200 ease-in-out motion-reduce:transition-none',
                     index <= currentIndex &&
                       'bg-amber-600 group-hover:bg-amber-500 group-focus-visible:bg-amber-500 dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300',
                   )}
