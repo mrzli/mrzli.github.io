@@ -1,30 +1,30 @@
-- Direct navigation to a subpage does not work, fix it.
-- Implement exprerience page.
-- Implement experience for freelance work.
-  - Add robot company experience.
-  - Add HVAC application experience.
-- Think about what to do on the home page, and how to structure it.
-- Implement values page.
-  - Implement values stub page, with routing etc.
-    - Make sure it works with responsive design.
-  - Add content.
-    - Have section about my technical values.
-      - Clean code.
-    - My strengths and weaknesses.
-      - Strengths / likes:
-        - Autonomous, but only if provided with all relevant information (what to do, or it does not matter).
-        - Precise and careful (usually). In some ways more than almost anyone I know.
-      - Weaknesses / hates:
-        - Working on a poorly defined goal, or with insufficient information.
-          - Clarify this further.
-        - Context switching.
-    - Have section about my political / contract-related values.
-      - Freedom.
-      - Tolerate, but disagree with:
-        - Non-compete clauses.
-        - Non-solicitation clauses.
-      - Do not tolerate:
-        - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
-- Review the TypeScript and code style rules in `flashcards-fe`, `flashcards-be`, and the `trading-app` tooling, and decide which to adopt here.
-  - One candidate: avoid `null`, which code in this project currently uses often.
-  - Record adopted rules in `docs/conventions/code-style.md`, then align existing code.
+1. Direct navigation to a subpage does not work, fix it.
+2. Implement exprerience page.
+3. Implement experience for freelance work.
+   - Add robot company experience.
+   - Add HVAC application experience.
+4. Think about what to do on the home page, and how to structure it.
+5. Implement values page.
+   - Implement values stub page, with routing etc.
+     - Make sure it works with responsive design.
+   - Add content.
+     - Have section about my technical values.
+       - Clean code.
+     - My strengths and weaknesses.
+       - Strengths / likes:
+         - Autonomous, but only if provided with all relevant information (what to do, or it does not matter).
+         - Precise and careful (usually). In some ways more than almost anyone I know.
+       - Weaknesses / hates:
+         - Working on a poorly defined goal, or with insufficient information.
+           - Clarify this further.
+         - Context switching.
+     - Have section about my political / contract-related values.
+       - Freedom.
+       - Tolerate, but disagree with:
+         - Non-compete clauses.
+         - Non-solicitation clauses.
+       - Do not tolerate:
+         - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
+6. Review the TypeScript and code style rules in `flashcards-fe`, `flashcards-be`, and the `trading-app` tooling, and decide which to adopt here.
+   - One candidate: avoid `null`, which code in this project currently uses often.
+   - Record adopted rules in `docs/conventions/code-style.md`, then align existing code.
