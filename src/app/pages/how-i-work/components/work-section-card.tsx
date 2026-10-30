@@ -40,13 +40,7 @@ export function WorkSectionCard({
           </div>
         ))}
 
-        {links.length > 0 && (
-          <div className={SPLIT_LAYOUT_CLASS_NAME}>
-            <div className='lg:col-start-2'>
-              <RelatedLinks links={links} />
-            </div>
-          </div>
-        )}
+        {links.length > 0 && <RelatedLinks links={links} split />}
       </div>
     </Card>
   );
