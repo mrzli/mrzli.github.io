@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { ExperienceEntry } from '@/content/types';
+import { chapterAttributes } from '@/hooks';
 
 import { ExperienceSectionHeader } from './experience-section-header';
 import { ProjectCard } from './project-card';
@@ -17,7 +18,7 @@ export function ExperienceSection({
   projects,
 }: ExperienceSectionProps): ReactNode {
   return (
-    <div id={contentKey} className='flex scroll-mt-24 flex-col gap-4'>
+    <div id={contentKey} {...chapterAttributes(title)} className='flex scroll-mt-24 flex-col gap-4'>
       <ExperienceSectionHeader
         anchor={contentKey}
         title={title}

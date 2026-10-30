@@ -5,6 +5,8 @@ import { type ReactNode, useId, useRef, useState } from 'react';
 import { cn } from '@/app/util';
 import { useHideOnScroll } from '@/hooks';
 
+import { ScrollChapters } from './scroll-chapters';
+
 export interface NavItem {
   readonly to: string;
   readonly label: string;
@@ -83,6 +85,7 @@ export function Nav({ items }: NavProps): ReactNode {
           ))}
         </div>
       )}
+      <ScrollChapters />
     </nav>
   );
 }

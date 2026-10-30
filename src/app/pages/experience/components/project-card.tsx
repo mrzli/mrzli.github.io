@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { getExperienceProjectAnchor } from '@/content/project-anchors';
 import type { ExperienceProject } from '@/content/types';
+import { chapterAttributes } from '@/hooks';
 
 export type ProjectCardProps = ExperienceProject;
 
@@ -17,7 +18,7 @@ export function ProjectCard({
   const anchor = getExperienceProjectAnchor({ id, contentKey });
   return (
     <Card padding='large'>
-      <div id={anchor} className='flex scroll-mt-24 flex-col gap-4'>
+      <div id={anchor} {...chapterAttributes(title)} className='flex scroll-mt-24 flex-col gap-4'>
         <ProjectDetails
           titleHref={`#${anchor}`}
           title={title}
