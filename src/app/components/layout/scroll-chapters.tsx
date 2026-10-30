@@ -1,4 +1,4 @@
-import { type ReactNode, useLayoutEffect, useRef, useState } from 'react';
+import { type KeyboardEvent, type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 
 import { type ScrollChapter, useScrollChapters } from '@/hooks';
 
@@ -18,6 +18,10 @@ export function ScrollChapters(): ReactNode {
   const { chapters, progress } = useScrollChapters();
   const [active, setActive] = useState<ActiveChapter | null>(null);
   const [tooltipLeft, setTooltipLeft] = useState(0);
+  // The bar is one tab stop. The arrow keys move between chapters, and the focusable chapter is the
+  // last one focused, or the chapter being read.
+  const [focusIndex, setFocusIndex] = useState<number | null>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -49,12 +53,44 @@ export function ScrollChapters(): ReactNode {
     clientX - (containerRef.current?.getBoundingClientRect().left ?? 0);
 
   const activeChapter = active ? chapters[active.index] : undefined;
+  const readingIndex = Math.max(
+    0,
+    chapters.findIndex((chapter) => progress < chapter.end),
+  );
+  const tabStopIndex =
+    focusIndex !== null && focusIndex < chapters.length ? focusIndex : readingIndex;
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {
+    const current = focusIndex ?? readingIndex;
+    const next =
+      event.key === 'ArrowRight'
+        ? Math.min(chapters.length - 1, current + 1)
+        : event.key === 'ArrowLeft'
+          ? Math.max(0, current - 1)
+          : event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? chapters.length - 1
+              : undefined;
+    if (next === undefined) {
+      return;
+    }
+    event.preventDefault();
+    buttonRefs.current[next]?.focus();
+  };
 
   return (
     <div ref={containerRef} className='absolute inset-x-0 -bottom-px hidden md:block'>
-      <ol
+      <div
+        role='toolbar'
         aria-label='Page chapters'
         className='flex gap-0.5'
+        onKeyDown={handleKeyDown}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setFocusIndex(null);
+          }
+        }}
         onMouseLeave={() => {
           setActive(null);
         }}
@@ -66,40 +102,41 @@ export function ScrollChapters(): ReactNode {
             ? `${chapter.parentTitle}: ${chapter.title}`
             : chapter.title;
           return (
-            <li
+            <button
               key={`${index}-${chapter.title}`}
-              className='min-w-0'
+              ref={(element) => {
+                buttonRefs.current[index] = element;
+              }}
+              type='button'
+              tabIndex={index === tabStopIndex ? 0 : -1}
               style={{ flexGrow: length, flexBasis: 0 }}
+              aria-label={`Go to ${label}`}
+              onClick={() => {
+                scrollToChapter(chapter);
+              }}
+              onMouseMove={(event) => {
+                setActive({ index, x: getRelativeX(event.clientX) });
+              }}
+              onFocus={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect();
+                setActive({ index, x: getRelativeX(rect.left + rect.width / 2) });
+                setFocusIndex(index);
+              }}
+              onBlur={() => {
+                setActive(null);
+              }}
+              className='group flex h-3 min-w-0 cursor-pointer items-end outline-none'
             >
-              <button
-                type='button'
-                aria-label={`Go to ${label}`}
-                onClick={() => {
-                  scrollToChapter(chapter);
-                }}
-                onMouseMove={(event) => {
-                  setActive({ index, x: getRelativeX(event.clientX) });
-                }}
-                onFocus={(event) => {
-                  const rect = event.currentTarget.getBoundingClientRect();
-                  setActive({ index, x: getRelativeX(rect.left + rect.width / 2) });
-                }}
-                onBlur={() => {
-                  setActive(null);
-                }}
-                className='group flex h-3 w-full cursor-pointer items-end outline-none'
-              >
-                <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
-                  <span
-                    className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300'
-                    style={{ width: `${fill * 100}%` }}
-                  />
-                </span>
-              </button>
-            </li>
+              <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
+                <span
+                  className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300'
+                  style={{ width: `${fill * 100}%` }}
+                />
+              </span>
+            </button>
           );
         })}
-      </ol>
+      </div>
       {active && activeChapter && (
         <div
           ref={tooltipRef}
