@@ -107,9 +107,13 @@ export function ScrollChapters(): ReactNode {
                 setActive({ index, x: getRelativeX(event.clientX) });
               }}
               onFocus={(event) => {
-                const rect = event.currentTarget.getBoundingClientRect();
-                setActive({ index, x: getRelativeX(rect.left + rect.width / 2) });
                 setFocusIndex(index);
+                // A click also focuses the button. Only keyboard focus places the tooltip, so it
+                // stays at the pointer after a click.
+                if (event.currentTarget.matches(':focus-visible')) {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  setActive({ index, x: getRelativeX(rect.left + rect.width / 2) });
+                }
               }}
               onBlur={() => {
                 setActive(null);
