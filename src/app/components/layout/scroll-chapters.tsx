@@ -137,12 +137,14 @@ export function ScrollChapters(): ReactNode {
           className='pointer-events-none absolute top-full z-10 mt-2 rounded-md bg-white px-2.5 py-1.5 text-xs whitespace-nowrap text-slate-900 shadow-md ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700'
           style={{ left: tooltipLeft }}
         >
+          {/* Each level keeps one style: top-level chapters, such as employments, in medium
+              weight, and nested chapters, such as projects, in regular weight below them. */}
+          <span className='block font-medium'>
+            {activeChapter.parentTitle ?? activeChapter.title}
+          </span>
           {activeChapter.parentTitle && (
-            <span className='block text-slate-500 dark:text-slate-400'>
-              {activeChapter.parentTitle}
-            </span>
+            <span className='block text-slate-600 dark:text-slate-300'>{activeChapter.title}</span>
           )}
-          <span className='block font-medium'>{activeChapter.title}</span>
         </div>
       )}
     </div>
