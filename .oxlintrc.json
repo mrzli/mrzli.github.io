@@ -8,7 +8,10 @@
       {
         "allowConstantExport": true
       }
-    ]
+    ],
+    "curly": ["error", "all"],
+    "no-case-declarations": "error",
+    "unicorn/no-null": "error"
   },
   "overrides": [
     {
