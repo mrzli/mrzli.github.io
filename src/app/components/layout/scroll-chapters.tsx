@@ -1,14 +1,34 @@
-import { type ReactNode, useRef, useState } from 'react';
+import { type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 
-import { cn } from '@/app/util';
 import { type ScrollChapter, useScrollChapters } from '@/hooks';
 
 const CHAPTER_SCROLL_GAP_PX = 16;
+// The tooltip sits below and to the left of the pointer, away from the pointer icon, which extends
+// below and to the right of the point it hovers.
+const TOOLTIP_POINTER_GAP_PX = 8;
+const TOOLTIP_POINTER_ICON_WIDTH_PX = 20;
+
+interface ActiveChapter {
+  readonly index: number;
+  // The pointer position, or the segment center for keyboard focus, relative to the bar.
+  readonly x: number;
+}
 
 export function ScrollChapters(): ReactNode {
   const { chapters, progress } = useScrollChapters();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [active, setActive] = useState<ActiveChapter | null>(null);
+  const [tooltipLeft, setTooltipLeft] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!active || !tooltipRef.current) {
+      return;
+    }
+    const width = tooltipRef.current.offsetWidth;
+    const leftOfPointer = active.x - TOOLTIP_POINTER_GAP_PX - width;
+    setTooltipLeft(leftOfPointer >= 0 ? leftOfPointer : active.x + TOOLTIP_POINTER_ICON_WIDTH_PX);
+  }, [active]);
 
   if (chapters.length === 0) {
     return null;
@@ -25,9 +45,20 @@ export function ScrollChapters(): ReactNode {
     window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? 'auto' : 'smooth' });
   };
 
+  const getRelativeX = (clientX: number): number =>
+    clientX - (containerRef.current?.getBoundingClientRect().left ?? 0);
+
+  const activeChapter = active ? chapters[active.index] : undefined;
+
   return (
     <div ref={containerRef} className='absolute inset-x-0 -bottom-px hidden md:block'>
-      <ol aria-label='Page chapters' className='flex gap-0.5'>
+      <ol
+        aria-label='Page chapters'
+        className='flex gap-0.5'
+        onMouseLeave={() => {
+          setActive(null);
+        }}
+      >
         {chapters.map((chapter, index) => {
           const length = chapter.end - chapter.start;
           const fill = Math.min(1, Math.max(0, (progress - chapter.start) / length));
@@ -37,7 +68,7 @@ export function ScrollChapters(): ReactNode {
           return (
             <li
               key={`${index}-${chapter.title}`}
-              className='relative min-w-0'
+              className='min-w-0'
               style={{ flexGrow: length, flexBasis: 0 }}
             >
               <button
@@ -46,51 +77,44 @@ export function ScrollChapters(): ReactNode {
                 onClick={() => {
                   scrollToChapter(chapter);
                 }}
-                onMouseEnter={() => {
-                  setActiveIndex(index);
+                onMouseMove={(event) => {
+                  setActive({ index, x: getRelativeX(event.clientX) });
                 }}
-                onMouseLeave={() => {
-                  setActiveIndex(null);
-                }}
-                onFocus={() => {
-                  setActiveIndex(index);
+                onFocus={(event) => {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  setActive({ index, x: getRelativeX(rect.left + rect.width / 2) });
                 }}
                 onBlur={() => {
-                  setActiveIndex(null);
+                  setActive(null);
                 }}
-                className='group flex h-3 w-full cursor-pointer items-end focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700 dark:focus-visible:outline-cyan-300'
+                className='group flex h-3 w-full cursor-pointer items-end outline-none'
               >
-                <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height] group-hover:h-[6px] group-focus-visible:h-[6px] motion-reduce:transition-none dark:bg-slate-800'>
+                <span className='block h-[3px] w-full overflow-hidden bg-slate-200 transition-[height,background-color] group-hover:h-[6px] group-hover:bg-slate-300 group-focus-visible:h-[6px] group-focus-visible:bg-slate-300 motion-reduce:transition-none dark:bg-slate-800 dark:group-hover:bg-slate-700 dark:group-focus-visible:bg-slate-700'>
                   <span
-                    className='block h-full bg-amber-600 dark:bg-cyan-400'
+                    className='block h-full bg-amber-600 transition-colors group-hover:bg-amber-500 group-focus-visible:bg-amber-500 motion-reduce:transition-none dark:bg-cyan-400 dark:group-hover:bg-cyan-300 dark:group-focus-visible:bg-cyan-300'
                     style={{ width: `${fill * 100}%` }}
                   />
                 </span>
               </button>
-              {activeIndex === index && (
-                <div
-                  aria-hidden='true'
-                  className={cn(
-                    'pointer-events-none absolute top-full z-10 mt-1 rounded-md bg-slate-900 px-2.5 py-1.5 text-xs whitespace-nowrap text-white shadow-md dark:bg-slate-100 dark:text-slate-900',
-                    index === 0
-                      ? 'left-0'
-                      : index === chapters.length - 1
-                        ? 'right-0'
-                        : 'left-1/2 -translate-x-1/2',
-                  )}
-                >
-                  {chapter.parentTitle && (
-                    <span className='block text-slate-300 dark:text-slate-600'>
-                      {chapter.parentTitle}
-                    </span>
-                  )}
-                  <span className='block font-medium'>{chapter.title}</span>
-                </div>
-              )}
             </li>
           );
         })}
       </ol>
+      {active && activeChapter && (
+        <div
+          ref={tooltipRef}
+          aria-hidden='true'
+          className='pointer-events-none absolute top-full z-10 mt-2 rounded-md bg-white px-2.5 py-1.5 text-xs whitespace-nowrap text-slate-900 shadow-md ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700'
+          style={{ left: tooltipLeft }}
+        >
+          {activeChapter.parentTitle && (
+            <span className='block text-slate-500 dark:text-slate-400'>
+              {activeChapter.parentTitle}
+            </span>
+          )}
+          <span className='block font-medium'>{activeChapter.title}</span>
+        </div>
+      )}
     </div>
   );
 }
