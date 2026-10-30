@@ -71,7 +71,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
     label: 'Workstation',
     title: 'A workstation defined as code',
     paragraphs: [
-      'My workstation is the platform for everything else on this page. I define it as code in one repository, [Archon](https://github.com/mrzli/archon), and the machine follows it.',
+      "My workstation is the platform for everything else on this page. To focus on development, I don't want to spend time on anything that isn't development, such as setting up and maintaining computers. So I define my workstation as code in one repository, [Archon](https://github.com/mrzli/archon), a setup on top of the base [Omarchy](https://omarchy.org/) system, and the machine follows it.",
     ],
     subsections: [
       {
@@ -83,7 +83,7 @@ export const WORK_SECTIONS: readonly WorkSection[] = [
       {
         title: 'The system',
         paragraphs: [
-          'I use [Omarchy](https://omarchy.org/), a ready-made Arch Linux setup built around the Hyprland window manager. Linux gives me complete flexibility, and Omarchy is modern and beautiful and comes set up close to how I want to work, so I get everything I need with little effort. It is a perfect fit for me. Archon builds on it, adding the software and configuration I use and removing what I do not.',
+          'I use Omarchy, a ready-made Arch Linux setup built around the Hyprland window manager. Linux gives me complete flexibility, and Omarchy is modern and beautiful and comes set up close to how I want to work, so I get everything I need with little effort. It is a perfect fit for me. Archon builds on it, adding the software and configuration I use and removing what I do not.',
         ],
       },
       {
