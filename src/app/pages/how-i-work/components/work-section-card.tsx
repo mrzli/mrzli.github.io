@@ -8,8 +8,6 @@ import {
 } from '@components';
 import type { ReactNode } from 'react';
 
-import { cn } from '@/app/util';
-
 import type { WorkSection } from '../data';
 
 export type WorkSectionCardProps = WorkSection;
@@ -24,13 +22,22 @@ export function WorkSectionCard({
   return (
     <Card as='section' padding='large'>
       <div className='flex flex-col gap-8'>
-        <div className={cn('flex flex-col gap-3', SPLIT_LAYOUT_CLASS_NAME)}>
+        <div className='flex flex-col gap-6'>
           <CardHeader label={label} title={title} />
-          <ProseParagraphs paragraphs={paragraphs} />
+          <div className={SPLIT_LAYOUT_CLASS_NAME}>
+            <div className='lg:col-start-2'>
+              <ProseParagraphs paragraphs={paragraphs} />
+            </div>
+          </div>
         </div>
 
         {subsections.map((subsection) => (
-          <Subsection key={subsection.title} split {...subsection} />
+          <div
+            key={subsection.title}
+            className='border-t border-slate-200 pt-8 dark:border-slate-800'
+          >
+            <Subsection split {...subsection} />
+          </div>
         ))}
 
         {links.length > 0 && (
