@@ -18,13 +18,6 @@
          - Working on a poorly defined goal, or with insufficient information.
            - Clarify this further.
          - Context switching.
-     - Have section about my political / contract-related values.
-       - Freedom.
-       - Tolerate, but disagree with:
-         - Non-compete clauses.
-         - Non-solicitation clauses.
-       - Do not tolerate:
-         - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
 6. Plan the site structure for more pages, so navigation works on both mobile and large screens.
    - Planned pages: How I Work (exists), Contracts, and maybe Experiences (item 7).
    - Decide which are top-level pages and which are subpages.
@@ -32,7 +25,13 @@
    - What frustrates me and what doesn't.
    - Problems and good things I saw on other projects.
 8. Add a Contracts page about what I expect from a contract.
-   - Related to the contract values in item 5. Decide whether they move here.
+   - Values:
+     - Freedom.
+     - Tolerate, but disagree with:
+       - Non-compete clauses.
+       - Non-solicitation clauses.
+     - Do not tolerate:
+       - Non-disparagement clauses, except if mutual, and 2-year limited, and even then only begrudgingly.
    - Later: generate my default contract from my old contracts, with possible variants.
 9. Later: a contract evaluation skill in the skills repository, using the Contracts page content as its reference.
    - Verdict: flat rejection, with the reasons, or a list of flagged clauses.
