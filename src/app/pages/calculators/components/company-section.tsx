@@ -20,6 +20,7 @@ import { FieldGroup, NumberField, SelectField, type SelectOption } from './contr
 import { AmountField } from './fields';
 import { PAYEE_LABELS } from './payees';
 import { PayrollTables } from './payroll-tables';
+import { TitledFieldset } from './titled-fieldset';
 
 export interface CompanySectionProps {
   readonly settings: CompanySettings;
@@ -72,13 +73,6 @@ export function CompanySection({
       description='What you keep in a year from your own company in the VAT system: your salary, plus all profit after expenses and profit tax paid out as dividends. Enter amounts without VAT; VAT is shown for information only, because the company deducts what it pays. Income per hour counts the billable hours from the Contractor rate tab.'
     >
       <div className='grid gap-4 sm:grid-cols-2'>
-        <AmountField
-          label='Your gross salary per month'
-          value={settings.ownerGross}
-          onChange={(ownerGross) => {
-            onChange({ ownerGross });
-          }}
-        />
         <FieldGroup legend='Currency and VAT' columns='two'>
           <NumberField
             label='US dollars per euro'
@@ -113,6 +107,20 @@ export function CompanySection({
         }}
         createItem={createIncomeItem}
       />
+      <TitledFieldset
+        title='Salary'
+        hint={`Your salary from the company, under the payroll rules: the company also pays ${formatPercent(payrollRules.contributions.employerHealthRate)} health insurance on top of the gross.`}
+      >
+        <div className='grid gap-4 border-t border-slate-200 pt-3 sm:grid-cols-2 dark:border-slate-800'>
+          <AmountField
+            label='Gross salary per month'
+            value={settings.ownerGross}
+            onChange={(ownerGross) => {
+              onChange({ ownerGross });
+            }}
+          />
+        </div>
+      </TitledFieldset>
       <BudgetItemsEditor
         title='Expenses'
         periods={EXPENSE_PERIODS}

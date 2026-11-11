@@ -6,7 +6,7 @@ import { CURRENCIES, type Currency, type Period } from '../model/company-budget'
 import { moveBudgetItem, removeBudgetItem, updateBudgetItem } from '../settings/budget-items';
 import { SETTING_LIMITS, type BudgetItemSettings } from '../settings/settings';
 import { CheckboxField, NumberField, SelectField, type SelectOption, TextField } from './controls';
-import { FIELD_HINT_CLASS } from './controls/field-styles';
+import { TitledFieldset } from './titled-fieldset';
 import { IconButton } from './ui/icon-button';
 
 export interface BudgetItemsEditorProps<T extends BudgetItemSettings> {
@@ -62,9 +62,7 @@ export function BudgetItemsEditor<T extends BudgetItemSettings>({
   };
 
   return (
-    <fieldset className='flex flex-col gap-3'>
-      <legend className='pb-2 font-semibold text-slate-900 dark:text-slate-100'>{title}</legend>
-      {hint !== undefined && <p className={FIELD_HINT_CLASS}>{hint}</p>}
+    <TitledFieldset title={title} hint={hint}>
       {items.length === 0 && (
         <p className='text-sm text-slate-500 dark:text-slate-400'>No items yet.</p>
       )}
@@ -169,6 +167,6 @@ export function BudgetItemsEditor<T extends BudgetItemSettings>({
       >
         Add item
       </button>
-    </fieldset>
+    </TitledFieldset>
   );
 }
