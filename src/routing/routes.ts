@@ -10,5 +10,6 @@ export default [
   route(PAGE_PATHS.howIWork, 'routing/pages/how-i-work.tsx'),
   route(PAGE_PATHS.background, 'routing/pages/background.tsx'),
   route(PAGE_PATHS.values, 'routing/pages/values.tsx'),
+  route(PAGE_PATHS.calculators, 'routing/pages/calculators.tsx'),
   route('*', 'routing/pages/not-found.tsx'),
 ] satisfies RouteConfig;

@@ -59,8 +59,9 @@ To add a page:
    `src/routing/routes.ts`, which is exposed by `src/routes.ts`.
 3. For an indexable page, add its title and description to `PAGE_METADATA` and
    return `getPageMetadata(PAGE_PATHS.yourPage)` from the route's `meta()` export.
-   `INDEXABLE_PAGE_PATHS` includes every page except Values. Exclude any additional
-   non-indexable page there and give its route an explicit `noindex` meta export.
+   `INDEXABLE_PAGE_PATHS` excludes the pages in `UNLISTED_PAGE_PATHS`, currently
+   Values and Calculators. Add any additional non-indexable page there and give
+   its route an explicit `noindex` meta export.
 4. If the page belongs in navigation, add it to `NAV_ITEMS` and the swipe-preview
    switch. A route can exist without a navigation entry.
 5. Build and check direct entry, refresh, navigation, metadata, and any new swipe
@@ -91,15 +92,17 @@ After editing, inspect the built HTML and validate the JSON-LD with Google's
 
 ## Static hosting contract
 
-| URL            | HTML in dist            | Indexing          |
-| -------------- | ----------------------- | ----------------- |
-| `/`            | `index.html`            | Indexable         |
-| `/experience/` | `experience/index.html` | Indexable         |
-| `/skills/`     | `skills/index.html`     | Indexable         |
-| `/projects/`   | `projects/index.html`   | Indexable         |
-| `/background/` | `background/index.html` | Indexable         |
-| `/values/`     | `values/index.html`     | noindex           |
-| Unknown path   | `404.html`              | noindex, HTTP 404 |
+| URL             | HTML in dist             | Indexing          |
+| --------------- | ------------------------ | ----------------- |
+| `/`             | `index.html`             | Indexable         |
+| `/experience/`  | `experience/index.html`  | Indexable         |
+| `/skills/`      | `skills/index.html`      | Indexable         |
+| `/projects/`    | `projects/index.html`    | Indexable         |
+| `/how-i-work/`  | `how-i-work/index.html`  | Indexable         |
+| `/background/`  | `background/index.html`  | Indexable         |
+| `/values/`      | `values/index.html`      | noindex           |
+| `/calculators/` | `calculators/index.html` | noindex           |
+| Unknown path    | `404.html`               | noindex, HTTP 404 |
 
 Each generated page directory also contains `_.data` for framework data. `dist/`
 includes assets, favicons, downloads under `data/`, sitemap.xml, and robots.txt.
@@ -110,8 +113,9 @@ Internal page links use trailing slashes, including before fragments:
 redirect, with query strings and fragments preserved. Public behavior must be
 checked after deployment, separately from the local preview.
 
-Values is a stub, excluded from navigation and the five-page sitemap. robots.txt
-allows crawling, including Values, so crawlers can read its `noindex` directive.
+Values and Calculators are excluded from navigation and the six-page sitemap.
+Values is a stub, and Calculators is reachable only by its URL. robots.txt allows
+crawling, including both, so crawlers can read their `noindex` directives.
 The sitemap is generated from indexable paths, with no invented modification dates.
 
 [public/404.html](../public/404.html) is a standalone error page with a Home link.

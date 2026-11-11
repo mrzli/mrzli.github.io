@@ -12,6 +12,7 @@
 - Keep reusable UI under `src/app/components/`, shared application types under `src/app/types/`, and shared utilities under `src/app/util/`.
 - Keep imported assets under `src/assets/` and directly served files, including the downloadable CV, under `public/`.
 - Keep component examples under `stories/` and Storybook configuration under `.storybook/`.
+- Keep the Croatian salary calculators self-contained under `src/app/pages/calculators/`, with their tests under `test/app/pages/calculators/`, so they can be moved to another site or removed in one step. The directory holds the pure calculation model and yearly rules (`model/`), the generated city tax rate data (`data/`) and the script that generates it (`tools/`), stored settings (`settings/`), and controls that only the calculators use (`components/`). The page may use shared components and utilities, but nothing outside it imports from it.
 
 ## State and Dependencies
 

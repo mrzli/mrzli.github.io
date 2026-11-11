@@ -21,4 +21,4 @@
 ## Portfolio Content
 
 - Keep related page content and static assets consistent when the task affects them.
-- A route's existence does not imply it belongs in navigation. The Values route is currently a stub, its navigation entry is disabled, and its prerendered HTML is marked `noindex`.
+- A route's existence does not imply it belongs in navigation. The Values route is a stub with its navigation entry disabled, and the Calculators route has no navigation entry. Both are marked `noindex`.
