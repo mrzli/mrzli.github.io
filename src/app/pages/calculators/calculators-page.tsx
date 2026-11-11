@@ -30,6 +30,7 @@ import {
   TAX_PROFILE_VALIDATORS,
   type TaxProfileSettings,
 } from './settings/settings';
+import { isOneOf } from './settings/stored-fields';
 import { useStoredSettings } from './settings/use-stored-settings';
 
 const RULES = PAYROLL_RULES_2026;
@@ -57,7 +58,7 @@ const DEFAULT_EQUIVALENCE: EquivalenceSettings = {
   vacationDays: 20,
   sickDays: 3,
   otherUnbilledDays: 0,
-  annualEmployerExtras: 0,
+  employerExtras: { perMonth: 0, perYear: 0 },
 };
 
 const DEFAULT_SALARY: SalarySettings = {
@@ -138,9 +139,8 @@ export function CalculatorsPage(): ReactNode {
       <Tabs
         value={page.settings.tab}
         onValueChange={(value) => {
-          const tab = CALCULATOR_TABS.find((candidate) => candidate === value);
-          if (tab !== undefined) {
-            page.update({ tab });
+          if (isOneOf(CALCULATOR_TABS)(value)) {
+            page.update({ tab: value });
           }
         }}
         className='flex flex-col gap-4'

@@ -12,21 +12,21 @@ import {
 } from './stored-fields';
 
 /** Upper limits of the stored values, which the input fields also enforce. */
-export const SETTING_LIMITS = { amount: 100_000_000, days: 366 } as const;
+export const SETTING_LIMITS = { amount: 100_000_000, days: 366, familyMembers: 30 } as const;
 
 const MAX_AMOUNT = SETTING_LIMITS.amount;
-const MAX_FAMILY_MEMBERS = 30;
+const MAX_FAMILY_MEMBERS = SETTING_LIMITS.familyMembers;
 const MAX_AGE = 130;
 const DAYS_PER_YEAR = SETTING_LIMITS.days;
 const HOURS_PER_DAY = 24;
 
-/** Non-taxable payments within their caps, entered per month, per year, or both. */
-export interface NonTaxablePaymentsSettings {
+/** An amount paid monthly, yearly, or both, such as non-taxable payments. */
+export interface MonthlyAndYearlyAmounts {
   readonly perMonth: number;
   readonly perYear: number;
 }
 
-const NON_TAXABLE_PAYMENTS_VALIDATORS: FieldValidators<NonTaxablePaymentsSettings> = {
+const MONTHLY_AND_YEARLY_VALIDATORS: FieldValidators<MonthlyAndYearlyAmounts> = {
   perMonth: isFiniteNumberBetween(0, MAX_AMOUNT),
   perYear: isFiniteNumberBetween(0, MAX_AMOUNT),
 };
@@ -67,7 +67,8 @@ export interface EquivalenceSettings {
   readonly vacationDays: number;
   readonly sickDays: number;
   readonly otherUnbilledDays: number;
-  readonly annualEmployerExtras: number;
+  /** What the employer pays on top of gross and its contributions, such as bonuses. */
+  readonly employerExtras: MonthlyAndYearlyAmounts;
 }
 
 export const EQUIVALENCE_VALIDATORS: FieldValidators<EquivalenceSettings> = {
@@ -78,7 +79,7 @@ export const EQUIVALENCE_VALIDATORS: FieldValidators<EquivalenceSettings> = {
   vacationDays: isFiniteNumberBetween(0, DAYS_PER_YEAR),
   sickDays: isFiniteNumberBetween(0, DAYS_PER_YEAR),
   otherUnbilledDays: isFiniteNumberBetween(0, DAYS_PER_YEAR),
-  annualEmployerExtras: isFiniteNumberBetween(0, MAX_AMOUNT),
+  employerExtras: isComplete(MONTHLY_AND_YEARLY_VALIDATORS),
 };
 
 export const SALARY_DIRECTIONS = ['grossToNet', 'netToGross'] as const;
@@ -98,7 +99,7 @@ export const SALARY_VALIDATORS: FieldValidators<SalarySettings> = {
 
 export interface CompanySettings {
   readonly ownerGross: number;
-  readonly ownerNonTaxablePayments: NonTaxablePaymentsSettings;
+  readonly ownerNonTaxablePayments: MonthlyAndYearlyAmounts;
   /** US dollars per euro. */
   readonly usdPerEur: number;
   /** Applies to the items marked as having VAT. */
@@ -130,7 +131,7 @@ const MAX_EXCHANGE_RATE = 1000;
 
 export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
   ownerGross: isFiniteNumberBetween(0, MAX_AMOUNT),
-  ownerNonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
+  ownerNonTaxablePayments: isComplete(MONTHLY_AND_YEARLY_VALIDATORS),
   usdPerEur: isFiniteNumberBetween(Number.MIN_VALUE, MAX_EXCHANGE_RATE),
   vatRate: isFiniteNumberBetween(0, 1),
   incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
@@ -139,12 +140,12 @@ export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
 
 export interface EmployeeOfferSettings {
   readonly gross: number;
-  readonly nonTaxablePayments: NonTaxablePaymentsSettings;
+  readonly nonTaxablePayments: MonthlyAndYearlyAmounts;
 }
 
 export const EMPLOYEE_OFFER_VALIDATORS: FieldValidators<EmployeeOfferSettings> = {
   gross: isFiniteNumberBetween(0, MAX_AMOUNT),
-  nonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
+  nonTaxablePayments: isComplete(MONTHLY_AND_YEARLY_VALIDATORS),
 };
 
 export const CALCULATOR_TABS = ['salary', 'equivalence', 'company', 'employeeOffer'] as const;

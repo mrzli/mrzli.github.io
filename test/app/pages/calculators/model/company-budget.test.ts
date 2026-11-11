@@ -4,33 +4,11 @@ import {
   calculateCompanyBudget,
   type CompanyBudgetInput,
 } from '../../../../../src/app/pages/calculators/model/company-budget';
-import {
-  calculatePayroll,
-  type TaxProfile,
-} from '../../../../../src/app/pages/calculators/model/payroll';
-import {
-  COMPANY_TAX_RULES_2026,
-  PAYROLL_RULES_2026,
-} from '../../../../../src/app/pages/calculators/model/rules-2026';
-
-const ZAGREB_PROFILE: TaxProfile = {
-  lowerTaxRate: 0.23,
-  higherTaxRate: 0.33,
-  age: 35,
-  isPensionPillar2Member: true,
-  childCount: 0,
-  dependentCount: 0,
-  disability: 'none',
-  familyMembersWithPartialDisability: 0,
-  familyMembersWithFullDisability: 0,
-  livesInAssistedArea: false,
-};
+import { COMPANY_TAX_RULES_2026 } from '../../../../../src/app/pages/calculators/model/rules-2026';
+import { zagrebPayrollFor } from '../fixtures';
 
 // Net pay 1370 and employer cost 2330 per month.
-const PAYROLL = calculatePayroll(
-  { gross: 2000, nonTaxablePayments: 0, profile: ZAGREB_PROFILE },
-  PAYROLL_RULES_2026,
-);
+const PAYROLL = zagrebPayrollFor(2000);
 
 const INPUT: CompanyBudgetInput = {
   incomes: [{ amount: 10_000, currency: 'EUR', period: 'month', vatRate: 0 }],

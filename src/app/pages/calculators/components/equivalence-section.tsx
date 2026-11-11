@@ -8,11 +8,13 @@ import {
 } from '../model/contractor-equivalence';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
-import { toWorkYearInput } from '../settings/conversions';
-import { SETTING_LIMITS, type EquivalenceSettings } from '../settings/settings';
+import { toAnnualAmount, toWorkYearInput } from '../settings/conversions';
+import type { EquivalenceSettings } from '../settings/settings';
+import { rowsIf } from './breakdown-row';
 import { BreakdownTable } from './breakdown-table';
 import { CalculatorSection } from './calculator-section';
-import { NumberField } from './controls';
+import { FieldGroup, NumberField } from './controls';
+import { AmountField, DaysField, MonthlyAndYearlyFields } from './fields';
 import { PayrollTables } from './payroll-tables';
 
 export interface EquivalenceSectionProps {
@@ -22,16 +24,19 @@ export interface EquivalenceSectionProps {
   readonly rules: PayrollRules;
 }
 
+const HOURS_PER_DAY = 24;
+
 export function EquivalenceSection({
   settings,
   onChange,
   profile,
   rules,
 }: EquivalenceSectionProps): ReactNode {
+  const annualEmployerExtras = toAnnualAmount(settings.employerExtras);
   const input: EquivalenceInput = {
     workYear: toWorkYearInput(settings),
     employerHealthRate: rules.contributions.employerHealthRate,
-    annualEmployerExtras: settings.annualEmployerExtras,
+    annualEmployerExtras,
   };
   const equivalence =
     settings.source === 'hourlyRate'
@@ -43,7 +48,7 @@ export function EquivalenceSection({
     rules,
   );
   const annualHealthContribution =
-    equivalence.annualBilling - settings.annualEmployerExtras - equivalence.annualGross;
+    equivalence.annualBilling - annualEmployerExtras - equivalence.annualGross;
 
   return (
     <CalculatorSection
@@ -51,74 +56,62 @@ export function EquivalenceSection({
       description='The hourly rate and the monthly gross salary that cost a client or an employer the same per year. A contractor bills only the hours worked, while an employee is also paid for holidays, vacation, and sick days.'
     >
       <div className='grid gap-4 sm:grid-cols-2'>
-        <NumberField
+        <AmountField
           label='Hourly rate'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
           value={equivalence.hourlyRate}
-          min={0}
           onChange={(hourlyRate) => {
             onChange({ source: 'hourlyRate', hourlyRate });
           }}
         />
-        <NumberField
+        <AmountField
           label='Gross salary per month'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
           value={equivalence.monthlyGross}
-          min={0}
           onChange={(monthlyGross) => {
             onChange({ source: 'monthlyGross', monthlyGross });
           }}
         />
-        <NumberField
-          label='Hours per day'
-          value={settings.hoursPerDay}
-          min={0}
-          max={24}
-          onChange={(hoursPerDay) => {
-            onChange({ hoursPerDay });
+        <FieldGroup legend='Working time' columns='two'>
+          <NumberField
+            label='Hours per day'
+            value={settings.hoursPerDay}
+            min={0}
+            max={HOURS_PER_DAY}
+            onChange={(hoursPerDay) => {
+              onChange({ hoursPerDay });
+            }}
+          />
+          <DaysField
+            label='Vacation days per year'
+            value={settings.vacationDays}
+            onChange={(vacationDays) => {
+              onChange({ vacationDays });
+            }}
+            hint='The legal minimum is 20.'
+          />
+          <DaysField
+            label='Sick days per year'
+            value={settings.sickDays}
+            onChange={(sickDays) => {
+              onChange({ sickDays });
+            }}
+          />
+          <DaysField
+            label='Other unbilled days per year'
+            value={settings.otherUnbilledDays}
+            onChange={(otherUnbilledDays) => {
+              onChange({ otherUnbilledDays });
+            }}
+            hint='Such as gaps between contracts.'
+          />
+        </FieldGroup>
+        <MonthlyAndYearlyFields
+          legend='Employer extras'
+          value={settings.employerExtras}
+          onChange={(employerExtras) => {
+            onChange({ employerExtras });
           }}
-        />
-        <NumberField
-          label='Vacation days per year'
-          value={settings.vacationDays}
-          min={0}
-          max={SETTING_LIMITS.days}
-          onChange={(vacationDays) => {
-            onChange({ vacationDays });
-          }}
-          hint='The legal minimum is 20.'
-        />
-        <NumberField
-          label='Sick days per year'
-          value={settings.sickDays}
-          min={0}
-          max={SETTING_LIMITS.days}
-          onChange={(sickDays) => {
-            onChange({ sickDays });
-          }}
-        />
-        <NumberField
-          label='Other unbilled days per year'
-          value={settings.otherUnbilledDays}
-          min={0}
-          max={SETTING_LIMITS.days}
-          onChange={(otherUnbilledDays) => {
-            onChange({ otherUnbilledDays });
-          }}
-          hint='Such as gaps between contracts.'
-        />
-        <NumberField
-          label='Employer extras per year'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
-          value={settings.annualEmployerExtras}
-          min={0}
-          onChange={(annualEmployerExtras) => {
-            onChange({ annualEmployerExtras });
-          }}
-          hint='Paid on top of the salary, such as meal allowances and bonuses.'
+          monthlyHint='Paid on top of the salary every month, such as a meal allowance.'
+          yearlyHint='Paid on top of the salary once or a few times a year, such as bonuses.'
         />
       </div>
       <dl className='grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-4'>
@@ -140,9 +133,10 @@ export function EquivalenceSection({
             amount: equivalence.annualBilling,
             kind: 'subtotal',
           },
-          ...(settings.annualEmployerExtras > 0
-            ? [{ label: 'Employer extras', amount: -settings.annualEmployerExtras }]
-            : []),
+          ...rowsIf(annualEmployerExtras > 0, {
+            label: 'Employer extras',
+            amount: -annualEmployerExtras,
+          }),
           {
             label: 'Health insurance',
             detail: `${formatPercent(rules.contributions.employerHealthRate)} of gross, paid by the employer`,

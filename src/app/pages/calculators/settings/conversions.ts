@@ -7,7 +7,7 @@ import type {
   CompanySettings,
   EmployeeOfferSettings,
   EquivalenceSettings,
-  NonTaxablePaymentsSettings,
+  MonthlyAndYearlyAmounts,
 } from './settings';
 
 /** `vatRate` is the company's rate, which applies when the item has VAT. */
@@ -33,15 +33,19 @@ export function toOfferPayrollInput(
 
 function toPayrollInput(
   gross: number,
-  nonTaxablePayments: NonTaxablePaymentsSettings,
+  nonTaxablePayments: MonthlyAndYearlyAmounts,
   profile: TaxProfile,
 ): PayrollInput {
-  return { gross, nonTaxablePayments: toMonthlyNonTaxablePayments(nonTaxablePayments), profile };
+  return { gross, nonTaxablePayments: toMonthlyAmount(nonTaxablePayments), profile };
 }
 
-/** The monthly amount, with the yearly payments spread evenly over the months. */
-function toMonthlyNonTaxablePayments(payments: NonTaxablePaymentsSettings): number {
-  return payments.perMonth + payments.perYear / MONTHS_PER_YEAR;
+/** The monthly amount, with the yearly amount spread evenly over the months. */
+export function toMonthlyAmount(amounts: MonthlyAndYearlyAmounts): number {
+  return amounts.perMonth + amounts.perYear / MONTHS_PER_YEAR;
+}
+
+export function toAnnualAmount(amounts: MonthlyAndYearlyAmounts): number {
+  return amounts.perMonth * MONTHS_PER_YEAR + amounts.perYear;
 }
 
 export function toWorkYearInput(settings: EquivalenceSettings): WorkYearInput {

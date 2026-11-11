@@ -13,6 +13,7 @@ import {
   SelectField,
   type SelectOption,
 } from './controls';
+import { CountField } from './fields';
 
 export interface TaxProfileSectionProps {
   readonly settings: TaxProfileSettings;
@@ -68,20 +69,16 @@ export function TaxProfileSection({
           }}
           hint={`The age reached during ${year}. Up to 25 refunds all lower-rate tax, 26 to 30 half.`}
         />
-        <NumberField
+        <CountField
           label='Dependent children'
           value={settings.childCount}
-          min={0}
-          integer
           onChange={(childCount) => {
             onChange({ childCount });
           }}
         />
-        <NumberField
+        <CountField
           label='Other dependent family members'
           value={settings.dependentCount}
-          min={0}
-          integer
           onChange={(dependentCount) => {
             onChange({ dependentCount });
           }}
@@ -95,20 +92,16 @@ export function TaxProfileSection({
               onChange({ disability });
             }}
           />
-          <NumberField
+          <CountField
             label='Family members, partial'
             value={settings.familyMembersWithPartialDisability}
-            min={0}
-            integer
             onChange={(familyMembersWithPartialDisability) => {
               onChange({ familyMembersWithPartialDisability });
             }}
           />
-          <NumberField
+          <CountField
             label='Family members, 100%'
             value={settings.familyMembersWithFullDisability}
-            min={0}
-            integer
             onChange={(familyMembersWithFullDisability) => {
               onChange({ familyMembersWithFullDisability });
             }}

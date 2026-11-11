@@ -1,25 +1,14 @@
 import { describe, expect, test } from 'bun:test';
 
-import type { TaxProfile } from '../../../../../src/app/pages/calculators/model/payroll';
 import {
+  toAnnualAmount,
   toBudgetItem,
+  toMonthlyAmount,
   toOfferPayrollInput,
   toOwnerPayrollInput,
 } from '../../../../../src/app/pages/calculators/settings/conversions';
 import type { BudgetItemSettings } from '../../../../../src/app/pages/calculators/settings/settings';
-
-const PROFILE: TaxProfile = {
-  lowerTaxRate: 0.2,
-  higherTaxRate: 0.3,
-  age: 35,
-  isPensionPillar2Member: true,
-  childCount: 0,
-  dependentCount: 0,
-  disability: 'none',
-  familyMembersWithPartialDisability: 0,
-  familyMembersWithFullDisability: 0,
-  livesInAssistedArea: false,
-};
+import { ZAGREB_PROFILE } from '../fixtures';
 
 const ITEM: BudgetItemSettings = {
   id: 'item',
@@ -57,18 +46,30 @@ describe('payroll inputs', () => {
           incomes: [],
           expenses: [],
         },
-        PROFILE,
+        ZAGREB_PROFILE,
       ),
-    ).toEqual({ gross: 2000, nonTaxablePayments: 100, profile: PROFILE });
+    ).toEqual({ gross: 2000, nonTaxablePayments: 100, profile: ZAGREB_PROFILE });
     expect(
       toOfferPayrollInput(
         { gross: 3000, nonTaxablePayments: { perMonth: 100, perYear: 600 } },
-        PROFILE,
+        ZAGREB_PROFILE,
       ),
     ).toEqual({
       gross: 3000,
       nonTaxablePayments: 150,
-      profile: PROFILE,
+      profile: ZAGREB_PROFILE,
     });
+  });
+});
+
+describe('monthly and yearly amounts', () => {
+  const amounts = { perMonth: 100, perYear: 600 };
+
+  test('spread the yearly amount over the months for a monthly total', () => {
+    expect(toMonthlyAmount(amounts)).toBe(150);
+  });
+
+  test('add twelve months to the yearly amount for a yearly total', () => {
+    expect(toAnnualAmount(amounts)).toBe(1800);
   });
 });

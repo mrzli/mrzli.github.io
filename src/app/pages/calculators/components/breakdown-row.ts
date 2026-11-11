@@ -9,3 +9,11 @@ export interface BreakdownRow {
 
 export const BREAKDOWN_ROW_KINDS = ['item', 'info', 'subtotal', 'total'] as const;
 export type BreakdownRowKind = (typeof BREAKDOWN_ROW_KINDS)[number];
+
+/** The rows when the condition holds and none otherwise, for spreading into a row list. */
+export function rowsIf(
+  condition: boolean,
+  ...rows: readonly BreakdownRow[]
+): readonly BreakdownRow[] {
+  return condition ? rows : [];
+}

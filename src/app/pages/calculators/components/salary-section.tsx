@@ -2,14 +2,10 @@ import type { ReactNode } from 'react';
 
 import { calculateGrossFromNet, calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
-import {
-  SETTING_LIMITS,
-  SALARY_DIRECTIONS,
-  type SalaryDirection,
-  type SalarySettings,
-} from '../settings/settings';
+import { SALARY_DIRECTIONS, type SalaryDirection, type SalarySettings } from '../settings/settings';
+import { isOneOf } from '../settings/stored-fields';
 import { CalculatorSection } from './calculator-section';
-import { NumberField } from './controls';
+import { AmountField } from './fields';
 import { PayrollTables } from './payroll-tables';
 import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
 
@@ -47,9 +43,8 @@ export function SalarySection({
         value={settings.direction}
         onValueChange={(value) => {
           // An empty value means the active item was pressed again; the direction stays.
-          const direction = SALARY_DIRECTIONS.find((candidate) => candidate === value);
-          if (direction !== undefined) {
-            onChange({ direction });
+          if (isOneOf(SALARY_DIRECTIONS)(value)) {
+            onChange({ direction: value });
           }
         }}
       >
@@ -61,23 +56,17 @@ export function SalarySection({
       </ToggleGroup>
       <div className='grid gap-4 sm:grid-cols-2'>
         {settings.direction === 'grossToNet' ? (
-          <NumberField
+          <AmountField
             label='Gross salary per month'
-            unit='EUR'
-            max={SETTING_LIMITS.amount}
             value={settings.gross}
-            min={0}
             onChange={(gross) => {
               onChange({ gross });
             }}
           />
         ) : (
-          <NumberField
+          <AmountField
             label='Net pay per month'
-            unit='EUR'
-            max={SETTING_LIMITS.amount}
             value={settings.netPay}
-            min={0}
             onChange={(netPay) => {
               onChange({ netPay });
             }}

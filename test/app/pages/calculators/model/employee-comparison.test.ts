@@ -5,35 +5,13 @@ import {
   compareEmployeeOffer,
   type EmployeeComparisonInput,
 } from '../../../../../src/app/pages/calculators/model/employee-comparison';
-import {
-  calculatePayroll,
-  type TaxProfile,
-} from '../../../../../src/app/pages/calculators/model/payroll';
-import {
-  COMPANY_TAX_RULES_2026,
-  PAYROLL_RULES_2026,
-} from '../../../../../src/app/pages/calculators/model/rules-2026';
-
-const ZAGREB_PROFILE: TaxProfile = {
-  lowerTaxRate: 0.23,
-  higherTaxRate: 0.33,
-  age: 35,
-  isPensionPillar2Member: true,
-  childCount: 0,
-  dependentCount: 0,
-  disability: 'none',
-  familyMembersWithPartialDisability: 0,
-  familyMembersWithFullDisability: 0,
-  livesInAssistedArea: false,
-};
-
-const payrollFor = (gross: number): ReturnType<typeof calculatePayroll> =>
-  calculatePayroll({ gross, nonTaxablePayments: 0, profile: ZAGREB_PROFILE }, PAYROLL_RULES_2026);
+import { COMPANY_TAX_RULES_2026 } from '../../../../../src/app/pages/calculators/model/rules-2026';
+import { zagrebPayrollFor } from '../fixtures';
 
 // Offer: net 1986 and employer cost 3495 per month. Owner: net 1370 and cost 2330 per month.
 const INPUT: EmployeeComparisonInput = {
-  offerPayroll: payrollFor(3000),
-  ownerPayroll: payrollFor(2000),
+  offerPayroll: zagrebPayrollFor(3000),
+  ownerPayroll: zagrebPayrollFor(2000),
   companyExpenses: [{ amount: 80, currency: 'EUR', period: 'month', vatRate: 0 }],
   usdPerEur: 1.25,
   billableHours: 2000,
@@ -53,7 +31,7 @@ describe('compareEmployeeOffer', () => {
 
   test('needs only to cover costs when the owner salary alone matches the offer', () => {
     const result = compareEmployeeOffer(
-      { ...INPUT, offerPayroll: payrollFor(1500) },
+      { ...INPUT, offerPayroll: zagrebPayrollFor(1500) },
       COMPANY_TAX_RULES_2026,
     );
     expect(result.matchingBudget.revenue).toBe(28_920);
@@ -62,7 +40,7 @@ describe('compareEmployeeOffer', () => {
 
   test('searches past the higher profit tax limit when needed', () => {
     const result = compareEmployeeOffer(
-      { ...INPUT, offerPayroll: payrollFor(150_000) },
+      { ...INPUT, offerPayroll: zagrebPayrollFor(150_000) },
       COMPANY_TAX_RULES_2026,
     );
     expect(result.matchingBudget.revenue).toBeGreaterThan(1_000_000);

@@ -3,22 +3,9 @@ import { describe, expect, test } from 'bun:test';
 import {
   calculateGrossFromNet,
   calculatePayroll,
-  type TaxProfile,
 } from '../../../../../src/app/pages/calculators/model/payroll';
 import { PAYROLL_RULES_2026 } from '../../../../../src/app/pages/calculators/model/rules-2026';
-
-const ZAGREB_PROFILE: TaxProfile = {
-  lowerTaxRate: 0.23,
-  higherTaxRate: 0.33,
-  age: 35,
-  isPensionPillar2Member: true,
-  childCount: 0,
-  dependentCount: 0,
-  disability: 'none',
-  familyMembersWithPartialDisability: 0,
-  familyMembersWithFullDisability: 0,
-  livesInAssistedArea: false,
-};
+import { ZAGREB_PROFILE } from '../fixtures';
 
 describe('calculatePayroll', () => {
   test('applies the pension relief to the 2026 minimum wage', () => {
