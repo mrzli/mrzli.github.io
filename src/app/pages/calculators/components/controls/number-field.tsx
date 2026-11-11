@@ -1,6 +1,7 @@
-import { type ReactNode, useId, useState } from 'react';
+import { type ComponentProps, type ReactNode, useId, useState } from 'react';
 
 import { Input } from '../ui/input';
+import { InputGroup, InputGroupAddon, InputGroupInput } from '../ui/input-group';
 import { FIELD_HINT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
 
 export interface NumberFieldProps {
@@ -37,6 +38,7 @@ export function NumberField({
   hideLabel,
 }: NumberFieldProps): ReactNode {
   const id = useId();
+  const unitId = useId();
   const [draft, setDraft] = useState<string>();
 
   const handleChange = (text: string): void => {
@@ -47,33 +49,39 @@ export function NumberField({
     }
   };
 
+  const inputProps: ComponentProps<'input'> = {
+    id,
+    type: 'number',
+    disabled,
+    inputMode: 'decimal',
+    value: draft ?? String(value),
+    min,
+    max,
+    step: step ?? (integer === true ? 1 : 'any'),
+    onFocus: () => {
+      setDraft(String(value));
+    },
+    onBlur: () => {
+      setDraft(undefined);
+    },
+    onChange: (event) => {
+      handleChange(event.target.value);
+    },
+  };
+
   return (
     <div className='flex flex-col gap-1'>
       <label htmlFor={id} className={hideLabel === true ? 'sr-only' : FIELD_LABEL_CLASS}>
         {label}
       </label>
-      <div className='flex items-center gap-2'>
-        <Input
-          id={id}
-          type='number'
-          disabled={disabled}
-          inputMode='decimal'
-          value={draft ?? String(value)}
-          min={min}
-          max={max}
-          step={step ?? (integer === true ? 1 : 'any')}
-          onFocus={() => {
-            setDraft(String(value));
-          }}
-          onBlur={() => {
-            setDraft(undefined);
-          }}
-          onChange={(event) => {
-            handleChange(event.target.value);
-          }}
-        />
-        {unit !== undefined && <span className={FIELD_HINT_CLASS}>{unit}</span>}
-      </div>
+      {unit === undefined ? (
+        <Input {...inputProps} />
+      ) : (
+        <InputGroup>
+          <InputGroupInput {...inputProps} aria-describedby={unitId} />
+          <InputGroupAddon id={unitId}>{unit}</InputGroupAddon>
+        </InputGroup>
+      )}
       {hint !== undefined && <p className={FIELD_HINT_CLASS}>{hint}</p>}
     </div>
   );
