@@ -71,6 +71,7 @@ const DEFAULT_COMPANY: CompanySettings = {
   ownerGross: 2000,
   ownerNonTaxablePayments: { perMonth: 0, perYear: 0 },
   usdPerEur: 1.15,
+  vatRate: COMPANY_RULES.standardVatRate,
   incomes: [],
   expenses: [],
 };
@@ -80,7 +81,7 @@ const DEFAULT_EMPLOYEE_OFFER: EmployeeOfferSettings = {
   nonTaxablePayments: { perMonth: 0, perYear: 0 },
 };
 
-const DEFAULT_PAGE: PageSettings = { tab: 'equivalence' };
+const DEFAULT_PAGE: PageSettings = { tab: 'salary' };
 
 const TAB_LABELS: Readonly<Record<CalculatorTab, string>> = {
   equivalence: 'Rate and salary',
@@ -206,7 +207,6 @@ function createBudgetItem(): BudgetItemSettings {
     currency: 'EUR',
     period: 'month',
     vatApplies: false,
-    vatRate: COMPANY_RULES.standardVatRate,
   };
 }
 

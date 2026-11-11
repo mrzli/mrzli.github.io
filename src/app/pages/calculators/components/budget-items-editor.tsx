@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
 import { CURRENCIES, type Currency, type Period } from '../model/company-budget';
-import { roundToCents } from '../model/money';
 import { SETTING_LIMITS, type BudgetItemSettings } from '../settings/settings';
 import { CheckboxField, NumberField, SelectField, type SelectOption, TextField } from './controls';
 
@@ -21,8 +20,6 @@ const PERIOD_OPTIONS: readonly SelectOption<Period>[] = [
   { value: 'month', label: 'Per month' },
   { value: 'year', label: 'Per year' },
 ];
-
-const PERCENT = 100;
 
 export function BudgetItemsEditor({
   title,
@@ -45,7 +42,7 @@ export function BudgetItemsEditor({
         return (
           <div
             key={item.id}
-            className='grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_auto_auto_auto_minmax(0,0.8fr)_auto] dark:border-slate-800'
+            className='grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_auto_auto_auto_auto] dark:border-slate-800'
           >
             <div className='col-span-2 sm:col-span-1'>
               <TextField
@@ -95,18 +92,6 @@ export function BudgetItemsEditor({
               checked={item.vatApplies}
               onChange={(vatApplies) => {
                 updateItem(item.id, { vatApplies });
-              }}
-            />
-            <NumberField
-              label={`${name}: VAT rate`}
-              hideLabel
-              disabled={!item.vatApplies}
-              unit='%'
-              value={roundToCents(item.vatRate * PERCENT)}
-              min={0}
-              max={PERCENT}
-              onChange={(vatPercent) => {
-                updateItem(item.id, { vatRate: vatPercent / PERCENT });
               }}
             />
             <button

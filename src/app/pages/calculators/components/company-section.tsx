@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { formatEuro, formatPercent } from '../format';
 import { MONTHS_PER_YEAR } from '../model/calendar';
 import { calculateCompanyBudget } from '../model/company-budget';
+import { roundToCents } from '../model/money';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { CompanyTaxRules, PayrollRules } from '../model/rules';
 import { toBudgetItem, toOwnerPayrollInput } from '../settings/conversions';
@@ -14,7 +15,7 @@ import {
 import { BreakdownTable } from './breakdown-table';
 import { BudgetItemsEditor } from './budget-items-editor';
 import { CalculatorSection } from './calculator-section';
-import { NumberField } from './controls';
+import { FieldGroup, NumberField } from './controls';
 import { NonTaxablePaymentsFields } from './non-taxable-payments-fields';
 import { PayrollTables } from './payroll-tables';
 
@@ -27,6 +28,8 @@ export interface CompanySectionProps {
   readonly companyRules: CompanyTaxRules;
 }
 
+const PERCENT = 100;
+
 export function CompanySection({
   settings,
   onChange,
@@ -38,8 +41,8 @@ export function CompanySection({
   const payroll = calculatePayroll(toOwnerPayrollInput(settings, profile), payrollRules);
   const budget = calculateCompanyBudget(
     {
-      incomes: settings.incomes.map(toBudgetItem),
-      expenses: settings.expenses.map(toBudgetItem),
+      incomes: settings.incomes.map((item) => toBudgetItem(item, settings.vatRate)),
+      expenses: settings.expenses.map((item) => toBudgetItem(item, settings.vatRate)),
       usdPerEur: settings.usdPerEur,
       payroll,
     },
@@ -62,16 +65,6 @@ export function CompanySection({
             onChange({ ownerGross });
           }}
         />
-        <NumberField
-          label='US dollars per euro'
-          value={settings.usdPerEur}
-          min={0}
-          onChange={(usdPerEur) => {
-            if (usdPerEur > 0) {
-              onChange({ usdPerEur });
-            }
-          }}
-        />
         <NonTaxablePaymentsFields
           labelPrefix='Your'
           value={settings.ownerNonTaxablePayments}
@@ -79,6 +72,30 @@ export function CompanySection({
             onChange({ ownerNonTaxablePayments });
           }}
         />
+        <FieldGroup legend='Currency and VAT' columns='two'>
+          <NumberField
+            label='US dollars per euro'
+            value={settings.usdPerEur}
+            min={0}
+            onChange={(usdPerEur) => {
+              if (usdPerEur > 0) {
+                onChange({ usdPerEur });
+              }
+            }}
+            hint='Converts the items entered in USD.'
+          />
+          <NumberField
+            label='VAT rate'
+            unit='%'
+            value={roundToCents(settings.vatRate * PERCENT)}
+            min={0}
+            max={PERCENT}
+            onChange={(vatPercent) => {
+              onChange({ vatRate: vatPercent / PERCENT });
+            }}
+            hint='For the items marked as having VAT.'
+          />
+        </FieldGroup>
       </div>
       <BudgetItemsEditor
         title='Income'

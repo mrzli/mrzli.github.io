@@ -28,12 +28,11 @@ const ITEM: BudgetItemSettings = {
   currency: 'USD',
   period: 'month',
   vatApplies: true,
-  vatRate: 0.25,
 };
 
 describe('toBudgetItem', () => {
-  test('keeps the VAT rate when VAT applies', () => {
-    expect(toBudgetItem(ITEM)).toEqual({
+  test('uses the company VAT rate when VAT applies', () => {
+    expect(toBudgetItem(ITEM, 0.25)).toEqual({
       amount: 100,
       currency: 'USD',
       period: 'month',
@@ -42,7 +41,7 @@ describe('toBudgetItem', () => {
   });
 
   test('uses a zero VAT rate when VAT does not apply', () => {
-    expect(toBudgetItem({ ...ITEM, vatApplies: false }).vatRate).toBe(0);
+    expect(toBudgetItem({ ...ITEM, vatApplies: false }, 0.25).vatRate).toBe(0);
   });
 });
 
@@ -54,6 +53,7 @@ describe('payroll inputs', () => {
           ownerGross: 2000,
           ownerNonTaxablePayments: { perMonth: 0, perYear: 1200 },
           usdPerEur: 1.2,
+          vatRate: 0.25,
           incomes: [],
           expenses: [],
         },

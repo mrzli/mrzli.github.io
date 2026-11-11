@@ -40,7 +40,7 @@ export function EmployeeOfferSection({
     {
       offerPayroll,
       ownerPayroll: calculatePayroll(toOwnerPayrollInput(company, profile), payrollRules),
-      companyExpenses: company.expenses.map(toBudgetItem),
+      companyExpenses: company.expenses.map((item) => toBudgetItem(item, company.vatRate)),
       usdPerEur: company.usdPerEur,
       billableHours,
     },

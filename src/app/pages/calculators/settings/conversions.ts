@@ -10,12 +10,13 @@ import type {
   NonTaxablePaymentsSettings,
 } from './settings';
 
-export function toBudgetItem(item: BudgetItemSettings): BudgetItem {
+/** `vatRate` is the company's rate, which applies when the item has VAT. */
+export function toBudgetItem(item: BudgetItemSettings, vatRate: number): BudgetItem {
   return {
     amount: item.amount,
     currency: item.currency,
     period: item.period,
-    vatRate: item.vatApplies ? item.vatRate : 0,
+    vatRate: item.vatApplies ? vatRate : 0,
   };
 }
 

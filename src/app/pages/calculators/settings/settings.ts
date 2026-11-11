@@ -103,6 +103,8 @@ export interface CompanySettings {
   readonly ownerNonTaxablePayments: NonTaxablePaymentsSettings;
   /** US dollars per euro. */
   readonly usdPerEur: number;
+  /** Applies to the items marked as having VAT. */
+  readonly vatRate: number;
   readonly incomes: readonly BudgetItemSettings[];
   readonly expenses: readonly BudgetItemSettings[];
 }
@@ -115,7 +117,6 @@ export interface BudgetItemSettings {
   readonly currency: Currency;
   readonly period: Period;
   readonly vatApplies: boolean;
-  readonly vatRate: number;
 }
 
 const BUDGET_ITEM_VALIDATORS: FieldValidators<BudgetItemSettings> = {
@@ -125,7 +126,6 @@ const BUDGET_ITEM_VALIDATORS: FieldValidators<BudgetItemSettings> = {
   currency: isOneOf(CURRENCIES),
   period: isOneOf(PERIODS),
   vatApplies: isBoolean,
-  vatRate: isFiniteNumberBetween(0, 1),
 };
 
 const MAX_EXCHANGE_RATE = 1000;
@@ -134,6 +134,7 @@ export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
   ownerGross: isFiniteNumberBetween(0, MAX_AMOUNT),
   ownerNonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
   usdPerEur: isFiniteNumberBetween(Number.MIN_VALUE, MAX_EXCHANGE_RATE),
+  vatRate: isFiniteNumberBetween(0, 1),
   incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
   expenses: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
 };
@@ -148,7 +149,7 @@ export const EMPLOYEE_OFFER_VALIDATORS: FieldValidators<EmployeeOfferSettings> =
   nonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
 };
 
-export const CALCULATOR_TABS = ['equivalence', 'salary', 'company', 'employeeOffer'] as const;
+export const CALCULATOR_TABS = ['salary', 'equivalence', 'company', 'employeeOffer'] as const;
 export type CalculatorTab = (typeof CALCULATOR_TABS)[number];
 
 export interface PageSettings {
