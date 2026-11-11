@@ -149,7 +149,7 @@ export function EquivalenceSection({
           { label: 'Gross salary', amount: equivalence.annualGross, kind: 'total' },
         ]}
       />
-      <PayrollTables breakdown={payroll} profile={profile} rules={rules} />
+      <PayrollTables breakdown={payroll} />
     </CalculatorSection>
   );
 }

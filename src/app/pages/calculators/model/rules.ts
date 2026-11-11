@@ -2,8 +2,6 @@ export interface PayrollRules {
   readonly year: number;
   readonly contributions: ContributionRules;
   readonly incomeTax: IncomeTaxRules;
-  readonly minimumWage: number;
-  readonly directorMinimumContributionBase: number;
 }
 
 export interface ContributionRules {
@@ -51,13 +49,4 @@ export type DisabilityLevel = (typeof DISABILITY_LEVELS)[number];
 export interface YouthRelief {
   readonly maxAge: number;
   readonly share: number;
-}
-
-export interface CompanyTaxRules {
-  readonly profitTaxLowRate: number;
-  readonly profitTaxHighRate: number;
-  /** Annual revenue up to which the low profit tax rate applies. */
-  readonly profitTaxLowRateRevenueLimit: number;
-  readonly dividendTaxRate: number;
-  readonly vatRates: readonly number[];
 }

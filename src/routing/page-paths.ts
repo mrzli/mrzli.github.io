@@ -11,10 +11,11 @@ export const PAGE_PATHS = {
 
 export const STATIC_PAGE_PATHS = Object.values(PAGE_PATHS);
 
-const UNLISTED_PAGE_PATHS: readonly string[] = [PAGE_PATHS.values, PAGE_PATHS.calculators];
+const UNLISTED_PAGE_PATHS = [PAGE_PATHS.values, PAGE_PATHS.calculators] as const;
+type UnlistedPagePath = (typeof UNLISTED_PAGE_PATHS)[number];
 
 export const INDEXABLE_PAGE_PATHS = STATIC_PAGE_PATHS.filter(
-  (path): path is Exclude<typeof path, typeof PAGE_PATHS.values | typeof PAGE_PATHS.calculators> =>
-    !UNLISTED_PAGE_PATHS.includes(path),
+  (path): path is Exclude<typeof path, UnlistedPagePath> =>
+    !(UNLISTED_PAGE_PATHS as readonly string[]).includes(path),
 );
 export type IndexablePagePath = (typeof INDEXABLE_PAGE_PATHS)[number];

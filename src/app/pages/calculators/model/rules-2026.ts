@@ -1,11 +1,11 @@
-import type { CompanyTaxRules, PayrollRules } from './rules';
+import type { PayrollRules } from './rules';
 
 /**
  * Croatian payroll rules for 2026.
  *
  * Sources:
  * - Contributions: https://porezna-uprava.gov.hr/hr/doprinosi/4585
- * - Contribution bases for 2026 (maximum base, director minimum base), NN 150/2025:
+ * - Contribution bases for 2026, NN 150/2025:
  *   https://narodne-novine.nn.hr/clanci/sluzbeni/full/2025_12_150_2237.html
  * - Pension pillar I relief for low pay (Zakon o doprinosima, art. 21.a), NN 114/2023:
  *   https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html
@@ -14,7 +14,6 @@ import type { CompanyTaxRules, PayrollRules } from './rules';
  * - Tax brackets, NN 152/2024: https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html
  * - Youth relief: https://porezna-uprava.gov.hr/hr/umanjenja-osobama-do-30-godina-zivota/4670
  * - Assisted areas and Vukovar: https://porezna-uprava.gov.hr/hr/posebne-olaksice/4669
- * - Minimum wage, NN 132/2025: https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html
  */
 export const PAYROLL_RULES_2026: PayrollRules = {
   year: 2026,
@@ -43,22 +42,4 @@ export const PAYROLL_RULES_2026: PayrollRules = {
     ],
     assistedAreaReliefShare: 0.5,
   },
-  minimumWage: 1050,
-  directorMinimumContributionBase: 1295.45,
-};
-
-/**
- * Croatian company tax rules for 2026.
- *
- * Sources:
- * - Profit tax: https://porezna-uprava.gov.hr/hr/porez-na-dobit-3940/3940
- * - Dividend tax: https://porezna-uprava.gov.hr/hr/oporezivanje-kapitala/4745
- * - VAT: https://porezna-uprava.gov.hr/hr/pdv-3938/3938
- */
-export const COMPANY_TAX_RULES_2026: CompanyTaxRules = {
-  profitTaxLowRate: 0.1,
-  profitTaxHighRate: 0.18,
-  profitTaxLowRateRevenueLimit: 1_000_000,
-  dividendTaxRate: 0.12,
-  vatRates: [0.25, 0.13, 0.05, 0],
 };

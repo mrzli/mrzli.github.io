@@ -1,25 +1,12 @@
 import { formatEuro, formatPercent } from '../format';
-import type { PayrollBreakdown, TaxProfile } from '../model/payroll';
-import type { PayrollRules } from '../model/rules';
+import type { PayrollBreakdown } from '../model/payroll';
 import type { BreakdownRow } from './breakdown-row';
 
-export function getEmployeeRows(
-  breakdown: PayrollBreakdown,
-  profile: TaxProfile,
-  rules: PayrollRules,
-): readonly BreakdownRow[] {
-  const { contributions } = rules;
-  const pillar1Rate = profile.isPensionPillar2Member
-    ? contributions.pensionPillar1Rate
-    : contributions.pensionPillar1Rate + contributions.pensionPillar2Rate;
+export function getEmployeeRows(breakdown: PayrollBreakdown): readonly BreakdownRow[] {
   const pillar1Detail =
     breakdown.lowIncomeReliefReduction > 0
-      ? `${formatPercent(pillar1Rate)} of ${formatEuro(breakdown.pensionPillar1Base)}, after a ${formatEuro(breakdown.lowIncomeReliefReduction)} low-pay reduction of the base`
-      : `${formatPercent(pillar1Rate)} of ${formatEuro(breakdown.pensionPillar1Base)}`;
-  const contributionBase = Math.min(breakdown.gross, contributions.maxMonthlyBase);
-  const higherBracketBase =
-    breakdown.taxableBase -
-    Math.min(breakdown.taxableBase, rules.incomeTax.monthlyLowerBracketLimit);
+      ? `${formatPercent(breakdown.pensionPillar1Rate)} of ${formatEuro(breakdown.pensionPillar1Base)}, after a ${formatEuro(breakdown.lowIncomeReliefReduction)} low-pay reduction of the base`
+      : `${formatPercent(breakdown.pensionPillar1Rate)} of ${formatEuro(breakdown.pensionPillar1Base)}`;
 
   return [
     { label: 'Gross salary', amount: breakdown.gross, kind: 'subtotal' },
@@ -28,11 +15,11 @@ export function getEmployeeRows(
       detail: pillar1Detail,
       amount: -breakdown.pensionPillar1,
     },
-    ...(profile.isPensionPillar2Member
+    ...(breakdown.pensionPillar2Rate > 0
       ? [
           {
             label: 'Pension insurance, pillar II',
-            detail: `${formatPercent(contributions.pensionPillar2Rate)} of ${formatEuro(contributionBase)}`,
+            detail: `${formatPercent(breakdown.pensionPillar2Rate)} of ${formatEuro(breakdown.contributionBase)}`,
             amount: -breakdown.pensionPillar2,
           },
         ]
@@ -45,20 +32,21 @@ export function getEmployeeRows(
     },
     {
       label: 'Personal allowance',
-      detail: 'Not taxed; deducted only to find the taxable base',
+      detail: 'Not taxed; deducted from income only to find the taxable base',
       amount: breakdown.personalAllowance,
+      kind: 'info',
     },
-    { label: 'Taxable base', amount: breakdown.taxableBase },
+    { label: 'Taxable base', amount: breakdown.taxableBase, kind: 'info' },
     {
       label: 'Income tax, lower rate',
-      detail: `${formatPercent(profile.lowerTaxRate)} of ${formatEuro(breakdown.taxableBase - higherBracketBase)}`,
+      detail: `${formatPercent(breakdown.lowerTaxRate)} of ${formatEuro(breakdown.lowerBracketBase)}`,
       amount: -breakdown.taxAtLowerRate,
     },
     ...(breakdown.taxAtHigherRate > 0
       ? [
           {
             label: 'Income tax, higher rate',
-            detail: `${formatPercent(profile.higherTaxRate)} of ${formatEuro(higherBracketBase)}`,
+            detail: `${formatPercent(breakdown.higherTaxRate)} of ${formatEuro(breakdown.higherBracketBase)}`,
             amount: -breakdown.taxAtHigherRate,
           },
         ]
@@ -67,7 +55,7 @@ export function getEmployeeRows(
       ? [
           {
             label: 'Assisted area tax relief',
-            detail: `${formatPercent(rules.incomeTax.assistedAreaReliefShare)} of the income tax`,
+            detail: `${formatPercent(breakdown.assistedAreaReliefShare)} of the income tax`,
             amount: breakdown.assistedAreaRelief,
           },
         ]
@@ -94,15 +82,12 @@ export function getEmployeeRows(
   ];
 }
 
-export function getEmployerRows(
-  breakdown: PayrollBreakdown,
-  rules: PayrollRules,
-): readonly BreakdownRow[] {
+export function getEmployerRows(breakdown: PayrollBreakdown): readonly BreakdownRow[] {
   return [
     { label: 'Gross salary', amount: breakdown.gross },
     {
       label: 'Health insurance',
-      detail: `${formatPercent(rules.contributions.employerHealthRate)} of gross, paid by the employer`,
+      detail: `${formatPercent(breakdown.employerHealthRate)} of gross, paid by the employer`,
       amount: breakdown.employerHealthContribution,
     },
     ...(breakdown.nonTaxablePayments > 0

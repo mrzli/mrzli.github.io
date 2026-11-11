@@ -1,4 +1,4 @@
-import { PageContainer, Typography } from '@components';
+import { ExternalLink, PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
 import { EquivalenceSection } from './components/equivalence-section';
@@ -70,7 +70,10 @@ export function CalculatorsPage(): ReactNode {
     EQUIVALENCE_VALIDATORS,
   );
   const salary = useStoredSettings(STORAGE_KEYS.salary, DEFAULT_SALARY, SALARY_VALIDATORS);
-  const profile = toTaxProfile(taxProfile.settings, CITY_DATA.cities);
+  const city = findCity(taxProfile.settings.cityCode, CITY_DATA.cities);
+  // A stored city missing from the current data shows and uses the default city.
+  const taxProfileSettings = { ...taxProfile.settings, cityCode: city.code };
+  const profile = toTaxProfile(taxProfileSettings, city);
 
   return (
     <PageContainer title='Calculators'>
@@ -79,7 +82,7 @@ export function CalculatorsPage(): ReactNode {
         advice. Inputs are saved in this browser.
       </Typography>
       <TaxProfileSection
-        settings={taxProfile.settings}
+        settings={taxProfileSettings}
         onChange={taxProfile.update}
         cities={CITY_DATA.cities}
         year={RULES.year}
@@ -96,24 +99,26 @@ export function CalculatorsPage(): ReactNode {
         profile={profile}
         rules={RULES}
       />
-      <Typography variant='body'>
-        Sources: Porezna uprava, Narodne novine, and the city tax rate table from{' '}
-        <a className='underline' href={CITY_DATA.source}>
-          data.gov.hr
-        </a>{' '}
+      <div className='flex flex-wrap items-center gap-x-1 text-sm text-slate-700 dark:text-slate-300'>
+        Sources: Porezna uprava, Narodne novine, and the city tax rate table from
+        <ExternalLink label='data.gov.hr' href={CITY_DATA.source} variant='highlight' />
         under the Croatian open license.
-      </Typography>
+      </div>
     </PageContainer>
   );
 }
 
-function toTaxProfile(settings: TaxProfileSettings, cities: readonly CityTaxRate[]): TaxProfile {
+function findCity(cityCode: number, cities: readonly CityTaxRate[]): CityTaxRate {
   const city =
-    cities.find((candidate) => candidate.code === settings.cityCode) ??
+    cities.find((candidate) => candidate.code === cityCode) ??
     cities.find((candidate) => candidate.code === DEFAULT_TAX_PROFILE.cityCode);
   if (city === undefined) {
     throw new Error('The city tax rate data has no default city.');
   }
+  return city;
+}
+
+function toTaxProfile(settings: TaxProfileSettings, city: CityTaxRate): TaxProfile {
   return {
     lowerTaxRate: city.lowerRate,
     higherTaxRate: city.higherRate,

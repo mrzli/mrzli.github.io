@@ -27,7 +27,12 @@ export interface PayrollInput {
 
 export interface PayrollBreakdown {
   readonly gross: number;
+  /** Gross up to the maximum contribution base. */
+  readonly contributionBase: number;
   readonly pensionPillar1Base: number;
+  readonly pensionPillar1Rate: number;
+  /** Zero for a worker insured only in pillar I. */
+  readonly pensionPillar2Rate: number;
   readonly lowIncomeReliefReduction: number;
   readonly pensionPillar1: number;
   readonly pensionPillar2: number;
@@ -35,8 +40,13 @@ export interface PayrollBreakdown {
   readonly income: number;
   readonly personalAllowance: number;
   readonly taxableBase: number;
+  readonly lowerBracketBase: number;
+  readonly higherBracketBase: number;
+  readonly lowerTaxRate: number;
+  readonly higherTaxRate: number;
   readonly taxAtLowerRate: number;
   readonly taxAtHigherRate: number;
+  readonly assistedAreaReliefShare: number;
   readonly assistedAreaRelief: number;
   /** Income tax withheld from monthly pay. */
   readonly incomeTax: number;
@@ -46,6 +56,7 @@ export interface PayrollBreakdown {
   /** Refunded after the year ends, in the annual tax settlement. */
   readonly youthRelief: number;
   readonly netPayWithYouthRelief: number;
+  readonly employerHealthRate: number;
   readonly employerHealthContribution: number;
   readonly employerCost: number;
 }
@@ -63,17 +74,16 @@ export function calculatePayroll(input: PayrollInput, rules: PayrollRules): Payr
   const pensionPillar1Rate = profile.isPensionPillar2Member
     ? contributions.pensionPillar1Rate
     : contributions.pensionPillar1Rate + contributions.pensionPillar2Rate;
+  const pensionPillar2Rate = profile.isPensionPillar2Member ? contributions.pensionPillar2Rate : 0;
   const pensionPillar1 = roundToCents(pensionPillar1Base * pensionPillar1Rate);
-  const pensionPillar2 = profile.isPensionPillar2Member
-    ? roundToCents(contributionBase * contributions.pensionPillar2Rate)
-    : 0;
+  const pensionPillar2 = roundToCents(contributionBase * pensionPillar2Rate);
   const employeeContributions = roundToCents(pensionPillar1 + pensionPillar2);
   const income = roundToCents(gross - employeeContributions);
 
   const personalAllowance = calculatePersonalAllowance(profile, taxRules);
   const taxableBase = roundToCents(Math.max(0, income - personalAllowance));
   const lowerBracketBase = Math.min(taxableBase, taxRules.monthlyLowerBracketLimit);
-  const higherBracketBase = taxableBase - lowerBracketBase;
+  const higherBracketBase = roundToCents(taxableBase - lowerBracketBase);
   const taxAtLowerRate = roundToCents(lowerBracketBase * profile.lowerTaxRate);
   const taxAtHigherRate = roundToCents(higherBracketBase * profile.higherTaxRate);
   const taxBeforeRelief = roundToCents(taxAtLowerRate + taxAtHigherRate);
@@ -95,7 +105,10 @@ export function calculatePayroll(input: PayrollInput, rules: PayrollRules): Payr
 
   return {
     gross,
+    contributionBase,
     pensionPillar1Base,
+    pensionPillar1Rate,
+    pensionPillar2Rate,
     lowIncomeReliefReduction,
     pensionPillar1,
     pensionPillar2,
@@ -103,22 +116,28 @@ export function calculatePayroll(input: PayrollInput, rules: PayrollRules): Payr
     income,
     personalAllowance,
     taxableBase,
+    lowerBracketBase,
+    higherBracketBase,
+    lowerTaxRate: profile.lowerTaxRate,
+    higherTaxRate: profile.higherTaxRate,
     taxAtLowerRate,
     taxAtHigherRate,
+    assistedAreaReliefShare,
     assistedAreaRelief,
     incomeTax,
     nonTaxablePayments,
     netPay,
     youthRelief,
     netPayWithYouthRelief: roundToCents(netPay + youthRelief),
+    employerHealthRate: contributions.employerHealthRate,
     employerHealthContribution,
     employerCost: roundToCents(gross + employerHealthContribution + nonTaxablePayments),
   };
 }
 
 /**
- * Finds the lowest gross, to the cent, whose monthly net pay reaches `netPay`. Net pay grows
- * strictly with gross, so a binary search over cents finds it exactly.
+ * Finds the lowest gross, to the cent, whose monthly net pay reaches `netPay`. Net pay never
+ * falls as gross rises, so a binary search over cents finds it exactly.
  */
 export function calculateGrossFromNet(
   netPay: number,

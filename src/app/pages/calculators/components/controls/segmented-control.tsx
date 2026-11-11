@@ -1,6 +1,4 @@
-import type { ReactNode } from 'react';
-
-import { cn } from '@/app/util';
+import { type ReactNode, useId } from 'react';
 
 export interface SegmentedOption<T extends string> {
   readonly value: T;
@@ -14,36 +12,34 @@ export interface SegmentedControlProps<T extends string> {
   readonly onChange: (value: T) => void;
 }
 
+/** Native radio inputs styled as segments, which keeps the browser's keyboard behavior. */
 export function SegmentedControl<T extends string>({
   label,
   value,
   options,
   onChange,
 }: SegmentedControlProps<T>): ReactNode {
+  const name = useId();
   return (
-    <div
-      role='radiogroup'
-      aria-label={label}
-      className='inline-flex self-start rounded-lg border border-slate-300 p-1 dark:border-slate-700'
-    >
+    <fieldset className='inline-flex self-start rounded-lg border border-slate-300 p-1 dark:border-slate-700'>
+      <legend className='sr-only'>{label}</legend>
       {options.map((option) => (
-        <button
-          key={option.value}
-          type='button'
-          role='radio'
-          aria-checked={option.value === value}
-          className={cn(
-            'rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 focus-visible:outline-2 focus-visible:outline-cyan-600 dark:text-slate-300',
-            option.value === value &&
-              'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900',
-          )}
-          onClick={() => {
-            onChange(option.value);
-          }}
-        >
-          {option.label}
-        </button>
+        <label key={option.value} className='cursor-pointer'>
+          <input
+            type='radio'
+            name={name}
+            value={option.value}
+            checked={option.value === value}
+            className='peer sr-only'
+            onChange={() => {
+              onChange(option.value);
+            }}
+          />
+          <span className='block rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 peer-checked:bg-slate-900 peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-cyan-600 dark:text-slate-300 dark:peer-checked:bg-slate-100 dark:peer-checked:text-slate-900'>
+            {option.label}
+          </span>
+        </label>
       ))}
-    </div>
+    </fieldset>
   );
 }

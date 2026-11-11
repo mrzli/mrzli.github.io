@@ -84,7 +84,7 @@ export function SalarySection({
           hint='Within their yearly caps, such as up to 1,200 EUR a year for meals or 700 EUR for Christmas and holiday bonuses.'
         />
       </div>
-      <PayrollTables breakdown={breakdown} profile={profile} rules={rules} />
+      <PayrollTables breakdown={breakdown} />
     </CalculatorSection>
   );
 }

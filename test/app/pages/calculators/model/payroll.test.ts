@@ -98,6 +98,20 @@ describe('calculatePayroll', () => {
     expect(result.pensionPillar2).toBe(0);
   });
 
+  test('applies the low-pay relief to the full 20% for a worker without pillar II', () => {
+    // Relief 0.5 × (1300 − 1050) = 125, so pillar I is 20% of 925.
+    const result = calculatePayroll(
+      {
+        gross: 1050,
+        nonTaxablePayments: 0,
+        profile: { ...ZAGREB_PROFILE, isPensionPillar2Member: false },
+      },
+      PAYROLL_RULES_2026,
+    );
+    expect(result.pensionPillar1).toBe(185);
+    expect(result.pensionPillar2).toBe(0);
+  });
+
   test('halves the tax in an assisted area and refunds young workers', () => {
     const result = calculatePayroll(
       {
