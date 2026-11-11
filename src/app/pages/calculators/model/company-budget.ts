@@ -6,7 +6,8 @@ import type { CompanyTaxRules } from './rules';
 export const CURRENCIES = ['EUR', 'USD'] as const;
 export type Currency = (typeof CURRENCIES)[number];
 
-export const PERIODS = ['month', 'year'] as const;
+/** `hour` counts the billable hours of a year, which suits income billed by the hour. */
+export const PERIODS = ['hour', 'month', 'year'] as const;
 export type Period = (typeof PERIODS)[number];
 
 /** An income or expense amount without VAT. */
@@ -22,6 +23,8 @@ export interface CompanyBudgetInput {
   readonly incomes: readonly BudgetItem[];
   readonly expenses: readonly BudgetItem[];
   readonly usdPerEur: number;
+  /** Billable hours per year, for items paid per hour. */
+  readonly billableHours: number;
   /** The owner's monthly payroll as an employee of the company. */
   readonly payroll: PayrollBreakdown;
 }
@@ -53,9 +56,13 @@ export function calculateCompanyBudget(
   input: CompanyBudgetInput,
   rules: CompanyTaxRules,
 ): CompanyBudget {
+  const periodsPerYear: Readonly<Record<Period, number>> = {
+    hour: input.billableHours,
+    month: MONTHS_PER_YEAR,
+    year: 1,
+  };
   const toAnnualEur = (item: BudgetItem): number =>
-    toEur(item.amount, item.currency, input.usdPerEur) *
-    (item.period === 'month' ? MONTHS_PER_YEAR : 1);
+    toEur(item.amount, item.currency, input.usdPerEur) * periodsPerYear[item.period];
   const sumAnnual = (items: readonly BudgetItem[]): number =>
     roundToCents(items.reduce((sum, item) => sum + toAnnualEur(item), 0));
   const sumAnnualVat = (items: readonly BudgetItem[]): number =>

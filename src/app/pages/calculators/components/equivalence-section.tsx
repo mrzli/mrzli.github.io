@@ -47,7 +47,7 @@ export function EquivalenceSection({
 
   return (
     <CalculatorSection
-      title='Contractor rate and salary'
+      title='Contractor rate'
       description='The hourly rate and the monthly gross salary that cost a client or an employer the same per year. A contractor bills only the hours worked, while an employee is also paid for holidays, vacation, and sick days.'
     >
       <div className='grid gap-4 sm:grid-cols-2'>

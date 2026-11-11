@@ -81,6 +81,7 @@ describe('compareEmployeeOffer', () => {
         ],
         expenses: INPUT.companyExpenses,
         usdPerEur: INPUT.usdPerEur,
+        billableHours: INPUT.billableHours,
         payroll: INPUT.ownerPayroll,
       },
       COMPANY_TAX_RULES_2026,

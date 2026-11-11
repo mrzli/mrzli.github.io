@@ -70,6 +70,7 @@ function findMatchingBudget(
         ],
         expenses: input.companyExpenses,
         usdPerEur: input.usdPerEur,
+        billableHours: input.billableHours,
         payroll: input.ownerPayroll,
       },
       rules,

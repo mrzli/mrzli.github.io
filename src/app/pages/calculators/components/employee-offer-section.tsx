@@ -50,8 +50,8 @@ export function EmployeeOfferSection({
 
   return (
     <CalculatorSection
-      title='Employee offer'
-      description='What an employee offer gives you per year, and what your company would have to earn to give you the same. The company side uses your salary and expenses from the Company tab, and the billable hours from the Rate and salary tab.'
+      title='Job offer'
+      description='What a job offer gives you per year, and what your own company would have to earn to give you the same. The company side uses your salary and expenses from the Own company tab, and the billable hours from the Contractor rate tab.'
     >
       <div className='grid gap-4 sm:grid-cols-2'>
         <NumberField

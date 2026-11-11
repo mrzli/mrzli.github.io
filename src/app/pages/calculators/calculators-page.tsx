@@ -84,10 +84,10 @@ const DEFAULT_EMPLOYEE_OFFER: EmployeeOfferSettings = {
 const DEFAULT_PAGE: PageSettings = { tab: 'salary' };
 
 const TAB_LABELS: Readonly<Record<CalculatorTab, string>> = {
-  equivalence: 'Rate and salary',
-  salary: 'Gross and net',
-  company: 'Company',
-  employeeOffer: 'Employee offer',
+  salary: 'Salary',
+  equivalence: 'Contractor rate',
+  company: 'Own company',
+  employeeOffer: 'Job offer',
 };
 
 const STORAGE_KEYS = {
@@ -122,6 +122,7 @@ export function CalculatorsPage(): ReactNode {
   // A stored city missing from the current data shows and uses the default city.
   const taxProfileSettings = { ...taxProfile.settings, cityCode: city.code };
   const profile = toTaxProfile(taxProfileSettings, city);
+  const { billableHours } = calculateWorkYear(toWorkYearInput(equivalence.settings));
 
   return (
     <PageContainer title='Calculators'>
@@ -173,6 +174,7 @@ export function CalculatorsPage(): ReactNode {
             settings={company.settings}
             onChange={company.update}
             createItem={createBudgetItem}
+            billableHours={billableHours}
             profile={profile}
             payrollRules={RULES}
             companyRules={COMPANY_RULES}
@@ -183,7 +185,7 @@ export function CalculatorsPage(): ReactNode {
             settings={employeeOffer.settings}
             onChange={employeeOffer.update}
             company={company.settings}
-            billableHours={calculateWorkYear(toWorkYearInput(equivalence.settings)).billableHours}
+            billableHours={billableHours}
             profile={profile}
             payrollRules={RULES}
             companyRules={COMPANY_RULES}

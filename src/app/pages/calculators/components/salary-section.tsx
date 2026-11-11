@@ -48,7 +48,7 @@ export function SalarySection({
 
   return (
     <CalculatorSection
-      title='Gross and net salary'
+      title='Salary'
       description='Monthly salary with every contribution and tax, for the employee and the employer.'
     >
       <ToggleGroup

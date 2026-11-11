@@ -9,6 +9,8 @@ export interface BudgetItemsEditorProps {
   readonly items: readonly BudgetItemSettings[];
   readonly onChange: (items: readonly BudgetItemSettings[]) => void;
   readonly createItem: () => BudgetItemSettings;
+  /** The periods an item may be paid in, such as per hour only for income. */
+  readonly periods: readonly Period[];
 }
 
 const CURRENCY_OPTIONS: readonly SelectOption<Currency>[] = CURRENCIES.map((currency) => ({
@@ -16,17 +18,23 @@ const CURRENCY_OPTIONS: readonly SelectOption<Currency>[] = CURRENCIES.map((curr
   label: currency,
 }));
 
-const PERIOD_OPTIONS: readonly SelectOption<Period>[] = [
-  { value: 'month', label: 'Per month' },
-  { value: 'year', label: 'Per year' },
-];
+const PERIOD_LABELS: Readonly<Record<Period, string>> = {
+  hour: 'Per hour',
+  month: 'Per month',
+  year: 'Per year',
+};
 
 export function BudgetItemsEditor({
   title,
   items,
   onChange,
   createItem,
+  periods,
 }: BudgetItemsEditorProps): ReactNode {
+  const periodOptions: readonly SelectOption<Period>[] = periods.map((period) => ({
+    value: period,
+    label: PERIOD_LABELS[period],
+  }));
   const updateItem = (id: string, changes: Partial<BudgetItemSettings>): void => {
     onChange(items.map((item) => (item.id === id ? { ...item, ...changes } : item)));
   };
@@ -42,7 +50,7 @@ export function BudgetItemsEditor({
         return (
           <div
             key={item.id}
-            className='grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_auto_auto_auto_auto] dark:border-slate-800'
+            className='grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_5.5rem_8rem_auto_auto] dark:border-slate-800'
           >
             <div className='col-span-2 sm:col-span-1'>
               <TextField
@@ -78,7 +86,7 @@ export function BudgetItemsEditor({
               label={`${name}: period`}
               hideLabel
               value={item.period}
-              options={PERIOD_OPTIONS}
+              options={periodOptions}
               onChange={(period) => {
                 updateItem(item.id, { period });
               }}

@@ -36,6 +36,7 @@ const INPUT: CompanyBudgetInput = {
   incomes: [{ amount: 10_000, currency: 'EUR', period: 'month', vatRate: 0 }],
   expenses: [{ amount: 100, currency: 'USD', period: 'month', vatRate: 0.25 }],
   usdPerEur: 1.25,
+  billableHours: 1800,
   payroll: PAYROLL,
 };
 
@@ -79,5 +80,14 @@ describe('calculateCompanyBudget', () => {
     expect(result.profitTax).toBe(0);
     expect(result.dividends).toBe(0);
     expect(result.personalNet).toBe(16_440);
+  });
+
+  test('counts income per hour over the billable hours of the year', () => {
+    const result = calculateCompanyBudget(
+      { ...INPUT, incomes: [{ amount: 50, currency: 'USD', period: 'hour', vatRate: 0 }] },
+      COMPANY_TAX_RULES_2026,
+    );
+    // 50 USD at 1.25 USD per EUR is 40 EUR, over 1,800 hours.
+    expect(result.revenue).toBe(72_000);
   });
 });
