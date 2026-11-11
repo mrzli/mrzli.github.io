@@ -5,7 +5,7 @@ import { FieldGroup, NumberField } from './controls';
 
 export interface NonTaxablePaymentsFieldsProps {
   /** Names whose payments these are, such as "Offered", at the start of the group's title. */
-  readonly labelPrefix?: string;
+  readonly labelPrefix: string;
   readonly value: NonTaxablePaymentsSettings;
   readonly onChange: (value: NonTaxablePaymentsSettings) => void;
 }
@@ -15,8 +15,7 @@ export function NonTaxablePaymentsFields({
   value,
   onChange,
 }: NonTaxablePaymentsFieldsProps): ReactNode {
-  const legend =
-    labelPrefix === undefined ? 'Non-taxable payments' : `${labelPrefix} non-taxable payments`;
+  const legend = `${labelPrefix} non-taxable payments`;
   return (
     <FieldGroup legend={legend} columns='two'>
       <NumberField

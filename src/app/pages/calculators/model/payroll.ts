@@ -141,16 +141,13 @@ export function calculatePayroll(input: PayrollInput, rules: PayrollRules): Payr
  */
 export function calculateGrossFromNet(
   netPay: number,
-  nonTaxablePayments: number,
   profile: TaxProfile,
   rules: PayrollRules,
 ): PayrollBreakdown {
+  const payrollAt = (grossCents: number): PayrollBreakdown =>
+    calculatePayroll({ gross: grossCents / 100, nonTaxablePayments: 0, profile }, rules);
   const targetCents = Math.round(netPay * 100);
-  const netCentsAt = (grossCents: number): number =>
-    Math.round(
-      calculatePayroll({ gross: grossCents / 100, nonTaxablePayments, profile }, rules).netPay *
-        100,
-    );
+  const netCentsAt = (grossCents: number): number => Math.round(payrollAt(grossCents).netPay * 100);
 
   let lowCents = 0;
   let highCents = Math.max(100, targetCents);
@@ -166,7 +163,7 @@ export function calculateGrossFromNet(
     }
   }
 
-  return calculatePayroll({ gross: lowCents / 100, nonTaxablePayments, profile }, rules);
+  return payrollAt(lowCents);
 }
 
 export function calculatePersonalAllowance(profile: TaxProfile, rules: IncomeTaxRules): number {

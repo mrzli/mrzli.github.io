@@ -144,12 +144,6 @@ describe('calculateGrossFromNet', () => {
   ] as const;
 
   test.each(cases)('finds the gross for net $input', ({ input, expected }) => {
-    expect(calculateGrossFromNet(input, 0, ZAGREB_PROFILE, PAYROLL_RULES_2026).gross).toBe(
-      expected,
-    );
-  });
-
-  test('excludes non-taxable payments from the gross', () => {
-    expect(calculateGrossFromNet(1470, 100, ZAGREB_PROFILE, PAYROLL_RULES_2026).gross).toBe(2000);
+    expect(calculateGrossFromNet(input, ZAGREB_PROFILE, PAYROLL_RULES_2026).gross).toBe(expected);
   });
 });

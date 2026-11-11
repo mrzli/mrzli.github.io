@@ -40,7 +40,7 @@ function toPayrollInput(
 }
 
 /** The monthly amount, with the yearly payments spread evenly over the months. */
-export function toMonthlyNonTaxablePayments(payments: NonTaxablePaymentsSettings): number {
+function toMonthlyNonTaxablePayments(payments: NonTaxablePaymentsSettings): number {
   return payments.perMonth + payments.perYear / MONTHS_PER_YEAR;
 }
 

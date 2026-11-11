@@ -64,7 +64,6 @@ const DEFAULT_SALARY: SalarySettings = {
   direction: 'grossToNet',
   gross: 3000,
   netPay: 2000,
-  nonTaxablePayments: { perMonth: 0, perYear: 0 },
 };
 
 const DEFAULT_COMPANY: CompanySettings = {

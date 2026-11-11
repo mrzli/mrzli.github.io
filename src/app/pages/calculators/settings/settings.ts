@@ -88,14 +88,12 @@ export interface SalarySettings {
   readonly direction: SalaryDirection;
   readonly gross: number;
   readonly netPay: number;
-  readonly nonTaxablePayments: NonTaxablePaymentsSettings;
 }
 
 export const SALARY_VALIDATORS: FieldValidators<SalarySettings> = {
   direction: isOneOf(SALARY_DIRECTIONS),
   gross: isFiniteNumberBetween(0, MAX_AMOUNT),
   netPay: isFiniteNumberBetween(0, MAX_AMOUNT),
-  nonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
 };
 
 export interface CompanySettings {
