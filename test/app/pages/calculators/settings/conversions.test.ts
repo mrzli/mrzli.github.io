@@ -47,12 +47,12 @@ describe('toBudgetItem', () => {
 });
 
 describe('payroll inputs', () => {
-  test('spread annual non-taxable payments over the months', () => {
+  test('add the monthly payments to the yearly ones spread over the months', () => {
     expect(
       toOwnerPayrollInput(
         {
           ownerGross: 2000,
-          ownerAnnualNonTaxablePayments: 1200,
+          ownerNonTaxablePayments: { perMonth: 0, perYear: 1200 },
           usdPerEur: 1.2,
           incomes: [],
           expenses: [],
@@ -60,9 +60,14 @@ describe('payroll inputs', () => {
         PROFILE,
       ),
     ).toEqual({ gross: 2000, nonTaxablePayments: 100, profile: PROFILE });
-    expect(toOfferPayrollInput({ gross: 3000, annualNonTaxablePayments: 600 }, PROFILE)).toEqual({
+    expect(
+      toOfferPayrollInput(
+        { gross: 3000, nonTaxablePayments: { perMonth: 100, perYear: 600 } },
+        PROFILE,
+      ),
+    ).toEqual({
       gross: 3000,
-      nonTaxablePayments: 50,
+      nonTaxablePayments: 150,
       profile: PROFILE,
     });
   });

@@ -64,12 +64,12 @@ const DEFAULT_SALARY: SalarySettings = {
   direction: 'grossToNet',
   gross: 3000,
   netPay: 2000,
-  nonTaxablePayments: 0,
+  nonTaxablePayments: { perMonth: 0, perYear: 0 },
 };
 
 const DEFAULT_COMPANY: CompanySettings = {
   ownerGross: 2000,
-  ownerAnnualNonTaxablePayments: 0,
+  ownerNonTaxablePayments: { perMonth: 0, perYear: 0 },
   usdPerEur: 1.15,
   incomes: [],
   expenses: [],
@@ -77,7 +77,7 @@ const DEFAULT_COMPANY: CompanySettings = {
 
 const DEFAULT_EMPLOYEE_OFFER: EmployeeOfferSettings = {
   gross: 3000,
-  annualNonTaxablePayments: 0,
+  nonTaxablePayments: { perMonth: 0, perYear: 0 },
 };
 
 const DEFAULT_PAGE: PageSettings = { tab: 'equivalence' };

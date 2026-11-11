@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { calculateGrossFromNet, calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
+import { toMonthlyNonTaxablePayments } from '../settings/conversions';
 import {
   SETTING_LIMITS,
   SALARY_DIRECTIONS,
@@ -10,6 +11,7 @@ import {
 } from '../settings/settings';
 import { CalculatorSection } from './calculator-section';
 import { NumberField } from './controls';
+import { NonTaxablePaymentsFields } from './non-taxable-payments-fields';
 import { PayrollTables } from './payroll-tables';
 import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
 
@@ -31,17 +33,18 @@ export function SalarySection({
   profile,
   rules,
 }: SalarySectionProps): ReactNode {
+  const nonTaxablePayments = toMonthlyNonTaxablePayments(settings.nonTaxablePayments);
   const breakdown =
     settings.direction === 'grossToNet'
       ? calculatePayroll(
           {
             gross: settings.gross,
-            nonTaxablePayments: settings.nonTaxablePayments,
+            nonTaxablePayments,
             profile,
           },
           rules,
         )
-      : calculateGrossFromNet(settings.netPay, settings.nonTaxablePayments, profile, rules);
+      : calculateGrossFromNet(settings.netPay, nonTaxablePayments, profile, rules);
 
   return (
     <CalculatorSection
@@ -88,19 +91,14 @@ export function SalarySection({
             onChange={(netPay) => {
               onChange({ netPay });
             }}
-            hint='Including non-taxable payments.'
+            hint='Including non-taxable payments, with the yearly ones spread over the months.'
           />
         )}
-        <NumberField
-          label='Non-taxable payments per month'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
+        <NonTaxablePaymentsFields
           value={settings.nonTaxablePayments}
-          min={0}
           onChange={(nonTaxablePayments) => {
             onChange({ nonTaxablePayments });
           }}
-          hint='Within their yearly caps, such as up to 1,200 EUR a year for meals or 700 EUR for Christmas and holiday bonuses.'
         />
       </div>
       <PayrollTables breakdown={breakdown} />

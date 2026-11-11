@@ -20,6 +20,17 @@ const MAX_AGE = 130;
 const DAYS_PER_YEAR = SETTING_LIMITS.days;
 const HOURS_PER_DAY = 24;
 
+/** Non-taxable payments within their caps, entered per month, per year, or both. */
+export interface NonTaxablePaymentsSettings {
+  readonly perMonth: number;
+  readonly perYear: number;
+}
+
+const NON_TAXABLE_PAYMENTS_VALIDATORS: FieldValidators<NonTaxablePaymentsSettings> = {
+  perMonth: isFiniteNumberBetween(0, MAX_AMOUNT),
+  perYear: isFiniteNumberBetween(0, MAX_AMOUNT),
+};
+
 export interface TaxProfileSettings {
   readonly cityCode: number;
   readonly age: number;
@@ -77,19 +88,19 @@ export interface SalarySettings {
   readonly direction: SalaryDirection;
   readonly gross: number;
   readonly netPay: number;
-  readonly nonTaxablePayments: number;
+  readonly nonTaxablePayments: NonTaxablePaymentsSettings;
 }
 
 export const SALARY_VALIDATORS: FieldValidators<SalarySettings> = {
   direction: isOneOf(SALARY_DIRECTIONS),
   gross: isFiniteNumberBetween(0, MAX_AMOUNT),
   netPay: isFiniteNumberBetween(0, MAX_AMOUNT),
-  nonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+  nonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
 };
 
 export interface CompanySettings {
   readonly ownerGross: number;
-  readonly ownerAnnualNonTaxablePayments: number;
+  readonly ownerNonTaxablePayments: NonTaxablePaymentsSettings;
   /** US dollars per euro. */
   readonly usdPerEur: number;
   readonly incomes: readonly BudgetItemSettings[];
@@ -121,7 +132,7 @@ const MAX_EXCHANGE_RATE = 1000;
 
 export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
   ownerGross: isFiniteNumberBetween(0, MAX_AMOUNT),
-  ownerAnnualNonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+  ownerNonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
   usdPerEur: isFiniteNumberBetween(Number.MIN_VALUE, MAX_EXCHANGE_RATE),
   incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
   expenses: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
@@ -129,12 +140,12 @@ export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
 
 export interface EmployeeOfferSettings {
   readonly gross: number;
-  readonly annualNonTaxablePayments: number;
+  readonly nonTaxablePayments: NonTaxablePaymentsSettings;
 }
 
 export const EMPLOYEE_OFFER_VALIDATORS: FieldValidators<EmployeeOfferSettings> = {
   gross: isFiniteNumberBetween(0, MAX_AMOUNT),
-  annualNonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+  nonTaxablePayments: isComplete(NON_TAXABLE_PAYMENTS_VALIDATORS),
 };
 
 export const CALCULATOR_TABS = ['equivalence', 'salary', 'company', 'employeeOffer'] as const;

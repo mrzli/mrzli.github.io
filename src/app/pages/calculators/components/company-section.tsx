@@ -15,6 +15,7 @@ import { BreakdownTable } from './breakdown-table';
 import { BudgetItemsEditor } from './budget-items-editor';
 import { CalculatorSection } from './calculator-section';
 import { NumberField } from './controls';
+import { NonTaxablePaymentsFields } from './non-taxable-payments-fields';
 import { PayrollTables } from './payroll-tables';
 
 export interface CompanySectionProps {
@@ -61,16 +62,12 @@ export function CompanySection({
             onChange({ ownerGross });
           }}
         />
-        <NumberField
-          label='Your non-taxable payments per year'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
-          value={settings.ownerAnnualNonTaxablePayments}
-          min={0}
-          onChange={(ownerAnnualNonTaxablePayments) => {
-            onChange({ ownerAnnualNonTaxablePayments });
+        <NonTaxablePaymentsFields
+          labelPrefix='Your'
+          value={settings.ownerNonTaxablePayments}
+          onChange={(ownerNonTaxablePayments) => {
+            onChange({ ownerNonTaxablePayments });
           }}
-          hint='Within their caps, such as meal allowances.'
         />
         <NumberField
           label='US dollars per euro'

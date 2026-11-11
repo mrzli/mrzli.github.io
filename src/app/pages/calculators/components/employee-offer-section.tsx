@@ -13,6 +13,7 @@ import {
 import { BreakdownTable } from './breakdown-table';
 import { CalculatorSection } from './calculator-section';
 import { NumberField } from './controls';
+import { NonTaxablePaymentsFields } from './non-taxable-payments-fields';
 import { PayrollTables } from './payroll-tables';
 
 export interface EmployeeOfferSectionProps {
@@ -63,16 +64,12 @@ export function EmployeeOfferSection({
             onChange({ gross });
           }}
         />
-        <NumberField
-          label='Offered non-taxable payments per year'
-          unit='EUR'
-          max={SETTING_LIMITS.amount}
-          value={settings.annualNonTaxablePayments}
-          min={0}
-          onChange={(annualNonTaxablePayments) => {
-            onChange({ annualNonTaxablePayments });
+        <NonTaxablePaymentsFields
+          labelPrefix='Offered'
+          value={settings.nonTaxablePayments}
+          onChange={(nonTaxablePayments) => {
+            onChange({ nonTaxablePayments });
           }}
-          hint='Such as meal allowances, Christmas and holiday bonuses, and work result bonuses.'
         />
       </div>
       <div className='grid items-start gap-6 lg:grid-cols-2'>

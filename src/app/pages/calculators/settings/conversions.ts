@@ -7,6 +7,7 @@ import type {
   CompanySettings,
   EmployeeOfferSettings,
   EquivalenceSettings,
+  NonTaxablePaymentsSettings,
 } from './settings';
 
 export function toBudgetItem(item: BudgetItemSettings): BudgetItem {
@@ -19,23 +20,27 @@ export function toBudgetItem(item: BudgetItemSettings): BudgetItem {
 }
 
 export function toOwnerPayrollInput(settings: CompanySettings, profile: TaxProfile): PayrollInput {
-  return toPayrollInput(settings.ownerGross, settings.ownerAnnualNonTaxablePayments, profile);
+  return toPayrollInput(settings.ownerGross, settings.ownerNonTaxablePayments, profile);
 }
 
 export function toOfferPayrollInput(
   settings: EmployeeOfferSettings,
   profile: TaxProfile,
 ): PayrollInput {
-  return toPayrollInput(settings.gross, settings.annualNonTaxablePayments, profile);
+  return toPayrollInput(settings.gross, settings.nonTaxablePayments, profile);
 }
 
-/** A monthly payroll input with annual non-taxable payments spread evenly over the months. */
 function toPayrollInput(
   gross: number,
-  annualNonTaxablePayments: number,
+  nonTaxablePayments: NonTaxablePaymentsSettings,
   profile: TaxProfile,
 ): PayrollInput {
-  return { gross, nonTaxablePayments: annualNonTaxablePayments / MONTHS_PER_YEAR, profile };
+  return { gross, nonTaxablePayments: toMonthlyNonTaxablePayments(nonTaxablePayments), profile };
+}
+
+/** The monthly amount, with the yearly payments spread evenly over the months. */
+export function toMonthlyNonTaxablePayments(payments: NonTaxablePaymentsSettings): number {
+  return payments.perMonth + payments.perYear / MONTHS_PER_YEAR;
 }
 
 export function toWorkYearInput(settings: EquivalenceSettings): WorkYearInput {
