@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 
 import { CURRENCIES, type Currency, type Period } from '../model/company-budget';
+import { moveBudgetItem, removeBudgetItem, updateBudgetItem } from '../settings/budget-items';
 import { SETTING_LIMITS, type BudgetItemSettings } from '../settings/settings';
 import { CheckboxField, NumberField, SelectField, type SelectOption, TextField } from './controls';
+import { IconButton } from './ui/icon-button';
 
 export interface BudgetItemsEditorProps {
   readonly title: string;
@@ -36,7 +38,7 @@ export function BudgetItemsEditor({
     label: PERIOD_LABELS[period],
   }));
   const updateItem = (id: string, changes: Partial<BudgetItemSettings>): void => {
-    onChange(items.map((item) => (item.id === id ? { ...item, ...changes } : item)));
+    onChange(updateBudgetItem(items, id, changes));
   };
 
   return (
@@ -102,16 +104,32 @@ export function BudgetItemsEditor({
                 updateItem(item.id, { vatApplies });
               }}
             />
-            <button
-              type='button'
-              aria-label={`Remove ${name}`}
-              className='justify-self-end rounded-md px-2 py-1 text-sm text-slate-500 hover:text-red-700 focus-visible:outline-2 focus-visible:outline-cyan-600 dark:text-slate-400 dark:hover:text-red-400'
-              onClick={() => {
-                onChange(items.filter((other) => other.id !== item.id));
-              }}
-            >
-              Remove
-            </button>
+            <div className='col-span-2 flex justify-self-end sm:col-span-1'>
+              <IconButton
+                icon='mdi:arrow-up'
+                label={`Move ${name} up`}
+                disabled={index === 0}
+                onClick={() => {
+                  onChange(moveBudgetItem(items, item.id, -1));
+                }}
+              />
+              <IconButton
+                icon='mdi:arrow-down'
+                label={`Move ${name} down`}
+                disabled={index === items.length - 1}
+                onClick={() => {
+                  onChange(moveBudgetItem(items, item.id, 1));
+                }}
+              />
+              <IconButton
+                icon='mdi:delete-outline'
+                label={`Remove ${name}`}
+                className='hover:text-red-700 dark:hover:text-red-400'
+                onClick={() => {
+                  onChange(removeBudgetItem(items, item.id));
+                }}
+              />
+            </div>
           </div>
         );
       })}
