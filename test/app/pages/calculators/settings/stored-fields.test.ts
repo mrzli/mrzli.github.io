@@ -3,7 +3,9 @@ import { describe, expect, test } from 'bun:test';
 import {
   decodeStoredFields,
   type FieldValidators,
+  isArrayOf,
   isBoolean,
+  isComplete,
   isIntegerBetween,
   isOneOf,
 } from '../../../../../src/app/pages/calculators/settings/stored-fields';
@@ -43,5 +45,27 @@ describe('decodeStoredFields', () => {
 
   test.each(cases)('$description', ({ input, expected }) => {
     expect(decodeStoredFields(input, VALIDATORS)).toEqual(expected);
+  });
+});
+
+describe('isArrayOf(isComplete(...))', () => {
+  const isExampleList = isArrayOf(isComplete(VALIDATORS));
+  const cases = [
+    {
+      description: 'accepts complete items',
+      input: [{ count: 1, enabled: true, mode: 'first' }],
+      expected: true,
+    },
+    { description: 'accepts an empty list', input: [], expected: true },
+    {
+      description: 'rejects an item with a missing field',
+      input: [{ count: 1, enabled: true }],
+      expected: false,
+    },
+    { description: 'rejects a value that is not a list', input: { count: 1 }, expected: false },
+  ] as const;
+
+  test.each(cases)('$description', ({ input, expected }) => {
+    expect(isExampleList(input)).toBe(expected);
   });
 });

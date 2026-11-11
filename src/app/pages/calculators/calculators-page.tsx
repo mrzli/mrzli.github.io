@@ -1,14 +1,18 @@
 import { ExternalLink, PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
+import { CompanySection } from './components/company-section';
 import { EquivalenceSection } from './components/equivalence-section';
 import { SalarySection } from './components/salary-section';
 import { TaxProfileSection } from './components/tax-profile-section';
 import CITY_TAX_RATES from './data/city-tax-rates-2026.json';
 import type { CityTaxRate, CityTaxRateData } from './model/city-tax-rates';
 import type { TaxProfile } from './model/payroll';
-import { PAYROLL_RULES_2026 } from './model/rules-2026';
+import { COMPANY_TAX_RULES_2026, PAYROLL_RULES_2026 } from './model/rules-2026';
 import {
+  type BudgetItemSettings,
+  COMPANY_VALIDATORS,
+  type CompanySettings,
   EQUIVALENCE_VALIDATORS,
   type EquivalenceSettings,
   SALARY_VALIDATORS,
@@ -19,6 +23,7 @@ import {
 import { useStoredSettings } from './settings/use-stored-settings';
 
 const RULES = PAYROLL_RULES_2026;
+const COMPANY_RULES = COMPANY_TAX_RULES_2026;
 const CITY_DATA: CityTaxRateData = CITY_TAX_RATES;
 const ZAGREB_CODE = 1333;
 
@@ -52,10 +57,19 @@ const DEFAULT_SALARY: SalarySettings = {
   nonTaxablePayments: 0,
 };
 
+const DEFAULT_COMPANY: CompanySettings = {
+  ownerGross: 2000,
+  ownerAnnualNonTaxablePayments: 0,
+  usdPerEur: 1.15,
+  incomes: [],
+  expenses: [],
+};
+
 const STORAGE_KEYS = {
   taxProfile: 'calculators.tax-profile',
   equivalence: 'calculators.equivalence',
   salary: 'calculators.salary',
+  company: 'calculators.company',
 } as const;
 
 export function CalculatorsPage(): ReactNode {
@@ -70,6 +84,7 @@ export function CalculatorsPage(): ReactNode {
     EQUIVALENCE_VALIDATORS,
   );
   const salary = useStoredSettings(STORAGE_KEYS.salary, DEFAULT_SALARY, SALARY_VALIDATORS);
+  const company = useStoredSettings(STORAGE_KEYS.company, DEFAULT_COMPANY, COMPANY_VALIDATORS);
   const city = findCity(taxProfile.settings.cityCode, CITY_DATA.cities);
   // A stored city missing from the current data shows and uses the default city.
   const taxProfileSettings = { ...taxProfile.settings, cityCode: city.code };
@@ -99,6 +114,14 @@ export function CalculatorsPage(): ReactNode {
         profile={profile}
         rules={RULES}
       />
+      <CompanySection
+        settings={company.settings}
+        onChange={company.update}
+        createItem={createBudgetItem}
+        profile={profile}
+        payrollRules={RULES}
+        companyRules={COMPANY_RULES}
+      />
       <div className='flex flex-wrap items-center gap-x-1 text-sm text-slate-700 dark:text-slate-300'>
         Sources: Porezna uprava, Narodne novine, and the city tax rate table from
         <ExternalLink label='data.gov.hr' href={CITY_DATA.source} variant='highlight' />
@@ -106,6 +129,18 @@ export function CalculatorsPage(): ReactNode {
       </div>
     </PageContainer>
   );
+}
+
+function createBudgetItem(): BudgetItemSettings {
+  return {
+    id: crypto.randomUUID(),
+    label: '',
+    amount: 0,
+    currency: 'EUR',
+    period: 'month',
+    vatApplies: false,
+    vatRate: COMPANY_RULES.standardVatRate,
+  };
 }
 
 function findCity(cityCode: number, cities: readonly CityTaxRate[]): CityTaxRate {

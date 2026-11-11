@@ -13,6 +13,8 @@ export interface NumberFieldProps {
   readonly integer?: boolean;
   readonly unit?: string;
   readonly hint?: string;
+  /** Keeps the label for assistive technology only, for fields in a labeled row. */
+  readonly hideLabel?: boolean;
 }
 
 /**
@@ -29,6 +31,7 @@ export function NumberField({
   integer,
   unit,
   hint,
+  hideLabel,
 }: NumberFieldProps): ReactNode {
   const id = useId();
   const [draft, setDraft] = useState<string>();
@@ -43,7 +46,7 @@ export function NumberField({
 
   return (
     <div className='flex flex-col gap-1'>
-      <label htmlFor={id} className={FIELD_LABEL_CLASS}>
+      <label htmlFor={id} className={hideLabel === true ? 'sr-only' : FIELD_LABEL_CLASS}>
         {label}
       </label>
       <div className='flex items-center gap-2'>

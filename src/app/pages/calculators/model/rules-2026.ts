@@ -1,4 +1,4 @@
-import type { PayrollRules } from './rules';
+import type { CompanyTaxRules, PayrollRules } from './rules';
 
 /**
  * Croatian payroll rules for 2026.
@@ -42,4 +42,20 @@ export const PAYROLL_RULES_2026: PayrollRules = {
     ],
     assistedAreaReliefShare: 0.5,
   },
+};
+
+/**
+ * Croatian company tax rules for 2026.
+ *
+ * Sources:
+ * - Profit tax: https://porezna-uprava.gov.hr/hr/porez-na-dobit-3940/3940
+ * - Dividend tax: https://porezna-uprava.gov.hr/hr/oporezivanje-kapitala/4745
+ * - VAT: https://porezna-uprava.gov.hr/hr/pdv-3938/3938
+ */
+export const COMPANY_TAX_RULES_2026: CompanyTaxRules = {
+  profitTaxLowRate: 0.1,
+  profitTaxHighRate: 0.18,
+  profitTaxLowRateRevenueLimit: 1_000_000,
+  dividendTaxRate: 0.12,
+  standardVatRate: 0.25,
 };

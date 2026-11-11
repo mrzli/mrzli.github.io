@@ -39,3 +39,23 @@ export function isBoolean(value: unknown): value is boolean {
 export function isOneOf<T>(values: readonly T[]): (value: unknown) => value is T {
   return (value): value is T => values.includes(value as T);
 }
+
+export function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+export function isArrayOf<T>(
+  isItem: (value: unknown) => value is T,
+): (value: unknown) => value is readonly T[] {
+  return (value): value is readonly T[] => Array.isArray(value) && value.every(isItem);
+}
+
+/** Accepts an object only when every field passes its validator. */
+export function isComplete<T extends object>(
+  validators: FieldValidators<T>,
+): (value: unknown) => value is T {
+  return (value): value is T =>
+    typeof value === 'object' &&
+    value !== null &&
+    Object.keys(decodeStoredFields(value, validators)).length === Object.keys(validators).length;
+}

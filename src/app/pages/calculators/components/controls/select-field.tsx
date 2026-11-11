@@ -13,6 +13,8 @@ export interface SelectFieldProps<T extends string | number> {
   readonly options: readonly SelectOption<T>[];
   readonly onChange: (value: T) => void;
   readonly hint?: string;
+  /** Keeps the label for assistive technology only, for fields in a labeled row. */
+  readonly hideLabel?: boolean;
 }
 
 export function SelectField<T extends string | number>({
@@ -21,11 +23,12 @@ export function SelectField<T extends string | number>({
   options,
   onChange,
   hint,
+  hideLabel,
 }: SelectFieldProps<T>): ReactNode {
   const id = useId();
   return (
     <div className='flex flex-col gap-1'>
-      <label htmlFor={id} className={FIELD_LABEL_CLASS}>
+      <label htmlFor={id} className={hideLabel === true ? 'sr-only' : FIELD_LABEL_CLASS}>
         {label}
       </label>
       <select

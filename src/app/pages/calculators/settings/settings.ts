@@ -1,10 +1,14 @@
+import { CURRENCIES, type Currency, PERIODS, type Period } from '../model/company-budget';
 import { DISABILITY_LEVELS, type DisabilityLevel } from '../model/rules';
 import {
   type FieldValidators,
+  isArrayOf,
   isBoolean,
+  isComplete,
   isFiniteNumberBetween,
   isIntegerBetween,
   isOneOf,
+  isString,
 } from './stored-fields';
 
 const MAX_AMOUNT = 100_000_000;
@@ -78,4 +82,44 @@ export const SALARY_VALIDATORS: FieldValidators<SalarySettings> = {
   gross: isFiniteNumberBetween(0, MAX_AMOUNT),
   netPay: isFiniteNumberBetween(0, MAX_AMOUNT),
   nonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+};
+
+export interface CompanySettings {
+  readonly ownerGross: number;
+  readonly ownerAnnualNonTaxablePayments: number;
+  /** US dollars per euro. */
+  readonly usdPerEur: number;
+  readonly incomes: readonly BudgetItemSettings[];
+  readonly expenses: readonly BudgetItemSettings[];
+}
+
+export interface BudgetItemSettings {
+  readonly id: string;
+  readonly label: string;
+  /** Without VAT. */
+  readonly amount: number;
+  readonly currency: Currency;
+  readonly period: Period;
+  readonly vatApplies: boolean;
+  readonly vatRate: number;
+}
+
+const BUDGET_ITEM_VALIDATORS: FieldValidators<BudgetItemSettings> = {
+  id: isString,
+  label: isString,
+  amount: isFiniteNumberBetween(0, MAX_AMOUNT),
+  currency: isOneOf(CURRENCIES),
+  period: isOneOf(PERIODS),
+  vatApplies: isBoolean,
+  vatRate: isFiniteNumberBetween(0, 1),
+};
+
+const MAX_EXCHANGE_RATE = 1000;
+
+export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
+  ownerGross: isFiniteNumberBetween(0, MAX_AMOUNT),
+  ownerAnnualNonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+  usdPerEur: isFiniteNumberBetween(Number.MIN_VALUE, MAX_EXCHANGE_RATE),
+  incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
+  expenses: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
 };

@@ -50,3 +50,12 @@ export interface YouthRelief {
   readonly maxAge: number;
   readonly share: number;
 }
+
+export interface CompanyTaxRules {
+  readonly profitTaxLowRate: number;
+  readonly profitTaxHighRate: number;
+  /** Annual revenue up to which the low profit tax rate applies. */
+  readonly profitTaxLowRateRevenueLimit: number;
+  readonly dividendTaxRate: number;
+  readonly standardVatRate: number;
+}
