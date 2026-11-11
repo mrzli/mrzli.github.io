@@ -1,13 +1,14 @@
 import { type ReactNode, useId } from 'react';
 
-import { FIELD_HINT_CLASS, FIELD_INPUT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { FIELD_HINT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
 
-export interface SelectOption<T extends string | number> {
+export interface SelectOption<T extends string> {
   readonly value: T;
   readonly label: string;
 }
 
-export interface SelectFieldProps<T extends string | number> {
+export interface SelectFieldProps<T extends string> {
   readonly label: string;
   readonly value: T;
   readonly options: readonly SelectOption<T>[];
@@ -17,7 +18,7 @@ export interface SelectFieldProps<T extends string | number> {
   readonly hideLabel?: boolean;
 }
 
-export function SelectField<T extends string | number>({
+export function SelectField<T extends string>({
   label,
   value,
   options,
@@ -31,23 +32,26 @@ export function SelectField<T extends string | number>({
       <label htmlFor={id} className={hideLabel === true ? 'sr-only' : FIELD_LABEL_CLASS}>
         {label}
       </label>
-      <select
-        id={id}
-        className={FIELD_INPUT_CLASS}
-        value={String(value)}
-        onChange={(event) => {
-          const selected = options.find((option) => String(option.value) === event.target.value);
-          if (selected !== undefined) {
-            onChange(selected.value);
+      <Select
+        value={value}
+        onValueChange={(selected) => {
+          const option = options.find((candidate) => candidate.value === selected);
+          if (option !== undefined) {
+            onChange(option.value);
           }
         }}
       >
-        {options.map((option) => (
-          <option key={option.value} value={String(option.value)}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+        <SelectTrigger id={id}>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
       {hint !== undefined && <p className={FIELD_HINT_CLASS}>{hint}</p>}
     </div>
   );

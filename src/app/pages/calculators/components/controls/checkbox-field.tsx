@@ -1,5 +1,6 @@
 import { type ReactNode, useId } from 'react';
 
+import { Checkbox } from '../ui/checkbox';
 import { FIELD_HINT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
 
 export interface CheckboxFieldProps {
@@ -14,13 +15,11 @@ export function CheckboxField({ label, checked, onChange, hint }: CheckboxFieldP
   return (
     <div className='flex flex-col gap-1'>
       <div className='flex items-center gap-2'>
-        <input
+        <Checkbox
           id={id}
-          type='checkbox'
-          className='size-4 accent-cyan-700'
           checked={checked}
-          onChange={(event) => {
-            onChange(event.target.checked);
+          onCheckedChange={(state) => {
+            onChange(state === true);
           }}
         />
         <label htmlFor={id} className={FIELD_LABEL_CLASS}>

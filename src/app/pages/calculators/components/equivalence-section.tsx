@@ -8,6 +8,7 @@ import {
 } from '../model/contractor-equivalence';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
+import { toWorkYearInput } from '../settings/conversions';
 import type { EquivalenceSettings } from '../settings/settings';
 import { BreakdownTable } from './breakdown-table';
 import { CalculatorSection } from './calculator-section';
@@ -28,12 +29,7 @@ export function EquivalenceSection({
   rules,
 }: EquivalenceSectionProps): ReactNode {
   const input: EquivalenceInput = {
-    workYear: {
-      hoursPerDay: settings.hoursPerDay,
-      vacationDays: settings.vacationDays,
-      sickDays: settings.sickDays,
-      otherUnbilledDays: settings.otherUnbilledDays,
-    },
+    workYear: toWorkYearInput(settings),
     employerHealthRate: rules.contributions.employerHealthRate,
     annualEmployerExtras: settings.annualEmployerExtras,
   };

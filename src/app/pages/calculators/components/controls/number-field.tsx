@@ -1,6 +1,7 @@
 import { type ReactNode, useId, useState } from 'react';
 
-import { FIELD_HINT_CLASS, FIELD_INPUT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
+import { Input } from '../ui/input';
+import { FIELD_HINT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
 
 export interface NumberFieldProps {
   readonly label: string;
@@ -50,11 +51,10 @@ export function NumberField({
         {label}
       </label>
       <div className='flex items-center gap-2'>
-        <input
+        <Input
           id={id}
           type='number'
           inputMode='decimal'
-          className={FIELD_INPUT_CLASS}
           value={draft ?? String(value)}
           min={min}
           max={max}

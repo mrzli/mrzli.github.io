@@ -5,7 +5,13 @@ import type { CityTaxRate } from '../model/city-tax-rates';
 import { DISABILITY_LEVELS, type DisabilityLevel } from '../model/rules';
 import type { TaxProfileSettings } from '../settings/settings';
 import { CalculatorSection } from './calculator-section';
-import { CheckboxField, NumberField, SelectField, type SelectOption } from './controls';
+import {
+  CheckboxField,
+  ComboboxField,
+  NumberField,
+  SelectField,
+  type SelectOption,
+} from './controls';
 
 export interface TaxProfileSectionProps {
   readonly settings: TaxProfileSettings;
@@ -41,8 +47,9 @@ export function TaxProfileSection({
       description={`Personal circumstances that the salary calculations below use, with ${year} rules.`}
     >
       <div className='grid gap-4 sm:grid-cols-2'>
-        <SelectField
+        <ComboboxField
           label='City or municipality of residence'
+          searchPlaceholder='Search cities and municipalities'
           value={settings.cityCode}
           options={cityOptions}
           onChange={(cityCode) => {

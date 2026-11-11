@@ -1,6 +1,7 @@
 import { type ReactNode, useId } from 'react';
 
-import { FIELD_INPUT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
+import { Input } from '../ui/input';
+import { FIELD_LABEL_CLASS } from './field-styles';
 
 export interface TextFieldProps {
   readonly label: string;
@@ -24,10 +25,9 @@ export function TextField({
       <label htmlFor={id} className={hideLabel === true ? 'sr-only' : FIELD_LABEL_CLASS}>
         {label}
       </label>
-      <input
+      <Input
         id={id}
         type='text'
-        className={FIELD_INPUT_CLASS}
         value={value}
         placeholder={placeholder}
         onChange={(event) => {

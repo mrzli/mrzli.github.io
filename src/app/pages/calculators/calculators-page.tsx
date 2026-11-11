@@ -2,19 +2,29 @@ import { ExternalLink, PageContainer, Typography } from '@components';
 import type { ReactNode } from 'react';
 
 import { CompanySection } from './components/company-section';
+import { EmployeeOfferSection } from './components/employee-offer-section';
 import { EquivalenceSection } from './components/equivalence-section';
 import { SalarySection } from './components/salary-section';
 import { TaxProfileSection } from './components/tax-profile-section';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import CITY_TAX_RATES from './data/city-tax-rates-2026.json';
 import type { CityTaxRate, CityTaxRateData } from './model/city-tax-rates';
+import { calculateWorkYear } from './model/contractor-equivalence';
 import type { TaxProfile } from './model/payroll';
 import { COMPANY_TAX_RULES_2026, PAYROLL_RULES_2026 } from './model/rules-2026';
+import { toWorkYearInput } from './settings/conversions';
 import {
   type BudgetItemSettings,
+  CALCULATOR_TABS,
+  type CalculatorTab,
   COMPANY_VALIDATORS,
   type CompanySettings,
   EQUIVALENCE_VALIDATORS,
+  EMPLOYEE_OFFER_VALIDATORS,
+  type EmployeeOfferSettings,
   type EquivalenceSettings,
+  PAGE_VALIDATORS,
+  type PageSettings,
   SALARY_VALIDATORS,
   type SalarySettings,
   TAX_PROFILE_VALIDATORS,
@@ -65,14 +75,31 @@ const DEFAULT_COMPANY: CompanySettings = {
   expenses: [],
 };
 
+const DEFAULT_EMPLOYEE_OFFER: EmployeeOfferSettings = {
+  gross: 3000,
+  annualNonTaxablePayments: 0,
+};
+
+const DEFAULT_PAGE: PageSettings = { tab: 'equivalence' };
+
+const TAB_LABELS: Readonly<Record<CalculatorTab, string>> = {
+  equivalence: 'Rate and salary',
+  salary: 'Gross and net',
+  company: 'Company',
+  employeeOffer: 'Employee offer',
+};
+
 const STORAGE_KEYS = {
+  page: 'calculators.page',
   taxProfile: 'calculators.tax-profile',
   equivalence: 'calculators.equivalence',
   salary: 'calculators.salary',
   company: 'calculators.company',
+  employeeOffer: 'calculators.employee-offer',
 } as const;
 
 export function CalculatorsPage(): ReactNode {
+  const page = useStoredSettings(STORAGE_KEYS.page, DEFAULT_PAGE, PAGE_VALIDATORS);
   const taxProfile = useStoredSettings(
     STORAGE_KEYS.taxProfile,
     DEFAULT_TAX_PROFILE,
@@ -85,6 +112,11 @@ export function CalculatorsPage(): ReactNode {
   );
   const salary = useStoredSettings(STORAGE_KEYS.salary, DEFAULT_SALARY, SALARY_VALIDATORS);
   const company = useStoredSettings(STORAGE_KEYS.company, DEFAULT_COMPANY, COMPANY_VALIDATORS);
+  const employeeOffer = useStoredSettings(
+    STORAGE_KEYS.employeeOffer,
+    DEFAULT_EMPLOYEE_OFFER,
+    EMPLOYEE_OFFER_VALIDATORS,
+  );
   const city = findCity(taxProfile.settings.cityCode, CITY_DATA.cities);
   // A stored city missing from the current data shows and uses the default city.
   const taxProfileSettings = { ...taxProfile.settings, cityCode: city.code };
@@ -102,26 +134,61 @@ export function CalculatorsPage(): ReactNode {
         cities={CITY_DATA.cities}
         year={RULES.year}
       />
-      <EquivalenceSection
-        settings={equivalence.settings}
-        onChange={equivalence.update}
-        profile={profile}
-        rules={RULES}
-      />
-      <SalarySection
-        settings={salary.settings}
-        onChange={salary.update}
-        profile={profile}
-        rules={RULES}
-      />
-      <CompanySection
-        settings={company.settings}
-        onChange={company.update}
-        createItem={createBudgetItem}
-        profile={profile}
-        payrollRules={RULES}
-        companyRules={COMPANY_RULES}
-      />
+      <Tabs
+        value={page.settings.tab}
+        onValueChange={(value) => {
+          const tab = CALCULATOR_TABS.find((candidate) => candidate === value);
+          if (tab !== undefined) {
+            page.update({ tab });
+          }
+        }}
+        className='flex flex-col gap-4'
+      >
+        <TabsList aria-label='Calculators'>
+          {CALCULATOR_TABS.map((tab) => (
+            <TabsTrigger key={tab} value={tab}>
+              {TAB_LABELS[tab]}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        <TabsContent value='equivalence'>
+          <EquivalenceSection
+            settings={equivalence.settings}
+            onChange={equivalence.update}
+            profile={profile}
+            rules={RULES}
+          />
+        </TabsContent>
+        <TabsContent value='salary'>
+          <SalarySection
+            settings={salary.settings}
+            onChange={salary.update}
+            profile={profile}
+            rules={RULES}
+          />
+        </TabsContent>
+        <TabsContent value='company'>
+          <CompanySection
+            settings={company.settings}
+            onChange={company.update}
+            createItem={createBudgetItem}
+            profile={profile}
+            payrollRules={RULES}
+            companyRules={COMPANY_RULES}
+          />
+        </TabsContent>
+        <TabsContent value='employeeOffer'>
+          <EmployeeOfferSection
+            settings={employeeOffer.settings}
+            onChange={employeeOffer.update}
+            company={company.settings}
+            billableHours={calculateWorkYear(toWorkYearInput(equivalence.settings)).billableHours}
+            profile={profile}
+            payrollRules={RULES}
+            companyRules={COMPANY_RULES}
+          />
+        </TabsContent>
+      </Tabs>
       <div className='flex flex-wrap items-center gap-x-1 text-sm text-slate-700 dark:text-slate-300'>
         Sources: Porezna uprava, Narodne novine, and the city tax rate table from
         <ExternalLink label='data.gov.hr' href={CITY_DATA.source} variant='highlight' />

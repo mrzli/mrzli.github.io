@@ -123,3 +123,24 @@ export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
   incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
   expenses: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
 };
+
+export interface EmployeeOfferSettings {
+  readonly gross: number;
+  readonly annualNonTaxablePayments: number;
+}
+
+export const EMPLOYEE_OFFER_VALIDATORS: FieldValidators<EmployeeOfferSettings> = {
+  gross: isFiniteNumberBetween(0, MAX_AMOUNT),
+  annualNonTaxablePayments: isFiniteNumberBetween(0, MAX_AMOUNT),
+};
+
+export const CALCULATOR_TABS = ['equivalence', 'salary', 'company', 'employeeOffer'] as const;
+export type CalculatorTab = (typeof CALCULATOR_TABS)[number];
+
+export interface PageSettings {
+  readonly tab: CalculatorTab;
+}
+
+export const PAGE_VALIDATORS: FieldValidators<PageSettings> = {
+  tab: isOneOf(CALCULATOR_TABS),
+};

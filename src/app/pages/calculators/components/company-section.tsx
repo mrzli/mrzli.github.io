@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 
 import { formatEuro, formatPercent } from '../format';
-import { type BudgetItem, calculateCompanyBudget } from '../model/company-budget';
+import { calculateCompanyBudget } from '../model/company-budget';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { CompanyTaxRules, PayrollRules } from '../model/rules';
+import { toBudgetItem, toOwnerPayrollInput } from '../settings/conversions';
 import type { BudgetItemSettings, CompanySettings } from '../settings/settings';
 import { BreakdownTable } from './breakdown-table';
 import { BudgetItemsEditor } from './budget-items-editor';
@@ -30,14 +31,7 @@ export function CompanySection({
   payrollRules,
   companyRules,
 }: CompanySectionProps): ReactNode {
-  const payroll = calculatePayroll(
-    {
-      gross: settings.ownerGross,
-      nonTaxablePayments: settings.ownerAnnualNonTaxablePayments / MONTHS_PER_YEAR,
-      profile,
-    },
-    payrollRules,
-  );
+  const payroll = calculatePayroll(toOwnerPayrollInput(settings, profile), payrollRules);
   const budget = calculateCompanyBudget(
     {
       incomes: settings.incomes.map(toBudgetItem),
@@ -158,13 +152,4 @@ export function CompanySection({
       <PayrollTables breakdown={payroll} />
     </CalculatorSection>
   );
-}
-
-function toBudgetItem(item: BudgetItemSettings): BudgetItem {
-  return {
-    amount: item.amount,
-    currency: item.currency,
-    period: item.period,
-    vatRate: item.vatApplies ? item.vatRate : 0,
-  };
 }

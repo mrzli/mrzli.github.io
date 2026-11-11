@@ -2,10 +2,11 @@ import type { ReactNode } from 'react';
 
 import { calculateGrossFromNet, calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
-import type { SalaryDirection, SalarySettings } from '../settings/settings';
+import { SALARY_DIRECTIONS, type SalaryDirection, type SalarySettings } from '../settings/settings';
 import { CalculatorSection } from './calculator-section';
-import { NumberField, SegmentedControl, type SegmentedOption } from './controls';
+import { NumberField } from './controls';
 import { PayrollTables } from './payroll-tables';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 export interface SalarySectionProps {
   readonly settings: SalarySettings;
@@ -14,10 +15,10 @@ export interface SalarySectionProps {
   readonly rules: PayrollRules;
 }
 
-const DIRECTION_OPTIONS: readonly SegmentedOption<SalaryDirection>[] = [
-  { value: 'grossToNet', label: 'Gross to net' },
-  { value: 'netToGross', label: 'Net to gross' },
-];
+const DIRECTION_LABELS: Readonly<Record<SalaryDirection, string>> = {
+  grossToNet: 'Gross to net',
+  netToGross: 'Net to gross',
+};
 
 export function SalarySection({
   settings,
@@ -42,49 +43,60 @@ export function SalarySection({
       title='Gross and net salary'
       description='Monthly salary with every contribution and tax, for the employee and the employer.'
     >
-      <SegmentedControl
-        label='Direction'
+      <Tabs
         value={settings.direction}
-        options={DIRECTION_OPTIONS}
-        onChange={(direction) => {
-          onChange({ direction });
+        onValueChange={(value) => {
+          const direction = SALARY_DIRECTIONS.find((candidate) => candidate === value);
+          if (direction !== undefined) {
+            onChange({ direction });
+          }
         }}
-      />
-      <div className='grid gap-4 sm:grid-cols-2'>
-        {settings.direction === 'grossToNet' ? (
-          <NumberField
-            label='Gross salary per month'
-            unit='EUR'
-            value={settings.gross}
-            min={0}
-            onChange={(gross) => {
-              onChange({ gross });
-            }}
-          />
-        ) : (
-          <NumberField
-            label='Net pay per month'
-            unit='EUR'
-            value={settings.netPay}
-            min={0}
-            onChange={(netPay) => {
-              onChange({ netPay });
-            }}
-            hint='Including non-taxable payments.'
-          />
-        )}
-        <NumberField
-          label='Non-taxable payments per month'
-          unit='EUR'
-          value={settings.nonTaxablePayments}
-          min={0}
-          onChange={(nonTaxablePayments) => {
-            onChange({ nonTaxablePayments });
-          }}
-          hint='Within their yearly caps, such as up to 1,200 EUR a year for meals or 700 EUR for Christmas and holiday bonuses.'
-        />
-      </div>
-      <PayrollTables breakdown={breakdown} />
+      >
+        <TabsList aria-label='Direction'>
+          {SALARY_DIRECTIONS.map((direction) => (
+            <TabsTrigger key={direction} value={direction}>
+              {DIRECTION_LABELS[direction]}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        <TabsContent value={settings.direction} className='flex flex-col gap-5 pt-5'>
+          <div className='grid gap-4 sm:grid-cols-2'>
+            {settings.direction === 'grossToNet' ? (
+              <NumberField
+                label='Gross salary per month'
+                unit='EUR'
+                value={settings.gross}
+                min={0}
+                onChange={(gross) => {
+                  onChange({ gross });
+                }}
+              />
+            ) : (
+              <NumberField
+                label='Net pay per month'
+                unit='EUR'
+                value={settings.netPay}
+                min={0}
+                onChange={(netPay) => {
+                  onChange({ netPay });
+                }}
+                hint='Including non-taxable payments.'
+              />
+            )}
+            <NumberField
+              label='Non-taxable payments per month'
+              unit='EUR'
+              value={settings.nonTaxablePayments}
+              min={0}
+              onChange={(nonTaxablePayments) => {
+                onChange({ nonTaxablePayments });
+              }}
+              hint='Within their yearly caps, such as up to 1,200 EUR a year for meals or 700 EUR for Christmas and holiday bonuses.'
+            />
+          </div>
+          <PayrollTables breakdown={breakdown} />
+        </TabsContent>
+      </Tabs>
     </CalculatorSection>
   );
 }

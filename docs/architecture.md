@@ -12,7 +12,7 @@
 - Keep reusable UI under `src/app/components/`, shared application types under `src/app/types/`, and shared utilities under `src/app/util/`.
 - Keep imported assets under `src/assets/` and directly served files, including the downloadable CV, under `public/`.
 - Keep component examples under `stories/` and Storybook configuration under `.storybook/`.
-- Keep the Croatian salary calculators self-contained under `src/app/pages/calculators/`, with their tests under `test/app/pages/calculators/`, so they can be moved to another site or removed in one step. The directory holds the pure calculation model and yearly rules (`model/`), the generated city tax rate data (`data/`) and the script that generates it (`tools/`), stored settings (`settings/`), and controls that only the calculators use (`components/`). The page may use shared components and utilities. Only its route module and its tests import from it.
+- Keep the Croatian salary calculators self-contained under `src/app/pages/calculators/`, with their tests under `test/app/pages/calculators/`, so they can be moved to another site or removed in one step. The directory holds the pure calculation model and yearly rules (`model/`), the generated city tax rate data (`data/`) and the script that generates it (`tools/`), stored settings (`settings/`), and controls that only the calculators use (`components/`). Its primitives in `components/ui/` follow shadcn/ui on Radix UI and cmdk, styled with the site's colors instead of shadcn's theme variables so the global stylesheet stays untouched. The page may use shared components and utilities. Only its route module and its tests import from it.
 
 ## State and Dependencies
 
