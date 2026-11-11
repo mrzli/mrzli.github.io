@@ -24,6 +24,7 @@
     "vite.config.ts",
     "react-router.config.ts",
     ".storybook/vite.config.ts",
-    "scripts/**/*.ts"
+    "scripts/**/*.ts",
+    "src/app/pages/calculators/tools/**/*.ts"
   ]
 }

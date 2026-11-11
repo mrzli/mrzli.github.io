@@ -38,10 +38,11 @@ committing or handing back:
   paths and commands exist.
 - **Code, configuration, or build files**: `bun run check` (formatting and
   Oxlint) and `bun run build` (route types, TypeScript for `src/` and
-  `stories/`, prerendering, and packaging).
+  `stories/`, prerendering, and packaging), and `bun run test` (Bun's test
+  runner over `test/`).
 - **Stories or Storybook configuration**: also `bun run build-storybook`.
 
-The repository has no `test`, `typecheck`, or `preflight` scripts, so never
+The repository has no `typecheck` or `preflight` scripts, so never
 report those as run. Browser checks are in
 [the testing guide](docs/conventions/testing.md).
 

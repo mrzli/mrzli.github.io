@@ -28,5 +28,6 @@
       "@components/*": ["./src/app/components/*"]
     }
   },
-  "include": ["src", "stories", ".react-router/types/**/*"]
+  "include": ["src", "stories", ".react-router/types/**/*"],
+  "exclude": ["src/app/pages/calculators/tools"]
 }
