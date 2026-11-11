@@ -1,8 +1,7 @@
+import { MONTHS_PER_YEAR } from './calendar';
 import { roundToCents } from './money';
 import type { PayrollBreakdown } from './payroll';
 import type { CompanyTaxRules } from './rules';
-
-const MONTHS_PER_YEAR = 12;
 
 export const CURRENCIES = ['EUR', 'USD'] as const;
 export type Currency = (typeof CURRENCIES)[number];

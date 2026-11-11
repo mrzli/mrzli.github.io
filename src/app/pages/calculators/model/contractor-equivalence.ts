@@ -1,3 +1,4 @@
+import { MONTHS_PER_YEAR } from './calendar';
 import { roundToCents } from './money';
 
 /**
@@ -30,7 +31,6 @@ export interface PublicHoliday {
 const AVERAGE_DAYS_PER_YEAR = 365.25;
 const WORKDAYS_PER_WEEK = 5;
 const DAYS_PER_WEEK = 7;
-const MONTHS_PER_YEAR = 12;
 
 export interface WorkYearInput {
   readonly hoursPerDay: number;

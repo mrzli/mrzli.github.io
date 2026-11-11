@@ -1,11 +1,15 @@
 import type { ReactNode } from 'react';
 
-import { formatEuro, formatNumber, formatPercent } from '../format';
+import { formatNumber, formatPercent } from '../format';
 import { compareEmployeeOffer } from '../model/employee-comparison';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { CompanyTaxRules, PayrollRules } from '../model/rules';
-import { toBudgetItem, toOwnerPayrollInput } from '../settings/conversions';
-import type { CompanySettings, EmployeeOfferSettings } from '../settings/settings';
+import { toBudgetItem, toOfferPayrollInput, toOwnerPayrollInput } from '../settings/conversions';
+import {
+  SETTING_LIMITS,
+  type CompanySettings,
+  type EmployeeOfferSettings,
+} from '../settings/settings';
 import { BreakdownTable } from './breakdown-table';
 import { CalculatorSection } from './calculator-section';
 import { NumberField } from './controls';
@@ -21,8 +25,6 @@ export interface EmployeeOfferSectionProps {
   readonly companyRules: CompanyTaxRules;
 }
 
-const MONTHS_PER_YEAR = 12;
-
 export function EmployeeOfferSection({
   settings,
   onChange,
@@ -32,14 +34,7 @@ export function EmployeeOfferSection({
   payrollRules,
   companyRules,
 }: EmployeeOfferSectionProps): ReactNode {
-  const offerPayroll = calculatePayroll(
-    {
-      gross: settings.gross,
-      nonTaxablePayments: settings.annualNonTaxablePayments / MONTHS_PER_YEAR,
-      profile,
-    },
-    payrollRules,
-  );
+  const offerPayroll = calculatePayroll(toOfferPayrollInput(settings, profile), payrollRules);
   const comparison = compareEmployeeOffer(
     {
       offerPayroll,
@@ -61,6 +56,7 @@ export function EmployeeOfferSection({
         <NumberField
           label='Offered gross salary per month'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={settings.gross}
           min={0}
           onChange={(gross) => {
@@ -70,6 +66,7 @@ export function EmployeeOfferSection({
         <NumberField
           label='Offered non-taxable payments per year'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={settings.annualNonTaxablePayments}
           min={0}
           onChange={(annualNonTaxablePayments) => {
@@ -114,12 +111,25 @@ export function EmployeeOfferSection({
               detail: `${formatPercent(budget.profitTaxRate)} of the profit`,
               amount: -budget.profitTax,
             },
+            { label: 'Dividends', amount: budget.dividends, kind: 'subtotal' },
             {
               label: 'Dividend tax',
-              detail: `${formatPercent(companyRules.dividendTaxRate)} of ${formatEuro(budget.dividends)} in dividends`,
+              detail: `${formatPercent(companyRules.dividendTaxRate)} of the dividends`,
               amount: -budget.dividendTax,
             },
-            { label: 'Your net', amount: budget.personalNet, kind: 'total' },
+            { label: 'Your net salary', amount: budget.netSalary },
+            ...(budget.youthRelief > 0
+              ? [{ label: 'Youth tax relief', amount: budget.youthRelief }]
+              : []),
+            {
+              label: 'Your net',
+              detail:
+                budget.personalNet > comparison.offerNet
+                  ? 'Above the offer, because your salary alone beats it and the company only needs to cover its costs'
+                  : undefined,
+              amount: budget.personalNet,
+              kind: 'total',
+            },
           ]}
         />
       </div>

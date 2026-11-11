@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react';
 
 import { formatEuro, formatPercent } from '../format';
+import { MONTHS_PER_YEAR } from '../model/calendar';
 import { calculateCompanyBudget } from '../model/company-budget';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { CompanyTaxRules, PayrollRules } from '../model/rules';
 import { toBudgetItem, toOwnerPayrollInput } from '../settings/conversions';
-import type { BudgetItemSettings, CompanySettings } from '../settings/settings';
+import {
+  SETTING_LIMITS,
+  type BudgetItemSettings,
+  type CompanySettings,
+} from '../settings/settings';
 import { BreakdownTable } from './breakdown-table';
 import { BudgetItemsEditor } from './budget-items-editor';
 import { CalculatorSection } from './calculator-section';
@@ -20,8 +25,6 @@ export interface CompanySectionProps {
   readonly payrollRules: PayrollRules;
   readonly companyRules: CompanyTaxRules;
 }
-
-const MONTHS_PER_YEAR = 12;
 
 export function CompanySection({
   settings,
@@ -51,6 +54,7 @@ export function CompanySection({
         <NumberField
           label='Your gross salary per month'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={settings.ownerGross}
           min={0}
           onChange={(ownerGross) => {
@@ -60,6 +64,7 @@ export function CompanySection({
         <NumberField
           label='Your non-taxable payments per year'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={settings.ownerAnnualNonTaxablePayments}
           min={0}
           onChange={(ownerAnnualNonTaxablePayments) => {

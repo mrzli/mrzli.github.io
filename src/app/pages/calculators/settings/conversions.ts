@@ -1,9 +1,13 @@
+import { MONTHS_PER_YEAR } from '../model/calendar';
 import type { BudgetItem } from '../model/company-budget';
 import type { WorkYearInput } from '../model/contractor-equivalence';
 import type { PayrollInput, TaxProfile } from '../model/payroll';
-import type { BudgetItemSettings, CompanySettings, EquivalenceSettings } from './settings';
-
-const MONTHS_PER_YEAR = 12;
+import type {
+  BudgetItemSettings,
+  CompanySettings,
+  EmployeeOfferSettings,
+  EquivalenceSettings,
+} from './settings';
 
 export function toBudgetItem(item: BudgetItemSettings): BudgetItem {
   return {
@@ -15,11 +19,23 @@ export function toBudgetItem(item: BudgetItemSettings): BudgetItem {
 }
 
 export function toOwnerPayrollInput(settings: CompanySettings, profile: TaxProfile): PayrollInput {
-  return {
-    gross: settings.ownerGross,
-    nonTaxablePayments: settings.ownerAnnualNonTaxablePayments / MONTHS_PER_YEAR,
-    profile,
-  };
+  return toPayrollInput(settings.ownerGross, settings.ownerAnnualNonTaxablePayments, profile);
+}
+
+export function toOfferPayrollInput(
+  settings: EmployeeOfferSettings,
+  profile: TaxProfile,
+): PayrollInput {
+  return toPayrollInput(settings.gross, settings.annualNonTaxablePayments, profile);
+}
+
+/** A monthly payroll input with annual non-taxable payments spread evenly over the months. */
+function toPayrollInput(
+  gross: number,
+  annualNonTaxablePayments: number,
+  profile: TaxProfile,
+): PayrollInput {
+  return { gross, nonTaxablePayments: annualNonTaxablePayments / MONTHS_PER_YEAR, profile };
 }
 
 export function toWorkYearInput(settings: EquivalenceSettings): WorkYearInput {

@@ -1,9 +1,9 @@
+import { MONTHS_PER_YEAR } from './calendar';
 import { type BudgetItem, type CompanyBudget, calculateCompanyBudget } from './company-budget';
 import { roundToCents } from './money';
 import type { PayrollBreakdown } from './payroll';
 import type { CompanyTaxRules } from './rules';
 
-const MONTHS_PER_YEAR = 12;
 const CENTS_PER_EURO = 100;
 
 export interface EmployeeComparisonInput {

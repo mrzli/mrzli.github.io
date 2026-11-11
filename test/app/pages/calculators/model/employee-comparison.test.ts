@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 
+import { calculateCompanyBudget } from '../../../../../src/app/pages/calculators/model/company-budget';
 import {
   compareEmployeeOffer,
   type EmployeeComparisonInput,
@@ -67,5 +68,23 @@ describe('compareEmployeeOffer', () => {
     expect(result.matchingBudget.revenue).toBeGreaterThan(1_000_000);
     expect(result.matchingBudget.profitTaxRate).toBe(0.18);
     expect(result.matchingBudget.personalNet).toBeGreaterThanOrEqual(result.offerNet);
+    // One cent less revenue falls short of the offer, so the revenue is the lowest that matches.
+    const justBelow = calculateCompanyBudget(
+      {
+        incomes: [
+          {
+            amount: result.matchingBudget.revenue - 0.01,
+            currency: 'EUR',
+            period: 'year',
+            vatRate: 0,
+          },
+        ],
+        expenses: INPUT.companyExpenses,
+        usdPerEur: INPUT.usdPerEur,
+        payroll: INPUT.ownerPayroll,
+      },
+      COMPANY_TAX_RULES_2026,
+    );
+    expect(justBelow.personalNet).toBeLessThan(result.offerNet);
   });
 });

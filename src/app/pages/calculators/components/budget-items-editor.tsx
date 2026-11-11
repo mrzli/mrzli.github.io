@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { CURRENCIES, type Currency, type Period } from '../model/company-budget';
 import { roundToCents } from '../model/money';
-import type { BudgetItemSettings } from '../settings/settings';
+import { SETTING_LIMITS, type BudgetItemSettings } from '../settings/settings';
 import { CheckboxField, NumberField, SelectField, type SelectOption, TextField } from './controls';
 
 export interface BudgetItemsEditorProps {
@@ -61,6 +61,7 @@ export function BudgetItemsEditor({
             <NumberField
               label={`${name}: amount without VAT`}
               hideLabel
+              max={SETTING_LIMITS.amount}
               value={item.amount}
               min={0}
               onChange={(amount) => {
@@ -86,7 +87,11 @@ export function BudgetItemsEditor({
               }}
             />
             <CheckboxField
-              label='VAT'
+              label={
+                <>
+                  <span className='sr-only'>{name}: </span>VAT
+                </>
+              }
               checked={item.vatApplies}
               onChange={(vatApplies) => {
                 updateItem(item.id, { vatApplies });
@@ -95,6 +100,7 @@ export function BudgetItemsEditor({
             <NumberField
               label={`${name}: VAT rate`}
               hideLabel
+              disabled={!item.vatApplies}
               unit='%'
               value={roundToCents(item.vatRate * PERCENT)}
               min={0}

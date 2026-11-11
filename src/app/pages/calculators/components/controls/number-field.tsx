@@ -10,6 +10,7 @@ export interface NumberFieldProps {
   readonly min?: number;
   readonly max?: number;
   readonly step?: number;
+  readonly disabled?: boolean;
   /** Accepts whole numbers only. */
   readonly integer?: boolean;
   readonly unit?: string;
@@ -30,6 +31,7 @@ export function NumberField({
   max,
   step,
   integer,
+  disabled,
   unit,
   hint,
   hideLabel,
@@ -54,6 +56,7 @@ export function NumberField({
         <Input
           id={id}
           type='number'
+          disabled={disabled}
           inputMode='decimal'
           value={draft ?? String(value)}
           min={min}

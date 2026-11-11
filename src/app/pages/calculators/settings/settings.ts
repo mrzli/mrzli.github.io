@@ -11,10 +11,13 @@ import {
   isString,
 } from './stored-fields';
 
-const MAX_AMOUNT = 100_000_000;
+/** Upper limits of the stored values, which the input fields also enforce. */
+export const SETTING_LIMITS = { amount: 100_000_000, days: 366 } as const;
+
+const MAX_AMOUNT = SETTING_LIMITS.amount;
 const MAX_FAMILY_MEMBERS = 30;
 const MAX_AGE = 130;
-const DAYS_PER_YEAR = 366;
+const DAYS_PER_YEAR = SETTING_LIMITS.days;
 const HOURS_PER_DAY = 24;
 
 export interface TaxProfileSettings {

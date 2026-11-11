@@ -9,7 +9,7 @@ import {
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { PayrollRules } from '../model/rules';
 import { toWorkYearInput } from '../settings/conversions';
-import type { EquivalenceSettings } from '../settings/settings';
+import { SETTING_LIMITS, type EquivalenceSettings } from '../settings/settings';
 import { BreakdownTable } from './breakdown-table';
 import { CalculatorSection } from './calculator-section';
 import { NumberField } from './controls';
@@ -54,6 +54,7 @@ export function EquivalenceSection({
         <NumberField
           label='Hourly rate'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={equivalence.hourlyRate}
           min={0}
           onChange={(hourlyRate) => {
@@ -63,6 +64,7 @@ export function EquivalenceSection({
         <NumberField
           label='Gross salary per month'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={equivalence.monthlyGross}
           min={0}
           onChange={(monthlyGross) => {
@@ -82,6 +84,7 @@ export function EquivalenceSection({
           label='Vacation days per year'
           value={settings.vacationDays}
           min={0}
+          max={SETTING_LIMITS.days}
           onChange={(vacationDays) => {
             onChange({ vacationDays });
           }}
@@ -91,6 +94,7 @@ export function EquivalenceSection({
           label='Sick days per year'
           value={settings.sickDays}
           min={0}
+          max={SETTING_LIMITS.days}
           onChange={(sickDays) => {
             onChange({ sickDays });
           }}
@@ -99,6 +103,7 @@ export function EquivalenceSection({
           label='Other unbilled days per year'
           value={settings.otherUnbilledDays}
           min={0}
+          max={SETTING_LIMITS.days}
           onChange={(otherUnbilledDays) => {
             onChange({ otherUnbilledDays });
           }}
@@ -107,6 +112,7 @@ export function EquivalenceSection({
         <NumberField
           label='Employer extras per year'
           unit='EUR'
+          max={SETTING_LIMITS.amount}
           value={settings.annualEmployerExtras}
           min={0}
           onChange={(annualEmployerExtras) => {

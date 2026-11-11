@@ -4,7 +4,8 @@ import { Checkbox } from '../ui/checkbox';
 import { FIELD_HINT_CLASS, FIELD_LABEL_CLASS } from './field-styles';
 
 export interface CheckboxFieldProps {
-  readonly label: string;
+  /** Text or markup, such as a visible label with a prefix for assistive technology only. */
+  readonly label: ReactNode;
   readonly checked: boolean;
   readonly onChange: (checked: boolean) => void;
   readonly hint?: string;
