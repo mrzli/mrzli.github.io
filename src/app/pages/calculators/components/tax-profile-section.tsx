@@ -8,6 +8,7 @@ import { CalculatorSection } from './calculator-section';
 import {
   CheckboxField,
   ComboboxField,
+  FieldGroup,
   NumberField,
   SelectField,
   type SelectOption,
@@ -85,34 +86,38 @@ export function TaxProfileSection({
             onChange({ dependentCount });
           }}
         />
-        <SelectField
-          label='Own disability'
-          value={settings.disability}
-          options={DISABILITY_OPTIONS}
-          onChange={(disability) => {
-            onChange({ disability });
-          }}
-        />
-        <NumberField
-          label='Family members with a partial disability'
-          value={settings.familyMembersWithPartialDisability}
-          min={0}
-          integer
-          onChange={(familyMembersWithPartialDisability) => {
-            onChange({ familyMembersWithPartialDisability });
-          }}
-        />
-        <NumberField
-          label='Family members with a 100% disability'
-          value={settings.familyMembersWithFullDisability}
-          min={0}
-          integer
-          onChange={(familyMembersWithFullDisability) => {
-            onChange({ familyMembersWithFullDisability });
-          }}
-        />
-        <div className='flex flex-col gap-3'>
+        <FieldGroup legend='Disability' columns='three'>
+          <SelectField
+            label='Yours'
+            value={settings.disability}
+            options={DISABILITY_OPTIONS}
+            onChange={(disability) => {
+              onChange({ disability });
+            }}
+          />
+          <NumberField
+            label='Family members, partial'
+            value={settings.familyMembersWithPartialDisability}
+            min={0}
+            integer
+            onChange={(familyMembersWithPartialDisability) => {
+              onChange({ familyMembersWithPartialDisability });
+            }}
+          />
+          <NumberField
+            label='Family members, 100%'
+            value={settings.familyMembersWithFullDisability}
+            min={0}
+            integer
+            onChange={(familyMembersWithFullDisability) => {
+              onChange({ familyMembersWithFullDisability });
+            }}
+            hint='Or with a care allowance.'
+          />
+        </FieldGroup>
+        <div className='col-span-full grid gap-4 sm:grid-cols-2'>
           <CheckboxField
+            variant='tile'
             label='Member of pension pillar II'
             checked={settings.isPensionPillar2Member}
             onChange={(isPensionPillar2Member) => {
@@ -121,6 +126,7 @@ export function TaxProfileSection({
             hint='Without pillar II, all 20% goes to pillar I.'
           />
           <CheckboxField
+            variant='tile'
             label='Lives in Vukovar or an assisted area of development group I'
             checked={settings.livesInAssistedArea}
             onChange={(livesInAssistedArea) => {

@@ -51,7 +51,7 @@ export function CompanySection({
       title='Company owner'
       description='What you keep in a year from your own company in the VAT system: your salary, plus all profit after expenses and profit tax paid out as dividends. Enter amounts without VAT; VAT is shown for information only, because the company deducts what it pays.'
     >
-      <div className='grid gap-4 sm:grid-cols-3'>
+      <div className='grid gap-4 sm:grid-cols-2'>
         <NumberField
           label='Your gross salary per month'
           unit='EUR'
@@ -62,13 +62,6 @@ export function CompanySection({
             onChange({ ownerGross });
           }}
         />
-        <NonTaxablePaymentsFields
-          labelPrefix='Your'
-          value={settings.ownerNonTaxablePayments}
-          onChange={(ownerNonTaxablePayments) => {
-            onChange({ ownerNonTaxablePayments });
-          }}
-        />
         <NumberField
           label='US dollars per euro'
           value={settings.usdPerEur}
@@ -77,6 +70,13 @@ export function CompanySection({
             if (usdPerEur > 0) {
               onChange({ usdPerEur });
             }
+          }}
+        />
+        <NonTaxablePaymentsFields
+          labelPrefix='Your'
+          value={settings.ownerNonTaxablePayments}
+          onChange={(ownerNonTaxablePayments) => {
+            onChange({ ownerNonTaxablePayments });
           }}
         />
       </div>

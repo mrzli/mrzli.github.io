@@ -6,7 +6,8 @@ const PERCENT_FORMAT = new Intl.NumberFormat('en-US', {
 const NUMBER_FORMAT = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 
 export function formatEuro(amount: number): string {
-  return EURO_FORMAT.format(amount);
+  // Shows a negated zero, such as an empty expense, as €0.00 rather than -€0.00.
+  return EURO_FORMAT.format(amount === 0 ? 0 : amount);
 }
 
 export function formatPercent(rate: number): string {
