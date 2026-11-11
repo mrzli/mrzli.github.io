@@ -1,19 +1,33 @@
 import type { ReactNode } from 'react';
 
+import { cn } from '@/app/util';
+
 import { CURRENCIES, type Currency, type Period } from '../model/company-budget';
 import { moveBudgetItem, removeBudgetItem, updateBudgetItem } from '../settings/budget-items';
 import { SETTING_LIMITS, type BudgetItemSettings } from '../settings/settings';
 import { CheckboxField, NumberField, SelectField, type SelectOption, TextField } from './controls';
+import { FIELD_HINT_CLASS } from './controls/field-styles';
 import { IconButton } from './ui/icon-button';
 
-export interface BudgetItemsEditorProps {
+export interface BudgetItemsEditorProps<T extends BudgetItemSettings> {
   readonly title: string;
-  readonly items: readonly BudgetItemSettings[];
-  readonly onChange: (items: readonly BudgetItemSettings[]) => void;
-  readonly createItem: () => BudgetItemSettings;
+  readonly items: readonly T[];
+  readonly onChange: (items: readonly T[]) => void;
+  readonly createItem: () => T;
   /** The periods an item may be paid in, such as per hour only for income. */
   readonly periods: readonly Period[];
+  readonly hint?: string;
+  /** A field for what only this kind of item has, placed before the VAT switch. */
+  readonly renderExtraField?: (
+    item: T,
+    name: string,
+    update: (changes: Partial<T>) => void,
+  ) => ReactNode;
 }
+
+const ROW_COLUMNS = 'lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_5.5rem_8rem_auto_auto]';
+const ROW_COLUMNS_WITH_EXTRA_FIELD =
+  'lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_5.5rem_8rem_9.5rem_auto_auto]';
 
 const CURRENCY_OPTIONS: readonly SelectOption<Currency>[] = CURRENCIES.map((currency) => ({
   value: currency,
@@ -26,24 +40,31 @@ const PERIOD_LABELS: Readonly<Record<Period, string>> = {
   year: 'Per year',
 };
 
-export function BudgetItemsEditor({
+export function BudgetItemsEditor<T extends BudgetItemSettings>({
   title,
   items,
   onChange,
   createItem,
   periods,
-}: BudgetItemsEditorProps): ReactNode {
+  hint,
+  renderExtraField,
+}: BudgetItemsEditorProps<T>): ReactNode {
   const periodOptions: readonly SelectOption<Period>[] = periods.map((period) => ({
     value: period,
     label: PERIOD_LABELS[period],
   }));
-  const updateItem = (id: string, changes: Partial<BudgetItemSettings>): void => {
+  const updateItem = (id: string, changes: Partial<T>): void => {
     onChange(updateBudgetItem(items, id, changes));
+  };
+  // Changes to the fields every item has are valid for T, which TypeScript cannot infer.
+  const updateBaseFields = (id: string, changes: Partial<BudgetItemSettings>): void => {
+    updateItem(id, changes as Partial<T>);
   };
 
   return (
     <fieldset className='flex flex-col gap-3'>
       <legend className='pb-2 font-semibold text-slate-900 dark:text-slate-100'>{title}</legend>
+      {hint !== undefined && <p className={FIELD_HINT_CLASS}>{hint}</p>}
       {items.length === 0 && (
         <p className='text-sm text-slate-500 dark:text-slate-400'>No items yet.</p>
       )}
@@ -52,16 +73,19 @@ export function BudgetItemsEditor({
         return (
           <div
             key={item.id}
-            className='grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)_5.5rem_8rem_auto_auto] dark:border-slate-800'
+            className={cn(
+              'grid grid-cols-2 items-center gap-2 border-t border-slate-200 pt-3 dark:border-slate-800',
+              renderExtraField === undefined ? ROW_COLUMNS : ROW_COLUMNS_WITH_EXTRA_FIELD,
+            )}
           >
-            <div className='col-span-2 sm:col-span-1'>
+            <div className='col-span-2 lg:col-span-1'>
               <TextField
                 label={`${name}: description`}
                 hideLabel
                 placeholder='Description'
                 value={item.label}
                 onChange={(label) => {
-                  updateItem(item.id, { label });
+                  updateBaseFields(item.id, { label });
                 }}
               />
             </div>
@@ -72,7 +96,7 @@ export function BudgetItemsEditor({
               value={item.amount}
               min={0}
               onChange={(amount) => {
-                updateItem(item.id, { amount });
+                updateBaseFields(item.id, { amount });
               }}
             />
             <SelectField
@@ -81,7 +105,7 @@ export function BudgetItemsEditor({
               value={item.currency}
               options={CURRENCY_OPTIONS}
               onChange={(currency) => {
-                updateItem(item.id, { currency });
+                updateBaseFields(item.id, { currency });
               }}
             />
             <SelectField
@@ -90,9 +114,12 @@ export function BudgetItemsEditor({
               value={item.period}
               options={periodOptions}
               onChange={(period) => {
-                updateItem(item.id, { period });
+                updateBaseFields(item.id, { period });
               }}
             />
+            {renderExtraField?.(item, name, (changes) => {
+              updateItem(item.id, changes);
+            })}
             <CheckboxField
               label={
                 <>
@@ -101,10 +128,10 @@ export function BudgetItemsEditor({
               }
               checked={item.vatApplies}
               onChange={(vatApplies) => {
-                updateItem(item.id, { vatApplies });
+                updateBaseFields(item.id, { vatApplies });
               }}
             />
-            <div className='col-span-2 flex justify-self-end sm:col-span-1'>
+            <div className='col-span-2 flex justify-self-end lg:col-span-1'>
               <IconButton
                 icon='mdi:arrow-up'
                 label={`Move ${name} up`}

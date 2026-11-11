@@ -4,7 +4,7 @@ import { formatNumber } from '../format';
 import { compareEmployeeOffer } from '../model/employee-comparison';
 import { calculatePayroll, type TaxProfile } from '../model/payroll';
 import type { CompanyTaxRules, PayrollRules } from '../model/rules';
-import { toBudgetItem, toOfferPayrollInput, toOwnerPayrollInput } from '../settings/conversions';
+import { toExpenseItem, toOfferPayrollInput, toOwnerPayrollInput } from '../settings/conversions';
 import { type CompanySettings, type EmployeeOfferSettings } from '../settings/settings';
 import { rowsIf } from './breakdown-row';
 import { BreakdownTables } from './breakdown-tables';
@@ -37,7 +37,7 @@ export function EmployeeOfferSection({
     {
       offerPayroll,
       ownerPayroll: calculatePayroll(toOwnerPayrollInput(company, profile), payrollRules),
-      companyExpenses: company.expenses.map((item) => toBudgetItem(item, company.vatRate)),
+      companyExpenses: company.expenses.map((item) => toExpenseItem(item, company.vatRate)),
       usdPerEur: company.usdPerEur,
       billableHours,
     },

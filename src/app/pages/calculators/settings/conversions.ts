@@ -1,5 +1,5 @@
 import { MONTHS_PER_YEAR } from '../model/calendar';
-import type { BudgetItem } from '../model/company-budget';
+import type { BudgetItem, ExpenseItem } from '../model/company-budget';
 import type { WorkYearInput } from '../model/contractor-equivalence';
 import type { PayrollInput, TaxProfile } from '../model/payroll';
 import type {
@@ -7,6 +7,7 @@ import type {
   CompanySettings,
   EmployeeOfferSettings,
   EquivalenceSettings,
+  ExpenseItemSettings,
   MonthlyAndYearlyAmounts,
 } from './settings';
 
@@ -20,23 +21,24 @@ export function toBudgetItem(item: BudgetItemSettings, vatRate: number): BudgetI
   };
 }
 
+export function toExpenseItem(item: ExpenseItemSettings, vatRate: number): ExpenseItem {
+  return { ...toBudgetItem(item, vatRate), payee: item.payee };
+}
+
+/** Non-taxable payments to the owner are expense items paid to them, outside the payroll. */
 export function toOwnerPayrollInput(settings: CompanySettings, profile: TaxProfile): PayrollInput {
-  return toPayrollInput(settings.ownerGross, settings.ownerNonTaxablePayments, profile);
+  return { gross: settings.ownerGross, nonTaxablePayments: 0, profile };
 }
 
 export function toOfferPayrollInput(
   settings: EmployeeOfferSettings,
   profile: TaxProfile,
 ): PayrollInput {
-  return toPayrollInput(settings.gross, settings.nonTaxablePayments, profile);
-}
-
-function toPayrollInput(
-  gross: number,
-  nonTaxablePayments: MonthlyAndYearlyAmounts,
-  profile: TaxProfile,
-): PayrollInput {
-  return { gross, nonTaxablePayments: toMonthlyAmount(nonTaxablePayments), profile };
+  return {
+    gross: settings.gross,
+    nonTaxablePayments: toMonthlyAmount(settings.nonTaxablePayments),
+    profile,
+  };
 }
 
 /** The monthly amount, with the yearly amount spread evenly over the months. */

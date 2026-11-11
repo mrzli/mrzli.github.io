@@ -58,4 +58,10 @@ export interface CompanyTaxRules {
   readonly profitTaxLowRateRevenueLimit: number;
   readonly dividendTaxRate: number;
   readonly standardVatRate: number;
+  /** Final tax on rent the owner receives, charged after the flat expense share. */
+  readonly rentTaxRate: number;
+  /** Share of the rent recognized as expenses without proof. */
+  readonly rentFlatExpenseShare: number;
+  /** Final tax on interest the owner receives. */
+  readonly interestTaxRate: number;
 }

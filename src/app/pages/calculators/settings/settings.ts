@@ -1,4 +1,11 @@
-import { CURRENCIES, type Currency, PERIODS, type Period } from '../model/company-budget';
+import {
+  CURRENCIES,
+  type Currency,
+  PAYEES,
+  type Payee,
+  PERIODS,
+  type Period,
+} from '../model/company-budget';
 import { DISABILITY_LEVELS, type DisabilityLevel } from '../model/rules';
 import {
   type FieldValidators,
@@ -99,13 +106,12 @@ export const SALARY_VALIDATORS: FieldValidators<SalarySettings> = {
 
 export interface CompanySettings {
   readonly ownerGross: number;
-  readonly ownerNonTaxablePayments: MonthlyAndYearlyAmounts;
   /** US dollars per euro. */
   readonly usdPerEur: number;
   /** Applies to the items marked as having VAT. */
   readonly vatRate: number;
   readonly incomes: readonly BudgetItemSettings[];
-  readonly expenses: readonly BudgetItemSettings[];
+  readonly expenses: readonly ExpenseItemSettings[];
 }
 
 export interface BudgetItemSettings {
@@ -127,15 +133,21 @@ const BUDGET_ITEM_VALIDATORS: FieldValidators<BudgetItemSettings> = {
   vatApplies: isBoolean,
 };
 
+export type ExpenseItemSettings = BudgetItemSettings & { readonly payee: Payee };
+
+const EXPENSE_ITEM_VALIDATORS: FieldValidators<ExpenseItemSettings> = {
+  ...BUDGET_ITEM_VALIDATORS,
+  payee: isOneOf(PAYEES),
+};
+
 const MAX_EXCHANGE_RATE = 1000;
 
 export const COMPANY_VALIDATORS: FieldValidators<CompanySettings> = {
   ownerGross: isFiniteNumberBetween(0, MAX_AMOUNT),
-  ownerNonTaxablePayments: isComplete(MONTHLY_AND_YEARLY_VALIDATORS),
   usdPerEur: isFiniteNumberBetween(Number.MIN_VALUE, MAX_EXCHANGE_RATE),
   vatRate: isFiniteNumberBetween(0, 1),
   incomes: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
-  expenses: isArrayOf(isComplete(BUDGET_ITEM_VALIDATORS)),
+  expenses: isArrayOf(isComplete(EXPENSE_ITEM_VALIDATORS)),
 };
 
 export interface EmployeeOfferSettings {

@@ -12,7 +12,7 @@ import { zagrebPayrollFor } from '../fixtures';
 const INPUT: EmployeeComparisonInput = {
   offerPayroll: zagrebPayrollFor(3000),
   ownerPayroll: zagrebPayrollFor(2000),
-  companyExpenses: [{ amount: 80, currency: 'EUR', period: 'month', vatRate: 0 }],
+  companyExpenses: [{ amount: 80, currency: 'EUR', period: 'month', vatRate: 0, payee: 'others' }],
   usdPerEur: 1.25,
   billableHours: 2000,
 };

@@ -1,5 +1,5 @@
 import { MONTHS_PER_YEAR } from './calendar';
-import { type BudgetItem, type CompanyBudget, calculateCompanyBudget } from './company-budget';
+import { type CompanyBudget, calculateCompanyBudget, type ExpenseItem } from './company-budget';
 import { roundToCents } from './money';
 import type { PayrollBreakdown } from './payroll';
 import type { CompanyTaxRules } from './rules';
@@ -11,7 +11,7 @@ export interface EmployeeComparisonInput {
   readonly offerPayroll: PayrollBreakdown;
   /** The owner's monthly payroll as an employee of their own company. */
   readonly ownerPayroll: PayrollBreakdown;
-  readonly companyExpenses: readonly BudgetItem[];
+  readonly companyExpenses: readonly ExpenseItem[];
   readonly usdPerEur: number;
   readonly billableHours: number;
 }

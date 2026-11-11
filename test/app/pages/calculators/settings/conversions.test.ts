@@ -3,6 +3,7 @@ import { describe, expect, test } from 'bun:test';
 import {
   toAnnualAmount,
   toBudgetItem,
+  toExpenseItem,
   toMonthlyAmount,
   toOfferPayrollInput,
   toOwnerPayrollInput,
@@ -34,21 +35,29 @@ describe('toBudgetItem', () => {
   });
 });
 
+describe('toExpenseItem', () => {
+  test('keeps the payee', () => {
+    expect(toExpenseItem({ ...ITEM, payee: 'ownerRent' }, 0.25)).toEqual({
+      amount: 100,
+      currency: 'USD',
+      period: 'month',
+      vatRate: 0.25,
+      payee: 'ownerRent',
+    });
+  });
+});
+
 describe('payroll inputs', () => {
-  test('add the monthly payments to the yearly ones spread over the months', () => {
+  test('leave non-taxable payments to the owner out of the payroll', () => {
     expect(
       toOwnerPayrollInput(
-        {
-          ownerGross: 2000,
-          ownerNonTaxablePayments: { perMonth: 0, perYear: 1200 },
-          usdPerEur: 1.2,
-          vatRate: 0.25,
-          incomes: [],
-          expenses: [],
-        },
+        { ownerGross: 2000, usdPerEur: 1.2, vatRate: 0.25, incomes: [], expenses: [] },
         ZAGREB_PROFILE,
       ),
-    ).toEqual({ gross: 2000, nonTaxablePayments: 100, profile: ZAGREB_PROFILE });
+    ).toEqual({ gross: 2000, nonTaxablePayments: 0, profile: ZAGREB_PROFILE });
+  });
+
+  test('add the offered monthly payments to the yearly ones spread over the months', () => {
     expect(
       toOfferPayrollInput(
         { gross: 3000, nonTaxablePayments: { perMonth: 100, perYear: 600 } },

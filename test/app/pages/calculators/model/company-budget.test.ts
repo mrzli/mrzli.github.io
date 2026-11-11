@@ -12,7 +12,7 @@ const PAYROLL = zagrebPayrollFor(2000);
 
 const INPUT: CompanyBudgetInput = {
   incomes: [{ amount: 10_000, currency: 'EUR', period: 'month', vatRate: 0 }],
-  expenses: [{ amount: 100, currency: 'USD', period: 'month', vatRate: 0.25 }],
+  expenses: [{ amount: 100, currency: 'USD', period: 'month', vatRate: 0.25, payee: 'others' }],
   usdPerEur: 1.25,
   billableHours: 1800,
   payroll: PAYROLL,
@@ -67,5 +67,29 @@ describe('calculateCompanyBudget', () => {
     );
     // 50 USD at 1.25 USD per EUR is 40 EUR, over 1,800 hours.
     expect(result.revenue).toBe(72_000);
+  });
+
+  test('adds expenses paid to the owner to their net, after the tax of each kind', () => {
+    // Profit 120,000 − 27,960 − 14,660 = 77,380, so net dividends 61,284.96.
+    const result = calculateCompanyBudget(
+      {
+        ...INPUT,
+        expenses: [
+          ...INPUT.expenses,
+          { amount: 1000, currency: 'EUR', period: 'month', vatRate: 0, payee: 'ownerRent' },
+          { amount: 100, currency: 'EUR', period: 'month', vatRate: 0, payee: 'ownerTaxFree' },
+          { amount: 500, currency: 'EUR', period: 'year', vatRate: 0, payee: 'ownerInterest' },
+        ],
+      },
+      COMPANY_TAX_RULES_2026,
+    );
+    expect(result.expenses).toBe(14_660);
+    expect(result.netDividends).toBe(61_284.96);
+    expect(result.ownerPayments).toEqual({
+      ownerTaxFree: { amount: 1200, taxRate: 0, tax: 0, net: 1200 },
+      ownerRent: { amount: 12_000, taxRate: expect.closeTo(0.084, 10), tax: 1008, net: 10_992 },
+      ownerInterest: { amount: 500, taxRate: 0.12, tax: 60, net: 440 },
+    });
+    expect(result.personalNet).toBe(90_356.96);
   });
 });

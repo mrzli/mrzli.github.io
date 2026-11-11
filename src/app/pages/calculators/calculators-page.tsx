@@ -20,6 +20,7 @@ import {
   COMPANY_VALIDATORS,
   type CompanySettings,
   EQUIVALENCE_VALIDATORS,
+  type ExpenseItemSettings,
   EMPLOYEE_OFFER_VALIDATORS,
   type EmployeeOfferSettings,
   type EquivalenceSettings,
@@ -69,7 +70,6 @@ const DEFAULT_SALARY: SalarySettings = {
 
 const DEFAULT_COMPANY: CompanySettings = {
   ownerGross: 2000,
-  ownerNonTaxablePayments: { perMonth: 0, perYear: 0 },
   usdPerEur: 1.15,
   vatRate: COMPANY_RULES.standardVatRate,
   incomes: [],
@@ -172,7 +172,8 @@ export function CalculatorsPage(): ReactNode {
           <CompanySection
             settings={company.settings}
             onChange={company.update}
-            createItem={createBudgetItem}
+            createIncomeItem={createIncomeItem}
+            createExpenseItem={createExpenseItem}
             billableHours={billableHours}
             profile={profile}
             payrollRules={RULES}
@@ -200,7 +201,7 @@ export function CalculatorsPage(): ReactNode {
   );
 }
 
-function createBudgetItem(): BudgetItemSettings {
+function createIncomeItem(): BudgetItemSettings {
   return {
     id: crypto.randomUUID(),
     label: '',
@@ -209,6 +210,10 @@ function createBudgetItem(): BudgetItemSettings {
     period: 'month',
     vatApplies: false,
   };
+}
+
+function createExpenseItem(): ExpenseItemSettings {
+  return { ...createIncomeItem(), payee: 'others' };
 }
 
 function findCity(cityCode: number, cities: readonly CityTaxRate[]): CityTaxRate {

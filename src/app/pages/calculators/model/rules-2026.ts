@@ -51,6 +51,8 @@ export const PAYROLL_RULES_2026: PayrollRules = {
  * - Profit tax: https://porezna-uprava.gov.hr/hr/porez-na-dobit-3940/3940
  * - Dividend tax: https://porezna-uprava.gov.hr/hr/oporezivanje-kapitala/4745
  * - VAT: https://porezna-uprava.gov.hr/hr/pdv-3938/3938
+ * - Rent: https://porezna-uprava.gov.hr/hr/najmodavac-i-zakupodavac-poslovnog-prostora-4448/4448
+ * - Interest: https://porezna-uprava.gov.hr/hr/oporezivanje-kapitala/4745
  */
 export const COMPANY_TAX_RULES_2026: CompanyTaxRules = {
   profitTaxLowRate: 0.1,
@@ -58,4 +60,7 @@ export const COMPANY_TAX_RULES_2026: CompanyTaxRules = {
   profitTaxLowRateRevenueLimit: 1_000_000,
   dividendTaxRate: 0.12,
   standardVatRate: 0.25,
+  rentTaxRate: 0.12,
+  rentFlatExpenseShare: 0.3,
+  interestTaxRate: 0.12,
 };

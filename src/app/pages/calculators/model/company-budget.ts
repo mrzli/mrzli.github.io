@@ -10,6 +10,12 @@ export type Currency = (typeof CURRENCIES)[number];
 export const PERIODS = ['hour', 'month', 'year'] as const;
 export type Period = (typeof PERIODS)[number];
 
+/** Who receives an expense: others, or the owner in a form with its own tax. */
+export const PAYEES = ['others', 'ownerTaxFree', 'ownerRent', 'ownerInterest'] as const;
+export type Payee = (typeof PAYEES)[number];
+export type OwnerPayee = Exclude<Payee, 'others'>;
+export const OWNER_PAYEES: readonly OwnerPayee[] = ['ownerTaxFree', 'ownerRent', 'ownerInterest'];
+
 /** An income or expense amount without VAT. */
 export interface BudgetItem {
   readonly amount: number;
@@ -19,9 +25,11 @@ export interface BudgetItem {
   readonly vatRate: number;
 }
 
+export type ExpenseItem = BudgetItem & { readonly payee: Payee };
+
 export interface CompanyBudgetInput {
   readonly incomes: readonly BudgetItem[];
-  readonly expenses: readonly BudgetItem[];
+  readonly expenses: readonly ExpenseItem[];
   readonly usdPerEur: number;
   /** Billable hours per year, for items paid per hour. */
   readonly billableHours: number;
@@ -42,9 +50,18 @@ export interface CompanyBudget {
   readonly netDividends: number;
   readonly netSalary: number;
   readonly youthRelief: number;
+  /** Expenses paid to the owner, by the form they take. */
+  readonly ownerPayments: Readonly<Record<OwnerPayee, OwnerPayment>>;
   readonly personalNet: number;
   readonly vatCharged: number;
   readonly vatPaid: number;
+}
+
+export interface OwnerPayment {
+  readonly amount: number;
+  readonly taxRate: number;
+  readonly tax: number;
+  readonly net: number;
 }
 
 /**
@@ -84,6 +101,16 @@ export function calculateCompanyBudget(
 
   const netSalary = roundToCents(input.payroll.netPay * MONTHS_PER_YEAR);
   const youthRelief = roundToCents(input.payroll.youthRelief * MONTHS_PER_YEAR);
+  const ownerPayments = Object.fromEntries(
+    OWNER_PAYEES.map((payee) => [
+      payee,
+      toOwnerPayment(
+        sumAnnual(input.expenses.filter((item) => item.payee === payee)),
+        getOwnerPaymentTaxRate(payee, rules),
+      ),
+    ]),
+  ) as Record<OwnerPayee, OwnerPayment>;
+  const ownerPaymentsNet = OWNER_PAYEES.reduce((sum, payee) => sum + ownerPayments[payee].net, 0);
 
   return {
     revenue,
@@ -97,10 +124,31 @@ export function calculateCompanyBudget(
     netDividends,
     netSalary,
     youthRelief,
-    personalNet: roundToCents(netSalary + youthRelief + netDividends),
+    ownerPayments,
+    personalNet: roundToCents(netSalary + youthRelief + netDividends + ownerPaymentsNet),
     vatCharged: sumAnnualVat(input.incomes),
     vatPaid: sumAnnualVat(input.expenses),
   };
+}
+
+/** The effective tax on the whole amount, with rent's flat expense share left untaxed. */
+function getOwnerPaymentTaxRate(payee: OwnerPayee, rules: CompanyTaxRules): number {
+  switch (payee) {
+    case 'ownerTaxFree': {
+      return 0;
+    }
+    case 'ownerRent': {
+      return rules.rentTaxRate * (1 - rules.rentFlatExpenseShare);
+    }
+    case 'ownerInterest': {
+      return rules.interestTaxRate;
+    }
+  }
+}
+
+function toOwnerPayment(amount: number, taxRate: number): OwnerPayment {
+  const tax = roundToCents(amount * taxRate);
+  return { amount, taxRate, tax, net: roundToCents(amount - tax) };
 }
 
 function toEur(amount: number, currency: Currency, usdPerEur: number): number {
